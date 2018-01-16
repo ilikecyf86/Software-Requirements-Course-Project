@@ -1,0 +1,47 @@
+Che 5.11.1 fails to start with either --user uid:gid or -e CHE_USER=uid:gid
+kind/question 
+I created a dedicated user che to run Che. It has UID and GID 1004 and it is added to the docker user group. I created /opt/che directory - owner is the user che As a different user, when I run sudo docker run --user 1004:1004 -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /opt/che:/data -e CHE_PORT=8000 eclipse/che:latest start I got: INFO: Welcome to Eclipse Che!
+INFO: 
+INFO: You are missing a mandatory parameter:
+INFO:    1. Mount 'docker.sock' for accessing Docker with unix sockets.
+INFO:    2. Or, set DOCKER_HOST to Docker's location (unix or tcp).
+INFO: 
+INFO: Mount Syntax:
+INFO:    Start with 'docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock' ...  
+INFO: 
+INFO: DOCKER_HOST Syntax:
+INFO:    Start with 'docker run -it --rm -e DOCKER_HOST=<daemon-location> ...'
+INFO: 
+INFO: Possible root causes:
+INFO:    1. Your admin has not granted permissions to /var/run/docker.sock.
+INFO:    2. You passed '--user uid:gid' with bad values.
+INFO:    3. Your firewall is blocking TCP ports for accessing Docker daemon.
+ If I try to run sudo docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /opt/che:/data -e CHE_PORT=8000 -e CHE_USER=1004:1004 eclipse/che:latest start I got : INFO: (che cli): 5.11.1 - using docker 17.03.1-ce / native
+INFO: (che init): Installing configuration and bootstrap variables:
+INFO: (che init):   CHE_HOST=172.17.0.1
+INFO: (che init):   CHE_VERSION=5.11.1
+INFO: (che init):   CHE_CONFIG=/opt/che
+INFO: (che init):   CHE_INSTANCE=/opt/che/instance
+INFO: (che config): Generating che configuration...
+INFO: (che config): Customizing docker-compose for running in a container
+INFO: (che start): Preflight checks
+WARNING: No swap limit support
+     mem (1.5 GiB):           [OK]
+     disk (100 MB):           [OK]
+     port 8000 (http):        [AVAILABLE]
+     conn (browser => ws):    [OK]
+     conn (server => ws):     [OK]
+
+INFO: (che start): Starting containers...
+ERROR: (che start): Timeout waiting for che container to start.
+ then if I do 'sudo docker logs eclipse-che-server-id' I get: Using embedded assembly...
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+#1) Respect the privacy of others.
+#2) Think before you type.
+#3) With great power comes great responsibility.
+
+sudo: no tty present and no askpass program specified
+ Any ideas what might be wrong here?

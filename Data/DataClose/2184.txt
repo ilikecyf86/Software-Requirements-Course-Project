@@ -1,0 +1,3 @@
+Implement possibility to execute commands from the context menu
+kind/enhancement team/ide status/in-progress status/pending-merge status/in-progress status/pending-merge 
+User should be able to execute commands from the context menu of Project Explorer, Processes panel, editor's tab.

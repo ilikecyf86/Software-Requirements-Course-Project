@@ -1,0 +1,49 @@
+cannot create WS from a docker file
+kind/question 
+Hi, I've installed Docker and che natively on a remote machine (che as a server), I'm able to create WS from the given stack library but cannot do so from a docker file using custom stack interface, I've took the Dockerfile from the dockerfile repository described in che docs : https://github.com/codenvy/dockerfiles/ the centos Java8 Docker file is here: https://github.com/codenvy/dockerfiles/blob/master/centos_jdk8/Dockerfile and this is it's content: FROM centos
+EXPOSE 4403 8080 8000 22
+RUN yum update -y && \
+    yum -y install sudo openssh-server procps wget unzip mc git curl subversion nmap && \
+    mkdir /var/run/sshd && \
+    sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd && \
+    echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
+    useradd -u 1000 -G users,wheel -d /home/user --shell /bin/bash -m user -p secret && \
+    sed -i 's/requiretty/!requiretty/g' /etc/sudoers
+
+USER user
+
+LABEL che:server:8080:ref=tomcat8 che:server:8080:protocol=http che:server:8000:ref=tomcat8-debug che:server:8000:protocol=http
+
+ENV MAVEN_VERSION=3.2.2 \
+    JAVA_VERSION=8u45 \
+    JAVA_VERSION_PREFIX=1.8.0_45 \
+    TOMCAT_HOME=/home/user/tomcat8
+
+ENV JAVA_HOME=/opt/jdk$JAVA_VERSION_PREFIX \
+    M2_HOME=/opt/apache-maven-$MAVEN_VERSION
+
+ENV PATH=$JAVA_HOME/bin:$M2_HOME/bin:$PATH
+
+RUN mkdir /home/user/tomcat8 && sudo mkdir /opt/apache-maven-$MAVEN_VERSION && \
+  wget \
+  --no-cookies \
+  --no-check-certificate \
+  --header "Cookie: oraclelicense=accept-securebackup-cookie" \
+  -qO- \
+  "http://download.oracle.com/otn-pub/java/jdk/$JAVA_VERSION-b14/jdk-$JAVA_VERSION-linux-x64.tar.gz" | sudo tar -zx -C /opt/ && \
+  sudo wget -qO- "https://archive.apache.org/dist/maven/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz" | sudo tar -zx --strip-components=1 -C /opt/apache-maven-$MAVEN_VERSION/
+
+ENV TERM xterm
+
+RUN wget -qO- "http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.24/bin/apache-tomcat-8.0.24.tar.gz" | tar -zx --strip-components=1 -C /home/user/tomcat8 && \
+    rm -rf /home/user/tomcat8/webapps/*
+USER root
+RUN  echo -e "JAVA_HOME=/opt/jdk$JAVA_VERSION_PREFIX\nM2_HOME=/home/user/apache-maven-$MAVEN_VERSION\nTOMCAT_HOME=/home/user/tomcat8\nPATH=$JAVA_HOME/bin:$M2_HOME/bin:$PATH" >> /etc/environment
+USER user
+ENV LANG C.UTF-8
+CMD sudo /usr/sbin/sshd -D && \
+    tail -f /dev/null
+ and pasted it here: When trying to create the container I get an error from the server: [DOCKER] [ERROR] The command '/bin/sh -c mkdir /home/user/tomcat8 && sudo mkdir /opt/apache-maven-$MAVEN_VERSION && wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" -qO- "http://download.oracle.com/otn-pub/java/jdk/$JAVA_VERSION-b14/jdk-$JAVA_VERSION-linux-x64.tar.gz" | sudo tar -zx -C /opt/ && sudo wget -qO- "https://archive.apache.org/dist/maven/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz" | sudo tar -zx --strip-components=1 -C /opt/apache-maven-$MAVEN_VERSION/' returned a non-zero code: 2
+[ERROR] Docker image build failed
+ What went wrong? What is the difference when running it from the stack library or running it from Dockerfile? Im new both to Docker and Che so excuse my noobness.... Also- on repeated attempts it seems che is trying to build the WS from cache - how can I clean this cache? when trying to create with a simple Docker file like: FROM ubuntu I get Error when starting agent
+Unable to start workspace agent. Error when trying to start the workspace agent: Error response from docker API, status: 500, message: Cannot kill container addfb8e8a256e4388a2536a5a8599c2530cd388ba3352b5e9adea79f2957db46: Container addfb8e8a256e4388a2536a5a8599c2530cd388ba3352b5e9adea79f2957db46 is not running

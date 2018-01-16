@@ -1,0 +1,3 @@
+Add contextual menu for commands in Commands Explorer
+kind/enhancement team/ide 
+Goal The goal of the issue is to allow contextual actions on commands displayed in the commands explorer. We need to allow right-click actions in the commands explorer to: Run Delete Duplicate Set as default (see #4966)

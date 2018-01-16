@@ -1,0 +1,3 @@
+Folders that only contain one subfolder break the UI
+
+I have imported a git project that contains nested folders with no content for several levels deep. Che seems to collapse these into one folder and breaks navigation. If I go into the terminal and throw a dummy file into each folder touch .foo, the UI will work as expected.

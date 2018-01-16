@@ -1,0 +1,3 @@
+Support private repositories in Factories
+kind/question 
+It would be really useful to be able to use private repositories in factory URLs so you could do this: /f?url=git@my.git.server:private/repository.git Alternatively, is there a way to somehow share factories between multiple Che instances on the same server?

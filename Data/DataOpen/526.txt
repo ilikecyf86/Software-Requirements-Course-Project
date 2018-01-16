@@ -1,0 +1,3 @@
+Project Samples Management in Dashboard
+kind/epic team/plugin kind/enhancement 
+We recently added the ability to manage the Stacks from the dashboard. We need to provide the ability to manage the Samples. Tasks: List for samples #2967 Ability to edit/create samples #2968 Advanced configuration for samples #2969

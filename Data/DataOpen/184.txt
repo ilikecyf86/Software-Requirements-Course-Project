@@ -1,0 +1,5 @@
+Che is not handling correctly Docker for mac 17.11 (edge stream)
+kind/bug 
+Description Using edge stream of Docker for mac is making issues with Che Docker For Mac Version 17.11.0-ce-rc2-mac37 $ docker run -it --rm alpine:3.6 uname -r
+4.9.44-linuxkit-aufs
+ Reproduction Steps Start Che and it fails as it is thinking we're using 'native' docker OS and version: macOS and Docker For Mac Version 17.11.0-ce-rc2-mac37

@@ -1,0 +1,3 @@
+Cannot add blank project in New Workspace wizard
+kind/question 
+When I try to add new blank project to a workspace in New Workspace wizard, it still requires to specify Git URL.

@@ -1,0 +1,3 @@
+Add "resend invitation" option for team member invites
+kind/eclipse-che kind/enhancement team/plugin kind/eclipse-che 
+From @bmicklea on March 29, 2017 13:16 When you invite a user to join your Codenvy team you should be able to choose to resend the same invitation in the event that they did not receive it. Copied from original issue: codenvy/codenvy#2010

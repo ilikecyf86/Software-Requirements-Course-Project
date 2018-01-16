@@ -1,0 +1,3 @@
+Focus lost after adding macros
+kind/bug severity/P2 
+Reproduction Steps: Create spring project Go to the commands editor Click on the "Macros" Add any macros Pay attention to the screen Expected Behavior: Editor field stay focusable after added macros Observed Behavior: Editor field does not stay focusable Attachment:

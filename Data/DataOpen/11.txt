@@ -1,0 +1,3 @@
+[Regression] The Delete button on organization members tab doesn't appear if select a member by checkbox
+kind/bug severity/P2 selenium/failure team/plugin 
+Reproduction Steps: Create an organization and add members Try to select members by checkbox and delete them Observed behavior: After checking a member the Delete button doesn't appear. OS and version: Che(Che6 branch) 6.0.0-M3; Chrome 59.0; Fedora 25 Related selenium test: OrganizationMembersTest Additional information:

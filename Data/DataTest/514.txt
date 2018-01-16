@@ -1,0 +1,122 @@
+Exception during deployment when RVM is in the PATH
+kind/question 
+My environment: PATH /Users/Junkie/.rvm/gems/ruby-2.1.2/bin:/Users/Junkie/.rvm/gems/ruby-2.1.2@global/bin:/Users/Junkie/.rvm/rubies/ruby-2.1.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/Junkie/Development/android-sdk/tools:/Users/Junkie/Development/android-sdk/platform-tools:/Users/Junkie/Development/gradle-2.0/bin:/Applications:/Users/Junkie/Development/scala-2.11.7/bin:/Library/PostgreSQL/9.3/bin:/Library/PostgreSQL/9.3/bin/psql:/Users/Junkie/Development/activator-1.2.10:/Users/Junkie/Development/apache-maven-3.2.5/bin:/usr/local/mysql/bin:/Users/Junkie/.rvm/bin JAVA Java version "1.8.0_05" Java(TM) SE Runtime Environment (build 1.8.0_05-b13) Java HotSpot(TM) 64-Bit Server VM (build 25.5-b02, mixed mode) When starting che I get the following exception. If I disable RVM by using __rvm_unload the problem goes away. Using CATALINA_BASE:   /Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat
+Using CATALINA_HOME:   /Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat
+Using CATALINA_TMPDIR: /Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/temp
+Using JRE_HOME:        /Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home
+Using CLASSPATH:       /Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/conf/:/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/lib/tools.jar:/Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/bin/bootstrap.jar:/Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/bin/tomcat-juli.jar
+2016-02-05 22:39:59,404[main]             [INFO ] [o.a.c.s.VersionLoggerListener 89]    - Server version:        Apache Tomcat/8.0.28
+2016-02-05 22:39:59,407[main]             [INFO ] [o.a.c.s.VersionLoggerListener 91]    - Server built:          Oct 7 2015 18:25:21 UTC
+2016-02-05 22:39:59,407[main]             [INFO ] [o.a.c.s.VersionLoggerListener 93]    - Server number:         8.0.28.0
+2016-02-05 22:39:59,408[main]             [INFO ] [o.a.c.s.VersionLoggerListener 95]    - OS Name:               Mac OS X
+2016-02-05 22:39:59,408[main]             [INFO ] [o.a.c.s.VersionLoggerListener 97]    - OS Version:            10.11.1
+2016-02-05 22:39:59,415[main]             [INFO ] [o.a.c.s.VersionLoggerListener 99]    - Architecture:          x86_64
+2016-02-05 22:39:59,416[main]             [INFO ] [o.a.c.s.VersionLoggerListener 101]   - Java Home:             /Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/jre
+2016-02-05 22:39:59,416[main]             [INFO ] [o.a.c.s.VersionLoggerListener 103]   - JVM Version:           1.8.0_05-b13
+2016-02-05 22:39:59,417[main]             [INFO ] [o.a.c.s.VersionLoggerListener 105]   - JVM Vendor:            Oracle Corporation
+2016-02-05 22:39:59,417[main]             [INFO ] [o.a.c.s.VersionLoggerListener 107]   - CATALINA_BASE:         /Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat
+2016-02-05 22:39:59,417[main]             [INFO ] [o.a.c.s.VersionLoggerListener 109]   - CATALINA_HOME:         /Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat
+2016-02-05 22:39:59,418[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.config.file=/Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/conf/logging.properties
+2016-02-05 22:39:59,419[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+2016-02-05 22:39:59,420[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dport.http=8080
+2016-02-05 22:39:59,420[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote
+2016-02-05 22:39:59,421[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.ssl=false
+2016-02-05 22:39:59,421[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.authenticate=false
+2016-02-05 22:39:59,422[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.local.conf.dir=/Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/conf/
+2016-02-05 22:39:59,422[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.home=/Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT
+2016-02-05 22:39:59,423[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.logs.dir=/Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/logs/
+2016-02-05 22:39:59,423[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.endorsed.dirs=/Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/endorsed
+2016-02-05 22:39:59,424[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.base=/Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat
+2016-02-05 22:39:59,424[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.home=/Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat
+2016-02-05 22:39:59,425[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.io.tmpdir=/Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/temp
+2016-02-05 22:39:59,775[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 424]  - Initializing ProtocolHandler ["http-nio-8080"]
+2016-02-05 22:39:59,834[main]             [INFO ] [o.a.t.util.net.NioSelectorPool 72]   - Using a shared selector for servlet write/read
+2016-02-05 22:39:59,917[main]             [INFO ] [o.a.catalina.startup.Catalina 587]   - Initialization processed in 1214 ms
+2016-02-05 22:40:00,068[main]             [INFO ] [c.m.JmxRemoteLifecycleListener 332]  - The JMX Remote Listener has configured the registry on port 32001 and the server on port 32101 for the Platform server
+2016-02-05 22:40:00,069[main]             [INFO ] [o.a.c.core.StandardService 433]      - Starting service Catalina
+2016-02-05 22:40:00,069[main]             [INFO ] [o.a.c.core.StandardEngine 259]       - Starting Servlet Engine: Apache Tomcat/8.0.28
+2016-02-05 22:40:00,222[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]        - Deploying web application archive /Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/webapps/dashboard.war
+2016-02-05 22:40:01,825[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]        - Deployment of web application archive /Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/webapps/dashboard.war has finished in 1,602 ms
+2016-02-05 22:40:01,830[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]        - Deploying web application archive /Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/webapps/ide.war
+2016-02-05 22:40:13,590[ost-startStop-1]  [WARN ] [p.DockerExtConfBindingProvider 51]   - DockerExtConfBindingProvider
+2016-02-05 22:40:13,812[ost-startStop-1]  [INFO ] [com.google.inject.Guice 42]          - An exception was caught and reported. Message: org.eclipse.che.inject.ConfigurationException: Property rvm_debug_flag:-0 is not found as system property or environment variable.
+org.eclipse.che.inject.ConfigurationException: Property rvm_debug_flag:-0 is not found as system property or environment variable.
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:243) ~[che-core-commons-inject-4.0.0-RC1-SNAPSHOT.jar:4.0.0-RC1-SNAPSHOT]
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:214) ~[che-core-commons-inject-4.0.0-RC1-SNAPSHOT.jar:4.0.0-RC1-SNAPSHOT]
+    at org.eclipse.che.inject.CheBootstrap$ExtConfiguration.configure(CheBootstrap.java:160) ~[che-core-commons-inject-4.0.0-RC1-SNAPSHOT.jar:4.0.0-RC1-SNAPSHOT]
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements.getElements(Elements.java:110) ~[guice-4.0.jar:na]
+    at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:198) ~[guice-4.0.jar:na]
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements.getElements(Elements.java:110) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:138) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:104) [guice-4.0.jar:na]
+    at com.google.inject.Guice.createInjector(Guice.java:96) [guice-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.getInjector(EverrestGuiceContextListener.java:137) [everrest-integration-guice-1.12.0.jar:na]
+    at com.google.inject.servlet.GuiceServletContextListener.contextInitialized(GuiceServletContextListener.java:47) [guice-servlet-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.contextInitialized(EverrestGuiceContextListener.java:84) [everrest-integration-guice-1.12.0.jar:na]
+    at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4738) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5181) [catalina.jar:8.0.28]
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717) [catalina.jar:8.0.28]
+    at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:945) [catalina.jar:8.0.28]
+    at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1798) [catalina.jar:8.0.28]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_05]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_05]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_05]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_05]
+    at java.lang.Thread.run(Thread.java:745) [na:1.8.0_05]
+2016-02-05 22:40:16,309[ost-startStop-1]  [ERROR] [o.a.c.c.C.[.[localhost].[/ide] 4744] - Exception sending context initialized event to listener instance of class org.eclipse.che.inject.CodenvyBootstrap
+com.google.inject.CreationException: Unable to create injector, see the following errors:
+
+1) An exception was caught and reported. Message: Property rvm_debug_flag:-0 is not found as system property or environment variable.
+  at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:198)
+
+1 error
+    at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:466) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:155) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107) ~[guice-4.0.jar:na]
+    at com.google.inject.Guice.createInjector(Guice.java:96) ~[guice-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.getInjector(EverrestGuiceContextListener.java:137) ~[everrest-integration-guice-1.12.0.jar:na]
+    at com.google.inject.servlet.GuiceServletContextListener.contextInitialized(GuiceServletContextListener.java:47) ~[guice-servlet-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.contextInitialized(EverrestGuiceContextListener.java:84) ~[everrest-integration-guice-1.12.0.jar:na]
+    at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4738) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5181) [catalina.jar:8.0.28]
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717) [catalina.jar:8.0.28]
+    at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:945) [catalina.jar:8.0.28]
+    at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1798) [catalina.jar:8.0.28]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_05]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_05]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_05]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_05]
+    at java.lang.Thread.run(Thread.java:745) [na:1.8.0_05]
+Caused by: org.eclipse.che.inject.ConfigurationException: Property rvm_debug_flag:-0 is not found as system property or environment variable.
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:243) ~[che-core-commons-inject-4.0.0-RC1-SNAPSHOT.jar:4.0.0-RC1-SNAPSHOT]
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:214) ~[che-core-commons-inject-4.0.0-RC1-SNAPSHOT.jar:4.0.0-RC1-SNAPSHOT]
+    at org.eclipse.che.inject.CheBootstrap$ExtConfiguration.configure(CheBootstrap.java:160) ~[che-core-commons-inject-4.0.0-RC1-SNAPSHOT.jar:4.0.0-RC1-SNAPSHOT]
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements.getElements(Elements.java:110) ~[guice-4.0.jar:na]
+    at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:198) ~[guice-4.0.jar:na]
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements.getElements(Elements.java:110) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:138) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:104) ~[guice-4.0.jar:na]
+    ... 17 common frames omitted
+2016-02-05 22:40:16,487[ost-startStop-1]  [ERROR] [o.a.c.core.StandardContext 5182]     - One or more listeners failed to start. Full details will be found in the appropriate container log file
+2016-02-05 22:40:16,488[ost-startStop-1]  [ERROR] [o.a.c.core.StandardContext 5233]     - Context [/ide] startup failed due to previous errors
+2016-02-05 22:40:16,509[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]        - Deployment of web application archive /Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/webapps/ide.war has finished in 14,679 ms
+2016-02-05 22:40:16,511[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]        - Deploying web application archive /Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/webapps/swagger.war
+2016-02-05 22:40:16,940[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]        - Deployment of web application archive /Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/webapps/swagger.war has finished in 429 ms
+2016-02-05 22:40:16,944[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 1036]       - Deploying web application directory /Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/webapps/ROOT
+2016-02-05 22:40:17,204[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 1152]       - Deployment of web application directory /Users/Junkie/Downloads/eclipse-che-4.0.0-RC1-SNAPSHOT/tomcat/webapps/ROOT has finished in 260 ms
+2016-02-05 22:40:17,212[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 469]  - Starting ProtocolHandler ["http-nio-8080"]
+2016-02-05 22:40:17,222[main]             [INFO ] [o.a.catalina.startup.Catalina 638]   - Server startup in 17303 ms

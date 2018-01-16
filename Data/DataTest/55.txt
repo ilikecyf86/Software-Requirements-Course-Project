@@ -1,0 +1,3 @@
+AMI for che?
+kind/enhancement 
+This page has instructions on installing che on an AMS EC2 instance. Why not just create an AMI for che?

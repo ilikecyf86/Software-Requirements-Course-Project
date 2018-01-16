@@ -1,0 +1,3 @@
+Important Git enhancements
+kind/epic team/enterprise kind/enhancement kind/epic kind/epic kind/enhancement 
+Customer requests and enhancements for Git functionality: Ability to Filter Git Branches in the branches pop up #4678 Support git pull --rebase #3415 Support git push -f #3416 Show current git branch in the IDE #5335 Mark with colour Git changed files in project explorer #5339 Implement coloured marks in editor to show Git changed lines #5340 Add 'Git revert commit' action #6024 Use hotkeys where it is possible #5925 Navigation in the diff window to the next/prev file #5892 Improve files selection model in commit window #6255

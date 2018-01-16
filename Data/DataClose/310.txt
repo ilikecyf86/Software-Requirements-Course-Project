@@ -1,0 +1,3 @@
+Import from github from UD on che-multiuser is broken
+kind/bug team/plugin severity/P1 status/in-progress status/in-progress 
+Import from github from UD on che-multiuser is broken to fix that we have to add KC token as qparam

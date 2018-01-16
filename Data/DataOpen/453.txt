@@ -1,0 +1,3 @@
+Command Palette for Che Editor
+kind/enhancement team/ide status/analyzing 
+Create a new command palette that can invoke command, actions, file navigation, symbol navigation, switch to terminal(s). This is basically a combination of Find Action, Navigate to File and command palette. @slemeur is working on a more detailed and visually attractive definition of the feature.

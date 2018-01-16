@@ -1,0 +1,3 @@
+Create widget for switching position of the panels
+kind/enhancement sprint/current-sprint status/open-for-dev team/plugin status/open-for-dev sprint/current-sprint 
+Need to add button on toolbar for switching the panels position:

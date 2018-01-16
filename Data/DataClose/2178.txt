@@ -1,0 +1,3 @@
+Better handle "Process Panel" when commands are long
+kind/enhancement team/plugin sprint/next-sprint status/open-for-dev sprint/current-sprint sprint/next-sprint status/in-progress status/code-review status/open-for-dev status/in-progress status/code-review sprint/current-sprint 
+The process panel is not properly handling situations where: name of the command is long command is long We need to improve and handle those situations properly. We should truncate the name of the command in the process tree and display a tooltip when user hover it: We should also do the same when we display the command executed:

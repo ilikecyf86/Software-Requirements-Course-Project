@@ -1,0 +1,3 @@
+Getting Started - ARTIK IDE, not making sense
+
+I do not know where else to post this so if this is the wrong place sorry. I am using a PC for this. I started reading the Getting Started - ARTIK IDE here: https://eclipse-che.readme.io/v4.0/docs/samsung-artik-ide-getting-started Is this setup for a Linux box or a PC? I am assuming its for a Linux, because In step 2, they say "Shell" So if this is true, there is no PC installation ?

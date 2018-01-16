@@ -1,0 +1,123 @@
+When specify the port, the ws-agent will still request to che-host:8080
+
+Description of problem: When specify the port, the ws-agent will still request to che-host:8080 Che version: eclipse-che-4.0.0-RC5-SNAPSHOT Che install directory: /root/che/eclipse-che-4.0.0-RC5-SNAPSHOT Docker version: Client:
+ Version:      1.9.0
+ API version:  1.21
+ Go version:   go1.4.3
+ Git commit:   76d6bc9
+ Built:        Tue Nov  3 19:20:09 UTC 2015
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.9.0
+ API version:  1.21
+ Go version:   go1.4.3
+ Git commit:   76d6bc9
+ Built:        Tue Nov  3 19:20:09 UTC 2015
+ OS/Arch:      linux/amd64
+ Docker info: Containers: 3
+Images: 58
+Server Version: 1.9.0
+Storage Driver: devicemapper
+ Pool Name: docker-202:1-1052099-pool
+ Pool Blocksize: 65.54 kB
+ Base Device Size: 10.74 GB
+ Backing Filesystem: extfs
+ Data file: /dev/loop0
+ Metadata file: /dev/loop1
+ Data Space Used: 2.808 GB
+ Data Space Total: 107.4 GB
+ Data Space Available: 13.29 GB
+ Metadata Space Used: 3.51 MB
+ Metadata Space Total: 2.147 GB
+ Metadata Space Available: 2.144 GB
+ Udev Sync Supported: false
+ Deferred Removal Enabled: false
+ Deferred Deletion Enabled: false
+ Deferred Deleted Device Count: 0
+ Data loop file: /docker/devicemapper/devicemapper/data
+ Metadata loop file: /docker/devicemapper/devicemapper/metadata
+ Library Version: 1.02.82-git (2013-10-04)
+Execution Driver: native-0.2
+Logging Driver: json-file
+Kernel Version: 3.10.0-123.9.3.el7.x86_64
+Operating System: CentOS Linux 7 (Core)
+CPUs: 4
+Total Memory: 7.39 GiB
+Name: kratosacs-c0a8210131361095101
+ID: 4KAA:UDTK:EEJB:57NA:IQK6:7U5A:CXIF:7LIZ:6ZLL:WGYP:OC4X:ULTL
+ Java version: java version "1.8.0_65"
+Java(TM) SE Runtime Environment (build 1.8.0_65-b17)
+Java HotSpot(TM) 64-Bit Server VM (build 25.65-b01, mixed mode)
+ Environment details (AWS, VirtualBox, physical, etc.): Aliyun Ecs How reproducible: Steps to Reproduce: bin/che.sh run --skip:uid --port:7000 create new project from any stack Actual Results: 2016-02-17 02:59:51,179[ventBusClient-0]  [WARN ] [.c.a.c.n.WocketEventBusClient 256]  - Not able to connect to ws://che-host:8080/ide/api/eventbus/?token=dummy_token because he HP request to initiate the Webocket connection failed. Retrying 
+2016-02-17 02:59:51,182[ost-starttop-1]  [ERRR] [o.a.c.c.C.[.[localhost].[/ide] 4799] - Exception sending context initialized event to listener instance of class org.eclipse.che.inject.CodenvyBootstrap
+com.google.inject.CreationException: nable to create injector, see the following errors:
+
+1) Invocation error of method public void org.eclipse.che.ide.ext.java.server.ApiEndpointAccessibilityChecker.start() throws org.eclipse.che.api.core.ForbiddenException,org.eclipse.che.api.core.BadRequestException,org.eclipse.che.api.core.ConflictException,org.eclipse.che.api.core.NotFoundException,org.eclipse.che.api.core.erverException,org.eclipse.che.api.core.nauthorizedException,java.io.IException on org.eclipse.che.ide.ext.java.server.ApiEndpointAccessibilityChecker@3e302cff
+  at org.eclipse.che.ide.ext.java.server.MachineModule.configure(MachineModule.java:104)
+  while locating org.eclipse.che.ide.ext.java.server.ApiEndpointAccessibilityChecker
+
+1 error
+    at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:466) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.injectynamically(InternalInjectorCreator.java:184) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110) ~[guice-4.0.jar:na]
+    at com.google.inject.Guice.createInjector(Guice.java:96) ~[guice-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.getInjector(EverrestGuiceContextListener.java:137) ~[everrest-integration-guice-1.12.0.jar:na]
+    at com.google.inject.servlet.GuiceervletContextListener.contextInitialized(GuiceervletContextListener.java:47) ~[guice-servlet-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.contextInitialized(EverrestGuiceContextListener.java:84) ~[everrest-integration-guice-1.12.0.jar:na]
+    at org.apache.catalina.core.tandardContext.listenertart(tandardContext.java:4793) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.tandardContext.startInternal(tandardContext.java:5236) [catalina.jar:8.0.29]
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.tandardHost.addChild(tandardHost.java:717) [catalina.jar:8.0.29]
+    at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:945) [catalina.jar:8.0.29]
+    at org.apache.catalina.startup.HostConfig$eployWar.run(HostConfig.java:1795) [catalina.jar:8.0.29]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_45]
+    at java.util.concurrent.Futureask.run(Futureask.java:266) [na:1.8.0_45]
+    at java.util.concurrent.hreadPoolExecutor.runWorker(hreadPoolExecutor.java:1142) [na:1.8.0_45]
+    at java.util.concurrent.hreadPoolExecutor$Worker.run(hreadPoolExecutor.java:617) [na:1.8.0_45]
+    at java.lang.hread.run(hread.java:745) [na:1.8.0_45]
+Caused by: java.net.ConnectException: Connection refused
+    at java.net.PlainocketImpl.socketConnect(Native Method) ~[na:1.8.0_45]
+    at java.net.AbstractPlainocketImpl.doConnect(AbstractPlainocketImpl.java:345) ~[na:1.8.0_45]
+    at java.net.AbstractPlainocketImpl.connectoAddress(AbstractPlainocketImpl.java:206) ~[na:1.8.0_45]
+    at java.net.AbstractPlainocketImpl.connect(AbstractPlainocketImpl.java:188) ~[na:1.8.0_45]
+    at java.net.ocksocketImpl.connect(ocksocketImpl.java:392) ~[na:1.8.0_45]
+    at java.net.ocket.connect(ocket.java:589) ~[na:1.8.0_45]
+    at sun.net.NetworkClient.doConnect(NetworkClient.java:175) ~[na:1.8.0_45]
+    at sun.net.www.http.HttpClient.openerver(HttpClient.java:432) ~[na:1.8.0_45]
+    at sun.net.www.http.HttpClient.openerver(HttpClient.java:527) ~[na:1.8.0_45]
+    at sun.net.www.http.HttpClient.<init>(HttpClient.java:211) ~[na:1.8.0_45]
+    at sun.net.www.http.HttpClient.New(HttpClient.java:308) ~[na:1.8.0_45]
+    at sun.net.www.http.HttpClient.New(HttpClient.java:326) ~[na:1.8.0_45]
+    at sun.net.www.protocol.http.HttpRLConnection.getNewHttpClient(HttpRLConnection.java:1168) ~[na:1.8.0_45]
+    at sun.net.www.protocol.http.HttpRLConnection.plainConnect0(HttpRLConnection.java:1104) ~[na:1.8.0_45]
+    at sun.net.www.protocol.http.HttpRLConnection.plainConnect(HttpRLConnection.java:998) ~[na:1.8.0_45]
+    at sun.net.www.protocol.http.HttpRLConnection.connect(HttpRLConnection.java:932) ~[na:1.8.0_45]
+    at sun.net.www.protocol.http.HttpRLConnection.getInputtream0(HttpRLConnection.java:1512) ~[na:1.8.0_45]
+    at sun.net.www.protocol.http.HttpRLConnection.getInputtream(HttpRLConnection.java:1440) ~[na:1.8.0_45]
+    at java.net.HttpRLConnection.getResponseCode(HttpRLConnection.java:480) ~[na:1.8.0_45]
+    at org.eclipse.che.api.core.rest.efaultHttpJsonRequest.doRequest(efaultHttpJsonRequest.java:225) ~[che-core-api-core-4.0.0-RC5-NAPH.jar:4.0.0-RC5-NAPH]
+    at org.eclipse.che.api.core.rest.efaultHttpJsonRequest.request(efaultHttpJsonRequest.java:136) ~[che-core-api-core-4.0.0-RC5-NAPH.jar:4.0.0-RC5-NAPH]
+    at org.eclipse.che.ide.ext.java.server.ApiEndpointAccessibilityChecker.start(ApiEndpointAccessibilityChecker.java:55) ~[classes/:4.0.0-RC5-NAPH]
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_45]
+    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_45]
+    at sun.reflect.elegatingMethodAccessorImpl.invoke(elegatingMethodAccessorImpl.java:43) ~[na:1.8.0_45]
+    at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_45]
+    at org.eclipse.che.inject.lifecycle.InitModule$1$1.afterInjection(InitModule.java:44) ~[che-core-commons-inject-4.0.0-RC5-NAPH.jar:4.0.0-RC5-NAPH]
+    at com.google.inject.internal.MembersInjectorImpl.notifyListeners(MembersInjectorImpl.java:119) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:115) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.ProvideroInternalFactoryAdapter$1.call(ProvideroInternalFactoryAdapter.java:46) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.ProvideroInternalFactoryAdapter.get(ProvideroInternalFactoryAdapter.java:40) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.ingletoncope$1.get(ingletoncope.java:145) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalFactoryoProviderAdapter.get(InternalFactoryoProviderAdapter.java:41) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.loadEageringletons(InternalInjectorCreator.java:199) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.injectynamically(InternalInjectorCreator.java:180) ~[guice-4.0.jar:na]
+    ... 18 common frames omitted

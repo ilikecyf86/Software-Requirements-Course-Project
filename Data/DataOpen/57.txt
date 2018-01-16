@@ -1,0 +1,3 @@
+Move language description configuration out of source code
+kind/task team/ide kind/enhancement target/che6 kind/task 
+Right now we use LanguageDescription instances when we want to find which language corresponds to specific file and further which language server corresponds to mentioned file. Those LanguageDescription instances are configured inside Guice modules. If we want to make it possible to have complete language server configuration as a part of workspace configuration, we need to find a way how we can move language description from Guice to workspace configuration or change the way we define a correspondence between file and language server instance.

@@ -1,0 +1,3 @@
+Need end point to load project from github branch
+kind/question 
+I have master github repository and there is one branch in that repo. I have created project from master branch successfully. But now I need to create project in eclipse che from github branch. Can any one please tell me how to do it?

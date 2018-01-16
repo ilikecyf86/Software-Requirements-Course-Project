@@ -1,0 +1,3 @@
+Rework Find Usages feature to avoid using Everrest based Websocket calls
+kind/enhancement team/ide status/in-progress status/in-progress 
+Find Usages feature works using Everrest based Websocket calls. See JavaSearchServiceWS. Need to replace it with JSON-RPC.

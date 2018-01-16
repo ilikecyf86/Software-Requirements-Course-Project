@@ -1,0 +1,3 @@
+GWT CodeServer cannot be launched or isn't reachable in some cases
+kind/bug severity/P2 target/che6 team/ide status/in-progress status/in-progress 
+Description There are a couple of problems with GTW SDM at some developers' machines: GWT CodeServer is unreachable at the provided URL; GWT CodeServer cannot be launched (it reports bindAddress host "0.0.0.0" unknown). I assume that GWT CodeServer cannot be bound to address 0.0.0.0 at some devs' machines due to different network settings.

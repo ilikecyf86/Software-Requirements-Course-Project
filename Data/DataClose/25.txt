@@ -1,0 +1,20 @@
+Compile fail mvn clean install -Dskip-validate-sources
+kind/bug team/platform 
+Description Reproduction Steps ERROR] COMPILATION ERROR :
+[INFO] -------------------------------------------------------------
+[ERROR] /Users/sj/dev/src/redhat/che/selenium/che-selenium-test/src/main/java/org/eclipse/che/selenium/pageobject/ConfigureClasspath.java:[109,8] error: reference to until is ambiguous
+  both method until(Predicate<T>) in FluentWait and method <V>until(Function<? super T,V>) in FluentWait match
+  where T,V are type-variables:
+    T extends Object declared in class FluentWait
+    V extends Object declared in method <V>until(Function<? super T,V>)
+[ERROR] /Users/sj/dev/src/redhat/che/selenium/che-selenium-test/src/main/java/org/eclipse/che/selenium/pageobject/ConfigureClasspath.java:[119,8] error: reference to until is ambiguous
+  both method until(Predicate<T>) in FluentWait and method <V>until(Function<? super T,V>) in FluentWait match
+  where T,V are type-variables:
+    T extends Object declared in class FluentWait
+    V extends Object declared in method <V>until(Function<? super T,V>)
+[ERROR] /Users/sj/dev/src/redhat/che/selenium/che-selenium-test/src/main/java/org/eclipse/che/selenium/pageobject/ConfigureClasspath.java:[163,8] error: reference to until is ambiguous
+  both method until(Predicate<T>) in FluentWait and method <V>until(Function<? super T,V>) in FluentWait match
+  where T,V are type-variables:
+    T extends Object declared in class FluentWait
+    V extends Object declared in method <V>until(Function<? super T,V>)
+[ERROR] /Users/sj/dev/src/redhat/che/selenium/che-selenium-test/src/main/java/org/eclipse/che/selenium/pageobject/ConfigureClasspath.java:[173,8] error: reference to until is ambiguous

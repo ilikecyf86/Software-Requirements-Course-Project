@@ -1,0 +1,3 @@
+Cannot create a duplicate stack
+kind/bug team/plugin sprint/next-sprint status/open-for-dev sprint/current-sprint sprint/next-sprint sprint/current-sprint status/open-for-dev status/code-review sprint/current-sprint status/code-review sprint/current-sprint 
+Reproduction Steps: Go to the dashboard "Stack" -> try to create a duplicated stack Expected behavior: The duplicated stack created Observed behavior: "Failed" notification appears Che version: 5.4.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.3 Che install: Docker container Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes] Che: Codenvy.io:

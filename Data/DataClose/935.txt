@@ -1,0 +1,7 @@
+Step Into in Java debugger often doesn't work
+kind/bug severity/P1 sprint/next-sprint team/enterprise status/in-progress sprint/next-sprint status/in-progress 
+Step into for classes from projects and project dependencies sometimes does not work. Reproduction Steps: Create a workspace from codenvy/jboss-eap7 image. Clone sample kitchen sink project: https://github.com/codenvy-templates/redhat-kitchensink-webapp.git Run JBoss in debug mode, compile and deploy the project. Open MemberController, and set breakpoints on following lines:  memberRegistration.register(newMember);
+ FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Registered!", "Registration successful");
+ facesContext.addMessage(null, m);
+ initNewMember();
+ Connect debugger. Open the application and register a user. When the debugger stops on the first breakpoint try to use step into. If it works use step out and again step into on next breakpoint. Expected behavior: step into works for all invocations. Actual behavior: step into sometimes (~50% cases) works as resume execution. OS and version: CHE 5.12.0-SNAPSHOT

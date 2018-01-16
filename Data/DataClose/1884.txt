@@ -1,0 +1,3 @@
+Create new docs repo
+kind/docs severity/P1 
+Create new docs repo eclipse/che-docs .

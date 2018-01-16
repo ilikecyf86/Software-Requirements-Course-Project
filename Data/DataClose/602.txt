@@ -1,0 +1,3 @@
+Move retrieving of estimated environment from RuntimeInfrastructure to RuntimeContext
+kind/task team/platform 
+Related to SPI branch only. Now normalized by infrastructure implementation environment can be retrieved in RuntimeInfrastructure#estimete. We want to move it to RuntimeContext#getEstimatedEnvironment.

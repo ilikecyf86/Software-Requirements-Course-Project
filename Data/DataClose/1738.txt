@@ -1,0 +1,3 @@
+Change schema data type for project attributes
+kind/enhancement sprint/current-sprint status/open-for-dev team/platform sprint/current-sprint 
+Project attributes are stored as key VARCHAR(255) -> value VARCHAR(255). But 255 is not enough for the value length as IDE may save there json objects(like project specific commands). Change the VARCHAR(255) data type to TEXT for project attribute value.

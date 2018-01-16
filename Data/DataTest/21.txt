@@ -1,0 +1,3 @@
+Show hidden files in project explorer
+
+The project explorer doesn't appear to show hidden files like .gitignore. Is there an option to enable showing hidden files?

@@ -1,0 +1,3 @@
+Loading native javascript file
+kind/question 
+Hello, I want to add the library joint.js to my extensio that I am currently developing. I inserted the file joint.js under the folder ~ / resources / public but when I run eclipse che this file does not load

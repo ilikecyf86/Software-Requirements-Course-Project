@@ -1,0 +1,30 @@
+Don't use Docker-in-Docker when running as a Docker Container
+kind/question 
+'docker-in-docker' usage is wrought with pain and suffering, and generally not recommended by the docker maintainers. I've got Che running great without doing this. Regardless, if you guys really insist on doing it this way, I recommend at the very least updating the Dockerfile to put /var/lib/docker in the container on a volume, otherwise you're beating the storage driver senseless, guaranteeing performance issues, especially when building containers. Here's the docker compose file I'm running that make Che work without the 'docker-in-docker' implementation: che:
+  image: codenvy/che:latest
+  #image: codenvy/che:4.0.0-beta-13
+  command: >
+    bash -c "
+    sudo rm -rf /home/user/che/lib-copy/* &&
+    sudo rm -rf /home/user/che/workspaces/* &&
+    sudo rm -rf /home/user/che/tomcat/temp/local-storage/* &&
+    mkdir -p /home/user/che/lib-copy/ &&
+    sudo chown -R user:user /home/user/che &&
+    cp -rf /home/user/che/lib/* /home/user/che/lib-copy &&
+    cd /home/user/che/bin/ && ./che.sh run -d -r:${DOCKER_MACHINE_HOST}
+    "
+  ports:
+    - "8080:8080"
+    - "32768-32788:32768-32788"
+  volumes:
+    - "${HOME}/.che/conf:/home/user/.che"
+    - "/var/run/docker.sock:/var/run/docker.sock"
+    - "/home/user/che/lib:/home/user/che/lib-copy"
+    - "/home/user/che/workspaces:/home/user/che/workspaces"
+    - "/home/user/che/tomcat/temp/local-storage:/home/user/che/tomcat/temp/local-storage"
+  privileged: true
+  container_name: che
+  extra_hosts:
+    - "vagrant-docker:127.0.0.1"
+ I need the extra_hosts probably b/c I'm using Che via Vagrant, and the vagrant host is vagrant-docker in my os x /etc/hosts... still no idea why i need this, but it works where no other configs do... YMMV Last thing is the che.properties, which I updated with: machine.docker.che_api.endpoint=http://172.17.0.1:8080/ide/api
+ This allowed the workspace to poll back in... the IP is the docker0 bridge IP. Note that I am not using host networking, as I find that to be an unnecessary workaround and presents unnecessary fragility. I haven't found anything that doesn't work.. workspace building, recipes, etc.. all seem to work fine.

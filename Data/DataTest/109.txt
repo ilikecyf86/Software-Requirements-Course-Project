@@ -1,0 +1,14 @@
+Errors during build
+
+I started to see a build failure with errors during attempts to build Building Che Plugin :: Java :: Extension Java Client. Few days ago I had no such problems but now there are two errors^                ^
+  where T is a type-variable:
+    T extends Object declared in method <T>newPromise(RequestCall<T>)
+C:\Users\1\IdeaProjects\che_\plugins\plugin-java\che-plugin-java-ext-lang-client\src\main\java\org\eclipse\che\ide\ext\java\client\search\FindUsagesPresenter.java:99: error: getTitleImage() in FindUsagesPresenter cannot implement getTitleImage() in PartPresenter
+    public SVGResource getTitleImage() {
+                       ^
+  return type SVGResource is not compatible with ImageResource
+C:\Users\1\IdeaProjects\che_\plugins\plugin-java\che-plugin-java-ext-lang-client\src\main\java\org\eclipse\che\ide\ext\java\client\search\FindUsagesPresenter.java:98: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+2 errors
+ I am not shure, but it seems to me that the cause of the promlem is merged PR

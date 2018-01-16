@@ -1,0 +1,3 @@
+Capture screenshot from webdriver instance when test configuration method fails
+kind/task team/production status/in-progress status/in-progress 
+Some selenium tests open test workspace, or creates the test projects in the configuration setup methods, for example, method InnerClassAndLambdaDebuggingTest.setup(). And we need to have screenshots in case of such configuration method fails.

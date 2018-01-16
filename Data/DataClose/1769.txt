@@ -1,0 +1,25 @@
+Chefile Dockerfile Error: Fail launching agent Terminal
+kind/question severity/P1 status/in-progress status/code-review status/in-progress status/code-review 
+I am trying to embed minimal Dockerfile content in a Chefile and I keep getting, "Error: Fail launching agent Terminal". I've tried to strip out everything unnecessary from the eclipse/alpine_jdk8 image, which does work if I simply put "FROM eclipse/alpine_jdk8". Reproduction Steps: Create a Chefile that contains: workspace.runtime.docker.content=`
+FROM docker:1.12.0
+RUN apk add --no-cache bash openssh sudo && \
+    adduser -S user -h /home/user -s /bin/bash -G root -u 1000 && \
+    echo "%root ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
+    echo "SECRET" >> /tmp/passwd && \
+    echo "SECRET" >> /tmp/passwd && \
+    cat /tmp/passwd | passwd user && \
+    chown -R user /home/user/
+EXPOSE 22
+USER user
+WORKDIR /projects
+CMD sudo /usr/bin/ssh-keygen -A && \
+    sudo /usr/sbin/sshd -D && \
+    sudo su - && \
+    tail -f /dev/null
+`
+ Then, go into the directory containing the Chefile and run something like: docker run -t --rm -v /var/run/docker.sock:/var/run/docker.sock -v $PWD/.che:/data eclipse/che dir $PWD up If using Windows PowerShell, replace the last $PWD in the command above with something like: /c/users/REPLACE_WITH_THE_REST_OF_YOUR_PATH This is the error you'll see in the terminal: INFO: (che dir): Workspace created
+INFO: (che dir): Workspace booting...
+ERROR: (che dir): Error when starting the workspace{"error":"Start of environment default failed. Error: Fail launching
+agent Terminal. Workspace ID:workspace6a1uxqckh8c0fvlo","eventType":"ERROR","prevStatus":"STARTING","workspaceId":"works
+pace6a1uxqckh8c0fvlo"}
+ Che version: 5.0.0 OS and version: Windows 10 Pro via PowerShell Docker version: 1.13.0-rc6 Che cli.log output: Fri Jan 13 05:12:53 UTC 2017 INFO: (che cli): Checking network... (hint: '--fast' skips version and network checks) /usr/bin/curl "-I -k dockerhub.com -s -o /dev/null --write-out %{http_code}" INFO: (che cli): Loading cli... DEBUG: docker_run DEBUG: is_boot2docker DEBUG: is_initialized DEBUG: cli_parse DEBUG: update_image_if_not_found �[0;32mINFO:�[0m (che download): Checking for image 'eclipse/che-dir:nightly'... found DEBUG: docker_run

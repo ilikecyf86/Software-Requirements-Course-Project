@@ -1,0 +1,3 @@
+CLI with multi-user mode doesn't work with mounted repo
+kind/bug team/production 
+CLI with multi-user mode doesn't work with mounted repo.

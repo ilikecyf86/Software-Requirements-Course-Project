@@ -1,0 +1,3 @@
+Upgrade to the GWT 2.8.1
+kind/enhancement target/branch status/code-review status/code-review 
+http://www.gwtproject.org/release-notes.html#Release_Notes_2_8_1

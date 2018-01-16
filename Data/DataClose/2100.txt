@@ -1,0 +1,16 @@
+Cannot start Eclipse Che using command line tool
+kind/docs 
+Cannot start Eclipse Che due to missing docker hub tag: Tag latest not found in repository docker.io/eclipse/che-server When going to dockerhub we see that latest tag is in fact missing: https://hub.docker.com/r/eclipse/che-server/tags/ Note: If latest tag is not desired here it would be better to update following guide: https://eclipse-che.readme.io/docs/che-getting-started Workaround Change $CHE_VERSION from latest to any version available in: https://hub.docker.com/r/eclipse/che-server/tags/ Reproduction Steps: Download and install che command line as in Getting Started Guide: https://eclipse-che.readme.io/docs/che-getting-started Execute che start ╰─$ che start                                                                                                                                     130 ↵
+INFO:  Pulling image curl:latest
+INFO:  Downloading cli-latest
+WARNING: No kernel memory limit support
+INFO: (che update): Pulling image eclipse/che-launcher:nightly
+nightly: Pulling from eclipse/che-launcher
+
+Digest: sha256:6429fdec20046021d4c9c8aeeb9c8945ec2378d6dc973a82ce724afb68eab09e
+Status: Downloaded newer image for eclipse/che-launcher:nightly
+
+INFO: ECLIPSE CHE: Pulling image eclipse/che-server:latest
+Pulling repository docker.io/eclipse/che-server
+FATA[0003] Tag latest not found in repository docker.io/eclipse/che-server
+ Che version: master (ebe8ed9) OS and version: MacOs X El Capitan Docker version: Docker version 1.12.3, build 6b644ec Che install: [command line/source code]

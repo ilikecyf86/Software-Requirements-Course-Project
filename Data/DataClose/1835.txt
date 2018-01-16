@@ -1,0 +1,3 @@
+Recipe location in stack editor should redirect to proper url
+kind/bug team/plugin sprint/next-sprint status/open-for-dev sprint/current-sprint sprint/next-sprint severity/P2 sprint/next-sprint sprint/current-sprint sprint/current-sprint sprint/next-sprint status/in-progress status/open-for-dev status/code-review status/in-progress status/code-review sprint/current-sprint 
+In the stack editor, it is possible to click on the "recipe location" but it redirects to a wrong location. We should redirect to: https://hub.docker.com/r/eclipse/dotnet_core/ We need to care if the recipe comes from a private Docker registry as well. Che version: 5.0.0-snapshot

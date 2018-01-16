@@ -1,0 +1,6 @@
+How to deploy Che to google cloud?
+kind/question status/open-for-dev 
+Hi, Tyler Jewell asked me to write my question here (not in google group) I'm trying to deploy Eclipse Che to my Google Cloud Container Engine. I did the following Pulled codeenvy/che image from repo to my local docker. Tagged the image with new name Pushed the image to google cloud Container Registry Created cluster Started image on cluster kubectl run che --image=gcr.io/my-project/che --port=8080 Exposed it kubectl expose deployment che --type="LoadBalancer" After that I got logs from the pod kubectl logs che-9999999-xxxxxx And I see the following !!!
+!!! Running 'docker' succeeded, but 'docker ps' failed. This usually means that docker cannot reach its daemon.
+!!!
+ So It does not work. What am I doing wrong?

@@ -1,0 +1,3 @@
+Use relative link to recipe in workspace environment if possible
+status/open-for-dev kind/task sprint/next-sprint team/platform sprint/current-sprint sprint/next-sprint status/pending-merge sprint/current-sprint status/open-for-dev status/pending-merge 
+If recipe is stored in our storage we can convert link to relative. This will allow to not domain in our storage and change domain in future.

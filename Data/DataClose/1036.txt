@@ -1,0 +1,3 @@
+Cannot re-start php workspace
+kind/bug severity/P1 status/open-for-dev team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+Steps to reproduce: Create a PHP workspace with a sample project. Make sure php language server is on Open index.php. Create new.php file Stop workspace. Start workspace. Initializing language server notification popup never goes away.

@@ -1,0 +1,5 @@
+Error occurs on sending ping message to websocket
+kind/question 
+We see the below messages in our workspace dev-machine logs but are not sure what is causing them/where they are coming from. The diagnostics tool returns successes for all elements. [STDOUT] 2017/05/12 14:08:52 Error occurs on sending ping message to websocket. websocket: close sent
+[STDOUT] 2017/05/12 14:08:52 Failed to send websocket message: , due to occurred error websocket: close sent
+[STDOUT] 2017/05/12 14:08:52 Error occurs on sending ping message to websocket. websocket: close sent

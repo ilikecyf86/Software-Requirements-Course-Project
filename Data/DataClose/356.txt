@@ -1,0 +1,3 @@
+Cannot create a new stack
+kind/bug severity/blocker team/plugin sprint/current-sprint status/open-for-dev status/code-review status/in-progress status/open-for-dev status/code-review status/code-review status/in-progress status/code-review sprint/current-sprint 
+When creating a new stack, it does not apper in the stacks list. 'Save' button is disabled when editing stacks details. Reproduction Steps: In the dasboard click 'Stacks' tab. Click 'Add Stack' button. Make some changes. Expected: 'Save' button must be active after changing stack details. The new stack must be present in the stacks list. Wrong: 'Save' button is inactive after changing stack details. There is no new stack in the stacks list. OS and version: Ubuntu 16.0.4 CHE 5.19.0-SNAPSHOT Diagnostics:

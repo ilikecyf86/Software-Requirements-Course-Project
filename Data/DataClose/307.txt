@@ -1,0 +1,11 @@
+[CHE 6] Add environment variables configuration to Machine model
+kind/enhancement status/open-for-dev team/platform target/branch sprint/current-sprint status/in-progress status/open-for-dev status/code-review status/in-progress sprint/current-sprint 
+Description We need to add an ability to set environment variables configuration in machine config. I suggest next structure of the MachineConfig object: {
+    "installers" : [ ],
+    "attributes" : { },
+    "servers" : { },
+    "env" : {
+         "my_env1" : "value1",
+         "my_env2" : "value2"
+    }
+}

@@ -1,0 +1,3 @@
+Rework testing of Find Text Feature presentation
+kind/task team/production status/in-progress sprint/current-sprint status/in-progress 
+We need rework the FindTextFeatureTest selenium test: Because checkTextResultsPagination test method of FindTextFeatureTest selenium test fails by #7055 in start of the method and don't check other part of feature we need rework it to check count of a page occurrences in the end of the test method. Add checking count of found occurrences from all pages.

@@ -1,0 +1,3 @@
+Create selenium tests for checking outputs from machines
+kind/task team/production 
+On this moment we don't have special test cases for testing outputs from machines. We've had many problems for 5.8.0 version because this functionality didn't tested properly. We found some bugs in context others auto tests but we need of documentations or specifications for creating test cases that will test only the outputs.

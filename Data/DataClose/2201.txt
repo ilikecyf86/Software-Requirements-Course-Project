@@ -1,0 +1,3 @@
+Upgrade to GWT 2.8.0
+kind/enhancement team/ide sprint/next-sprint sprint/current-sprint sprint/current-sprint sprint/current-sprint sprint/next-sprint 
+http://www.gwtproject.org/release-notes.html#Release_Notes_2_8_0

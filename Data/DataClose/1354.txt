@@ -1,0 +1,3 @@
+Move Orion Editor from plugin to the IDE Core module
+kind/task sprint/next-sprint status/in-progress status/code-review status/in-progress sprint/current-sprint sprint/next-sprint 
+We need to have strong definition of the things that user can override and that is not. Basically users don't have a choice to override Orion editor. So it's not a plugin. And giving them ability to override any components may be risky

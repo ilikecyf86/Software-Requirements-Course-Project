@@ -1,0 +1,17 @@
+Issues with Language Servers
+kind/question kind/bug team/ide kind/question sprint/next-sprint sprint/current-sprint sprint/current-sprint status/in-progress status/code-review status/in-progress 
+I am experimenting with Language Servers in Che (implemented with Xtext) and I came over following issues: The Client Misses to send the languageId to the Server in didOpen requests (as a temp solution i patched che to hardcode the id) If i use Content Assist the Calculated Offsets and Lines seem wrong thus Xtext answers with errors Reproduction Steps: find my code here https://github.com/cdietrich/che/tree/xtext2 start che and create a new PHP project create a mydsl file Expected behavior: everything works Actual Behaviour validation works (* after patching che), content assist not content assist is not working have a look at xxx-* log to see the errors xtext sends "message": "java.lang.IndexOutOfBoundsException: Position [\n line \u003d 2\n character \u003d 20\n] text was : Hello
+name!\nHello Yyyyy from name!\nHello xxxx from \n\n"
+ before i patched che regarding language id i got following error from xtext Nov 18, 2016 8:02:12 PM org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer fireError                                      
+SEVERE: The property 'languageId' must have a non-null value.                                                               
+org.eclipse.lsp4j.jsonrpc.json.InvalidMessageException: The property 'languageId' must have a non-null value.               
+        at org.eclipse.lsp4j.jsonrpc.validation.ReflectiveMessageValidator.consume(ReflectiveMessageValidator.java:41)      
+        at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:149)               
+        at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:77)                       
+        at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:68)                
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)                                          
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)                                                         
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)                                  
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)                                  
+        at java.lang.Thread.run(Thread.java:745)
+ i am not sure what the state of the clientside impl is and if this is expected to work and if i miss a configuraton regarding the languageId (besides confuguring it in the module and adding the module to the war) is there a easy possibility to debug this client side?

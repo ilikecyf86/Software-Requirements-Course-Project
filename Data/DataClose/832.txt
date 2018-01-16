@@ -1,0 +1,3 @@
+Unexpected behavior when using the "move lines up/down" keybind on Chromebook
+kind/bug severity/P2 
+When trying to use the alt + arrow up/down keybind to move lines in your code, it seems to trigger the page up/down keybind instead. Che version: 5.12.0 Reproduction Steps: On chromebook: Create php workspace Create a php file Try to use alt + arrow up/down keybind OS and version: ChromeOS version 58

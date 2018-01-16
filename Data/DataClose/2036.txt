@@ -1,0 +1,189 @@
+wsagent 4818 Exception sending context initialized event
+kind/task team/ide 
+[when I create a workspace the error logs show '[ERROR] [o.a.c.c.C.[.[.[/wsagent] 4818] - Exception sending context initialized event to listener instance of class org.eclipse.che.inject.CheBootstrap'] Reproduction Steps: [install docker] [run che.sh start] [crate a workspace] Expected behavior: [a worksapce create success] Observed behavior: [Describe observed behavior here] Che version: [4.7.2] OS and version: [10.0] Docker version: [Docker version 1.12.3,] Che install: [Docker container, server (zip)] error detail 2016-11-28 05:45:02,526[ost-startStop-1] [INFO ] [o.a.c.startup.HostConfig 910] - Deploying web application archive /home/user/che/ws-agent/webapps/wsagent.war 2016-11-28 05:45:11,956[ost-startStop-1] [ERROR] [o.a.c.c.C.[.[.[/wsagent] 4818] - Exception sending context initialized event to listener instance of class org.eclipse.che.inject.CheBootstrap com.google.common.util.concurrent.UncheckedExecutionException: com.google.common.util.concurrent.UncheckedExecutionException: java.lang.SecurityException: class "org.eclipse.jdt.internal.core.Openable"'s signer information does not match signer information of other classes in the same package at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2203) ~[guava-18.0.jar:na]
+
+at com.google.common.cache.LocalCache.get(LocalCache.java:3937) ~[guava-18.0.jar:na]
+
+at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3941) ~[guava-18.0.jar:na]
+
+at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4824) ~[guava-18.0.jar:na]
+
+at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4830) ~[guava-18.0.jar:na]
+
+at com.google.inject.internal.FailableCache.get(FailableCache.java:48) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.ConstructorInjectorStore.get(ConstructorInjectorStore.java:50) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.ConstructorBindingImpl.initialize(ConstructorBindingImpl.java:138) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.InjectorImpl.initializeBinding(InjectorImpl.java:536) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.AbstractBindingProcessor$Processor$1.run(AbstractBindingProcessor.java:160) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.ProcessedBindingData.initializeBindings(ProcessedBindingData.java:44) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:123) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.Guice.createInjector(Guice.java:99) ~[guice-4.1.0.jar:na]
+
+at org.everrest.guice.servlet.EverrestGuiceContextListener.getInjector(EverrestGuiceContextListener.java:140) ~[everrest-integration-guice-1.13.1.jar:na]
+
+at com.google.inject.servlet.GuiceServletContextListener.contextInitialized(GuiceServletContextListener.java:47) ~[guice-servlet-4.1.0.jar:na]
+
+at org.everrest.guice.servlet.EverrestGuiceContextListener.contextInitialized(EverrestGuiceContextListener.java:85) ~[everrest-integration-guice-1.13.1.jar:na]
+
+at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4812) [catalina.jar:8.0.32]
+
+at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5255) [catalina.jar:8.0.32]
+
+at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147) [catalina.jar:8.0.32]
+
+at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725) [catalina.jar:8.0.32]
+
+at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701) [catalina.jar:8.0.32]
+
+at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717) [catalina.jar:8.0.32]
+
+at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:939) [catalina.jar:8.0.32]
+
+at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1812) [catalina.jar:8.0.32]
+
+at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_45]
+
+at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_45]
+
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_45]
+
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_45]
+
+at java.lang.Thread.run(Thread.java:745) [na:1.8.0_45]
+ Caused by: com.google.common.util.concurrent.UncheckedExecutionException: java.lang.SecurityException: class "org.eclipse.jdt.internal.core.Openable"'s signer information does not match signer information of other classes in the same package at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2203) ~[guava-18.0.jar:na]
+
+at com.google.common.cache.LocalCache.get(LocalCache.java:3937) ~[guava-18.0.jar:na]
+
+at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3941) ~[guava-18.0.jar:na]
+
+at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4824) ~[guava-18.0.jar:na]
+
+at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4830) ~[guava-18.0.jar:na]
+
+at com.google.inject.internal.FailableCache.get(FailableCache.java:48) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.MembersInjectorStore.get(MembersInjectorStore.java:68) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.ConstructorInjectorStore.createConstructor(ConstructorInjectorStore.java:75) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.ConstructorInjectorStore.access$000(ConstructorInjectorStore.java:29) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.ConstructorInjectorStore$1.create(ConstructorInjectorStore.java:37) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.ConstructorInjectorStore$1.create(ConstructorInjectorStore.java:33) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.FailableCache$1.load(FailableCache.java:37) ~[guice-4.1.0.jar:na]
+
+at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3527) ~[guava-18.0.jar:na]
+
+at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2319) ~[guava-18.0.jar:na]
+
+at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2282) ~[guava-18.0.jar:na]
+
+at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2197) ~[guava-18.0.jar:na]
+
+... 29 common frames omitted
+ Caused by: java.lang.SecurityException: class "org.eclipse.jdt.internal.core.Openable"'s signer information does not match signer information of other classes in the same package at java.lang.ClassLoader.checkCerts(ClassLoader.java:895) ~[na:1.8.0_45]
+
+at java.lang.ClassLoader.preDefineClass(ClassLoader.java:665) ~[na:1.8.0_45]
+
+at java.lang.ClassLoader.defineClass(ClassLoader.java:758) ~[na:1.8.0_45]
+
+at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142) ~[na:1.8.0_45]
+
+at org.apache.catalina.loader.WebappClassLoaderBase.findClassInternal(WebappClassLoaderBase.java:2469) ~[catalina.jar:8.0.32]
+
+at org.apache.catalina.loader.WebappClassLoaderBase.findClass(WebappClassLoaderBase.java:835) ~[catalina.jar:8.0.32]
+
+at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1277) ~[catalina.jar:8.0.32]
+
+at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1142) ~[catalina.jar:8.0.32]
+
+at java.lang.ClassLoader.defineClass1(Native Method) ~[na:1.8.0_45]
+
+at java.lang.ClassLoader.defineClass(ClassLoader.java:760) ~[na:1.8.0_45]
+
+at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142) ~[na:1.8.0_45]
+
+at org.apache.catalina.loader.WebappClassLoaderBase.findClassInternal(WebappClassLoaderBase.java:2469) ~[catalina.jar:8.0.32]
+
+at org.apache.catalina.loader.WebappClassLoaderBase.findClass(WebappClassLoaderBase.java:835) ~[catalina.jar:8.0.32]
+
+at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1277) ~[catalina.jar:8.0.32]
+
+at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1142) ~[catalina.jar:8.0.32]
+
+at java.lang.Class.getDeclaredFields0(Native Method) ~[na:1.8.0_45]
+
+at java.lang.Class.privateGetDeclaredFields(Class.java:2583) ~[na:1.8.0_45]
+
+at java.lang.Class.getDeclaredFields(Class.java:1916) ~[na:1.8.0_45]
+
+at com.google.inject.spi.InjectionPoint.getInjectionPoints(InjectionPoint.java:675) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.spi.InjectionPoint.forInstanceMethodsAndFields(InjectionPoint.java:380) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.MembersInjectorStore.createWithListeners(MembersInjectorStore.java:93) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.MembersInjectorStore.access$000(MembersInjectorStore.java:37) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.MembersInjectorStore$1.create(MembersInjectorStore.java:45) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.MembersInjectorStore$1.create(MembersInjectorStore.java:42) ~[guice-4.1.0.jar:na]
+
+at com.google.inject.internal.FailableCache$1.load(FailableCache.java:37) ~[guice-4.1.0.jar:na]
+
+at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3527) ~[guava-18.0.jar:na]
+
+at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2319) ~[guava-18.0.jar:na]
+
+at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2282) ~[guava-18.0.jar:na]
+
+at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2197) ~[guava-18.0.jar:na]
+
+... 44 common frames omitted
+ 2016-11-28 05:45:12,282[ost-startStop-1] [ERROR] [o.a.c.c.C.[.[.[/wsagent] 4818] - Exception sending context initialized event to listener instance of class org.eclipse.che.everrest.ServerContainerInitializeListener java.lang.NullPointerException: null at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:210) ~[guava-18.0.jar:na]
+
+at org.everrest.core.impl.RequestDispatcher.<init>(RequestDispatcher.java:84) ~[everrest-core-1.13.1.jar:na]
+
+at org.eclipse.che.everrest.ServerContainerInitializeListener.getEverrestProcessor(ServerContainerInitializeListener.java:165) ~[che-core-api-core-4.7.2.jar:4.7.2]
+
+at org.eclipse.che.everrest.ServerContainerInitializeListener.createWsServerEndpointConfig(ServerContainerInitializeListener.java:123) ~[che-core-api-core-4.7.2.jar:4.7.2]
+
+at org.eclipse.che.everrest.ServerContainerInitializeListener.contextInitialized(ServerContainerInitializeListener.java:91) ~[che-core-api-core-4.7.2.jar:4.7.2]
+
+at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4812) [catalina.jar:8.0.32]
+
+at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5255) [catalina.jar:8.0.32]
+
+at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147) [catalina.jar:8.0.32]
+
+at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725) [catalina.jar:8.0.32]
+
+at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701) [catalina.jar:8.0.32]
+
+at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717) [catalina.jar:8.0.32]
+
+at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:939) [catalina.jar:8.0.32]
+
+at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1812) [catalina.jar:8.0.32]
+
+at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_45]
+
+at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_45]
+
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_45]
+
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_45]
+
+at java.lang.Thread.run(Thread.java:745) [na:1.8.0_45]
+ 2016-11-28 05:45:12,283[ost-startStop-1] [ERROR] [o.a.c.core.StandardContext 5256] - One or more listeners failed to start. Full details will be found in the appropriate container log file 2016-11-28 05:45:12,376[ost-startStop-1] [ERROR] [o.a.c.core.StandardContext 5307] - Context [/wsagent] startup failed due to previous errors

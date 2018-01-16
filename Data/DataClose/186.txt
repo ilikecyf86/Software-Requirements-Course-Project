@@ -1,0 +1,3 @@
+Investigate possibility to speed-up GWT Super DevMode launching
+kind/enhancement team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint status/in-progress status/in-progress 
+gwt:codeserver Mojo forks process-classes build phase for each project from the maven reactor in order to prepare/ensure all required projects are prepared for running GWT Super DevMode. E.g. all (re-)sources have been generated etc. Since we never (AFAIK) launch GWT Super DevMode on freshly cloned Che sources but built it first, forking process-classes build phase looks redundant and it takes a lot of time. So it makes sense to investigate the possibility to skip process-classes build phase execution on every project during launching GWT SDM.

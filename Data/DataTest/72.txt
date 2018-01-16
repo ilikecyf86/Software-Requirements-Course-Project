@@ -1,0 +1,3 @@
+Compatibility matrix
+
+I apologize if this is not the correct spot. I guess technically it is an issue with support. Is there a compatibility matrix for Eclipse Che? I am specifically looking for any known compatibility issues with older Docker versions e.g. Docker 1.6.

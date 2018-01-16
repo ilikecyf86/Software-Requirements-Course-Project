@@ -1,0 +1,3 @@
+Move dashboard part of factory functionality from codenvy to che
+kind/task team/plugin status/open-for-dev sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Move dashboard part of factory functionality from codenvy to che related to #4091

@@ -1,0 +1,6 @@
+Where is "che-tomcat8-slf4j-logback"?
+kind/question 
+che/assembly/assembly-machine-server/src/assembly/assembly.xml Line 25 in 2795099 <include>org.eclipse.che.lib:che-tomcat8-slf4j-logback</include>             <includes>
+                <include>org.eclipse.che.lib:che-tomcat8-slf4j-logback</include>
+            </includes>
+ Where can I find the che-tomcat8-slf4j-logback dependency? I searched through the che codebase, but not found

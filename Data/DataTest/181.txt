@@ -1,0 +1,3 @@
+[dashboard] Reduce the height of Github projects list
+kind/bug 
+Need to reduce the height of the box with GitHub projects on Project screen and make it scrollable, cause it's hard to navigate to Project Information.

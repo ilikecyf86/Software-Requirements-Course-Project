@@ -1,0 +1,3 @@
+Add ability set formatting per project and for workspace
+kind/enhancement team/ide sprint/next-sprint 
+We will support to layers for Java formmater setting: global for workspace - will be accept for all java file in current workspace per project will be accept only for Java file in current project

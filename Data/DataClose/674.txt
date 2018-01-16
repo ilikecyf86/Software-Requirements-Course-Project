@@ -1,0 +1,3 @@
+The commands from context menu is duplicated after restarting workspace and creating a project
+kind/bug severity/P2 severity/P1 severity/P2 team/plugin status/open-for-dev status/in-progress status/open-for-dev status/in-progress 
+Reproduction Steps: Create a workspace based on java stack. Create the Spring project from IDE. Invoke context menu on project and select Commands and open dropdown with commands. Expected result: Actual result: Additional information: we have the same problem after stopping and starting a workspace. Failed test: CheckSimpleGwtAppTest

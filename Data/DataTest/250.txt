@@ -1,0 +1,3 @@
+Bad Dockerfile link on website
+
+The "Suggest Edits" link on eclipse-che.readme.io brought me here. https://eclipse-che.readme.io/docs/usage-docker#using-docker-syntax Under section "Using Docker Syntax" It says: We provide a Docker image and Dockerfile that has Ubuntu, ... ... where "Dockerfile" is a link to: https://github.com/eclipse/che/blob/4.0/Dockerfile this doesn't exist.

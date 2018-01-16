@@ -1,0 +1,3 @@
+The rerun diagnostics feature doesn't work
+kind/bug severity/P2 team/plugin sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Reproduction Steps: From the Dashboard click on the Diagnostics link and then on the Start Diagnostics button Wait that the Diagnostic is finished Click on the Re run diagnostics button Observed behavior: Diagnostic finished with error "Create Workspace Unable to start workspace: TypeError: t.cheWorkspace.onStopWorkspace is not a function" because workspace for diagnostics is still running. Che version: 5.20.0-SNAPSHOT OS and version: Fedora 25

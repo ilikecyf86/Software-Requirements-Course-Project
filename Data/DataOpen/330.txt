@@ -1,0 +1,3 @@
+Create IP code review request for k8s-client updates
+kind/task team/osio 
+Create IP code review request for k8s-client updates: gorkem/che-dependencies@b7789df Replace eclipse/che-dependencies#53

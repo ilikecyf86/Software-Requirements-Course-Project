@@ -1,0 +1,43 @@
+Build of Che fails
+kind/bug severity/blocker target/che6 
+Description I tried to build Che today and it fails. Logs [INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.eclipse.che.plugin.dynamodule.DynaModuleListGeneratorMojoITest
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.32 s <<< FAILURE! - in org.eclipse.che.plugin.dynamodule.DynaModuleListGeneratorMojoITest
+[ERROR] compileGuiceListModule(org.eclipse.che.plugin.dynamodule.DynaModuleListGeneratorMojoITest)  Time elapsed: 0.025 s  <<< FAILURE!
+java.lang.NoClassDefFoundError: org/eclipse/che/wsagent/server/WsAgentModule
+        at org.eclipse.che.plugin.dynamodule.DynaModuleListGeneratorMojoITest.compileGuiceListModule(DynaModuleListGeneratorMojoITest.java:104)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.che.wsagent.server.WsAgentModule
+        at org.eclipse.che.plugin.dynamodule.DynaModuleListGeneratorMojoITest.compileGuiceListModule(DynaModuleListGeneratorMojoITest.java:104)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   DynaModuleListGeneratorMojoITest.compileGuiceListModule:104 » NoClassDefFound ...
+[INFO] 
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 15.369 s
+[INFO] Finished at: 2017-11-02T11:03:21+02:00
+[INFO] Final Memory: 63M/1363M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.20.1:test (integration-test) on project che-core-dynamodule-maven-plugin: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/gaal/workspace/che/core/che-core-dynamodule-maven-plugin/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date]-jvmRun[N].dump, [date].dumpstream and [date]-jvmRun[N].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+ OS and version: Diagnostics:

@@ -1,0 +1,18 @@
+Can't restart workspace after stopping it
+duplicate 
+I have a workspace with a custom stack. I stopped it. Now I'm trying to start it and seeing the following log in the window where I ran che.sh run -i. 2016-02-08 00:19:05,985[spaceManager-11]  [INFO ] [o.e.c.a.m.s.MachineManager 167]      - Creating machine [ws = workspacenjfsirvsxhz55bas: env = gen-alfresco-ws: machine = ws-machine]
+2016-02-08 00:19:05,990[spaceManager-11]  [ERROR] [o.e.c.a.w.s.WorkspaceManager 615]    - Can't start machine ws-machine. http://192.168.99.100:8080/ide/api/recipe/recipe7jnhxi6wjjbz6181/script
+org.eclipse.che.api.machine.server.exception.MachineException: Can't start machine ws-machine. http://192.168.99.100:8080/ide/api/recipe/recipe7jnhxi6wjjbz6181/script
+    at org.eclipse.che.api.machine.server.MachineManager.getRecipeByLocation(MachineManager.java:983) ~[che-core-api-machine-4.0.0-beta-13.jar:4.0.0-beta-13]
+    at org.eclipse.che.api.machine.server.MachineManager.createMachine(MachineManager.java:293) ~[che-core-api-machine-4.0.0-beta-13.jar:4.0.0-beta-13]
+    at org.eclipse.che.api.machine.server.MachineManager.createMachineSync(MachineManager.java:168) ~[che-core-api-machine-4.0.0-beta-13.jar:4.0.0-beta-13]
+    at org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry.createMachine(RuntimeWorkspaceRegistry.java:451) ~[che-core-api-workspace-4.0.0-beta-13.jar:4.0.0-beta-13]
+    at org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry.startEnvironment(RuntimeWorkspaceRegistry.java:319) ~[che-core-api-workspace-4.0.0-beta-13.jar:4.0.0-beta-13]
+    at org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry.start(RuntimeWorkspaceRegistry.java:145) ~[che-core-api-workspace-4.0.0-beta-13.jar:4.0.0-beta-13]
+    at org.eclipse.che.api.workspace.server.WorkspaceManager.performSyncStart(WorkspaceManager.java:642) ~[che-core-api-workspace-4.0.0-beta-13.jar:4.0.0-beta-13]
+    at org.eclipse.che.api.workspace.server.WorkspaceManager.lambda$performAsyncStart$9(WorkspaceManager.java:613) ~[che-core-api-workspace-4.0.0-beta-13.jar:4.0.0-beta-13]
+    at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalRunnable.run(CopyThreadLocalRunnable.java:28) ~[che-core-commons-lang-4.0.0-beta-13.jar:4.0.0-beta-13]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_65]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_65]
+    at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_65]
+ Of course the workspace doesn't start at this point...

@@ -1,0 +1,3 @@
+fix usage of CHE_DATA in Che Server
+team/platform status/in-progress kind/bug sprint/current-sprint status/in-progress sprint/current-sprint 
+CHE_DATA are not being picked up by Che-Server, so it is impossible to use custom user configuration/data mounting volume. Che version: 5.0.0-M7-SNAPSHOT Docker version: [Enter your Docker version here docker version on CLI] Che install: Che Launcher Additional information: Problem started happening recently, didn't happen in an older version of Che: [Yes] Problem can be reliably reproduced, doesn't happen randomly: [Yes]

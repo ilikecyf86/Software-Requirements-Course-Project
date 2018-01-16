@@ -1,0 +1,7 @@
+"fast" profile does not disable "skip-validate-sources"
+kind/enhancement 
+After some tests of this profile it looks like -Pfast is not disabling the validate source profile using -Dskip-validate-sources is working but using -Pfast not $ mvn -Pfast help:active-profiles |grep validate-sources
+ - validate-sources (source: org.eclipse.che.parent:maven-parent-pom:5.0.0-M6-SNAPSHOT)
+ - validate-sources (source: org.eclipse.che.parent:maven-parent-pom:5.0.0-M6-SNAPSHOT)
+ - validate-sources (source: org.eclipse.che.parent:maven-parent-pom:5.0.0-M6-SNAPSHOT)
+ $ mvn -Pfast -Dskip-validate-sources help:active-profiles |grep validate-sources Expected behavior: It is expected that using "fast" profile will disable "skip-validate-sources" Che version: [5.0.0-M6] OS and version: [All] Additional information: more details can be found in the #2733

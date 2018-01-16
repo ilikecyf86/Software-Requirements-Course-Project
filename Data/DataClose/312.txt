@@ -1,0 +1,3 @@
+Rework selenium page objects for Dashboard
+kind/task team/production sprint/current-sprint status/open-for-dev status/in-progress status/open-for-dev status/in-progress 
+After improving workspace details toolbar and panels(#5451) we need rework selenium page objects for the Dashboard. There will be next selenium page objects for the Dashboard: Dashboard CreateWorkspace ProjectSourcePage Workspaces WorkspaceDetails WorkspaceOverview WorkspaceProjects WorkspaceMachines WorkspaceInstallers WorkspaceServers WorkspaceEnvVariables WorkspaceConfig WorkspaceSsh WorkspaceShare

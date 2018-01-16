@@ -1,0 +1,3 @@
+Support long Docker Registry passwords
+kind/eclipse-che kind/enhancement team/plugin kind/eclipse-che 
+From @wernight on March 18, 2017 8:57 Reproduction Steps: Go to /dashboard/#/administration URL Click "Add Registry" Fill in: Address: https://gcr.io Username: _json_key Password: Content of the file generated. Should support long password to support for example pulling from Google Container Registry (which generates a JSON file which is the password and is about 2000 characters long). Codenvy version: 5.5.0 Copied from original issue: codenvy/codenvy#1948

@@ -1,0 +1,3 @@
+Stabilize some test after latest changes in the IDE UI
+kind/enhancement status/open-for-dev target/che6 team/production sprint/current-sprint status/open-for-dev 
+Description We should rework clickOnRefreshTreeButton() method, because the widget with button that refreshes tree was removed into other place. Change closing of the opened tabs method in the StepIntoStepOverStepReturnWithChangeVariableTest. In the test action with closing all tabs last time unstable. I try to apply close all feature from context menu Update the list of checked actions in the CheckFindActionFeatureInCheTest. After lates changes in the UI part the list was changed. OS and version: Chrome browser, CHE -6.0.0-M2

@@ -1,0 +1,3 @@
+The links in Readme files of plugin samples are not actual
+kind/bug team/platform severity/P2 sprint/next-sprint status/open-for-dev sprint/next-sprint 
+Reproduction Steps: Open for instance file of the plugin by path like: che/samples/sample-plugin-actions/README.md. Try to use link from Read the tutorial at: https://eclipse-che.readme.io/v5.0/docs/actions section. We have: 404 Page Not Found.

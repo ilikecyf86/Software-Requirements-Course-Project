@@ -1,0 +1,3 @@
+how to use content assist automatically
+kind/enhancement kind/question kind/question team/ide 
+I't seems like there is a content assist in menu, I can use it to autocomplete my java code, but how can I use it automatically? such as I press (.), show it.

@@ -1,0 +1,3 @@
+Inject text/code to the editor area
+kind/question 
+I want to open some html file(not the json file)in the editor area(where the files are currently opening) with double click on the json file. I did it in the INFORMATION (console) area, but in the EDITING area I didn't succeeded. Any idea anyone? -->

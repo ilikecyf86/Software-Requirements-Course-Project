@@ -1,0 +1,45 @@
+Error: [$interpolate:interr] Can't interpolate: {{ideIframeLink}}
+kind/question 
+I can't understand the error to give out a detailed description but the screenshot should do Done on BrowserSync'ed Dashboard from the che repo. Reproduction Steps: 1:) Run gulp:dist 2:) wait for everything to transpile 3:)go to dashboard and click to workspace. Expected : IDE should work as expected. Result: Infinite loading. OS and version: Eclipse Che 5.15.0 Snapshot on Windows 10 Build 14393 on Docker 17.05 CE Diagnostics: CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che:nightly
+ Version:        nightly
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /c/tmp
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         boot2docker
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    nightly
+ CHE_HOST:       192.168.99.100
+ CHE_INSTANCE:   /c/tmp/instance
+ CHE_CONFIG:     /c/tmp
+ CHE_BACKUP:     /c/tmp/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   192.168.99.100
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:nightly
+ IMAGE_CHE=eclipse/che-server:nightly
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ IMAGE_TRAEFIK=traefik:v1.3.0-rc3
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+che.env:
+ CHE_HOST=192.168.99.100
+ CHE_SINGLE_PORT=false

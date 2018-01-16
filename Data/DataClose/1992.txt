@@ -1,0 +1,3 @@
+Config che server to Nginx,but terminal is die
+kind/bug 
+Hello, I use Nignx reverse proxy server to run my che server and che workspace link, so that the browser's entrance to look the same, and everything is running very well. But I open a terminal in che server, a few minutes or more without operations, terminal die(The terminal websocket broken links ), unable to input and output. can only be close, to open a new one or refresh the page . I guess whether the nginx websocket long connection timeout, no operation off within a few minutes? If it is for this reason is there any way to avoid? In addition to configure nginx longer timeout. Or maybe something else? thanks.

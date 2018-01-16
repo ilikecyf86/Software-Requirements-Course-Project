@@ -1,0 +1,3 @@
+add rh-che team to whitelist on CI
+kind/task team/production 
+add rh-che team to whitelist on CI

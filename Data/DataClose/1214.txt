@@ -1,0 +1,3 @@
+Cannot launch a test in a workspace without predefined commands
+kind/bug team/ide sprint/next-sprint severity/P2 sprint/next-sprint 
+Reproduction Steps: Create workspace based on java stack Create console-java application Remove all commands from commands explorer Open test folders, select test class and launch it as junit test Expected result: the test should pass Actual result: unexpected 500 server error Note: for correct working the runner needs compiled classes. The plugin for compiling and running - uses predefined commands. But if command is absent - the runner will work wrong Related selenium tests: JavaTestPluginJunit3Test, JavaTestPluginJunit4Test, JavaTestPluginTestNgTest OS and version: Ubuntu 14.0 TLS, chrom browser, nightly server

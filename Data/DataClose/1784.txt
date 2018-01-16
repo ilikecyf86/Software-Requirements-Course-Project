@@ -1,0 +1,3 @@
+NodeJS Hello World Broke
+kind/bug severity/P2 severity/P2 
+Could not run nodejs sample project "hello world" with ready to go stack NodeJS. Seems like the sample uses old node js syntax. Replacing with var server = http.createServer(function (response) { with var server = http.createServer(function (request, response) { fixes issue. Need to update nodejs project sample(s). Reproduction Steps: Run application Click preview url link to view page Error in console appears Che version: 5.0.0

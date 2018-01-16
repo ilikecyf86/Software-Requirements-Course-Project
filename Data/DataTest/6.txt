@@ -1,0 +1,3 @@
+Intercept Ctrl + W in terminal
+kind/enhancement 
+Ctrl + W in terminal commonly deleted previous word, but it also commonly closes current tab (without warning). Solutions: Show a warning Create a Chrome App so that it can intercept Ctrl + W.

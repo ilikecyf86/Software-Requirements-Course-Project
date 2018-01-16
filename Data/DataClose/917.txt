@@ -1,0 +1,3 @@
+Refine light theme to adapt for new panels concept
+kind/enhancement sprint/next-sprint status/info-needed status/open-for-dev status/in-progress status/info-needed sprint/next-sprint status/in-progress 
+As far as we introduced new panels concept in the dark theme - the light one should also be adapted for it.

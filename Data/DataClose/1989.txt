@@ -1,0 +1,3 @@
+Make process of snapshot removal asynchronous.
+kind/task sprint/next-sprint status/open-for-dev team/platform sprint/next-sprint 
+Make process of snapshot removal asynchronous. Right now we do that synchronous with workspace removal operation and couple of others. But it make sense to make in asynchronous, it will allow to speed up some operation, will hide some errors where user has no ability to recover.

@@ -1,0 +1,3 @@
+After refreshing page, not all files opened in the editor are restored
+kind/bug severity/P2 team/ide sprint/next-sprint status/in-progress sprint/next-sprint status/code-review status/in-progress status/code-review 
+Reproduction Steps: Create a workspace from the JavaMySql stack with the web-java-petclinic project Open any 6 - 8 files in the Editor Refresh a page Expected behavior: All opened files are visible in the Editor Observed behavior: Some files are not visible in the Editor and will appear if click on any files tab. Problem is reproduced randomly. Che version: 5.16.0-SNAPSHOT OS and version: Fedora 25 Additional information:

@@ -1,0 +1,3 @@
+Show current git branch in the IDE
+kind/enhancement sprint/current-sprint status/open-for-dev team/enterprise status/analyzing status/open-for-dev sprint/current-sprint sprint/next-sprint status/info-needed status/analyzing status/info-needed status/analyzing sprint/current-sprint sprint/next-sprint status/in-progress status/analyzing status/code-review status/in-progress sprint/current-sprint 
+Show current git branch name in the editors bottom info panel. Clicking on the branch name must show Git branches dialog. This issue is a part of epic: #5128

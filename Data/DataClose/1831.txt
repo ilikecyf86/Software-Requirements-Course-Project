@@ -1,0 +1,3 @@
+Git commit multiline
+kind/enhancement kind/bug severity/P2 kind/enhancement status/analyzing team/enterprise status/open-for-dev status/analyzing status/open-for-dev 
+Git commit description does not support multiple lines. This is an issue for che because I cannot sign off which requires a new line. Not sure if this should be labelled a bug or enhancement. Che version: Codenvy onPrem Version :5.0.0-SNAPSHOT Revision :942cc1996e34183 eBuild Time :2016-12-28 17:15:27 Additional information: Problem started happening recently, didn't happen in an older version of Che: Not sure Problem can be reliably reproduced, doesn't happen randomly: Yes

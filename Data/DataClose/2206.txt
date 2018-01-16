@@ -1,0 +1,3 @@
+Wrong message when connection with workspace agent is broken
+team/plugin kind/enhancement sprint/next-sprint status/open-for-dev sprint/next-sprint status/open-for-dev 
+See the snapshot: Replace the label by: "Workspace agent is no longer responding. To fix the problem, restart the workspace." Add button in the popup to "Restart" the workspace. Che version: 5.0.0-M6

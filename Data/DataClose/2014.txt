@@ -1,0 +1,3 @@
+Not able to load eclipse che Java console app
+kind/question 
+I have created java console app from stack in eclipse che but getting an error: Error: Can't load project types: Error at Object.window.IDE.eventHandlers.initializationFailed (http://XXXXXXX:8080/ide/WS_JAVA_1?uid=712513:39:27) at Idb (_app-0.js:1781:44) at Vdb (_app-0.js:1786:380) at _.Wn (_app-0.js:4291:317) at eval (_app-0.js:1316:278) if i would create any other project like .net then it works perfectly only for java i am getting an error. i have attached screenshot also. Any idea?

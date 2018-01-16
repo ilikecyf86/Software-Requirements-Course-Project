@@ -1,0 +1,3 @@
+Make it possible to provide envs for workspaces
+kind/enhancement 
+Right now, such feature is available only for workspaces created with compose files (in User Dashboard). It should be possible to provide envs for all workspaces. A user may need to add envs without having to modify a Dockerfile. These envs should be added to machine config and then passed to Docker when container is run.

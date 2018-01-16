@@ -1,0 +1,3 @@
+Test CPU limits with docker and swarm
+kind/task team/platform status/open-for-dev status/in-progress status/open-for-dev 
+In #2630 I found several ways to limit CPU consumption by docker containers. Now we need to test how it works, especially variant with CgroupParent since it is not supplied by docker. We also need to test whether Ssh, Docker API are responsive when limits are set and containers occupy all possible CPU cycles. It would be great to describe how admin can limit CPU usage by containers as a comment to this issue.

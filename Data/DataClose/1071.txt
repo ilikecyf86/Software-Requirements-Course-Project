@@ -1,0 +1,3 @@
+Inner packages are lost after rename (after refresh page they are restored )
+kind/bug team/plugin status/open-for-dev severity/P2 selenium/failure sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Reproduction Steps: Go to the spring project with Create some packages (see attachment) Choose package and press "shift + F6" Important In the opened window clear input field and type package name as in attachment Click "Ok" button Pay attention to result Expected behavior: Observed behavior: Additional information: Related selenium test is the RenamePackageTest

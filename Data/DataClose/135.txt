@@ -1,0 +1,3 @@
+Update RenameProjectTest selenium test
+kind/task team/production status/in-progress sprint/current-sprint status/in-progress 
+We need update RenameProjectTest selenium test: Cover use case described in issue #6352 (project has a simple folder type after renaming) to ensure that functionality works properly. Check that the Rename Project form is opened by Shift+F6 keys, the project context menu and from the main menu.

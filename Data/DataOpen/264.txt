@@ -1,0 +1,3 @@
+Some factories in multi thread launching can not clone a project properly
+kind/bug selenium/failure 
+Reproduction Steps: this reproduce in the selenium tests under multithread mode (3 or more threads) by DirectUrlFactoryWithRootFolder: OS and version: Fedora 25.0, chrome browser, nightly servers (SaaS, Onprem)

@@ -1,0 +1,3 @@
+Remove Local dao implementations
+kind/task sprint/next-sprint status/open-for-dev team/platform sprint/current-sprint sprint/next-sprint status/open-for-dev sprint/current-sprint 
+We want to remove legacy file based dao implementations. Now we are using JPA based as default

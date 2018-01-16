@@ -1,0 +1,21 @@
+Start che with --volumes-from using /data in data container
+kind/question kind/enhancement team/production kind/question sprint/next-sprint status/analyzing sprint/current-sprint sprint/next-sprint sprint/current-sprint status/analyzing status/info-needed 
+I am trying to get Eclipse Che with docker working using a data container for /data instead of using a local bind mounted volume. Using local volumes goes against our standard for dockerized setups, as we want to be as independent of the host file systems as possible. Reproduction Steps: So I was trying a simple setup like this: First, create a "che-data" container: docker create --name che-data -v /data busybox Try to start che using this data container: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock --volumes-from che-data eclipse/chestart Che version: 5.1.2 OS and version: RancherOS 0.7.1 Docker version: 1.12.3 Che cli.log output: WARN: Bound 'eclipse/che' to 'eclipse/che:5.1.2'
+INFO: Welcome to Eclipse Che!
+INFO: 
+INFO: We could not detect a location to save data.
+INFO: Volume mount a local directory to ':/data'.
+INFO: 
+INFO: Simplest syntax:
+INFO:   docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock
+INFO:                       -v <YOUR_LOCAL_PATH>:/data
+INFO:                          eclipse/che start
+INFO: 
+INFO: 
+INFO: Or, run with additional overrides:
+INFO:   docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock
+INFO:                       -v <YOUR_LOCAL_PATH>:/data
+INFO:                       -v <YOUR_INSTANCE_PATH>:/data/instance
+INFO:                       -v <YOUR_BACKUP_PATH>:/data/backup
+INFO:                          eclipse/che start
+ This would be similar to creating a fdata container in docker-compose and using this - which I have not tried yet, but I assume this will give the same error. Question is - does che not support using data containers for data storage?

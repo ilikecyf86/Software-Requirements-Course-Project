@@ -1,0 +1,3 @@
+Is multithreading debug available in che?
+kind/question Improvement kind/enhancement Improvement kind/question 
+Hello, I want to ask if is it possible to debug all threads in the java program? I've tried to debug both the console and the swing desktop application, but Remote debug mode finished when main thread reaches the end and doesn't step to other threads. So, I can't understand if I'm doing something wrong, or there is no such possibility in che debug. Thank you in advance.

@@ -1,0 +1,640 @@
+REST API for creating a new project does not seem to be working
+kind/question 
+I have successfully been able to create a workspace and start it using REST API calls (although the URL param startAfterCreate=true does not seem to do anything). I try creating a project with the following URL and JSON: http://usrscp28:8080/wsmaster/api/workspace/workspaceesz846ftyu1nre3u/project {  
+  "links":[  
+
+  ],
+  "name":"MyServDevProj",
+  "attributes":{  
+    "is.package": [ "WmAssetPublisher" ],
+    "is.port": [ "33091" ]
+  },
+  "type":"servicedev",
+  "source":{  
+    "parameters":{  
+
+    }
+  },
+  "path":"/MyServDevProj",
+  "problems":[  
+
+  ],
+  "mixins":[  
+
+  ]
+}
+
+{  
+  "links":[  
+
+  ],
+  "name":"ProcDev",
+  "attributes":{  
+  },
+  "type":"process_dev",
+  "source":{  
+    "parameters":{  
+
+    }
+  },
+  "path":"/ProcDev",
+  "problems":[  
+
+  ],
+  "mixins":[  
+
+  ]
+}
+ I get a 200 OK status back along with the following JSON response; however, when I refresh my workspace in the Che Web UI, the project does not show up. Am I missing a step? Thank you JSON Response: {     "attributes": {
+        "updated": "1486673555145",
+        "stackId": "IntegrationServer",
+        "created": "1486664231645"
+    },
+    "namespace": "che",
+    "temporary": false,
+    "id": "workspace0ohdq31ihw4x0kqs",
+    "status": "RUNNING",
+    "runtime": {
+        "machines": [
+            {
+                "links": [
+                    {
+                        "href": "http://usrscp28:8080/wsmaster/api/workspace/workspace0ohdq31ihw4x0kqs",
+                        "parameters": [],
+                        "rel": "self link",
+                        "method": "GET",
+                        "produces": "application/json"
+                    },
+                    {
+                        "href": "http://usrscp28:8080/wsmaster/api/workspace",
+                        "parameters": [],
+                        "rel": "get machines",
+                        "method": "GET",
+                        "produces": "application/json"
+                    },
+                    {
+                        "href": "http://usrscp28:8080/wsmaster/api/workspace/workspace0ohdq31ihw4x0kqs",
+                        "parameters": [],
+                        "rel": "destroy machine",
+                        "method": "DELETE"
+                    },
+                    {
+                        "href": "http://usrscp28:8080/wsmaster/api/workspace/workspace0ohdq31ihw4x0kqs/command",
+                        "parameters": [
+                            {
+                                "required": false,
+                                "name": "outputChannel",
+                                "valid": []
+                            }
+                        ],
+                        "rel": "execute command",
+                        "method": "POST",
+                        "consumes": "application/json",
+                        "produces": "application/json"
+                    },
+                    {
+                        "href": "http://usrscp28:8080/wsmaster/api/workspace/workspace0ohdq31ihw4x0kqs/process",
+                        "parameters": [],
+                        "rel": "get processes",
+                        "method": "GET",
+                        "produces": "application/json"
+                    },
+                    {
+                        "href": "ws://172.17.0.1:33187/pty",
+                        "parameters": [],
+                        "rel": "terminal",
+                        "method": "GET"
+                    },
+                    {
+                        "href": "ws://usrscp28:8080/wsmaster/api/ws/workspace0ohdq31ihw4x0kqs",
+                        "parameters": [
+                            {
+                                "required": true,
+                                "name": "channel",
+                                "valid": [],
+                                "defaultValue": "workspace:workspace0ohdq31ihw4x0kqs:environment_output"
+                            }
+                        ],
+                        "rel": "environment.output_channel",
+                        "method": "GET"
+                    },
+                    {
+                        "href": "ws://usrscp28:8080/wsmaster/api/ws/workspace0ohdq31ihw4x0kqs",
+                        "parameters": [
+                            {
+                                "required": true,
+                                "name": "channel",
+                                "valid": [],
+                                "defaultValue": "workspace:workspace0ohdq31ihw4x0kqs:machines_statuses"
+                            }
+                        ],
+                        "rel": "workspace:%s:machines_statuses",
+                        "method": "GET"
+                    }
+                ],
+                "envName": "default",
+                "id": "machinejfl043yecklbc2i6",
+                "owner": "che",
+                "status": "RUNNING",
+                "runtime": {
+                    "properties": {
+                        "hostConfig.binds": "[/home/user/che/lib/linux_amd64/terminal:/mnt/che/terminal:ro,Z, /home/user/che/lib/ws-agent.tar.gz:/mnt/che/ws-agent.tar.gz:ro,Z, /home/user/che/workspaces/IS_WORKSPACE_3:/projects:Z]",
+                        "hostConfig.dnsSearch": "null",
+                        "network.bridge": "",
+                        "hostConfig.volumesFrom": "[]",
+                        "config.image": "eclipse-che/workspace0ohdq31ihw4x0kqs_machinejfl043yecklbc2i6_che_dev-machine",
+                        "hostConfig.ipcMode": "",
+                        "state.paused": "false",
+                        "hostConfig.logConfig": "LogConfig{type='json-file', config={}}",
+                        "resolvConfPath": "/var/lib/docker/containers/a941c2f9b9021707492ce0f40779ed484eeb6ef2aa870f6d776efac0dbad5138/resolv.conf",
+                        "config.networkDisabled": "false",
+                        "config.openStdin": "false",
+                        "path": "/bin/sh",
+                        "network.globalIPv6Address": "",
+                        "hostConfig.memory": "2147483648",
+                        "state.dead": "false",
+                        "network.linkLocalIPv6Address": "",
+                        "hostConfig.extraHosts": "[che-host:172.17.0.3]",
+                        "hostConfig.cgroupParent": "",
+                        "network.globalIPv6PrefixLen": "0",
+                        "hostConfig.cpuShares": "0",
+                        "id": "a941c2f9b9021707492ce0f40779ed484eeb6ef2aa870f6d776efac0dbad5138",
+                        "config.securityOpts": "null",
+                        "image": "sha256:07b6c8166d140564ef3dd08f0fdd40c84ddb39640cb4195222bce5d3dd8f9442",
+                        "hostConfig.ulimits": "null",
+                        "config.entrypoint": "[]",
+                        "config.exposedPorts": "{4401/tcp={}, 4403/tcp={}, 4411/tcp={}, 5555/tcp={}, 9999/tcp={}}",
+                        "created": "2017-02-09T20:03:14.515066791Z",
+                        "volumes": "{}",
+                        "hostConfig.links": "null",
+                        "config.macAddress": "",
+                        "config.user": "",
+                        "hostConfig.cpusetCpus": "",
+                        "hostConfig.pidMode": "",
+                        "config.tty": "false",
+                        "driver": "aufs",
+                        "config.volumes": "null",
+                        "state.pid": "27203",
+                        "name": "/workspace0ohdq31ihw4x0kqs_machinejfl043yecklbc2i6_che_dev-machine",
+                        "config.labels": "{build-date=20160906, license=GPLv2, name=CentOS Base Image, vendor=CentOS}",
+                        "volumesRW": "{}",
+                        "hostConfig.devices": "null",
+                        "config.hostname": "a941c2f9b902",
+                        "config.env": "[CHE_LOCAL_CONF_DIR=/mnt/che/conf, USER_TOKEN=dummy_token, CHE_API_ENDPOINT=http://che-host:8080/wsmaster/api, JAVA_OPTS=-Xms256m -Xmx2048m -Djava.security.egd=file:/dev/./urandom, CHE_WORKSPACE_ID=workspace0ohdq31ihw4x0kqs, CHE_PROJECTS_ROOT=/projects, PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin, JAVA_HOME=/sag/jvm/jvm/, INSTANCE_NAME=default]",
+                        "state.exitCode": "0",
+                        "appArmorProfile": "",
+                        "restartCount": "0",
+                        "config.attachStdin": "false",
+                        "state.startedAt": "2017-02-09T20:03:15.291549897Z",
+                        "state.restarting": "false",
+                        "config.stdinOnce": "false",
+                        "state.running": "true",
+                        "hostConfig.containerIDFile": "",
+                        "mountLabel": "",
+                        "config.cpuShares": "0",
+                        "config.attachStderr": "false",
+                        "logPath": "/var/lib/docker/containers/a941c2f9b9021707492ce0f40779ed484eeb6ef2aa870f6d776efac0dbad5138/a941c2f9b9021707492ce0f40779ed484eeb6ef2aa870f6d776efac0dbad5138-json.log",
+                        "network.portMappings": "null",
+                        "hostsPath": "/var/lib/docker/containers/a941c2f9b9021707492ce0f40779ed484eeb6ef2aa870f6d776efac0dbad5138/hosts",
+                        "hostConfig.capDrop": "null",
+                        "network.macAddress": "02:42:ac:11:00:04",
+                        "hostConfig.restartPolicy": "RestartPolicy{name='', maximumRetryCount=0}",
+                        "state.OOMKilled": "false",
+                        "config.attachStdout": "false",
+                        "network.iPv6Gateway": "",
+                        "network.ports": "{4401/tcp=[PortBinding{hostIp='0.0.0.0', hostPort='33189'}], 4403/tcp=[PortBinding{hostIp='0.0.0.0', hostPort='33188'}], 4411/tcp=[PortBinding{hostIp='0.0.0.0', hostPort='33187'}], 5555/tcp=[PortBinding{hostIp='0.0.0.0', hostPort='33186'}], 9999/tcp=[PortBinding{hostIp='0.0.0.0', hostPort='33185'}]}",
+                        "hostConfig.networkMode": "workspace0ohdq31ihw4x0kqs_uwf68sssno0p9ibb",
+                        "network.gateway": "172.17.0.1",
+                        "network.ipPrefixLen": "16",
+                        "config.workingDir": "",
+                        "hostConfig.dns": "null",
+                        "args": "[-c, cd /sag/profiles/IS_default/bin && ./console.sh]",
+                        "config.cmd": "[/bin/sh, -c, cd /sag/profiles/IS_default/bin && ./console.sh]",
+                        "network.linkLocalIPv6PrefixLen": "0",
+                        "hostConfig.portBindings": "{}",
+                        "state.finishedAt": "0001-01-01T00:00:00Z",
+                        "hostConfig.lxcConf": "null",
+                        "hostConfig.memorySwap": "-1",
+                        "state.error": "",
+                        "processLabel": "",
+                        "hostConfig.capAdd": "null",
+                        "hostnamePath": "/var/lib/docker/containers/a941c2f9b9021707492ce0f40779ed484eeb6ef2aa870f6d776efac0dbad5138/hostname"
+                    },
+                    "servers": {
+                        "4401/tcp": {
+                            "url": "http://172.17.0.1:33189/wsagent/ext",
+                            "ref": "wsagent",
+                            "properties": {
+                                "internalUrl": "http://172.17.0.1:33189/wsagent/ext",
+                                "internalAddress": "172.17.0.1:33189",
+                                "path": "/wsagent/ext"
+                            },
+                            "address": "172.17.0.1:33189",
+                            "protocol": "http"
+                        },
+                        "9999/tcp": {
+                            "ref": "Server-9999-tcp",
+                            "properties": {
+                                "internalAddress": "172.17.0.1:33185"
+                            },
+                            "address": "172.17.0.1:33185"
+                        },
+                        "5555/tcp": {
+                            "ref": "Server-5555-tcp",
+                            "properties": {
+                                "internalAddress": "172.17.0.1:33186"
+                            },
+                            "address": "172.17.0.1:33186"
+                        },
+                        "4411/tcp": {
+                            "url": "http://172.17.0.1:33187",
+                            "ref": "terminal",
+                            "properties": {
+                                "internalUrl": "http://172.17.0.1:33187",
+                                "internalAddress": "172.17.0.1:33187"
+                            },
+                            "address": "172.17.0.1:33187",
+                            "protocol": "http"
+                        },
+                        "4403/tcp": {
+                            "url": "http://172.17.0.1:33188",
+                            "ref": "wsagent.debug",
+                            "properties": {
+                                "internalUrl": "http://172.17.0.1:33188",
+                                "internalAddress": "172.17.0.1:33188"
+                            },
+                            "address": "172.17.0.1:33188",
+                            "protocol": "http"
+                        }
+                    },
+                    "envVariables": {
+                        "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                        "INSTANCE_NAME": "default",
+                        "CHE_LOCAL_CONF_DIR": "/mnt/che/conf",
+                        "USER_TOKEN": "dummy_token",
+                        "JAVA_HOME": "/sag/jvm/jvm/",
+                        "CHE_API_ENDPOINT": "http://che-host:8080/wsmaster/api",
+                        "JAVA_OPTS": "-Xms256m -Xmx2048m -Djava.security.egd=file:/dev/./urandom",
+                        "CHE_WORKSPACE_ID": "workspace0ohdq31ihw4x0kqs",
+                        "CHE_PROJECTS_ROOT": "/projects"
+                    }
+                },
+                "config": {
+                    "limits": {
+                        "ram": 2048
+                    },
+                    "name": "dev-machine",
+                    "type": "docker",
+                    "source": {
+                        "location": "machine_snapshot_p91dce7fz9pbjzxo:latest",
+                        "type": "image"
+                    },
+                    "dev": true,
+                    "servers": [],
+                    "envVariables": {},
+                    "links": []
+                },
+                "workspaceId": "workspace0ohdq31ihw4x0kqs"
+            }
+        ],
+        "activeEnv": "default",
+        "devMachine": {
+            "links": [
+                {
+                    "href": "ws://172.17.0.1:33189/wsagent/ext/ws",
+                    "parameters": [],
+                    "rel": "wsagent.websocket",
+                    "method": "GET"
+                },
+                {
+                    "href": "ws://172.17.0.1:33187/pty",
+                    "parameters": [],
+                    "rel": "terminal",
+                    "method": "GET"
+                }
+            ],
+            "envName": "default",
+            "id": "machinejfl043yecklbc2i6",
+            "owner": "che",
+            "status": "RUNNING",
+            "runtime": {
+                "properties": {
+                    "hostConfig.binds": "[/home/user/che/lib/linux_amd64/terminal:/mnt/che/terminal:ro,Z, /home/user/che/lib/ws-agent.tar.gz:/mnt/che/ws-agent.tar.gz:ro,Z, /home/user/che/workspaces/IS_WORKSPACE_3:/projects:Z]",
+                    "hostConfig.dnsSearch": "null",
+                    "network.bridge": "",
+                    "hostConfig.volumesFrom": "[]",
+                    "config.image": "eclipse-che/workspace0ohdq31ihw4x0kqs_machinejfl043yecklbc2i6_che_dev-machine",
+                    "hostConfig.ipcMode": "",
+                    "state.paused": "false",
+                    "hostConfig.logConfig": "LogConfig{type='json-file', config={}}",
+                    "resolvConfPath": "/var/lib/docker/containers/a941c2f9b9021707492ce0f40779ed484eeb6ef2aa870f6d776efac0dbad5138/resolv.conf",
+                    "config.networkDisabled": "false",
+                    "config.openStdin": "false",
+                    "path": "/bin/sh",
+                    "network.globalIPv6Address": "",
+                    "hostConfig.memory": "2147483648",
+                    "state.dead": "false",
+                    "network.linkLocalIPv6Address": "",
+                    "hostConfig.extraHosts": "[che-host:172.17.0.3]",
+                    "hostConfig.cgroupParent": "",
+                    "network.globalIPv6PrefixLen": "0",
+                    "hostConfig.cpuShares": "0",
+                    "id": "a941c2f9b9021707492ce0f40779ed484eeb6ef2aa870f6d776efac0dbad5138",
+                    "config.securityOpts": "null",
+                    "image": "sha256:07b6c8166d140564ef3dd08f0fdd40c84ddb39640cb4195222bce5d3dd8f9442",
+                    "hostConfig.ulimits": "null",
+                    "config.entrypoint": "[]",
+                    "config.exposedPorts": "{4401/tcp={}, 4403/tcp={}, 4411/tcp={}, 5555/tcp={}, 9999/tcp={}}",
+                    "created": "2017-02-09T20:03:14.515066791Z",
+                    "volumes": "{}",
+                    "hostConfig.links": "null",
+                    "config.macAddress": "",
+                    "config.user": "",
+                    "hostConfig.cpusetCpus": "",
+                    "hostConfig.pidMode": "",
+                    "config.tty": "false",
+                    "driver": "aufs",
+                    "config.volumes": "null",
+                    "state.pid": "27203",
+                    "name": "/workspace0ohdq31ihw4x0kqs_machinejfl043yecklbc2i6_che_dev-machine",
+                    "config.labels": "{build-date=20160906, license=GPLv2, name=CentOS Base Image, vendor=CentOS}",
+                    "volumesRW": "{}",
+                    "hostConfig.devices": "null",
+                    "config.hostname": "a941c2f9b902",
+                    "config.env": "[CHE_LOCAL_CONF_DIR=/mnt/che/conf, USER_TOKEN=dummy_token, CHE_API_ENDPOINT=http://che-host:8080/wsmaster/api, JAVA_OPTS=-Xms256m -Xmx2048m -Djava.security.egd=file:/dev/./urandom, CHE_WORKSPACE_ID=workspace0ohdq31ihw4x0kqs, CHE_PROJECTS_ROOT=/projects, PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin, JAVA_HOME=/sag/jvm/jvm/, INSTANCE_NAME=default]",
+                    "state.exitCode": "0",
+                    "appArmorProfile": "",
+                    "restartCount": "0",
+                    "config.attachStdin": "false",
+                    "state.startedAt": "2017-02-09T20:03:15.291549897Z",
+                    "state.restarting": "false",
+                    "config.stdinOnce": "false",
+                    "state.running": "true",
+                    "hostConfig.containerIDFile": "",
+                    "mountLabel": "",
+                    "config.cpuShares": "0",
+                    "config.attachStderr": "false",
+                    "logPath": "/var/lib/docker/containers/a941c2f9b9021707492ce0f40779ed484eeb6ef2aa870f6d776efac0dbad5138/a941c2f9b9021707492ce0f40779ed484eeb6ef2aa870f6d776efac0dbad5138-json.log",
+                    "network.portMappings": "null",
+                    "hostsPath": "/var/lib/docker/containers/a941c2f9b9021707492ce0f40779ed484eeb6ef2aa870f6d776efac0dbad5138/hosts",
+                    "hostConfig.capDrop": "null",
+                    "network.macAddress": "02:42:ac:11:00:04",
+                    "hostConfig.restartPolicy": "RestartPolicy{name='', maximumRetryCount=0}",
+                    "state.OOMKilled": "false",
+                    "config.attachStdout": "false",
+                    "network.iPv6Gateway": "",
+                    "network.ports": "{4401/tcp=[PortBinding{hostIp='0.0.0.0', hostPort='33189'}], 4403/tcp=[PortBinding{hostIp='0.0.0.0', hostPort='33188'}], 4411/tcp=[PortBinding{hostIp='0.0.0.0', hostPort='33187'}], 5555/tcp=[PortBinding{hostIp='0.0.0.0', hostPort='33186'}], 9999/tcp=[PortBinding{hostIp='0.0.0.0', hostPort='33185'}]}",
+                    "hostConfig.networkMode": "workspace0ohdq31ihw4x0kqs_uwf68sssno0p9ibb",
+                    "network.gateway": "172.17.0.1",
+                    "network.ipPrefixLen": "16",
+                    "config.workingDir": "",
+                    "hostConfig.dns": "null",
+                    "args": "[-c, cd /sag/profiles/IS_default/bin && ./console.sh]",
+                    "config.cmd": "[/bin/sh, -c, cd /sag/profiles/IS_default/bin && ./console.sh]",
+                    "network.linkLocalIPv6PrefixLen": "0",
+                    "hostConfig.portBindings": "{}",
+                    "state.finishedAt": "0001-01-01T00:00:00Z",
+                    "hostConfig.lxcConf": "null",
+                    "hostConfig.memorySwap": "-1",
+                    "state.error": "",
+                    "processLabel": "",
+                    "hostConfig.capAdd": "null",
+                    "hostnamePath": "/var/lib/docker/containers/a941c2f9b9021707492ce0f40779ed484eeb6ef2aa870f6d776efac0dbad5138/hostname"
+                },
+                "servers": {
+                    "4401/tcp": {
+                        "url": "http://172.17.0.1:33189/wsagent/ext",
+                        "ref": "wsagent",
+                        "properties": {
+                            "internalUrl": "http://172.17.0.1:33189/wsagent/ext",
+                            "internalAddress": "172.17.0.1:33189",
+                            "path": "/wsagent/ext"
+                        },
+                        "address": "172.17.0.1:33189",
+                        "protocol": "http"
+                    },
+                    "9999/tcp": {
+                        "ref": "Server-9999-tcp",
+                        "properties": {
+                            "internalAddress": "172.17.0.1:33185"
+                        },
+                        "address": "172.17.0.1:33185"
+                    },
+                    "5555/tcp": {
+                        "ref": "Server-5555-tcp",
+                        "properties": {
+                            "internalAddress": "172.17.0.1:33186"
+                        },
+                        "address": "172.17.0.1:33186"
+                    },
+                    "4411/tcp": {
+                        "url": "http://172.17.0.1:33187",
+                        "ref": "terminal",
+                        "properties": {
+                            "internalUrl": "http://172.17.0.1:33187",
+                            "internalAddress": "172.17.0.1:33187"
+                        },
+                        "address": "172.17.0.1:33187",
+                        "protocol": "http"
+                    },
+                    "4403/tcp": {
+                        "url": "http://172.17.0.1:33188",
+                        "ref": "wsagent.debug",
+                        "properties": {
+                            "internalUrl": "http://172.17.0.1:33188",
+                            "internalAddress": "172.17.0.1:33188"
+                        },
+                        "address": "172.17.0.1:33188",
+                        "protocol": "http"
+                    }
+                },
+                "envVariables": {
+                    "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "INSTANCE_NAME": "default",
+                    "CHE_LOCAL_CONF_DIR": "/mnt/che/conf",
+                    "USER_TOKEN": "dummy_token",
+                    "JAVA_HOME": "/sag/jvm/jvm/",
+                    "CHE_API_ENDPOINT": "http://che-host:8080/wsmaster/api",
+                    "JAVA_OPTS": "-Xms256m -Xmx2048m -Djava.security.egd=file:/dev/./urandom",
+                    "CHE_WORKSPACE_ID": "workspace0ohdq31ihw4x0kqs",
+                    "CHE_PROJECTS_ROOT": "/projects"
+                }
+            },
+            "config": {
+                "limits": {
+                    "ram": 2048
+                },
+                "name": "dev-machine",
+                "type": "docker",
+                "source": {
+                    "location": "machine_snapshot_p91dce7fz9pbjzxo:latest",
+                    "type": "image"
+                },
+                "dev": true,
+                "servers": [],
+                "envVariables": {},
+                "links": []
+            },
+            "workspaceId": "workspace0ohdq31ihw4x0kqs"
+        },
+        "rootFolder": "/projects",
+        "links": [
+            {
+                "href": "http://usrscp28:8080/wsmaster/api/workspace/workspace0ohdq31ihw4x0kqs/runtime",
+                "parameters": [],
+                "rel": "stop workspace",
+                "method": "DELETE"
+            },
+            {
+                "href": "http://172.17.0.1:33189/wsagent/ext",
+                "parameters": [],
+                "rel": "wsagent",
+                "method": "GET"
+            },
+            {
+                "href": "ws://172.17.0.1:33189/wsagent/ext/ws",
+                "parameters": [],
+                "rel": "wsagent.websocket",
+                "method": "GET"
+            }
+        ]
+    },
+    "config": {
+        "environments": {
+            "default": {
+                "machines": {
+                    "dev-machine": {
+                        "attributes": {
+                            "memoryLimitBytes": "2147483648"
+                        },
+                        "servers": {},
+                        "agents": [
+                            "org.eclipse.che.terminal",
+                            "org.eclipse.che.ws-agent",
+                            "org.eclipse.che.ssh"
+                        ]
+                    }
+                },
+                "recipe": {
+                    "location": "localhost:5000/is:is912",
+                    "type": "dockerimage"
+                }
+            }
+        },
+        "defaultEnv": "default",
+        "projects": [
+            {
+                "links": [],
+                "name": "AAAAAAAX",
+                "attributes": {},
+                "type": "servicedev",
+                "source": {
+                    "parameters": {}
+                },
+                "path": "/AAAAAAAX",
+                "description": "Hello World",
+                "problems": [],
+                "mixins": []
+            },
+            {
+                "links": [],
+                "name": "MyServDevProj111",
+                "attributes": {},
+                "type": "servicedev",
+                "source": {
+                    "parameters": {}
+                },
+                "path": "/MyServDevProj111",
+                "problems": [],
+                "mixins": []
+            }
+        ],
+        "name": "IS_WORKSPACE_3",
+        "commands": [],
+        "links": []
+    },
+    "links": [
+        {
+            "href": "http://usrscp28:8080/wsmaster/api/workspace/workspace0ohdq31ihw4x0kqs",
+            "parameters": [],
+            "rel": "self link",
+            "method": "GET"
+        },
+        {
+            "href": "http://usrscp28:8080/wsmaster/api/workspace/workspace0ohdq31ihw4x0kqs/runtime",
+            "parameters": [],
+            "rel": "start workspace",
+            "method": "POST",
+            "produces": "application/json"
+        },
+        {
+            "href": "http://usrscp28:8080/wsmaster/api/workspace/workspace0ohdq31ihw4x0kqs",
+            "parameters": [],
+            "rel": "remove workspace",
+            "method": "DELETE",
+            "produces": "application/json"
+        },
+        {
+            "href": "http://usrscp28:8080/wsmaster/api/workspace",
+            "parameters": [],
+            "rel": "get all user workspaces",
+            "method": "GET",
+            "produces": "application/json"
+        },
+        {
+            "href": "http://usrscp28:8080/wsmaster/api/workspace/workspace0ohdq31ihw4x0kqs/snapshot",
+            "parameters": [],
+            "rel": "get workspace snapshot",
+            "method": "GET",
+            "produces": "application/json"
+        },
+        {
+            "href": "http://usrscp28:8080/che/IS_WORKSPACE_3",
+            "parameters": [],
+            "rel": "ide url",
+            "method": "GET",
+            "produces": "text/html"
+        },
+        {
+            "href": "ws://usrscp28:8080/wsmaster/api/ws/workspace0ohdq31ihw4x0kqs",
+            "parameters": [
+                {
+                    "required": true,
+                    "name": "channel",
+                    "valid": [],
+                    "defaultValue": "workspace:workspace0ohdq31ihw4x0kqs"
+                }
+            ],
+            "rel": "get workspace events channel",
+            "method": "GET"
+        },
+        {
+            "href": "ws://usrscp28:8080/wsmaster/api/ws/workspace0ohdq31ihw4x0kqs",
+            "parameters": [
+                {
+                    "required": true,
+                    "name": "channel",
+                    "valid": [],
+                    "defaultValue": "workspace:workspace0ohdq31ihw4x0kqs:environment_output"
+                }
+            ],
+            "rel": "environment.output_channel",
+            "method": "GET"
+        },
+        {
+            "href": "ws://usrscp28:8080/wsmaster/api/ws/workspace0ohdq31ihw4x0kqs",
+            "parameters": [
+                {
+                    "required": true,
+                    "name": "channel",
+                    "valid": [],
+                    "defaultValue": "workspace:workspace0ohdq31ihw4x0kqs:machines_statuses"
+                }
+            ],
+            "rel": "environment.status_channel",
+            "method": "GET"
+        }
+    ]
+}
+
+ Che version: 5.0.0-M6 OS and version: Linux usrscp28 4.4.0-53-generic #74-Ubuntu SMP Fri Dec 2 15:59:10 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux system VMware Virtual Platform bus 440BX Desktop Reference Platform memory 87KiB BIOS processor Intel(R) Xeon(R) CPU E5-2660 0 @ 2.20GHz Docker version: 1.12.1 API version: 1.24 Che install: Codenvy

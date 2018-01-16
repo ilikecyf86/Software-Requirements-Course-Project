@@ -1,0 +1,3 @@
+Eclipse Che CLI Refactoring + Improvements : phase 1
+kind/task sprint/current-sprint status/in-progress status/pending-merge status/in-progress status/pending-merge sprint/current-sprint 
+: Use self-contained directories : entry point scripts should be named entrypoint.sh : add build.sh for each folder : Use common layer for eclipse/che-cli and codenvy/cli : move che-* images eclipse-che/dockerfiles to eclipse/che repository /dockerfiles folder (removing che-* prefix from the folder)

@@ -1,0 +1,54 @@
+Unable to spin up a workspace using local Docker image
+kind/question kind/enhancement 
+After starting up a Che server by following these steps, when I try to spin up a workspace using local Docker image, it fails with image not found error Reproduction Steps: Spin up a Che server using: $ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /eclipse:/data -e CHE_HOST=<ip-address> eclipse/che start Add a new stack. Raw configuration of the stack Modify che.properties file at /eclipse/instance/data/conf/che.properties to have che.docker.always_pull_image=false so that locally existing container images get preference Spin up a new workspace by using the newly created stack from "Runtime" section of "Add Workspace" "dev-machine" tab shows the following error [DOCKER] Pulling repository registry.centos.org/che-stacks/wildfly-swarm 
+[DOCKER] [ERROR] Error: image che-stacks/wildfly-swarm:latest not found As can be seen in Diagnostics section, /data/instance is not set. So I exec'd into the container and checked for: $ grep pull /data/conf/che.properties
+# If this is true, then we always pull an image from a registry even if we have an image cached
+# locally. If false, Docker only pulls image if it does not exist locally.
+che.docker.always_pull_image=false OS and version: CentOS Linux 7.3.1611 Diagnostics: $ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /eclipse:/data -e CHE_HOST=<ip-address> eclipse/che info
+WARN: Bound 'eclipse/che' to 'eclipse/che:5.4.1'
+ WARNING: Usage of loopback devices is strongly discouraged for production use. Either use `--storage-opt dm.thinpooldev` or use `--storage-opt dm.no_warn_on_loop_devices=true` to suppress this warning.
+WARNING: bridge-nf-call-iptables is disabled
+WARNING: bridge-nf-call-ip6tables is disabled
+INFO: (che cli): 5.4.1 - using docker 1.12.5 / native
+
+CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che
+ Version:        5.4.1
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /eclipse
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    5.4.1
+ CHE_HOST:       <ip-address>
+ CHE_INSTANCE:   /eclipse/instance
+ CHE_CONFIG:     /eclipse
+ CHE_BACKUP:     /eclipse/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   172.17.0.1
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:5.4.1
+ IMAGE_CHE=eclipse/che-server:5.4.1
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.4.1
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.4.1
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:5.4.1
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:5.4.1
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.4.1
+che.env:
+ CHE_HOST=<ip-address> cc: @l0rd

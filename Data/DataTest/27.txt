@@ -1,0 +1,27 @@
+Can't start machine ws-machine because machine recipe downloading failed.
+status/open-for-dev 
+I had setup a python workspace when my local ip was 192.168.48.88, by running: ~/che/assembly/assembly-main/target/eclipse-che-4.3.0-RC2-SNAPSHOT/eclipse-che-4.3.0-RC2-SNAPSHOT/bin/./che.sh --skip:uid  -r:192.168.48.88 Now my local IP address has changed to 192.168.48.35, and when I run, and launch previously created workspace, ~/che/assembly/assembly-main/target/eclipse-che-4.3.0-RC2-SNAPSHOT/eclipse-che-4.3.0-RC2-SNAPSHOT/bin/./che.sh --skip:uid  -r:192.168.48.35 I get an error stating: [ERROR] Can't start machine ws-machine because machine recipe downloading failed. Recipe url http://192.168.48.88:8080/wsmaster/api/recipe/recipe1mf2o2in6rt85wxg/script. Error: Connection refused How can I access my previous workspace with my new local IP? ifconfig: docker0   Link encap:Ethernet  HWaddr 02:42:f6:25:43:08  
+          inet addr:172.17.0.1  Bcast:0.0.0.0  Mask:255.255.0.0
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+enp3s0    Link encap:Ethernet  HWaddr 2c:56:dc:00:52:51  
+          inet addr:192.168.48.35  Bcast:192.168.49.255  Mask:255.255.254.0
+          inet6 addr: fe80::2e56:dcff:fe00:5251/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:220666 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:157330 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:308927775 (308.9 MB)  TX bytes:11701531 (11.7 MB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:6539 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:6539 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:6368609 (6.3 MB)  TX bytes:6368609 (6.3 MB)

@@ -1,0 +1,3 @@
+OpenShift Topology, Repo Location, and Install Guide
+kind/docs kind/question kind/question 
+Is there a network topology showing how Che will/currently works with OpenShift? Currently there is https://codenvy.com/docs/assets/imgs/codenvy/AIO.png at codevy docs https://codenvy.com/docs/admin-guide/installation/index.html. It would be nice to see something similar for Che openshift/Kubernetes implementation. Where is the current Eclipse Che OpenShift adapter repository https://github.com/eclipse/che/tree/openshift-connector? Is it in master? Is there a guide on how to build and test it on OpenShift Origin?

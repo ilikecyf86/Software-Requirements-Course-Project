@@ -1,0 +1,3 @@
+[Homepage] HTTPS everywhere
+kind/question kind/bug kind/question 
+I am trying to enter a GitHub URL at https://www.eclipse.org/che/getting-started/cloud/ Although that site is HTTPS, the form POST target seems to be non-SSL: Even though HTTPS is not really relevant there, HTTPS everywhere propagates to use HTTPS everywhere.

@@ -1,0 +1,6 @@
+Actions are not enabled in sample-plugin-json
+kind/question team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint kind/bug kind/question severity/P2 
+Added the sample-plugin-json to CHE, compiled it and run it. Created a json sample project. Opened the context menu for the project. The JSON Example Menu is grayed out and not enabled. I think this comes from the updateInPerspective check on the JsonExampleProjectAction. There is a bug in the logic of the resources check I think. if (resources == null || resources.length != -1) {
+            event.getPresentation().setEnabledAndVisible(false);
+            return;
+} Instead of resources.length != -1, the idea here I think was to check if the resources are valid. resources.length < 0. But I am not sure why the length check is necessary when resources is an array unless the desire was to check that resources has at least one resource which in that case resources.length <= 0 could fix this. I am not sure what the resources presents on the AppContext. https://github.com/eclipse/che/blob/master/samples/sample-plugin-json/che-sample-plugin-json-ide/src/main/java/org/eclipse/che/plugin/jsonexample/ide/action/JsonExampleProjectAction.java#L65

@@ -1,0 +1,3 @@
+Create selenium tests for check main features with disabled autosave files
+kind/task 
+Reproduction Steps: OS and version: Diagnostics:

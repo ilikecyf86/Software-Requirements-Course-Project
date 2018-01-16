@@ -1,0 +1,3 @@
+Make bootstrapping of OpenShift machines parallel
+kind/task status/open-for-dev team/platform target/che6 
+OpenShift infrastructure starts machines parallel but bootstraps them one by one. Make bootstrapping parallel should speed up the start of multimachine workspaces.

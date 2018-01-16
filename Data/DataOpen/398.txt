@@ -1,0 +1,3 @@
+Dogfooding improvements to use Che to build Che
+kind/epic 
+Development experience is a topic of constant improvement and currently there is a bunch of issues that covers the most valuable features that are planned to be improved. Self-Hosting Che for Che development #6713 Enhance Java debugger functionality #2611 Add: Java refactoring "extract to method" #324 Test runner plugin improvement #5429 - depends on #6157 Improving search results #5174 - [DONE] Delete Java class from Project Explorer should consider as Refactoring #5549 For GWT (important for IDE client development) GWT SuperDev Mode command does not work #2595 [INPROGRESS] For JS/TS (important for User Dashboard development) TypeScript project: autocomplete, go to declaration, find usages #5146

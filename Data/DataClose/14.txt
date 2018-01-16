@@ -1,0 +1,3 @@
+SVN tests are failing on CI pr-builder
+kind/task sprint/current-sprint team/production 
+SVN tests are failing on CI pr-builder https://ci.codenvycorp.com/job/che-pullrequests-build/org.eclipse.che.plugin$che-plugin-svn-ext-server/4381/testReport/org.eclipse.che.plugin.svn.server/SubversionApiITest/testInfo/

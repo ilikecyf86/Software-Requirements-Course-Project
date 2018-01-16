@@ -1,0 +1,11 @@
+Incorrect buld & run instructions on http://eclipse.org/che
+
+Currenly mainpage of the progect says: # <...>
+git clone https://github.com/codenvy/che 
+git checkout 4.0 
+cd assembly-sdk
+mvn clean install
+
+cd ..
+./che run
+http://localhost:8080 These script doesnt work for 4.0 at least (minor) add "cd ./che" after clonning there is no che.bat/che.sh neither in root nor assembly-sdk Please, update the mainpage

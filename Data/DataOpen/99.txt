@@ -1,0 +1,3 @@
+Add new methods to the ProjectExplorer page-object
+kind/task status/in-progress team/production sprint/current-sprint 
+For explicit wait defined events and for remove "Thread.sleep()", and for better stability, we need to add next methods to the ProjectExplorer page-object: method for the wait until several defined items will be selected method for the select several elements by "Shift" button methods which do click on the item in the context menu must check that item is enabled method for checking that context menu is closed

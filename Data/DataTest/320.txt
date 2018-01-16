@@ -1,0 +1,3 @@
+Is it possible to use Sonarqube with Eclipse Che?
+kind/question kind/enhancement kind/question kind/question team/plugin kind/enhancement 
+No description provided.

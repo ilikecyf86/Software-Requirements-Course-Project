@@ -1,0 +1,3 @@
+Incorrect processing JSON RPC responses
+kind/bug severity/P2 
+We get NPE at processing JSON RPC responses. Reproduction Steps: Create a JSON RPC request Don't process JsonRpcPromise You can see NPE in a browser console. OS and version: Ubuntu 16.04 TLS, Chrome browser

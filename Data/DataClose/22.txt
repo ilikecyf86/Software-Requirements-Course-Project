@@ -1,0 +1,3 @@
+Synchronized update git state and project configuration
+kind/bug severity/P1 target/che6 team/ide 
+Description When user switch to another branch he expect that project also will be switched to expected branch on UI. But we have a bit different situation. When Che performs a branch switch client gets success response from git server and immediately requests project tree from the project service and in this moment we have an old value for the git branch in project configuration. In awhile, when we request project tree again, we'll get a new value of git branch in project configuration.

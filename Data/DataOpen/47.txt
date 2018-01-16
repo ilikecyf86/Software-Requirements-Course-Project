@@ -1,0 +1,3 @@
+Dashboard has to handle properly the supported types of environments
+kind/enhancement sprint/next-sprint status/open-for-dev team/plugin sprint/current-sprint sprint/next-sprint 
+As the result of this issue - the dashboard client will know the list of supported environment types, and should handle them properly. The stack creation should propose end user to choose the type of recipe (examples: openshift, compose, dockerfile, dockerimage) The user should be notified when there is workspace with unsupported environment type before start. All recipe validations should be based on the types of the environments, that are currently supported. A bunch of tests should be added to validate the recipe validation.

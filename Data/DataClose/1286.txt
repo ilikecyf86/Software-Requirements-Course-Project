@@ -1,0 +1,3 @@
+Project explorer show folder as for unconfigured projects
+team/ide kind/bug sprint/next-sprint sprint/current-sprint sprint/next-sprint severity/P2 sprint/current-sprint 
+I have an old python project that I sometime using for tests. It made from python simple. It shows folder with icon for unconfigured projects I can reconfigure project , and after clicking 'save' it show normal icon. But after browser refresh or stop/start workspace icon goes back. Please see screenshot, it show that responsec are OK and project is configured Reproduction Steps: OS and version: Centos 7.3 Codenvy 5.5.1

@@ -1,0 +1,3 @@
+Need to push changes to github branch
+kind/question 
+I have 1 github repo and have multiple branches. I am able to push changes to github master repo but now i need to push changes to any 1 branch. can anyone please tell me how to puch changes to github branch?

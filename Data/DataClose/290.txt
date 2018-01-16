@@ -1,0 +1,3 @@
+refactor CHE CI QA jobs to better utilise qa ci-slaves
+kind/task sprint/current-sprint status/in-progress team/production status/in-progress 
+today most CHE QA jobs on CI are bounded to some particular ci-slaves due to some limitations with permissions and different tools required. But as number of QA jobs is growing we have to adopt all jobs to be able to run on any random available qa slave for better utilisation resources.

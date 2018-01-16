@@ -1,0 +1,13 @@
+NotFoundException: Workspace with id 'ХХХ' doesn't exist
+kind/bug status/open-for-dev team/platform severity/P2 
+During our QA cycle we have a lot operation like this Start workspace Do something Stop workspace Delete workspace This exception often occur between 3-4 2017-01-31 12:22:52,393[io-8080-exec-10]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-31 12:22:52,400[aceSharedPool-9]  [INFO ] [o.e.c.a.w.s.WorkspaceManager 783]    - Workspace 'che:preview' with id 'workspacer57ru10qrcb9h50p' is being stopped by user 'che'
+2017-01-31 12:22:52,407[nio-8080-exec-3]  [INFO ] [o.e.c.a.w.s.WorkspaceManager 377]    - Workspace 'workspacer57ru10qrcb9h50p' removed by user 'che'
+2017-01-31 12:22:53,410[aceSharedPool-9]  [ERROR] [o.e.c.a.w.s.WorkspaceManager 824]    - Workspace with id 'workspacer57ru10qrcb9h50p' doesn't exist
+org.eclipse.che.api.core.NotFoundException: Workspace with id 'workspacer57ru10qrcb9h50p' doesn't exist
+	at org.eclipse.che.api.workspace.server.jpa.JpaWorkspaceDao.doUpdate(JpaWorkspaceDao.java:213) ~[che-core-api-workspace-5.2.0-SNAPSHOT.jar:5.2.0-SNAPSHOT]
+	at com.google.inject.persist.jpa.JpaLocalTxnInterceptor.invoke(JpaLocalTxnInterceptor.java:70) ~[guice-persist-4.1.0.jar:na]
+	at org.eclipse.che.api.workspace.server.jpa.JpaWorkspaceDao.update(JpaWorkspaceDao.java:78) ~[che-core-api-workspace-5.2.0-SNAPSHOT.jar:5.2.0-SNAPSHOT]
+	at org.eclipse.che.api.workspace.server.WorkspaceManager.lambda$stopAsync$3(WorkspaceManager.java:816) ~[che-core-api-workspace-5.2.0-SNAPSHOT.jar:5.2.0-SNAPSHOT]
+	at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalRunnable.run(CopyThreadLocalRunnable.java:28) ~[che-core-commons-lang-5.2.0-SNAPSHOT.jar:5.2.0-SNAPSHOT]
+	at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626) ~[na:1.8.0_111]

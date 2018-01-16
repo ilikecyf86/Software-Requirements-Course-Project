@@ -1,0 +1,3 @@
+[CHE 6] Add an ability to scroll to a file that is opened in the editor
+kind/task target/che6 team/ide status/in-progress status/code-review status/in-progress status/code-review 
+Description Add an ability to scroll to a file that is opened in the editor. There is an ability to link editor and project tree. But I don't like it because of unnecessary switching of selection in the project tree which distracts my attention. It also requires some resource to perform refreshing of project tree each time when an active file in the editor is changed. It would be better to provide an ability to scroll to a file that is opened in the editor once when a user needs it.

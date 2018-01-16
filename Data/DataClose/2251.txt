@@ -1,0 +1,21 @@
+Named Volume Support for Compose Recipes
+kind/enhancement status/open-for-dev team/platform status/analyzing status/open-for-dev roadmap/next-QTR 
+Enhancement request for named volumes support in compose recipe. This enhancement will allow runtime machines in a multi-machine workspaces the ability to share folders/files through shared volumes created specifically for the multi-machine workspace while not making the host file system vulnerable. This enhancement is related to codenvy/codenvy#897. Expected Usage Example: services:
+  db:
+    image: codenvy/mysql
+    volumes:
+      - db_volume:/mnt/db_volume
+    environment:
+      MYSQL_DATABASE: petclinic
+      MYSQL_USER: petclinic
+      MYSQL_PASSWORD: password
+    mem_limit: 1073741824
+  dev-machine:
+    image: codenvy/ubuntu_jdk8
+    mem_limit: 2147483648
+    volumes:
+      - db_volume:/mnt/db_volume
+    depends_on:
+      - db
+  volumes:
+    db_volume:

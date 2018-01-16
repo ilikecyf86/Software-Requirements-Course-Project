@@ -1,0 +1,3 @@
+[CHE6] Rename environment variable with machine token to CHE_MACHINE_TOKEN
+kind/task status/open-for-dev team/platform sprint/current-sprint status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+Now machine token is provided for agents as USER_TOKEN environment variable. But it would be much better to name it as CHE_MACHINE_TOKEN. I'd indicated that it is token for accessing to agents in machine/for accessing to wsmaster from MACHINE. It is also needed to rename the corresponding field in RuntimeDto from userToken to machineToken.

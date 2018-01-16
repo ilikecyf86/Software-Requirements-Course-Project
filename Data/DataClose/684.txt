@@ -1,0 +1,6 @@
+How to pull private image from DockerHub
+kind/question 
+I want to use custom recipe, which based on private docker image from default DockerHub registry. Creating workspace obviously fails with [DOCKER] [ERROR] repository ***/*** not found: does not exist or no pull access I've tried to add params as it described in the docs CHE_DOCKER_REGISTRY_AUTH_REGISTRY1_URL=https://registry.hub.docker.com/v2/
+CHE_DOCKER_REGISTRY_AUTH_REGISTRY1_USERNAME=***
+CHE_DOCKER_REGISTRY_AUTH_REGISTRY1_PASSWORD=***
+ But it didn't affect anything, also I'm not sure about url to DockerHub registry, which API version should be, and should there be the protocol part or not. Can you please specify, is it possible or not, and if yes, how to configure parameters? Reproduction Steps: Point the docker image in recipe to any private image from DockerHub, add parameters above to env file or just as env parameters then try to start a workspace OS and version: macOS Sierra, Version 10.12.5

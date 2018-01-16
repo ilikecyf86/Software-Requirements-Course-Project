@@ -1,0 +1,9 @@
+Unable to start a workspace after compiling Che
+
+Hello, Now that I'm quite familiar with Che I've decided to take a look on the latest implemented feature (and maybe contribute if I have some free time). I have been able to run Che and try every features available (creating workspace, projects, Git ...) on the version downloaded straight from eclipse website (eclipse-che-4.0.0-RC3). Unfortunately when cloning code from Git things are not going as good, when creating a new workspace it get stuck at step 2/4 and no docker commands are issued as it does normally (pulling docker image and so on) Che version : master Che directory : /opt/eclipse/eclipse-che-build/che/ Java : 1.8.0_73 docker : 1.10.1 maven : 3.3.3 Environment : Virutla server (vmware) running Debian 3.16.7-ckt20-1+deb8u3 Building step : cd /opt/eclipse/eclipse-che-build/
+git clone https://github.com/eclipse/che.git
+cd assembly 
+mvn clean install
+ => Build succeeded Running : cd assembly-main/target/eclipse-che-4.0.0-RC14-SNAPSHOT/eclipse-che-4.0.0-RC14-SNAPSHOT/bin
+./che.sh -s:uid -r:myserver.net (<= exact same command I'm running with RC3 wich is working, I'm not using an IP in the -r arg but a DNS wich seems to work fine on RC3 )
+ I've tried to build with tag 4.0.0-RC9 with the same result Thank for your help

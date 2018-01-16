@@ -1,0 +1,3 @@
+Show suggestions when adding user to a team
+kind/eclipse-che kind/enhancement team/plugin kind/eclipse-che 
+From @vitaliy-guliy on January 26, 2017 13:31 We have to write the full user email to the email field. But it's polite and helpful to suggest available uses which emails are started on the text in the field. Copied from original issue: codenvy/codenvy#1624

@@ -1,0 +1,3 @@
+Automatically add openFile actions to a Review Pull request factory
+kind/enhancement 
+When creating a pull request from the PR panel, it generates a review factory URL. It would be nice if this factory opens the modified files of the PR.

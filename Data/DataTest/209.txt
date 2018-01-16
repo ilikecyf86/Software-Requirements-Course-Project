@@ -1,0 +1,3 @@
+Ability to move dialogs in the IDE
+New feature 
+Dialog windows become not movable.

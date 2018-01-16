@@ -1,0 +1,3 @@
+Agents descriptions are not consistent.
+kind/bug sprint/current-sprint status/open-for-dev team/enterprise kind/task kind/bug status/in-progress status/open-for-dev status/code-review status/in-progress status/code-review sprint/current-sprint 
+AGENTS The agent names are not consistent. They should be: a) "First second",not "First-second", "First-Second", or "First Second" b) There is no need to add "agent" in the name, so it's "Git" not "Git Agent" or "Exec Agent"

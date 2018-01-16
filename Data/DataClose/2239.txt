@@ -1,0 +1,3 @@
+Maven modules not recognized
+kind/question 
+Maven modules in a maven multi-module project are normal folders, not java projects Reproduction Steps: Clone a maven multimodule project from github (https://github.com/Teg79/BBArena) Expected behavior: The maven modules must be parsed like java projects with packages and java and test source folders Observed behavior In project explorer the parent pom is a regular project, but it's modules are normal folders Che version: Codenvy.com online version OS and version: macOS 10.12.1 Additional information: Problem started happening recently, didn't happen in an older version of Che: don't know Problem can be reliably reproduced, doesn't happen randomly: yes

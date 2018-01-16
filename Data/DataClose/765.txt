@@ -1,0 +1,7 @@
+C/CPP compilation error/warning messages support
+kind/enhancement sprint/current-sprint team/osio 
+Che should be able to analyze and open the correct file associated with a given ERROR and WARINIG compilation messages from C/CPP runtime, like: g++ -o hello.o -g -c hello.cc
+hello.cc: In function ‘int main()’:
+hello.cc:8:13: warning: division by zero [-Wdiv-by-zero]
+     return 0/0;
+             ^

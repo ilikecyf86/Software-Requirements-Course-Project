@@ -1,0 +1,121 @@
+trying to create WS fails
+
+Hi, I'm using Che as a server natively on a CentOS7 machine, the application is up and accessible via my browser but I cannot create any project. I'm getting this : [ost-startStop-1] [ERROR] [o.a.c.c.C.[.[localhost].[/ide] 4818] - Exception sending context initialized event to listener instance of class org.eclipse.che.inject.CodenvyBootstrap
+[STDOUT] com.google.common.util.concurrent.ExecutionError: com.google.common.util.concurrent.ExecutionError: java.lang.NoClassDefFoundError: org/eclipse/che/ide/ext/java/jdi/shared/BreakPoint
+ and then this at the bottom:  [ERROR] [o.a.c.core.StandardContext 5256] - One or more listeners failed to start. Full details will be found in the appropriate container log file
+[STDOUT] 2016-04-12 06:49:19,835[ost-startStop-1] [ERROR] [o.a.c.core.StandardContext 5307] - Context [/ide] startup failed due to previous errors
+ I've open all FW ports described in Docs: 32768-65535 , 8080, 4401 ,4403, 4411 my bash_profile: export JAVA_HOME=/opt/jdk/current
+export PATH=$JAVA_HOME/bin:$PATH
+
+export M2_HOME=/usr/local/maven
+export PATH=$M2_HOME/bin:$PATH
+
+export CHE_DOCKER_MACHINE_HOST=<external IP>
+export CHE_HOME=/opt/che
+
+export CHE_LOCAL_CONF_DIR=$CHE_HOME/conf
+export CHE_LOGS_DIR=$CHE_HOME/tomcat/logs
+export PATH=$CHE_HOME/bin:$PATH
+ Che.properties: machine.docker.che_api.endpoint=http://172.17.0.1:${SERVER_PORT}/ide/api
+api.endpoint=http://<external IP>:${SERVER_PORT}/ide/api
+machine.docker.local_node_host=NULL
+ I'm starting che like this: che.sh run -r:<external IP> What am I doing wrong? some more output: [STDOUT] 2016-04-12 07:07:53,690[main] [INFO] [o.a.c.s.VersionLoggerListener 105] - JVM Vendor: Oracle Corporation
+[STDOUT] 2016-04-12 07:07:53,690[main] [INFO] [o.a.c.s.VersionLoggerListener 107] - CATALINA_BASE: /home/user/che/ws-agent
+[STDOUT] 2016-04-12 07:07:53,690[main] [INFO] [o.a.c.s.VersionLoggerListener 109] - CATALINA_HOME: /home/user/che/ws-agent
+[STDOUT] 2016-04-12 07:07:53,691[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -Djava.util.logging.config.file=/home/user/che/ws-agent/conf/logging.properties
+[STDOUT] 2016-04-12 07:07:53,691[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+[STDOUT] 2016-04-12 07:07:53,691[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -Xms256m
+[STDOUT] 2016-04-12 07:07:53,692[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -Xmx1024m
+[STDOUT] 2016-04-12 07:07:53,692[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -Djava.security.egd=file:/dev/./urandom
+[STDOUT] 2016-04-12 07:07:53,692[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -Dche.logs.dir=/home/user/che/ws-agent/logs
+[STDOUT] 2016-04-12 07:07:53,692[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -agentlib:jdwp=transport=dt_socket,address=4403,server=y,suspend=n
+[STDOUT] 2016-04-12 07:07:53,692[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -Dcom.sun.management.jmxremote
+[STDOUT] 2016-04-12 07:07:53,692[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -Dcom.sun.management.jmxremote.ssl=false
+[STDOUT] 2016-04-12 07:07:53,693[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -Dcom.sun.management.jmxremote.authenticate=false
+[STDOUT] 2016-04-12 07:07:53,693[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -Dche.local.conf.dir=/mnt/che/conf
+[STDOUT] 2016-04-12 07:07:53,693[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -Djava.endorsed.dirs=/home/user/che/ws-agent/endorsed
+[STDOUT] 2016-04-12 07:07:53,693[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -Dcatalina.base=/home/user/che/ws-agent
+[STDOUT] 2016-04-12 07:07:53,693[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -Dcatalina.home=/home/user/che/ws-agent
+[STDOUT] 2016-04-12 07:07:53,697[main] [INFO] [o.a.c.s.VersionLoggerListener 115] - Command line argument: -Djava.io.tmpdir=/home/user/che/ws-agent/temp
+[STDOUT] 2016-04-12 07:07:53,867[main] [INFO] [o.a.c.http11.Http11NioProtocol 425] - Initializing ProtocolHandler ["http-nio-4401"]
+[STDOUT] 2016-04-12 07:07:53,880[main] [INFO] [o.a.t.util.net.NioSelectorPool 72] - Using a shared selector for servlet write/read
+[STDOUT] 2016-04-12 07:07:53,883[main] [INFO] [o.a.catalina.startup.Catalina 591] - Initialization processed in 507 ms
+[STDOUT] 2016-04-12 07:07:53,939[main] [INFO] [c.m.JmxRemoteLifecycleListener 332] - The JMX Remote Listener has configured the registry on port 32002 and the server on port 32102 for the Platform server
+[STDOUT] 2016-04-12 07:07:53,939[main] [INFO] [o.a.c.core.StandardService 435] - Starting service Catalina
+[STDOUT] 2016-04-12 07:07:53,940[main] [INFO] [o.a.c.core.StandardEngine 259] - Starting Servlet Engine: Apache Tomcat/8.0.32
+[STDOUT] 2016-04-12 07:07:54,009[ost-startStop-1] [INFO] [o.a.c.startup.HostConfig 910] - Deploying web application archive /home/user/che/ws-agent/webapps/ide.war
+[STDOUT] 2016-04-12 07:07:58,600[ost-startStop-1] [ERROR] [o.a.c.c.C.[.[localhost].[/ide] 4818] - Exception sending context initialized event to listener instance of class org.eclipse.che.inject.CodenvyBootstrap
+[STDOUT] com.google.common.util.concurrent.ExecutionError: com.google.common.util.concurrent.ExecutionError: java.lang.NoClassDefFoundError: org/eclipse/che/ide/ext/java/jdi/shared/BreakPointList
+[STDOUT] at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2201) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache.get(LocalCache.java:3937) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3941) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4824) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4830) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.inject.internal.FailableCache.get(FailableCache.java:48) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.ConstructorInjectorStore.get(ConstructorInjectorStore.java:50) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.ConstructorBindingImpl.initialize(ConstructorBindingImpl.java:136) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.InjectorImpl.initializeBinding(InjectorImpl.java:533) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.AbstractBindingProcessor$Processor$1.run(AbstractBindingProcessor.java:160) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.ProcessedBindingData.initializeBindings(ProcessedBindingData.java:44) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:123) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.Guice.createInjector(Guice.java:96) ~[guice-4.0.jar:na]
+[STDOUT] at org.everrest.guice.servlet.EverrestGuiceContextListener.getInjector(EverrestGuiceContextListener.java:137) ~[everrest-integration-guice-1.12.1.jar:na]
+[STDOUT] at com.google.inject.servlet.GuiceServletContextListener.contextInitialized(GuiceServletContextListener.java:47) ~[guice-servlet-4.0.jar:na]
+[STDOUT] at org.everrest.guice.servlet.EverrestGuiceContextListener.contextInitialized(EverrestGuiceContextListener.java:84) ~[everrest-integration-guice-1.12.1.jar:na]
+[STDOUT] at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4812) [catalina.jar:8.0.32]
+[STDOUT] at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5255) [catalina.jar:8.0.32]
+[STDOUT] at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147) [catalina.jar:8.0.32]
+[STDOUT] at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725) [catalina.jar:8.0.32]
+[STDOUT] at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701) [catalina.jar:8.0.32]
+[STDOUT] at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717) [catalina.jar:8.0.32]
+[STDOUT] at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:939) [catalina.jar:8.0.32]
+[STDOUT] at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1812) [catalina.jar:8.0.32]
+[STDOUT] at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_45]
+[STDOUT] at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_45]
+[STDOUT] at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_45]
+[STDOUT] at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_45]
+[STDOUT] at java.lang.Thread.run(Thread.java:745) [na:1.8.0_45]
+[STDOUT] Caused by: com.google.common.util.concurrent.ExecutionError: java.lang.NoClassDefFoundError: org/eclipse/che/ide/ext/java/jdi/shared/BreakPointList
+[STDOUT] at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2201) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache.get(LocalCache.java:3937) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3941) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4824) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4830) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.inject.internal.FailableCache.get(FailableCache.java:48) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.MembersInjectorStore.get(MembersInjectorStore.java:68) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.ConstructorInjectorStore.createConstructor(ConstructorInjectorStore.java:74) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.ConstructorInjectorStore.access$000(ConstructorInjectorStore.java:29) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.ConstructorInjectorStore$1.create(ConstructorInjectorStore.java:37) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.ConstructorInjectorStore$1.create(ConstructorInjectorStore.java:33) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.FailableCache$1.load(FailableCache.java:37) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3527) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2319) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2282) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2197) ~[guava-18.0.jar:na]
+[STDOUT] ... 29 common frames omitted
+[STDOUT] Caused by: java.lang.NoClassDefFoundError: org/eclipse/che/ide/ext/java/jdi/shared/BreakPointList
+[STDOUT] at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.8.0_45]
+[STDOUT] at java.lang.Class.privateGetDeclaredMethods(Class.java:2701) ~[na:1.8.0_45]
+[STDOUT] at java.lang.Class.getDeclaredMethods(Class.java:1975) ~[na:1.8.0_45]
+[STDOUT] at com.google.inject.spi.InjectionPoint.getInjectionPoints(InjectionPoint.java:688) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.spi.InjectionPoint.forInstanceMethodsAndFields(InjectionPoint.java:380) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.MembersInjectorStore.createWithListeners(MembersInjectorStore.java:93) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.MembersInjectorStore.access$000(MembersInjectorStore.java:37) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.MembersInjectorStore$1.create(MembersInjectorStore.java:45) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.MembersInjectorStore$1.create(MembersInjectorStore.java:42) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.inject.internal.FailableCache$1.load(FailableCache.java:37) ~[guice-4.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3527) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2319) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2282) ~[guava-18.0.jar:na]
+[STDOUT] at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2197) ~[guava-18.0.jar:na]
+[STDOUT] ... 44 common frames omitted
+[STDOUT] Caused by: java.lang.ClassNotFoundException: org.eclipse.che.ide.ext.java.jdi.shared.BreakPointList
+[STDOUT] at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1308) ~[catalina.jar:8.0.32]
+[STDOUT] at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1142) ~[catalina.jar:8.0.32]
+[STDOUT] ... 58 common frames omitted
+[STDOUT] 2016-04-12 07:07:58,825[ost-startStop-1] [ERROR] [o.a.c.core.StandardContext 5256] - One or more listeners failed to start. Full details will be found in the appropriate container log file
+[STDOUT] 2016-04-12 07:07:58,828[ost-startStop-1] [ERROR] [o.a.c.core.StandardContext 5307] - Context [/ide] startup failed due to previous errors
+[STDOUT] 2016-04-12 07:07:58,840[ost-startStop-1] [INFO] [o.a.c.startup.HostConfig 974] - Deployment of web application archive /home/user/che/ws-agent/webapps/ide.war has finished in 4,830 ms
+[STDOUT] 2016-04-12 07:07:58,843[main] [INFO] [o.a.c.http11.Http11NioProtocol 470] - Starting ProtocolHandler ["http-nio-4401"]
+[STDOUT] 2016-04-12 07:07:58,850[main] [INFO] [o.a.catalina.startup.Catalina 642] - Server startup in 4966 ms

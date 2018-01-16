@@ -1,0 +1,3 @@
+Document "Servers" in workspace stack
+kind/docs kind/enhancement kind/docs 
+When creating a Workspace in Che, under Runtime tab, expanding Machines section allows to add "Servers" but it's not documented what it's used for. Even on https://www.eclipse.org/che/docs/workspace/stacks/index.html it seems there is no documentation.

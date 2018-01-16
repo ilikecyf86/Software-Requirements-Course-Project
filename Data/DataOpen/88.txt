@@ -1,0 +1,3 @@
+Focus jumps into editor from project tree
+kind/bug 
+Reproduction Steps Open some file of project Activate 'Link with editor' feature Set focus in project tree Walk through project tree by arrows You can see jumping of focus into editor from project tree when open file is selected in project tree OS and version: Fedora 25

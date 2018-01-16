@@ -1,0 +1,3 @@
+Replace ZeroClipboard library with another one which is not uses flash objects
+kind/task 
+As browsers deprecate using flash last time, we need to think of using another library that performs copy to clipboard text. For example https://clipboardjs.com/ Github repository: https://github.com/zenorocha/clipboard.js

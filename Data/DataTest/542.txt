@@ -1,0 +1,3 @@
+How to enable User Account Control
+kind/bug kind/question 
+Is it possible to enable User Account Control in the free version of eclipse che? And how to enable it. The only endpoints I found was /dashboard, /swagger and /api. Also the logout button returns a 404 error.

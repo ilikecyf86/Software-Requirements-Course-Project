@@ -1,0 +1,3 @@
+There is no way to specify password during registering via email.
+kind/enhancement team/plugin 
+From @sleshchenko on March 6, 2017 16:20 There is no way to specify password during registering via email. Dashboard in 3.x version asks user to update password immediately after signing up. But in 4.x version it doesn't and user should know that he should update password on Dashboard#Account & Account#Security when he signs up or he will have to recover password later. We can implement such feature in codenvy dashboard 4.x Or redirect user to {HOST}/site/setup-password page for setting up password after signing up with email. Copied from original issue: codenvy/codenvy#1888

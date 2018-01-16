@@ -1,0 +1,3 @@
+IDE UI elements are hard to recognize
+kind/enhancement team/plugin kind/bug severity/P1 kind/enhancement sprint/current-sprint sprint/current-sprint 
+Description It is hard for me to recognize UI elements in Che because of small size and/or contrast. The code in the editor is small and I haven't found any way to increase it without increasing all the elements of the window. Zooming of the browser doesn't allow to change elements size in a comfortable way and it is not persisted across IDE usage sessions. Even after I increased zooming of the tab by 10% some buttons were too small. Take a look at file tree buttons in zoomed by 10% Che and regular buttons in IDEA: Reproduction Steps OS and version: Diagnostics:

@@ -1,0 +1,3 @@
+Che behind HAProxy
+kind/question 
+I've the impression that python language server doesn't work with python 2.7 ? Reproduction Steps: Select Python 2.7 stack in stack view Active Sourcegraph Python LS Click to Test button OS and version: Windows Os X Diagnostics: When workspace is open, you cannot create project or update project. In log file, there isn't error.

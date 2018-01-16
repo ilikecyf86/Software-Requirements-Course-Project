@@ -1,0 +1,3 @@
+Provide Openshift template for Che Deployment
+kind/enhancement team/osio 
+Description Che must be provided as an OpenShift template (or playbook) so it can easily be deployed to OCP. Linked Issue #5098

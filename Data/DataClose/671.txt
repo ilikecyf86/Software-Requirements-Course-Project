@@ -1,0 +1,3 @@
+Run custom set of tests
+kind/enhancement team/ide sprint/next-sprint status/in-progress 
+Need to add an ability to run custom set of test classes.

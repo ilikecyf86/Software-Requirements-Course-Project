@@ -1,0 +1,3 @@
+Newly created java class is not displayed in the project explorer tree (regression)
+kind/bug severity/P1 
+Reproduction Steps: Go to the spring project Click on the "java" folder Run from commands menu : "Project" -> "New" -> "Java Class" Type "test.ua.TestClass" Click "Ok" button Pay attention to the screen Expected Behavior: Class will be shown in the project explorer tree . Observed Behavior: Class displayed in the project tree only after refreshing page . Attachment :

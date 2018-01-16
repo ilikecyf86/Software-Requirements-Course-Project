@@ -1,0 +1,28 @@
+Workspace shutdown within 10 minutes for no reason
+kind/question 
+This morning, a workspace was shutdown by Che within 10 minutes of starting for no apparent reason. Here are the server logs. 06/10/2017 09:28:212017-10-06 08:28:21,749[p-nio-80-exec-5]  [INFO ] [o.e.c.a.f.s.jpa.JpaFactoryDao 111]   - FactoryDao#getByAttributes #maxItems: 15 #skipCount: 0, #attributes: [{first=creator.userId, second=che}]
+06/10/2017 09:28:252017-10-06 08:28:25,407[aceSharedPool-3]  [ERROR] [e.c.a.e.s.CheEnvironmentEngine 942]  - The snapshot of the image for the machine dev-machine of the workspace workspaceeslqbjrx6z74biqy not found. The machine will be created from origin source. Details: no such id: machine_snapshot_xnud06psudme5zkc:latest
+06/10/2017 09:28:25
+06/10/2017 09:28:272017-10-06 08:28:27,187[aceSharedPool-3]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 676]   - Launching 'org.eclipse.che.exec' agent at workspace workspaceeslqbjrx6z74biqy
+06/10/2017 09:28:292017-10-06 08:28:29,347[aceSharedPool-3]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 676]   - Launching 'org.eclipse.che.terminal' agent at workspace workspaceeslqbjrx6z74biqy
+06/10/2017 09:28:312017-10-06 08:28:31,506[aceSharedPool-3]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 676]   - Launching 'org.eclipse.che.ws-agent' agent at workspace workspaceeslqbjrx6z74biqy
+06/10/2017 09:28:412017-10-06 08:28:41,905[aceSharedPool-3]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 676]   - Launching 'org.eclipse.che.ssh' agent at workspace workspaceeslqbjrx6z74biqy
+06/10/2017 09:28:412017-10-06 08:28:41,953[aceSharedPool-3]  [INFO ] [e.c.a.w.s.i.ServerIdleDetector 69]   - Idling che server canceled
+06/10/2017 09:28:412017-10-06 08:28:41,955[aceSharedPool-3]  [INFO ] [o.e.c.a.w.s.WorkspaceManager 658]    - Workspace 'che/obs' with id 'workspaceeslqbjrx6z74biqy' started by user 'che'
+06/10/2017 09:29:192017-10-06 08:29:19,417[p-nio-80-exec-1]  [INFO ] [o.e.c.a.f.s.jpa.JpaFactoryDao 111]   - FactoryDao#getByAttributes #maxItems: 15 #skipCount: 0, #attributes: [{first=creator.userId, second=che}]
+06/10/2017 09:29:422017-10-06 08:29:42,246[p-nio-80-exec-6]  [INFO ] [o.e.c.a.f.s.jpa.JpaFactoryDao 111]   - FactoryDao#getByAttributes #maxItems: 15 #skipCount: 0, #attributes: [{first=creator.userId, second=che}]
+06/10/2017 09:36:542017-10-06 08:36:54,293[p-nio-80-exec-3]  [INFO ] [o.e.c.a.f.s.jpa.JpaFactoryDao 111]   - FactoryDao#getByAttributes #maxItems: 15 #skipCount: 0, #attributes: [{first=creator.userId, second=che}]
+06/10/2017 09:37:172017-10-06 08:37:17,819[aceSharedPool-4]  [INFO ] [o.e.c.a.w.s.WorkspaceManager 700]    - Workspace 'che/obs' with id 'workspaceeslqbjrx6z74biqy' is being stopped by user 'che'
+06/10/2017 09:37:182017-10-06 08:37:18,702[aceSharedPool-4]  [INFO ] [e.c.a.w.s.i.ServerIdleDetector 80]   - Idling che server scheduled [timeout=1800] seconds]
+06/10/2017 09:37:182017-10-06 08:37:18,702[aceSharedPool-4]  [INFO ] [o.e.c.a.w.s.WorkspaceManager 733]    - Workspace 'che/obs' with id 'workspaceeslqbjrx6z74biqy' stopped by user 'che'
+06/10/2017 09:37:312017-10-06 08:37:31,605[entSubscriber-4]  [ERROR] [oggingUncaughtExceptionHandler 31]   - Runtime exception caught in thread RemoveWorkspaceFilesAfterRemoveWorkspaceEventSubscriber-4. Message: null
+06/10/2017 09:37:31java.lang.NullPointerException: null
+06/10/2017 09:37:31	at java.lang.String.replace(String.java:2239)
+06/10/2017 09:37:31	at org.eclipse.che.plugin.docker.machine.cleaner.LocalWorkspaceFilesCleaner.clear(LocalWorkspaceFilesCleaner.java:51)
+06/10/2017 09:37:31	at org.eclipse.che.plugin.docker.machine.cleaner.RemoveWorkspaceFilesAfterRemoveWorkspaceEventSubscriber.lambda$onEvent$0(RemoveWorkspaceFilesAfterRemoveWorkspaceEventSubscriber.java:68)
+06/10/2017 09:37:31	at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalRunnable.run(CopyThreadLocalRunnable.java:28)
+06/10/2017 09:37:31	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+06/10/2017 09:37:31	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+06/10/2017 09:37:31	at java.lang.Thread.run(Thread.java:745)
+06/10/2017 09:37:312017-10-06 08:37:31,614[p-nio-80-exec-1]  [INFO ] [o.e.c.a.w.s.WorkspaceManager 336]    - Workspace 'workspaceeslqbjrx6z74biqy' removed by user 'che'
+ OS and version: Che 5.18

@@ -1,0 +1,3 @@
+Project import never finishes if no wizard was provided for the project importer
+kind/bug team/ide severity/P1 sprint/next-sprint status/in-progress sprint/next-sprint status/code-review status/in-progress status/code-review 
+Project import looks like never ending if no wizard was provided for the project importer. Import dialog must not display importer in the list if no appropriate wizard was provided. Please, pay attention that there's the same problem in the project creation wizard. Reproduction Steps: Run CHE without client-part of git-plugin. Try to import a project with GIT importer. Diagnostics: There's the error message in browser's console: Caused by java.lang.IllegalStateException: WizardRegistrar for the importer git isn't registered.

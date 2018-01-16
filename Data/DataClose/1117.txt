@@ -1,0 +1,3 @@
+Recommended hosting priorities
+kind/question 
+We are looking to host on AWS although this question will apply to any environment. I appreciate there are many variables to take into account but I'm looking for a good starting point. What sort of instance type will serve Che best and make the most economic sense, i.e. what is the order of priority? Is it; Memory CPU Storage For example, if memory is the priority - we would be looking at memory optimised instances (r4), or, if storage was the priority - SSD-backed instances, etc. My guess is that memory probably is the first priority?

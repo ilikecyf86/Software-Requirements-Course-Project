@@ -1,0 +1,4 @@
+CHE6 on OpenShift: mount sync warning for a service pod
+kind/bug severity/P2 team/platform target/branch 
+When a workspace is started, the following errors constantly show up in logs: 2017-11-13 16:53:49 +0200 EET   2017-11-13 16:53:49 +0200 EET   1         mkdir-workspacerqfzv8ad1949a9en   Pod                 Warning   FailedMount   kubelet, localhost   Unable to mount volumes for pod "mkdir-workspacerqfzv8ad1949a9en_eclipse-che(2c67cd35-c882-11e7-bdca-0eaf89091814)": timeout expired waiting for volumes to attach/mount for pod "eclipse-che"/"mkdir-workspacerqfzv8ad1949a9en". list of unattached/unmounted volumes=[claim-che-workspace default-token-g0l
+ It looks like there are some race conditions/timing issues when a special pod is launched to create mount paths in PV. Though this error isn't critical - it's just a warning - it's still not good that we have it. It litters the log and also makes it challenging to identify problems when a workspace fails to start.

@@ -1,0 +1,3 @@
+Resources administration for Codenvy's admin
+kind/epic 
+Goals Codenvy system allow to control: Stacks Templates Factories Recipes Today, a Codenvy admin can provision Stacks and Templates for all users, but only by editing the stacks.json or samples.json files. The goals of this epic are to: Allow Codenvy admin to provision Stacks and Templates from Admin Dashboard (without having to edit the configuration files) for users + organizations Similarly, we'll need to allow the Codenvy admin to provision Factories and Recipes. Linked issues: codenvy/codenvy#1002 codenvy/codenvy#1780

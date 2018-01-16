@@ -1,0 +1,3 @@
+Allow custom font size in Editor
+kind/question kind/enhancement team/plugin kind/question 
+I must say: so far I love Eclipse Che. There is just one thing that reallllly bugs me right now. The font size is too small for me to easily read my code and so I keep making mistakes. It would be really nice if you guys allowed for a custom font size in the editor.

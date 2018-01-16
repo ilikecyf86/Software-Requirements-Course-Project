@@ -1,0 +1,3 @@
+Add continuous checking of servers statuses for wsagent, exec, terminal
+kind/task target/che6 team/platform sprint/current-sprint 
+Description We have servers checking for wsagent, exec, terminal. Now it is used on servers starts only whereas the server can fail at any point in time, e.g. OOM. This leads to a bad UX of workspaces usage. We want to make these checks continuous to identify when a problem occurs and WS should be stopped due to the error. Reproduction Steps OS and version: Diagnostics:

@@ -1,0 +1,3 @@
+Update project in the tree after updating its attributes
+kind/enhancement team/plugin severity/P2 sprint/current-sprint sprint/current-sprint 
+The project does not update in the tree after updating its attributes. Reproduction Steps: https://github.com/codenvy/artik-ide/issues/309

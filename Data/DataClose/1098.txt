@@ -1,0 +1,3 @@
+A duplicated stack always exists in the "Stack library" list
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: Create a duplicated stack from any predefined stack. In the duplicated stack settings click on Ready-to-go button. Expected behavior: While creating a workspace this stack exists only on the Ready-to-go Stacks list. Observed behavior: This stack exists in the Stack library list too. Che version: 5.9.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

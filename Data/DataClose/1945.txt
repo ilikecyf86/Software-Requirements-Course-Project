@@ -1,0 +1,3 @@
+Starting a workspace as an user
+kind/enhancement 
+CHE-3264 enables starting the che-server as an user. Now, we have to enable starting a workspace as an user. See #3264 for more detail. Che version: any OS and version: any Docker version: any Che install: docker

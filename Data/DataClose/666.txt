@@ -1,0 +1,3 @@
+Items from autocomplete proposal panel of Language server paste incorrect in some cases
+severity/P1 kind/bug team/ide sprint/next-sprint 
+Reproduction Steps: Create for example the workspace based on .Net stack. Go to the workspace and create Asp .net project from wizard. Open Program.cs file. After initialization of language server set cursor into 16:34 Erase Build until .symbol Invoke autocomplete proposal panel by Ctrl+spase Paste Build item by double clicking OS and version: Fedora 25, chrome browser v. of CHE 5.15.0 Expected result: Should be pasted Build();. Code should be valid. Error markers should disappear. Actual result: Has been pasted just Build item. Code is invalid.

@@ -1,0 +1,16 @@
+Terminal keeps opened hundred of bash processes.
+kind/bug team/enterprise sprint/next-sprint status/open-for-dev status/blocked status/blocked sprint/current-sprint severity/P1 sprint/next-sprint status/in-progress status/open-for-dev status/in-progress status/blocked sprint/current-sprint severity/P2 severity/P1 
+I got monitoring alert about too many processes opened on some of our nodes. It was bash processes spawned by terminal centos   11194  0.0  0.0   4504   156 ?        Ss   Jan08   0:00  |   |   \_ /bin/sh -c trap '[ -z "$(jobs -p)" ] || kill $(jobs -p); [ -e /tmp/docker-exec-3424.pid ] && rm /tmp/docker-exec-3424.pid' EXIT; echo $$>/tmp/docker-exec-3424.pi
+centos   11273  0.0  0.2 124408 70824 ?        Sl   Jan08   1:03  |   |       \_ /home/user/che/terminal/che-websocket-terminal -addr :4411 -cmd /bin/bash -static /home/user/che/terminal/
+centos   12573  0.0  0.0  19904   372 pts/0    Ss+  Jan08   0:00  |   |           \_ /bin/bash
+centos   19634  0.0  0.0  19900   464 pts/1    Ss+  Jan08   0:00  |   |           \_ /bin/bash
+centos   21406  0.0  0.0  19900   468 pts/2    Ss+  Jan08   0:00  |   |           \_ /bin/bash
+centos   22738  0.0  0.0  19900   732 ?        Ss+  Jan08   0:00  |   |           \_ /bin/bash
+centos   24842  0.0  0.0  19900   248 ?        Ss+  Jan08   0:00  |   |           \_ /bin/bash
+centos   25634  0.0  0.0  19900   252 ?        Ss+  Jan08   0:00  |   |           \_ /bin/bash
+centos   28721  0.0  0.0  19900   248 ?        Ss+  Jan08   0:00  |   |           \_ /bin/bash
+centos   30432  0.0  0.0  19900   248 ?        Ss+  Jan08   0:00  |   |           \_ /bin/bash
+centos   31573  0.0  0.0  19900   732 ?        Ss+  Jan08   0:00  |   |           \_ /bin/bash
+ Inspecting shows that it was more than 600 bash processes. # ps ax | grep -c [b]ash 
+614
+ I think we need to close bash processes spawned by terminal that we don't use. Reproduction Steps: Probably just hit refresh button. Che version: 5.0.0-M8 OS and version: Centos 7.3 Docker version: 1.11.1

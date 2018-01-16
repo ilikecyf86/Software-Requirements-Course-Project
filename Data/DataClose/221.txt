@@ -1,0 +1,5 @@
+Java Debugger evaluates only simple expressions
+kind/task status/analyzing team/enterprise status/open-for-dev status/analyzing sprint/current-sprint status/in-progress status/open-for-dev sprint/current-sprint status/in-progress 
+Java debugger evaluator can handle only basic expressions. It is definitively not enough and decrease productivity. 2+3
+"a".length()
+ The goals of the task is to propose solution to evaluate arbitrary expressions (POC). Resources: http://asm.ow2.org/ http://jboss-javassist.github.io/javassist/ https://git.eclipse.org/c/gerrit/jdt/eclipse.jdt.debug.git/

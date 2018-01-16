@@ -1,0 +1,3 @@
+Che Authentification/Authorization
+kind/question 
+Hi, We already have web-system based on NodeJS that manages users/credentials/permissions etc. Now we want to let users to work with Che. How can we authorize user for working with our instance of Che? Do we need to create our own plugin that would check current user and block users without credentials? Something else?

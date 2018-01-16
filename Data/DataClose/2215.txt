@@ -1,0 +1,3 @@
+Wrong hover tooltip behavior
+team/plugin kind/enhancement sprint/next-sprint status/open-for-dev sprint/current-sprint sprint/next-sprint status/in-progress status/open-for-dev status/code-review status/in-progress status/code-review sprint/current-sprint 
+The tooltip's behavior on Dashboard is creating problem of usability. When moving fast the pointer over multiple elements where a hover can be displayed, all tooltips are displayed at the same time. We should always display only one tooltip at a time. See attached animated gif: Che version: 5.0.0-M5 Additional information: Problem started happening recently, didn't happen in an older version of Che: No Problem can be reliably reproduced, doesn't happen randomly: No

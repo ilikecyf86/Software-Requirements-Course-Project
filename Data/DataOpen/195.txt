@@ -1,0 +1,3 @@
+[Multiuser] After creating an organization its name isn't appear in the ORGANIZATION list of the New Workspace page
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: Create an organization Start to create a new workspace Expected behavior: The name of created organization exist in the ORGANIZATION list of the New Workspace page Observed behavior: The organization name will appear in the ORGANIZATION list only after web page refreshing Che version: 5.21.0-SNAPSHOT Multiuser OS and version: Fedora 25 Additional information:

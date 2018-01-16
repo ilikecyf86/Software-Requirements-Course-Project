@@ -1,0 +1,3 @@
+Error when creating new workspace
+kind/question 
+Description There is a JavaScript error when creating a new work space in che. This issue was not present in 5.21.0 and first appeared in 5.21.1 and is still present in the latest nightly build as of 12/12/2017. Server is started as: docker run -it --rm -e CHE_MULTIUSER=true -e CHE_HOST=11.25.21.220 -e CHE_PORT=8081 -v /var/run/docker.sock:/var/run/docker.sock -v ~/.che-nightly:/data eclipse/che:nightly restart --skip:graceful Reproduction Steps http://11.25.21.220:8081/dashboard/#/create-workspace Click, "Ok" The page is blank: OS and version: NAME="SLES" VERSION="12-SP1" VERSION_ID="12.1" PRETTY_NAME="SUSE Linux Enterprise Server 12 SP1" Diagnostics: catalina.log

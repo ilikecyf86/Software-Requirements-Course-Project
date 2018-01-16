@@ -1,0 +1,3 @@
+[REGRESSION] All actions that open new tab in browser don't work
+severity/P1 severity/blocker severity/P1 kind/bug team/ide status/in-progress status/in-progress 
+All actions that execute next GWT code :Window.open(String, String, String); don't work. Reproduction Steps: Menu 'Help' -> 'Community' Expected: New browser tab must be opened. Actual: Nothing happens. OS and version: Ubuntu 16.04, CHE 5.15.0-SNAPSHOT Diagnostics:

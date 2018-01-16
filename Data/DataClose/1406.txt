@@ -1,0 +1,30 @@
+Improve multilines commands formatting in JSON object
+kind/task kind/enhancement kind/task 
+Goals Improve the CommandsJSON Object to better handle multilines commands. Details Before intelligent commands, we were handling multilines (or multi-instructions) commands by combining them using && characters. So a command was looking like this: {
+          "name": "build and deploy",
+          "type": "mvn",
+          "commandLine": "mvn -f ${current.project.path} clean install -DskipTests && cp ${current.project.path}/target/*.war $TOMCAT_HOME/webapps/ROOT.war && $TOMCAT_HOME/bin/catalina.sh run 2>&1",
+          "attributes": {
+            "previewUrl": "http://${server.port.8080}"
+          }
+} With the introduction of the new command's editor, we are now allowing multiple lines in command's definition. In order to do that, we have to replace && by \n. But the way we are handling it into the JSON object is making the command hard to read. {
+          "name": "build and deploy",
+          "type": "mvn",
+          "commandLine": "mvn -f ${current.project.path} clean install -DskipTests \ncp ${current.project.path}/target/*.war $TOMCAT_HOME/webapps/ROOT.war \n$TOMCAT_HOME/bin/catalina.sh run 2>&1",
+          "attributes": {
+            "previewUrl": "http://${server.port.8080}",
+            "goal": "Run"
+          }
+} We need to improve the representation of the Command JSON object so that it will stay readable and better formatted. The proposal would be the following: {
+          "name": "build and deploy",
+          "type": "mvn",
+          "commandLine": [
+                  "mvn -f ${current.project.path} clean install -DskipTests",
+                  "cp ${current.project.path}/target/*.war $TOMCAT_HOME/webapps/ROOT.war", 
+                  "$TOMCAT_HOME/bin/catalina.sh run 2>&1"
+          ],
+          "attributes": {
+            "previewUrl": "http://${server.port.8080}",
+            "goal": "Run"
+          }
+} Linked issues: #4274

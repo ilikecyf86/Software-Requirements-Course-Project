@@ -1,0 +1,3 @@
+[Regression] The debug connection is not set for Node.js project properly
+kind/bug severity/P2 
+Reproduction Steps: Preconditions: create a workspase based on NodeJs stack. Go to the IDE. Create the NodeJs project by Wizard. Select the root folder of the project. Run -> Edit debug configuration -> NODEJS ->Click + icon ->click Debug Expected result: debug connection - should be established OS and version: we see endless pop up notification with attempt to connection. The debugger is not active Env.: che v. 5.16.0, was reproduced on https://nightly.codenvy-stg.com server, rev.: ca5ba8d98e66351b

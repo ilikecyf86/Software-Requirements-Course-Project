@@ -1,0 +1,3 @@
+Improve annoying preview not available console notification
+team/ide 
+Thanks to @vitaliy-guliy remark now we know that this line https://github.com/eclipse/che/blob/master/ide/che-core-ide-app/src/main/java/org/eclipse/che/ide/command/toolbar/previews/PreviewsPresenter.java#L113 floods console in some cases making it difficult to use it. So it would be very nice to filter messages or in other appropriate way improve the behavior of the notification so a user/developer be not frustrated because of a console flood.

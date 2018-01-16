@@ -1,0 +1,3 @@
+Self Hosting for Che
+kind/enhancement team/ide team/platform team/ide team/ide 
+Description We need to enable self hosting of Che for the purpose of developing Che. On self hosting, Che should be able to run projects that exists on the workspace as a replacement or addition to create and start a second hosted instance that is based on the basic Che. I think this will require a slightly different approach to self hosting for different parts of Che. IMHO the priority of those are 1.) Anything on workspace 2.) IDE 3.) Che server (wsmaster).

@@ -1,0 +1,3 @@
+Remove Machine Perspective
+kind/enhancement team/ide 
+We don't need it any more all information about workspace/machines available in User dashboard

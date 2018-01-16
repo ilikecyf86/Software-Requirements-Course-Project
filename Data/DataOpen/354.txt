@@ -1,0 +1,5 @@
+"Git" menu items sometimes disabled after workspace creation
+kind/bug 
+Originally reported - redhat-developer/rh-che#230 Demo: https://screencast.com/t/IGLhwJwnTfO Comment from the original issue: one thing we have noticed today...if you wait a while...the menus become available
+if you refresh the browser, the menus become available
+it is apparently an async process that happens after the workspace comes up

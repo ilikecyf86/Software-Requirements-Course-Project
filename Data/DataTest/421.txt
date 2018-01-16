@@ -1,0 +1,3 @@
+Show error message when update deps timeout is reached
+kind/enhancement 
+With projects having a lot of dependencies it takes more than 10 mins to download all of them. Che has a 10 min timeout. It would be nice to show an informative error message instead of Update Dependencies Failed. Ideally, this timeout should be configurable.

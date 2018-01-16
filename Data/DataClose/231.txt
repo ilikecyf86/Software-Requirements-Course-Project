@@ -1,0 +1,3 @@
+Second iteration of stabilization selenium tests in "autocomplete", "projectexplorer" packages
+kind/task status/in-progress team/production status/code-review status/in-progress status/code-review 
+After done the first iteration of stabilization #6896 we still have unexpected fails in two tests: AutocompleteProposalJavaDocTest DeleteProjectsTest We need to investigate and find the new reasons of instability. Also, we need to be sure that problems with another fixed tests are not reproduced.

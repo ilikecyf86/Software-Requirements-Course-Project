@@ -1,0 +1,3 @@
+Feature request: Add coffeescript support
+kind/enhancement 
+There are a lot of frontend projects which use coffeescript. It would be nice to have its support. Even basic support like highlighting is very useful.

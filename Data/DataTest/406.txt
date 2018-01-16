@@ -1,0 +1,3 @@
+Che does not respond
+
+Eclipse Che is running, and curl can connect to port 8080, but I get no response. Logs: https://gist.github.com/fnkr/beebe07b0332934611f2

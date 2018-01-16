@@ -1,0 +1,3 @@
+[dashboard] Create project in existing stopped workspace fails
+kind/bug 
+Two options for dealing this bug on project creation flow: display only running workspaces in the list of existing workspaces start existing workspace (+1 for this)

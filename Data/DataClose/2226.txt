@@ -1,0 +1,3 @@
+Add ability to add and remove machines to workspace environment
+kind/enhancement status/info-needed sprint/next-sprint team/plugin status/open-for-dev sprint/current-sprint status/info-needed sprint/next-sprint status/open-for-dev sprint/current-sprint 
+User has to be able to add new machine and to remove existing one on workspace environment's page. The result will impact the type of the environment - dockerfile or compose one to be used.

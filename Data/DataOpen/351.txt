@@ -1,0 +1,5 @@
+Transmission of Websocket Message fails based on Content
+kind/bug team/ide sprint/next-sprint sprint/next-sprint status/in-progress 
+Version: 5.15.0-SNAPSHOT: How to reproduce: in a project, create a file named pom.xml with the following content: https://gist.githubusercontent.com/invincibleJai/57377d0fd99d7d5a904b4afc5b07d357/raw/3515b741c6d02ed51362126c2fc6ac9204038a38/pom.xml Put a breakpoint in TextDocumentServiceClient (in the Browser) and in TextDocumentService (in the wsagent). open the file observe: you hit both breakpoints add the following text at the end of the file: <plugin>
+</plugin>
+ close the file and reopen it observe: you only hit the breakpoint in the Browser, but not the one in the wsagent

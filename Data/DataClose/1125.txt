@@ -1,0 +1,3 @@
+Initializing Language Server Forever
+kind/question 
+Time to time when I start workspace initializing ls is freezing and there is no any errors in the browser console output. It's very hard to reproduce, but it appears for JSON Language Server as for as custom YAML Language server. Blank stack. Che 5.8.0. Windows 7

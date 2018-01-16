@@ -1,0 +1,3 @@
+My che container starts very slow
+kind/question 
+From @eivantsov's video of starting che container in a digital ocean server, it just uses less than 3 minutes in total (including downloading che images, creating workspace, until it's ready): https://www.youtube.com/watch?v=UVucYKI5NHs But for me, most time of the it's pretty slow. The fastest record is about 10 minutes, and most of the time, it needs me 20 minutes or so to do the same thing as in eivantsov's video. And the longest record is 60 minutes (starting che container: 41minutes, other things 20 minutes) So I wonder what's your configurations in your digital ocean? Mine is: 4GB Ram 60GB SSD Disk San Francisco

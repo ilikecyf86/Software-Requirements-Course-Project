@@ -1,0 +1,5 @@
+Incorrect error message che.sh
+
+che/assembly-ide/src/assembly/bin/che.sh line 236, 257 error_exit "!!! DOCKER_TOOL_BOX_INSTALL_PATH environment variable not set. Add it or rerun Docker Toolbox installation.!!!"
+ should be error_exit "!!! DOCKER_TOOLBOX_INSTALL_PATH environment variable not set. Add it or rerun Docker Toolbox installation.!!!"
+ TOOLBOX is one word

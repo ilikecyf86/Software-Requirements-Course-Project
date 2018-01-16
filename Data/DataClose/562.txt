@@ -1,0 +1,3 @@
+Options for displaying artifact id in the maven project does not working when project created from dashboard
+kind/bug severity/P2 sprint/next-sprint status/open-for-dev team/enterprise 
+Reproduction Steps: Go to dashboard and create java stack with default "java-spring-project" Wait until workspace will be started Go to "Profile" -> "Preference" Chose Maven and change state of the "Show artifact id in project explorer" checkbox Pay attention that state of the project explorer does not changed Expected behavior: After change checkbox state , the project id must be displayed (or not displayed if before changes checkbox was enabled) Observed behavior: Artefact id in the project explorer does not displayed in any cases. OS and version: CHE 5.17.0 ; Chrome 59.0 ; Fedora 25

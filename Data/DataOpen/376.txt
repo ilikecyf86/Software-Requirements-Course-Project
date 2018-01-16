@@ -1,0 +1,3 @@
+Log data when user access a workspace
+kind/eclipse-che kind/enhancement status/analyzing kind/eclipse-che 
+From @tolusha on August 27, 2016 12:56 Write to log file each time when user access a workspace. Log file should be located near the tomcat access log. Log data: access timestamp in some universal format. user name workspace id workspace name Trigger: User request a workspace by @get 'api/workspace` method Copied from original issue: codenvy/codenvy#638

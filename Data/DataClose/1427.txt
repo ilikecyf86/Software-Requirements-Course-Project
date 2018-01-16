@@ -1,0 +1,3 @@
+Newly created file does not automatically appear in project explorer
+kind/bug severity/P2 team/platform 
+Steps to reproduce: Start Che on Windows. Mount an existing Win dir into :/data, for example -v /c/Users/Codenvy/che-data:/data Create a project. Create a new file in a terminal New file does not appear in project tree. Project explorer has to be manually refreshed. It works though when the data volume binding looks like /data:/data, i.e. there's no Win file system involved.

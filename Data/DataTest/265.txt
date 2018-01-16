@@ -1,0 +1,3 @@
+intellisense breaks after rename
+kind/bug 
+reported from user. Take a class name, Shift-F6 once and then rename it in the editor. Immediately after changing the name, hit CTRL-SPACE for auto-complete. The auto-complete suggestions will still be recommending the old name and not reflect the new name.

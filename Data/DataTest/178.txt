@@ -1,0 +1,3 @@
+Do not call the same resource multiple time on loading
+kind/bug 
+When UD loads it calls these requests 2 times (both of them): http://dev.box.com/api/user/inrole?role=admin&scope=system&scopeId= http://dev.box.com/api/user/inrole?role=user&scope=system&scopeId= See attached screenshot [^Selection_047.png]. We can improve that.

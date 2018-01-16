@@ -1,0 +1,3 @@
+Github PR panel: use .github/PULL_REQUEST_TEMPLATE.md
+kind/enhancement 
+Reproduction Steps: Import an existing project on Github containing Che open the PR panel we expect the content of .github/PULL_REQUEST_TEMPLATE.md to be in PR Comments section by default

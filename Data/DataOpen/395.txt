@@ -1,0 +1,3 @@
+Can't boot up ws-agent with huge workspace.
+kind/question 
+Reproduction Steps: Place project on NFS volume. Create huge project (e.g. npm install after cloning ng2-admin) Restart workspace. OS and version: 5.15.0-SNAPSHOT c7c1ee8 Diagnostics: Small size workspaces work fine on the same instance. Referring docker exec -it <container-id> ps -ef, my ws-agent was blocked in chown -R usr /projects. Is it possible to run chown in background ?

@@ -1,0 +1,3 @@
+Workspace project storage created with insecure permissions
+kind/enhancement 
+Where -che- is the root of the app, -che-/workspaces/-workspace- and -che-/workspaces/-workspace-/-project- are both created with 777 permissions. It is also owned by 33:33 which isn't correct, but the permissions is much more serious issue.

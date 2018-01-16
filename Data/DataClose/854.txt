@@ -1,0 +1,3 @@
+Possible to unsubscribe handler from RequestHandlerManager
+kind/enhancement team/plugin 
+Current implementation of RequestHandlerManager allows to subscribe for handling specific events, but it doesn't allow to unsubscribe handler by method name. So there is a need to extend RequestHandlerManager by adding a new method which will unsubscribe handler by given method name. Proposed signature: public boolean unregister(String method). Returned value Description true If manager contained the specific handler for given method name false If manager didn't contain specific handler for given method name

@@ -1,0 +1,3 @@
+Continuous Testing support on Che
+kind/enhancement kind/epic kind/enhancement kind/enhancement kind/epic 
+Going beyond just a regular execution of unit tests we could think about Continuous Testing experience. Whenever a change is made in the code, IDE would run all the related tests (some sort of extended code coverage). There are plugins for both Eclipse and IDEA which provide it and I think it would be awesome to have something like that in CHE. I think this one is the most popular one: https://infinitest.github.io/

@@ -1,0 +1,20 @@
+Che 5.1.1 times out on F25
+kind/question 
+Running docker run eclipse/che start on my Fedora 25 installation fails. I have tried to set the CHE_HOST, but no difference. The startup times out, but the dashboard can be opened using the hostaddress:8080/dashboard. Reproduction Steps: On Fedora 25, using docker-latest, run docker run eclispe/che start Che version: 5.1.1. OS and version: Fedora 25 (updated) Docker version: Client:
+ Version:         1.12.6
+ API version:     1.24
+ Package version: docker-common-1.12.6-4.gitf499e8b.fc25.x86_64
+ Go version:      go1.7.4
+ Git commit:      f499e8b/1.12.6
+ Built:           Fri Jan 13 11:03:22 2017
+ OS/Arch:         linux/amd64
+
+Server:
+ Version:         1.12.6
+ API version:     1.24
+ Package version: docker-common-1.12.6-4.gitf499e8b.fc25.x86_64
+ Go version:      go1.7.4
+ Git commit:      f499e8b/1.12.6
+ Built:           Fri Jan 13 11:03:22 2017
+ OS/Arch:         linux/amd64
+ Che cli.log output: https://gist.github.com/gbraad/7daae7837504d63973af7665e8a75f9d

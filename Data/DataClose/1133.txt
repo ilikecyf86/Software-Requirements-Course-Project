@@ -1,0 +1,3 @@
+There is not output in a terminal after starting commands (regression)
+kind/bug severity/blocker 
+Reproduction Steps: Create any project with commands Start commands Expected behavior: Commands result output showed in a terminal Observed behavior: The commands worked properly but in terminals shows only Command Line text and Preview URL. After refreshing a page the commands output appears. Che version: 5.9.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

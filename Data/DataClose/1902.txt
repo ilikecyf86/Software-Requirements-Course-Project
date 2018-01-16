@@ -1,0 +1,19 @@
+changing recipe location causes an error
+kind/question 
+Changing recipe location to something else rather than codenvy/ubuntu_jdk8 causes an error when startin the workspace. Reproduction Steps: I have created a workspace 'default blank'. It's default recipe location is codenvy/ubuntu_jdk8 "recipe": {
+        "location": "codenvy/ubuntu_jdk8",
+        "type": "dockerimage"
+      }
+ I have also created a new docker image using $docker commit command and pushed to the docker hub. The new image is based on codenvy/ubuntu_jdk8 and it's name is marmolata/ubuntu_jdk8_123 When I change the receipe location to "recipe": {
+        "location": "marmolata/ubuntu_jdk8_123",
+        "type": "dockerimage"
+      }
+ then I have an error when start the workspace. I also tried with other images, like "recipe": {
+        "location": "ubuntu",
+        "type": "dockerimage"
+      }
+ or "recipe": {
+        "location": "ankitkariryaa/sbt-javac",
+        "type": "dockerimage"
+      }
+ and it only failed to start. Expected behavior: I expect it would work as if it was codenvy/ubuntu_jdk8. Observed behavior: Che version: 5.0.0-latest OS and version: Ubuntu 16.04 LTS Docker version: 1.12.1, build 23cf638 Additional information: Problem started happening recently, didn't happen in an older version of Che: Yes Problem can be reliably reproduced, doesn't happen randomly: Yes

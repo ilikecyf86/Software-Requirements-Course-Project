@@ -1,0 +1,34 @@
+Give projects the ability to set default parent directory
+kind/question kind/enhancement kind/question 
+Eclipse Che version 5.1.2. I want to set the default "parent directory" of a project/template/example (I'm a bit confused by the naming). I thought the path property of a project specified the default parent directory, but this doesn't seem to be working. Example project: [
+  {
+    "name":"reactive-layer",
+    "displayName":"Reactive Layer",
+    "path":"/charms/layers",
+    "description":"A Basic reactive layer",
+    "projectType":"blank",
+    "mixins":[],
+    "attributes":{},
+    "modules":[],
+    "problems":[],
+    "source":{
+      "type":"git",
+      "location":"https://github.com/juju-solutions/template-reactive-python.git",
+      "parameters":{}
+    },
+    "commands":[],
+    "links":[],
+    "category":"Samples",
+    "tags":["python","juju"]
+  }
+] I'm working on a Juju stack for eclipse Che. This is what the projects directory should look like. /projects
+└── charms
+    ├── layers
+    │  ├── layer-a
+    │  └── layer-b
+    ├── interfaces
+    │  └── interface-x
+    └── builds
+        ├── charm-a
+        └── charm-b
+ When creating a "layer" project, it should be put in /projects/charms/layers. When creating an interface project, it should be put in /projects/charms/interfaces etc. Is is possible to customize Che to have this behavior? Note that each layer and interface should have its own git repo, has different build commands etc, so they really are different projects.

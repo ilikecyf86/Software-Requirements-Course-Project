@@ -1,0 +1,51 @@
+Che 6 on OCP: Failed Workspace Start
+kind/bug severity/blocker team/platform status/in-progress sprint/current-sprint status/in-progress 
+Description Automated QA tests show an enormous number of failed workspace starts. As a result, most of tests fail because workspace has never started, or a workspace somehow depends on the workspaces that should have started before but never did so. Server says that: 2017-11-16 14:10:02,861[aceSharedPool-3]  [ERROR] [w.i.o.OpenShiftInternalRuntime 123]  - Failed to start of OpenShift runtime. An error has occurred.
+ where An error has occurred is KubernetesClientException Caused by: java.net.SocketTimeoutException: connect timed out It happens both when starting and deleting workspaces. Server logs are also full of: WARNING: A connection to https://kubernetes.default.svc/ was leaked. Did you forget to close a response body? To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);
+
+ which is described in this issue - #5902 This is how exception looks like: 2017-11-16 15:57:19,190[nio-8080-exec-7]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 238]   - Starting workspace 'admin/workspace8pnbim' with id 'workspace0p8c84wq7r55599f' by user 'admin'
+Exception in thread "OkHttp Dispatcher" io.fabric8.kubernetes.client.KubernetesClientException: An error has occurred.
+	at io.fabric8.kubernetes.client.KubernetesClientException.launderThrowable(KubernetesClientException.java:61)
+	at io.fabric8.kubernetes.client.KubernetesClientException.launderThrowable(KubernetesClientException.java:52)
+	at io.fabric8.openshift.client.internal.OpenShiftOAuthInterceptor.authorize(OpenShiftOAuthInterceptor.java:122)
+	at io.fabric8.openshift.client.internal.OpenShiftOAuthInterceptor.intercept(OpenShiftOAuthInterceptor.java:71)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:179)
+	at okhttp3.RealCall$AsyncCall.execute(RealCall.java:129)
+	at okhttp3.internal.NamedRunnable.run(NamedRunnable.java:32)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:124)
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:220)
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:146)
+	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:186)
+	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:121)
+	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:100)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:120)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+	at io.fabric8.kubernetes.client.utils.HttpClientUtils$2.intercept(HttpClientUtils.java:90)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
+	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:179)
+	at okhttp3.RealCall.execute(RealCall.java:63)
+	at io.fabric8.openshift.client.internal.OpenShiftOAuthInterceptor.authorize(OpenShiftOAuthInterceptor.java:109)
+	... 9 more
+ Tests fail both locally and on CI. I've observed that it happens after tests have been running for 40-50 mins.

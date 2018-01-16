@@ -1,0 +1,3 @@
+documentation: Improving Incremental Builds out of date for GWT soft permutations
+
+#4298 introduced a new way to generate IDE.gwt.xml, but the documentation still refers to the old way. Can these instructions be updated with the new way to turn on soft permutations?

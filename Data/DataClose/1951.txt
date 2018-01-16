@@ -1,0 +1,78 @@
+server and clent interaction
+
+Excuse me , I want to use the Extension Services on my artik-ide service, the client callback is strange, it is the content of IDE.jsp <title>Eclipse Che</title> <script type="text/javascript" language="javascript">
+
+    /**This parameter is needed to define sdk mode.*/
+    window.sdk = 1;
+
+    /**
+     * Base IDE object
+     */
+
+    window.IDE = {};
+
+    /**
+     * Initial configuration
+     */
+
+    window.IDE.config = {
+        "restContext": "/wsmaster/api"
+    };
+
+    /**
+     * Event handlers
+     */
+
+    window.IDE.eventHandlers = {};
+
+    window.IDE.eventHandlers.initializationFailed = function (message) {
+        if (message) {
+            var err = new Error(message);
+            window.alert(err.stack);
+        } else {
+            window.alert("Unable to initialize IDE");
+        }
+    };
+</script>
+
+<script type="text/javascript" language="javascript" src="/_app/browserNotSupported.js"></script>
+<script type="text/javascript" language="javascript" src="/_app/_app.nocache.js"></script>
+ my server code is: @path("json-example/{ws-id}") public class JsonLocService { private ProjectManager projectManager; @Inject public JsonLocService(ProjectManager projectManager) { this.projectManager = projectManager; } @get @path("{projectPath}") public Map<String, String> countLinesPerFile( @pathparam("projectPath") String projectPath) throws ServerException, NotFoundException, ForbiddenException { Map<String, String> linesPerFile = new LinkedHashMap<>();
+RegisteredProject project = projectManager.getProject(projectPath);
+
+for (FileEntry child : project.getBaseFolder().getChildFiles()) {
+  if (isJsonFile(child)) {
+    linesPerFile.put(child.getName(), Integer.toString(countLines(child)));
+  }
+}
+
+return linesPerFile;
+ } private static int countLines(FileEntry fileEntry) throws ServerException, ForbiddenException { String content = fileEntry.getVirtualFile().getContentAsString(); String[] lines = content.split("\r\n|\r|\n"); return lines.length; } private static boolean isJsonFile(FileEntry fileEntry) { return fileEntry.getName().endsWith("json"); } } The client code is @override public void actionPerformed(ActionEvent e) {     String url =appContext.getDevMachine().getWsAgentBaseUrl() + "/getmyfile2/" +
+            appContext.getWorkspaceId() +
+            appContext.getRootProject().getLocation();
+    Window.alert(url);
+    asyncRequestFactory.createGetRequest(url, false).send(
+            new AsyncRequestCallback<Map<String, String>>(unmarshaller) {
+
+                @Override
+                protected void onSuccess(Map<String, String> linesPerFile) {
+                    for (Map.Entry<String, String> entry : linesPerFile.entrySet()) {
+                        String fileName = entry.getKey();
+                        String loc = entry.getValue();
+                        notificationManager.notify(
+                                "File " + fileName + " has " + loc + " lines.",
+                                StatusNotification.Status.SUCCESS,
+                                StatusNotification.DisplayMode.FLOAT_MODE);
+                    }
+                }
+
+                @Override
+                protected void onFailure(Throwable exception) {
+                    notificationManager.notify(
+                            exception.getMessage(),
+                            StatusNotification.Status.FAIL,
+                            StatusNotification.DisplayMode.FLOAT_MODE);
+                }
+            });
+}
+ I want to get the project's file lines, but the return value is IDE.jsp, can you help me?

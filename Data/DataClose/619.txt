@@ -1,0 +1,3 @@
+Inject CHE Keycloak theme into Keycloak container
+kind/task sprint/current-sprint team/production status/in-progress status/in-progress sprint/current-sprint 
+In #5786 I prepared a draft of Che Keycloak theme. We have to inject Che theme files with puppet into themes directory. Path inside Keycloak container: /opt/jboss/keycloak/themes. Also branch che-multiuser-che-theme contains necessary settings to apply this theme by default (not tested).

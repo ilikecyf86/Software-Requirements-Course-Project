@@ -1,0 +1,3 @@
+Project configuration is failed after import maven project
+kind/bug 
+Open IDE, go to 'Workspace' -> 'Import Project..'. Note: this action need to do a quite fast. Select 'Git', type name project and import it (e.g.git@github.com:idexmai/testRepository.git). Select 'Maven Project' and click 'Save' button in the configuration form. Expected: the configuration form should be closed and the project be configured as maven. Actual: there is '..Configuration Fail' form and the project is not configured as maven.

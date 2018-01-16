@@ -1,0 +1,3 @@
+Port git dedicated panel to che6
+kind/task status/open-for-dev team/enterprise sprint/current-sprint status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+Epic: #5128 Merge https://github.com/eclipse/che/tree/CHE-6608 into https://github.com/eclipse/che/tree/che6 Add selenium test

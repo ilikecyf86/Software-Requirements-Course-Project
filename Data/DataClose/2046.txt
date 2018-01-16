@@ -1,0 +1,3 @@
+Properly handle the dimensions of split editors.
+kind/bug severity/P2 team/plugin 
+An editor part may be hidden when the IDE is closed and then opened in the window with smaller dimensions. Reproduction Steps: Open the IDE and three files with splitting the editor Close the IDE Decrease the window size and open the IDE again See the result

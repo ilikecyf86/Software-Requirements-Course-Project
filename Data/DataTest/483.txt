@@ -1,0 +1,11 @@
+Question about the "Using che.sh Script" way to start che
+
+From the documentation: https://eclipse-che.readme.io/docs/usage-docker#using-chesh-script, it says: START CHE CONTAINER AND CHE SERVER IN IT
+./che.sh -i
+
+STOP CHE SERVER WITHOUT KILLING A CONTAINER
+./che.sh stop
+
+STOP CHE CONTAINER
+./che.sh stop -i -t
+ I'm not quite clear how we can get the che.sh shell. Do we have to clone this repo (https://github.com/eclipse/che), and mvn clean install it to generate the required che.sh?

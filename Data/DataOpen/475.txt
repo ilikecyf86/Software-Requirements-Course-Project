@@ -1,0 +1,3 @@
+Changes not displayed in the splitted commands editor tabs
+kind/enhancement kind/bug severity/P2 kind/enhancement 
+Reproduction Steps: Go to any project with commands -> commands explorer Click twice on the any command and go to the commands editor Click right mouse button on the command tab and in the context menu choose "split pane in two columns" Do some changes in the opened tab Pay attention to another tab Expected Behavior : The changes displayed in the both tabs . Observed Behavior : The changes displayed only in the one tab . Attachment :

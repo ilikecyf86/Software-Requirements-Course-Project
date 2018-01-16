@@ -1,0 +1,3 @@
+Eclipse Xtend
+kind/enhancement status/open-for-dev Improvement Improvement 
+I would like to be able to use Xtend in Che. Maven can already do all the compiliing work, but the editor needs code completion and syntax highlighting

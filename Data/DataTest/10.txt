@@ -1,0 +1,3 @@
+Add README for each plugin
+kind/enhancement 
+To help people who want to contribute plugins, extend them, or just understand all features provided, having a short README per plugin describing the plug-in's main features would be helpful.

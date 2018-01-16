@@ -1,0 +1,3 @@
+Does CHE Keep the editing histories of a file?
+kind/question wontfix 
+When a file is modified, does che keep the editing histories of it on the service side? And I can get them from the rest API. I ask about this feature, because we use che for students, for their programming training. We want to find a way to know about all his changes, so we know how he/she was thinking when programming

@@ -1,0 +1,3 @@
+Create repo to store large files such doc images.
+kind/docs 
+Currently I have the images at https://github.com/JamesDrummond/che-doc-images.

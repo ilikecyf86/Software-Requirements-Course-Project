@@ -1,0 +1,3 @@
+In Windows 10, sometimes workspaces hang when being stopped, and then when you start them again, they malfunction
+kind/question 
+Sometimes, it hangs when you stop a workspace. So I restart the host computer, and I restart Che. I'm able to successfully start the workspace, but it looks like this: http://i.imgur.com/MVIXmzM.png Notice no Output tab on the bottom, and the dropdown box of Run Commands doesn't work. When I stop the workspace again, it succeeds. Afterwards, if I restart the workspace, everything works normally.

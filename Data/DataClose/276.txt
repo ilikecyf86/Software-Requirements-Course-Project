@@ -1,0 +1,3 @@
+Fix project import menu wording
+kind/bug team/ide 
+Description In project import menu we have "Import From Codenvy Config..." menu. I think it should not mention Codenvy. Reproduction Steps OS and version: Diagnostics:

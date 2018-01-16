@@ -1,0 +1,57 @@
+Debugger goes into ClassLoader when performing 'Step into' command
+kind/bug team/enterprise severity/P2 
+Java console project for testing can be found here. Reproduction Steps: Open workspace and import test project https://github.com/dmytro-ndp/java8-static.git. Configure it as a maven project. Add maven command "build-and-debug": clean install && java -jar -Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y ${current.project.path}/target/*.jar Open "src/main/java/test/App.java" file inside editor and set breakpoint at line 6. Call top menu command "Run > Edit Debug Configurations..." and create Java Remote configuration with port=8000. Invoke "build-and-debug" command and wait until there is "Listening for transport dt_socket at address: 8000" message in console. Call top menu command "Run > Debug > Remote java" Wait until Che stops execution in line 6, and then go into constructor by clicking on "Step into" button in debug console. Expected behaviour: Che opens Book class and stop execution in the constructor. Actual misleading behaviour: Che opens ClassLoader instead of Book class. Screencast: Selenium tests: There is selenium test MultimoduleProjectDebuggingTest.shouldGoIntoConstructor() which should be enabled after this bug is fixed. OS and version: Ubuntu 14.04 LTS Browser: Chrome Version 55.0.2883.87 (64-bit) Che version: 5.4.0-SNAPSHOT. Revision: 7187062 Diagnostics: ndp@ndp:~/projects/qa$ docker run -ti -v /home/ndp/data/che/:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:nightly info
+WARNING: No swap limit support
+INFO: (che cli): nightly - using docker 1.12.6 / native
+INFO: (che download): Pulling image eclipse/che:nightly
+
+nightly: Pulling from eclipse/che
+Digest: sha256:697904f8f9934b880fbef927a493394a658cca17ca0bfcb977eb720b984e7bf9
+Status: Image is up to date for eclipse/che:nightly
+
+CLI:
+ TTY: true
+ Daemon: /var/run/docker.sock
+ Image: eclipse/che:nightly
+ Version: nightly
+ Command: info
+ Parameters: info
+Mounts:
+ /data: /home/ndp/data/che/
+ /data/instance: not set
+ /data/backup: not set
+ /repo: not set
+ /assembly: not set
+ /sync: not set
+ /unison: not set
+ /chedir: not set
+System:
+ Docker: native
+ Proxy: not set
+Internal:
+ CHE_VERSION: nightly
+ CHE_HOST: 172.19.20.32
+ CHE_INSTANCE: /home/ndp/data/che//instance
+ CHE_CONFIG: /home/ndp/data/che/
+ CHE_BACKUP: /home/ndp/data/che//backup
+ CHE_REGISTRY: /version
+ CHE_DEBUG: false
+ IP Detection: 172.19.20.32
+ Initialized: true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:nightly
+ IMAGE_CHE=eclipse/che-server:nightly
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+che.env:
+ CHE_HOST=172.19.20.32
+ CHE_OAUTH_GITHUB_CLIENTID=***
+ CHE_OAUTH_GITHUB_CLIENTSECRET=***
+ CHE_OAUTH_GITHUB_AUTHURI=https://github.com/login/oauth/authorize
+ CHE_OAUTH_GITHUB_TOKENURI=https://github.com/login/oauth/access_token
+ CHE_OAUTH_GITHUB_REDIRECTURIS=http://localhost:${SERVER_PORT}/wsmaster/api/oauth/callback

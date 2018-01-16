@@ -1,0 +1,3 @@
+Eclispse CHE doesn't load in browser(Chrome/Firefox)
+kind/question 
+After starting the CHE server , and going to the address http://localhost:8080/dashboard/#/ in browser, it just keeps kind of buffering. Nothing happens for hours.

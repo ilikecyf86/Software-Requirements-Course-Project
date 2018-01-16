@@ -1,0 +1,3 @@
+Editor doesn't handle Home/End keys on mac os
+kind/bug severity/P2 
+There is a problem with handling Home/End keys in editor under mac os in chrome browser. Influences on the selenium tests under OSX. Reproduction Steps: Open any file and try to navigate in a row via Home/End key. OS and version: OSX 10.11.4 Che revision: ed06339 Chrome version: 56.0.2924.87 (64-bit)

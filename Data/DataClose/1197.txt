@@ -1,0 +1,3 @@
+Gitignored files get deleted when starting and stoping workspace
+kind/question 
+Gitignored files get deleted when starting and stoping workspace. This is a problem since may projects keep configurations and enviroment variables in gitignored folders Reproduction Steps: Turn on workspace import a project with a folder that is gitignored place a new file in that folder turn off workspace turn back on workspace the file recently created will be deleted OS and version: OS: Ubuntu 16.04 Version. 5.6.0-SNAPSHOT Diagnostics: N/A

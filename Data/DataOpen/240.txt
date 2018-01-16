@@ -1,0 +1,3 @@
+POC for Action API and loader for JavaScript plugins
+kind/enhancement team/ide sprint/next-sprint status/in-progress sprint/current-sprint sprint/next-sprint status/in-progress 
+Description Here we want to start developing JavaScript API for IDE plugins. We will take Action API because it simple and well understanding. Also need to think about plugin loading process: how to embed JS plugin to the IDE application; assembly procedure As result we expect simple example of implemented JavaScript API and draft of specification Dpends on : Adapt IDE Action API for the JavaScript endpoint #6788

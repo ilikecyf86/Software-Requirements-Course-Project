@@ -1,0 +1,9 @@
+[SPI] Prefix names of objects in OpenShift recipe on provisioning step
+kind/task team/platform target/branch status/in-progress status/code-review status/in-progress status/code-review 
+It is needed to rename objects in OpenShift recipe to make it possible to create two OpenShift workspace in one project aka namespace. To make it possible it is needed to prefixes all objects in original user's OpenShift Recipe with some unique for workspace value like id. It would be more readable to prefix them with workspace name (it is also unique) but OpenShift objects name is not сompatible with workspace name pattern: Workspace name pattern is [a-zA-Z0-9][-_.a-zA-Z0-9]{1,18}[a-zA-Z0-9] see While OpenShift object name must match the regex [a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)* (e.g. 'example.com') Now it is known the following list of fields which must be updated: Pod
+    metadata:
+        name: PREFIX Service
+    metadata:
+        name: DO_NOT_PREFIX,  # see UPDATE Route
+    metadata:
+        name: PREFIX Update: Services names should not be prefixed because a user may use it for communication between pods. Note that in this case, a workspace will fail to start if there is another running workspace which contains at least one service with the same name. Removed prefixing of labels and selectors keys. Issues with ensuring that services use only pods in the same workspace will be solved by adding label and selector fields entry with workspace id within this issue.

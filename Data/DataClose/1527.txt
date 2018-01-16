@@ -1,0 +1,3 @@
+[Question] Is it possible to Repackage Che as a Desktop IDE?
+kind/question 
+I have been trying out Che in Codenvy for a while and I fell in love on many aspects that the Eclipse Platform lacks. Most Notably the UI because it's clean to look at and reduces cognitive load when I code and I'm liking the Intellisense it provides (it just lacks the Quick Suggestions I need for Node.js and Proper ESLint support). If it's possible, is there a way to compile Che without requiring to edit most of the codebase?

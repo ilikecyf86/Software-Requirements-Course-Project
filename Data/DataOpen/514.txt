@@ -1,0 +1,3 @@
+Add support for JSX in Typescript (TSX)
+kind/enhancement level/beginner team/plugin team/ide team/plugin 
+In 5458966 support for typescript and jsx files has been introduced. Typescript does support JSX only in files with the tsx extension (babel and other transformers usually do not distinct between ".jsx" and ".js") It would be nice to have ".tsx" mapped to Typescript - even if syntax highlighting for JSX within Typescript is not yet available. Eclipse Che 5.0.1 (756f46a)

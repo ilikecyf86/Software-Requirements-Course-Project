@@ -1,0 +1,3 @@
+Eclipse Che JS Linter doesn't analyze the JS code on the fly.
+kind/question kind/enhancement kind/bug severity/P2 kind/question kind/enhancement severity/P1 severity/P2 team/ide 
+Whenever I edit a JS File, the linter has to always wait for the save event to update it's analysis. It wuld be nice if the JS Linter lints on the fly without waiting for the file to be saved.

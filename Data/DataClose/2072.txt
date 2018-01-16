@@ -1,0 +1,3 @@
+Endpoint for create and delete branch in eclipseche-->git-->branches
+kind/question 
+I need to rename master branch by another name in eclipseche-->git-->branches using api. can anyone please help me with the endpoint for the same

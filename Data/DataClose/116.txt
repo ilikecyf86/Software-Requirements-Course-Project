@@ -1,0 +1,3 @@
+Include Organization tests into acceptance tests execution on the Multiuser Che
+kind/task status/open-for-dev team/production status/in-progress status/open-for-dev sprint/current-sprint status/in-progress 
+Description We have separate package org.eclipse.che.selenium.dashboard.organization of selenium tests which is dedicated to Organization Management in Mutli-User Eclipse Che. We need to find the way to run organization package automatically in case of testing the Che which is run in multi-user mode. Possible solution: add special annotation above the Organization test class - @Multiuser, to mark the class to be excluded from the execution in case of testing Single User Che. We can use listener IAnnotationTransformer to fix list of executing tests.

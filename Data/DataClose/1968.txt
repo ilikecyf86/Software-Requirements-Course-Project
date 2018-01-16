@@ -1,0 +1,3 @@
+Create electron client packaging for Windows (exe), Mac (dmg), and Linux (zip / tgz)
+kind/enhancement sprint/next-sprint status/analyzing team/ide sprint/current-sprint status/analyzing sprint/next-sprint status/in-progress status/in-progress sprint/current-sprint 
+Create electron client packaging for Windows (exe), Mac (dmg), and Linux (zip / tgz). The electron packagaing should have a nice icon for the product that it represents, provide minimize / maximize, and also have an icon that appears in the system tray when minified. For start will be something simple without ability connect to remote codenvy host.

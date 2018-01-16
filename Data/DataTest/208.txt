@@ -1,0 +1,3 @@
+Make ability to group by directory list of files when performing git diff
+Improvement 
+For now, when viewing a list of changed files by git compare we see a row list of files. We need to add ability to group the list by directory.

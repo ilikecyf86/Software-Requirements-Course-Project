@@ -1,0 +1,3 @@
+Move WsAgent and Terminal Checkers to agents module, check and clean
+kind/task team/platform 
+1/ org.eclipse.che.plugin.docker.machine.ext.DockerMachineExtServerChecker.class and org.eclipse.che.plugin.docker.machine.ext.DockerMachineTerminalChecker.class are plased to docker machine plugin but they have nothing to do with docker and machines. Let's move them to agents module 2/ It seems this will not correctly work for the all configs (only when we have agent as a local archive ect). It has to be validated. Also we need to consider AgentRegistry API to check this kind of things, let's discuss then

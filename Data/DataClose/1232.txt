@@ -1,0 +1,3 @@
+Cannot edit multi-line recipe in stack
+kind/question kind/enhancement severity/P1 kind/question severity/P1 
+I cannot edit the recipe in stack unless I do it through raw configuration which is one line. Not sure this was ever a feature or if this issue is an enhancement request.

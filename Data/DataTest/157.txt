@@ -1,0 +1,60 @@
+Che fails to communicate with Workspace agent
+
+Hi, I'm have eclipse che running natively on a CentOS 7 instance at google cloud platform. I'm able to get che interface on my browser, but cannot start a project. from my che.properties file machine.docker.local_node_host=172.17.0.1
+api.endpoint=http://_my instance external IP_:${SERVER_PORT}/ide/api
+ from my /etc/hosts (putted manualy): 172.17.0.1 che-host installed Docker as pre-requirement Docker version 1.10.3, build 20f81dd from my ~/.bash_profile file export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.77-0.b03.el7_2.x86_64
+export CHE_HOME=/opt/eclipse-che-4.1.0
+export CHE_LOCAL_CONF_DIR=$CHE_HOME/conf
+export CHE_DOCKER_MACHINE_HOST=172.17.0.1
+ ifconfig output docker0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 0.0.0.0
+        inet6 fe80::42:68ff:fe05:66b1  prefixlen 64  scopeid 0x20<link>
+        ether 02:42:68:05:66:b1  txqueuelen 0  (Ethernet)
+        RX packets 3025  bytes 334688 (326.8 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2563  bytes 390278 (381.1 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1460
+        inet <google internal network IP for instance>  netmask 255.255.255.255  broadcast 10.132.0.2
+        inet6 fe80::4001:aff:fe84:2  prefixlen 64  scopeid 0x20<link>
+        ether 42:01:0a:84:00:02  txqueuelen 1000  (Ethernet)
+        RX packets 402499  bytes 1381254390 (1.2 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 292323  bytes 58381431 (55.6 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 0  (Local Loopback)
+        RX packets 1061  bytes 57399 (56.0 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1061  bytes 57399 (56.0 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+veth53e0def: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet6 fe80::1005:77ff:fe1d:83a4  prefixlen 64  scopeid 0x20<link>
+        ether 12:05:77:1d:83:a4  txqueuelen 0  (Ethernet)
+        RX packets 42  bytes 6574 (6.4 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 40  bytes 7991 (7.8 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+ firewalld rules for trusted zone instance-1 ~]$ sudo firewall-cmd --permanent --zone=trusted --list-all
+trusted (default, active)
+  interfaces: docker0
+  sources:
+  services:
+  ports: 32768-65535/tcp 32768-65535/udp 4243/tcp 4401/tcp 4411/tcp 4403/tcp 22/tcp
+  masquerade: no
+  forward-ports:
+  icmp-blocks:
+  rich rules:
+
+ output from che console in browser [STDOUT] 2016-04-05 19:40:39,511[main] [INFO] [o.a.c.http11.Http11NioProtocol 470] - Starting ProtocolHandler ["http-nio-4401"]
+[STDOUT] 2016-04-05 19:40:39,515[main] [INFO] [o.a.catalina.startup.Catalina 642] - Server startup in 4795 ms
+[STDOUT] 2016-04-05 19:40:39,515[main] [INFO] [o.a.catalina.startup.Catalina 642] - Server startup in 4795 ms
+[STDOUT] 2016-04-05 19:40:39,712[nio-4401-exec-1] [WARN ] [i.ContainerResponse$BodyWriter 90] - Client has aborted connection. Response writing omitted.
+[STDOUT] 2016-04-05 19:40:39,712[nio-4401-exec-1] [WARN ] [i.ContainerResponse$BodyWriter 90] - Client has aborted connection. Response writing omitted.
+ this happens in Starting workspace agent stage, after below stages Initializing workspace ... completed
+Starting workspace runtime ... completed

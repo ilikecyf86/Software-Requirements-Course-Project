@@ -1,0 +1,3 @@
+creating new agents
+kind/question 
+Hi, I created custom agent as in https://www.eclipse.org/che/docs/plugins/agents/index.html How do i extend che to show my custom agent while creating workspace. In other words, how do i link this with Che assembly - so that i can start Che with this Custom assembly.

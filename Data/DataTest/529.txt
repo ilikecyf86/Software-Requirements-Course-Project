@@ -1,0 +1,3 @@
+Execute commands on auxiliary machines
+new feature 
+As discussed in #248 it should be possible to run commands on auxiliary machines. This is possible via the REST API, but not implemented in the UI yet.

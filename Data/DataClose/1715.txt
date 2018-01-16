@@ -1,0 +1,3 @@
+non-ASCII character support for git username
+kind/bug severity/P2 team/ide 
+non-ASCII character change to �� when execute git commit

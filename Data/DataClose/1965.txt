@@ -1,0 +1,7 @@
+Workspace RUNNING status event is not published after SNAPSHOTTING status
+kind/bug sprint/current-sprint status/open-for-dev team/platform sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+Workspace statuses are clearly defined by the the WorkspaceStatus javadoc. For the SNAPSHOTTING status the flow is the following:   RUNNING -> SNAPSHOTTING -> RUNNING
+ On snapshot creation the following events are published: SNAPSHOT_CREATING -> SNAPSHOT_CREATED
+SNAPSHOT_CREATING -> SNAPSHOT_CREATION_ERROR
+ But after workspace status changed back to RUNNING WorkspaceStatusEvent is not published. Mostly a workspace lifecycle consists of the following events STARTING -> RUNNING -> (SNAPSHOTTING -> RUNNING)[0+ times] -> STOPPING -> STOPPED
+ In this case clients should consider SNAPSHOT_CREATION_ERROR or SNAPSHOT_CREATION_ERROR as the ones which switch workspace status back to running on views, but it's not really convenient and clear for the client. Along with event publishing i propose to add a new field to WorkspaceStatusEvent which is previousStatus that allows client to see the difference between the states when workspace is started and when workspace is running again after it was snapshotting and react appropriately.

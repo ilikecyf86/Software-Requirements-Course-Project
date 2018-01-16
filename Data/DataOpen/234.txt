@@ -1,0 +1,3 @@
+Improve "references" and "declarations" LSP view
+kind/enhancement 
+We would like to support features like in the "usages" view of the current Java support the LSP references and declarations views. In particular Tree view of matches instead of flat list Showing excerpts of the source code showing the matches. Language server plugins can contribute code to build paths and compute excerpts (optinal)

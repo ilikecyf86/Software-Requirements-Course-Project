@@ -1,0 +1,3 @@
+Using authentication to access dashboard / IDE
+kind/enhancement kind/question 
+I was wondering if it is possible to use some sort of authentication before accessing the Che dashboard or a Che IDE. I'm not very familiar with Tomcat either so maybe it is possible to use htaccess protection (or the equivalent for Tomcat server), but I'm quite surprised that Che didn't provide an authentication mechanism, is there any future plan to add this feature? PS : I need to protect the dashboard from people using the workspaces (and protect workspaces for each user)

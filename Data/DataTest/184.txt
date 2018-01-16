@@ -1,0 +1,3 @@
+Create add target widget
+status/pending-merge 
+When user clicks plus button on category title section - add target widget popup should appear with two choices: Add new target manually (usrer will have to fill all data by manually) Use discovery (will display the list of available IP addresses)

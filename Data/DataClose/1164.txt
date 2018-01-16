@@ -1,0 +1,3 @@
+Machine output of just started worspace is visible on all other started workspaces
+kind/bug severity/blocker sprint/current-sprint status/in-progress status/in-progress 
+Reproduction Steps: Create and start a workspace Create a other workspace and change its machine name Start second workspace and see the first workspace Processes area Observed behavior: In the first workspace Processes area appears the second workspace machine output Che version: 5.8.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.6 Che install: Docker container Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes]

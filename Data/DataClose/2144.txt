@@ -1,0 +1,3 @@
+Multi-Machine Workspace creation
+kind/bug status/open-for-dev sprint/next-sprint team/plugin sprint/next-sprint status/open-for-dev status/code-review sprint/current-sprint status/code-review sprint/current-sprint 
+When creating a workspace the names of the machines are not displayed for allocating available ram. Expected behavior: Names of each machine. "dev-machine" and "db" in the java-myqsl stack sample. Observed behavior: All machines are labelled machine. Che version: Hackathon codenvy OS and version: Debian - Linode remote cloud Additional information: Problem started happening recently, didn't happen in an older version of Che: No Problem can be reliably reproduced, doesn't happen randomly: Yes

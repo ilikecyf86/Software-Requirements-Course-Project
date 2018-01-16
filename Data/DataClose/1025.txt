@@ -1,0 +1,3 @@
+Add ${workspace.id} macro
+kind/enhancement 
+Like ${workspace.name}, this would be really helpful as we use the workspace ID to uniquely identify workspaces in the preview URL and for automation of docker image generation.

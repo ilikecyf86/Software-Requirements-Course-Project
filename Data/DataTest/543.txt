@@ -1,0 +1,3 @@
+Che cannot create projects with SELinux enabled
+kind/bug status/open-for-dev 
+In Eclipse Che 4.0.0-beta-13. Trying to create a simple project fails in Fedora 22 in the third stage "Injecting and starting workspace agent" [STDERR] unzip: cannot find or open /mnt/che/ws-agent.zip, /mnt/che/ws-agent.zip.zip or /mnt/che/ws-agent.zip.ZIP. After su -c "setenforce 0" all goes ok. And projects can be created without problem. May be is a problem with volume labels in Docker? link

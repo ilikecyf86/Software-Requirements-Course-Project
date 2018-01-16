@@ -1,0 +1,3 @@
+Make OpenShift pod removal timeout configurable
+kind/task team/platform target/che6 
+Description Based on changes in PR it's needed to define Che property which will set the time limits for OpenShift pod removal and refactor related code in accordance to this.

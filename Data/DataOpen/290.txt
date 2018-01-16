@@ -1,0 +1,3 @@
+Extend guide render to display and execute che actions
+kind/task status/analyzing team/enterprise 
+Extend render (if needed) to display and execute che actions. Epic: #6150

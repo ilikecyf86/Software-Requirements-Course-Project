@@ -1,0 +1,3 @@
+Add support for project type auto-detection
+kind/question kind/enhancement kind/question 
+The project hierarchy for a maven Java project no longer rolls up the package directories into one dir for java packages. This makes navigation more difficult due to having to navigate package names.

@@ -1,0 +1,3 @@
+Add support for PHPUnit testing
+kind/enhancement 
+Add support for testing PHP scripts with the use of PHPUnit engine. To be able to create a PR with support implementation, issue #3452 has to be closed first. It would also be nice to add PHPUnit installation in different PHP stacks.

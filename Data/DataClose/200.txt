@@ -1,0 +1,3 @@
+Keycloak high memory usage
+
+We're seeing keycloak utilising a consistent 1GB of memory in idle state (compare that to 40mb used by postgres). This seems like a waste of resource as we only have a small number of users in multi-user mode. Are there any flags or work that needs to be done upstream to minimise idle memory usage?

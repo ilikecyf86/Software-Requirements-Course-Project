@@ -1,0 +1,23 @@
+Ease implementation of new language servers
+kind/bug kind/bug kind/enhancement team/ide 
+Right now ws-agent connects to LSP servers using Java classes such as this one. This class provides LanguageServerDescription with: file watchers patterns language IDs LS ID document filters (paths regexes, schemas, etc) And also responsible for starting LSP servers binaries, connecting to LSP of the server, checking whether certain LSP server is available. We have the same classes for PHP, Python, CSharp, TypeScript. With such an approach we need 1 Java class per LSP implementation and the addition of new LSP implementations require the addition of new Java class and recompilation of ws-agent. Instead of this approach, we can provide some JSON file with everything needed for communication with LSP server. Then ws-agent should know some path where LSs configs are placed. It can have nested structure. Example: /ls-configs/
+/ls-configs/json/conf.json
+/ls-configs/php/conf.json
+/ls-configs/java/java.json
+/ls-configs/non-lang-name/some-ls-conf.json
+ Where configuration file would have data like the following: {
+    "id" : ""org.eclipse.che.plugin.json.languageserver"",
+    "languagesIds" : [], // IDK what it is, I haven't found usage in Che
+    "fileWatchPatterns" [ // taken from tests, I haven't found usage in Che
+        "glob:*.foo",
+        "glob:*.bar"
+    ],
+    "documentFilters" : [
+        {
+            "pathRegex" : ".*\\.(cs|csx)",
+            "languageId" : "csharp",
+            "scheme" : "",
+        }
+    ]
+}
+ Fields of this JSON are just example. One more thing that might be useful in such JSON is way how to connect to LS: unix socket or tcp socket or input-output configuration of connection. binary path in case of launching LS and using IO; address to connect to TCP socket; path to unix socket. As Tomas noticed it should be still possible to use Java class to provide this thing in an LS implementation specific way when something is hard coded on purpose if it can not be done in JSON configuration.

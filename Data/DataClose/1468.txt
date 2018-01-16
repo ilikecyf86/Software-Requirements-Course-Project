@@ -1,0 +1,3 @@
+Visual mode of terminal is broken in some case in midnight commander
+kind/bug team/plugin severity/P2 
+Visual mode of terminal is broken in midnight commander when user creates file with touch utility and presses down or up key. Reproduction Steps: Start WS Open mc in terminal Type touch test Press ENTER, Down

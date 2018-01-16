@@ -1,0 +1,3 @@
+[CHE-6] Duplicate TODO annotations are shown
+kind/bug 
+Description Duplicate TODO annotations are shown. Reproduction Steps Open a file in the editor Place TODO annotation somewhere. Check annotations at the left and right borders of the editor. Screenshots

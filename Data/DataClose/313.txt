@@ -1,0 +1,3 @@
+Fix run QA in "multiuser" mode on CI
+kind/task team/production 
+We need to investigate the reason of failing tests on the CI

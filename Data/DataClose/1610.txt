@@ -1,0 +1,4 @@
+che-ip tests does not work on CI
+kind/bug 
+recently added tests for che-ip image by @benoitf does not work on ci infra. it fails with: 11:25:04 tput: No value for $TERM and no -T specified
+ whole log https://ci.codenvycorp.com/view/nightly-builds/job/che-ip-docker-image-nightly/194/console

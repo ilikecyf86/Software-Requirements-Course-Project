@@ -1,0 +1,3 @@
+Update CheckIntelligenceCommandFromToolbarTest selenium test after the fixup of preview Url
+kind/task status/in-progress team/production status/code-review status/in-progress sprint/current-sprint status/code-review 
+According to the changes in the PR #7196 we need to do next changes in the CheckIntelligenceCommandFromToolbarTest: Change name of preview URL according to changes in the PR Delete all notifications checks which waits for notification of running workspace Report with a reproduced problem: https://ci.codenvycorp.com/job/che-pullrequests-test/90/Selenium_tests_report/

@@ -1,0 +1,3 @@
+Add JSON-RPC over Websockets back-end in Project API
+status/in-progress kind/enhancement team/ide sprint/current-sprint 
+For now our client (IDE) communicate with Project Service via REST in same time we receive notification from File Watching System via JSON-RPC over Websockets. This situation complicate our model and hard for documentation, so we decide to switch client communication to the JSON-RPC calls. Under this issue need to: add JSON-RPC handlers/transmitters on server-side; deprecate ProjectServiceClient in IDE client API; replace ProjectServiceClient with JSON-RPC calls remove deprecated classes

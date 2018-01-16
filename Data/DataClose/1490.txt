@@ -1,0 +1,3 @@
+The "Save" button is not active after changing a user name.
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: Create any project. "Profile" -> "Preferences" -> "Git" -> "Committer". Change the user name in "Name:" input box. Press "Tab" button. Expected behavior: Focus is on "Email" input box and the "Save" button is active. Observed behavior: The "Save" button is not active. Che version: 5.4.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.3 Che install: Docker container Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes]

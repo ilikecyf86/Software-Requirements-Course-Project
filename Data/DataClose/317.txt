@@ -1,0 +1,3 @@
+In `deploy_che.sh`, the keycloack route should be `https` when the che server is `https`
+kind/bug 
+Description Currently, when deploying to Openshift, the route of the dedicated Keycloak server is always unsecured, even if the che server is deployed with a secured route. This brings errors when the che-server tries to authenticate to the Keycloak server URL.

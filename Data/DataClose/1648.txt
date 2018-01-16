@@ -1,0 +1,3 @@
+Proxy settings exported in the workspace container for a user not root
+kind/bug severity/P1 severity/blocker severity/P1 status/in-progress sprint/current-sprint team/platform sprint/current-sprint 
+When http and https proxies are applied, they are applied for a current user in a container. However, apt-get or dnf or yum or any package manager commands should be run with sudo. A root user does not have those envs, as a result any package manager commands that need connection fail. This affects launching agents in Che and Codenvy.

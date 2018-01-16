@@ -1,0 +1,3 @@
+[Regression] Files are still opened in the Editor after stopping a workspace
+kind/bug severity/P2 team/ide 
+Reproduction Steps: Start any workspace with a project Open any files in the Editor Stop this workspace Expected behavior: The opened files in the Editor closed and a project in the Project Explorer too. Observed behavior: The files are still opened in the Editor, the project did not closed. Che version: 5.15.0-SNAPSHOT OS and version: Fedora 25

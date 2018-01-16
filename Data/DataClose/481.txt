@@ -1,0 +1,3 @@
+[CHE6 branch] Wrong macros in the default maven command
+kind/bug severity/P2 selenium/failure 
+Related to #6215, #6734, #6880 Reproduction Steps: Run java stack with default spring project Go to the "Commands explorer" Click on "+" button in the "Build" goal In the opened list click twice on "Maven" Pay attention to the created command : "mvn clean install -f ${current.project.relpath}" , but needs "mvn clean install -f ${current.project.path}" OS and version: Che 5.18.0 (SPI branch) ; Chrome 59.0 ; Fedora 25 Additional information: Related selenium test: NavigateToFileTest See the attachment:

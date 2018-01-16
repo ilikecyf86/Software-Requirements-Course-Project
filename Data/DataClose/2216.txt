@@ -1,0 +1,3 @@
+Cordova/Phonegap stacks, templates, and commands
+kind/question 
+Cant found Cordova provider here: https://eclipse-che.readme.io/docs/get-started-with-nodejs-and-che There is some planned?? Thanks

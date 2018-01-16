@@ -1,0 +1,3 @@
+Add 'Git local changes panel'
+kind/task status/analyzing team/enterprise 
+Add 'Git local changes panel' that will show list/tree of changed files. The panel should be placed in the bottom panels area. The panel should show changed files (compare with lates). Clicking on the file should open/activate the file in the editors area

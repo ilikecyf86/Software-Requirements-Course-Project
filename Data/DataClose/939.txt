@@ -1,0 +1,3 @@
+URL for zip import will be changed if select some stack
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: Go to "Dashboard" -> "Import from existing location" -> "Zip" Fill the "Zip URL" field by some URL Choose some stack Pay attention to the "Zip URL" field Expected behavior Value in "Zip URL" will be saved after choose some another stack Observed behavior Value is changed Attachment

@@ -1,0 +1,3 @@
+No error or indicator if file can't be written
+kind/question kind/enhancement kind/question team/ide 
+If a file can't be written to in the editor - eg. if permissions aren't correct - there is no indicator or error.

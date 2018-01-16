@@ -1,0 +1,3 @@
+There are no any notifications after deleting project from terminal
+kind/bug severity/P2 team/ide selenium/failure 
+Preconditions: Create a workspace with some projects. Open events panel. Reproduction Steps: Go to the workspace and delete a project from terminal. Expected result: should appear a notification about deleting project Actual result: the notification does not appear Env: CHE-5.17.0-SNAPSHOT, chrome browser

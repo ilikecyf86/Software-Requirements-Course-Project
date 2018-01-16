@@ -1,0 +1,3 @@
+Authentication on workspace agent
+kind/planning kind/task status/open-for-dev 
+The main difference between wsmaster and wsagent authentification is that wsagent is a completely untrusted environment. We can't store any system-wide secrets here. We have such options. Reuse machine token authentication from Codenvy Dynamically register new OpenId clients for each workspace and grant access to only for a particular set of users who have permissions to use it.

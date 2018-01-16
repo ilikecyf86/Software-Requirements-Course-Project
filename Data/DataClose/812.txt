@@ -1,0 +1,3 @@
+The warning message is not informative after creating a factory with the same name
+kind/bug severity/P2 team/plugin team/platform 
+Reproduction Steps: Create a factory Try to create a new factory with same name Expected behavior: There is a notification about the factory with this name exist Observed behavior: The warning message is not informative Che version: 5.14.0-SNAPSHOT OS and version: Fedora 25

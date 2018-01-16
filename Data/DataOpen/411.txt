@@ -1,0 +1,3 @@
+Feature request to name terminal tabs in the workspace
+kind/enhancement 
+Hello, I do not find menu to name terminal tabs in the workspace. Should be an interesting feature to add. Laurent

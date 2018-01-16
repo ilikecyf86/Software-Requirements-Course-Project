@@ -1,0 +1,22 @@
+Windows boot2docker fails starting new che-server under certain conditions
+kind/bug severity/blocker 
+Windows with boot2docker. Have %userprofile% be a directory with a space in the path. set CHE_VERSION=nightly set CHE_UTILITY_VERSION=nightly The che-server does not configure the embedded che.properties properly. The template should be copied into a /conf folder so that paths for the terminal and agents can be configured. But the che-server doesn't properly detect boot2docker and ends up setting the template folder to the wrong place. This is the execution from the CLI - and youc an see that the che-launcher is correct. So eclipse/che-server is not handling the parameter well. WARN: Boot2docker for Windows - CHE_DATA_FOLDER set to /c/Users/Valued Customer/.che
+INFO: ECLIPSE CHE: Pulling image codenvy/che-server:nightly
+nightly: Pulling from codenvy/che-server
+e110a4a17941: Already exists
+50b7abe3f55a: Pull complete
+c217ed2786ac: Pull complete
+Digest: sha256:6eab5d81e81e688e5841d9376f66edf879470eb878366420e0dc5ffa6f113704
+Status: Downloaded newer image for codenvy/che-server:nightly
+
+INFO: ECLIPSE CHE: Starting container...
+INFO: ECLIPSE CHE: Server logs at "docker logs -f che-server"
+INFO: ECLIPSE CHE: Server booting...
+INFO: ECLIPSE CHE: Booted and reachable
+INFO: ECLIPSE CHE: Ver: 5.0.0-M7-SNAPSHOT
+INFO: ECLIPSE CHE: Use: http://192.168.99.100:8080
+INFO: ECLIPSE CHE: API: http://192.168.99.100:8080/swagger
+
+c:\codenvy\che>docker logs -f che-server
+Using embedded assembly...
+Using embedded che.properties... Copying template to <no value>/conf.

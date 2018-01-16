@@ -1,0 +1,3 @@
+Redesign workspace agents
+kind/enhancement sprint/next-sprint status/open-for-dev team/plugin sprint/current-sprint sprint/next-sprint status/in-progress status/code-review status/open-for-dev status/in-progress status/code-review sprint/current-sprint 
+Workspace Agents

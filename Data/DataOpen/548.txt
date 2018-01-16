@@ -1,0 +1,3 @@
+Developer Use Case: Ease super dev mode with existing IDEs
+Improvement kind/task kind/enhancement Improvement kind/bug severity/P1 team/platform team/platform kind/bug severity/P1 
+super-dev mode is not working out of the box on all IDEs. While with Intellij it’s mainly working, with Eclipse IDE the super dev mode configuration needs manual steps and download some jars. Option 1 : add maven dependency so that required jars are available in the maven repository, add run configuration ? Option 2 : Che in Che or Che in Codenvy : add super dev mode / development extension plugin

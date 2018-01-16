@@ -1,0 +1,3 @@
+[CHE6 (singleuser)] Unexpected fail of CheckBasicFunctionalityInCommandsExplorerTest selenium test
+kind/bug status/in-progress target/che6 team/production sprint/current-sprint status/code-review status/in-progress status/code-review 
+Description We have unexpected fail in the CheckFactoryWithSincePolicyTest selenium test. It looks like webdriver click on another element than expected. So we need to investigate and fix this problem. Report with a reproduced problem: https://ci.codenvycorp.com/view/qa/job/che-integration-tests-che6/82/Selenium_tests_report/ Attachment: OS and version: Che(singleuser) 6.0.0-M2 ; Chrome 59.0 ; Fedora 25

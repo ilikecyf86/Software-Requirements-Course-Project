@@ -1,0 +1,3 @@
+Che editor widget with a factory
+kind/enhancement kind/epic kind/enhancement 
+We should provide a widget/component version of Eclipse Che editor that can be easily embedded to an HTML page and backed up by a factory. It should be possible to open a file on a workspace through this widget.

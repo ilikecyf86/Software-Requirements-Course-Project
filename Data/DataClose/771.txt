@@ -1,0 +1,9 @@
+org.eclipse.che.plugin.docker.machine.MachineProviderImplTest.setUp test is failing randomly on CI
+kind/bug team/platform 
+We have PR jenkins jobs that fails very often with the error : org.eclipse.che.plugin.docker.machine.MachineProviderImplTest.setUp
+Error Message
+
+'getContainerLogs' is a *void method* and it *cannot* be stubbed with a *return value*!
+Voids are usually stubbed with Throwables:
+    doThrow(exception).when(mock).someVoidMethod();
+ so we need to launch again the tests...so jenkins jobs take longer to perform as we run them more than once. Maybe there is wrong init/cleanup sequence in the tests Reproduction Steps: Jenkins PR jobs like https://ci.codenvycorp.com/job/che-pullrequests-build/org.eclipse.che.plugin$che-plugin-docker-machine/3009/testReport/

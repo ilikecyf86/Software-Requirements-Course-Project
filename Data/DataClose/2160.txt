@@ -1,0 +1,3 @@
+Use base images from eclipse DockerHub organization
+kind/task status/blocked status/open-for-dev status/blocked 
+All base images referenced in stacks.json should be from Eclipse org on DockerHub, e.g eclipse/ubuntu_jdk8 etc

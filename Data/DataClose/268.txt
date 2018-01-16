@@ -1,0 +1,20 @@
+Maven reimport sometimes fails
+kind/bug team/ide severity/P1 
+Che 6 branch. Reproduction Steps Create a workspace from eclipse/che-dev image Import Che (I used master, fe6d621302c618c9337968171aa83ad797cea5c5 revision), configure as maven project Open a java file (org.eclipse.che.api.core.ApiException in my case) Right click on project -> Maven -> Reimport After some time (about 15 seconds) in the dev-machine log appears error and reimport fails: 2017-10-19 14:31:53,670[equestProcessor]  [ERROR] [oggingUncaughtExceptionHandler 31]   - Runtime exception caught in thread ServerSideRequestProcessor. Message: Can't find IClasspathEntry for path /che/core/che-core-api-core/src/main/java/org/eclipse/che/api/core/ApiException.java
+java.lang.RuntimeException: Can't find IClasspathEntry for path /che/core/che-core-api-core/src/main/java/org/eclipse/che/api/core/ApiException.java
+	at org.eclipse.che.api.testing.server.TestingRPCService.handleTestDetection(TestingRPCService.java:95)
+	at org.eclipse.che.api.testing.server.TestingRPCService$$Lambda$63/1669060259.apply(Unknown Source)
+	at org.eclipse.che.plugin.java.testing.AbstractJavaTestRunner.findCompilationUnitByPath(AbstractJavaTestRunner.java:184)
+	at org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerManager$OneToOneHandler.access$1000(RequestHandlerManager.java:315)
+	at org.eclipse.che.plugin.java.testing.AbstractJavaTestRunner.getRuntimeException(AbstractJavaTestRunner.java:263)
+	at org.eclipse.che.api.core.jsonrpc.commons.RequestDispatcher.dispatch(RequestDispatcher.java:51)
+	at org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerManager.handle(RequestHandlerManager.java:212)
+	at org.eclipse.che.plugin.java.testing.AbstractJavaTestRunner.detectTests(AbstractJavaTestRunner.java:86)
+	at org.eclipse.che.api.core.jsonrpc.commons.JsonRpcMessageReceiver.processRequest(JsonRpcMessageReceiver.java:97)
+	at java.lang.Thread.run(Thread.java:745)
+	at org.eclipse.che.api.core.jsonrpc.commons.JsonRpcMessageReceiver.lambda$receive$0(JsonRpcMessageReceiver.java:72)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerManager$OneToOneHandler.handle(RequestHandlerManager.java:328)
+	at org.eclipse.che.api.core.jsonrpc.commons.JsonRpcMessageReceiver$$Lambda$167/812036956.run(Unknown Source)
+ I mounted .m2 and che project into workspace as volumes. Workspace has 5Gb of RAM. OS and version: Fedora 25, Docker 17.06.0-ce

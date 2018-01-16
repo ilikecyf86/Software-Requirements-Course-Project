@@ -1,0 +1,3 @@
+Real-Time Collaboration
+kind/enhancement 
+Most of the web IDEs that exists in the market have this functionality, I think Che would excel alot if we have this feature What does it do? Real-Time Code Collaboration or we can shorten it to code collab, is a feature that allows multiple users to share the same IDE Stack. This allows the guest users to use the stack without downloading the whole image just to join the fun. This allows live pair-coding possible and allows for other developers to jump right in to your progress. Although this would require it's dedicated panel (a Members' list plus a chat box), it's a great feature to have around if you want to do pair-coding often in your group.

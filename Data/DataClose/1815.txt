@@ -1,0 +1,3 @@
+Create new Git history window
+kind/task sprint/next-sprint status/open-for-dev team/enterprise status/in-progress status/open-for-dev status/code-review status/in-progress status/pending-merge status/code-review status/pending-merge sprint/next-sprint 
+Since we have visual Git compare functionality, Git history must show diff in visual format instead of raw format like it shows now. Git history has to be as a window (like Git 'compare with revision' window), not as a panel because it will be easer to show history of selected items: When double-click on commit item or 'Compare' button click a 'Git compare' window with changed files should be shown': The commits list widget has to inherit the paging auto load functionality that was done in #3553

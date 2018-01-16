@@ -1,0 +1,76 @@
+docker-compose Che don't run
+
+Description of problem Hello Che team! I cannot run the docker-compose using the configuration describe here: https://eclipse-che.readme.io/docs/usage-docker. The docker-compose.yml I used: che:
+  image: codenvy/che:latest
+  command: >
+    bash -c "
+    sudo rm -rf /home/user/che/lib-copy/* &&
+    sudo rm -rf /home/user/che/tomcat/temp/local-storage/* &&
+    mkdir -p /home/user/che/lib-copy/ &&
+    sudo chown -R user:user /home/user/che &&
+    cp -rf /home/user/che/lib/* /home/user/che/lib-copy &&
+    /home/user/che/bin/che.sh run -d
+    "
+  net: "host"
+  volumes:
+    - "/var/run/docker.sock:/var/run/docker.sock"
+    - "/home/user/che/lib:/home/user/che/lib-copy"
+    - "/home/user/che/workspaces:/home/user/che/workspaces"
+    - "/home/user/che/tomcat/temp/local-storage:/home/user/che/tomcat/temp/local-storage"
+  container_name: che Version Docker image: tag latest, I think is 4.1.1 OS: Debian Jessie Docker: 1.11.0 Docker-compose: 1.7.0 How reproducible Just run the docker-compose file. docker-compose up Actual Results utars@ns387383:~/containers/che$ docker-compose up
+Recreating che
+Attaching to che
+che    | USE_BLOCKING_ENTROPY: false
+che    | USE_DOCKER: false
+che    | CHE_DOCKER_TAG: latest
+che    | CHE_PORT: 8080
+che    | CHE_IP: ""
+che    | CHE_DOCKER_MACHINE: che
+che    | MACHINE_DRIVER: virtualbox
+che    | LAUNCH_REGISTRY: false
+che    | SKIP_PRINT_CLIENT: false
+che    | SKIP_DOCKER_UID: false
+che    | SKIP_JAVA_VERSION: false
+che    | STOP_CONTAINER:
+che    | USE_HELP: false
+che    | CHE_SERVER_ACTION: run
+che    | USE_DEBUG: true
+che    |
+che    | !!!
+che    | !!! Running 'docker' succeeded, but 'docker ps' failed. This usually means that docker cannot reach its daemon.
+che    | !!!
+che    |
+che    | Usage:
+che    |   che [OPTIONS] [COMMAND]
+che    |      -v,        --vmware                Use the docker-machine VMware driver (instead of VirtualBox)
+che    |      -m:name,   --machine:name          For Win & Mac, sets the docker-machine VM name; default=che
+che    |      -a:driver, --machine-driver:driver For Win & Mac, specifies the docker-machine driver to use; default=vbox
+che    |      -p:port,   --port:port             Port that Che server will use for HTTP requests; default=8080
+che    |      -r:ip,     --remote:ip             If Che clients are not localhost, set to IP address of Che server
+che    |      -h,        --help                  Show this help
+che    |      -d,        --debug                 Use debug mode (prints command line options + app server debug)
+che    |
+che    |   Options when running Che natively:
+che    |      -b,        --blocking-entropy      Security: https://wiki.apache.org/tomcat/HowTo/FasterStartUp
+che    |      -g,        --registry              Launch Docker registry as a container (used for ws snapshots)
+che    |      -s:client, --skip:client           Do not print browser client connection information
+che    |      -s:java,   --skip:java             Do not enforce Java version checks
+che    |      -s:uid,    --skip:uid              Do not enforce UID=1000 for Docker
+che    |
+che    |   Options when running Che in a Docker container:
+che    |      -i,        --image                 Launches Che within a Docker container using latest image
+che    |      -i:tag,    --image:tag             Launches Che within a Docker container using specific image
+che    |      -c:name,   --container:name        Sets the container name if -i provided; default=che
+che    |      -t,        --stop-container        If stopping Che, will also stop Che container if Che ran with -i
+che    |
+che    |   Commands:
+che    |      run                                (Default) Starts Che server with logging in current console
+che    |      start                              Starts Che server in new console
+che    |      stop                               Stops Che server
+che    |
+che    | Docs: http://eclipse.org/che/getting-started.
+che    |
+che    | If you are running Che as a server on a VM for multiple users to access, review the various networking
+che    | configuration items that control how clients, Che and workspaces initiate connections. See:
+che    | https://eclipse-che.readme.io/docs/networking.
+che exited with code 0

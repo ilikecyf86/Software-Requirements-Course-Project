@@ -1,0 +1,5 @@
+Set machine attributes of workspace
+kind/question 
+Hi, Am using swagger-codegen-maven-plugin to generate swagger client and the respective model, api classes. I want to set new attribute in machine attributes section, like this "dev-machine": { "attributes": { "memoryLimitBytes": "2147483648", "new": "smth" } For doing this, we have putAttributesItem in WorkspaceDto class. I know my factory and is available in factoryDto model. and workspace i retrieved based on    // Prepare a Workspace based on the WorkspaceConfig of the factory
+    WorkspaceConfigDto config = factoryDto.getWorkspace();//workspaces.get(0).getConfig();
+ I could not establish connection between factoryDto and WorkspaceDto. And attributes can be set only using WorkspaceDto. Do we have a possibility to achieve this ?

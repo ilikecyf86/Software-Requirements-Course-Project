@@ -1,0 +1,3 @@
+How to edit files in the default image? No vi, vim, nano or any text editors found
+kind/question 
+I'm using the default che stack (eclipse/ubuntu-jdk8) however, I don't find any text editor in the image (vi, vim, nano, etc). Due to my company policy, I can't do apt-get update && apt-get install (URL blocked), so can I use the che workspace editor to open a file in the image (say /home/user/tomcat8/conf/catalina.properties).

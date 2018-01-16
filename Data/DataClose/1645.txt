@@ -1,0 +1,13 @@
+Debug Language Servers
+kind/question kind/task kind/docs level/beginner 
+How can i debug the messages sent from Che to Language Servers. For me it looks like the Issue from #3127 is there again. If i enable logging on my server i see following open request SEVERE: The property 'languageId' must have a non-null value.                                                                                                                                                                   
+org.eclipse.lsp4j.jsonrpc.json.InvalidMessageException: The property 'languageId' must have a non-null value.                                                                                                                   
+        at org.eclipse.lsp4j.jsonrpc.validation.ReflectiveMessageValidator.consume(ReflectiveMessageValidator.java:41)                                                                                                          
+        at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:149)                                                                                                                   
+        at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:77)                                                                                                                           
+        at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:68)                                                                                                                    
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)                                                                                                                                              
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)                                                                                                                                                             
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)                                                                                                                                      
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)                                                                                                                                      
+        at java.lang.Thread.run(Thread.java:745)

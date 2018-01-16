@@ -1,0 +1,3 @@
+Compile error
+kind/question 
+We are trying to build plugin with some action, this page Actions we referring to start with sample This is an error in eclipse @vicky-unvired @eivantsov @alexanup @srinisubramanian @TylerJewell @slemeur @azatsarynnyy @vparfonov @benoitf @eivantsov @vzhukovskii

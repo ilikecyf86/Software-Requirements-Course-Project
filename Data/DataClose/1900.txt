@@ -1,0 +1,3 @@
+Add Servers section to machine details
+kind/enhancement sprint/next-sprint status/open-for-dev team/plugin status/in-progress status/open-for-dev sprint/current-sprint sprint/next-sprint status/code-review status/in-progress sprint/current-sprint 
+There is no ability now to completely configure such part of the machine as servers. So need to add appropriate section to machine's one. User has to be able to set reference to the server, port,protocol and properties. As the result - the existing workspace details page will show servers info and we will be able to remove Machine Perspective from IDE.

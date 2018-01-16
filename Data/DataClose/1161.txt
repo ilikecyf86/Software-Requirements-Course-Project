@@ -1,0 +1,69 @@
+Tomcat java.lang.InternalError
+
+Hi, I got this when I try to run custom docker image of che server v5.2.2: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock che-server:5.2.2-my
+
+2017-04-12 10:06:26,534[main]             [INFO ] [o.a.c.s.VersionLoggerListener 89]    - Server version:        Apache Tomcat/8.0.38
+2017-04-12 10:06:26,537[main]             [INFO ] [o.a.c.s.VersionLoggerListener 91]    - Server built:          Oct 6 2016 20:51:55 UTC
+2017-04-12 10:06:26,538[main]             [INFO ] [o.a.c.s.VersionLoggerListener 93]    - Server number:         8.0.38.0
+2017-04-12 10:06:26,538[main]             [INFO ] [o.a.c.s.VersionLoggerListener 95]    - OS Name:               Linux
+2017-04-12 10:06:26,538[main]             [INFO ] [o.a.c.s.VersionLoggerListener 97]    - OS Version:            3.10.0-327.el7.x86_64
+2017-04-12 10:06:26,539[main]             [INFO ] [o.a.c.s.VersionLoggerListener 99]    - Architecture:          amd64
+2017-04-12 10:06:26,539[main]             [INFO ] [o.a.c.s.VersionLoggerListener 101]   - Java Home:             /usr/lib/jvm/java-1.8-openjdk/jre
+2017-04-12 10:06:26,539[main]             [INFO ] [o.a.c.s.VersionLoggerListener 103]   - JVM Version:           1.8.0_121-b13
+2017-04-12 10:06:26,539[main]             [INFO ] [o.a.c.s.VersionLoggerListener 105]   - JVM Vendor:            Oracle Corporation
+2017-04-12 10:06:26,540[main]             [INFO ] [o.a.c.s.VersionLoggerListener 107]   - CATALINA_BASE:         /home/user/eclipse-che-5.2.2-nc4-test_ls-SNAPSHOT/tomcat
+2017-04-12 10:06:26,540[main]             [INFO ] [o.a.c.s.VersionLoggerListener 109]   - CATALINA_HOME:         /home/user/eclipse-che-5.2.2-nc4-test_ls-SNAPSHOT/tomcat
+2017-04-12 10:06:26,541[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.config.file=/home/user/eclipse-che-5.2.2-nc4-test_ls-SNAPSHOT/tomcat/conf/logging.properties
+2017-04-12 10:06:26,541[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+2017-04-12 10:06:26,541[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.docker.network=bridge
+2017-04-12 10:06:26,542[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dport.http=8080
+2017-04-12 10:06:26,542[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.home=/home/user/eclipse-che-5.2.2-nc4-test_ls-SNAPSHOT
+2017-04-12 10:06:26,542[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.logs.dir=/logs/
+2017-04-12 10:06:26,542[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.logs.level=INFO
+2017-04-12 10:06:26,543[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+2017-04-12 10:06:26,543[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+2017-04-12 10:06:26,543[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote
+2017-04-12 10:06:26,544[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.ssl=false
+2017-04-12 10:06:26,544[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.authenticate=false
+2017-04-12 10:06:26,544[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - C
+2017-04-12 10:06:26,545[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - C                                                                                                  t/endorsed
+2017-04-12 10:06:26,545[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - C
+2017-04-12 10:06:26,546[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - C
+2017-04-12 10:06:26,546[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - C                                                                                                  mp
+
+
+Exception in thread "main" java.lang.InternalError
+        at sun.security.ec.SunEC.initialize(Native Method)
+        at sun.security.ec.SunEC.access$000(SunEC.java:49)
+        at sun.security.ec.SunEC$1.run(SunEC.java:61)
+        at sun.security.ec.SunEC$1.run(SunEC.java:58)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at sun.security.ec.SunEC.<clinit>(SunEC.java:58)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorI
+        at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorA
+        at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+        at java.lang.Class.newInstance(Class.java:442)
+        at sun.security.jca.ProviderConfig$2.run(ProviderConfig.java:221)
+        at sun.security.jca.ProviderConfig$2.run(ProviderConfig.java:206)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at sun.security.jca.ProviderConfig.doLoadProvider(ProviderConfig.java:206)
+        at sun.security.jca.ProviderConfig.getProvider(ProviderConfig.java:187)
+        at sun.security.jca.ProviderList.loadAll(ProviderList.java:282)
+        at sun.security.jca.ProviderList.removeInvalid(ProviderList.java:299)
+        at sun.security.jca.Providers.getFullProviderList(Providers.java:173)
+        at java.security.Security.getProviders(Security.java:485)
+        at org.apache.catalina.core.JreMemoryLeakPreventionListener.lifecycleEve
+        at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(Lifecycl
+        at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBa
+        at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase
+        at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:101)
+        at org.apache.catalina.startup.Catalina.load(Catalina.java:580)
+        at org.apache.catalina.startup.Catalina.load(Catalina.java:603)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:310)
+        at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:484)
+ Reproduction Steps: Using che 5.2.2 version with custom extensions mvn clean install -P fast cd dockerfiles/che ./build.sh che-server 5.2.2-my docker run --rm -v /var/run/docker.sock:/var/run/docker.sock che-server:5.2.2-my OS and version: Windows 7 Docker version 1.13.1, build 092cba3

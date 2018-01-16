@@ -1,0 +1,3 @@
+Not found image resource in the tooltip
+kind/bug team/ide sprint/current-sprint status/pending-merge 
+In some case the tooltip which is showed in the editor has an icon, but the resource doesn't exist for this icon. For these icons Orion editor uses 3 images which can be found here, but our plugin doesn't have these images. Reproduction Steps: Open *.html file; Add </a> tag with href attribute, for example <a href=https://github.com/eclipse/che">che</a> Hover the mouse cursor over this attribute. How it looks on orionhub.org: Che version: 5.1.0-SNAPSHOT OS and version: Ubuntu-16.04

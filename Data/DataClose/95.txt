@@ -1,0 +1,3 @@
+IDE injects require.js script many times
+kind/bug target/che6 team/ide severity/P1 
+Description It seems that IDE injects require.js script into the host page on each RequireJS invocation.

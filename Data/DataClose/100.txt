@@ -1,0 +1,3 @@
+POC for IDE Part API for the JavaScript endpoint
+kind/enhancement team/ide status/in-progress status/in-progress 
+Description We need to develop a mechanism for injecting custom UI widgets to the IDE Part. New widgets should be represented by an IDE Plugin.

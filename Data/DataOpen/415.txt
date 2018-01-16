@@ -1,0 +1,3 @@
+Autobrackets not working (PHP)
+kind/question kind/bug severity/P2 kind/question team/ide 
+Auto Brackets for PHP seem to be broken on Windows with Chrome browser (Tested on Codenvy 5.12.0). When typing { or [ the closing bracket does not appear while it works with < and (. On a chromebook (Chrome OS 58) it works in Chrome. Also works perfectly fine in Firefox on the same test devices. Reproduction Steps: Create PHP Workspace Create PHP File Write Brackets OS and version: Windows 8 with Chrome 59 Windows 10 with Chrome 59

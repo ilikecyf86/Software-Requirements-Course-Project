@@ -1,0 +1,3 @@
+[CHE6] Rework selenium tests according to changes with the Popup Loader
+kind/task status/in-progress target/che6 team/production status/in-progress 
+According to the changes with the Popup Loader (#7469) we need: rework CheckStopStartWsTest selenium test(remove waiting "Starting workspace runtime." message); change locators for the Popup Loader.

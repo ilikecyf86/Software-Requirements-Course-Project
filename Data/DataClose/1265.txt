@@ -1,0 +1,3 @@
+Item selection does not work properly
+kind/bug team/plugin severity/P2 
+There is a bug with item selection in dashboard navbar. I need to click twice to get item selected.

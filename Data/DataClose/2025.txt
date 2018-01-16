@@ -1,0 +1,3 @@
+Need to access eclipse che url(http://ip-address/dashboard) from jquery
+kind/question 
+[Short description of problem here] I am trying to load http://ip-address/dashboard url from jquery but getting following error: XMLHttpRequest cannot load http://ip-address/dashboard. Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://my-application url' is therefore not allowed access. The response had HTTP status code 401. Reproduction Steps: Load url in html div [Describe observed behavior here] Che version: 4.5.1 OS and version: windows 7 Che install: bitnami

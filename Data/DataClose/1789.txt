@@ -1,0 +1,3 @@
+Confusing help on CLI for 'sync' command
+
+When you start the CLI, there is the following instruction on the 'sync' command: sync <wksp-name> Synchronize workspace with current working directory It is not accurate as this is not possible. The directory to be used for the sync, has to be defined with the following parameter: -v <path>:/sync Should be renamed: sync <wksp-name> Synchronize workspace with /sync volume mount

@@ -1,0 +1,3 @@
+mono not found
+kind/bug 
+Description: Shomehow mono is not in the path when you are using the mono workspace. Steps to reproduce: 1- go to beta.codenvy.com 2- create new mono web-aspnet-simple 3- try to update dependencies Output: cd /projects/web-aspnet-simple && dnu restore /opt/dnx/runtimes/dnx-mono.1.0.0-rc1-final/bin/dnx: line 14: exec: mono: not found Reproducible always. Solution: Provide a docker image with mono working.

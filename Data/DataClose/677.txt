@@ -1,0 +1,3 @@
+Adapt PHP test runner according new API
+kind/enhancement team/ide status/in-progress 
+Need to adapt PHP test runner according new API and remove deprecated code related to old test API

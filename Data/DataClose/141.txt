@@ -1,0 +1,3 @@
+There is no way to restart workspace in the IDE
+kind/bug severity/P1 status/info-needed target/che6 team/plugin 
+Description As far as workspace loading popup was removed: There is no ability to restart the stopped workspace inside IDE. Workspace menu is disabled as well.

@@ -1,0 +1,3 @@
+CLI Docker Daemon Check
+kind/bug severity/blocker status/code-review 
+The current CLI has checks for Docker 1.10, but we have confirmed that you will get errors in running below Docker 1.11. Need to update the error message output and also update the CLI base image be reinstated with the Docker 1.11 client again.

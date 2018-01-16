@@ -1,0 +1,5 @@
+Workflow for multi-machine stack development on the command line
+kind/question kind/enhancement kind/question 
+Hi, I've got a question about the creation of multi machine stack. When I edit the provided one Java-MySQL I have noticed in the recipe a dependency between the dev-machine container and the db container represented by this code in dev-machine declaration: depends_on:
+    - db
+ (a document can be found here https://www.eclipse.org/che/docs/tutorials/multi-machine/index.html explaining the objective) I tried to do the same with a new custom one, however I am unable to find a way to define dependencies between container using your interface and editing the raw configuration lead to an error. Can you give me a way to define containers dependencies ? Thanks by advance. Reproduction Steps: see below OS and version: 5.3.0 Diagnostics:

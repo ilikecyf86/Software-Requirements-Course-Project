@@ -1,0 +1,3 @@
+machine.getOwner() should return userId and not namespace
+kind/bug sprint/next-sprint sprint/next-sprint status/open-for-dev team/platform team/platform sprint/current-sprint status/code-review status/open-for-dev sprint/current-sprint status/code-review 
+When calling machine.getOwner() it returns a namespace while it should return userId https://github.com/eclipse/che/blob/master/plugins/plugin-docker/che-plugin-docker-machine/src/main/java/org/eclipse/che/plugin/docker/machine/MachineProviderImpl.java#L313-313 Che version: 5.0.0-M7-SNAPSHOT Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes]

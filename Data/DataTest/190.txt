@@ -1,0 +1,3 @@
+Cannot resolve dependencies in the multi-module project
+kind/bug 
+Open IDE and import the multi-module project (e.g. git@github.com:idexmai1/java-multimodule.git). Expand nodes of project and open the 'Greeting Controller' class. Expected: dependencies should resolve and project should be valid. Actual: dependencies are not resolved and the project is no valid.

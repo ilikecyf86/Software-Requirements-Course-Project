@@ -1,0 +1,3 @@
+[CHE 6] Can't login to multiuser Che server deployed on OCP or minishift with default admin credentials
+kind/bug team/production sprint/current-sprint status/open-for-dev 
+Description Can't login to multiuser Che server deployed on OCP or minishift with default admin credentials. Reproduction Steps Deploy Che server on minishift or OCP. Try to login with default admin credentials. I suppose it is admin value for login and password. Expected: User is logged in. Actuals: Failed to log in. Note that is it possible to login to Keycloak Admin console with admin:admin credentials and Che Realms doesn't have any users. As far as I know, it works fine for Che server started by CLI.

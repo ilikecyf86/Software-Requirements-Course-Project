@@ -1,0 +1,3 @@
+What's the "temporary workspace"?
+kind/question 
+I see there is an api: POST /workspace/runtime Start the temporary workspace from the given configuration I'm not sure what does the "temporary workspace" mean and how can we use it. What's the difference between it and normal workspace?

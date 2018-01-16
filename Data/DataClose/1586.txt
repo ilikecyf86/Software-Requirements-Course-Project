@@ -1,0 +1,3 @@
+Reduce count of file reveal during perform copy/move operation
+kind/enhancement team/plugin 
+#3244

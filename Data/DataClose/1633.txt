@@ -1,0 +1,3 @@
+Workspace creation from custom recipe doesn't work in UD
+kind/bug team/plugin sprint/next-sprint status/open-for-dev sprint/current-sprint sprint/next-sprint status/code-review status/open-for-dev sprint/current-sprint status/code-review 
+When I create WS in UD and choose custom recipe UD doesn't save my changes. Reproduction Steps: Go to UD. Open Workspaces -> Add Workspace -> Runtime -> Stack authoring Change recipe. Click save. Go to Workspace config section and check recipe

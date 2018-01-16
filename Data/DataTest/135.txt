@@ -1,0 +1,3 @@
+Beaglebone Che - Stuck on Finishing Editor Initialization
+kind/question 
+I am currently waiting for this 'Finishing Editor Initialization' to finish. Is there some kind of log I can check to see what is happening? I don't see anything in the terminal window I started che server from. Doesn't seem to be downloading dependencies.

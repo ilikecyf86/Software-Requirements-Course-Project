@@ -1,0 +1,3 @@
+Websocket connection fails on workspace
+sprint/next-sprint status/analyzing status/open-for-dev team/plugin sprint/current-sprint status/in-progress sprint/next-sprint status/open-for-dev kind/bug severity/blocker severity/blocker status/code-review status/analyzing status/in-progress status/code-review sprint/current-sprint 
+In some cases the workspace+project creation flow fails due to websocket connection errors. The project creation step is not reached in this case, though we have running workspace. Additional information: Problem started happening recently, didn't happen in an older version of Che: [No] Problem can be reliably reproduced, doesn't happen randomly: [No]

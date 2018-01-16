@@ -1,0 +1,3 @@
+Compile websocket terminal for Arm
+status/pending-merge 
+This is required for Arm ssh machines.Terminal should be compiled with special options to be able to run on ARM

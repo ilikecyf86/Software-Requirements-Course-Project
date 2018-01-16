@@ -1,0 +1,20 @@
+Allow adding new Logstash logback appenders to che-server tomcat logback.xml
+kind/enhancement status/in-progress team/osio 
+At the moment, it is not possible to add logstash-logback appenders to logback.xml. It would be useful to just provide a proper logback-additional-appenders.xml and nothing else Reproduction Steps: Adding a logback-additional-appenders.xml like <?xml version="1.0" encoding="UTF-8"?>
+<included>
+    <appender name="file-json" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${che.logs.dir}/logs/catalina.log.json</file>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+          <level>info</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${che.logs.dir}/archive/%d{yyyy/MM/dd}/catalina.log.json</fileNamePattern>
+            <maxHistory>${max.retention.days}</maxHistory>
+        </rollingPolicy>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+    </appender>
+
+    <root level="${che.logs.level:-INFO}">
+        <appender-ref ref="file-json"/>
+    </root>
+</included> won't work at the moment Pull Requests eclipse/che-lib#42 #6539 eclipse/che-dependencies#60 PR docs: eclipse/che-docs#297 ** PR for che6 ** eclipse/che-lib#58 #7415 eclipse/che-dependencies#73

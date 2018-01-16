@@ -1,0 +1,3 @@
+Incorrect author information on Git History
+kind/bug 
+Description The information displayed for author for a commit is incorrect. Che history seems to show committers but it should really show author for a commit. OS and version: minishift 1.10 on OSX

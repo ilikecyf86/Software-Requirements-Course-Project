@@ -1,0 +1,19 @@
+Projects in custom stack
+kind/question 
+It's unclear how to use projects in custom stacks. If I edit the raw config of a custom stack and add a project, then after creating a workspace from this that stack I do not see that project in my workspace. This is what I added to stack config: "projects": [
+      {
+        "source": {
+          "location": "",
+          "type": "",
+          "parameters": {}
+        },
+        "mixins": [],
+        "links": [],
+        "problems": [],
+        "name": "test-project",
+        "type": "blank",
+        "path": "/test-project",
+        "attributes": {}
+      }
+    ]
+ Also on the "New Workspace" page it says SELECT STACK Choose your workspace runtime environment used to build and run your projects. Projects are not part of workspace environment in stacks. Does this mean, that the project information is ignored then?

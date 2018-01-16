@@ -1,0 +1,3 @@
+[REGRESSION] Preview feature from the context menu doesn`t work
+kind/bug severity/P2 team/ide severity/blocker severity/P2 status/in-progress status/in-progress 
+Related with #5516 Reproduction Steps: Create web-java-pet-clinic project from project wizard Expand project tree to "overview.html" item Open context menu on the "overview.html" item Click on "Preview" Pay attention to result Expected result: Html document will be shown like in browser Actual result: Document does not opened OS and version: Che - 5.15.0 ; Chrome - 59.0 ; Fedora - 25 Attachment:

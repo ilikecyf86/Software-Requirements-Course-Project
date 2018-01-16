@@ -1,0 +1,3 @@
+Data stored in Che volumes on OpenShift are not removed after removal of a workspace
+kind/bug team/production 
+Description The reason is that Che removes PVCs but doesn't control removal of data from PVs. This may lead to the situation when FS of CI is overblown with out-of-date data of removed workspaces. Reproduction Steps OS and version: Diagnostics:

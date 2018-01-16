@@ -1,0 +1,3 @@
+Remove deprecated samples
+kind/task status/open-for-dev team/platform severity/P2 sprint/current-sprint sprint/current-sprint 
+A long time ago we replaced our samples with https://github.com/eclipse/che-archetypes. It's time to remove https://github.com/eclipse/che/tree/master/samples from codebase

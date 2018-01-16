@@ -1,0 +1,3 @@
+Incorrect alignements in Stack screen
+team/plugin status/open-for-dev kind/bug sprint/next-sprint sprint/current-sprint sprint/next-sprint status/open-for-dev sprint/current-sprint 
+See the following snapshot. Che version: 5.0.0-M6

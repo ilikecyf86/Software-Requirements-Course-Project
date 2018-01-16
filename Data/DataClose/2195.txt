@@ -1,0 +1,3 @@
+Adding a new project template to custom stack
+kind/question 
+I have created a custom stack and want to provide a template to be available under sample category in New Project Wizard. Also the same need to prompted while workspace is getting created newly from the custom stack in the dashboard. I have added a template object to the existing templates folder in che/templates/samples.json. I have then tried restarting the Che instance. But am not able to get the newly added template getting prompted either while creating workspace or in New Project wizard Can some one guide me if am missing something in the workflow? Regards Santhosh

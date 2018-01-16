@@ -1,0 +1,3 @@
+Cant Start Wokspace on EC2
+
+Hi, My name is Walter and I am having a bit of trouble starting the workspace agent on a Linux EC2 virtual machine. I have added a picture to show exactly where the process stops, but shortly after it tells me that the server is starting I get the same message repeated three times which is "Client has aborted connection. Response writing omitted." Does anyone know how to overcome this issue? I have used --remote:ip and even changed the ip in che.properties, but this has not fixed the problem. Also if I back out onto another page it says the workspace is running, but when I open it in the IDE, I get an error saying it cant load project types. Thanks, Walter

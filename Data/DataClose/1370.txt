@@ -1,0 +1,3 @@
+Refine Teams' buttons
+kind/enhancement team/plugin sprint/current-sprint status/code-review sprint/current-sprint status/code-review 
+Buttons for selecting team have different styles on new workspace and edit existed workspace pages. They should have same style. Actual state:

@@ -1,0 +1,9 @@
+Scrolled line should appear in the middle of the editor
+team/ide team/enterprise status/open-for-dev team/ide kind/task sprint/current-sprint status/in-progress status/open-for-dev 
+We have dozens of places where we programmatically scroll the file to the specific line:     new Timer() {
+      @Override
+      public void run() {
+             textEditor.setCursorPosition(new TextPosition(lineNumber, 0));
+      }
+    }.schedule(300);
+ The scrolled line usually appears in the bottom of the editor that isn't a convenient. It should be the middle of the editor. https://orionhub.org/jsdoc/symbols/orion.editor.TextViewShowOptions.html The goal of the task is to rework method che/ide/che-core-orion-editor/src/main/java/org/eclipse/che/ide/editor/orion/client/OrionEditorPresenter.java Line 743 in fc3a2d2 public void setCursorPosition(TextPosition textPosition) { to avoid using timer and to display scrolled line in the middle of the editor. che/ide/che-core-orion-editor/src/main/java/org/eclipse/che/ide/editor/orion/client/jso/OrionTextViewOverlay.java Line 128 in 6e9825c public final native void setCaretOffset(int offset, OrionTextViewShowOptionsOverlay show) /*-{ che/ide/che-core-orion-editor/src/main/java/org/eclipse/che/ide/editor/orion/client/jso/OrionTextViewShowOptionsOverlay.java Line 15 in 6e9825c public class OrionTextViewShowOptionsOverlay extends JavaScriptObject {

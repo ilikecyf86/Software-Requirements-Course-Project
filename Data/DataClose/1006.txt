@@ -1,0 +1,3 @@
+Implement Runtimes restoring in Docker implementation.
+kind/task 
+New SPI provides a concept of restoring runtimes after reloading of Master. We should implement it in Docker SPI impl to check whether the concept has everything needed for this feature.

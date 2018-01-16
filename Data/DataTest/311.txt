@@ -1,0 +1,3 @@
+Item ${projectName} already exists
+status/open-for-dev kind/question 
+each time when i try to created a project, it tells me "Item ${projectName} already exists" , really difficult to use!!!

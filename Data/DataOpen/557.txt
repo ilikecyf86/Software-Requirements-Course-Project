@@ -1,0 +1,3 @@
+Adding EMF & Modeling Support to Che platform and IDE layer
+kind/question kind/enhancement kind/question 
+No description provided.

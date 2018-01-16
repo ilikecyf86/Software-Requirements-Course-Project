@@ -1,0 +1,3 @@
+Add the "Assert.fail()" to some tests into 'git' package
+kind/task status/in-progress target/che6 team/production status/in-progress 
+Description Need to add the 'Assert.fail()' to some selenium tests into 'git' package Related selenium test: GitColorsTest

@@ -1,0 +1,3 @@
+Update ready-to-use templates and provide goals for all pre-defined commands
+kind/enhancement sprint/next-sprint team/ide sprint/next-sprint 
+With the work we did on Intelligent command, we have introduce command's goals. We need to update all the templates so that each command get properly configured with a goal. che/ide/che-core-ide-templates/src/main/resources/samples.json Line 23 in bdac9ec "commands": [ We also need to split the command into multi-lines, so when we opened it in the command editor, it is possible to see the whole command on multi-lines (instead of a single line that you have to scroll horizontally to read).

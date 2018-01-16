@@ -1,0 +1,3 @@
+Show list of threads when debug is suspended [NodeJs debugger]
+kind/enhancement status/open-for-dev team/enterprise 
+This issue implies server-sides changes to return list of threads.

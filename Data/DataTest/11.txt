@@ -1,0 +1,3 @@
+Change file type
+kind/enhancement 
+*.tpl are detected as plain text even if they are HTML files. It'd be useful to allow changing detected file types. This could also go back to Eclipse Che so that it may get smarter over time.

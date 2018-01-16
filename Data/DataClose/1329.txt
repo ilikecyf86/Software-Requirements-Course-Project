@@ -1,0 +1,3 @@
+Make plugin-ssh-key as core artifact to plugin
+kind/task status/open-for-dev team/platform 
+plugin-ssh-key contains some basic functionality that is reused by other core services like Jgit implementation of core git service. We would like to convert plugin-ssh-key to core part.

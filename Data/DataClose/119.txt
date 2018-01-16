@@ -1,0 +1,3 @@
+Add IDE action to trigger GWT SDM recompilation
+kind/enhancement target/che6 team/ide status/in-progress status/code-review status/in-progress status/code-review 
+In case of Che in Che development, GWT CodeServer can be started into a (dev-)machine at the address differs from the localhost. Thus each time one needs to use the new bookmarklets on a browsers toolbar for working with the CodeServer. It is very inconvenient. We can add an action to IDE for triggering GWT recompilation on the CodeServer since IDE always knows the address of the launched CodeServer. Such action allows avoiding drag&drop a new bookmarklet each time when a new instance of GWT CodeServer is launched.

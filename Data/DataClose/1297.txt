@@ -1,0 +1,3 @@
+How to use git via ssh using both gitlab and eclipse che in the same server
+kind/question 
+Hello. I'm trying to clone my repository hosted on my private gitlab server on eclipse che, hosted in the same server. However I have no idea how to achieve that. I already tried adding the eclipse che private key on gitlab but I'm still getting the same problem: " can't store ssh keys. Unable to get ssh private key. " Any suggestion?

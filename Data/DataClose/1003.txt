@@ -1,0 +1,3 @@
+Create POC of Codenvy implementation of SPI
+kind/task 
+Codenvy Docker infrastructure significantly differs from Docker infrastructure in Che. We should create POC of this implementation to ensure that new SPI design is suitable for this implementation.

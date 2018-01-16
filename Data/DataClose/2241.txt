@@ -1,0 +1,3 @@
+Unable to create multiline command
+kind/bug 
+It is unable to create multiline command in Commands dialog. The Save button is pressed when the command line field is focused and Enter key is pressed.

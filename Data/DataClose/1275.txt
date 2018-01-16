@@ -1,0 +1,3 @@
+Move golang agents code to make it Golang way
+kind/task team/platform 
+Now we put golang agents code into https://github.com/eclipse/che/tree/master/agents/go-agents/src/main/go. This is maven approach, not golang. The path should be https://github.com/eclipse/che/tree/master/agents/go-agents/ We don't rely on that structure, so we can easily change the structure to be golang friendly.

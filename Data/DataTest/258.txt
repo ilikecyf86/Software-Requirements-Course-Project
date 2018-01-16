@@ -1,0 +1,3 @@
+Split build IDE war to two modules: GWT compilation (client side) and API war (deploy server component)
+status/pending-merge 
+Split build IDE war to two modules: GWT compilation (client side) and API war (deploy server component)

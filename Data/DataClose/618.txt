@@ -1,0 +1,10 @@
+How to speed up a custom assembly build?
+kind/question 
+I'm running the script below as part of our CI pipeline: ##!/bin/bash
+echo "=> Building the binary"
+docker run --rm \
+  -v $(pwd):/home/user/che-build \
+  -w /home/user/che-build \
+  eclipse/che-dev \
+  mvn clean install -Pfast
+ This takes 24 minutes to complete on a test machine. At the moment, the only file we are changing in our custom assembly is outeredge/che@dc8bb54. I'd appreciate some community advice on how we can speed up the build above. Can we just do a assembly/assembly-main && mvn clean install instead? I'm not clear whether the change above would then be "built" into the main assembly as it's in a plugin? Also, it doesn't look like the fast profile exists in the assembly-main pom.xml? Thanks!

@@ -1,0 +1,3 @@
+Button icons disorder in `Git Show History` panel
+kind/bug 
+Description of problem: The button icons in Git > Show History panel show up in disorder. Suggested in the snapshot below. Che version: Version :4.0.0-RC11 Revision :31194172ac236965 Build Time :2016-03-03 20:31:58 Che install directory: docker default Docker version: 1.10.3, build 20f81dd Java version: 1.8 Environment details (AWS, VirtualBox, physical, etc.): VirtualBox How reproducible: Git > Show History The button height is 18px, however the icon svg is 32px.

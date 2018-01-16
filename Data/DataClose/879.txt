@@ -1,0 +1,3 @@
+Rework Java plugin to avoid using Everrest based Websocket calls
+kind/enhancement team/ide 
+JavaClasspathServiceClientImpl uses WsAgentStateController#getMessageBus for updating dependencies procedure. Need to replace it with JSON-RPC.

@@ -1,0 +1,3 @@
+Feature Request : Environmental Variables in main project / app container.
+
+It would be nice if shell scripts could be run that could easily find the project name, project directory etc.

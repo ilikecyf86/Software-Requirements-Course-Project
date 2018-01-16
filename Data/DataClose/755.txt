@@ -1,0 +1,36 @@
+Provide links of the workspace to the client
+target/branch 
+We already have at least two endpoints which may be useful for clients: output endpoint workspace status endpoint So we need to rework our workspace links injector in accordance with client`s needs and changes in spi branch. Note that the set of endpoints may expand. We also want to simplify Links model. It is supposed to be done as a part of this issue. The current model is complicated and, lately, we used to use it in the simplest use cases only. So we decided to simplify it significantly. The current model of an object that contains links is: {
+    "field1" : "",
+    "links" : [
+        {
+            "href" : "http://some-server.com:9090/path1/path2",
+            "rel" : "myserver.api",
+            "method" : "GET",
+            "produces" : "application/json",
+            "consumes" : "application/json",
+            "parameters" : [
+                {
+                    "name" : "parameterName",
+                    "defaultValue" : "defvalue1",
+                    "description" : "Some user-friendly description",
+                    "type" : "string",
+                    "required" : true,
+                    "valid" : [
+                        "valid1",
+                        "valid2",
+                    ]
+                }
+            ],
+            "requestBody" : {
+                "description" : "body user-friendly description"
+            }
+        }
+    ]
+} and the new model would be: {
+    "field1" : "",
+    "links" : {
+        "myserver.api" : "http://some-server.com:9090/path1/path2",
+        "anotherserver.api" : "http://another-server.com",
+    }
+}

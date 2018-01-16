@@ -1,0 +1,9 @@
+Change workspace idle timeout
+kind/enhancement severity/P2 
+The workspace timeout in the che.env file and default hard coded idle timeout should be changed to 4 hours. che.env # Idle Timeout
+#     The length of time that a user is idle with their workspace when the system will suspend the
+#     workspace by snapshotting it and then stopping it. Idleness is determined by the length of
+#     time that the user has not interacted with the workspace, meaning that one of our agents
+#     has not received instructions. Leaving a browser window open counts as idleness time.
+#CHE_MACHINE_WS_AGENT_INACTIVE_STOP_TIMEOUT_MS=600000
+ Related to codenvy/codenvy#1592

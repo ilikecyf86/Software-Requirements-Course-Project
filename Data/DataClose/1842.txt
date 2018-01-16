@@ -1,0 +1,3 @@
+Fix package/deploy issue of docs.
+kind/task status/blocked status/blocked 
+Need docs war file to be "deploy/installed" at {host}/docs .

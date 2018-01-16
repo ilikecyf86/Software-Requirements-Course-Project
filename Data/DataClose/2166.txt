@@ -1,0 +1,18 @@
+Docker networks are not deleted when the corresponding workspace is stopped
+kind/bug status/open-for-dev severity/blocker sprint/current-sprint team/enterprise status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+It looks like che doesn't always remove networks when stopping corresponding containers. # docker network ls | wc -l
+21
+# docker ps -a | wc -l
+3
+ In a long runs it will lead to problems, either open-files limit for network connections: # lsof -P -p $(cat /run/docker.pid) | awk '{print $9 $10}' | sort | uniq -c | sort -n | tail -n 3
+     12 [eventpoll]
+     22 pipe
+    391 protocol:NETLINK
+ or (probably) inability to create new networks: 2016-10-27 17:04:41,044[aceManager-2506]  [ERROR] [o.e.c.a.w.s.WorkspaceManager 637]    - Start of environment default failed. Error: Error response from docker API, status: 500, message: Error response from daemon: couldn't get vxlan id for "10.0.114.0/24": failed to allocate vxlan id: no bit available
+org.eclipse.che.api.core.ServerException: Start of environment default failed. Error: Error response from docker API, status: 500, message: Error response from daemon: couldn't get vxlan id for "10.0.114.0/24": failed to allocate vxlan id: no bit available
+    at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.start(WorkspaceRuntimes.java:277) ~[che-core-api-workspace-5.0.0-M5.jar:5.0.0-M5]
+    at org.eclipse.che.api.workspace.server.WorkspaceManager.lambda$performAsyncStart$1(WorkspaceManager.java:621) ~[che-core-api-workspace-5.0.0-M5.jar:5.0.0-M5]
+    at org.eclipse.che.api.workspace.server.WorkspaceManager$$Lambda$139/1789460612.run(Unknown Source) [che-core-api-workspace-5.0.0-M5.jar:5.0.0-M5]
+    at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalRunnable.run(CopyThreadLocalRunnable.java:28) [che-core-commons-lang-5.0.0-M5.jar:5.0.0-M5]
+...
+ Reproduction Steps: Start che/codenvy and let it run for a while(several hours/days), launching different kind of workspaces Check number of containers: `docker ps -a -q | wc -l Check number of networks docker network ls -q | wc -l Compare above numbers, if difference is greater than 4 (default non-overlay networks) then there is a problem Expected behavior: Number of networks same less as number of containers Observed behavior: Number of overlay networks times bigger than number of containers Che version: 5.0.0-M5 OS and version: Centos 7.2 Docker version: 1.11.2 Che install: Codenvy Additional information: Problem started happening recently, didn't happen in an older version of Che: Yes Problem can be reliably reproduced, doesn't happen randomly: No

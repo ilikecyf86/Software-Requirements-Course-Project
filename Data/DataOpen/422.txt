@@ -1,0 +1,3 @@
+Enablers for JavaScript based IDE plugins
+kind/epic kind/enhancement kind/epic 
+Che needs to open a way to implement IDE plugins using JavaScript. We can use JsInterop to define these APIs. In addition to GWT backed JavaScript APIs, we also need a loading mechanism defined for these plugins. This is a complicated issues that needs more study and discussions, opening this one as to serve as the epic.

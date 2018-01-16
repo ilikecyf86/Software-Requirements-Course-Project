@@ -1,0 +1,3 @@
+Adapt GitColorsTest and CheckWorkingWithTabByUsingTabListTest according to latest changes in the IDE
+team/production 
+Description We have 2 changes in UI, that broke the tests: Default color for files under git has been changed. The tab list for opened files always is shown (erlier it has appeared when avialible space for opened tabs is overload) After merge the PR: #7396, we should change the tests. OS and version: Che6, chrome browser

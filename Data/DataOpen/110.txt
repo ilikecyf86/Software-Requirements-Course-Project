@@ -1,0 +1,3 @@
+Revise project related exception hierarchy
+kind/enhancement sprint/next-sprint target/che6 team/ide 
+Description Right now we have no project specific exceptions so we use existing ones that not really good map to project related operations and we can't comfortably process exceptional situations. We need to add a project related hierarchy of exceptions that will allows us to effectively deal with cases when we have no project/file/directory/type and so on.

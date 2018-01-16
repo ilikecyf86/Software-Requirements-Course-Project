@@ -1,0 +1,4 @@
+Not enough information for investigation agent failure from error output at `AbstractAgentLauncher`
+kind/bug sprint/next-sprint status/open-for-dev team/enterprise severity/P2 sprint/next-sprint status/open-for-dev 
+Got several such errors: 2017-04-10 13:36:38,568[aceSharedPool-6]  [ERROR] [.a.a.s.l.AbstractAgentLauncher 149]  - An error occurs while starting 'SSH' agent. The agent didn't produce any logs.
+ This all I got in logs. It's not possible start investigation, please fix it by including at least workspaceId. Also container ID needed, if possible It would be great also to have NodeID in case of swarm. Reproduction Steps: None OS and version: Centos 7.3

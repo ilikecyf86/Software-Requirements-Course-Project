@@ -1,0 +1,73 @@
+Latest eclipse che image complains about /data not mounted although it is, and stops with exit code 2
+kind/question status/info-needed kind/bug severity/P2 team/pm kind/question status/pending-merge status/info-needed 
+Starting eclipse che, I am getting a message saying /data is not mounted: eclipse_1 | WARN: You are using CLI image version 'latest' which is set to '5.1.1'.
+eclipse_1 |  WARNING: Usage of loopback devices is strongly discouraged for production use. Either use `--storage-opt dm.thinpooldev` or use `--storage-opt dm.no_warn_on_loop_devices=true` to suppress this warning.
+eclipse_1 | WARN: Did not detect TTY - interactive mode disabled
+eclipse_1 | INFO: Welcome to Eclipse Che!
+eclipse_1 | INFO: 
+eclipse_1 | INFO: We could not detect a location to save data.
+eclipse_1 | INFO: Volume mount a local directory to ':/data'.
+ Afterwards, it stops with exit code 2. However, the inspect has the mount listed:         "Mounts": [
+            {
+                "Source": "/home/jonas/Develop/eclipse-che/volumes/data",
+                "Destination": "/data",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Source": "/var/run/docker.sock",
+                "Destination": "/var/run/docker.sock",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+ Also, the respective docker-compose.yml I wrote contains it too: version: '2'
+
+services:
+  eclipse:
+    image: eclipse/che
+    volumes:
+    - ./volumes/data/:/data
+    - /var/run/docker.sock:/var/run/docker.sock
+    command: start
+ Reproduction Steps: Start eclipse/che with docker-compose up -d Check log with docker-compose logs Observe process is gone with docker-compose ps Che version: version seems to be broken by this too, although clearly it shouldn't need the data directory to be existant: [root@falcon eclipse-che]# docker-compose run eclipse version
+WARN: You are using CLI image version 'latest' which is set to '5.1.1'.
+ WARNING: Usage of loopback devices is strongly discouraged for production use. Either use `--storage-opt dm.thinpooldev` or use `--storage-opt dm.no_warn_on_loop_devices=true` to suppress this warning.
+INFO: Welcome to Eclipse Che!
+INFO: 
+INFO: We could not detect a location to save data.
+INFO: Volume mount a local directory to ':/data'.
+INFO: 
+INFO: Simplest syntax:
+INFO:   docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock
+INFO:                       -v <YOUR_LOCAL_PATH>:/data
+INFO:                          eclipse/che version
+INFO: 
+INFO: 
+INFO: Or, run with additional overrides:
+INFO:   docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock
+INFO:                       -v <YOUR_LOCAL_PATH>:/data
+INFO:                       -v <YOUR_INSTANCE_PATH>:/data/instance
+INFO:                       -v <YOUR_BACKUP_PATH>:/data/backup
+INFO:                          eclipse/che version
+[root@falcon eclipse-che]#
+ OS and version: Fedora 25 x64 (I tested with setenforce 0 to make sure SELinux wasn't the reason) Docker version: Client:
+ Version:         1.12.6
+ API version:     1.24
+ Package version: docker-common-1.12.6-5.git037a2f5.fc25.x86_64
+ Go version:      go1.7.4
+ Git commit:      037a2f5/1.12.6
+ Built:           Wed Jan 18 12:11:29 2017
+ OS/Arch:         linux/amd64
+
+Server:
+ Version:         1.12.6
+ API version:     1.24
+ Package version: docker-common-1.12.6-5.git037a2f5.fc25.x86_64
+ Go version:      go1.7.4
+ Git commit:      037a2f5/1.12.6
+ Built:           Wed Jan 18 12:11:29 2017
+ OS/Arch:         linux/amd64
+ Che cli.log output: There is no log file present.

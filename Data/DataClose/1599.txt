@@ -1,0 +1,18 @@
+Che CLI is not considering local assembly
+kind/question 
+I am trying to use the local Che assembly. I have followed below steps still, I am not able to see Che with local assembly. Am I missing any steps? Reproduction Steps: c:\dev\che5.2.0\che (master) λ mvn clean install -Pfast -pl !dashboard [INFO] BUILD SUCCESS [INFO] ------------------------------------------------------------------------ [INFO] Total time: 17:47 min [INFO] Finished at: 2017-02-02T15:53:58+05:30 [INFO] Final Memory: 551M/1803M [INFO] ------------------------------------------------------------------------ λ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /c/Users/cpra/tmp:/data -v /c/dev/che5.2.0/che:/assembly eclipse/che-cli:nightly start
+
+WARN: Boot2docker detected - ensure :/data is mounted to %userprofile%
+INFO: (che cli): :/assembly mounted - using assembly from local host
+INFO: (che cli): nightly - using docker 1.13.0 / boot2docker
+INFO: (che download): Pulling image eclipse/che-cli:nightly
+
+nightly: Pulling from eclipse/che-cli
+Digest: sha256:44cb634008926d07ede24b594c02a5f3da41d65291948e2b2d1bdb7d1e657ac7
+Status: Image is up to date for eclipse/che-cli:nightly
+
+INFO: (che start): Booted and reachable
+INFO: (che start): Ver: nightly
+INFO: (che start): Use: http://192.168.99.101:8080
+INFO: (che start): API: http://192.168.99.101:8080/swagger
+ OS and version: Windows 7 Professional I can see the Che up but it's not considering my local assembly. I would be happy to provide more details if you needed.

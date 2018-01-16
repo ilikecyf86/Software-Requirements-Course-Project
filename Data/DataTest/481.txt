@@ -1,0 +1,3 @@
+Custom Java formatting rules
+kind/enhancement kind/epic team/ide kind/enhancement 
+User should be able to choose which formatting rules to use at least basic rules, like use tab or 2 spaces for indent the best: import Eclipse formatting rule Also need to make possible set formatting per project Add ability set formatting per project and for workspace #5724 Develop UI panel for changing Java code formatter preferences #5720 Develop service for importing Java formatter preferences form the file #5721

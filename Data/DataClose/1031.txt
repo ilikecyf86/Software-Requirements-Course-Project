@@ -1,0 +1,3 @@
+Custom Che Assembly version to version migration
+kind/question 
+What's the best way to migrate custom Che assembly to the new version? Imagine, I have custom assembly with version 5.2.0 and the following modules structure: I change some pom.xml files from root and assembly module to include custom plugins and agents. But now I want to migrate to the last Che version. Is some special approach or tool to do it or only manual file changing (ad hoc)?

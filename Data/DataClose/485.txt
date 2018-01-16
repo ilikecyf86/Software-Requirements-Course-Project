@@ -1,0 +1,3 @@
+"Link with editor" feature should not pick up focus from editor.
+kind/bug severity/P2 team/ide status/in-progress status/code-review status/in-progress status/code-review 
+Reproduction Steps: Reproduction Steps: Open some project. Open some file from project. Click on the button "Link with editor feature" in the Project Explorer. Click in the editor. Actual behavior: Project Explorer pick up focus from editor. Expected behavior: yes, feature should find and select FileNode mapped to current active editor, but focus should stay in the editor like in the Desktop Eclipse. Losing focus from editor in this case is annoying for user and can broke some selenium tests. OS and version: Fedora 25 CHE version: 5.18.0-SNAPSHOT

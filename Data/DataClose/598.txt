@@ -1,0 +1,3 @@
+Ability to switch to the Classic Che 5.x layout
+kind/question 
+Since Che 6 would introduce a new IDE layout +panels it would be nice if we have the classic IDE layout as an option to switch to. It could be a redesign of it since I already fell in love with the current Che 5.x Layout.

@@ -1,0 +1,3 @@
+Unable to log in with a user if an organization with the same name already exists
+kind/bug status/open-for-dev team/platform sprint/current-sprint sprint/current-sprint 
+Description Unable to log in with a user if an organization with the same name already exists. Reproduction Steps Log in as admin. Create an organization with some name e.g. test. Log out. Try to register a new user with the same name. Expected: User is registered and logged in successfully or gets an error with the message that he has to use another username. Actual: User is created on keycloak server but the dashboard is not opened because of error while importing keycloak user into che-server database because of name uniqueness constraint.

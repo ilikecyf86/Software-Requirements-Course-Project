@@ -1,0 +1,3 @@
+Possibility to develop android with gradle
+kind/question 
+Possibility to develop android with gradle I am using gradle to develop my android application (Actually libgdx which use gradle to build). I try to make a workspace for that by modifying recipe ubuntu_android by adding lines in ubuntu_gradle in it. However, when I try to use the workspace like that, it shows error when building it, could someone write a usable recipe for gradle + android? Thank you.

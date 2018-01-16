@@ -1,0 +1,50 @@
+che-sample-plugin-serverservice-server server not responding
+kind/question 
+che-sample-plugin-serverservice-server server not responding. che-sample-plugin-serverservice-ide is able to send the request with url Ex: http://172.17.0.1:32778/api/hello/xyz. but getting reply as "There is no any resources matched to request path /hello/xyz" I am referring https://eclipse-che.readme.io/docs/serverworkspace-access for enabling this plugin. and following bellow procedure. How to test sample-serverservice plugin 1- Link to IDE assembly The plugin-serverservice has both part, an IDE extension and a server extension. You have to introduce the extension as a dependency in /che/assembly/assembly-ide-war/pom.xml. Add: ...
+<dependency>
+  <groupId>org.eclipse.che.sample</groupId>
+  <artifactId>che-sample-plugin-serverservice-ide</artifactId>
+</dependency>
+... You can insert the dependency anywhere in the list. After you have inserted it, run mvn sortpom:sort and maven will order the pom.xml for you. 2- Link to WS-Master assembly The plugin-serverservice has a server side part. You have to introduce the extension as a dependency in /che/assembly/assembly-wsmaster-war/pom.xml. Add: ...
+<dependency>
+  <groupId>org.eclipse.che.sample</groupId>
+  <artifactId>che-sample-plugin-serverservice-server</artifactId>
+</dependency>
+... You can insert the dependency anywhere in the list. After you have inserted it, run mvn sortpom:sort and maven will order the pom.xml for you. 3- Register dependency to the GWT application Link the GUI extension into the GWT app. You will add an <inherits> tag to the module definition. The name of the GWT extension is derived from the direction + package structure given to the GWT module defined in our extension. In: assembly-ide-war/src/main/resources/org/eclipse/che/ide/IDE.gwt.xml Add: ...
+<inherits name='org.eclipse.che.plugin.serverservice.ServerService'/>
+... 4- Rebuild Eclipse Che # Create a new Che server web app that includes your Che server extension
+cd che/assembly/assembly-wsmaster-war
+mvn clean install
+
+# Build a new IDE.war
+# This IDE web app will be bundled into the assembly
+cd che/assembly/assembly-ide-war
+mvn clean install
+
+# Create a new Che assembly that includes all new server- and client-side extensions
+cd assembly/assembly-main
+mvn clean install
+#
+
+**Reproduction Steps:**
+1. Enable the plugin and build
+2. launch eclipse che
+3. right click on any projects created in eclipse che -> MyAction 
+
+**Expected behavior:**
+ service accepts a String {name} and responds with "Hello {name} !".
+
+**Observed behavior:**
+There is no any resources matched to request path /hello/{name}
+
+
+Che version: 5.0.0-M8  
+OS and version:  Ubuntu 14.04.5 LTS
+Docker version: Docker version 1.12.5
+Che install: Docker container   
+
+**Additional information:**
+
+
+* Problem started happening recently, didn't happen in an older version of Che: [No]
+* Problem can be reliably reproduced, doesn't happen randomly: [Yes]

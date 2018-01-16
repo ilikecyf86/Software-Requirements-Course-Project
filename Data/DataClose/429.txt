@@ -1,0 +1,3 @@
+Che fails to start a workspace on OpenShift in spi branch
+kind/bug severity/P1 status/open-for-dev target/branch team/platform status/in-progress 
+Related to SPI branch only. After last changes, OpenShift infrastructure implementation workspaces don't start. The reason is that URL of websocket endpoint provided by Che is wrong. It should be <che-host-on-openshift>/wsmaster/websocket but now it is <che-host-on-openshift>:8080/wsmaster/websocket. Because of that bootstrapper of installers fails to connect to push statuses and logs on installers. Reproduction Steps: Start WS on OpenShift. It fails to start. OS and version: Diagnostics:

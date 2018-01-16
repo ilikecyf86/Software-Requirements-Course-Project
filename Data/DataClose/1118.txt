@@ -1,0 +1,12 @@
+How to correctly setup Eclipse Che on Docker Cloud
+kind/question 
+I've just got Che running nicely (all diagnostic tests pass) on Docker Cloud / AWS. I just wanted to check whether we should still be setting CHE_HOST or not with the below config? Everything seems to work fine without, I just don't want to slow anything down by external DNS or something happening where I can't see it. We have set CHE_DOCKER_IP_EXTERNAL to the FQDN of the container running Che. che:
+  environment:
+    - CHE_DOCKER_IP_EXTERNAL=$DOCKERCLOUD_SERVICE_FQDN
+    - CHE_DOCKER_SERVER__EVALUATION__STRATEGY=docker-local
+#  - CHE_HOST=$DOCKERCLOUD_SERVICE_FQDN
+  image: 'eclipse/che-server:5.7.2'
+  ports:
+    - '8080:8080'
+  restart: always
+  ... Oh, and how do CHE_IP and CHE_API come into this? They don't seem to be necessary even through we are connecting from a remote browser?

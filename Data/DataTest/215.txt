@@ -1,0 +1,3 @@
+Add old workspace sub-entity identifier to workspace REST service sub-enitity update methods
+kind/bug 
+In terms of the workspace API all methods which do update of workspace sub-entities should provide old sub-enitity identifier as well as update body. For example {code} PUT //environment -> PUT //environment?old_env_name=old_name {code} Then it will be possible to update entity identifier as well(e.g. environment name)

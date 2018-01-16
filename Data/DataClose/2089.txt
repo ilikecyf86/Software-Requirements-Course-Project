@@ -1,0 +1,3 @@
+<tag> content is filtered out when a command is executed
+kind/bug severity/P2 team/ide team/plugin team/ide severity/P2 severity/P2 
+Reproduction Steps: Create a maven sample project with pom.xml in it Create a command cd ${current.project.path} && cat pom.xml Execute this command. Here's the result. All tags content isn't displayed.

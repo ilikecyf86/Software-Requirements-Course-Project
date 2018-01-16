@@ -1,0 +1,4 @@
+che init does not create any files in host folder
+kind/question 
+I wanted to generate the che.evn file using the che init command, but the host folder mounted to /data always remains empty. Reproduction Steps: I tried the following che init command as specified here docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /C/ajay_temp/testProjects/docker/eclipse_che:/data eclipse/che init
+ The results were the same with the che start command too i.e. the host folder corresponding to the /data folder was always empty. Che version: Your CLI version is '5.1.1'. Your installed version is '5.1.1'. OS and version: Windows 7 Docker version: $ docker version Client: Version: 1.12.6 API version: 1.24 Go version: go1.6.4 Git commit: 78d1802 Built: Wed Jan 11 00:23:16 2017 OS/Arch: windows/amd64 Server: Version: 1.12.6 API version: 1.24 Go version: go1.6.4 Git commit: 78d1802 Built: Wed Jan 11 00:23:16 2017 OS/Arch: linux/amd64 Che cli.log output:

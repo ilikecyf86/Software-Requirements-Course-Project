@@ -1,0 +1,3 @@
+How do I do a git checkout from sourceforget.net using password
+
+Hello, I'm trying to checkout my project from SourceForge.net using git. The checkout keeps failing. I'm using ?token=xxxx as part of the git: line. I've setup an API key at sourceforge and put that as the token. I've also created a public rsa key and put that in sourceforge. Che can't find the private key and I haven't found how to import the private key into che. Suggestions or pointers gratefully accepted. Thanks, Harlan...

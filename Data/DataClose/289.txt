@@ -1,0 +1,3 @@
+Remove add exec installer functionality
+kind/task status/open-for-dev target/branch team/platform target/che6 sprint/current-sprint status/in-progress status/open-for-dev status/in-progress 
+Description When we split terminal agent into exec agent and terminal agent we added filters which automatically add exec agent to workspaces/stacks into a workspace with a terminal. It was done for backward compatibility of workspace configurations. Since then a lot of time and releases passed, so we can remove this workaround in Che 6 branch. Reproduction Steps OS and version: Diagnostics:

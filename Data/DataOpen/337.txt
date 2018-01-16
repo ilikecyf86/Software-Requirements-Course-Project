@@ -1,0 +1,13 @@
+Delegate OAuth authentication to keycloak
+kind/task team/platform sprint/next-sprint status/open-for-dev status/in-progress sprint/next-sprint status/open-for-dev status/in-progress status/open-for-dev sprint/current-sprint 
+We want to manage Identity Providers like github or google on keyclaok We want to be able to use github or other IP tokens from plugins. We would like to have the same api for Che SDK and multiuser che. 3.1     @GET
+    @Path("authenticate")
+    public Response authenticate(@Required @QueryParam("oauth_provider") String oauthProvider,
+                                 @QueryParam("scope") List<String> scopes)throws ForbiddenException,
+                                                                                 BadRequestException,
+                                                                                 OAuthAuthenticationException {
+ to initiate authentification on IP. 3.2    @GET
+   @Path("token")
+   @Produces(MediaType.APPLICATION_JSON)
+   public OAuthToken token(@Required @QueryParam("oauth_provider") String oauthProvider)
+ To get stored token for IP. See more https://wjw465150.gitbooks.io/keycloak-documentation/server_admin/topics/identity-broker/tokens.html

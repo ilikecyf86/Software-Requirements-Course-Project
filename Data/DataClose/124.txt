@@ -1,0 +1,3 @@
+Problems Running Eclipse Che in Eclipse Oxygen
+kind/question 
+Description I'm trying to build/run Eclipse Che in Eclipse Oxygen but I'm having some troubles because I can't build the project. Reproduction Steps I open the eclipse che project in Eclipse Oxygen but i can't build it or run because the eclipse doesn't recognize the project in the "Run as..." option. OS and version: Mac OS High Sierra 10.13.1

@@ -1,0 +1,3 @@
+Replace button style to open in IDE
+Improvement 
+As discussed with [~ashumilova], we wanted to change the style of the "Open in IDE" in the header of workspace, project, factory details. Here is the mockup: !open-ide.png|thumbnail!

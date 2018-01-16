@@ -1,0 +1,3 @@
+Enable Processes panel in machine and project perspective
+status/pending-merge 
+Enable Processes panel in machine and project perspectives We need the ability to keep the same view in the two perpsectives and keep all the context

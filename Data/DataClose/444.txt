@@ -1,0 +1,3 @@
+Tooltip seems to use Orion default style instead of Eclipse Che's tooltip styling
+kind/question 
+I don't know if this is a bug or intended feature since I spotted this while I have errors in my project This is how it should normally look Reproduction Steps: Normally open a project and hover to a statement with errors, you might get lucky to spot this since it might be a rare bug. Expected: Gray tooltips on hover. Resulting Behavior: uses Orion's default scheme instead. OS and version: Codenvy 5.18.0-SNAPSHOT on Windows 10

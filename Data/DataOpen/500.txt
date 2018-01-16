@@ -1,0 +1,3 @@
+Sever-Client communicaton - Dto usage sample and documentation
+kind/question team/ide kind/docs kind/question 
+My use case is sending a completion proposal for instance that composed of several data fields. Looking at the Java plugin project, I see the sending over the server and client is done via Dto for serialization of that info instance. One way for me currently to implement this is to reverse engineer the Java plugin project. I see that for instance there is a need to create a build step in the shared project to create the Dto artifacts. Is there a guide for implementing a Dto support for a plugin project ?

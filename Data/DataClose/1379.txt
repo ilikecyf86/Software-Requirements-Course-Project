@@ -1,0 +1,15 @@
+SSH agent might fail due to sudo not working properly
+kind/bug severity/P2 sprint/current-sprint team/platform status/in-progress sprint/current-sprint status/in-progress 
+Got these errors in logs: 2017-03-07 10:40:12,627[aceSharedPool-9]  [ERROR] [.a.a.s.l.AbstractAgentLauncher 145]  - An error occurs while starting 'SSH' agent. Detailed log:
+[STDERR] sudo: no tty present and no askpass program specified
+[STDERR] sudo: no tty present and no askpass program specified
+[STDERR] sudo: no tty present and no askpass program specified
+[STDERR] sudo: no tty present and no askpass program specified
+ And this 2017-03-07 20:09:05,468[ceSharedPool-14]  [ERROR] [.a.a.s.l.AbstractAgentLauncher 145]  - An error occurs while starting 'SSH' agent. Detailed log:
+[STDERR] /bin/sh: 65: sudo: not found
+[STDERR] /bin/sh: 66: sudo: not found
+[STDERR] /bin/sh: 68: sudo: not found
+[STDERR] /bin/sh: 129: sudo: not found
+[STDERR] /bin/sh: 134: sudo: not found
+[STDERR] /bin/sh: 137: sudo: not found
+ Reproduction Steps: Don't know, probably need to use some strange docker images OS and version: Centos 7.2 Codenvy 5.4.1

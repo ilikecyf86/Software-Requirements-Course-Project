@@ -1,0 +1,3 @@
+Use IDE on existing server without vms/dockers?
+kind/question kind/enhancement status/open-for-dev status/analyzing status/open-for-dev kind/question 
+Hi, many apologies if this has been answered already but I've looked through closed issues and the docs and can't see a simple answer. Can I run che on an existing server as an IDE, similar to cloud9? I have servers already setup how I like them with puppet and lots of code on the local filesystem, I really just want to run che as an IDE for this code. Cloud9 offers an 'ssh' workspace for their commercial offering that allows use of existing servers/code. I appreciate the che environments, they're cool and all, but like a lot of existing environments I already have mine setup how I like them.

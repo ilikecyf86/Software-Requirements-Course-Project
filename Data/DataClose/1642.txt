@@ -1,0 +1,16 @@
+Get rid of dependencies from ws-master in ws-agent war
+kind/task status/open-for-dev team/enterprise sprint/next-sprint status/in-progress status/open-for-dev sprint/current-sprint sprint/next-sprint status/in-progress sprint/current-sprint 
+org.eclipse.che.plugin:che-plugin-github-server:jar produces transitive dependencies from ws-master: [INFO] +- org.eclipse.che.plugin:che-plugin-gdb-server:jar:5.2.0-SNAPSHOT:compile
+[INFO] +- org.eclipse.che.plugin:che-plugin-github-provider-github:jar:5.2.0-SNAPSHOT:compile
+[INFO] +- org.eclipse.che.plugin:che-plugin-github-server:jar:5.2.0-SNAPSHOT:compile
+[INFO] |  +- org.eclipse.che.core:che-core-api-ssh:jar:5.2.0-SNAPSHOT:compile
+[INFO] |  |  +- com.google.inject.extensions:guice-persist:jar:4.1.0:compile
+[INFO] |  |  +- org.eclipse.che.core:che-core-db:jar:5.2.0-SNAPSHOT:compile
+[INFO] |  |  |  +- org.eclipse.persistence:eclipselink:jar:2.6.2:compile
+[INFO] |  |  |  |  \- org.glassfish:javax.json:jar:1.0.4:compile
+[INFO] |  |  |  \- org.flywaydb:flyway-core:jar:4.0.3:compile
+[INFO] |  |  \- org.eclipse.persistence:javax.persistence:jar:2.1.1:compile
+[INFO] |  \- org.eclipse.che.core:che-core-api-ssh-shared:jar:5.2.0-SNAPSHOT:compile
+[INFO] +- org.eclipse.che.plugin:che-plugin-github-shared:jar:5.2.0-SNAPSHOT:compile
+[INFO] +- org.eclipse.che.plugin:che-plugin-java-debugger-server:jar:5.2.0-SNAPSHOT:compile
+ Need to do refactoring to get rid of those dependencies.

@@ -1,0 +1,3 @@
+The test runner does not work (regression)
+kind/bug severity/P1 
+Reproduction Steps: Go to the spring project Open context menu of any java class Click on "Run Test" -> "JUnit Class" Pay attention to the screen Expected Result : Test will be ran and result message will be shown . Observed result : Test stopped on the compile stage . Attachment :

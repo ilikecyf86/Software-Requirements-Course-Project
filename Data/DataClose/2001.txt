@@ -1,0 +1,14 @@
+Add utility methods for casting resources to their particular types
+kind/task status/open-for-dev team/plugin status/open-for-dev 
+Add to org.eclipse.che.ide.api.resources.Resource interface utility methods to cast current resource to its particular type. Proposed method names: org.eclipse.che.ide.api.resources.Resource#asFile org.eclipse.che.ide.api.resources.Resource#asFolder org.eclipse.che.ide.api.resources.Resource#asProject It's syntax sugar to better code readability. Example of usage:     public void doSmth() {
+
+        Resource resource = ...;
+        
+        if (resource.isFolder()) {
+            final Folder folder = resource.asFolder();
+            
+            folder.newFile("name", "content");
+        }
+        
+    }
+ If resource type is not corresponding caller method, method should throw java.lang.IllegalStateException

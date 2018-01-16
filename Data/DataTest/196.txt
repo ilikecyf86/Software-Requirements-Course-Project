@@ -1,0 +1,3 @@
+Che git will display empty cell if remote git url starts with spaces
+kind/bug 
+If the remote git url I added to che starts with spaces mistakenly, che can accept it: https://camo.githubusercontent.com/a49cb171724f66e8f7359692f2437a1162e82bce/687474703a2f2f736e61672e67792f49587346442e6a7067 but can't show it properly: https://camo.githubusercontent.com/0e454d0b425a02666d391df52581e0464b182756/687474703a2f2f736e61672e67792f684d4962302e6a7067 If I push to this remote, it will show such an error: https://camo.githubusercontent.com/b1772f22ab4177dfecb2609fc8700619dd917d65/687474703a2f2f736e61672e67792f7447564f452e6a7067 I think che should display an error when the url contains spaces, or just trim it directly

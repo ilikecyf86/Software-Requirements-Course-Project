@@ -1,0 +1,3 @@
+Add attributes field into ServerConfig and Server model objects
+kind/task target/che6 team/platform status/in-progress sprint/current-sprint 
+Description To provide an ability to use Language server as a separate container we need a way to identify it in workspace runtime and provide some metadata for wsagent. Add Map<String, String> field with name attributes into ServerConfig model Add the same field into Server object model (representation of ServerConfig at runtime) Copy attributes from ServerConfig into the corresponding Server Reproduction Steps OS and version: Diagnostics:

@@ -1,0 +1,3 @@
+Occasional Errors upon starting workspace
+
+Recently, I've had the occasional failure when starting up an existing workspace. Sometimes restarting the workspace seems to help or rebuilding from scratch. Haven't been able to determine what helps, really. This is when running in a branch close to master. In a chat conversation, @sunix and @eivantsov have said they have seen similar errors, so I don't believ it's my changes that cause it.

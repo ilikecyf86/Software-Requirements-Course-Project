@@ -1,0 +1,3 @@
+New Status bar / Activity monitor
+kind/enhancement 
+Description The status bar in its current form is used only for maven project and it is rarely active. The information displayed in is important, but we must always look at how we can optimize the use of the space on the screen. For all users who are not doing Maven, the status bar is stealing 20px which could be better use. The goal of this issue is to discuss and define what other solutions we could put in place. Options 1- Display the status bar only for maven project 2- Hide the bar, when no information to be displayed (would be annoying for end-user) 3- Allowing the command controller to display IDE activity information (similar to XCode and Visual Studio) 4- Display the information in a toast popup

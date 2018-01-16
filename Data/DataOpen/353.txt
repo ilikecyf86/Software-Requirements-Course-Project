@@ -1,0 +1,3 @@
+The highliter for NodeJs project set incorrectly
+kind/bug severity/P2 
+Preconditions: create a workspace base on NodeJs stack Reproduction Steps: Go to the workspace and create nodejs-hello-world project. Set debugger connection. Expected result: The app.js file should open, the highlighter should set in first line Actual result: The file is not opened. Env.: Fedora 25, chrome browser, CHE 1.16.0

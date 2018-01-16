@@ -1,0 +1,3 @@
+Cannot save previewURL into a command (regression)
+kind/bug severity/blocker team/plugin sprint/current-sprint status/analyzing sprint/current-sprint 
+Reproduction Steps: Create a new command Try to save it with a preview URL http://${server.port.8080} Expected behavior: Command is saved with a previewURL Observed behavior: Preview URL is not saved Additional information: Problem started happening recently, didn't happen in an older version of Che: Not sure Problem can be reliably reproduced, doesn't happen randomly: Yes

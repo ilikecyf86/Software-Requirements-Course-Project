@@ -1,0 +1,3 @@
+Support for Openshift Origin?
+kind/question 
+Description The current setup process for Openshift (https://www.eclipse.org/che/docs/setup/openshift/index.html) mentions deployment compatibility to Minishift and OCP. However nothing is mentioned about Openshift Origin. Is it afterall compatible with Origin? If not, any plans? Basically I´m looking for a scalable topology where I don´t need to spend on Licenses.

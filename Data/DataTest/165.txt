@@ -1,0 +1,3 @@
+Edit (Cut, Copy, Paste) are always disabled for the standard editor
+kind/bug 
+The menu entries for cut and copy in edit menu are disabled although I have a character selection in the currently opened text editor. The actions seem to work for the selection in the package explorer only.

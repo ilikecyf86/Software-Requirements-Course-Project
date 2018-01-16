@@ -1,0 +1,3 @@
+che custom workspace questions
+kind/question 
+Hello, in my project i would like to be able to create workspaces with projects containing just a folder with some files... For that , I would probably want to implement something like zip file upload at in the workspace creation menu, where a user creates and configures the workspace. As of now i can see that when i create a workspace i am able to import sources as zip, however an url must be provided there. I would like to change this functionality to be able to upload files just from the local machine. Would it be possible? If yes, where would i find the code to tweak? I would appreciate any help. Thank you in advance.

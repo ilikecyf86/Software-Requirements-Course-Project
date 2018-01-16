@@ -1,0 +1,3 @@
+Custom Stack Not Being Used.
+kind/question 
+Using custom stack over and over in develop sometimes it will not use my custom stack and will default to ready-to-go rails stack instead. Might have to run custom stack a couple of times to reproduce.

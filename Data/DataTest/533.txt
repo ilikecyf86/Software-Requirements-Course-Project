@@ -1,0 +1,3 @@
+import project from local file system
+kind/question 
+based on this link, I can import project from a local file system by "Copy a project to Che's projects folder on the local file system". May I know what's the Che's projects path? Thanks

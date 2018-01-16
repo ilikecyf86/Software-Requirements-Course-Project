@@ -1,0 +1,3 @@
+External operation notification workflow improvement
+team/ide kind/bug 
+Currently in situations when we multiple times within short duration or constantly externally edit file we get a flood of notifications about that. It would be nice to improve that in some way so a user would not be bothered so much by useless notifications.

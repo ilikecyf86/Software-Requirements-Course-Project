@@ -1,0 +1,3 @@
+IDE is frozen in 'Starting' status (regression)
+kind/bug severity/P1 
+Reproduction Steps: Run workspace from dashboard Expected behavior: Logs is displayed in Processes panel while workspace is starting Project is displayed when workspace has 'Running' status Observed behavior: Logs is absent while workspace is starting. IDE is frozen in 'Starting' status Che version: 5.9.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

@@ -1,0 +1,3 @@
+che idle timeout 5.15
+kind/question 
+Currently when running latest version our workspace's timeout/idle when not used for some time (within 24 hours). I'd like to set a single workspace as persistent and to not idle or timeout. I have not been able to find clear documentation for doing this.

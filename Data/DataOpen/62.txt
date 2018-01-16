@@ -1,0 +1,3 @@
+Browser with IDE hang after git hard resetting
+kind/bug severity/P1 team/ide 
+Reproduction Steps Create a workspace based on Eclipse Che stack. Clone Che project, checkout on che6 branch. I've renamed method by refactoring. This changed about 20 -30 files. After that i applied hard resetting from the Git menu Wrong: the browser is hung OS and version: Chrome browser, che6.0.0.M3

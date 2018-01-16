@@ -1,0 +1,43 @@
+Factory commands cannot run on non dev-machine.
+kind/enhancement 
+Factory commands cannot run on non dev-machine. Currently I do not want to run the Run gRPC Client command on dev-machine but on client machine. Part of .factory.json: ---
+"ide": {
+    "onProjectsLoaded": {
+      "actions": [
+        {
+          "properties": {
+            "name": "Setup Build-Run gRPC Server"
+          },
+          "id": "runCommand"
+        },
+        {
+          "properties": {
+            "name": "Run gRPC Client",
+            "machine": "client"
+          },
+          "id": "runCommand"
+        }
+      ]
+    }
+---
+ Proposed Part of .factory.json: ---
+"ide": {
+    "onProjectsLoaded": {
+      "actions": [
+        {
+          "properties": {
+            "name": "Setup Build-Run gRPC Server",
+            "machine": "dev-machine"
+          },
+          "id": "runCommand"
+        },
+        {
+          "properties": {
+            "name": "Run gRPC Client",
+            "machine": "client"
+          },
+          "id": "runCommand"
+        }
+      ]
+    }
+---

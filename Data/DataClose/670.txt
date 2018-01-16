@@ -1,0 +1,3 @@
+The C# language server does not initialize properly
+severity/blocker kind/bug 
+Reproduction Steps: Create a workspace based on .NET stack Create ASP project from wizard, open Program.cs Expected result: the language server should be initialized. Code validation should work Actual result: the language server does not start. OS and version: Ubuntu 16.04

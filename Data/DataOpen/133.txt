@@ -1,0 +1,3 @@
+Create maven project from wizard feature works wrong
+kind/bug 
+Reproduction Steps Create Project -> Select maven -> set name Expected result: the Create button should be active Actual result: the button is disabled. But after clicking on Next button and Back button, the Create button becomes enabled. OS and version: Che6 M2, chrome browser, Fedora 25

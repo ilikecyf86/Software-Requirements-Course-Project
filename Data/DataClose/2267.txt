@@ -1,0 +1,3 @@
+Add a health check
+kind/enhancement 
+In order to restart Che if anything is wrong (it seems to happens when messing around creating, renaming... workspaces), a /healthz page or similar would be useful. Basically a HTTP GET on /healthz should just respond 200 and with content may be just ok if everything looks fine, and return any non-200 if something's wrong. Example of similar implementation in some major projects: Sentry (see also source code) Elasticsearch GitLab

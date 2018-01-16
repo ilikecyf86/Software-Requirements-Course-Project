@@ -1,0 +1,10 @@
+Adding dependency to IDE plugin
+kind/question 
+I have added following dependency to my IDE plugin , but I am not able to compile it , is this because of some dependency restrictions? <dependency>
+            <groupId>com.googlecode.gwt-charts</groupId>
+            <artifactId>gwt-charts</artifactId>
+            <version>0.9.10</version>
+        </dependency>
+
+
+ [WARNING] Rule 0: org.apache.maven.plugins.enforcer.RequireDepMgt failed with message: com.googlecode.gwt-charts:gwt-charts:jar is not managed by dependency management You are trying to use artifacts that are not in the list of allowed artifacts included in dependencyManagement in maven-depmgt-pom or have different version. [I Reproduction Steps: OS and version: Diagnostics:

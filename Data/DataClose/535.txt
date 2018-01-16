@@ -1,0 +1,3 @@
+Multiuser Che Dashboard displays broken icons
+kind/bug 
+There are broken icons in New Workspace window: There problem is 403 server error: Access to the specified resource has been forbidden. This issue is related to #5362.

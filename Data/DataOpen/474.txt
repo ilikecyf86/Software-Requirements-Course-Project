@@ -1,0 +1,3 @@
+Java reconciler does not show error in some cases
+kind/bug severity/P2 team/ide severity/P2 severity/P2 
+Java reconciler does not show error when we use class which is not exist anymore Reproduction Steps: Create a new java class Open another java class and use the newly created class(create a new object for example) Remove the newly created class Expected behavior: Java reconciler shows error Observed behavior: We haven't any errors.

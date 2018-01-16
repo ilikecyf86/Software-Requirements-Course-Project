@@ -1,0 +1,3 @@
+Creating a new machine in the machine perspective doesn't appear in project perspective (regression)
+kind/bug severity/blocker team/ide severity/blocker 
+Reproduction Steps: Add new machine in the Machine perspective. Make sure that this one has been created correct. Go to the project perspective. Expected behavior: In the processes widget should appear just created machine Observed behavior: There is no the expected machine Codenvy version: 5.0.0.-M6 OS and version: Ubuntu 14 TLS, Chrome v. 53. Additional information: Problem only started happening recently, didn't happen in an older version of Codenvy: Yes Problem can be reliably reproduced: Yes

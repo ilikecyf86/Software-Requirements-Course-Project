@@ -1,0 +1,3 @@
+[SPI] Commands are not executed
+kind/bug severity/P2 team/ide 
+Steps to reproduce: Start a workspace (SPI branch) Execute a command Often, commands is not executed. There are no logs, and there's no process in the workspace. Refreshing browser page helps. The problem can be occasionally reproduced.

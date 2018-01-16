@@ -1,0 +1,3 @@
+Mark with colour Git changed files in project explorer
+kind/enhancement status/in-progress team/enterprise sprint/current-sprint status/code-review status/in-progress sprint/current-sprint sprint/current-sprint status/code-review sprint/current-sprint 
+A part of #5128 (https://cloud.githubusercontent.com/assets/1636769/26213265/b13531d4-3bf8-11e7-9516-8217c68a6af8.png) Mark with colour Git changed files in project explorer

@@ -1,0 +1,3 @@
+OutOfMemoryError when use mounted project
+kind/bug 
+Reproduction Steps Mount project by configuring CHE_WORKSPACE_VOLUME in che.env file Create workspace from 'Java' or 'Eclipse Che' stack Start workspace See logs in dev-machine tab OS and version: Fedora 25

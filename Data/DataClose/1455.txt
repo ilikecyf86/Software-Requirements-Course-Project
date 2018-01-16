@@ -1,0 +1,3 @@
+The error event message appears when deleting a file in the Project Explorer
+kind/bug sprint/next-sprint team/ide sprint/current-sprint sprint/next-sprint 
+Reproduction Steps: Start any workspace with a project Open a file in the Editor Delete the file Expected behavior: The file is deleted Observed behavior: The file deleted and "Failed to update content of file(s)" event appears The error message appears only if this file open in the Editor Che version: 5.4.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.3 Che install: Docker container Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes]

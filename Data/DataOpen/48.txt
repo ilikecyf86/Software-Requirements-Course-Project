@@ -1,0 +1,3 @@
+Prepare QA suite for rh-che 6 packaging
+kind/task status/open-for-dev target/che6 team/production 
+Description There is deployed RH Che 6 server. It is needed to be able to run there Che QA tests. At the beginning, it is enough to run one existing test with the similar scenario to the following: Create a workspace. Start the created workspace. Import any project. Open any file (maybe open a terminal). Stop the workspace. Note that this Che 6 server uses OpenShift.io authentication server while QA tests expect to use Keycloak dedicated instance (I guess the form is different and there is no an ability to register new test user).

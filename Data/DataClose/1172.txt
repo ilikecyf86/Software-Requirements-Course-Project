@@ -1,0 +1,3 @@
+Factories command validation invalid error
+kind/bug severity/P2 team/plugin sprint/next-sprint sprint/next-sprint 
+Reproduction Steps: Go to /factory/ When creating a factory try to add a command with a space in the name like: Note the invalid error reported OS and version: Docker image of Che 5.7.2

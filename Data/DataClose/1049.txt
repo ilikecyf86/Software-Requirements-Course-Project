@@ -1,0 +1,15 @@
+Machine is Destroyed
+kind/question 
+We are seeing this consistently across multiple Che installs after launching a workspace. It usually happens within the first half an hour or so. I can't see any other errors than "Machine is destroyed". Any thoughts? [STDOUT] 2017-05-09 10:27:48,119[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 987]        - Deployment of web application archive /root/che/ws-agent/webapps/ROOT.war has finished in 8,771 ms
+[STDOUT] 2017-05-09 10:27:48,141[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 570]  - Starting ProtocolHandler [http-nio-4401]
+[STDOUT] 2017-05-09 10:27:48,191[main]             [INFO ] [o.a.catalina.startup.Catalina 668]   - Server startup in 9043 ms
+[STDOUT] 2017/05/09 10:27:55 A new channel with id 'channel-1' successfully opened
+[STDOUT] 2017-05-09 10:27:55,858[nio-4401-exec-7]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 49]   - Web socket session opened
+[STDOUT] 2017-05-09 10:27:55,860[nio-4401-exec-7]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 50]   - Endpoint: 475087258
+[STDOUT] 2017/05/09 10:27:55 A new channel with id 'channel-2' successfully opened
+[STDOUT] 2017-05-09 10:27:55,889[nio-4401-exec-3]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 49]   - Web socket session opened
+[STDOUT] 2017-05-09 10:27:55,891[nio-4401-exec-3]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 50]   - Endpoint: 565413378
+[STDOUT] 2017/05/09 10:27:55 Start new terminal.
+[STDOUT] 2017/05/09 10:27:55 Start new terminal.
+Machine is destroyed
+ Running eclipse/che-server:5.9.1.

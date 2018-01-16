@@ -1,0 +1,3 @@
+Testing Server Protocol
+kind/task team/ide kind/epic kind/task 
+With the latest changes to the unit testing on Che, we have a good understanding for a testing server protocol that is similar to Language Server protocol. This is a request for creation of a Testing Server Protocol that can streamline the integration of different test frameworks for Che and any other clients that implements the protocol. Extract and document the protocol Collect comments Provide Che's implementation of the protocol as a library

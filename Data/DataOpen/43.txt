@@ -1,0 +1,3 @@
+Add ability to create OpenShift-specific selenium tests of Eclipse Che
+kind/task status/open-for-dev team/production 
+Description Provide @Openshift type-level annotation to mark OpenShift-specific selenium test classes, and --openshift parameter of webdriver.sh to include such tests into the test execution. Docker-specific selenium tests will be executed by default. This issue is an implementation of requests #7761 and #7669. OS and version: Eclipse Che 6.x

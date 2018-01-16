@@ -1,0 +1,3 @@
+Upgrade Selenium to the version 3.6.0
+kind/enhancement team/production 
+https://raw.githubusercontent.com/SeleniumHQ/selenium/master/java/CHANGELOG

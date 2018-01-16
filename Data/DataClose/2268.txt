@@ -1,0 +1,3 @@
+Enhance the build args for compose syntax
+kind/enhancement team/platform status/open-for-dev 
+Add checks to prevent the args in compose build in Che from being used maliciously to gain access to the host. This was the second part of #2661.

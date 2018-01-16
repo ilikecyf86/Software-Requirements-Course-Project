@@ -1,0 +1,3 @@
+Workspace ram
+
+I would like to be able to adjust workspace ram after it has been created while workspace is stopped.

@@ -1,0 +1,4 @@
+[Codeenvy] CORs issue
+
+When opening a workspace chrome console shows there is a CORs problem: XMLHttpRequest cannot load http://node2.beta.codenvy.com:38336/api/ext/. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://beta.codenvy.com' is therefore not allowed access. The response had HTTP status code 503.
+_app-0.js:5264 ERROR (org.eclipse.che.api.machine.gwt.client.WsAgentStateController$4): (null)p$ @ _app-0.js:5264

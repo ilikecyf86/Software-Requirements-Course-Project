@@ -1,0 +1,3 @@
+Checkboxes aren't aligned in 'Commit to repository' window
+kind/bug 
+All checkboxes in Commit to repository window have to be aligned by left side. Also need to increase vertical spaces between them.

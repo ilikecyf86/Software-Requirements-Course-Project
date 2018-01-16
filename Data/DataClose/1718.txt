@@ -1,0 +1,21 @@
+the commands from samples.json don't appear
+kind/question 
+I have created a blank workspace and in it I have created an angular-patternfly-starter project (from the sample group). It appeared in the project explorer, but the commands assigned for this sample "commands": [
+      {
+        "name": "install dependencies",
+        "type": "custom",
+        "commandLine": "cd ${current.project.path} && npm install --no-bin-links && bower install",
+        "attributes": {
+          "previewUrl": ""
+        }
+      },
+      {
+        "name": "run",
+        "type": "custom",
+        "commandLine": "cd ${current.project.path} && grunt server",
+        "attributes": {
+          "previewUrl": "http://${server.port.8003}"
+        }
+      }
+    ],
+ did not appear in the CMD dropbox. Che version: 5.0.0 OS and version: Ubuntu 16.04 Docker version: 1.12.5

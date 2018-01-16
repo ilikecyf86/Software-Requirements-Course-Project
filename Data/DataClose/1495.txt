@@ -1,0 +1,3 @@
+Unable to start Eclipse Che on Raspberry Pi 2
+kind/question kind/enhancement kind/question 
+Docker returns "docker: Error response from daemon: rpc error: code = 2 desc = "oci runtime error: exec format error"." when running Eclipse Che. Reproduction Steps: Run the command "sudo docker run --rm -t -v /var/run/docker.sock:/var/run/docker.sock eclipse/che-cli:nightly start" OS and version: Raspbian Jessie Diagnostics: Info command returns same error.

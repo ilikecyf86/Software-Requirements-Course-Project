@@ -1,0 +1,3 @@
+Need to move OutputCustomizers to the according plugins and make them to be loaded according to workspace's settings
+sprint/next-sprint 
+Currently all the existing Output Customizers are placed into che-core-ide-app. However it doesn't appear to be a correct to tCore IDE App to hold the output customizers for the different runtimes... We need to move OutputCustomizers to the according runtime plugins and make them to be loaded according to workspace's settings (or a list of runtimes used in the workspace projects).

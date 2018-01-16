@@ -1,0 +1,3 @@
+Superdev mode for Debugging IDE plugins
+kind/question 
+I am trying to setup my development environment for debugging Custom IDE plugins. https://www.eclipse.org/che/docs/plugins/setup-che-workspace/index.html But getting message "the code server isn't configured to compile this module" Reproduction Steps: OS and version: Diagnostics:

@@ -1,0 +1,3 @@
+Add links to GitHub and Mattermost channel in the IDE
+kind/enhancement team/plugin kind/enhancement 
+We should include links in the product in order to let a user being able to engage with the community more easily. Since we opened the mattermost channel we should add a new entry in the Help menu: The item "Public Chat" should be below "Community" and point to: https://mattermost.eclipse.org/eclipse/channels/eclipse-che Also we add "Report Issue" and point to: https://github.com/eclipse/che

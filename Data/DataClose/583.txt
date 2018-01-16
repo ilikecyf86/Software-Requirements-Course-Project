@@ -1,0 +1,3 @@
+Websocket API docs
+kind/question 
+I can't find any Websocket API docucemntation, particularly I need WS API to watch files (create, save, delete) in a whole project.

@@ -1,0 +1,3 @@
+Rework workspace key to new format where namespace can contain `/` symbols
+kind/task status/open-for-dev team/plugin sprint/current-sprint status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+Rework workspace key to new format where namespace can contain / symbols. Now workspace key have following format: {workspaceId} {namespace}:{workspaceName} :{workspaceName} It is needed to rework workspace key to have following format: {workspaceId} {namespace}/{workspaceName} Note that namespace can contains / so workspace key can looks like {namespace_part1}/{namespace_part2}/.../{namespace_partN}/{workspaceName}.

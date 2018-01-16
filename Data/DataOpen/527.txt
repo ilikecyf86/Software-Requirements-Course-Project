@@ -1,0 +1,3 @@
+Advanced Samples editing options
+kind/enhancement team/plugin 
+Once #2968 is done, we will add more capabilities in order to manage the Samples from Che Dashboard.

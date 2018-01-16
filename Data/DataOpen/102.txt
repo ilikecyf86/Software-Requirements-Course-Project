@@ -1,0 +1,3 @@
+Support for multiple applications on a workspace
+kind/epic 
+Enhance our workspace definitions so that Che allows to develop 2 or more projects that are deployed on different containers within a single workspace. When implementing this feature we should not assume that these projects would be coming from different code repositories. However, it should be safe to assume a project could only be deployed to a single container. The experience of development activities such as debugging across these multiple containers should also be handled. For instance we should be able to put a breakpoint on two projects that are deployed to two different containers and be able to start debugging for both on a single action.

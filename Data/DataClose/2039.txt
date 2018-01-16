@@ -1,0 +1,3 @@
+Customize and Add more support for code formatter
+kind/question kind/bug kind/question 
+I entered 2 in Preferences -> IDE -> Editor -> Tabs -> Tab Size, but I found that I still get 4 spaces for an indent level when I used Alt+Shift+L for code formatting, while having 2 spaces when indenting with TAB. Can I make my code formatter also indent 2 spaces only? Also can is the code formatter support of c/c++ in the plan?

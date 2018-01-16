@@ -1,0 +1,3 @@
+TextEditor integration
+
+Hello, I built my own editor for XML files, and I would to implement the TextEditor within, like XML editors in Eclipse Neon (Design and Source View). Is there a way for that ? I tried to implement EditorMultiPartStack to my presenter but I think this isn't the right way.

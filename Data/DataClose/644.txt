@@ -1,0 +1,29 @@
+No implementation for java.io.File annotated with @com.google.inject.name.Named(value=che.user.workspaces.storage) was bound
+kind/question 
+Hi, I see Che use MavenLanguageServer for validation, so I am trying to create a languageServerLauncher similar to the MavenLanguageServerLauncher to validate my language. I follow most of the code in MavenLanguageServerLauncher. In my SQLModule, I bind the launcher like how MavenModule does. Multibinder.newSetBinder(binder(), LanguageServerLauncher.class).addBinding().to(SQLLanguageServerLauncher.class).asEagerSingleton();
+ And my launcher constructor is @Inject
+    public SQLLanguageServerLauncher(
+                                       EditorWorkingCopyManager editorWorkingCopyManager,
+                                       EventService eventService) {
+        this.editorWorkingCopyManager = editorWorkingCopyManager;
+        this.eventService = eventService;
+    }
+
+ The build succeed, but I always get several errors when I start the Che server No implementation for java.io.File annotated with @com.google.inject.name.Named(value=che.user.workspaces.storage) was bound.
+  while locating java.io.File annotated with @com.google.inject.name.Named(value=che.user.workspaces.storage)
+    for the 1st parameter of org.eclipse.che.api.vfs.watcher.FileWatcherEventHandler.<init>(FileWatcherEventHandler.java:47)
+  while locating org.eclipse.che.api.vfs.watcher.FileWatcherEventHandler
+    for the 2nd parameter of org.eclipse.che.api.vfs.watcher.FileWatcherService.<init>(FileWatcherService.java:81)
+  while locating org.eclipse.che.api.vfs.watcher.FileWatcherService
+    for the 1st parameter of org.eclipse.che.api.vfs.watcher.FileWatcherByPathValue.<init>(FileWatcherByPathValue.java:32)
+  while locating org.eclipse.che.api.vfs.watcher.FileWatcherByPathValue
+    for the 2nd parameter of org.eclipse.che.api.vfs.watcher.FileWatcherManager.<init>(FileWatcherManager.java:48)
+  while locating org.eclipse.che.api.vfs.watcher.FileWatcherManager
+    for the 9th parameter of org.eclipse.che.api.project.server.ProjectManager.<init>(ProjectManager.java:97)
+  while locating com.google.inject.Provider<org.eclipse.che.api.project.server.ProjectManager>
+    for the 1st parameter of org.eclipse.che.api.project.server.EditorWorkingCopyManager.<init>(EditorWorkingCopyManager.java:65)
+  while locating org.eclipse.che.api.project.server.EditorWorkingCopyManager
+    for the 1st parameter of com.my.che.plugin.sql.languageserver.SQLLanguageServerLauncher.<init>(SQLLanguageServerLauncher.java:27)
+  at com.my.che.plugin.sql.inject.SQLModule.configure(SQLModule.java:22) 
+
+ Seems something missed in injecting EditorWorkingCopyManager. The class which use inject @Named("che.user.workspaces.storage") File will report error. I do not find any place provide this binding and I also do not find any special handling in MavenLanguageServerLauncher and MavenModule. Does anyone know why these errors happen and how to resolve?

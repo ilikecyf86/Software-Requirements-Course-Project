@@ -1,0 +1,18 @@
+Dashboard is not able to cache factories
+kind/bug severity/P2 sprint/current-sprint status/open-for-dev team/plugin status/code-review status/open-for-dev status/code-review sprint/current-sprint 
+Dashboard fetches factories each time instead of using cache with etag like he does with entities on other pages. Reproduction Steps: Create at least one factory in che. Open factories page on dashboard and check requests list Expected: First request returns 200 response code and next requests return 304. Actual: All requests returns 200. It works in this way because of wrong accepted rel that contains hash of GuiceUriBuilderImpl instance instead of link. {
+  "v": "4.0",
+  "name": "test",
+  ...
+  "links": [
+    ...
+    {
+      "href": "org.everrest.guice.GuiceUriBuilderImpl@7dcf6b95",
+      "parameters": [],
+      "rel": "accepted",
+      "method": "GET",
+      "produces": "text/plain"
+    }
+    ...
+  ]
+}

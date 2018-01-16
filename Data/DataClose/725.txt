@@ -1,0 +1,3 @@
+Compatible browsers
+kind/bug kind/question kind/bug 
+Hello, I want to know what are the compatible browsers with CHE.

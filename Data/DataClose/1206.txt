@@ -1,0 +1,3 @@
+Syntax Highlighing for new filetype
+kind/question 
+So I've created a new filetype according to docs, and it registered successfuly, so far so good. But the sysntax highlighing is marking me a hard time to implement. The docs aren't clear. I'm using this example: https://www.eclipse.org/che/docs/plugins/code-editors/index.html#add-syntax-highlighting-for-your-own-language and I have few questions: where do I implement the code? i search for reference in che, and I found one plugin that uses this function (plugin-language-server), and I followed the code but nothing seems to work. Do you have any example on how to use this feature? Thanks :)

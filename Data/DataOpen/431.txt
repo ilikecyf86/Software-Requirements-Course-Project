@@ -1,0 +1,89 @@
+Get ssh pair HTTP request encodes '=' symbol to \u003d
+kind/bug status/analyzing team/enterprise 
+If ssh key pair with '=' symbol is present, HTTP request to retrieve the pair returns Json with encoded key. Reproduction Steps: Create ssh key pair with key that contains '=' in the end: curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{
+  "service": "vcs",
+  "privateKey": "-----BEGIN RSA PRIVATE KEY-----\n
+MIIEogIBAAKCAQEAoQnwMsPcGaTaZcI7c8jlF8pgbS+1xASYDQFTD0QSCmMXQcMU\n
+LfrlFWgaago6WsI/TTfUqDU0eRRt70V+ODpF1vc6QW6kmAATHagf/X4Vpy8wdqOx\n
+oBkHN5eeLTWtLuKd8f4Xfv/K9JBzT9OJsN7xU7BdnaH9WknCxPfgQNTHcI5R7JIH\n
++pvfFi1Ey7ljTxrh+d7AglikagUP5VmruDgWtUsBWyPGD9a0ww6OJdh1cJD107DU\n
+OSWq4bqrSvgJUfQSGTkzfrVn7a7FnY/C52bMVIchOzY9HizVtn507cPBkdJiMIQ7\n
+XLTvrCAjXiNw0KL69xng2hzkcA2eQeHld0GJsQIDAQABAoIBAFGTxkEBJMs8zoHD\n
+7fgOabcuhsBo7cwZg6j65ceS9Qyb+9kNaHiOY2P/s3nKKpt1UTndsXVwVl+LsNEH\n
+xBPZuS1XWgRxdyGk0Aoy89mm+HMTnZpL/Bwc8aIAxVkjmtJobBh9XguwqnBPiIqE\n
+n3igx2Fcs1+6AqytNuQuqURORaXHNFOhLwrc+n90N3BTFnx0LbFGko+RaBtX5a0R\n
+B+WoRxvb/qbKj/FSU3qe+J8LkjDMnf0yyTEUTeSjkqCSxDmApBeHz9RdKH2t9CKN\n
+yb8tolrus5LSls0oDETl3syI0GQdJB7Iqj9vAjZGs0dK4baBEIj9gK7/d0Pnb7pp\n
+hoI+sgECgYEA3S+U4PLhaqGAkJ0mNvJSp3xrlOPbkti6+jhu5shdIeYR+b8/bPAM\n
+fFe51qr6GQyolMParEzkHAFYsPcMCv5YhKxM5xdpfgi3kN7OUd4Nho6gKJNx0jgB\n
+Lp5zR+3lGAH+fhnd4+TMPqmQdploQH9l5AZu4qwC3OFmvkvDRwr9NlECgYEAumLN\n
+zSBbe4YC5ik0NIQ+B4oaChEu708kzS0btjYQM/w5S7ESmendQrTMb9/xowNd1fx/\n
+uDC/72V+1KSFzs8SGRJdasqffMa2MAuQ9a7FgEfDlshGoTPUddYDPFdms6QIyYJM\n
+TJhTB6g7/2p01y6aKXgqqu1tf/h1M/OcjoZCZWECgYAI3pOVwaeQYxGIuwSBR45Q\n
+8QhPXCO967rztbecwYQai+NEpIqij62wfsQQ+6IzxvIrpP7r0dmD1fn8fquY9UIP\n
+b+lVivbL+wWBZa3YUpMwRh/eAKubxmslt2zgAYYiRFI0NE1ViiM2kA4e81/e1jz7\n
+u9ZOeJ9UxCUelGMsQiCNQQKBgFUAOlsSJqZut2O/5s8MgD1v/fAZZg49SctIhxrS\n
+DRGoNXkPiCwpO37wdUuQFeMB5glw3c5ibSYAY5cWcO+f/+DvPys0vQdqmCvRGorw\n
+6aFXGRvquktKF9qlf1RFh9DlPhyoD6Pe0/7p+nLBWgfIeQXwh4TsQsPZy5mlwAA/\n
+uogBAoGADzwRqkMLgTdv73MZXTlv/R9DoTGETbaG+POLBrN0PlMbe4BjDfsXBZ1L\n
+zcDGM2rP8GWgyuRLGmNL+8URgzdau6Q+Sk0XLrSijncL708G9fWrr8A3wdoZ20J2\n
+JNlfXkRpStMXJF5A1Wxj2GUvqnaqB0DMZpp/gnrvDlbtOT+LX3o=\n
+-----END RSA PRIVATE KEY-----\n",
+  "publicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQChCfAyw9wZpNplwjtzyOUXymBtL7XEBJgNAVMPRBIKYxdBwxQt+uUVaBpqCjpawj9NN9SoNTR5FG3vRX44OkXW9zpBbqSYABMdqB/9fhWnLzB2o7GgGQc3l54tNa0u4p3x/hd+/8r0kHNP04mw3vFTsF2dof1aScLE9+BA1MdwjlHskgf6m98WLUTLuWNPGuH53sCCWKRqBQ/lWau4OBa1SwFbI8YP1rTDDo4l2HVwkPXTsNQ5JarhuqtK+AlR9BIZOTN+tWftrsWdj8LnZsxUhyE7Nj0eLNW2fnTtw8GR0mIwhDtctO+sICNeI3DQovr3GeDaHORwDZ5B4eV3QYmx ",
+  "name": "sshkey",
+  "links": [
+    {
+      "method": "string",
+      "parameters": [
+        {
+          "description": "string",
+          "type": "String",
+          "valid": [
+            "string"
+          ],
+          "required": false,
+          "defaultValue": "string",
+          "name": "string"
+        }
+      ],
+      "consumes": "string",
+      "produces": "string",
+      "requestBody": {
+        "description": "string"
+      },
+      "href": "string",
+      "rel": "string"
+    }
+  ]
+}' 'http://172.17.0.1:8080/api/ssh'
+ Make Get HTTP request for the created pair: curl http://172.17.0.1:8080/api/ssh/vcs/find?name=sshkey
+ Wrong: ssh key has encoded '=' symbol. The key is not valid. curl http://172.17.0.1:8080/api/ssh/vcs/find?name=sshkey
+{"name":"sshkey","publicKey":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQChCfAyw9wZpNplwjtzyOUXymBtL7XEBJgNAVMPRBIKYxdBwxQt+uUVaBpqCjpawj9NN9SoNTR5FG3vRX44OkXW9zpBbqSYABMdqB/9fhWnLzB2o7GgGQc3l54tNa0u4p3x/hd+/8r0kHNP04mw3vFTsF2dof1aScLE9+BA1MdwjlHskgf6m98WLUTLuWNPGuH53sCCWKRqBQ/lWau4OBa1SwFbI8YP1rTDDo4l2HVwkPXTsNQ5JarhuqtK+AlR9BIZOTN+tWftrsWdj8LnZsxUhyE7Nj0eLNW2fnTtw8GR0mIwhDtctO+sICNeI3DQovr3GeDaHORwDZ5B4eV3QYmx ","privateKey":"-----BEGIN RSA PRIVATE KEY-----\n
+MIIEogIBAAKCAQEAoQnwMsPcGaTaZcI7c8jlF8pgbS+1xASYDQFTD0QSCmMXQcMU\n
+LfrlFWgaago6WsI/TTfUqDU0eRRt70V+ODpF1vc6QW6kmAATHagf/X4Vpy8wdqOx\n
+oBkHN5eeLTWtLuKd8f4Xfv/K9JBzT9OJsN7xU7BdnaH9WknCxPfgQNTHcI5R7JIH\n
++pvfFi1Ey7ljTxrh+d7AglikagUP5VmruDgWtUsBWyPGD9a0ww6OJdh1cJD107DU\n
+OSWq4bqrSvgJUfQSGTkzfrVn7a7FnY/C52bMVIchOzY9HizVtn507cPBkdJiMIQ7\n
+XLTvrCAjXiNw0KL69xng2hzkcA2eQeHld0GJsQIDAQABAoIBAFGTxkEBJMs8zoHD\n
+7fgOabcuhsBo7cwZg6j65ceS9Qyb+9kNaHiOY2P/s3nKKpt1UTndsXVwVl+LsNEH\n
+xBPZuS1XWgRxdyGk0Aoy89mm+HMTnZpL/Bwc8aIAxVkjmtJobBh9XguwqnBPiIqE\n
+n3igx2Fcs1+6AqytNuQuqURORaXHNFOhLwrc+n90N3BTFnx0LbFGko+RaBtX5a0R\n
+B+WoRxvb/qbKj/FSU3qe+J8LkjDMnf0yyTEUTeSjkqCSxDmApBeHz9RdKH2t9CKN\n
+yb8tolrus5LSls0oDETl3syI0GQdJB7Iqj9vAjZGs0dK4baBEIj9gK7/d0Pnb7pp\n
+hoI+sgECgYEA3S+U4PLhaqGAkJ0mNvJSp3xrlOPbkti6+jhu5shdIeYR+b8/bPAM\n
+fFe51qr6GQyolMParEzkHAFYsPcMCv5YhKxM5xdpfgi3kN7OUd4Nho6gKJNx0jgB\n
+Lp5zR+3lGAH+fhnd4+TMPqmQdploQH9l5AZu4qwC3OFmvkvDRwr9NlECgYEAumLN\n
+zSBbe4YC5ik0NIQ+B4oaChEu708kzS0btjYQM/w5S7ESmendQrTMb9/xowNd1fx/\n
+uDC/72V+1KSFzs8SGRJdasqffMa2MAuQ9a7FgEfDlshGoTPUddYDPFdms6QIyYJM\n
+TJhTB6g7/2p01y6aKXgqqu1tf/h1M/OcjoZCZWECgYAI3pOVwaeQYxGIuwSBR45Q\n
+8QhPXCO967rztbecwYQai+NEpIqij62wfsQQ+6IzxvIrpP7r0dmD1fn8fquY9UIP\n
+b+lVivbL+wWBZa3YUpMwRh/eAKubxmslt2zgAYYiRFI0NE1ViiM2kA4e81/e1jz7\n
+u9ZOeJ9UxCUelGMsQiCNQQKBgFUAOlsSJqZut2O/5s8MgD1v/fAZZg49SctIhxrS\n
+DRGoNXkPiCwpO37wdUuQFeMB5glw3c5ibSYAY5cWcO+f/+DvPys0vQdqmCvRGorw\n
+6aFXGRvquktKF9qlf1RFh9DlPhyoD6Pe0/7p+nLBWgfIeQXwh4TsQsPZy5mlwAA/\n
+uogBAoGADzwRqkMLgTdv73MZXTlv/R9DoTGETbaG+POLBrN0PlMbe4BjDfsXBZ1L\n
+zcDGM2rP8GWgyuRLGmNL+8URgzdau6Q+Sk0XLrSijncL708G9fWrr8A3wdoZ20J2\n
+JNlfXkRpStMXJF5A1Wxj2GUvqnaqB0DMZpp/gnrvDlbtOT+LX3o\u003d\n
+-----END RSA PRIVATE KEY-----\n
+","service":"vcs","links":[{"href":"http://172.17.0.1:8080/wsmaster/api/ssh/vcs","parameters":[],"rel":"get pair","method":"GET","produces":"application/json"},{"href":"http://172.17.0.1:8080/wsmaster/api/ssh/vcs","parameters":[],"rel":"remove pair","method":"DELETE","produces":"application/json"},{"href":"http://172.17.0.1:8080/wsmaster/api/ssh/vcs/find","parameters":[],"rel":"get pair","method":"GET","produces":"application/json"}]}
+ OS and version: Ubuntu 16.04, CHE Version :5.12.0-SNAPSHOT Diagnostics:

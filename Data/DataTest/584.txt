@@ -1,0 +1,4 @@
+Where is the docker image for che 4.x?
+
+I can only install che 3.x from docker: docker pull codenvy/che
+ Is there one for 4.x?

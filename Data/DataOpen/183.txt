@@ -1,0 +1,7 @@
+OpenShift Keycloak
+kind/question 
+Description I couldn't get dedicated Keycloak to work created from the https://github.com/eclipse/che/blob/master/dockerfiles/init/modules/openshift/files/scripts/deploy_che.sh . So I am trying to get Keycloak in different Openshift project to work with Che. Seems like I am getting close after getting redirected to the keycloak server, registering a new user, and then getting the flashing che logo but doesn't go past that. I get the following in the chrome development console. Seems like api is not working for me. Is there something in my realm's client "che-public" configuration I need to do? I had to add Valid Redirect URIs (https://che-eclipse-che.devcomb.com/* and // etc) and set Web Origins to "+". GET https://che-eclipse-che.devcomb.com/api/ 403 ()
+GET https://che-eclipse-che.devcomb.com/api/workspace/settings 403 ()
+OPTIONS https://che-eclipse-che.devcomb.com/api/ 403 ()
+....
+ VM2698:1 POST https://keycloak-keycloak.devcomb.com/auth/realms/che/protocol/openid-connect/token 400 (Bad Request) {error: "unauthorized_client", error_description: "Client secret not provided in request"}

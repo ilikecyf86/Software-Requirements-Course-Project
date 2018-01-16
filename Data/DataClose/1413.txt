@@ -1,0 +1,3 @@
+superdevmode using IntellijI
+kind/question 
+Hi, i'm trying to run superdevmode using IntellijI but when i click on Dev Mode On i have this message : Can't find any GWT Modules on this page.

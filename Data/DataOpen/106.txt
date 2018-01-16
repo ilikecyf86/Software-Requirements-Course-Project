@@ -1,0 +1,3 @@
+Workspace start fails on OpenShift infra when one of images pulls lasts long time
+kind/bug target/che6 team/platform 
+Description When quite a big image is not pulled yet or network is bad pulling may last quite a long period of time. In this situation, our workspace fails to start. Reproduction Steps OS and version: Diagnostics:

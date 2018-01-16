@@ -1,0 +1,3 @@
+Change terminal cursor color into white
+kind/bug team/ide severity/P2 kind/enhancement kind/bug severity/P2 
+Reproduction Steps: Start a workspace and switch to the Light Theme in the Preferences menu In the Terminal run the Midnight Commander and open any file for editing Observed behavior: Cursor is barely visible on blue background. Che version: 5.9.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

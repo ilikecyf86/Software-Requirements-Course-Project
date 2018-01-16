@@ -1,0 +1,3 @@
+After starting PlayForJavf
+kind/bug 
+Reproduction Steps: Create workspace form Bitnami Play for java stack. Run java-play: 1. Create and run project command. OS and version: Ubuntu 14 TLS, Chrome browser

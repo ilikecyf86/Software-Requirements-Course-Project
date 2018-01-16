@@ -1,0 +1,3 @@
+Make possible to run all tests from project and package for JUnit and TestNG frameworks
+kind/enhancement team/ide status/in-progress 
+Now we have an ability to run JUnit and TestNG tests from test class by using new Test Runer API. Need to make possible to run all tests from the project or package.

@@ -1,0 +1,3 @@
+Java debugger integration tests hang
+kind/bug team/enterprise sprint/current-sprint sprint/current-sprint 
+It seems ProjectApiUtils is not properly initialized che/plugins/plugin-java-debugger/che-plugin-java-debugger-server/src/test/java/org/eclipse/che/plugin/jdb/server/util/ProjectApiUtils.java Line 47 in 0f635cf public class ProjectApiUtils { It is required by #6914

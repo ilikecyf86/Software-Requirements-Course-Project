@@ -1,0 +1,3 @@
+Prevent a tab from being automatically opened
+
+Hi, When I open a file on CHE, a tab is opened to show the content of the file. If I refresh the page (or close->re-open the browser), the tab is automatically opened. Is there a way to disable this feature for files that contain a certain pattern in its name ? Or maybe I should close these tabs with a function using JSNI when the page is refreshed or closed ? For example, I don't want all files with the name "README" to be re-opened in a tab when the page is laoded.

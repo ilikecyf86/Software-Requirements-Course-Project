@@ -1,0 +1,64 @@
+Unsupported major.minor version 52.0 while running TestNG Tests
+kind/question kind/bug severity/P2 team/ide kind/question 
+I've tried to run TestNG-Tests with Che-GUI. I have Java 7 Installed on my dev-machine because my project demands it. I get: Exception in thread "main" java.lang.UnsupportedClassVersionError: org/testng/CheTestNGLauncher : Unsupported major.minor version 52.0
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:800)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at sun.launcher.LauncherHelper.checkAndLoadMain(LauncherHelper.java:482)
+Test suite is empty.
+ Is there a possibility to run these test in GUI with JDK7 installed? OS and version: Linux Mint 18.1 Diagnostics: WARNING: No swap limit support
+INFO: (che cli): 5.16.0 - using docker 17.06.1-ce / native
+WARN: Newer version '5.17.0' available
+
+CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che:5.16.0
+ Version:        5.16.0
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /data
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    5.16.0
+ CHE_HOST:       10.131.200.11
+ CHE_INSTANCE:   /data/instance
+ CHE_CONFIG:     /data
+ CHE_BACKUP:     /data/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   10.131.200.11
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:5.16.0
+ IMAGE_CHE=eclipse/che-server:5.16.0
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ IMAGE_TRAEFIK=traefik:v1.3.0-rc3
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.16.0
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.16.0
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:5.16.0
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:5.16.0
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.16.0
+che.env:
+ CHE_HOST=10.131.200.11
+ CHE_SINGLE_PORT=false

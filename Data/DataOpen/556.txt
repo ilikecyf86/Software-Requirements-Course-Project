@@ -1,0 +1,3 @@
+Kubernetes and Che
+kind/enhancement team/enterprise team/platform team/enterprise team/platform kind/question kind/enhancement 
+Is it possible to work with containers that work under kubernetes? We want to use Google Cloud Container Engine so it uses kubernetes to access to containers (not Docker API). Thanks

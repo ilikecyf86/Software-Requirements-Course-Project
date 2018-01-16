@@ -1,0 +1,3 @@
+Change the timeout in methods related to the 'GitColorsTest'
+kind/task status/in-progress target/che6 team/production 
+Description Sometimes the selenium test 'Git Colors Test' is fail when is waited change color after git actions. Do not enough timeout for 5 sec We decided to change timeout to 10 sec for increase stability the test

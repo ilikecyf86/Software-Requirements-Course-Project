@@ -1,0 +1,3 @@
+Eclipse Che install is a disaster
+kind/question 
+I have tried a few times now to follow the directions to install Eclipse Che in Ubuntu 16.04.1 LTS xenial. From here: https://eclipse-che.readme.io/docs/samsung-artik-ide-getting-started Was able to get docker installed ok. However the next step of: curl -sL https://raw.githubusercontent.com/codenvy/artik-ide/master/artik-ide.sh > /usr/local/bin/artik-ide resulted in a response of: bash: /usr/local/bin/artik-ide: Permission denied Anyone know whats the problem here? Also, that getting started page is a terrible set of instructions.

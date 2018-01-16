@@ -1,0 +1,3 @@
+Provide JSON-RPC service for Language Service Communications
+kind/enhancement target/che6 team/ide 
+Description Issue part of epic #7554 Client-side (IDE) will call this service which will be protected by Che's authorization system, service will detect correct LS or LS's and make call to them. After getting result from all corresponded Language Services will return response to the client. URL and description for Language Service communication will be provided in Workspace Configuration (depends on #7560)

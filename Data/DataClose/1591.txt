@@ -1,0 +1,3 @@
+Refactoring wizard for move class broken in some case
+kind/bug team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+Reproduction Steps: Clone Che project Navigate to class: /che/core/commons/che-core-commons-lang/src/main/java/org/eclipse/che/commons/lang/IoUtil.java Try to move this class to other package. For example: /che/core/commons/che-core-commons-xml/src/main/java/org/eclipse/che/commons/xml Che: 5.2.1

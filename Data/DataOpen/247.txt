@@ -1,0 +1,25 @@
+Exception thrown using PHP LS
+kind/bug 
+We get the following error when enabling the PHP LS agent. [STDOUT] 2017-10-04 09:55:22,795[ool-13-thread-1]  [INFO ] [o.e.c.a.l.r.CheLanguageClient 80]    - Parsing file 28467/28467: dev/tools/Magento/Tools/StaticReview/PhpCsFixerReview.php.
+[STDOUT] 2017-10-04 09:55:22,795[ool-13-thread-1]  [INFO ] [o.e.c.a.l.r.CheLanguageClient 80]    - All PHP files parsed in 330 seconds. 286 MiB allocated.
+[STDOUT] 2017-10-04 10:01:26,745[onPool-worker-2]  [INFO ] [o.e.c.a.l.util.OperationUtil 90]     - Exception occurred in request
+[STDOUT] java.util.concurrent.CompletionException: java.util.concurrent.CancellationException
+[STDOUT] 	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+[STDOUT] 	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+[STDOUT] 	at java.util.concurrent.CompletableFuture.uniAccept(CompletableFuture.java:647)
+[STDOUT] 	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:632)
+[STDOUT] 	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:474)
+[STDOUT] 	at java.util.concurrent.CompletableFuture.cancel(CompletableFuture.java:2265)
+[STDOUT] 	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint$1.cancel(RemoteEndpoint.java:109)
+[STDOUT] 	at org.eclipse.che.api.languageserver.util.OperationUtil.doInParallel(OperationUtil.java:114)
+[STDOUT] 	at org.eclipse.che.api.languageserver.service.TextDocumentService$2.lambda$start$0(TextDocumentService.java:257)
+[STDOUT] 	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1590)
+[STDOUT] 	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1582)
+[STDOUT] 	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+[STDOUT] 	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+[STDOUT] 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+[STDOUT] 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+[STDOUT] Caused by: java.util.concurrent.CancellationException: null
+[STDOUT] 	at java.util.concurrent.CompletableFuture.cancel(CompletableFuture.java:2263)
+[STDOUT] 	... 9 common frames omitted
+ Che 5.18

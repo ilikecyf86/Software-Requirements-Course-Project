@@ -1,0 +1,8 @@
+Plugin-docker is not a plugin
+kind/task sprint/next-sprint status/open-for-dev team/platform sprint/next-sprint status/open-for-dev status/blocked status/blocked 
+Plugin-docker in our current vision is not a plugin. It's more like implementation of infrastructure layer. We would like to rename this plugin and move out from plugins folder. We are thinking about /che
+/che/agents
+/che/plugins
+/che/infrastructure  
+/che/infrastructure/docker 
+ Need for #4403

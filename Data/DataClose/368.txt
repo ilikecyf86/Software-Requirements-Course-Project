@@ -1,0 +1,3 @@
+Che multiuser: Move and adapt html templates from Codenvy project
+kind/task status/in-progress team/platform 
+Move and adapt HTML templates from Codenvy project. It is required to move HTML templates from Codenvy project to send users email notifications about some changes like organization renaming/removing. Also, these changes are required for moving invite API from Codenvy. And just moving won't work because there is thymeleaf implementation that should not be used for Che. Instead of thymeleaf there should be StringTemplate(ST) simple implementation. So it is needed to do required changes to implement it in this way.

@@ -1,0 +1,3 @@
+Installing sample-plugin-parts plugin
+kind/question 
+Given I want to test out the "sample-plugin-parts plugin" If I follow instructions at sample plugin readme I notice that the file assembly-ide-war/src/main/resources/org/eclipse/che/ide/IDE.gwt.xml is missing... So I just skiped this step. Now, when I proceed with the build as in the example, without any errors, however my view doesnt even appear in the java editor... Please help. Am I missing something in the plugin installation?

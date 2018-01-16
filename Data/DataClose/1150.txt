@@ -1,0 +1,3 @@
+Cannot create preview url for custom command
+kind/bug severity/P1 
+Cannot create preview url for custom command. Codenvy 5.7.2

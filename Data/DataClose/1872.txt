@@ -1,0 +1,3 @@
+Delete docs folder
+kind/docs 
+Delete folder https://github.com/eclipse/che/tree/master/docs. Moved docs to dedicated repo.

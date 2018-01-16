@@ -1,0 +1,3 @@
+WorkspaceService#symbol is broken
+kind/bug severity/P2 sprint/current-sprint team/osio status/code-review 
+While integrating the jdt.ls language server, I have noticed that the the lsp WorkspaceService is not properly prefixing the workspace-relative path before looking up applicable language servers. I have fixed the problem in my branch and will cherry-pick to master later.

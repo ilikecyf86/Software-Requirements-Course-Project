@@ -1,0 +1,3 @@
+File Watcher exclude feature doesn't work after restarting workspace
+kind/bug severity/P2 
+Reproduction Steps: Start a workspace from any stack with project Restart this workspace Select any file and from its context menu select the Add to File Watcher excludes Expected behavior: This file added File Watcher excludes list and in its context menu the Remove from File Watcher excludes item is active. Observed behavior: The Remove from File Watcher item in context menu is disabled. After refreshing page feature works normally. Che version: 5.19.0-SNAPSHOT OS and version: Fedora 25

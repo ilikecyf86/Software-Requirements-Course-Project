@@ -1,0 +1,3 @@
+Issue with Code Folding in case of Language Server
+kind/question 
+I have my own Xtext based language server. I can see code folding for C# but not for my DSL. With same language server, I can see code folding in Visual Code. I want to know do I need to write any code/anything to enable code folding? I could not find any documentation related to this, any link or pointer would be helpful.

@@ -1,0 +1,19 @@
+Can't find which port is using by tomcat for `codenvy/ubuntu_jdk8` (che 4.x)
+
+My workspace is based on codenvy/ubuntu_jdk8, and I found it should bind to port 8080 for tomcat from the "Servers" tab: If I docker exec -it <container_id> bash to corresponding container, I can see there is running the tomcat: user@76ea98bc2d0f:/$ ps -eaf | grep tomcat
+user        32     1  0 02:40 ?        00:00:18 /opt/jdk1.8.0_45/bin/java -Djava.util.logging.config.file=/home/user/che/ext-server/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Xms256m -Xmx1024m -server -Dche.logs.dir=/home/user/che/ext-server/logs -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dche.local.conf.dir=/mnt/che/conf -agentlib:jdwp=transport=dt_socket,address=4403,server=y,suspend=n -Djava.endorsed.dirs=/home/user/che/ext-server/endorsed -classpath /home/user/che/ext-server/conf/:/opt/jdk1.8.0_45/lib/tools.jar:/home/user/che/ext-server/bin/bootstrap.jar:/home/user/che/ext-server/bin/tomcat-juli.jar -Dcatalina.base=/home/user/che/ext-server -Dcatalina.home=/home/user/che/ext-server -Djava.io.tmpdir=/home/user/che/ext-server/temp org.apache.catalina.startup.Bootstrap start
+user       236   213  0 03:39 ?        00:00:00 grep --color=auto tomcat
+ But the port 8080 is not used by anyone: user@76ea98bc2d0f:/$ netstat -npl
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:4403            0.0.0.0:*               LISTEN      32/java
+tcp6       0      0 :::57273                :::*                    LISTEN      32/java
+tcp6       0      0 :::4411                 :::*                    LISTEN      24/terminal
+tcp6       0      0 :::32001                :::*                    LISTEN      32/java
+tcp6       0      0 :::32101                :::*                    LISTEN      32/java
+tcp6       0      0 :::4401                 :::*                    LISTEN      32/java
+tcp6       0      0 127.0.0.1:4405          :::*                    LISTEN      32/java
+Active UNIX domain sockets (only servers)
+Proto RefCnt Flags       Type       State         I-Node   PID/Program name    Path
+user@76ea98bc2d0f:/$
+ How can I find which port is really used by tomcat? And is there anything wrong?

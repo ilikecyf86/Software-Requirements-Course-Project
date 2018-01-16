@@ -1,0 +1,3 @@
+PHPDoc for ls-php
+kind/question kind/task team/ide kind/question 
+Can anyone see PHP.net phpdoc showing for any built in functions? I'm only seeing the list of core functions (so lsp must be working) but nothing to the right. che-server v5.9.1

@@ -1,0 +1,3 @@
+Implement User Preferences for jdt.ls
+kind/task 
+We need to analyse what configuration we need to do for jdt.ls. This analysis will result in outcomes: Settings that exist, but will not be shown to the user Settings that exist and need to be exposed in user preferences Settings that don't exist yet. We need to implement those in jdt.ls. At this point, we should implement the minimum settings we need for Java support to function. More settings can be added later.

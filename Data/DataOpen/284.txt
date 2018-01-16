@@ -1,0 +1,19 @@
+The browser hangs on editing (vi mode related?)
+kind/question 
+Reproduction Steps: Choose vi mode as keybind. 2, Edit code. (not 100% reproduction) The browser hangs OS and version: Browser Chrome : 60.0.3112.114（Official Build） （64 bit） Che Version :5.18.0-SNAPSHOT Revision :20d596648cb1bf4b Build Time :2017-09-15 16:12:46 Diagnostics: built-codeEdit-amd.js:22611 Uncaught TypeError: Cannot read property 'selection' of undefined
+    at TextView.setText (built-codeEdit-amd.js:22611)
+    at built-codeEdit-amd.js:38165
+    at VIMode._invoke (built-codeEdit-amd.js:37755)
+    at Object.view.setAction.name [as handler] (built-codeEdit-amd.js:38152)
+    at TextView.invokeAction (built-codeEdit-amd.js:21756)
+    at TextView._doAction (built-codeEdit-amd.js:24070)
+    at TextView._handleKeyPress (built-codeEdit-amd.js:23164)
+    at HTMLDivElement.handler (built-codeEdit-amd.js:25642)
+setText @ built-codeEdit-amd.js:22611
+(anonymous) @ built-codeEdit-amd.js:38165
+_invoke @ built-codeEdit-amd.js:37755
+view.setAction.name @ built-codeEdit-amd.js:38152
+invokeAction @ built-codeEdit-amd.js:21756
+_doAction @ built-codeEdit-amd.js:24070
+_handleKeyPress @ built-codeEdit-amd.js:23164
+handler @ built-codeEdit-amd.js:25642

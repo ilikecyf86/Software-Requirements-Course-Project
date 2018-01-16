@@ -1,0 +1,3 @@
+Revamp Che docs for 5
+kind/docs status/in-progress 
+This is an epic to track progress toward a revamped doc set and structure for Che 5. Conversion to MD Convert all markdown files Docs Page Reviews Goal of Review Identify: Broken links Style problems Situations where "Che" is mentioned and unclear Getting Started Section - Pages to Review Doc writer tooling docs.sh script to allow anyone to run Jekyll and edit docs on their local machine Packaging Stevan: Doc styles complete Stevan: Docs integrated into the dashboard for che

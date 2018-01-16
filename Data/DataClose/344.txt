@@ -1,0 +1,7 @@
+[SPI] Investigate why OpenShift SPI doesn't work on OCP
+kind/task status/open-for-dev target/branch team/platform status/in-progress status/open-for-dev status/in-progress sprint/current-sprint sprint/current-sprint 
+OpenShift SPI works fine on minishift instance with set user's credentials. But it doesn't work on OCP In case of using a service account (with missing credentials) che-server doesn't have rights to create objects outside of its project. In case of using user's credentials, there is another error 2017-10-05 15:34:59,923[nio-8080-exec-5]  [ERROR] [o.e.c.a.w.s.WorkspaceRuntimes 270]   - Unexpected response (401 Unauthorized), to the authorization request. Missing header:[Location]!
+--
+  | org.eclipse.che.api.workspace.server.spi.InfrastructureException: Unexpected response (401 Unauthorized), to the authorization request. Missing header:[Location]!
+  | at org.eclipse.che.workspace.infrastructure.openshift.project.OpenShiftProject.get(OpenShiftProject.java:98)
+ It is needed to investigate how we can provide OpenShift SPI rights to manage objects outside of its OpenShift Project.

@@ -1,0 +1,3 @@
+Consider JGit 4.9 upgrade
+kind/enhancement team/enterprise kind/task kind/enhancement status/open-for-dev status/in-progress status/open-for-dev sprint/current-sprint status/in-progress sprint/current-sprint 
+Description We are using 4.2 jgit that is about ~2 years old Among other things, I've seen a couple of notes about performance improvements. See https://wiki.eclipse.org/JGit/New_and_Noteworthy/4.9#Performance_Improvements https://wiki.eclipse.org/JGit/New_and_Noteworthy/4.8#Performance_Improvements It would be interesting to see benefits on basic operation with repository like eclipse/che Check selenium tests

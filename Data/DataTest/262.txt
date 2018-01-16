@@ -1,0 +1,3 @@
+No set commands after create template project on dashboard
+kind/bug 
+Open the dashboard and create new template project (e.g. 'web-java-spring'). Open project in IDE and open 'Edit Commands' on toolbar. Expected: should be the set commands into 'Commands' form. Actual: the set commands is not present. See the attachments.

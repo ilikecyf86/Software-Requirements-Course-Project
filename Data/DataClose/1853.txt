@@ -1,0 +1,3 @@
+Debug Che binaries within che-server without mounting /repo
+kind/task kind/enhancement kind/task 
+Sometimes I need to debug some version of Che or some branch but I don't have compiled sources of that state of Che. I would want to debug Che without compilation of sources. But now it is not implemented. Che version: 5.0.0-Snapshot Problem started happening recently, didn't happen in an older version of Che: [No] Problem can be reliably reproduced, doesn't happen randomly: [Yes]

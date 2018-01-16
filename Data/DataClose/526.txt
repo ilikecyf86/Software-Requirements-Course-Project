@@ -1,0 +1,3 @@
+Integration for JavaScript Build Systems
+kind/question 
+Eclipse Che has integration to build systems like GCC. JavaScript, like any other language, has a build system used by many large projects to automate transpilation, getting dependencies, etc. An integration to these Node.js build systems, like gulp, would ease workflow

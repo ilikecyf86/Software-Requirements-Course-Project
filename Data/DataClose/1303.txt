@@ -1,0 +1,3 @@
+There is a error notification when create a new command after a project renaming
+kind/bug sprint/current-sprint team/ide sprint/next-sprint sprint/current-sprint sprint/current-sprint sprint/next-sprint severity/P2 
+This is issue related with epic #4511 Reproduction Steps: Go to the spring project Rename the project Try to create any command Expected behavior : The new command is created Observed behavior A error notification "Unable to create command" appeared and the command is created but is not visible in the Command Explorer. See attachment : It's looks like a new name of the project was added to the "Apply to" section of a command settings.

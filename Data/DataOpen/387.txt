@@ -1,0 +1,3 @@
+Replace double-click actions from projects/commands explorer
+kind/enhancement 
+At this moment, we are using the double-click in the projects explorer in order to: expand/collapse a folder open a file In the commands explorer: open command's editor We should replace that behaviour by a simple click, which would: make the behaviour consistent with how it works in the processes panel allow better control for all the devices which are not handling double-click (tablets, phones) The goals would be the following: simple click on a folder, would expand or collapse it simple click on a file will open its editor simple click on a command will open its dedicated editor

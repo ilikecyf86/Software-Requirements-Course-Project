@@ -1,0 +1,3 @@
+The Create button for starting a workspace doesn't work if in the Projects list selected a project imported from github
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: Start to create a new workspace. Select any stack and from the Projects section click on the Add or Import Project button. From the GitHub tab add any from your account project and select it from projects list. Click on the Create button. Expected behavior: The workspace started. Observed behavior: Nothing happens. If select other project from the list(not from github) or click on the Add or Import Project button then the workspace will start. Che version: 5.18.0-SNAPSHOT OS and version: Fedora 25

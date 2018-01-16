@@ -1,0 +1,47 @@
+`docker ps` checking fails randomly
+
+I found it quite often to view following information when running che in docker, like docker run -it --rm --privileged nowind/academy-che:2016-01-09-9e4369517e4308593fce0895d4700e77ecba12f8-x bash -c " sudo service docker start && cd /home/user/che/bin/ && ./che.sh -r:159.203.211.163 run", which is running on digital ocean.  * Starting Docker: docker                                               [ OK ]
+
+!!! Running 'docker' succeeded, but 'docker ps' failed. This usually means that docker cannot reach its daemon.
+
+Looks like something went wrong. Possible issues:
+  1. (Win | Mac) VirtualBox not installed          ==> Rerun Docker Toolbox installation
+  2. (Win | Mac) Docker Machine not installed      ==> Rerun Docker Toolbox installation
+  3. (Win | Mac) Docker is not reachable           ==> Docker VM failed to start
+  4. (Win | Mac) Docker ok, but docker ps fails    ==> Docker environment variables not set properly
+  5. (Linux) Docker is not reachable               ==> Install: wget -qO- https://get.docker.com/ | sh
+  6. Could not find the Che app server             ==> Did /tomcat get moved away from CHE_HOME?
+  7. Did you use the right parameter syntax?       ==> See usage
+
+We have seen issues with VirtualBox on windows where your VM gets corrupted when your computer is suspended while the VM is still running. This will appear as SSH or ethernet connection issues. This is rare, but if encountered, current known solution is to uninstall VirtualBox and Docker Toolbox, and then reinstall.
+
+Che Environment Variables:
+  (REQUIRED) JAVA_HOME                             ==> Location of Java runtime
+  (REQUIRED: WIN|MAC) DOCKER_TOOLBOX_INSTALL_PATH  ==> Location of Docker Toolbox
+  (REQUIRED: WIN|MAC) VBOX_MSI_INSTALL_PATH        ==> Location of VirtualBox
+  (OPTIONAL) CHE_HOME                              ==> Directory where Che is installed
+  (OPTIONAL) CHE_LOCAL_CONF_DIR                    ==> Directory with custom Che .properties files
+  (OPTIONAL) CHE_LOGS_DIR                          ==> Directory for Che output logs
+
+
+Usage:
+  che [-i] [-i:tag] [-p:port] [-r:ip] [-m:vm] [-d] [run | start | stop]
+
+     -i,      --image        Launches Che within a Docker container using latest image
+     -i:tag,  --image:tag    Launches Che within a Docker container using specific image tag
+     -p:port, --port:port    Port that Che server will use for HTTP requests; default=8080
+     -r:ip,   --remote:ip    If Che clients are not localhost, set to IP address of Che server
+     -m:vm,   --machine:vm   For Win & Mac, sets the docker-machine VM name to vm; default=default
+     -s,      --suppress     Do not print browser client connection information
+     -h,      --help         Show this help
+     -d,      --debug        Use debug mode (prints command line options + app server debug)
+     run                     Starts Che application server in current console
+     start                   Starts Che application server in new console
+     stop                    Stops Che application server
+
+The -r flag sets the DOCKER_MACHINE_HOST system environment variable. Set this to the IP address of the node
+that is running your Docker daemon. Only necessary to set this if on Linux and your browser clients are not
+localhost, ie they are remote. This property automatically set for Che on Windows and Mac.
+ The long docker image nowind/academy-che:2016-01-09-9e4369517e4308593fce0895d4700e77ecba12f8-x is my own-made images. The only difference between my image and the official one is the Dockerfile. I removed the invocation of che.sh, and it becomes in my Dockerfile: RUN sudo chown -R user:user /home/user/che && \
+    sudo service docker start
+ To fix this, I have to sudo reboot my server, and it will work OK with the same command. Although I have it today with my own image, but I had the same problem these days with official images, and "reboot" is the only way to fix it. Not sure if you have the same issue? If not, just keep it here, and I will update if I have any news

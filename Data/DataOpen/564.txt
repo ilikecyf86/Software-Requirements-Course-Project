@@ -1,0 +1,3 @@
+Add: Java refactoring "extract to method"
+kind/enhancement team/ide 
+There is no java refactor action: "extract to method"

@@ -1,0 +1,5 @@
+Browser's size in the selenium chrome node is not set properly
+kind/bug status/open-for-dev team/production selenium/failure status/in-progress status/open-for-dev sprint/current-sprint status/in-progress 
+Related test: CheckErrorsWarningsTabTest In the current state selenium tests run in "grid" mode without defined browser size. So probably we can have different browser sizes in the different tests. For resolving this problem we need provide next environment variables when our "chromenode" starts: -e SCREEN_HEIGHT=1080
+-e SCREEN_WIDTH=1920
+-e SCREEN_DEPTH=24

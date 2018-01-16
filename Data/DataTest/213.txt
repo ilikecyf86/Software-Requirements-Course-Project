@@ -1,0 +1,3 @@
+Add profile with eclipse jar signer plugin
+status/pending-merge 
+Add profile with eclipse jar signer plugin. https://www.eclipse.org/cbi/maven-plugins/documentation/1.1.3/eclipse-jarsigner-plugin/plugin-info.html http://git.eclipse.org/c/cbi/org.eclipse.cbi.git/plain/maven-plugins/README.md

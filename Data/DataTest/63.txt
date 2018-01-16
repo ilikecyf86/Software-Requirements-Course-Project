@@ -1,0 +1,3 @@
+Artik IDE not reuseable
+kind/bug 
+Hello, I am running the artik ide using the vagrant. Everything works fine. But if the system is booted without saving VM state using the vagrant suspend then, when I try to do vagrant up next time it gets stuck at ARTIK IDE: BOOTING ECLIPSE CHE and the IDE never starts. What has to be done in such case?

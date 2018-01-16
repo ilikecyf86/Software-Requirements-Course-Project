@@ -1,0 +1,22 @@
+Commands not loading from new workspace.
+kind/question kind/bug kind/question 
+Edited the default java stack. I know it's loading the modification because I changed the description name to make sure. Should these commands be loaded when I start the workspace?   "commands": [
+    {
+      "commandLine": "mvn clean install -f ${current.project.path}",
+      "name": "Clean Install",
+      "type": "custom"
+    },
+    {
+      "commandLine": "mvn compile -f ${current.project.path}",
+      "name": "Compile",
+      "type": "custom"
+    },
+    {
+      "commandLine": "mvnDebug jetty:run -f ${current.project.path}",
+      "name": "Jetty Debug",
+      "type": "custom",
+      "attributes": {
+            "previewUrl": "http://${server.port.8080}/${current.project.relpath}"
+      }
+    }
+  ]

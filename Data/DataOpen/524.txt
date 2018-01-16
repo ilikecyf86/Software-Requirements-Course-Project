@@ -1,0 +1,3 @@
+Extract Project Explorer into standalone plugin
+kind/task 
+Profit of this operation is to complete division functionality to work with nodes and cached resource. As IDE now has standalone mechanism to operate with resources, project explorer become useless as system component and can be moved into plugins.

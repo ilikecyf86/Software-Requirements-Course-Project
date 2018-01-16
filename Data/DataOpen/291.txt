@@ -1,0 +1,3 @@
+Guides rendering in the guide panel
+kind/task status/analyzing team/enterprise status/open-for-dev status/analyzing 
+Integrate rendering library defined in #6292 to display guides in the guide panel. Rendering actions is out of the scope (another issue), just default format. Display by default README.md or README.asciidoc Refresh button Epic: #6150

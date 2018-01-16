@@ -1,0 +1,3 @@
+Developer Use Case: Unlink/decouple IDE client from the runtime server
+kind/enhancement 
+Like for User dashboard, we should have a mode to select a remote server If I have “no” modification to do on a server, why should I regenerate or update my assembly Let say a new server API is implemented and available on acceptanceserver.eclipse-che-acceptance.com I may want to deploy che IDE on a server and then connect websocket/APi to this remote server.

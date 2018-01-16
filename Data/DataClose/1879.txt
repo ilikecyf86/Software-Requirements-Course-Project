@@ -1,0 +1,3 @@
+Projects table in command editor should be updated when projects are changed
+kind/bug team/ide status/in-progress status/pending-merge status/in-progress status/pending-merge 
+Reproduction Steps: Open some command in the editor Create, remove or rename some project Expected behavior: Projects table in command editor should be updated automatically. Observed behavior: Additional information: branch icom

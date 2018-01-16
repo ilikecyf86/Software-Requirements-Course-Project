@@ -1,0 +1,3 @@
+Signature help is too slow on big projects
+kind/bug 
+Description Signature help feature is slow on big projects, which makes it barely usable. For Che in Che it takes about 15-20 seconds and IDE is blocked by loader. Reproduction Steps Open Che in Che Find any System.getenv(VAR_NAME) Go to getenv word in editor Invoke signature help with Ctrl + P shortcut Quick response is expected, but loader appears for 15-20 seconds. OS and version: Fedora 25, Che6, mounted Che project.

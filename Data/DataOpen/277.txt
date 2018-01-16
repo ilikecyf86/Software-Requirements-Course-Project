@@ -1,0 +1,25 @@
+Download sources for some libs failed
+kind/bug team/ide 
+steps to reproduce: import git project: https://github.com/codenvy-templates/redhat-kitchensink-webapp.git open org.jboss.as.quickstarts.kitchensink.controller.MemberController class go to line 55 and go to declaration of FacesMessage class once FacesMessage class will be opened click Download sources expected result: sources will be downloaded and editor will be updated. actual result: Download sources for 'javax.faces.application.FacesMessage' failed More info: After executing command mvn dependency:resolve -Dclassifier=sources in terminal all sources were successfully downloaded and editor was updated. Sources for that jar were in custom maven repo defined in pom.xml     <repositories>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>jboss-enterprise-maven-repository</id>
+            <url>https://maven.repository.redhat.com/ga/</url>
+        </repository>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>jboss-enterprise-maven-repository-ea</id>
+            <url>https://maven.repository.redhat.com/earlyaccess/all/</url>
+        </repository>
+    </repositories>
+ So it seems that we are not considering custom repos added in pom.xml while downloading sources.

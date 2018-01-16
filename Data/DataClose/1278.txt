@@ -1,0 +1,11 @@
+My Chrome hangs when I'm working in Terminal tab.
+kind/question 
+This is caused in similar situation and similar result to #4558. But different logs. I got this issue on executing npm install in Terminal tab. My environment is same as #4558. _app-0.js:17188 Uncaught (in promise) TypeError: Cannot read property 'length' of undefined
+    at gPf (_app-0.js:17188)
+    at lPf (_app-0.js:10186)
+    at GPf.HPf [as sl] (_app-0.js:18348)
+    at eval (_app-0.js:10704)
+gPf @ _app-0.js:17188
+lPf @ _app-0.js:10186
+HPf @ _app-0.js:18348
+(anonymous) @ _app-0.js:10704

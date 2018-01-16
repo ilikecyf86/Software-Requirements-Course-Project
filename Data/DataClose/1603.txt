@@ -1,0 +1,3 @@
+Projects samples are not filtered
+kind/bug severity/blocker team/plugin sprint/current-sprint sprint/current-sprint 
+Projects samples are not filtered by ready-to-go stack selected. This could be related to #3995 Reproduction Steps: Create new workspace via new-project interface Select any ready-to-go stack All project samples are there

@@ -1,0 +1,3 @@
+Cannot delete projects on Windows
+kind/bug severity/blocker severity/P1 severity/blocker 
+Steps to reproduce: Run Che on Win 7 or 8 Create a workspace and project in it Delete a project Also, when deleting workspaces in UD, actual project files are not deleted on a Win 7 or 8 filesystem. It looks like .git folder cannot be deleted due to permissions issues. Running chmod 777 on a workspace directory inside a VM fixes the problem

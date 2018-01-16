@@ -1,0 +1,135 @@
+Restarting of workspace broke debug capability to step into dependent classes without sources
+kind/bug team/ide sprint/next-sprint sprint/next-sprint 
+Reproduction Steps: Create and open workspace from java stack. Import project https://github.com/dmytro-ndp/java-with-external-libs.git and configure it as maven project. Restart workspace. Open SimpleLogger.java file in editor. Add command "build and debug" to the IDE: mvn -f ${current.project.path} clean install && java -jar -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 ${current.project.path}/target/java-with-external-libs-1.0-SNAPSHOT-jar-with-dependencies.jar Set debug breakpoint to the line 13 with command logbackLogger.info("Info from {}", "logbackLogger"). Execute command "build and debug". Call top-menu command "Run > Debug > Debug 'java-with-external-libs". Wait until execution is stopped at the breakpoint. Goto Debug Panel and call "Step Into" command. Expected behavior IDE opens decompiled class Logger. Actual wrong behavior IDE went further without opening class Logger. There was error message in log of ws-agent: 2017-03-29 16:43:33,919[Thread-11]        [ERROR] [o.e.c.p.j.s.EventsCollector 43]      - Type with fully qualified name: ch.qos.logback.classic.Logger was not found
+org.eclipse.che.api.debugger.server.exceptions.DebuggerException: Type with fully qualified name: ch.qos.logback.classic.Logger was not found
+	at org.eclipse.che.plugin.jdb.server.utils.JavaDebuggerUtils.getLocation(JavaDebuggerUtils.java:76) ~[che-plugin-java-debugger-server-5.6.0-SNAPSHOT.jar:5.6.0-SNAPSHOT]
+	at org.eclipse.che.plugin.jdb.server.JavaDebugger.processStepEvent(JavaDebugger.java:599) ~[che-plugin-java-debugger-server-5.6.0-SNAPSHOT.jar:5.6.0-SNAPSHOT]
+	at org.eclipse.che.plugin.jdb.server.JavaDebugger.handleEvents(JavaDebugger.java:547) ~[che-plugin-java-debugger-server-5.6.0-SNAPSHOT.jar:5.6.0-SNAPSHOT]
+	at org.eclipse.che.plugin.jdb.server.EventsCollector.run(EventsCollector.java:41) ~[che-plugin-java-debugger-server-5.6.0-SNAPSHOT.jar:5.6.0-SNAPSHOT]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+ Executing of Project Explorer context menu command "Maven > Reimport" fixed issue. Screencast Error reason This error was caused by wrong work of next code within the method org.eclipse.che.plugin.jdb.server.utils.JavaDebuggerUtils#findTypeByFqn() when JavaDebugger.processStepEvent() is requesting the type of place to go into:         searchEngine.searchAllTypeNames(packages,
+                                        names,
+                                        scope,
+                                        new TypeNameMatchRequestor() {
+                                            @Override
+                                            public void acceptTypeNameMatch(TypeNameMatch typeNameMatch) {
+                                                result.add(typeNameMatch.getType());
+                                            }
+                                        },
+                                        IJavaSearchConstants.WAIT_UNTIL_READY_TO_SEARCH,
+                                        new NullProgressMonitor());
+ Root problem Method org.eclipse.jdt.internal.core.JavaModelManager#getDeltaState() returns list without paths to maven dependency /home/user/.m2/repository/ch/qos/logback/logback-classic/1.1.2/logback-classic-1.1.2.jar. Actual list of roots:   /java-with-external-libs/src/main/java=project=java-with-external-libs
+path=/java-with-external-libs/src/main/java
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/cldrdata.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/cldrdata.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/nashorn.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/nashorn.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/localedata.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/localedata.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/rt.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/rt.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/jfxrt.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/jfxrt.jar
+including=null
+excluding=null,
+  /java-with-external-libs/src/test/java=project=java-with-external-libs
+path=/java-with-external-libs/src/test/java
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/dnsns.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/dnsns.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/sunjce_provider.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/sunjce_provider.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/zipfs.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/zipfs.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/sunpkcs11.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/sunpkcs11.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/sunec.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/sunec.jar
+including=null
+excluding=null
+}
+ Correct list of roots ought to include maven dependencies as well:   /java-with-external-libs/src/main/java=project=java-with-external-libs
+path=/java-with-external-libs/src/main/java
+including=null
+excluding=null,
+  /home/user/.m2/repository/ch/qos/logback/logback-classic/1.1.2/logback-classic-1.1.2.jar=project=java-with-external-libs
+path=/home/user/.m2/repository/ch/qos/logback/logback-classic/1.1.2/logback-classic-1.1.2.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/nashorn.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/nashorn.jar
+including=null
+excluding=null,
+  /java-with-external-libs/src/test/java=project=java-with-external-libs
+path=/java-with-external-libs/src/test/java
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/dnsns.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/dnsns.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/sunjce_provider.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/sunjce_provider.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/sunpkcs11.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/sunpkcs11.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/cldrdata.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/cldrdata.jar
+including=null
+excluding=null,
+  /home/user/.m2/repository/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.jar=project=java-with-external-libs
+path=/home/user/.m2/repository/ch/qos/logback/logback-core/1.1.2/logback-core-1.1.2.jar
+including=null
+excluding=null,
+  /home/user/.m2/repository/log4j/log4j/1.2.12/log4j-1.2.12.jar=project=java-with-external-libs
+path=/home/user/.m2/repository/log4j/log4j/1.2.12/log4j-1.2.12.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/localedata.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/localedata.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/rt.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/rt.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/jfxrt.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/jfxrt.jar
+including=null
+excluding=null,
+  /home/user/.m2/repository/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar=project=java-with-external-libs
+path=/home/user/.m2/repository/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/zipfs.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/zipfs.jar
+including=null
+excluding=null,
+  /opt/jdk1.8.0_45/jre/lib/ext/sunec.jar=project=java-with-external-libs
+path=/opt/jdk1.8.0_45/jre/lib/ext/sunec.jar
+including=null
+excluding=null
+}
+ Selenium tests Temporary workaround (reimport of maven dependencies) should be removed from the com.codenvy.ide.debugger.DebugExternalClassTest#setup after the successful fix of this bug.

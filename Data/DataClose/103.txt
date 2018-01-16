@@ -1,0 +1,3 @@
+Return back loader for stopped workspace
+kind/enhancement severity/P1 team/plugin status/in-progress 
+Description It's difficult to understand whether workspace is stopping or stopped. It's become after changing workspace loading sequence and hiding toast loader. As it was discussed we need to show the loader when workspace is in stopping or stopped state. Reproduction Steps OS and version: Diagnostics:

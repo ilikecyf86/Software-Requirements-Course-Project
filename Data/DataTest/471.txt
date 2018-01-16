@@ -1,0 +1,53 @@
+Create project in IDE got HTTP 409 conflict code
+status/open-for-dev 
+Che version: eclipse-che-4.0.0-RC5-SNAPSHOT Che install directory: /root/che/eclipse-che-4.0.0-RC5-SNAPSHOT Docker version: Client:
+ Version:      1.9.0
+ API version:  1.21
+ Go version:   go1.4.3
+ Git commit:   76d6bc9
+ Built:        Tue Nov  3 19:20:09 UTC 2015
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.9.0
+ API version:  1.21
+ Go version:   go1.4.3
+ Git commit:   76d6bc9
+ Built:        Tue Nov  3 19:20:09 UTC 2015
+ OS/Arch:      linux/amd64
+ Docker info: Containers: 3
+Images: 58
+Server Version: 1.9.0
+Storage Driver: devicemapper
+ Pool Name: docker-202:1-1052099-pool
+ Pool Blocksize: 65.54 kB
+ Base Device Size: 10.74 GB
+ Backing Filesystem: extfs
+ Data file: /dev/loop0
+ Metadata file: /dev/loop1
+ Data Space Used: 2.808 GB
+ Data Space Total: 107.4 GB
+ Data Space Available: 13.29 GB
+ Metadata Space Used: 3.51 MB
+ Metadata Space Total: 2.147 GB
+ Metadata Space Available: 2.144 GB
+ Udev Sync Supported: false
+ Deferred Removal Enabled: false
+ Deferred Deletion Enabled: false
+ Deferred Deleted Device Count: 0
+ Data loop file: /docker/devicemapper/devicemapper/data
+ Metadata loop file: /docker/devicemapper/devicemapper/metadata
+ Library Version: 1.02.82-git (2013-10-04)
+Execution Driver: native-0.2
+Logging Driver: json-file
+Kernel Version: 3.10.0-123.9.3.el7.x86_64
+Operating System: CentOS Linux 7 (Core)
+CPUs: 4
+Total Memory: 7.39 GiB
+Name: kratosacs-c0a8210131361095101
+ID: 4KAA:UDTK:EEJB:57NA:IQK6:7U5A:CXIF:7LIZ:6ZLL:WGYP:OC4X:ULTL
+ Java version: java version "1.8.0_65"
+Java(TM) SE Runtime Environment (build 1.8.0_65-b17)
+Java HotSpot(TM) 64-Bit Server VM (build 25.65-b01, mixed mode)
+ Environment details (AWS, VirtualBox, physical, etc.): Aliyun Ecs How reproducible: Steps to Reproduce: bin/che.sh run --skip:uid --remote:myIp create new project from any stack Actual Results: [17/Feb/2016:09:10:58 +0000] "POST /ide/ext/project/workspacehuj5aoa87v0p3kx0?name=asd HTTP/1.1" 409 -
+ I've seen 409 indicates "Project with specified name already exist in workspace", but I haven't create any project right now.

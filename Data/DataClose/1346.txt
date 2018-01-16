@@ -1,0 +1,3 @@
+Allow to create assembly without svn plugin
+kind/bug status/analyzing team/enterprise sprint/current-sprint team/ide team/enterprise 
+Svn now is mandatory plugin because ProjectImporter has a dependency on SubversionCredentialsDialog. To be able to create custom assembly without svn this link relation should be decoupled

@@ -1,0 +1,12 @@
+Provide revision number in assembly Che artifact
+kind/task status/open-for-dev target/che6 team/platform sprint/current-sprint 
+Description There is a use case for custom assembly when it needs revision number of Che artifact. See the following discussion: redhat-developer/rh-che#465 (comment). For Che 5, it uses revision number from BuildInfo, but it is not included into war in Che6. It is needed to include somewhere revision number. It can be part of a war archive or all of them. It can be done with maven-war-plugin by adding the following configuration <plugin>
+    <artifactId>maven-war-plugin</artifactId>
+    <configuration>
+        <archive>
+            <manifest>
+                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+            </manifest>
+        </archive>
+    </configuration>
+</plugin>

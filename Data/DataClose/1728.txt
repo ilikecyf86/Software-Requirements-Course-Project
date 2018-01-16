@@ -1,0 +1,3 @@
+Add Vert.x stack to default assembly
+kind/enhancement 
+Add an Eclipse Vert.x (https://projects.eclipse.org/projects/rt.vertx) stack to the default Che assembly.

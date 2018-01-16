@@ -1,0 +1,14 @@
+CS Language Server doesnt work
+kind/question 
+Reproduction Steps: Use Language Server for cs OS and version: Debian 8 and Eclipse Che 5.8.0 Diagnostics: Browser Error: Uncaught (in promise) Error: Can't initialize Language Server csharp on /projects/blank-v6xi. Can't restore dependencies. Error: . Output: /projects/blank-v6xi/HelloWeb.xproj(7,3): error MSB4019: The imported project "/usr/share/dotnet/sdk/1.0.1/Microsoft/VisualStudio/v14.0.25123/DotNet/Microsoft.DotNet.Props" was not found. Confirm that the path in the declaration is correct, and that the file exists on disk. at Eke (_app-0.js:11741)
+at nke (_app-0.js:8472)
+at DKi.EKi [as Gq] (_app-0.js:19397)
+at Kbh (_app-0.js:18410)
+at Obh (_app-0.js:16448)
+at DKi.Vbh [as to] (_app-0.js:19386)
+at DB (_app-0.js:13368)
+at VB.WB [as ro] (_app-0.js:19360)
+at XMLHttpRequest.eval (_app-0.js:12414)
+at $p (_app-0.js:8631)
+at bq (_app-0.js:11773)
+at XMLHttpRequest.eval (_app-0.js:12473)

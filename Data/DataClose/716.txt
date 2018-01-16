@@ -1,0 +1,3 @@
+Adapt existing selenium tests that use workspace details page
+kind/task sprint/next-sprint status/open-for-dev team/production sprint/current-sprint sprint/next-sprint 
+As far as new workspace details page is introduced, the existing selenium tests need to be adapted to proper test this stuff. The task can be divided into phases: Overview page Machines page Environment variable page Servers page Agents page Projects page The new stuff can be found on https://a2.codenvy-stg.com :

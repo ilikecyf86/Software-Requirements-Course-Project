@@ -1,0 +1,3 @@
+Project explorer should not show hidden folders from `/projects`
+kind/bug severity/P1 team/ide 
+Description The project explorer is displaying all the folders in /projects including the hidden ones - which can be a problem for certain types of projects. See issue in: openshiftio/openshift.io#1294 Reproduction Steps Create a workspace and open the IDE Once loaded, open the terminal and create folder .foo Do chmod 770 .foo Expected behaviour: The folder .foo should not be displayed in the project explorer. Current behaviour: The folder .foo is shown in the project explorer.

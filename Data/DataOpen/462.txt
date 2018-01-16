@@ -1,0 +1,5 @@
+`chedo` A terminal command to trigger ide actions
+kind/enhancement 
+It would be nice if from the terminal we could have a command to trigger action in the IDE. For instance: in the terminal in che : chedo openFileAction myProject/pom.xml
+ would open the file in the IDE !!! This could be very useful also when using git from the terminal: we could configure this chedo command in git/config and when we have conflicts while merging: git mergetool
+ Would open the diff compare in Che Web UI

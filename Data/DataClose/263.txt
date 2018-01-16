@@ -1,0 +1,8 @@
+Can't start multi-user Che
+kind/question 
+Trying to start multi-user Che for the first time and get these errors: INFO: (che config): Generating che configuration...
+Error: Could not set 'file' on ensure: Is a directory @ rb_file_s_rename - (/opt/che/config/postgres/init-che-user.sh20171020-1-557ykv, /opt/che/config/postgres/init-che-user.sh) at 12:/etc/puppet/modules/postgres/manifests/init.pp
+Error: Could not set 'file' on ensure: Is a directory @ rb_file_s_rename - (/opt/che/config/postgres/init-che-user.sh20171020-1-557ykv, /opt/che/config/postgres/init-che-user.sh) at 12:/etc/puppet/modules/postgres/manifests/init.pp
+Wrapped exception:
+Is a directory @ rb_file_s_rename - (/opt/che/config/postgres/init-che-user.sh20171020-1-557ykv, /opt/che/config/postgres/init-che-user.sh)
+Error: /Stage[main]/Postgres/File[/opt/che/config/postgres/init-che-user.sh]/ensure: change from directory to file failed: Could not set 'file' on ensure: Is a directory @ rb_file_s_rename - (/opt/che/config/postgres/init-che-user.sh20171020-1-557ykv, /opt/che/config/postgres/init-che-user.sh) at 12:/etc/puppet/modules/postgres/manifests/init.pp Reproduction Steps docker run -it -e CHE_MULTIUSER=true -e CHE_HOST=che.example.com -e CHE_PORT=81 -v /var/run/docker.sock:/var/run/docker.sock -v /root/che-multiusertest:/data eclipse/che start OS and version: RancherOS, Che 5.19

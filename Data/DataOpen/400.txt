@@ -1,0 +1,3 @@
+VS Code debug protocol support on Che
+kind/epic kind/task kind/epic 
+Investigate what are the requirements, tasks areas and impediments to integrate VS Code debug protocol [1] to Che. Create more detailed tasks on how to continue. [1] https://github.com/Microsoft/vscode-debugadapter-node

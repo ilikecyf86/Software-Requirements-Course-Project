@@ -1,0 +1,3 @@
+Need to consider the existing names of workspace's namespace, when rename shared workspace.
+kind/bug sprint/next-sprint status/open-for-dev team/plugin severity/P2 sprint/current-sprint sprint/next-sprint sprint/current-sprint status/open-for-dev 
+Need to consider the existing names of workspace's namespace (in case user has access to workspaces in the namespace), when rename shared workspace. Reproduction Steps: User 1: create a team add User 2 as team member create workspace 'wksp-dashboard' in the team create another one workspace in the team and share it to User 2 User 2: try to rename shared workspace as 'wksp-dashboard'. OS and version: Codenvy 5.6.0 (https://nightly.codenvy-stg.com)

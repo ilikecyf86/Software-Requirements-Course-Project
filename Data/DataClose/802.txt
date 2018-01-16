@@ -1,0 +1,10 @@
+.NET C# stacktrace support
+kind/enhancement team/osio sprint/current-sprint 
+Che should be able to analyze and open the correct file associated with a given stacktrace. Probably, it's possible to process and open according source files not only for normal stacktraces, like: Unhandled Exception: System.NullReferenceException: Object reference not set to an instance of an object.
+   at hwapp.ppp.PPPProgram.Main1(String[] args) in /home/zzz/projects/csharp/hwapp/ppp/PPPProgram.cs:line 18
+   at hwapp.Program.Main(String[] args) in /home/zzz/projects/csharp/hwapp/Program.cs:line 10
+ but also for different WARNING and ERROR messages from .net runtime, like: ppp/PPPProgram.cs(9,17): warning CS0219: The variable 'testIntValue' is assigned but its value is never used [/home/zzz/projects/csharp/hwapp/hwapp.csproj]
+
+Program.cs(2,13): error CS0234: The type or namespace name 'ppp' does not exist in the namespace 'hwapp' (are you missing an assembly reference?) [/home/zzz/projects/csharp/hwapp/hwapp.csproj]
+
+The build failed. Please fix the build errors and run again.

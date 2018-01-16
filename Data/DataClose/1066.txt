@@ -1,0 +1,3 @@
+Eclipse CHE logo is hidden in the Google Chrome browser
+kind/bug 
+Reproduction Steps: Open Google Chrome browser. Open Eclipse CHE. Run workspace. Don't open any files. Actual result: svg logo is exist in the editor partStack, but it's hidden. Seems main reason these are svg styles. Expected result: svg log should be visible like in the Firefox. OS and version: Fedora 25, but I think it's doesn't matter. CHE version: 5.10.0-SNAPSHOT Google Chrome version: 58.0.3029.81 Firefox 53:

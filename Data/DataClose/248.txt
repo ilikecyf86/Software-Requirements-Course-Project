@@ -1,0 +1,3 @@
+Implement "get effective pom"
+kind/task target/che6 team/enterprise sprint/current-sprint status/in-progress status/code-review status/in-progress status/code-review sprint/current-sprint 
+The maven plugin offers an action to open the effective pom. We need to add a custom command to the che jdt.ls extension to offer this service. M2e (embedded in jdt.ls) should offer API to do this. See MavenServerService#getEffectivePom() Familiarization with jdt.ls 1SP Add a new command 1SP Implement the new command 5SP Add unit tests 1SP

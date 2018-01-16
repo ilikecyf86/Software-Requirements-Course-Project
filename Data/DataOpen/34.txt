@@ -1,0 +1,3 @@
+JavaScript endpoint for Project/File management
+kind/enhancement team/ide status/in-progress 
+Description Here we need to provide ability for Project/File management: get project/project config; create/update project get current project file/folder management get root project etc

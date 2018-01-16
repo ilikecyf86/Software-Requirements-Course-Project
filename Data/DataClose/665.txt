@@ -1,0 +1,3 @@
+Maven project folders aren't grouped into packages after project configuration
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: Create a java workspace without parojects Clone maven project from terminal Use Mennu -> Project -> Update project configuratiopn... and select Maven project Unfold project explorer to a java file Expected behaviour: Folders are grouped into packages Actual behaviour: A user sees just folders in project explorer Note, after page refreshing all works as expected. Screencast: OS and version: Fedora 25

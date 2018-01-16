@@ -1,0 +1,3 @@
+UrlBuilder#isPath(), etc. are broken
+kind/bug severity/P2 target/che6 
+In the class org.eclipse.che.ide.rest.UrlBuilder, there are methods to get the path, host, etc. They all compute their value something like so: return o.get("path").toString(); I believe this to in an unintended way, because if the path is, effectively "/foo/bar", the path value returned is indeed ""/foo/bar"". The "toString()" method on JsonString adds extra quotadion marks around the value. The methods don't seem to be used anywhere currently. I would not expect this to happen, and the behaviour is not mentioned in the Javadoc. Also, it's easier to add the quotation marks if necessary than to remove them afterwards.

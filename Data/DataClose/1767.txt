@@ -1,0 +1,3 @@
+Show list of threads when debug is suspended
+kind/task sprint/next-sprint status/open-for-dev team/enterprise kind/enhancement kind/task kind/epic sprint/next-sprint status/open-for-dev team/enterprise 
+Show list of threads when debug is suspended. It requires UI changes as well. JDB #3708 GDB #3709 Zend Debugger #3710 NodeJs Debugger #3711 UI #3712

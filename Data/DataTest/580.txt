@@ -1,0 +1,104 @@
+Too many open files with `codenvy/che:nightly`
+kind/question 
+I have the same problem with this issue codenvy#140. I run the image codenvy/che:nightly in a virtual box, which is running ubuntu 14.04, and the "open files" settings is increased as following: scaleworks@ubuntu:~$ ulimit -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 31375
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 100000
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 200000
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+ and append the following to /etc/security/limits.conf: *                hard    nofile          100000
+*                hard    nproc           200000
+*                soft    nofile          100000
+*                soft    nproc           200000
+ Then I start codenvy/che:nightly: $ docker run -it -p 8080:8080 codenvy/che:nightly
+ It seems started correctly: $ docker run -it -p 8080:8080 codenvy/che:nightly
+ * Starting Docker: docker                                               [ OK ]
+Using CATALINA_BASE:   /home/user/che/tomcat
+Using CATALINA_HOME:   /home/user/che/tomcat
+Using CATALINA_TMPDIR: /home/user/che/tomcat/temp
+Using JRE_HOME:        /opt/jre1.8.0_65
+Using CLASSPATH:       /home/user/che/tomcat/conf/:/opt/jre1.8.0_65/lib/tools.jar:/home/user/che/tomcat/bin/bootstrap.jar:/home/user/che/tomcat/bin/tomcat-juli.jar
+2015-12-29 06:10:51,681[main]             [INFO ] [o.a.c.s.VersionLoggerListener 89]    - Server version:        Apache Tomcat/8.0.28
+2015-12-29 06:10:51,683[main]             [INFO ] [o.a.c.s.VersionLoggerListener 91]    - Server built:          Oct 7 2015 18:25:21 UTC
+2015-12-29 06:10:51,683[main]             [INFO ] [o.a.c.s.VersionLoggerListener 93]    - Server number:         8.0.28.0
+2015-12-29 06:10:51,683[main]             [INFO ] [o.a.c.s.VersionLoggerListener 95]    - OS Name:               Linux
+2015-12-29 06:10:51,684[main]             [INFO ] [o.a.c.s.VersionLoggerListener 97]    - OS Version:            3.13.0-32-generic
+2015-12-29 06:10:51,684[main]             [INFO ] [o.a.c.s.VersionLoggerListener 99]    - Architecture:          amd64
+2015-12-29 06:10:51,684[main]             [INFO ] [o.a.c.s.VersionLoggerListener 101]   - Java Home:             /opt/jre1.8.0_65
+2015-12-29 06:10:51,684[main]             [INFO ] [o.a.c.s.VersionLoggerListener 103]   - JVM Version:           1.8.0_65-b17
+2015-12-29 06:10:51,685[main]             [INFO ] [o.a.c.s.VersionLoggerListener 105]   - JVM Vendor:            Oracle Corporation
+2015-12-29 06:10:51,685[main]             [INFO ] [o.a.c.s.VersionLoggerListener 107]   - CATALINA_BASE:         /home/user/che/tomcat
+2015-12-29 06:10:51,685[main]             [INFO ] [o.a.c.s.VersionLoggerListener 109]   - CATALINA_HOME:         /home/user/che/tomcat
+2015-12-29 06:10:51,685[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.config.file=/home/user/che/tomcat/conf/logging.properties
+2015-12-29 06:10:51,686[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+2015-12-29 06:10:51,687[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Xms256m
+2015-12-29 06:10:51,688[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Xmx1024m
+2015-12-29 06:10:51,688[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.logs.dir=/home/user/che/tomcat/logs/
+2015-12-29 06:10:51,688[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote
+2015-12-29 06:10:51,689[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.ssl=false
+2015-12-29 06:10:51,689[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.authenticate=false
+2015-12-29 06:10:51,690[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.local.conf.dir=/home/user/.che
+2015-12-29 06:10:51,690[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.home=/home/user/che
+2015-12-29 06:10:51,690[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.endorsed.dirs=/home/user/che/tomcat/endorsed
+2015-12-29 06:10:51,690[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.base=/home/user/che/tomcat
+2015-12-29 06:10:51,690[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.home=/home/user/che/tomcat
+2015-12-29 06:10:51,691[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.io.tmpdir=/home/user/che/tomcat/temp
+2015-12-29 06:10:51,826[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 424]  - Initializing ProtocolHandler ["http-nio-8080"]
+2015-12-29 06:10:51,835[main]             [INFO ] [o.a.t.util.net.NioSelectorPool 72]   - Using a shared selector for servlet write/read
+2015-12-29 06:10:51,837[main]             [INFO ] [o.a.catalina.startup.Catalina 587]   - Initialization processed in 416 ms
+2015-12-29 06:10:51,854[main]             [INFO ] [c.m.JmxRemoteLifecycleListener 332]  - The JMX Remote Listener has configured the registry on port 32001 and the server on port 32101 for the Platform server
+2015-12-29 06:10:51,854[main]             [INFO ] [o.a.c.core.StandardService 433]      - Starting service Catalina
+2015-12-29 06:10:51,854[main]             [INFO ] [o.a.c.core.StandardEngine 259]       - Starting Servlet Engine: Apache Tomcat/8.0.28
+2015-12-29 06:10:51,910[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]        - Deploying web application archive /home/user/che/tomcat/webapps/che.war
+2015-12-29 06:10:56,477[ost-startStop-1]  [INFO ] [.c.p.d.c.DockerRegistryChecker 43]   - Probing registry 'http://localhost:5000'
+2015-12-29 06:10:56,487[ost-startStop-1]  [WARN ] [.c.p.d.c.DockerRegistryChecker 50]   - Docker registry http://localhost:5000 is not available, which means that you won't be able to save snapshots of your workspaces.
+How to configure registry?
+    Local registry  -> https://docs.docker.com/registry/
+    Remote registry -> set up 'docker.registry.auth.*' properties
+2015-12-29 06:10:58,125[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]        - Deployment of web application archive /home/user/che/tomcat/webapps/che.war has finished in 6,215 ms
+2015-12-29 06:10:58,131[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]        - Deploying web application archive /home/user/che/tomcat/webapps/dashboard.war
+2015-12-29 06:10:58,305[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]        - Deployment of web application archive /home/user/che/tomcat/webapps/dashboard.war has finished in 174 ms
+2015-12-29 06:10:58,307[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 1036]       - Deploying web application directory /home/user/che/tomcat/webapps/ROOT
+2015-12-29 06:10:58,386[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 1152]       - Deployment of web application directory /home/user/che/tomcat/webapps/ROOT has finished in 79 ms
+2015-12-29 06:10:58,394[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 469]  - Starting ProtocolHandler ["http-nio-8080"]
+2015-12-29 06:10:58,401[main]             [INFO ] [o.a.catalina.startup.Catalina 638]   - Server startup in 6562 ms
+ But now I can't run any commands, even the simplest ls: $ ls
+-bash: start_pipeline: pgrp pipe: Too many open files in system
+-bash: /bin/ls: Too many open files in system
+ Then I visit the che from browser: http://10.202.128.49:8080/
+ It doesn't show anything, instead, I can see many "Too many open files in system" showing on the log: 2015-12-29 06:10:58,401[main]             [INFO ] [o.a.catalina.startup.Catalina 638]   - Server startup in 6562 ms
+
+2015-12-29 06:11:26,236[8080-Acceptor-0]  [ERROR] [o.a.t.util.net.NioEndpoint 709]      - Socket accept failed
+java.io.IOException: Too many open files in system
+    at sun.nio.ch.ServerSocketChannelImpl.accept0(Native Method) ~[na:1.8.0_65]
+    at sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:422) ~[na:1.8.0_65]
+    at sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:250) ~[na:1.8.0_65]
+    at org.apache.tomcat.util.net.NioEndpoint$Acceptor.run(NioEndpoint.java:682) ~[tomcat-coyote.jar:8.0.28]
+    at java.lang.Thread.run(Thread.java:745) [na:1.8.0_65]
+2015-12-29 06:11:26,289[8080-Acceptor-0]  [ERROR] [o.a.t.util.net.NioEndpoint 709]      - Socket accept failed
+java.io.IOException: Too many open files in system
+    at sun.nio.ch.ServerSocketChannelImpl.accept0(Native Method) ~[na:1.8.0_65]
+    at sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:422) ~[na:1.8.0_65]
+    at sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:250) ~[na:1.8.0_65]
+    at org.apache.tomcat.util.net.NioEndpoint$Acceptor.run(NioEndpoint.java:682) ~[tomcat-coyote.jar:8.0.28]
+    at java.lang.Thread.run(Thread.java:745) [na:1.8.0_65]
+2015-12-29 06:11:26,392[8080-Acceptor-0]  [ERROR] [o.a.t.util.net.NioEndpoint 709]      - Socket accept failed
+java.io.IOException: Too many open files in system
+    at sun.nio.ch.ServerSocketChannelImpl.accept0(Native Method) ~[na:1.8.0_65]
+    at sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:422) ~[na:1.8.0_65]
+    at sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:250) ~[na:1.8.0_65]
+    at org.apache.tomcat.util.net.NioEndpoint$Acceptor.run(NioEndpoint.java:682) ~[tomcat-coyote.jar:8.0.28]
+    at java.lang.Thread.run(Thread.java:745) [na:1.8.0_65]
+ I tried to docker ps but failed: -bash: start_pipeline: pgrp pipe: Too many open files in system
+-bash: /usr/bin/docker: Too many open files in system

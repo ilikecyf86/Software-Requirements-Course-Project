@@ -1,0 +1,3 @@
+Move exec-agent/process module to core/process
+kind/task sprint/current-sprint status/open-for-dev team/platform sprint/current-sprint 
+Process execution and output streaming is done by exec-agent. From the defined spec Agent installer needs pretty the same functionality. The goal of the issue is to move process execution functionality from exec-agent to core/process.

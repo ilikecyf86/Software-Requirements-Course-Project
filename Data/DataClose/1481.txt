@@ -1,0 +1,46 @@
+Not responding Che GWT WebUI app when using "Navigate to File" action or F4
+kind/bug severity/P1 team/ide sprint/current-sprint 
+The GWT is not responding anymore when using "Navigate to File" action Reproduction Steps: Create a new workspace with a Che in Che stack Clone the che git project Navigate to the file "WorkspaceService.java" with "Navigate to File" action The browser is hanging with high CPU load in Chrome process When using the project explorer to access to the file, it works fine Closing and reopening the browser tab stop CPU load the file is not open after reopening OS and version: Linux Ubuntu Xenial Diagnostics: CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che:nightly
+ Version:        nightly
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /home/sunix/dev/che-data
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          /home/sunix/dev/che-data/instance/data/workspaces/che/eclipse-che
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    nightly
+ CHE_HOST:       172.17.0.1
+ CHE_INSTANCE:   /home/sunix/dev/che-data/instance
+ CHE_CONFIG:     /home/sunix/dev/che-data
+ CHE_BACKUP:     /home/sunix/dev/che-data/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   10.32.196.148
+ Initialized:    true
+ CHE_DEVELOPMENT_REPO: /home/sunix/dev/che-data/instance/data/workspaces/che/eclipse-che
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:nightly
+ IMAGE_CHE=eclipse/che-server:nightly
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+che.env:
+ CHE_HOST=172.17.0.1
+ CHE_WORKSPACE_VOLUME=/var/run/docker.sock:/var/run/docker.sock;/home/sunix/.m2:/home/user/.m2
+ CHE_DOCKER_PRIVILEGED=true

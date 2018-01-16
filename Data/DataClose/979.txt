@@ -1,0 +1,3 @@
+Add machine defaults to codenvy/ubuntu_jdk8
+kind/bug team/plugin severity/P2 
+Add machine defaults to codenvy/ubuntu_jdk8 but should be eclipse/ubuntu_jdk8

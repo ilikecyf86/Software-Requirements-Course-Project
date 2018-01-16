@@ -1,0 +1,3 @@
+CHE CLI does not detect that that there is newer image on hub
+kind/bug 
+devs reported issue that CLI does not work in some cases, after some investigation I;ve figured out that due to some reason CHE CLI does not detect if there is newer nightly on hub and does not pull che-cli:nightly while codenvy CLI check this normally.

@@ -1,0 +1,3 @@
+Test runner launch tests on the same JVM with dev-machine
+kind/bug severity/P1 team/ide sprint/next-sprint status/in-progress sprint/current-sprint sprint/next-sprint sprint/current-sprint status/in-progress 
+Reproduction Steps: Create java console application from wizard Open the AppTest class and add System.exit(1); invocation in the test. Expected result: the test should pass Actual result: the test has invoked System.exit. The workspace has crashed. The test can invoke any java code on the JVM of dev-machine! It is very critical for security. OS and version: Ubuntu 14.0 TLS, chrome browser

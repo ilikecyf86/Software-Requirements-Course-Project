@@ -1,0 +1,3 @@
+Implement bootstrapper
+kind/task sprint/next-sprint status/open-for-dev team/platform status/in-progress sprint/next-sprint status/open-for-dev status/in-progress 
+Implement specification described here (golang app part)

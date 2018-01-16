@@ -1,0 +1,3 @@
+Split github plugin to several modules client/server/shared
+status/pending-merge 
+Split github plugin to several modules client/server/shared

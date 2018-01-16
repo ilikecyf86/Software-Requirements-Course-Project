@@ -1,0 +1,3 @@
+Errors with indexing and editing files with Ü and other similar symbols
+team/ide sprint/next-sprint kind/bug severity/P1 sprint/next-sprint 
+We have exception each time we try to index text file with mentioned symbol. We have blanks instead of mentioned symbols when we open such files in text editor.

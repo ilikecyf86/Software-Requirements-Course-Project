@@ -1,0 +1,3 @@
+include real time coediting in che
+kind/enhancement 
+Description include real time coediting in che. (like google doc) for pair programming !

@@ -1,0 +1,20 @@
+"ForbiddenException: API rate limit exceeded" in selenium tests of github related features
+kind/bug selenium/failure team/production status/in-progress sprint/current-sprint status/code-review status/info-needed status/in-progress status/code-review status/info-needed 
+Description We have selenium tests of github-related features which run by using dedicated github account chepullreq2 on pullrequests job. Sometimes they fail because of error: org.eclipse.che.api.core.ForbiddenException: API rate limit exceeded for chepullreq2. Stack Trace       org.eclipse.che.api.core.ForbiddenException: API rate limit exceeded for chepullreq2.
+        at org.eclipse.che.api.core.rest.DefaultHttpJsonRequest.doRequest(DefaultHttpJsonRequest.java:247)
+        at org.eclipse.che.api.core.rest.DefaultHttpJsonRequest.request(DefaultHttpJsonRequest.java:152)
+        at org.eclipse.che.selenium.core.client.TestGitHubServiceClient.getAllGrants(TestGitHubServiceClient.java:176)
+        at org.eclipse.che.selenium.core.client.TestGitHubServiceClient.deleteAllGrants(TestGitHubServiceClient.java:185)
+        at org.eclipse.che.selenium.git.KeepDirectoryGitImportTest.prepare(KeepDirectoryGitImportTest.java:81)
+ Test report: https://ci.codenvycorp.com/job/che-pullrequests-test/180/Selenium_tests_report/failsafe-report.html#Failure_Details Test report: https://ci.codenvycorp.com/job/che-pullrequests-test/206/Selenium_tests_report/failsafe-report.html#Failure_Details Test report: https://ci.codenvycorp.com/job/che-pullrequests-test/189/Selenium_tests_report/failsafe-report.html#Failure_Details The reason of error: is the Gihub account chepullreq2 which is used in the test has been flagged and, as a result, it has limit rates of unauthorized user: {"resources":
+ {
+ "core":
+  {"limit":60,"remaining":58,"reset":1512662606},
+ "search":
+  {"limit":10,"remaining":10,"reset":1512659067},
+ "graphql":
+  {"limit":0,"remaining":0,"reset":1512662607}
+ },
+ "rate":
+  {"limit":60,"remaining":58,"reset":1512662606}
+ } OS and version: Eclipse Che 6.0.0-M3-SNAPSHOT Rate Limit Documentation page: https://developer.github.com/v3/rate_limit/

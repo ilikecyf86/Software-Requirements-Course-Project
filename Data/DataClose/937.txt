@@ -1,0 +1,3 @@
+Release bugfix CHE 5.11.2
+kind/task sprint/current-sprint status/in-progress team/production sprint/current-sprint status/in-progress 
+Release bugfix CHE 5.11.2 changes to include: #4931 d75545d #5167 #5200 #5210

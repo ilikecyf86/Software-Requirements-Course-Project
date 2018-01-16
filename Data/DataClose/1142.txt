@@ -1,0 +1,3 @@
+External operation event is displayed when remove project
+kind/bug severity/P2 team/ide sprint/current-sprint status/in-progress status/code-review status/pending-merge status/in-progress status/code-review status/pending-merge 
+External operation event is displayed when remove project Reproduction Steps: Create "spring" project Open a java class Remove project Observed behavior: External operation event is displayed

@@ -1,0 +1,3 @@
+Add some new macro for commands
+kind/task team/ide 
+Description When I'm trying to develop che plugin in che I need couple more macro for commands. {workspace.name} - the name of the current workspace {workspace.namespace} - the name of the workspace namespace {current.project.root.path} - root path of the current project

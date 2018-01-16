@@ -1,0 +1,3 @@
+Modify stacks.json
+kind/question 
+In my project, I want to delete the java-mysql images in the stacks.json. But I found it has never change when I start the eclipse-che, how to make the change by modify stacks.json?

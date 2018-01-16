@@ -1,0 +1,3 @@
+Move selenium changes for "che6" branch to the "master" branch
+kind/task status/in-progress team/production sprint/current-sprint status/in-progress 
+Description We do changes for stabilization selenium tests in the "che6" branch. We need apply this changes also for "master" branch. List of changes: Fix bugs in the selenium tests from "factory" package. #7455 Fix unexpected fails in the "autocomplete", "projectexplorer", "intelligencecommand" packages of the Che6 selenium #7138 Add "waitCommandIsSelected" method to the "CommandsExplorer" page-object in selenium tests #7467

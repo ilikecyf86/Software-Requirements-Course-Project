@@ -1,0 +1,3 @@
+Provide the data about supported environments
+kind/enhancement team/platform target/che6 sprint/current-sprint 
+There is need for the clients to know the types of supported environments - to proper validate the workspace creation from recipe and the environment itself. Example - dockerfile, dockerimage, openshift, compose.

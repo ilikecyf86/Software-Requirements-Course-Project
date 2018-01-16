@@ -1,0 +1,3 @@
+Investigate problem of failing testrunner tests
+kind/task 
+After rework and updated tests for checking main features of testrunner plugin 2 tests failed. But the tests always pass if we launch this one local. We should clarify of reason why the tests do not work properly on CI and stabilize this: JavaTestPluginTestNgTest JavaTestPluginJunit4CheckRunSuitesAndScopesTest

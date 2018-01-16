@@ -1,0 +1,3 @@
+CHE-6: Sometimes window with terminal doesn't resize.
+kind/bug team/enterprise 
+Steps to reproduce: Very hard to find stable steps to reproduce. OS and version: Fedora 25 Google Chrome 61.0.3163.100 (Official Build) (64-bit) CHE version: 6.0.0-M1-SNAPSHOT

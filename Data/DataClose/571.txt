@@ -1,0 +1,3 @@
+[Regression] The web-nodejs-simple project from the Node stack doesn't work
+kind/bug severity/P2 
+Reproduction Steps: Create a workspace from the Node stack with the web-nodejs-simple project; Run the "install dependencies" command and wait ending; Run the "run" command. Observed behavior: There is an error in the Console Che version: 5.17.0-SNAPSHOT OS and version: Fedora 25 Failed test: WorkingWithNodeWsTest Additional information:

@@ -1,0 +1,3 @@
+ESLint Language server
+kind/enhancement 
+since Orion, by default uses JSHint for linting, it would be nice to have a ESLint service. Visual Studio Code sports the following functionality by an extension and running it as a Language Server. Refrences The Official repository for the ESLint extension How does this work? the ESLint extension referenced above, queries to a local ESLint instance. The package somehow has a api.js that is used by the extension to communicate with the server component of the extension which brings real-time quick-actions, analysis, Intellisense, etc.

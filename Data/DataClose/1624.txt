@@ -1,0 +1,3 @@
+Wrong behaviour of Quick Documentation popup
+kind/bug team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint status/in-progress 
+Reproduction Steps: Open a project in the IDE Make editor area not so long Type something and invoke autocomplete popup Invoke Quick Documentation popup Observed result:

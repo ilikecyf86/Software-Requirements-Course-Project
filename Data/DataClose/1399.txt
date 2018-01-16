@@ -1,0 +1,3 @@
+Custom Graphical Editor Provider Eclipse Che
+kind/question 
+Hello, I am a developer Eclipse Che beginner, I am developing a plugin for eclipse che containing a graphical editor (palette / drawing area) using a Javascript library. I'm not finding out how to create a custom editor provider. Is it possible ? Are there guides for that?

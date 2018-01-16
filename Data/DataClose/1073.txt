@@ -1,0 +1,4 @@
+Study to use UseStringDeduplication jvm flag for workspace agent configuration
+kind/task sprint/next-sprint status/open-for-dev team/platform sprint/next-sprint 
+It can help us to reduce memory usage of agent Proposed JVM config -XX:+UseG1GC -XX:+UseStringDeduplication 
+ See more https://blog.codecentric.de/en/2014/08/string-deduplication-new-feature-java-8-update-20-2/

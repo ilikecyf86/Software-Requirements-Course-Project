@@ -1,0 +1,3 @@
+Using Git Support in Che
+kind/question 
+Is possible to add git support in Che and have inline highlighting of changes? See image attached

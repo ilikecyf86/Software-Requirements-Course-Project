@@ -1,0 +1,3 @@
+Support Language Servers in pom.xml editor
+kind/enhancement team/osio sprint/current-sprint sprint/current-sprint 
+Once we have support for multiple languages server in place, it makes sense to make editors that are provided by "first class" plugins in Che open to extension by language servers (so that you can add linters, etc.) The immediate use case we have for OSIO is to allow Bayesian to contribute problems and quick fixes to the pom.xml editor. As I understand it, the pom editor only supports reporting problems (outside of syntax highlighting). It should be possible to contribute that support as a language server and to use the language server based editor for poms instead. To be clear, this would not involve repackaging any modules.

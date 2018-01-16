@@ -1,0 +1,3 @@
+Make displaying of vcs head name in project explorer configurable
+kind/enhancement status/analyzing team/plugin 
+Description There is a proposal to make a displaying of vcs head name in project explorer configurable via preferences and hidden by default.

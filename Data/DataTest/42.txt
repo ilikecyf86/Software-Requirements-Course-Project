@@ -1,0 +1,3 @@
+How to create and register a custom viewpart in Che workspace?
+status/open-for-dev 
+Hi, I want to create my own viewpart and show it in Che workspace, In desktop eclipse, this can be done through writing a subclass of ViewPart and defining related extension point, but how can I do it in Che? Thanks.

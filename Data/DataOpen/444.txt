@@ -1,0 +1,3 @@
+Support for custom colour themes and bundle default custom colour themes
+kind/enhancement 
+one of the things I've also noticed is Che doesn't have support for custom editor colour schemes. It would be nice if we have support for such + prebundled custom colour schemes (preferrably the most loved ones)

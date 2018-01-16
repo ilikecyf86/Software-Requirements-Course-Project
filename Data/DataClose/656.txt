@@ -1,0 +1,42 @@
+Che-cli always ignore CHE_HOST variable when sync a workspace to local directory with che-cli
+kind/question 
+Hi I try to follow the instructions of https://www.eclipse.org/che/docs/ide/sync/index.html to sync my workspace on a remote server to my local folder. But no matter which ip I give, che-cli only connection to my local ip, totally ignore CHE_HOST I give. I pretty sure that I give a right CHE_HOST. Because I can use che-cli to ssh to my workspace, only not for sync command. Reproduction Steps: start che at server side, My start up script as below: #! /usr/bin/env bash
+
+IP="<server-ip>"
+DATA_DIR=$(pwd -P)/data
+COMMAND="$1"
+PORT="$2"
+EX_IP="<server-ip>"
+
+docker run -it --rm \
+	--memory=2g \
+	--memory-swap=4g \
+	-e CHE_HOST=${IP} \
+	-e CHE_PORT=${PORT} \
+	-e CHE_DOCKER_IP_EXTERNAL=${EX_IP} \
+    -v ${DATA_DIR}:/data \
+	-v /var/run/docker.sock:/var/run/docker.sock  \
+    eclipse/che:latest ${COMMAND}
+ run che-cli in client side docker run -it --rm -e CHE_HOST=<server-ip> -e CHE_PORT=8080  \
+-v /var/run/docker.sock:/var/run/docker.sock \
+                    -v <path>:/data \
+                    -v <local-sync-point>:/sync \
+                    eclipse/che-cli sync <workspace-name>
+ get erro message("public" is my workspace-name) Unable to connect to the remote host 192.168.65.2 on port 8080. Please check the server is listening and that there is no network issue to reach this host. Full error: Error: connect ECONNREFUSED 192.168.65.2:8080
+---------------------------------------
+!!!
+!!! ERROR: Error when trying to get workspace data for workspace named public
+!!!
+---------------------------------------
+List of workspaces are:
+ERROR: (Eclipse Che action/list-workspaces): Unable to connect to the remote host 192.168.65.2 on port 8080. Please check the server is listening and that there is no network issue to reach this host. Full error: Error: connect ECONNREFUSED 192.168.65.2:8080
+ start che locally with same script create different name workspace at local che instance execute step 2, and you will found this time "List of workspaces are:" part changed. local workspaces show there. Call on rest url /api/workspace/:public returned invalid response code (404) with error:Workspace with name 'public' in namespace 'che' doesn't exist
+---------------------------------------
+!!!
+!!! ERROR: Error when trying to get workspace data for workspace named public
+!!!
+---------------------------------------
+List of workspaces are:
+NAME       ID                         STATUS
+wksp-fhg9  workspaceed3m9e8ltvcuw5me  STOPPED
+ OS and version: Client OS is mac, server side OS is ubuntu 14.04 LTS. che-cli version is 5.15.0, che version is also 5.15.0 Diagnostics: I guess that this line of code may cause this issue: che/dockerfiles/mount/entrypoint.sh Line 113 in cd1e74f docker run --rm -v /var/run/docker.sock:/var/run/docker.sock eclipse/che-action:${CHE_VERSION} get-ssh-data ${WORKSPACE_NAME} ${COMMAND_EXTRA_ARGS} > $HOME/env Because DOCKER_RUN_OPTIONS did not be send to get-ssh-data

@@ -1,0 +1,3 @@
+The Processes panel button for downloading a log file doesn't have tooltip message
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: Create a project with commands and start any Hover cursor on button for downloading a log file in the Processes panel Observed behavior: There is not tooltip message Che version: 5.10.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

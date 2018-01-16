@@ -1,0 +1,3 @@
+Stop workspace w/o snapshot on deletion
+kind/enhancement status/open-for-dev team/plugin sprint/current-sprint status/in-progress status/open-for-dev status/code-review status/in-progress sprint/current-sprint status/code-review 
+When user deletes running workspace - we first try to stop it, on stop - workspace is snapshotting, but no need in it, cause the last step will delete it. So to avoid extra operations - need to stop workspace without snapshotting on workspace deletion.

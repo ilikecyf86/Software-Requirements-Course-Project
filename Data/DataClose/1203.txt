@@ -1,0 +1,3 @@
+Can't reset panel layout.
+kind/question kind/enhancement kind/question 
+I coudn't access explorer/editor when I opened Che workspace on my laptop (w/ 12inch display). This workspace was opened on my workstation (w/ 24inch display). One of the easiest fix is to reset its panel layout. But I couldn't the menu item for it.

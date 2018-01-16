@@ -1,0 +1,3 @@
+Make che.sh to work again
+kind/task sprint/next-sprint status/open-for-dev team/platform sprint/current-sprint sprint/next-sprint sprint/current-sprint status/analyzing status/open-for-dev 
+We should get engineer to investigate to generate a list of requirements related to what we need to modify in that so that it properly starts a Che server.

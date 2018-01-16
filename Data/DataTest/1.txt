@@ -1,0 +1,3 @@
+Change Ctrl+Shift+A into Ctrl+Shift+P
+kind/enhancement 
+Ctrl+Shift+P can be used in websites and it has become a pretty standard shortcut for the command panel used by: Sublime Text Atomic Codiad ...

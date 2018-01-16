@@ -1,0 +1,3 @@
+Improve and rework selenium tests from package 'git'
+kind/task status/open-for-dev team/production sprint/next-sprint kind/epic kind/task kind/epic kind/task sprint/next-sprint status/open-for-dev 
+We have enough much selenium tests in the package git still from the second version of product, so test cases can be obsolete and cumbersome We need to reconsider exist tests and rework them, if will be such necessity Target of this issue is to do git selenium tests more compact and reliable Rework GitPull test #7031

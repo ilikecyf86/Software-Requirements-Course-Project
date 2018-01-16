@@ -1,0 +1,3 @@
+Update Project Configuration should be available regardless of what project level is selected
+kind/bug severity/P2 sprint/next-sprint status/analyzing 
+Today you can only see the Project > Update Project Configuration menu item when you have selected the project name in the Project Explorer. This is confusing for new and experienced users. Instead you should be able to (re)configure the project no matter where your selection is inside a project. Reproduction Steps: Import a project. Set the project type on import. Open the project and select a sub-folder or file. Click the Project menu. There is no Update Project Configuration option. Click on the project name. Now the Update Project Configuration option is there. OS and version: used codenvy.io and OSIO Diagnostics:

@@ -1,0 +1,3 @@
+Remove project-creation page and everything connected with it
+kind/task team/plugin status/code-review status/code-review 
+As far as old project creation flow is not used - the related code should be removed.

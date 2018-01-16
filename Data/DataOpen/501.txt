@@ -1,0 +1,3 @@
+The Format feature does not respect tab spaces set in Preferences
+kind/bug status/analyzing severity/P1 team/ide kind/enhancement kind/bug severity/P1 
+Steps to reproduce: Preconditions: create the Spring project. Open the GreetingController class. Reproduction Steps: Profile ->Preferences ->Editor->Tab Size: -> set 2. Edit -> format Expected result new settings for the current code should be applied. Actual result the format is not changed OS and version: Chrome browser, Ubuntu 14 TLS.

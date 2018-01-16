@@ -1,0 +1,3 @@
+Investigate problem with InnerClassAndLambdaDebuggingTest
+kind/task team/production kind/bug sprint/current-sprint status/open-for-dev kind/task 
+We have unexpected failing of the test on CI. The test launches command for building test project. After building we get *.jar file and debug it. For starting command test uses Command Palette widget. After double clicking on the name of command this one should be execute and widget should be closed. But after clicking the widget still present and the command does not run.

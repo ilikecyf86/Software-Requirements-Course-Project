@@ -1,0 +1,3 @@
+Add ability to pass instance of the requestor into org.eclipse.che.ide.api.resources.ResourceChangedEvent
+kind/task status/open-for-dev team/plugin 
+It would be nice to have an information about caller object which performed particular operation on given resource. Proposed changes: Add a new one constructor which consumes java.lang.Object as an argument to the org.eclipse.che.ide.api.resources.ResourceChangedEvent Add getter method to obtain caller object

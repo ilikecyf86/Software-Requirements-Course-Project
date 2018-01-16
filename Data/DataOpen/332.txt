@@ -1,0 +1,9 @@
+Rework and migrate dockerimage recipe
+kind/task team/platform severity/P2 status/open-for-dev sprint/current-sprint 
+Related to SPI branch only. Now dockerimage recipe uses next format: {
+    "type" : "dockerimage",
+    "location" : "eclipse/ubuntu_jdk8",
+    "contentType" : null,
+    "content" : null
+}
+ Since field 'location' is supposed to contain URL to recipe content we decided to move docker image from location field to field content, e.g.: { "type" : "dockerimage", "location" : null, "contentType" : null, "content" : "eclipse/ubuntu_jdk8" } In addition to making Docker infrastructure use content field instead of location, in this case, we also need to migrate dockerimage environment type in all the cases: Codenvy DBs, accepting workspace config and factories in a backward compatible way.

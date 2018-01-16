@@ -1,0 +1,3 @@
+UD doesn't allow to edit compose environment recipe of existing WS in a pretty way
+kind/enhancement 
+When I create WS I can use stack authoring view to write compose file with syntax highlighting and validation. When I there is existing WS with compose environment I can see it in a pretty way on some of views in UD. In workspace config view it is inlined yaml, so it is unfriendly to edit it. It would be helpful to edit it in a way we edit it in stack authoring view.

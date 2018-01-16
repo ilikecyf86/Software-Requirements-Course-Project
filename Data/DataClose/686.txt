@@ -1,0 +1,16 @@
+Can't stop che-server booted up with CHE_PORT and CHE_SINGLE_PORT.
+kind/question 
+Port 8081 is listened not by che-8081 but che8081_traefik_1 when CHE_PORT and CHE_SINGLE_PORT=true. It seems che CLI doesn't care about this. Reproduction Steps: At the first. docker run  -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /opt/home/8081:/data -e CHE_HOST={censored} -e CHE_PORT=8081 -e CHE_SINGLE_PORT=true eclipse/che:nightly start
+ After above. docker run  -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /opt/home/8081:/data -e CHE_HOST={censored} -e CHE_PORT=8081 -e CHE_SINGLE_PORT=true eclipse/che:nightly stop
+ INFO: (che cli): nightly - using docker 17.05.0-ce / native
+INFO: (che download): Pulling image eclipse/che:nightly
+
+nightly: Pulling from eclipse/che
+Digest: sha256:09f62efb3d3fea2a88dd8c9f1951cfc2da92b6d9e4bcd537ede600661a9005bd
+Status: Image is up to date for eclipse/che:nightly
+
+INFO: (che stop): Server che-8081 on port 8081 not running...
+ OS and version: Diagnostics: $ docker ps
+CONTAINER ID        IMAGE                        COMMAND                  CREATED              STATUS              PORTS                               NAMES
+f5ae71bbb5c7        traefik:v1.3.0-rc3           "/traefik --logLev..."   10 minutes ago       Up 10 minutes       80/tcp, 0.0.0.0:8081->8081/tcp      che8081_traefik_1
+f18ccc188e12        eclipse/che-server:nightly   "/entrypoint.sh"         10 minutes ago       Up 10 minutes       8000/tcp, 0.0.0.0:32947->8080/tcp   che-8081

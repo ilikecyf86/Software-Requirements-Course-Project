@@ -1,0 +1,3 @@
+Incorrect behavior for read-only files
+kind/bug severity/P2 team/ide sprint/current-sprint status/code-review status/pending-merge status/code-review status/pending-merge 
+We handle read-only files as editable in some cases. Please see steps to reproduce and video. Reproduction Steps: Open some read-only file (from external library, for example). => you can see in a browser console errors related to attempt to save a content of the file. Try to refresh a page => you can see a browser popup with warning "Change you made may not be saved". Remove the project => the project is removed but the file is still opened.

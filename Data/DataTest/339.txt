@@ -1,0 +1,4 @@
+Nightly docker image issue: can't open the created project
+
+The command to run che: docker run -ti --net=host -v /var/run/docker.sock:/var/run/docker.sock -v /home/user/che/lib:/home/user/che/lib-copy -v /home/user/che/workspaces:/home/user/che/workspaces -v /home/user/che/tomcat/temp/local-storage:/home/user/che/tomcat/temp/local-storage -e CHE_DOCKER_MACHINE_HOST=198.199.105.97 codenvy/che:nightly
+ And created a java project successfully: But when click on "OPEN PROJECT IN IDE", it will show such a dialog: If click on the "Create" button, it will show an tip says the workspace is already existed

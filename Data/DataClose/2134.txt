@@ -1,0 +1,3 @@
+Command Editor - Arguments view
+team/ide status/in-progress status/pending-merge status/in-progress status/pending-merge 
+This issue is sub-task of #2898 Issue dedicated to the Command Editor - Arguments only.

@@ -1,0 +1,3 @@
+[Regression] Validation markers appear just for a second and then disappear.
+team/ide kind/bug status/code-review status/code-review 
+Originally reported by @kaloyan-raev in #5311 (comment) Reproduction Steps: To reproduce: Have a composer.json file with this content { "require-dev": { "phpunit/phpunit": "^6.1" } } Type something - even just a space char would be enough. A warning validation (about missing "name" and "description" keys) appears on the top left of the editor. After a second the warning disappears. This only happens for the warnings related to the schema validation. It does not affect the syntax error messages.

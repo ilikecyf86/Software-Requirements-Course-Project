@@ -1,0 +1,3 @@
+Eclipse Che - RecentWorkspace does not list items correctly
+kind/question 
+Hello, In the RECENTWORKSPACES section, the lats modified work space or the recent ones does not list up. Always it shows only one though i have 6 workspaces Do we have any fix for this or is this a known issue. Thank you.

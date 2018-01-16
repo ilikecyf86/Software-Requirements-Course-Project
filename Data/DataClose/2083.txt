@@ -1,0 +1,3 @@
+Unexpected server error after refactoring with rename and move operations
+kind/bug team/ide sprint/next-sprint status/in-progress status/in-progress sprint/next-sprint 
+Preconditions: create a new package in the Spring project Reproduction Steps: Create the Spring project. Open GreetingController class. Do rename class in the editor trough Assistant ->Refactoring->Rename menu. After renaming, select the just renamed class in the Project tree and do: Assistant-> Refactoring-> Move Related selenium test test: RefactoringFeatureTest Expected behavior: The class should be moved Observed behavior: Internal server error Che version: 5.0.0-M8 OS and version: Ubuntu 14.0 TLS Docker version: 1.12.3

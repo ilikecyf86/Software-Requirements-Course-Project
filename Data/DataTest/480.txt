@@ -1,0 +1,23 @@
+workspace rename not working when stopped.
+kind/bug 
+Trying to rename a stopped workspace. Got the following error message Failed undefined chrome debug http://localhost:8080/api/workspace/workspacet5gpubcjl97x4q3w/config Failed to load resource: the server responded with a status of 500 (Internal Server Error) config: Object
+data: Object
+headers: Object
+method: "PUT"
+paramSerializer: (e)
+transformRequest: Array[1]
+0: (e)
+length: 1
+__proto__: Array[0]
+transformResponse: Array[1]
+0: xt(e,t)
+length: 1
+__proto__: Array[0]
+url: "/api/workspace/workspacet5gpubcjl97x4q3w/config"
+__proto__: Object
+data: "This is not a JSON Array."
+headers: (n)
+status: 500
+statusText: "Internal Server Error"
+
+ rename works if the workspace is running.

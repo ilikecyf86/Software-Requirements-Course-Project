@@ -1,0 +1,4 @@
+Add tests written section in PR template
+
+Add section that checks whether tests are written in PR template in Che repo. Here how it can look (from Codenvy repo): ### Tests written?
+Yes/No

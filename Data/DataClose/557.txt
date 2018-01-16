@@ -1,0 +1,3 @@
+Servers health-check for ws-agent and terminal-agent on Docker infra
+kind/task team/platform 
+Servers health-checker: Started as a reaction on MachineStatus.RUNNING event, Stopped as a reaction on MachineStatus.STOPPED event

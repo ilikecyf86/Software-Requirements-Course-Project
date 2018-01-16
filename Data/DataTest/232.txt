@@ -1,0 +1,3 @@
+Swagger page is broken if no trailing slash in url
+kind/bug 
+Swagger page is broken if no trailing slash in url. See attached screenshot.

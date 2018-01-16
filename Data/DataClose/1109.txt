@@ -1,0 +1,3 @@
+how can I achieve python debug mode
+
+Che does not have Python debugger now，and how can I achieve python debug mode in che project ，is there some way，like GDB or else？thanks for tell me！

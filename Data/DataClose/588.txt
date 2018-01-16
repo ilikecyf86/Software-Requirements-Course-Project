@@ -1,0 +1,3 @@
+Broadcast project import output through JSON RPC protocol
+kind/enhancement team/ide status/open-for-dev team/plugin team/ide 
+The batch project creation of the ProjectService is not using broadcasting of the project's import output through JSON RPC protocol. To have the common way of handling this stuff - need to adapt the batch creation same as project import.

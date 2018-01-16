@@ -1,0 +1,3 @@
+Improve style of Orion-based assistant popup
+kind/enhancement 
+Restyle Orion based assistant popup and make it depended on the current theme. We need to make the popup to look like the following

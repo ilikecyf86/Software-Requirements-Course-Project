@@ -1,0 +1,3 @@
+Rework test for Preview refactoring feature
+kind/task 
+After change preview refactoring widget the related test is deprecated. We need rework this one

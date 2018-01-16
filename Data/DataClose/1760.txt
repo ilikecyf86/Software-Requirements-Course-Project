@@ -1,0 +1,13 @@
+a recipe content is not parsed correctly when creating a project
+kind/bug severity/P1 team/platform team/plugin team/platform sprint/next-sprint sprint/current-sprint sprint/next-sprint status/code-review sprint/current-sprint 
+The recipe content is not parsed correctly Reproduction Steps: I have added a new stack with the wollowing recipe           "recipe": {
+                "type": "dockerfile",
+                "contentType": "text/x-dockerfile",
+                "content": "FROM marmolata/ubuntu_bashrc\nENV SBT_OPTS '-Dhttp.proxyHost=proxy.wdf.sap.corp -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy.wdf.sap.corp -Dhttps.proxyPort=8080 -Dhttp.nonProxyHosts=nexus.wdf.sap.corp'\nCMD tailf /dev/null\n"
+          }
+ Let distinguish the two ways to create a workspace. Namely http://10.97.89.4:8080/dashboard/#/create-workspace and http://10.97.89.4:8080/dashboard/#/create-project When using the second approach (create project), then the recipe is parsed into "recipe": {
+        "type": "dockerfile",
+        "content": "FROM marmolata/ubuntu_bashrc\nENV -Dhttp.nonProxyHosts nexus.wdf.sap.corp'\nCMD tailf /dev/null\n",
+        "contentType": "text/x-dockerfile"
+      }
+ which is incorrect. Che version: 5.0.0 OS and version: Ubuntu 16.04 Docker version: 1.12.5

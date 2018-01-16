@@ -1,0 +1,3 @@
+Unexpected error message 'Machine id' not found after refreshing a browser (regression)
+kind/bug severity/blocker sprint/current-sprint team/ide status/in-progress status/pending-merge status/in-progress status/pending-merge 
+Reproduction Steps: Create a workspace and refresh browser More details in the screencast: Expected behavior: There is no any errors messages. Observed behavior: We have error message about losing machine id [Describe observed behavior here] Che version: 5.0.0-M6-SNAPSHOT OS and version: Ubuntu 14.0 TLS NOTE! This reproduced only nighly5 server! This is the reason why terminal is not starting after creation a workspace

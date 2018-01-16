@@ -1,0 +1,3 @@
+Terminal frame doesn't scale correctly when window is resized
+kind/bug severity/P2 status/open-for-dev team/enterprise 
+Terminal frame doesn't scale correctly when window is resized. It can be found when browser window height is decreased or when browser developer tools frame is opened. Reproduction Steps: Start WS Increase size of terminal frame, but without usage of maximization button of terminal. Decrease height of window or open browser developer tools. Expected: Terminal frame control buttons are present as in case it was resized using maximize button of the frame. Actual: Terminal frame control buttons are missing, top lines of content of terminal are missing. OS and version: Diagnostics:

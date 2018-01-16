@@ -1,0 +1,3 @@
+The import javax.crypto cannot be resolved (codenvy.io)
+kind/question 
+Reproduction Steps: OS and version: Microsoft Windows 10 Version 1703 (Build 15063.483) 64bit Diagnostics:

@@ -1,0 +1,3 @@
+Question on bannedDependencies
+kind/question 
+The che root pom bans some dependencies via the maven-enforcer-plugin (org.sl4j:sl4j-nop, -jdk14, ....) and some more. I wanted to include a library into an agent that requires some of the banned dependencies. Can you provide some general background, why these dependencies are banned? Will it cause trouble if I use those dependencies or are they just banned to enforce the use of standard libraries for the project?

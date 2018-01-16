@@ -1,0 +1,22 @@
+Add tracking events to the System graceful stop
+kind/enhancement sprint/next-sprint status/open-for-dev team/platform sprint/next-sprint status/code-review 
+#3892 is introducing a system "graceful shutdown" provided by initial PR #3917 Clients like CLI might be interested to display nice output to users during the stop it could be something like @evoevodin suggested (I've added extra current/total) {
+    "type" : "STOPPING_SERVICE", 
+    "service" : "workspace"
+} {
+    "type" : "SERVICE_ITEM_STOPPED", 
+    "id" : "workspace0x123456",
+    "service" : "workspace",
+    "current" : "12",
+    "total": "36"
+}  {
+    "type" : "SERVICE_STOPPED", 
+    "service" : "workspace"
+}  Then CLI could display Stopping service: workspace
+   'workspace123' is stopped [12/36]
+   'workspace234' is stopped [13/36]
+   'workspace345' is stopped [14/36]
+   service stopped
+
+Stopping service: ldap
+...

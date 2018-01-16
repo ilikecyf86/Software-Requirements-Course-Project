@@ -1,0 +1,3 @@
+Detect symbolic link and display it with unique svg images.
+kind/enhancement 
+It would be useful to detect symbolic link inside project and display it with unique svg images. For now it displays like folder.

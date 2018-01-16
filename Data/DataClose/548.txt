@@ -1,0 +1,3 @@
+Language Server loading processes should be an async background process
+kind/enhancement 
+it's a bit irriating to wait for the language server to load for a specific file (for example, the JSON langserver) and displays a loader. It would be nice if the loading process for the LSes would be a background async task and the user can still edit a specific file without waiting for the LS for the file.

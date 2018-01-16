@@ -1,0 +1,3 @@
+Add method for getting project
+kind/task status/open-for-dev team/plugin sprint/next-sprint sprint/current-sprint sprint/next-sprint status/open-for-dev sprint/current-sprint 
+As org.eclipse.che.ide.api.resources.VirtualFile doesn't contains getProject method anymore we can deprecate current method org.eclipse.che.ide.api.resources.Resource#getRelatedProject and create a new one org.eclipse.che.ide.api.resources.Resource#getProject which will return an instance of bound org.eclipse.che.ide.api.resources.Project.

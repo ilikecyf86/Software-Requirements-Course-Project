@@ -1,0 +1,77 @@
+An unexpected error on `eclipse/che start`
+kind/question 
+5.2.2: Pulling from eclipse/che-server
+b7f33cc0b48e: Already exists 
+484088cdace9: Pull complete 
+22b53d89ffed: Pull complete 
+b7ab394c0e2e: Pull complete 
+Digest: sha256:1c43b62a101e2122d77a0d619e0d618e8f18073cecd4e77bd4b3d1f15f29799a
+Status: Downloaded newer image for eclipse/che-server:5.2.2
+
+INFO: (che init): Installing configuration and bootstrap variables:
+INFO: (che init):   CHE_HOST=10.2.0.4
+INFO: (che init):   CHE_VERSION=5.2.2
+INFO: (che init):   CHE_CONFIG=/home/core/foo
+INFO: (che init):   CHE_INSTANCE=/home/core/foo/instance
+INFO: (che config): Generating che configuration...
+INFO: (che config): Customizing docker-compose for running in a container
+INFO: (che start): Preflight checks
+/scripts/base/library.sh: line 309: [: .: integer expression expected
+         mem (1.5 GiB):           [OK]
+         disk (100 MB):           [OK]
+         port 8080 (http):        [AVAILABLE]
+         conn (browser => ws):    [OK]
+         conn (server => ws):     [OK]
+
+INFO: (che start): Starting containers...
+INFO: (che start): Services booting...
+INFO: (che start): Server logs at "docker logs -f che"
+INFO: (che start): Booted and reachable
+INFO: (che start): Ver: 5.2.2
+INFO: (che start): Use: http://10.2.0.4:8080
+INFO: (che start): API: http://10.2.0.4:8080/swagger
+ It works well but have an unexpected error. /scripts/base/library.sh: line 309: [: .: integer expression expected
+ Reproduction Steps: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v `pwd`/foo:/data eclipse/che start
+ OS and version: Container Linux by CoreOS 1235.9.0 (Ladybug) Diagnostics: WARN: Bound 'eclipse/che' to 'eclipse/che:5.2.2'
+INFO: (che cli): 5.2.2 - using docker 1.12.6 / native
+
+CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che
+ Version:        5.2.2
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /home/core/foo
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    5.2.2
+ CHE_HOST:       10.2.0.4
+ CHE_INSTANCE:   /home/core/foo/instance
+ CHE_CONFIG:     /home/core/foo
+ CHE_BACKUP:     /home/core/foo/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   10.2.0.4
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:5.2.2
+ IMAGE_CHE=eclipse/che-server:5.2.2
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.2.2
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.2.2
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:5.2.2
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:5.2.2
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.2.2
+che.env:
+ CHE_HOST=10.2.0.4

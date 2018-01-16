@@ -1,0 +1,3 @@
+Maven plugin does not work with Java 7
+kind/enhancement status/in-progress 
+Even though it is possible to install whatever Java you need in a workspace, Maven plugin works only with 1.8+. Perhaps it will be a good idea to make sure Maven plugin using the same java that the workspace agent uses.

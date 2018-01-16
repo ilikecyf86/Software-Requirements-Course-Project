@@ -1,0 +1,3 @@
+Rework docker runtime infrastructure to use bootstrapper events during workspace start
+kind/task team/platform sprint/current-sprint status/open-for-dev status/open-for-dev sprint/current-sprint 
+Events specification is here(section Bootstrapper events). Rework docker infrastructure to use bootstrapper to start agents. The golang bootstrapper is merged under #5399.

@@ -1,0 +1,3 @@
+[Multiuser] Workplace member permissions do not change after changing his role in organization
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: Create an organization and add a member with the member role Create an workspace in this organization and share it with the member Change role of the member to admin Check the Share tab of the workspace Expected behavior: The member permissions for the workspace changed(added setPermission because the member is admin now in the organization). Observed behavior: Nothing changed. If delete the member from the Share tab and add again then he will be has admin permission. Che version: 5.21.0-SNAPSHOT Multiuser OS and version: Fedora 25 Additional information:

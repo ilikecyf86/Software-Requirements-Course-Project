@@ -1,0 +1,13 @@
+Add template example when creating a workspace with custom dockerfile
+kind/question kind/enhancement kind/question 
+It is not possible to start a workspace with any node image (node:4, node:6, node:7). However, alpine image works. Reproduction Steps: Go to Create workspace -> Runtime -> Stack authoring. Enter "FROM node:4". Save to create. Or start with che dir up and get same result. Chefile: workspace.runtime.docker.image="node:4"
+workspace.name="local"
+workspace.ram=2048
+ OS and version: Windows 8 Diagnostics: Message in popup: Could not start workspace wksp-vr0r. Reason: Start of environment 'wksp-vr0r' failed. Error: Error occurs while initializing command [/bin/sh, -c, trap '[ -z "$(jobs -p)" ] || kill $(jobs -p); [ -e /tmp/docker-exec-93.pid ] && rm /tmp/docker-exec-93.pid' EXIT; echo $$>/tmp/docker-exec-93.pid; command -v pidof >/dev/null 2>&1 && { pidof che-exec-agent >/dev/null 2>&1 && echo 0 || echo 1 } || { ps -fC che-exec-agent >/dev/null 2>&1 && echo 0 || echo 1 }] in docker container a4f260a5b614cd7d7df741d17dbf1c40abb37093031ab6527d29cafdf2eced1c: Error response from docker API, status: 500, message: Container a4f260a5b614cd7d7df741d17dbf1c40abb37093031ab6527d29cafdf2eced1c is not running
+ Message in dev machine output: [DOCKER] Step 1/1 : FROM node:4
+[DOCKER] 4: Pulling from library/node 
+[DOCKER] Digest: sha256:ea678b5c98f45994794c2deab51a2bdbfba5be91e836c31007568bc4de8b0fa0 
+[DOCKER] Status: Image is up to date for node:4 
+[DOCKER] ---> 3007493bf881
+[STDOUT] rpc error: code = 2 desc = oci runtime error: exec failed: container_linux.go:247: starting container process caused "process_linux.go:110: decoding init error from pipe caused \"read parent: connection reset by peer\""
+[STDOUT]

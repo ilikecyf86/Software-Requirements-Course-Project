@@ -1,0 +1,3 @@
+Command's name usage issue
+kind/bug 
+There is an issue with using command's name: duplicates of names are allowed name is used as id : to update name need to recreate the command name is used as path param in requests - so has symbol restrictions

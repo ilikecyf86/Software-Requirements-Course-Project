@@ -1,0 +1,3 @@
+Test docker infrastructure
+target/branch team/platform status/open-for-dev 
+Revise the infrastructure-docker module and provide corresponding unit test suite for all components inside this module and remove components moved from master which are essentially useless. Sub tasks: Move docker container settings applying from DockerMachineStarter #5871 Move code of DockerMachineStarter into several classes for managing containers/images Add tests for DockerMachineStarter Uncomment commented tests Improve test coverage of DockerInternalRuntime Add tests for DockerMachine Add tests for DockerMachineCreator Add tests for DockerRuntimeContext Add tests for DockerRuntimeInfrastructure

@@ -1,0 +1,3 @@
+how to configure che to pull private images from docker hub
+kind/question 
+How do you set up che to be able to log on to Docker hub and pull private images. I want to create a custom stack, using one of our own docker images. The only place I can see where I might be able to do this is in the che.properties file - where it looks like I have to store the login credentials in clear text. Is this the place to set this up - and then restart the che server to have this kick in? Or am I overlooking something? It would be nice to have a UI for this - as it should not be necessary for users have to edit the config file to set this up.

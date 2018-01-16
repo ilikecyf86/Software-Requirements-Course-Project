@@ -1,0 +1,3 @@
+Creation of a new file in collapsed project cause hide of all project files
+kind/bug severity/P2 
+If create a file in project which is not unwrapped, all project items will be hide except new one. Reproduction Steps: Open an workspace with a project. Collapse the project. Refresh page. Create a new file using Main Menu -> Project -> New -> File. Actual behaviour: The only created file is in project directory. Screencast:

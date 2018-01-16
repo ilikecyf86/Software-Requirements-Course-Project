@@ -1,0 +1,3 @@
+How to configure SSL che terminal ?
+kind/question 
+Hello, che terminal is there any way to use SSL to start? Configured SSL, I want to make the link more secure, but I use HTTPS configuration che tomcat, che terminal using the WSS protocol, but the link can't do it.

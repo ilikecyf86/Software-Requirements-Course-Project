@@ -1,0 +1,38 @@
+Che server does not start
+kind/question 
+Downloaded che latest, unip and trying to launch using che.bat. It seems that startup script che.sh fails on the JDK version check (even though I have the required 1.8 version installed). C:\Users\anbhatia\Documents\eclipse-che-latest\eclipse-che-4.0.0-beta-12\bin>che.bat
+
+#############################################################
+On Windows, Che projects can only reside in %userprofile% due
+to limitations of Docker. On this computer, %userprofile% is
+C:\Usersnbhatia
+#############################################################
+
+Docker machine named default already exists...
+Setting environment variables for machine default...
+Docker is configured to use vbox docker-machine named default with IP 192.168.99.100...
+
+############## HOW TO CONNECT YOUR CHE CLIENT ###############
+After Che server has booted, you can connect your clients by:
+1. Open browser to http://localhost:8080, or:
+2. Open native chromium app.
+#############################################################
+
+C:\Users\anbhatia\Documents\eclipse-che-latest\eclipse-che-4.0.0-beta-12\bin>
+ My environment - Win 7, JDK 1.8, Git 2.7.0: C:\Users\anbhatia\Documents\eclipse-che-latest\eclipse-che-4.0.0-beta-12\bin>bash --version
+GNU bash, version 4.3.42(5)-release (x86_64-pc-msys)
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+C:\Users\anbhatia\Documents\eclipse-che-latest\eclipse-che-4.0.0-beta-12\bin>ver
+
+Microsoft Windows [Version 6.1.7601]
+C:\Users\anbhatia\Documents\eclipse-che-latest\eclipse-che-4.0.0-beta-12\bin>"%JAVA_HOME%"\bin\java -version
+java version "1.8.0_72"
+Java(TM) SE Runtime Environment (build 1.8.0_72-b15)
+Java HotSpot(TM) 64-Bit Server VM (build 25.72-b15, mixed mode)
+
+C:\Users\anbhatia\Documents\eclipse-che-latest\eclipse-che-4.0.0-beta-12\bin>

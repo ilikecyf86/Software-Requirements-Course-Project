@@ -1,0 +1,17 @@
+Unable to Build Che
+
+i try to do a mvn clean install -Pfast on the current master of che and get compile errors in go Reproduction Steps: Checkout Che mvn clean install -Pfast Expected behavior: Build Goes Through Observed behavior: Maven Fails 
+main:
+     [copy] Copying 40 files to /home/dietrich/che/exec-agent/target/go-workspace/src
+     [copy] Copying 29 files to /home/dietrich/che/exec-agent/target/go-workspace/src/github.com/eclipse/che/exec-agent
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- iterator-maven-plugin:0.4:iterator (compile-exec-agent) @ exec-agent ---
+[INFO] ------ (linux_arm5) org.codehaus.mojo:exec-maven-plugin:1.4.0:exec
+[INFO] ------ (linux_arm6) org.codehaus.mojo:exec-maven-plugin:1.4.0:exec
+[INFO] ------ (linux_arm7) org.codehaus.mojo:exec-maven-plugin:1.4.0:exec
+[INFO] ------ (linux_amd64) org.codehaus.mojo:exec-maven-plugin:1.4.0:exec
+# runtime/cgo
+/usr/lib/go-1.6/src/runtime/cgo/cgo.go:54:19: fatal error: errno.h: No such file or directory
+compilation terminated.
+ Che version: Current Master OS and version: Linux Mint 18 Do you have any hint what could cause this?

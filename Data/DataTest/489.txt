@@ -1,0 +1,3 @@
+How to customise project properties and preferences in Che?
+kind/question 
+In other versions of Eclipse, you've the option of customizing the properties of a project like maven settings, jdk ver, etc. I am not able see such options in che. As a result, maven fails to download my project dependencies and hence, build fails.

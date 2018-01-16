@@ -1,0 +1,3 @@
+Add ability to configure allowedClockSkewMillis parameter of JWT token parser
+kind/task sprint/current-sprint team/platform status/in-progress status/in-progress sprint/current-sprint 
+We are using DefaultJwtParser of JWT tokens. It checks token MUST NOT be accepted on or after any specified exp time: token MUST NOT be accepted before any specified nbf time But due some delays in time setup on keycloak side and browsers and ws-master it may be that time on this three nodes has a small difference. To reduce the possibility of errors due to this difference, there is a parameter allowedClockSkewSeconds. We want to make it configurable with default value 3 sec

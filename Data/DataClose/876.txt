@@ -1,0 +1,3 @@
+Rework importing a project while consuming Factory to avoid using Everrest based Websocket calls
+kind/enhancement team/ide status/in-progress status/in-progress 
+FactoryProjectImporter uses WsAgentStateController#getMessageBus for listening the git checkout operations. Need to replace it with JSON-RPC.

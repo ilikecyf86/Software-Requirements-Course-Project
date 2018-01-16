@@ -1,0 +1,3 @@
+Make it possible in easy way generate skeleton for JavaScript plugin
+kind/enhancement target/che6 team/ide 
+Description Main task here is provide ability for developer create template for JavaScript plugins. Possibly easiest way will be use http://yeoman.io/ for this.

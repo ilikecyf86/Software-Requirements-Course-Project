@@ -1,0 +1,3 @@
+Xmx value for ws-agent's JAVA_OPTS must not exceed total machine RAM
+kind/enhancement kind/enhancement kind/enhancement team/platform team/platform kind/bug severity/P1 kind/enhancement sprint/next-sprint status/open-for-dev team/platform sprint/next-sprint status/analyzing sprint/next-sprint status/open-for-dev 
+I think part of machine crashes occur because Xmx for ws-agent is set to 2048M while machine run with limit of 1GB RAM. This prevent garbage collector to be fired so linux kernel imposes RAM limit and terminates ws-agent with OutOfMemory error. We need either dynamically set Xmx to something about no more than 70% of machine's RAM limit or disable starting machine with RAM limit less than 2.5GB if ws-agent is present in machine.

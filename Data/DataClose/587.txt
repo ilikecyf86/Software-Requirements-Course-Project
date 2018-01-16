@@ -1,0 +1,3 @@
+update OpenJDK notification files
+kind/task sprint/current-sprint team/production status/code-review 
+we have to update notification files for OpenJDK with GPL v2 text begin with: 'The following license applies to OpenJDK' http://openjdk.java.net/legal/gplv2+ce.html

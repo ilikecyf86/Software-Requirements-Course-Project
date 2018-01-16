@@ -1,0 +1,3 @@
+[languageserver] Push notification to client on new language server
+kind/enhancement team/ide 
+Currently the list of registered servers is polled once during startup. We should send a notification through WS when ever there is a language server un/registered and should update the client accordingly.

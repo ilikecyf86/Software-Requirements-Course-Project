@@ -1,0 +1,3 @@
+Unable to Create Workspace
+kind/question 
+I am using Windows 10, 64 bit. This is the nightly build on 2/1/2016. It says that the workspace does not respond, so I cannot create any projects at all. Thanks

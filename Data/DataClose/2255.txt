@@ -1,0 +1,3 @@
+Docker Store - Replace Che-Server Base Image
+kind/enhancement 
+The vulnerabilities we got on our security scan from the Docker store are also in the openjdk/alpine image. Need to change our che-server base Docker "alpine" image to "openjdk/alpine" image. This should allow us to have Docker coordinate with openjdk directly to solve issue. This is in reference to #2534.

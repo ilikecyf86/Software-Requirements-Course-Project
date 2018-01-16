@@ -1,0 +1,3 @@
+External Libraries not available before opeining a Java File
+kind/bug severity/P1 target/branch target/che6 
+In the jdt.ls branch, when you start the workspace and try to expand the external libraries node of a java project before opening the first Java file, a failure occurs. The problem is that the Java language server is not started yet.

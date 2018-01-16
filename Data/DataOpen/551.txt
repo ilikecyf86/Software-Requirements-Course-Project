@@ -1,0 +1,3 @@
+Developer Use Case: Hot (un)deploy of server components
+Improvement kind/task kind/enhancement Improvement 
+If I’ve a new component, like a rest service component, I should be able to add it dynamically on the workspace master or the workspace agent My workspace agent is running, I could be able to use IDE or UD admin view, select a jar, click on update and then my rest component is available. Or to be able to disable dynamically my component. OSGi is a candidate with Eclipse Equinox.

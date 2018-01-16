@@ -1,0 +1,28 @@
+error in cli output
+kind/bug severity/P2 
+when I was running nightly server updates I've got following error in CLI output �[0;32mINFO:�[0m (codenvy config): Generating codenvy configuration...
+�[mNotice: Compiled catalog for 1511be7f32f2.ec2.internal in environment production in 0.55 seconds�[0m
+�[mNotice: Applied catalog in 0.09 seconds�[0m
+�[0;32mINFO:�[0m (codenvy config): Customizing docker-compose for running in a container
+�[0;32mINFO:�[0m (codenvy start): Preflight checks
+WARNING: bridge-nf-call-iptables is disabled
+WARNING: bridge-nf-call-ip6tables is disabled
+/scripts/base/library.sh: line 309: [: .: integer expression expected
+         mem (1.5 GiB):           �[0;32m[OK]�[0m
+         disk (100 MB):           �[0;32m[OK]�[0m
+         port 80 (http):          �[0;32m[AVAILABLE]�[0m
+         port 443 (https):        �[0;32m[AVAILABLE]�[0m
+         port 2181 (zookeeper):   �[0;32m[AVAILABLE]�[0m
+         port 5000 (registry):    �[0;32m[AVAILABLE]�[0m
+         port 23750 (socat):      �[0;32m[AVAILABLE]�[0m
+         port 23751 (swarm):      �[0;32m[AVAILABLE]�[0m
+         port 32000 (jmx):        �[0;32m[AVAILABLE]�[0m
+         port 32001 (jmx):        �[0;32m[AVAILABLE]�[0m
+         port 8000 (debug):        �[0;32m[AVAILABLE]�[0m
+         port 9000 (lighttpd):    �[0;32m[AVAILABLE]�[0m
+         conn (browser => ws):    �[0;32m[OK]�[0m
+         conn (server => ws):     �[0;32m[OK]�[0m
+
+�[0;32mINFO:�[0m (codenvy start): Starting containers...
+Creating codenvy_rsyslog_1
+ this is somehow related to version checks https://github.com/eclipse/che/blob/master/dockerfiles/base/scripts/base/library.sh#L309 @TylerJewell can you please take a look on this

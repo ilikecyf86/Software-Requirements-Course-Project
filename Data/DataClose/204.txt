@@ -1,0 +1,3 @@
+Question : Regarding dotnet-web-simple not appear in Che 5.19.0
+kind/question kind/bug severity/P2 team/production kind/question sprint/current-sprint status/open-for-dev 
+OS : 16.04.3 Che : 5.19.0 Mode : Multi-User and Single-user First Case i been using che from the first version till now, meaning that upgrade repeatly till latest version 5.19.0, but i still can't find the dotnet-web-simple. Second Case I try first done the installation on version 5.18.0 and upgrade to 5.19.0, sadly i still can't find the dotnet-web-simple. Third Case I deleted docker and all related files for Che, meaning that i done an installation from fresh, in this case, i can find dotnet-web-simple. so, what wrong with Che?

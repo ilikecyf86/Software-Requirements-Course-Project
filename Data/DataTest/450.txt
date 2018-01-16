@@ -1,0 +1,3 @@
+Che upgrade from beta to RC3 release fails to detect my existing workspace
+
+I upgraded my Eclipse Che from eclipse-che-4.0.0-beta-13-1 to RC3 release. The issue here is the new RC3 release fails to detect my existing workspace under the same base - <%userprofile%>. Creating a new workspace with the same name in the new Che also gives me error. Import option with the jsn configuration also has not worked out.

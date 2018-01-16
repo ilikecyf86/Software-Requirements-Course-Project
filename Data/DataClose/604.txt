@@ -1,0 +1,3 @@
+Adapt CLI to use keycloak openid authentication
+kind/task team/platform status/open-for-dev status/in-progress status/open-for-dev 
+We need to change this code https://github.com/eclipse/che/blob/master/dockerfiles/lib/src/api/wsmaster/auth/auth-data.ts#L129 to use keycloak openid authentication. I think we need a new client in che realm. Let's say 'curl' with "Bearer only" authentification. Then, change the way how cli obtain token to something like this. curl --data "grant_type=password&client_id=che-public&username=admin&password=123456" http://192.168.65.2:5050/auth/realms/che/protocol/openid-connect/token See also http://blog.keycloak.org/2015/10/getting-started-with-keycloak-securing.html

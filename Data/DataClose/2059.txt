@@ -1,0 +1,3 @@
+Update codemirror version to 5.19.0
+kind/enhancement sprint/next-sprint status/open-for-dev team/plugin sprint/current-sprint sprint/next-sprint status/code-review status/open-for-dev status/pending-merge status/code-review status/code-review status/pending-merge sprint/current-sprint 
+As far as we have CQ https://dev.eclipse.org/ipzilla/show_bug.cgi?id=12154 approved for 5.19.0 version of Codemirror - so now need to update it.

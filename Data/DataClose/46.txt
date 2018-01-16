@@ -1,0 +1,3 @@
+Use real hostname in functional test on CI of Che6 on OpenShift instead of nip.io
+kind/task target/che6 team/production status/in-progress status/in-progress 
+Description While I'm creating this issue nip.io is unavailable. This leads us to the unstable state of Che6 CI for OpenShift infrastructure. We need to reconfigure start of OCP to use the public host of CI instance where OpenShift is running. From what I see now we need: fix hardcoded value here set OPENSHIFT_NAMESPACE_URL to the public hostname of CI instance with the OpenShift Reproduction Steps OS and version: Diagnostics:

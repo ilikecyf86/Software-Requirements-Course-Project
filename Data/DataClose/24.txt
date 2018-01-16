@@ -1,0 +1,3 @@
+[CHE6-OCP] The PHP stack workspace does not start
+kind/bug selenium/failure severity/P2 target/che6 team/platform team/platform 
+Reproduction Steps: Choose on the dashbord php stack and create workspace Expected behavior: the workspace should be started Observed behavior: the workspace is not started Che version: 6.0.0-M3 OS and version: Fedora 25 Che install: OCP Additional information: Related selenium test: PhpProjectDebuggingTest Problem can be reliably reproduced, doesn't happen randomly: [Yes] See the attachment:

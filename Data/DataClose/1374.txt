@@ -1,0 +1,12 @@
+Enable Syntax Highlighting for Xtext Based Language Server
+
+I have Xtext based language server integrated with Che. For syntax highlighting, I am trying to access https://eclipse-che.readme.io/inactive#section-syntax-highlighting but it's only for Admin members. Based on existing code, I have added below code for syntax highlighting. I have just set Highlighting configuration in my plugin's MyLanguageServerLauncher, but it didn't work, Is this correct approach? Am I missing anything? description = new LanguageDescriptionImpl();
+
+    	description.setHighlightingConfiguration("[\n" +
+                "  {\"include\":\"orion.js\"},\n" +
+                "  {\"match\":\"\\\\b(?:constructor|declare|module|laddha)\\\\b\",\"name\" :\"keyword.operator.typescript\"},\n" +
+
+                "  {\"match\":\"\\\\b(?:any|boolean|number|string|chetan)\\\\b\",\"name\" : \"storage.type.typescript\"}\n" +
+
+                "]");
+ I want to know easy and elegant way to enable syntax highlighting in Che( Assume on a server side, we have language server and we know the tokens which need to be displayed) Is there any blog or direct steps for doing this?

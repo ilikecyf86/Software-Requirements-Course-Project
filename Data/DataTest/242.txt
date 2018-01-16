@@ -1,0 +1,3 @@
+Github: Newly created workspace is stopped and gives 503
+kind/bug 
+Created new workspace from ready-to-go node stack. Workspace is created immediately: 2016-02-24 17:07:12,058[nio-8080-exec-9] [INFO ] [o.e.c.a.w.s.WorkspaceManager 140] - EVENT#workspace-created# WS#default# WS-ID#workspacef4refa2ij5yqofhw# USER#che# Browser gives this error in the console: http://xxx.net:8080/api/ext/project/workspacef4refa2ij5yqofhw 503 (Service Unavailable) This shows in a browser as: HTTP Status 503 - Request can't be forwarded to machine. Dev machine of workspace workspacef4refa2ij5yqofhw is not running. I would expect the workspace to start as part of the creation process, and/or the api call should be handled by the server or client gracefully rather than giving 503 error.

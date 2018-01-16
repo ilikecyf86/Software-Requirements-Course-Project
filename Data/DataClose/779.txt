@@ -1,0 +1,3 @@
+Some JSON RPC requests are not processed by RequestHandlerManager
+kind/bug severity/P2 team/ide status/in-progress status/in-progress 
+I found that we don't handle JSON-RPC requests that are configured to receive empty result (e.g. resultAsEmpty()) in some strange way. When I try to transmit such request it throws an exception so I guess there is an error. It is another subject of investigation if we really can receive empty responses according to JSON-RPS specifications however I must admit that such ability is quite important in situations where we just want to check if the request is processed properly and no error occurred.

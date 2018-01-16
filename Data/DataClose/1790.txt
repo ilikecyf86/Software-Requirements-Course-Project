@@ -1,0 +1,3 @@
+C++ icon on the Dashboard has incorrect length of symbol
+kind/bug 
+Go to the Dashboard with url https://codenvy-stg.com/dashboard/#/create-project. C++ symbol looks strange.

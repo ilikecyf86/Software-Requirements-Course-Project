@@ -1,0 +1,6 @@
+Edit->Format does not support bind on different formatters
+kind/question 
+To extend Edit->Format to support my language file, I need to bind my formatter to ContentFormatter like below and it works. protected void configure() {
+    	bind(ContentFormatter.class).to(MyFormatter.class);
+    }
+ But after I add the java-ext-lang-client back, the build failed because java editor also bind on ContentFormatter. I searched code but do not find any other language support format. So what is the correct way to extend the Format menu to support format based on file type? Here is build error: [ERROR] Key org.eclipse.che.ide.api.editor.formatter.ContentFormatter is Double-bound: Bound at org.eclipse.che.ide.ext.java.client.inject.JavaEditorGinModule.configure(JavaEditorGinModule.java:38) in org.eclipse.che.ide.client.inject.IDEInjector and ...

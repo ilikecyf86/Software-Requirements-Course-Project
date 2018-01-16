@@ -1,0 +1,3 @@
+How to add action to the view toolbar , to close/refresh the view.
+kind/question 
+I would like to add a view toolbar action, which closes the view or refresh the view. Any example would be helpful.

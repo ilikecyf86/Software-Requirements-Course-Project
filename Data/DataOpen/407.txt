@@ -1,0 +1,3 @@
+pytest added along side JUnit Test menu
+kind/enhancement 
+Is there any plan to add "pytest" along side JUnit? Two places to find what I'm talking about are: In "Projects Explorer", right click on class/file, seconds one down is "Run Test" From the menu tab along the top, "Run" last item on the bottom is "Test".

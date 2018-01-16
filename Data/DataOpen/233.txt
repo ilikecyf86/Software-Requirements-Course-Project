@@ -1,0 +1,3 @@
+Add python interactive environment with ability to "run selected lines"
+kind/enhancement 
+Description Currently when using the python stacks, users have two options: run the entire script run the script in debug mode (which only partially worked for me) stopping at breakpoints I propose a feature where an interactive environment (possibly IPython) be made available. Allow users to highlight lines of code and add an option in the run menu to "run selected lines". Default behavior should be to send the selected lines to the currently running IPython session. The overall idea would be to mimic some of the interactive developer experience found in other IDEs like Spyder (or RStudio for the R community).

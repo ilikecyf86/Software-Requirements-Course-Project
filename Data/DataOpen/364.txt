@@ -1,0 +1,3 @@
+Cannot consume a factory from workspace that have name with 20 symbols
+kind/bug kind/eclipse-che severity/P2 team/plugin kind/bug kind/bug kind/eclipse-che 
+From @musienko-maxim on February 16, 2017 10:15 Steps to reproduce: See screencast: OS version: Ubuntu 14 TLS, chrome browser Server location: nightly.codenvy-stg.com Additional information: It happens because a factory service adds suffix for creation a new workspace, that based on name main workspace and exceeds the allowable limit. We should validate this case in the IDE and User Dashboard Copied from original issue: codenvy/codenvy#1790

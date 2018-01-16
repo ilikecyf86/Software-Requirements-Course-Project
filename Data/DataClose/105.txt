@@ -1,0 +1,24 @@
+jul-to-slf4j does not work
+kind/bug team/platform 
+Description We have a special lib to translate java util logging logs to SLF4J API to have a consistent view of logs. But it looks like it doesn't work, probably not enabled properly. Here are chunk of Che master logs where it can be seen that we have some SLF4J logs and then JUL logs: 2017-11-15 14:51:57,395[aceSharedPool-1]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 384]   - Workspace 'che/volumes-test2' with id 'workspacey5fp27lg0un5db8j' stopped by user 'che'
+2017-11-15 14:52:14,409[nio-8080-exec-3]  [INFO ] [o.e.c.a.w.s.WorkspaceManager 269]    - Workspace 'workspacey5fp27lg0un5db8j' removed by user 'che'
+Nov 15, 2017 2:52:59 PM okhttp3.internal.platform.Platform log
+WARNING: A connection to https://kubernetes.default.svc/ was leaked. Did you forget to close a response body? To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);
+Nov 15, 2017 2:53:01 PM okhttp3.internal.platform.Platform log
+WARNING: A connection to https://kubernetes.default.svc/ was leaked. Did you forget to close a response body? To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);
+Nov 15, 2017 2:53:04 PM okhttp3.internal.platform.Platform log
+WARNING: A connection to https://kubernetes.default.svc/ was leaked. Did you forget to close a response body? To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);
+Nov 15, 2017 2:53:04 PM okhttp3.internal.platform.Platform log
+WARNING: A connection to https://kubernetes.default.svc/ was leaked. Did you forget to close a response body? To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);
+Nov 15, 2017 3:38:24 PM okhttp3.internal.platform.Platform log
+WARNING: A connection to https://kubernetes.default.svc/ was leaked. Did you forget to close a response body? To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);
+Nov 15, 2017 3:38:24 PM okhttp3.internal.platform.Platform log
+WARNING: A connection to https://kubernetes.default.svc/ was leaked. Did you forget to close a response body? To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);
+Nov 15, 2017 3:38:26 PM okhttp3.internal.platform.Platform log
+WARNING: A connection to https://kubernetes.default.svc/ was leaked. Did you forget to close a response body? To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);
+Nov 15, 2017 3:38:27 PM okhttp3.internal.platform.Platform log
+WARNING: A connection to https://kubernetes.default.svc/ was leaked. Did you forget to close a response body? To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);
+Nov 15, 2017 3:38:27 PM okhttp3.internal.platform.Platform log
+WARNING: A connection to https://kubernetes.default.svc/ was leaked. Did you forget to close a response body? To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);
+
+ Reproduction Steps OS and version: Diagnostics:

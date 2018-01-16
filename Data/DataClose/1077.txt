@@ -1,0 +1,3 @@
+How generate getters and setters
+kind/question 
+hi for all, how i can generate getters , setters , equals and hashcode in eclipse che?, i have another question... the eclipse che desktop client is working?

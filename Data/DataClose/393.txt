@@ -1,0 +1,3 @@
+Fix unstable selenium tests from dashboard package
+kind/task team/production status/in-progress status/in-progress 
+We need to fix unstable selenium tests RenameWorkspaceTest and CreateAndDeleteProjectsTest. RenameWorkspaceTest sometimes fails because there is not enough time for waiting restarting a workspace after renaming. In CreateAndDeleteProjectsTest need to add waiting for fully initialization projects in the IDE. This issue related to #6346.

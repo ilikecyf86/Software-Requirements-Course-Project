@@ -1,0 +1,4 @@
+CLI doesn't work properly for multiuser with mounted repo
+kind/bug severity/P2 team/production sprint/current-sprint 
+CLI starts single user tomcat and multiuser containers when environment variable CHE_MULTIUSER is set to true and there is mounted repo. Reproduction Steps: Try to start multiuser che with CLI where the che repository is mounted. I executed the following command: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /home/serg/.che:/data -v /home/serg/projects/che:/repo -e CHE_MULTIUSER=true eclipse/che-cli:nightly start --skip:scripts --skip:pull --skip:nightly
+ docker ps command output: Tomcat logs fragment that show that tomcat for single user is started: Postgresql is used for multiuser but here is H2

@@ -1,0 +1,3 @@
+Build che docs.
+kind/docs status/blocked status/blocked 
+Need someone to finish up pull request I started. #3473 . The pom.xml needs to be fixed to meet our maven/CI standards. Need to send jar to maven repo for codenvy build to use. Maven build requires jekyll 2.5.3

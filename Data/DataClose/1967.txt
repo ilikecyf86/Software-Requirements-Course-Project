@@ -1,0 +1,61 @@
+dashboard fails to compile
+kind/question 
+dashboard fails to compile Reproduction Steps: I have installed npm python v 2.7.12 node.js v4.7.0 bower gulp typings I did $ git clone https://github.com/eclipse/che.git $ cd ./che/dashboard $ mvn clean install Expected behavior: It is expected that the installation process finishes with success. Observed behavior: npm throws an error. Che version: 5.0.0-latest OS and version: Ubuntu 16.04.1 LTS Additional information: Installation log [INFO] --- maven-antrun-plugin:1.8:run (compile) @ che-dashboard-war ---
+[INFO] Executing tasks
+
+main:
+     [exec] npm WARN deprecated gulp-minify-css@1.2.4: Please use gulp-clean-css
+     [exec] npm WARN deprecated phantomjs@2.1.7: Package renamed to phantomjs-prebuilt. Please update 'phantomjs' package references to 'phantomjs-prebuilt'
+     [exec] npm WARN deprecated wrench@1.5.9: wrench.js is deprecated! You should check out fs-extra (https://github.com/jprichardson/node-fs-extra) for any operations you were using wrench for. Thanks for all the usage over the years.
+     [exec] npm WARN peerDependencies The peer dependency eslint@^1.0.0 included from eslint-loader will no
+     [exec] npm WARN peerDependencies longer be automatically installed to fulfill the peerDependency 
+     [exec] npm WARN peerDependencies in npm 3+. Your application will need to depend on it explicitly.
+     [exec] npm WARN peerDependencies The peer dependency jasmine-core@* included from karma-jasmine will no
+     [exec] npm WARN peerDependencies longer be automatically installed to fulfill the peerDependency 
+     [exec] npm WARN peerDependencies in npm 3+. Your application will need to depend on it explicitly.
+     [exec] npm WARN deprecated minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+     [exec] npm WARN deprecated node-uuid@1.4.7: use uuid module instead
+     [exec] npm WARN deprecated graceful-fs@2.0.3: graceful-fs v3.0.0 and before will fail on node releases >= v7.0. Please update to graceful-fs@^4.0.0 as soon as possible. Use 'npm ls graceful-fs' to find it in the tree.
+     [exec] npm WARN deprecated tough-cookie@2.2.2: ReDoS vulnerability parsing Set-Cookie https://nodesecurity.io/advisories/130
+     [exec] npm WARN deprecated minimatch@1.0.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+     [exec] npm WARN optional dep failed, continuing fsevents@1.0.15
+     [exec] npm WARN deprecated minimatch@0.2.14: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+     [exec] npm WARN deprecated graceful-fs@1.2.3: graceful-fs v3.0.0 and before will fail on node releases >= v7.0. Please update to graceful-fs@^4.0.0 as soon as possible. Use 'npm ls graceful-fs' to find it in the tree.
+     [exec] npm WARN engine svg-pathdata@1.0.0: wanted: {"node":"0.10.*"} (current: {"node":"4.7.0","npm":"2.15.11"})
+     [exec] npm WARN optional dep failed, continuing fsevents@1.0.15
+     [exec] 
+     [exec] > phantomjs@2.1.7 install /home/alex/che/dashboard/node_modules/phantomjs
+     [exec] > node install.js
+     [exec] 
+     [exec] PhantomJS not found on PATH
+     [exec] Download already available at /tmp/phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2
+     [exec] Verified checksum of previously downloaded file
+     [exec] Extracting tar contents (via spawned process)
+     [exec] Removing /home/alex/che/dashboard/node_modules/phantomjs/lib/phantom
+     [exec] Copying extracted folder /tmp/phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2-extract-1481115367798/phantomjs-2.1.1-linux-x86_64 -> /home/alex/che/dashboard/node_modules/phantomjs/lib/phantom
+     [exec] Writing location.js file
+     [exec] Done. Phantomjs binary available at /home/alex/che/dashboard/node_modules/phantomjs/lib/phantom/bin/phantomjs
+     [exec] npm ERR! Linux 4.4.0-53-generic
+     [exec] npm ERR! argv "/usr/bin/nodejs" "/usr/bin/npm" "install"
+     [exec] npm ERR! node v4.7.0
+     [exec] npm ERR! npm  v2.15.11
+     [exec] 
+     [exec] npm ERR! shasum check failed for /tmp/npm-10087-1b88a8ed/registry.npmjs.org/tslint/-/tslint-2.5.1.tgz
+     [exec] npm ERR! Expected: bde4c99e97cd5d1c6fbb3033f64b7d897fd41a92
+     [exec] npm ERR! Actual:   5b02910b9cf1499470281089553126bc05a0cb0c
+     [exec] npm ERR! From:     https://registry.npmjs.org/tslint/-/tslint-2.5.1.tgz
+     [exec] npm ERR! 
+     [exec] npm ERR! If you need help, you may report this error at:
+     [exec] npm ERR!     <https://github.com/npm/npm/issues>
+     [exec] 
+     [exec] npm ERR! Please include the following file with any support request:
+     [exec] npm ERR!     /home/alex/che/dashboard/npm-debug.log
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 07:32 min
+[INFO] Finished at: 2016-12-07T13:57:45+01:00
+[INFO] Final Memory: 26M/981M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.8:run (compile) on project che-dashboard-war: An Ant BuildException has occured: exec returned: 1
+ Problem can be reliably reproduced, doesn't happen randomly: Yes

@@ -1,0 +1,3 @@
+Git clone via IDE import missing execute bits
+kind/question 
+When we import a project using the IDE "Import Project" feature, execute bits seem to be lost from the upstream repository. For example, this is the the result of an import... -rw-r--r-- 1 root root 827 May 10 12:30 run.sh ...and this is what we get from a manual git clone in the terminal (and what we expect)... -rwxr-xr-x 1 root root 827 May 10 12:43 run.sh

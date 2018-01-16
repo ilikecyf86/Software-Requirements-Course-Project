@@ -1,0 +1,8 @@
+Diagnostics will be failed by BusyBox's wget.
+kind/bug 
+Diagnostics will be failed by BusyBox's wget. Reproduction Steps: Execute dianostics. OS and version: CoreOS but must be independent from OS. Version :5.11.0-SNAPSHOT
+Revision :63b440af28634235
+Build Time :2017-05-19 16:01:18
+ Diagnostics: [STDOUT] Exec Agent binary is downloaded remotely
+[STDERR] wget: unrecognized option: s
+ Note: I've already report this issue at #2424 (comment) and moved here.

@@ -1,0 +1,21 @@
+Can't start che-5.20.0 multi-user on macOS
+kind/question 
+Description Postgres can not be started properly INFO: (che start):  Starting containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p="che" up -d >> "/data/cli.log" 2>&1
+Creating che_postgres_1
+
+ERROR: for che  Container "68a92ce965c7" is unhealthy.
+
+ERROR: for keycloak  Container "68a92ce965c7" is unhealthy.
+Encountered errors while bringing up the project.
+ docker logs che_postgres_1: Initial call to run-postgresql...
+mkdir: cannot create directory '/var/lib/pgsql/data/userdata': Permission denied
+pg_ctl: directory "/var/lib/pgsql/data/userdata" does not exist
+ Reproduction Steps docker run -it --rm \
+    -e CHE_MULTIUSER=true \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v $HOME/che_root:/data \
+    -v $HOME/che_custom:/assembly \
+    eclipse/che:5.20.0 \
+    start
+ OS and version: Diagnostics:

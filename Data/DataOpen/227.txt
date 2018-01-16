@@ -1,0 +1,3 @@
+Unable to create Maven project in CHE using my archetype
+kind/enhancement 
+Description Unable to create Maven project in the CHE IDE using my archetype, as the archetype component is drop down and only 3 archetypes are always listed. Ideally this should be text box allowing users to specify any archetypes artifact ID However I am able to create project from any archetype through the SSH console, but not through the IDE wizard due to this restriction. Reproduction Steps In the CHE IDE Create a project provide name and set type as Maven. Click next Check "From Archetype checkbox", Only 3 archetypes are present in the drop down. No way to specify any other archetypes. OS and version: Windows 10, Eclipse CHE 5.18.0 Diagnostics:

@@ -1,0 +1,3 @@
+Unable to build project for local use
+kind/question 
+Using for creating a plugin, i cloned the project and run: mvn clean install -DskipTests The error is in exec-agent: Failed to execute goal com.soebes.maven.plugins:iterator-maven-plugin:0.5.0:iterator (compile-exec-agent) on project exec-agent: Command execution failed. Cannot run program "go" (in directory "/<>/che/agents/exec/target/go-workspace/src/github.com/eclipse/che/agents/exec"): error=2, No such file or directory Reproduction Steps: OS and version: Lubuntu 16.04 Maven 3.3.9 NodeJS 6.9.4

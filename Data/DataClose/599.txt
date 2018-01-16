@@ -1,0 +1,3 @@
+SPI OpenShift Infrastructure: support recipes of type dockerimage
+kind/enhancement team/osio team/platform status/open-for-dev team/osio status/blocked status/open-for-dev status/in-progress status/blocked status/in-progress 
+In SPI branch OpenShift infrastructure only support recipes of type openshift but we want users to be able start workpace on OpenShift based on a dockerimage recipes too. A first implementation of the dockerimage recipe support has been made in the OpenShiftConnector. This issue is about deprecating OpenShiftConnector and porting its logic in the new SPI based OpenShift Infrastructure.

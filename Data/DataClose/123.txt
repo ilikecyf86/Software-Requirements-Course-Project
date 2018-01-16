@@ -1,0 +1,3 @@
+Save server logs and oc events before resetting environment
+kind/task team/production status/in-progress status/in-progress 
+To troubleshoot QA test failures the following logs are extremely helpful: OpenShift events (oc get events) server logs (oc logs $che_server_pod) workspace logs - probably the best way is to get PV path by oc describe pv

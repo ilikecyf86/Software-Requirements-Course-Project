@@ -1,0 +1,3 @@
+Rework git status feature
+team/enterprise status/in-progress status/in-progress sprint/current-sprint kind/bug status/open-for-dev status/open-for-dev sprint/current-sprint 
+In #5722 a new gutter has been introduce to display vcs changes. Unfortunately it causes project explorer freezing. It has been fixed in https://github.com/eclipse/che/pull/6341/files The goal of this issue is to refine solution of the #5722 If node is oped either in Project Explorer or in Editor then it is its obligation to listen to event/git/indexChanged and update its color (status). The current state: it seems don't work if node has been added/modified not from project root.

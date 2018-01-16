@@ -1,0 +1,29 @@
+Cannot compile "group id ... is too big"
+
+On git tag: 4.0.0-RC13 $ mvn -v
+Apache Maven 3.3.9 (bb52d8502b132ec0a5a3f4c09453c07478323dc5; 2015-11-10T08:41:47-08:00)
+Maven home: /usr/local/Cellar/maven/3.3.9/libexec
+Java version: 1.8.0_73, vendor: Oracle Corporation
+Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "mac os x", version: "10.11.3", arch: "x86_64", family: "mac"
+ $ mvn clean install
+...
+[INFO] Che IDE :: Assemblies Tomcat ....................... FAILURE [ 24.881 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 09:04 min
+[INFO] Finished at: 2016-03-10T12:45:30-08:00
+[INFO] Final Memory: 89M/1265M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-assembly-plugin:2.6:single (make-assembly) on project assembly-main: Execution make-assembly of goal org.apache.maven.plugins:maven-assembly-plugin:2.6:single failed: group id '1694527156' is too big ( > 2097151 ). Use STAR or POSIX extensions to overcome this limit -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :assembly-main

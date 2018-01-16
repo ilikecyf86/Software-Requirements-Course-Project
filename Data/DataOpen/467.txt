@@ -1,0 +1,3 @@
+Actual bugs for the IDE Light Theme appearance
+kind/bug severity/P2 team/ide target/che5 target/che6 team/plugin team/ide target/che5 sprint/current-sprint 
+Hard to read text on blue background when switched to the Light Theme style - #4832. The panel for resizing the Processes panel is barely visible when switching to the "Light theme" style - #4874. A cursor in the MC editor is barely visible when switched to the Light Theme style - #4901.

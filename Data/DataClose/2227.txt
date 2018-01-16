@@ -1,0 +1,3 @@
+Make agents list fit the styles of other lists in machine's section
+kind/enhancement status/open-for-dev sprint/next-sprint team/plugin sprint/current-sprint sprint/next-sprint status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+Agents list differs from the others used in machine configuration section:

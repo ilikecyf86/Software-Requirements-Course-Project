@@ -1,0 +1,3 @@
+Google Hangouts logo?
+kind/bug 
+Description On the https://www.eclipse.org/che/ website in the "Chefiles - Clonable, Reproducible, Lightweight Workspaces in Eclipse Che" section there is a giant Google Hangouts logo. Since this section has nothing to do with Google Hangouts, I'm a bit confused as to what their logo is doing here, especially since no mention is made in the text of the site as to that it's their logo. Right now it looks like somebody just grabbed a random image, but the source code explicitly stating it's google-hangout means this was done on purpose for some bizarre reason. Reproduction Steps Open https://www.eclipse.org/che/ and scroll down till you find the giant Google Hangouts logo: OS and version: N/A Diagnostics: N/A

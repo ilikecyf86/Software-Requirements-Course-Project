@@ -1,0 +1,3 @@
+Update CI Systems
+kind/task sprint/current-sprint team/production status/open-for-dev status/in-progress status/open-for-dev sprint/current-sprint status/in-progress 
+For testing purposes, we need 'latest' tag added to DockerHub for eclipse/che-cli. Have it temporarily point to 5.0.0-M8 until we make formal release. Please have eclipse/che image retagged to point to eclipse/che-cli image. It currently points to eclipse/che-launcher. After #2 is done, we have to make a temporary update to the eclipse/che-launcher docs on README to use the fully qualified image name, not the short-hand.

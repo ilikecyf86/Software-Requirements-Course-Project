@@ -1,0 +1,3 @@
+Change behavior deleting of workspace on the Dashboard for invited users
+kind/enhancement 
+User that is member of a workspace (not owner) cannot delete the workspace. But invited user have active button for deleting. I think the button should be disabled. Because the user can only stop the ws. Codenvy version: 5.0.0-M8 OS and version: Ubuntu 14.04

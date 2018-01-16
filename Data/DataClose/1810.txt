@@ -1,0 +1,3 @@
+Remove machine API since it is not used anymore
+kind/task status/open-for-dev team/platform sprint/current-sprint status/blocked sprint/next-sprint sprint/current-sprint status/blocked sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+We don't use Machine API anymore. We should remove it and it's client in IDE since it is additional technical debt for maintainers. Issue supposes: remove machine creation/destroying API remove machine exec's API remove workarounds added to continue support of machine API

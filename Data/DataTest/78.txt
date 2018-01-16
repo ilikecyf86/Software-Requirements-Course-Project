@@ -1,0 +1,3 @@
+Add option to turn off copy and paste
+kind/enhancement 
+For high security environments and also some education settings we need the ability to turn off copy and paste in the IDE. Is there a way to do this? If not, can you add this?

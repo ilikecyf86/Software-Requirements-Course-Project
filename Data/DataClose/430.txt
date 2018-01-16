@@ -1,0 +1,3 @@
+Project Name and icon seems to be missing after successful init of Workspace
+kind/question kind/bug kind/question severity/P2 severity/P1 severity/P2 team/ide 
+This might be a new bug since it didn't happen to earlier snapshots of 5.18 Reproduction Steps: 1:) Using this Sample Factory, wait for the WS to load Expected behavior: Project icon and name should appear and registered properly. Resulting behaviour: Project icon and name is missing. OS and version: Codenvy 5.18.0-SNAPSHOT on Windows 10

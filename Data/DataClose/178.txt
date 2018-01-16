@@ -1,0 +1,3 @@
+Debug toolbar looses pictograms
+kind/bug team/enterprise sprint/current-sprint sprint/current-sprint 
+Reproduction Steps Open debug panel Click Run in the Main Menu Debug toolbar looses most of pictograms. OS and version: Fedora 25, Che 6.0.0-M2, mounted project

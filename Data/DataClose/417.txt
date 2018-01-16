@@ -1,0 +1,3 @@
+[Regression] Sometimes after creating a workspace a project is not valid
+kind/bug severity/P2 severity/blocker severity/P2 selenium/failure team/ide status/in-progress status/in-progress severity/P1 severity/blocker 
+Reproduction Steps: Create a workspace with 2 or more projects Wait while the workspace started Observed behavior: Sometimes the project is not valid. Basically this issue is reproduced in ** codenvy **. Che version: 5.19.0-SNAPSHOT OS and version: Fedora 25 Failed test: CreateAndDeleteProjectsTest Additional information: May be depend on #6344 Problem happens randomly: [Yes]

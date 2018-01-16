@@ -1,0 +1,3 @@
+Error in browser console when java file is openning
+kind/bug team/ide severity/P2 status/in-progress status/code-review status/in-progress status/code-review 
+We have some errors in browser console when java file is openning Reproduction Steps: Open some java file in editor See errors in browser console OS and version: Fedora 25 Diagnostics: NPE is happened at attempt to get cursor offset from orion editor che/ide/che-core-orion-editor/src/main/java/org/eclipse/che/ide/editor/orion/client/OrionEditorPresenter.java Line 697 in 22fecf2 public int getCursorOffset() {

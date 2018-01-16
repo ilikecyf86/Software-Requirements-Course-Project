@@ -1,0 +1,3 @@
+Where can I find the git hash from a che docker image?
+
+When I use the latest codenvy/che:nightly, I found there is something wrong (not sure if it's code issues or just my wrong usage), but I have already tagged a previous good image as a backup. Now I want to see what't the git hash of the code in that docker image, so I can checkout the code and do something, but not sure how to do it. Is there any file recorded the git hash in the image? Or is there any other way I can find it?

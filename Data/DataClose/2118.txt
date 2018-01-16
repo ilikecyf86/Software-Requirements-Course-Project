@@ -1,0 +1,18 @@
+Problem with mounting in docker while che starts from the external physical hard drive
+kind/bug severity/blocker team/platform severity/blocker team/platform 
+If assembly locates on the external physical hard drive it will not start. Reproduction Steps: Build che assembly. Place binaries into external hard drive. Try to run che from che launcher or simply from the bin directory. Expected behavior: Che starts as usual OR inform user with the user-friendly error message that something happened with docker. Observed behavior: Running from che launcher will not mount binaries from the assembly into docker image. Running from the bin directory will start as usual, but creating a workspace will fails with the given error: Che version: 5.0.0-M7 OS and version: OSX 10.11.4 Docker version: Client:
+ Version:      1.12.1
+ API version:  1.24
+ Go version:   go1.7.1
+ Git commit:   6f9534c
+ Built:        Thu Sep  8 10:31:18 2016
+ OS/Arch:      darwin/amd64
+
+Server:
+ Version:      1.12.1
+ API version:  1.24
+ Go version:   go1.6.3
+ Git commit:   23cf638
+ Built:        Thu Aug 18 17:52:38 2016
+ OS/Arch:      linux/amd64
+ Che install: Docker container, server (zip) Additional information: Problem started happening recently, didn't happen in an older version of Che: [No] Problem can be reliably reproduced, doesn't happen randomly: [Yes]

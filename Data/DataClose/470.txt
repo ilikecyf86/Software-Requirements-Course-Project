@@ -1,0 +1,3 @@
+Rework FindTextFeatureTest acording to changes
+kind/task team/production status/in-progress status/in-progress 
+We need rework FindTextFeatureTest test according to improving search results. This issue is related to #5874.

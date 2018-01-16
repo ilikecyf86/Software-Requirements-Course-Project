@@ -1,0 +1,49 @@
+Error: Fail launching agent SSH
+kind/question kind/bug 
+Starting any workspace will fail with the aformentioned error Fail launching agent SSH after 3 minutes Reproduction Steps: Create a workspace using any stack (tested with blank, php, node, python) Wait for the workspace to start loading until the following line appears: [STDOUT] ssh-keygen: generating new host keys: RSA1 The error popup will appear after 3 minutes (timeout) Expected behavior: Proper launch of the workspace Observed behavior: -> Popup message: Could not start workspace wksp-b6nu. Reason: Start of environment default failed. Error: Fail launching agent SSH. Workspace ID:workspace8vauea36yanui9tw -> Eclipse Che log (trimmed) 2017-01-05 01:44:54,166[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 443]  - Initializing ProtocolHandler ["http-nio-4401"]
+2017-01-05 01:44:54,180[main]             [INFO ] [o.a.t.util.net.NioSelectorPool 72]   - Using a shared selector for servlet write/read
+2017-01-05 01:44:54,183[main]             [INFO ] [o.a.catalina.startup.Catalina 591]   - Initialization processed in 488 ms
+2017-01-05 01:44:54,244[main]             [INFO ] [c.m.JmxRemoteLifecycleListener 332]  - The JMX Remote Listener has configured the registry on port 32002 and the server on port 32102 for the Platform server
+2017-01-05 01:44:54,244[main]             [INFO ] [o.a.c.core.StandardService 435]      - Starting service Catalina
+2017-01-05 01:44:54,245[main]             [INFO ] [o.a.c.core.StandardEngine 259]       - Starting Servlet Engine: Apache Tomcat/8.0.38
+2017-01-05 01:44:54,316[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 911]        - Deploying web application archive /home/user/che/ws-agent/webapps/ROOT.war
+Thu Jan 05 01:45:04 UTC 2017 - [localhost-startStop-1] Product-specified preferences called before plugin is started
+2017-01-05 01:45:04,924[ost-startStop-1]  [INFO ] [.e.c.a.v.i.f.e.LoEventListener 48]   - Subscribing to event service: class org.eclipse.che.api.vfs.impl.file.event.LoEventListener
+2017-01-05 01:45:04,927[ost-startStop-1]  [INFO ] [.e.c.a.v.i.f.e.VfsEventService 58]   - Starting virtual file system event service: LoEventService
+2017-01-05 01:45:04,935[ost-startStop-1]  [INFO ] [.e.c.a.v.i.f.e.VfsEventService 58]   - Starting virtual file system event service: HiEventService
+2017-01-05 01:45:05,039[rest.WSClient-0]  [INFO ] [.c.a.c.n.WSocketEventBusClient 227]  - Open connection to ws://che-host:8080/wsmaster/api/eventbus/?token=dummy_token. 
+2017-01-05 01:45:05,226[s polled Thread]  [INFO ] [o.e.c.p.m.server.rmi.RmiClient 130]  - Port/Name:8068/MavenRemoteServerImpledf1a86a
+ 
+2017-01-05 01:45:06,852[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 975]        - Deployment of web application archive /home/user/che/ws-agent/webapps/ROOT.war has finished in 12,534 ms
+2017-01-05 01:45:06,866[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 488]  - Starting ProtocolHandler ["http-nio-4401"]
+2017-01-05 01:45:06,870[main]             [INFO ] [o.a.catalina.startup.Catalina 642]   - Server startup in 12686 ms
+2017-01-05 01:45:07,086[nio-4401-exec-1]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-05 01:45:07,087[nio-4401-exec-3]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-05 01:45:07,089[nio-4401-exec-2]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+[STDOUT] ssh-keygen: generating new host keys: RSA1 
+ -> Docker logs 2017-01-05 01:44:50,117[spaceRuntimes-0]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 600]   - Launching 'org.eclipse.che.terminal' agent at workspace workspace8vauea36yanui9tw
+2017-01-05 01:44:52,483[spaceRuntimes-0]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 600]   - Launching 'org.eclipse.che.ws-agent' agent at workspace workspace8vauea36yanui9tw
+2017-01-05 01:45:07,093[spaceRuntimes-0]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 600]   - Launching 'org.eclipse.che.ssh' agent at workspace workspace8vauea36yanui9tw
+2017-01-05 01:47:08,902[spaceRuntimes-0]  [ERROR] [.a.a.s.l.AbstractAgentLauncher 95]   - Fail launching agent SSH. Workspace ID:workspace8vauea36yanui9tw
+2017-01-05 01:47:12,993[kspaceManager-5]  [ERROR] [o.e.c.a.w.s.WorkspaceManager 660]    - org.eclipse.che.api.core.ServerException: Start of environment default failed. Error: Fail launching agent SSH. Workspace ID:workspace8vauea36yanui9tw
+java.util.concurrent.ExecutionException: org.eclipse.che.api.core.ServerException: Start of environment default failed. Error: Fail launching agent SSH. Workspace ID:workspace8vauea36yanui9tw
+        at java.util.concurrent.FutureTask.report(FutureTask.java:122) ~[na:1.8.0_111]
+        at java.util.concurrent.FutureTask.get(FutureTask.java:192) ~[na:1.8.0_111]
+        at org.eclipse.che.api.workspace.server.WorkspaceManager.lambda$performAsyncStart$4(WorkspaceManager.java:639) ~[che-core-api-workspace-5.0.0-M8.jar:5.0.0-M8]
+        at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalRunnable.run(CopyThreadLocalRunnable.java:28) ~[che-core-commons-lang-5.0.0-M8.jar:5.0.0-M8]
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_111]
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_111]
+        at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_111]
+Caused by: org.eclipse.che.api.core.ServerException: Start of environment default failed. Error: Fail launching agent SSH. Workspace ID:workspace8vauea36yanui9tw
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.doStart(WorkspaceRuntimes.java:665) ~[che-core-api-workspace-5.0.0-M8.jar:5.0.0-M8]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.lambda$startAsync$1(WorkspaceRuntimes.java:245) ~[che-core-api-workspace-5.0.0-M8.jar:5.0.0-M8]
+        at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalCallable.call(CopyThreadLocalCallable.java:30) ~[che-core-commons-lang-5.0.0-M8.jar:5.0.0-M8]
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_111]
+        ... 3 common frames omitted
+Caused by: org.eclipse.che.api.core.ServerException: Fail launching agent SSH. Workspace ID:workspace8vauea36yanui9tw
+        at org.eclipse.che.api.agent.server.launcher.AbstractAgentLauncher.launch(AbstractAgentLauncher.java:96) ~[che-core-api-agent-5.0.0-M8.jar:5.0.0-M8]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.launchAgents(WorkspaceRuntimes.java:604) ~[che-core-api-workspace-5.0.0-M8.jar:5.0.0-M8]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.launchAgents(WorkspaceRuntimes.java:676) ~[che-core-api-workspace-5.0.0-M8.jar:5.0.0-M8]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.doStart(WorkspaceRuntimes.java:640) ~[che-core-api-workspace-5.0.0-M8.jar:5.0.0-M8]
+        ... 6 common frames omitted
+ Che version: 5.0.0-latest OS and version: Debian GNU/Linux 8.6 (jessie) Docker version: 1.12.5 Che install: Docker container (che command) Additional information: I am accessing Che through my domain on port 8080 (default). The CHE_HOST_IP has correctly been changed to my server's IP. The logs use the /home/user/che path even though it has been changed (the issue still happens when using the default folder) Problem started happening recently, didn't happen in an older version of Che: N/A Problem can be reliably reproduced, doesn't happen randomly: Yes

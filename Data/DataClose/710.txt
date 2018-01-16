@@ -1,0 +1,3 @@
+Don't add unregistered user to a team
+kind/eclipse-che kind/enhancement team/plugin kind/eclipse-che 
+From @vitaliy-guliy on February 1, 2017 9:45 Do not allow to add unregistered user to a team. The Add button has to be disabled if not registered user email is entered. For now Add button is enabled and an error message is appeared after closing the popup. Copied from original issue: codenvy/codenvy#1670

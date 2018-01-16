@@ -1,0 +1,8 @@
+content assistant does not work correctly
+kind/bug severity/P1 team/ide sprint/next-sprint status/in-progress sprint/next-sprint status/in-progress 
+The function document.replace in Completion does not work as expected. For example, in the Json example code, proposal is expected to be appended after cursor. but it will append another string after proposal. input 'fir' in Json file select 'firstname' and the text become 'firfirstNamefir'. Extra 'fir' is appended after proposal. Is there API to just append the missing part? For example, if I have already input 'fir', then only 'stName' should be appended. public void apply(Document document) {
+        document.replace(
+                document.getCursorOffset(),
+                proposal.length(),
+                proposal);
+    }

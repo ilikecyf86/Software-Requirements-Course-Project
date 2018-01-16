@@ -1,0 +1,3 @@
+Refactoring method does not work properly in certain case
+kind/bug severity/P1 
+Reproduction Steps I've used che during dog fooding session. I opened the CodenvyEditor class and try to rename method setCursorToDefinedLineAndCharForVisible. But refactoring did not complete and i had 500 error from server without clarified details in the response. OS and version: Che 6.0.0-M3, Chrome browser, Eclipse Che stack. Diagnostics:

@@ -1,0 +1,3 @@
+The close icon on the Remove machine widget doesn't work
+kind/bug sprint/next-sprint status/open-for-dev team/plugin severity/P2 sprint/current-sprint sprint/next-sprint status/code-review status/open-for-dev status/code-review sprint/current-sprint 
+Reproduction Steps: Workspace settings -> Runtimes In "Machines" section click the remove machine icon In opened widget click on the close icon Expected behavior: The widget is closed Observed behavior: Nothing happened Che version: 5.6.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.3 Che install: Docker container

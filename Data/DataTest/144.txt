@@ -1,0 +1,87 @@
+Eclipse Che with Docker Swarm doesn't work
+kind/question 
+Hello, I'm trying to use Eclipse Che with Docker Swarm, to spawn workspaces on multiple physical servers. Sadly, it doesn't work out-of-the box, and to be honest - I don't know why. Setup is very simple - 3 vagrant vms with ubuntu images che docker-1 docker-2 Servers "docker-1" and "docker-2" are swarm cluster, docker-1 is swarm manager. root@docker-1:/home/user# DOCKER_HOST=172.28.128.10:3376 docker info
+Containers: 43
+ Running: 4
+ Paused: 0
+ Stopped: 39
+Images: 4
+Server Version: swarm/1.2.0
+Role: primary
+Strategy: spread
+Filters: health, port, dependency, affinity, constraint
+Nodes: 2
+ docker-1: 172.28.128.10:2375
+  └ Status: Healthy
+  └ Containers: 32
+  └ Reserved CPUs: 0 / 1
+  └ Reserved Memory: 0 B / 1.018 GiB
+  └ Labels: executiondriver=, kernelversion=4.2.0-34-generic, operatingsystem=Ubuntu 14.04.4 LTS, storagedriver=aufs
+  └ Error: (none)
+  └ UpdatedAt: 2016-04-15T14:05:41Z
+  └ ServerVersion: 1.11.0
+ docker-2: 172.28.128.11:2375
+  └ Status: Healthy
+  └ Containers: 11
+  └ Reserved CPUs: 0 / 1
+  └ Reserved Memory: 1000 MiB / 1.018 GiB
+  └ Labels: executiondriver=, kernelversion=4.2.0-34-generic, operatingsystem=Ubuntu 14.04.4 LTS, storagedriver=aufs
+  └ Error: (none)
+  └ UpdatedAt: 2016-04-15T14:05:41Z
+  └ ServerVersion: 1.11.0
+Plugins: 
+ Volume: 
+ Network: 
+Kernel Version: 4.2.0-34-generic
+Operating System: linux
+Architecture: amd64
+CPUs: 2
+Total Memory: 2.037 GiB
+Name: 77884f7c42a8
+Docker Root Dir: 
+Debug mode (client): false
+Debug mode (server): false
+WARNING: No kernel memory limit support
+root@docker-1:/home/user# 
+
+ Eclipse Che is running on "che" server, also in local docker (which is not part of swarm). #!/bin/bash
+
+CHE="/home/vagrant/che"
+SWARM="172.28.128.10"
+
+docker run -d --name che -ti --net=host          -e DOCKER_HOST=tcp://${SWARM}:3376   -v ${CHE}/lib:/home/user/che/lib-copy          -v ${CHE}/workspaces:/home/user/che/workspaces          -v ${CHE}/tomcat/temp/local-storage:/home/user/che/tomcat/temp/local-storage          codenvy/che
+ I updated Che configuration file che.properties with: endpoint set to to 172.28.128.12 (che IP) instead of che-host I set docker.registry.auth.(username|password|email)=.* to NULL (As in one of latest commits to eliminate authentication errors in registry) Also: I set DOCKER_HOST to docker-1:3376 IP address (swarm manager) To share ws-agent.zip files I mounted /home/user/che as NFS share on docker-1 and docker-2 from che server. Now - my problem. As long as Che spawns workspace on docker-1 (which is also swarm manager) - it works perfectly. But when swarm choose to spawn workspace on docker-2... Agent stucks on (until agent.max timeout occurs): [STDOUT] 2016-04-15 13:56:39,589[rrest.WSClient1] [INFO] [.c.a.c.n.WSocketEventBusClient 223] - Open connection to ws://172.28.128.12:8080/ide/api/eventbus/?token=dummy_token.
+[STDOUT] 2016-04-15 13:56:40,265[ost-startStop-1] [INFO] [o.a.c.startup.HostConfig 980] - Deployment of web application archive /home/user/che/ws-agent/webapps/ide.war has finished in 15,849 ms
+[STDOUT] 2016-04-15 13:56:40,271[main] [INFO] [o.a.c.http11.Http11NioProtocol 470] - Starting ProtocolHandler ["http-nio-4401"]
+[STDOUT] 2016-04-15 13:56:40,285[main] [INFO] [o.a.catalina.startup.Catalina 638] - Server startup in 16118 ms
+ I sniffed traffic a little, and this is how communicaton looks: 172.028.128.011.57030-172.028.128.012.08080: GET /ide/api/eventbus/?token=dummy_token HTTP/1.1
+Sec-WebSocket-Key: chHavah6+YbosRzZa/N7GA==
+Connection: upgrade
+Sec-WebSocket-Version: 13
+Host: 172.28.128.12:8080
+Upgrade: websocket
+
+write error to stdout
+
+172.028.128.012.08080-172.028.128.011.57030: HTTP/1.1 101 Switching Protocols
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=10A1E67B932E22A75ED4373F4969520C; Path=/ide/; HttpOnly
+Upgrade: websocket
+Connection: upgrade
+Sec-WebSocket-Accept: JLfnLpF8vETkmVsBlbNZWYKEfWk=
+Date: Fri, 15 Apr 2016 08:42:47 GMT
+
+write error to stdout
+
+172.028.128.011.57030-172.028.128.012.08080: Om+mm*7*<*,b<b*9*<,*.#c;mc+m,!mc&m6|
+
+write error to stdout
+
+172.028.128.012.08080-172.028.128.011.57030: ~
+
+write error to stdout
+
+172.028.128.012.08080-172.028.128.011.57030: {"headers":[{"name":"x-everrest-websocket-message-type","value":"subscribe-channel"}],"method":"POST","responseCode":200,"body":"{\"channel\":\"\"}","uuid":"b5jyzpp3"}
+
+write error to stdout
+ When Che connects to docker-1 to spawn workspace there is a lot more communication AFTER that strange dummy_token, but it looks very similar For sure there is 2 side communication between container & che API, but for unknown reason agent stops it immediately after receiving above message from Che. There is no NAT, all servers are in one network 172.28.128.0/24 I'll appreciate any help, not sure if it's swarm configuration fault (this is my first try), or Che.

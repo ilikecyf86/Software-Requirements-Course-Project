@@ -1,0 +1,3 @@
+xterm.js incorrect close Midnight commander by Ctrl + O or when we quite from MC by F10.
+kind/bug kind/task team/enterprise sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Reproduction Steps: Open Midnight Commander; Switch on to normal terminal mode(without mc) by Ctrl + O; Actual result: terminal cursor lose correct position and terminal ui has incorrect state. Expected result: terminal cursor should save terminal position before opening MC. OS and version: Ubuntu 14.04. Midnight Commander version: 4.8.11.

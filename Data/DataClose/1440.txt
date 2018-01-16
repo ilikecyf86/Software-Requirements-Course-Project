@@ -1,0 +1,3 @@
+Improve run, debug and preview buttons behavior with new intelligent command
+
+User stories As a user, I'm able to default the command which will be executed when pressing the "run", "debug" or "preview" button As a user, I can change the default command associated with one of the "run, "debug" or "preview" button Mockups

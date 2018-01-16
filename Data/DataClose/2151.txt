@@ -1,0 +1,59 @@
+Fail to build che dashboard module using Docker
+kind/question 
+Fail to build che dashboard module using Docker Reproduction Steps: Build che using Docker docker run -it --rm --name build-che -v "/c/Users/User/.m2:/home/user/.m2" -v "/c/Users/User/Desktop/Projects/che/che":/home/user/che-build -w /home/user/che-build codenvy/che-dev mvn -DskipTests=true -Dfindb ugs.skip=true -Dgwt.compiler.localWorkers=2 -T 1C -Dskip-validate-sources -Dmdep.analyze.skip=true -Dlicense.skip=true -e clean install Upon building dashboard module [INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 12:16 min
+[INFO] Finished at: 2016-11-02T15:03:07+00:00
+[INFO] Final Memory: 199M/989M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.8:run (compile) on project che-dashboard-war: An Ant BuildException has occured: exec returned: 185
+[ERROR] around Ant part ...<exec failonerror="true" dir="/home/user/che-build/dashboard" executable="npm">... @ 4:82 in /home/user/che-build/dashboard/target/antrun/build-main.xml
+[ERROR] -> [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.8:run (compile) on project che-dashboard-war: An Ant BuildException has occured: exec returned: 185
+around Ant part ...<exec failonerror="true" dir="/home/user/che-build/dashboard" executable="npm">... @ 4:82 in /home/user/che-build/dashboard/target/antrun/build-main.xml
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+        at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+        at org.apache.maven.lifecycle.internal.builder.multithreaded.MultiThreadedBuilder$1.call(MultiThreadedBuilder.java:185)
+        at org.apache.maven.lifecycle.internal.builder.multithreaded.MultiThreadedBuilder$1.call(MultiThreadedBuilder.java:181)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+Caused by: org.apache.maven.plugin.MojoExecutionException: An Ant BuildException has occured: exec returned: 185
+around Ant part ...<exec failonerror="true" dir="/home/user/che-build/dashboard" executable="npm">... @ 4:82 in /home/user/che-build/dashboard/target/antrun/build-main.xml
+        at org.apache.maven.plugin.antrun.AntRunMojo.execute(AntRunMojo.java:342)
+        at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+        ... 11 more
+Caused by: /home/user/che-build/dashboard/target/antrun/build-main.xml:4: exec returned: 185
+        at org.apache.tools.ant.taskdefs.ExecTask.runExecute(ExecTask.java:643)
+        at org.apache.tools.ant.taskdefs.ExecTask.runExec(ExecTask.java:669)
+        at org.apache.tools.ant.taskdefs.ExecTask.execute(ExecTask.java:495)
+        at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:292)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:497)
+        at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+        at org.apache.tools.ant.Task.perform(Task.java:348)
+        at org.apache.tools.ant.Target.execute(Target.java:435)
+        at org.apache.tools.ant.Target.performTasks(Target.java:456)
+        at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1393)
+        at org.apache.tools.ant.Project.executeTarget(Project.java:1364)
+        at org.apache.maven.plugin.antrun.AntRunMojo.execute(AntRunMojo.java:313)
+        ... 13 more
+[ERROR]
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR]
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :che-dashboard-war
+
+ Che version: 5.0.0-M6 (I got latest source from github) OS and version: Windows 10 Docker version: Docker version 1.12.0, build 8eab29e Che install: [Vagrant, Docker container, server (zip), Bitnami, Yatta, or Codenvy?] Additional information: Problem can be reliably reproduced, doesn't happen randomly: Yes

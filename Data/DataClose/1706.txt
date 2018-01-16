@@ -1,0 +1,3 @@
+Autocomplete for JSON sample works wrong
+kind/bug severity/P1 team/ide sprint/current-sprint 
+Reproduction Steps: Create JSON example project from wizard. Open package.json and try to use autocomlete Expected result: The autocomplete proposal should be pasted. The autocomplete widget should be closed. Actual result: The autocomplete is not closed. Items may be pasted incorrectly. Che version: 5.1.0 OS and version: Ubuntu 14.0 TLS Docker version: 12.1

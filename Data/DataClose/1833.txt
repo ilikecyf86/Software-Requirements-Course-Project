@@ -1,0 +1,3 @@
+Unexpected losing of ocus in the terminal after minimize/maximize operations
+kind/bug team/ide status/in-progress status/in-progress 
+Reproduction Steps: Go to the terminal, type for example ps ax command several times Maximize terminal panel and type the ps ax commands one more time Minimize the terminal try to type some text. Expected behavior: The terminal should scroll to last line, the text should be typed. Observed behavior: Terminal does not scroll position to last line. The focus is lost. Che version: 5.0.0 OS and version: Ubuntu 14 TLS Docker version: 1.12.5 Che install: Docker container

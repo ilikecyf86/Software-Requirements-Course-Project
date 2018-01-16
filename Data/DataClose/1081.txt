@@ -1,0 +1,3 @@
+Java packages are not displayed in the spring project after upload project from zip
+kind/bug severity/P2 
+Reproduction Steps: Go to the spring project. Upload project from zip. Pay attention to the screen. Expected result : Java packages will be displayed in the project . Observed behavior : Java packages are not display . Attachment :

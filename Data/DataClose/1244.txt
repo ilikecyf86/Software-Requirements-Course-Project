@@ -1,0 +1,3 @@
+The EXEC widget is broken when a command name is very long
+kind/bug severity/P2 sprint/next-sprint sprint/current-sprint sprint/next-sprint status/in-progress status/code-review status/in-progress status/code-review team/ide 
+Reproduction Steps: Open a project Create a new command with long name Observed behavior: The EXEC widget is broken, the Commands Palette and the Preview buttons aren't visible. Che version: 5.6.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.3 Che install: Docker container

@@ -1,0 +1,3 @@
+Rework RemoveFilesWithActiveTabs test to actual state
+kind/task team/production sprint/current-sprint 
+Description In the che6 the toolbar panel is hidden by default. But the test used some features from this. We should rework test according to this changes. OS and version: chrome browser, Fedora25, CHE-6 M1 Diagnostics:

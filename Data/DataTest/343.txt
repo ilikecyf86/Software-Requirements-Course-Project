@@ -1,0 +1,5 @@
+How to use che.sh to run a custom docker image?
+kind/question 
+The che.sh provides some nice configurations for running che, but the -i related options can only be used with che official images, like: che.sh -i run
+che.sh -i:nightly run
+ But I have build some che images by myself, which is under nowind/che namespace. I can't find a way to pass it to che.sh shell. Is it possible to make che.sh supports custom images?

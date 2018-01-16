@@ -1,0 +1,12 @@
+jdwp debug - cannot connect to localhost
+kind/question 
+After starting java -agentlib:jdwp=transport=df_socket,server=y,suspend=y,address=8000 ... Then selecting the appropriate .java file in the Projects Explorer, the debugger sometimes runs correctly allowing me two stop through the code. //example method 
+public static void main(String[] args){
+    System.out.println("foo");
+    System.out.println("bar"); // break point here
+    System.out.println("baz");
+}
+ 95% of the time the output of the jdwp process and the example method above prints the following (below) which appears to have stopped at the break point correctly BUT, the debug buttons are grayed out and the line that prints "bar" is not red. Listening for transport df_socket at address: 8000
+foo
+ Under the run tab I can now click on "End Debug Session". Clicking this gives a new event "Remote debugger disconnected". Rerunning the entire process results in the error: Can not connect to: localhost:8000
+ OS and version: REL: 7 Docker: 17.03 Che: 5.11.0 :::EDIT::: After a failure, refreshing the screen (F5) and running everything again but on port 5005 works but like before only once. Changing it now to 5001 had the same effect. At this point, I tried port 8000 again and it was working like before.

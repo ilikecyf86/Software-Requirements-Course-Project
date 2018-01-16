@@ -1,0 +1,3 @@
+[CHE6-branch] Terminal width doesn't adapt to the width of Che window
+kind/bug team/enterprise severity/P2 severity/P1 severity/P2 
+Description On the following image, MC takes just a part of the screen width. Reproduction Steps OS and version: Diagnostics:

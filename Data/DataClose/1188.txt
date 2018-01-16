@@ -1,0 +1,3 @@
+How to make eclipse-che language internationalization?
+kind/question 
+How to make eclipse-che language internationalization?

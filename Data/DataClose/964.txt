@@ -1,0 +1,58 @@
+Interpolate correctly resource paths in maven project inside maven server implementation
+kind/bug severity/P1 team/plugin 
+Sometimes after updating properties of maven based projects we may have in project attributes absolute paths: {
+    "links": [{
+        "href": "http://.../api/project/AddFilesToIndex_anym",
+        "parameters": [],
+        "rel": "update project",
+        "method": "PUT",
+        "produces": "application/json",
+        "consumes": "application/json"
+    }, {
+        "href": "http://.../api/project/children/AddFilesToIndex_anym",
+        "parameters": [],
+        "rel": "children",
+        "method": "GET",
+        "produces": "application/json"
+    }, {
+        "href": "http://.../api/project/tree/AddFilesToIndex_anym",
+        "parameters": [],
+        "rel": "tree",
+        "method": "GET",
+        "produces": "application/json"
+    }, {
+        "href": "http://.../api/project/AddFilesToIndex_anym",
+        "parameters": [],
+        "rel": "delete",
+        "method": "DELETE"
+    }],
+    "name": "AddFilesToIndex_anym",
+    "attributes": {
+        "maven.artifactId": ["artifactId"],
+        "maven.parent.version": ["unknown"],
+        "maven.test.source.folder": ["/projects/AddFilesToIndex_anym/src/test/java"],
+        "maven.version": ["1.0-SNAPSHOT"],
+        "maven.parent.groupId": ["unknown"],
+        "languageVersion": ["1.8.0_45"],
+        "language": ["java"],
+        "maven.groupId": ["groupId"],
+        "maven.packaging": ["war"],
+        "containsJavaFiles": ["true"],
+        "java.source.folder": ["/projects/AddFilesToIndex_anym/src/main/java"],
+        "maven.resource.folder": ["/projects/AddFilesToIndex_anym/src/main/resources"],
+        "vcs.provider.name": ["git"],
+        "git.current.branch.name": ["master"],
+        "maven.parent.artifactId": ["unknown"]
+    },
+    "type": "maven",
+    "source": {
+        "parameters": {}
+    },
+    "path": "/AddFilesToIndex_anym",
+    "problems": [{
+        "message": "Value for attribute java:java.output.folder:java.output.folder is not initialized, caused by: Unknown attribute java.output.folder",
+        "code": 13
+    }],
+    "mixins": ["git"]
+}
+ Method org.eclipse.che.maven.server.MavenServerImpl#resolveProject should be refactored to return relative paths instead of absolute.

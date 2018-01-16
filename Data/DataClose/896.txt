@@ -1,0 +1,24 @@
+Regression: JSON intellisense is broken
+kind/bug severity/blocker 
+The intellisense in the JSON editor seriously regressed recently. Currently, only the basic syntax validation works. Code completion does not work at all. Intellisense that is based on the JSON schema does not work too: validation according to the schema, hover support, etc. It seems that the issues were caused by #4765. There used to by a JsonLanguageServer class that sends schema associations to the language server, but it was simply deleted without anything replacing its functionality. While debugging the code completion issue I found that the TextDocumentService get this exception: java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request textDocument/completion failed with message: Cannot read property 'getText' of undefined
+ Opening the JSON editor also produces an error in the dev-machine output: [STDOUT] java.lang.NullPointerException: null
+[STDOUT] 	at org.eclipse.che.api.languageserver.messager.PublishDiagnosticsParamsJsonRpcTransmitter.lambda$subscribe$1(PublishDiagnosticsParamsJsonRpcTransmitter.java:34)
+[STDOUT] 	at org.eclipse.che.api.core.notification.EventService.publish(EventService.java:106)
+[STDOUT] 	at org.eclipse.che.api.languageserver.registry.ServerInitializerImpl$1.publishDiagnostics(ServerInitializerImpl.java:83)
+[STDOUT] 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[STDOUT] 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[STDOUT] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[STDOUT] 	at java.lang.reflect.Method.invoke(Method.java:498)
+[STDOUT] 	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:49)
+[STDOUT] 	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:104)
+[STDOUT] 	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:164)
+[STDOUT] 	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:135)
+[STDOUT] 	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:149)
+[STDOUT] 	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:77)
+[STDOUT] 	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:68)
+[STDOUT] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+[STDOUT] 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[STDOUT] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+[STDOUT] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+[STDOUT] 	at java.lang.Thread.run(Thread.java:745)
+ Reproduction Steps: Follow the PHP tutorial Try to use code completion in composer.json - it won't work at all. Try to add a key that don't exist in the composer.json schema - no validation will be done. OS and version: Fedora 24 Diagnostics: CLI: TTY: true Daemon: /var/run/docker.sock Image: eclipse/che:5.11.2 Version: 5.11.2 Command: info Parameters: info Mounts: /data: /home/kraev/Work/che-data /data/instance: not set /data/backup: not set /repo: not set /assembly: /home/kraev/git/che/assembly/assembly-main/target/eclipse-che-5.12.0-SNAPSHOT/eclipse-che-5.12.0-SNAPSHOT /sync: not set /unison: not set /chedir: not set System: Docker: native Proxy: not set Internal: CHE_VERSION: 5.11.2 CHE_HOST: 172.17.0.1 CHE_INSTANCE: /home/kraev/Work/che-data/instance CHE_CONFIG: /home/kraev/Work/che-data CHE_BACKUP: /home/kraev/Work/che-data/backup CHE_REGISTRY: /version CHE_DEBUG: false IP Detection: 172.17.0.1 Initialized: true Image Registry: IMAGE_INIT=eclipse/che-init:5.11.2 IMAGE_CHE=eclipse/che-server:5.11.2 IMAGE_COMPOSE=docker/compose:1.8.1 IMAGE_TRAEFIK=traefik:v1.3.0-rc1 BOOTSTRAP_IMAGE_ALPINE=alpine:3.4 BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.11.2 UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.11.2 UTILITY_IMAGE_CHEDIR=eclipse/che-dir:5.11.2 UTILITY_IMAGE_CHETEST=eclipse/che-test:5.11.2 UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.11.2 che.env: CHE_HOST=172.17.0.1 CHE_SINGLE_PORT=false

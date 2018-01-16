@@ -1,0 +1,3 @@
+Feature: Multiple Panes
+kind/enhancement 
+Multiple panes for editing multiple files in a single screen. Drag n drop would be cool

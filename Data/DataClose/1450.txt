@@ -1,0 +1,3 @@
+Move existed parts of IDE.gwt.xml to individual plugins.
+kind/task sprint/next-sprint status/open-for-dev team/platform sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Move existed parts of IDE.gwt.xml to individual plugins. Depends on #4258

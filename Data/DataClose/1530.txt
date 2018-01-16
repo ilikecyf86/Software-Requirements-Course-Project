@@ -1,0 +1,3 @@
+cannot open git-upload-pack error
+kind/question kind/bug severity/P2 team/ide 
+I have added custom project types into the samples.json file. I have also configure git on the host machine to avoid ssl verification by the command git config --global http.sslVerify false. When I try to create a custom project (one from the samples.json list) it returns an error https://github.com/BlahBlah/Demo.git: cannot open git-upload-pack OS and version: Ubuntu 16.04

@@ -1,0 +1,3 @@
+Documentation for PHP Debugging
+kind/docs 
+As the PHP Debugging topic is complete I would like to provide detailed documentation on this page: https://eclipse-che.readme.io/docs/debug @TylerJewell What is the process of updating the documentation? Should I use the "Suggest Edits" action? Or is there a better way?

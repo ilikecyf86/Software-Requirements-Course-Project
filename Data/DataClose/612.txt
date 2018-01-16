@@ -1,0 +1,3 @@
+A project folder cannot be added to the File Watcher exclude feature
+kind/bug severity/P2 team/ide status/in-progress status/code-review status/in-progress status/code-review 
+Reproduction Steps: Start a workspace from the Java stack with the web-java-spring project Menu Project -> Show/Hide Hidden Files Click right mouse button on a project folder and from context menu select Add to File Watcher excludes. From .che folder open fileWatcherIgnore file Expected behavior: The project name added to the fileWatcherIgnore file. Observed behavior: An empty line added to fileWatcherIgnore file. Che version: 5.16.0-SNAPSHOT OS and version: Fedora 25 Additional information:

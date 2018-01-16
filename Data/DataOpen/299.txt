@@ -1,0 +1,3 @@
+Create selenium test for checking text selection and a copy-paste functions in console
+kind/task team/production 
+We need create selenium test for checking next functions in console: Text selection Copy-paste text

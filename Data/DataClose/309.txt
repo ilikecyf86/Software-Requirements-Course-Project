@@ -1,0 +1,3 @@
+[Multiuser] After registration user is redirected to the not working Dashboard
+kind/bug severity/P2 severity/blocker severity/P2 team/platform 
+Reproduction Steps Go to che-multiuser login page Click on "Register" link Fill in all fields Click "Register" button Pay attention to the screen Expected behavior New registered user will be redirected to the working dashboard Observed behavior New registered user is redirected to the not working dashboard OS and version: Che(multiuser) 5.19.0 ; Fedora 25 ; Chrome 59.0 Attachment

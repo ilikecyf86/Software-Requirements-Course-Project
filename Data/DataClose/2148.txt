@@ -1,0 +1,3 @@
+Improve the stack selector widget
+kind/enhancement team/plugin sprint/next-sprint status/open-for-dev sprint/current-sprint sprint/next-sprint status/in-progress status/open-for-dev status/code-review status/in-progress sprint/current-sprint status/code-review 
+The goal of this issue is to improve the current stack selector that we have in the Dashboard. At this moment: the widget does not scale nicely when the list of stacks is huge icons are displayed only for ready-to-go stack each stack is represented with a tile, but the tiles does not redraw properly for small resolution the search/filter capabilities are the tabs experience is not that easy for end-users adding a new stack is difficult to find Here is the proposed solution: And the behaviors detailled:

@@ -1,0 +1,3 @@
+Endpoint for removing origin in eclipse che
+kind/question 
+can anyone knows how to delete origin from eclipse che ? I need endpoint for that

@@ -1,0 +1,3 @@
+[SPI] Add runtime warnings in Docker infra
+kind/task team/platform status/open-for-dev 
+Related to SPI branch only. Implement runtime warnings in Docker infra in case some defaults were applied or other good to know for a user info appears during runtime work. For example when default RAM size for a container is applied, when restoring from a snapshot is requested but omitted for some reason. Consider an event on new runtime warning addition.

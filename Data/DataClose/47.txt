@@ -1,0 +1,3 @@
+Improve the CheckFileWatcherExcludeFeatureTest for increase stability and readability user story
+kind/enhancement team/production kind/bug sprint/current-sprint status/open-for-dev kind/enhancement 
+Description This test check different use cases with including and excluding files which track by File Watcher. But sometimes the test fails on steps that is not dependent on file watcher feature. We should remove this unnecessary steps. This able to improve stability (because we will have less steps in the test), also the test should fails if we have problem with filewatcher feature other problems should be found by other tests OS and version: Chrome browser, selenium, CI.

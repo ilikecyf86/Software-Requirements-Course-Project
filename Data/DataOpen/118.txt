@@ -1,0 +1,3 @@
+[CHE 6] The 'Terminal' menu item is disabled, if there is no open terminal
+kind/bug severity/P2 target/che6 
+Reproduction Steps: Start any workspace Close the existed terminal Try to create a new terminal by the Menu -> Run -> Terminal Observed behavior: The Terminal menu item is disabled. This menu item will be enabled after refreshing web page. OS and version: Che(Che6 branch) 6.0.0-M3; Chrome 59.0; Fedora 25 Additional information:

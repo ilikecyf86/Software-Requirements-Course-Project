@@ -1,0 +1,3 @@
+Add more support for docker-machine drivers
+kind/enhancement 
+docker-machine have many drivers, not just only Virtualbox. Can we just use the docker-machine and its support drivers, so i can run its on EC2, Fusion and other.

@@ -1,0 +1,3 @@
+Synchronize the list of test repositories before running selenium tests
+kind/task team/production 
+The list of repositories to fork is declared in README.md But if somebody merged something in the original repos then users don't know if there forked repos are up to date. The goal of this issue is to detect and let user know the difference between original repos and forked ones.

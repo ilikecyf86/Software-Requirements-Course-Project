@@ -1,0 +1,3 @@
+Add new agents workflow into Docker SPI impl.
+kind/task 
+Docker should start agents (later will be install-agent), check the state of agents (later state of agents from install agent), send environment start failed event to Master if agents start failed.

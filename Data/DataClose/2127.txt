@@ -1,0 +1,3 @@
+Customizing dashboard
+kind/question 
+Hi, i began looking into customizing eclipse che dashboard and found this https://github.com/eclipse/che/blob/master/CUSTOMIZING.md, which says you can customize several parts o eclipse che. Following that, i read https://github.com/eclipse/che/wiki/Development-Workflow and followed it's tutorial, and managed to build the assemblies and other submodules from che. After reading more, i learned that assemblies pull che submodules like dashboard from your repository and not from the folders on che. My questions are: How can i integrate my changes made on the dashboard to a che container? Do i need to create a plugin for that? Thank you. Che version: 4.6 OS and version: Ubuntu 16.04 Docker version: 1.12.1

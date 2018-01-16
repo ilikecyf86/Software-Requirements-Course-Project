@@ -1,0 +1,3 @@
+Import project from hosted GIT repository URL: the host name must start with www
+
+Hi, I want to import a project from its hosted repository. The repository is located on an internal server. The hosted project repository URL is like: ssh://myname@myserver/srv/git/myproject.git When i write this URL into The Eclipse Che IDE import project window, i get the error: The address of the remote server is incorrect. But if i change this URL as: ssh://myname@www.myserver/srv/git/myproject.git there's no error. How can i import from an internal server repository ? Thanks

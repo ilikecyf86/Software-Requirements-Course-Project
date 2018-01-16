@@ -1,0 +1,3 @@
+IDE.gwt.xml decentralization
+kind/epic team/platform 
+Right now we have single monolitic https://github.com/eclipse/che/blob/master/assembly/assembly-ide-war/src/main/resources/org/eclipse/che/ide/IDE.gwt.xml. It means that if plugin developer want's to use it he have to be inherited as is or copy-pasted and then modified. We want to make it possible for plugin-developer to have maven-plugin that generate resulting IDE.gwt.xml based on maven dependencies of module. So they can include assembly-ide-war to inherit all parts of current IDE.gwt.xml and exclude small parts (like dialog about) by excluding maven dependency. Create maven plugin and generate resulting IDE.gwt.xml #4258 Move existed parts of IDE.gwt.xml to individual plugins. #4259

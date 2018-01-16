@@ -1,0 +1,3 @@
+The sample-serverservice example works wrong
+kind/bug severity/P2 team/plugin 
+Build the IDE with serverservice extension, run it. Reproduction Steps: OS and version: Ubuntu 14.0 TLS Che version: 5.1.0 Docker version: 12.1

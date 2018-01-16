@@ -1,0 +1,3 @@
+Che somehow doesn't know which normal user account to use for container when custom username is set.
+kind/question 
+I created a Codenvy Factory to demo this. Apparently if the user name isn't user, Che doesn't know the normal user and fallbacks to root, which is a bit irritating if you want to have custom username for the workspace container that che runs. OS and Version Codenvy 5.14.0 on Ubuntu 16.04.1 LTS

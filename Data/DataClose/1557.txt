@@ -1,0 +1,3 @@
+New terminal ui lose info about max line size after command "reset".
+kind/bug kind/task team/enterprise status/in-progress sprint/current-sprint sprint/current-sprint status/in-progress 
+Reproduction Steps: Create new terminal. Type command "reset". When terminal clean up screen type command longer then line size. Expected result: part text is longer than line should be moved on the new line. Actual result: part text longer then line tear down previous text on the begin of the line. P.S. Command "clear" works correct...

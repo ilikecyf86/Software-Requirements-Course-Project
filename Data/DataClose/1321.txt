@@ -1,0 +1,46 @@
+[Bug] Snapshot removing failed. Snapshot attributes are not valid
+kind/question kind/question kind/bug status/in-progress team/enterprise status/in-progress sprint/next-sprint status/open-for-dev sprint/current-sprint sprint/next-sprint sprint/current-sprint status/open-for-dev 
+Cannot delete snapshots from the remote registry at docker hub. Pushes and pulls to registry just fine, however it fails to delete old snapshots from registry resulting in ALOT of orphan snapshots in registry. I have a multi-machine workspace consisting of 5 machines and it left around 40 orphan snapshots over time. Reproduction Steps: configure che to work with a docker hub organization repository for saving snapshots start a multi-machine workspace stop the workspace, verify that it saves to registry start the workspace and load from snapshot stop the workspace without saving snapshot OS and version: Che running on AWS EC2 t2.medium. Ubuntu 16.04 Eclipse Che 5.4 Diagnostics: Log: 2017-03-21 18:16:26,551[aceSharedPool-3]  [ERROR] [o.e.c.a.w.s.WorkspaceRuntimes 529]   - Couldn't remove snapshot 'snapshot7r82ivljtss3ls1n', workspace id 'workspacem52qibob1zahcdiy'
+org.eclipse.che.api.machine.server.exception.SnapshotException: Snapshot removing failed. Snapshot attributes are not valid
+        at org.eclipse.che.plugin.docker.machine.DockerInstanceProvider.removeInstanceSnapshot(DockerInstanceProvider.java:149) ~[che-plugin-docker-machine-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.environment.server.CheEnvironmentEngine.removeSnapshot(CheEnvironmentEngine.java:557) ~[che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.removeBinaries(WorkspaceRuntimes.java:508) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.removeBinaries(WorkspaceRuntimes.java:525) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.snapshotAndUpdateStatus(WorkspaceRuntimes.java:893) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.snapshot(WorkspaceRuntimes.java:470) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceManager.lambda$stopAsync$3(WorkspaceManager.java:815) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalRunnable.run(CopyThreadLocalRunnable.java:28) ~[che-core-commons-lang-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626) ~[na:1.8.0_111-internal]
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_111-internal]
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_111-internal]
+        at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_111-internal]
+2017-03-21 18:16:26,551[aceSharedPool-3]  [ERROR] [c.p.d.m.DockerInstanceProvider 148]  - Failed to remove instance snapshot: invalid machine source: MachineSourceImpl{type='image', location='null', content='nu
+ll'}
+2017-03-21 18:16:26,552[aceSharedPool-3]  [ERROR] [o.e.c.a.w.s.WorkspaceRuntimes 529]   - Couldn't remove snapshot 'snapshotyq6mieud1voj4cxf', workspace id 'workspacem52qibob1zahcdiy'
+org.eclipse.che.api.machine.server.exception.SnapshotException: Snapshot removing failed. Snapshot attributes are not valid
+        at org.eclipse.che.plugin.docker.machine.DockerInstanceProvider.removeInstanceSnapshot(DockerInstanceProvider.java:149) ~[che-plugin-docker-machine-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.environment.server.CheEnvironmentEngine.removeSnapshot(CheEnvironmentEngine.java:557) ~[che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.removeBinaries(WorkspaceRuntimes.java:508) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.removeBinaries(WorkspaceRuntimes.java:525) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.snapshotAndUpdateStatus(WorkspaceRuntimes.java:893) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.snapshot(WorkspaceRuntimes.java:470) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceManager.lambda$stopAsync$3(WorkspaceManager.java:815) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalRunnable.run(CopyThreadLocalRunnable.java:28) ~[che-core-commons-lang-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626) ~[na:1.8.0_111-internal]
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_111-internal]
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_111-internal]
+        at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_111-internal]
+2017-03-21 18:16:26,553[aceSharedPool-3]  [ERROR] [c.p.d.m.DockerInstanceProvider 148]  - Failed to remove instance snapshot: invalid machine source: MachineSourceImpl{type='image', location='null', content='nu
+ll'}
+2017-03-21 18:16:26,553[aceSharedPool-3]  [ERROR] [o.e.c.a.w.s.WorkspaceRuntimes 529]   - Couldn't remove snapshot 'snapshot15c4j45me2k0lt2p', workspace id 'workspacem52qibob1zahcdiy'
+org.eclipse.che.api.machine.server.exception.SnapshotException: Snapshot removing failed. Snapshot attributes are not valid
+        at org.eclipse.che.plugin.docker.machine.DockerInstanceProvider.removeInstanceSnapshot(DockerInstanceProvider.java:149) ~[che-plugin-docker-machine-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.environment.server.CheEnvironmentEngine.removeSnapshot(CheEnvironmentEngine.java:557) ~[che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.removeBinaries(WorkspaceRuntimes.java:508) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.removeBinaries(WorkspaceRuntimes.java:525) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.snapshotAndUpdateStatus(WorkspaceRuntimes.java:893) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.snapshot(WorkspaceRuntimes.java:470) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceManager.lambda$stopAsync$3(WorkspaceManager.java:815) [che-core-api-workspace-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalRunnable.run(CopyThreadLocalRunnable.java:28) ~[che-core-commons-lang-5.4.0-SNAPSHOT.jar:5.4.0-SNAPSHOT]
+        at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626) ~[na:1.8.0_111-internal]
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_111-internal]

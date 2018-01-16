@@ -1,0 +1,3 @@
+Problem in folder (Package) with name "api"
+kind/question 
+Hi I have a problem in SaaS version of eclipse che. when i create a folder ( in my case java package) in my project , eclipse che can't work with it ... it can't create file , can't open it and when i create a file using terminal inside this folder, eclipse che don't recognize it...

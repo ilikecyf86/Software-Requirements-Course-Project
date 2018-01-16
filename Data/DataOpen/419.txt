@@ -1,0 +1,3 @@
+[Regression] PHP language server fails on code completion apply
+kind/bug severity/P1 sprint/current-sprint sprint/current-sprint team/ide 
+Reproduction Steps: Open any php file, call code completion and try to apply any, nothing is inserted in editor and error message appears in browser console: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Warning: Missing argument 4 for LanguageServer\Server\CompletionItemResolver::resolve(), called in /home/user/che/ls-php/php-language-server/vendor/felixfbecker/advanced-json-rpc/lib/Dispatcher.php on line 164 and defined

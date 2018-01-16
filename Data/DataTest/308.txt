@@ -1,0 +1,475 @@
+Unfinished loading while open http://localhost:8080
+
+While opening che from http://localhost:8080 it still loading and won't open the dashboard. I'm running on Ubuntu 14.04 64 bit: NAME="Ubuntu" VERSION="14.04.4 LTS, Trusty Tahr" ID=ubuntu ID_LIKE=debian PRETTY_NAME="Ubuntu 14.04.4 LTS" VERSION_ID="14.04" HOME_URL="...ubuntu.com/" SUPPORT_URL="...ubuntu.com/" BUG_REPORT_URL="...bugs.launchpad.net/ubuntu/" Step to reproduce the errors: Following this thread discussion i'm replacing che.sh with this one Then i got error that the JAVA_HOME environment isn't set, following this thread i try to make the JAVA_HOME environment by adding the path to ~/.bashrc file & ~/.profile Reading this thread im making CHE_HOME= environment variables by adding the path to ~/.bashrc file & ~/.profile I read this che Configuration thread and launch Che with --skip:uid because i got an internal container user with ID=1000 I'm highlighting the important error line below. This is what the error showing from the terminal: admin@ubuntu-PC:~$ che.sh run --skip:uid
+GNU bash, version 4.3.11(1)-release (x86_64-pc-linux-gnu)
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+
+This is free software; you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+12509 pts/16   S+     0:00 /bin/bash /opt/eclipse-che-4.0.0-RC11/bin/che.sh run --skip:uid
+12512 pts/16   S+     0:00 grep che.sh
+Docker is natively installed and reachable...
+
+############## HOW TO CONNECT YOUR CHE CLIENT ###############
+After Che server has booted, you can connect your clients by:
+1. Open browser to http://localhost:8080, or:
+2. Open native chromium app.
+#############################################################
+
+Using CATALINA_BASE:   /opt/eclipse-che-4.0.0-RC11/tomcat
+Using CATALINA_HOME:   /opt/eclipse-che-4.0.0-RC11/tomcat
+Using CATALINA_TMPDIR: /opt/eclipse-che-4.0.0-RC11/tomcat/temp
+Using JRE_HOME:        /usr/lib/jvm/java-8-oracle
+Using CLASSPATH:       /opt/eclipse-che-4.0.0-RC11/tomcat/conf/:/usr/lib/jvm/java-8-oracle/lib/tools.jar:/opt/eclipse-che-4.0.0-RC11/tomcat/bin/bootstrap.jar:/opt/eclipse-che-4.0.0-RC11/tomcat/bin/tomcat-juli.jar
+2016-03-13 08:25:20,225[main]             [INFO ] [o.a.c.s.VersionLoggerListener 89]    - Server version:        Apache Tomcat/8.0.29
+2016-03-13 08:25:20,229[main]             [INFO ] [o.a.c.s.VersionLoggerListener 91]    - Server built:          Nov 20 2015 09:18:00 UTC
+2016-03-13 08:25:20,231[main]             [INFO ] [o.a.c.s.VersionLoggerListener 93]    - Server number:         8.0.29.0
+2016-03-13 08:25:20,231[main]             [INFO ] [o.a.c.s.VersionLoggerListener 95]    - OS Name:               Linux
+2016-03-13 08:25:20,245[main]             [INFO ] [o.a.c.s.VersionLoggerListener 97]    - OS Version:            3.19.0-51-generic
+2016-03-13 08:25:20,246[main]             [INFO ] [o.a.c.s.VersionLoggerListener 99]    - Architecture:          amd64
+2016-03-13 08:25:20,247[main]             [INFO ] [o.a.c.s.VersionLoggerListener 101]   - Java Home:             /usr/lib/jvm/java-8-oracle/jre
+2016-03-13 08:25:20,247[main]             [INFO ] [o.a.c.s.VersionLoggerListener 103]   - JVM Version:           1.8.0_74-b02
+2016-03-13 08:25:20,248[main]             [INFO ] [o.a.c.s.VersionLoggerListener 105]   - JVM Vendor:            Oracle Corporation
+2016-03-13 08:25:20,249[main]             [INFO ] [o.a.c.s.VersionLoggerListener 107]   - CATALINA_BASE:         /opt/eclipse-che-4.0.0-RC11/tomcat
+2016-03-13 08:25:20,250[main]             [INFO ] [o.a.c.s.VersionLoggerListener 109]   - CATALINA_HOME:         /opt/eclipse-che-4.0.0-RC11/tomcat
+2016-03-13 08:25:20,250[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.config.file=/opt/eclipse-che-4.0.0-RC11/tomcat/conf/logging.properties
+2016-03-13 08:25:20,252[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+2016-03-13 08:25:20,255[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dport.http=8080
+2016-03-13 08:25:20,259[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.logs.dir=/opt/eclipse-che-4.0.0-RC11/tomcat/logs/
+2016-03-13 08:25:20,261[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote
+2016-03-13 08:25:20,262[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.ssl=false
+2016-03-13 08:25:20,263[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.authenticate=false
+2016-03-13 08:25:20,265[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.local.conf.dir=/opt/eclipse-che-4.0.0-RC11/conf/
+2016-03-13 08:25:20,272[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.endorsed.dirs=/opt/eclipse-che-4.0.0-RC11/tomcat/endorsed
+2016-03-13 08:25:20,280[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.base=/opt/eclipse-che-4.0.0-RC11/tomcat
+2016-03-13 08:25:20,281[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.home=/opt/eclipse-che-4.0.0-RC11/tomcat
+2016-03-13 08:25:20,281[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.io.tmpdir=/opt/eclipse-che-4.0.0-RC11/tomcat/temp
+2016-03-13 08:25:20,469[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 425]  - Initializing ProtocolHandler ["http-nio-8080"]
+2016-03-13 08:25:20,491[main]             [INFO ] [o.a.t.util.net.NioSelectorPool 72]   - Using a shared selector for servlet write/read
+2016-03-13 08:25:20,495[main]             [INFO ] [o.a.catalina.startup.Catalina 587]   - Initialization processed in 760 ms
+2016-03-13 08:25:20,534[main]             [INFO ] [c.m.JmxRemoteLifecycleListener 332]  - The JMX Remote Listener has configured the registry on port 32001 and the server on port 32101 for the Platform server
+2016-03-13 08:25:20,604[main]             [INFO ] [o.a.c.core.StandardService 433]      - Starting service Catalina
+2016-03-13 08:25:20,607[main]             [INFO ] [o.a.c.core.StandardEngine 259]       - Starting Servlet Engine: Apache Tomcat/8.0.29
+2016-03-13 08:25:20,714[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]        - Deploying web application archive /opt/eclipse-che-4.0.0-RC11/tomcat/webapps/swagger.war
+2016-03-13 08:25:21,177[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]        - Deployment of web application archive /opt/eclipse-che-4.0.0-RC11/tomcat/webapps/swagger.war has finished in 462 ms
+2016-03-13 08:25:21,180[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]        - Deploying web application archive /opt/eclipse-che-4.0.0-RC11/tomcat/webapps/dashboard.war
+2016-03-13 08:25:21,338[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]        - Deployment of web application archive /opt/eclipse-che-4.0.0-RC11/tomcat/webapps/dashboard.war has finished in 158 ms
+2016-03-13 08:25:21,347[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]        - Deploying web application archive /opt/eclipse-che-4.0.0-RC11/tomcat/webapps/ide.war
+2016-03-13 08:25:25,896[ost-startStop-1]  [WARN ] [p.DockerExtConfBindingProvider 51]   - DockerExtConfBindingProvider
+ 2016-03-13 08:25:26,043[ost-startStop-1] [INFO ] [com.google.inject.Guice 42] - An exception was caught and reported. Message: org.eclipse.che.inject.ConfigurationException: Property che.home is not found as system property or environment variable. org.eclipse.che.inject.ConfigurationException: Property che.home is not found as system property or environment variable.
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:243) ~[che-core-commons-inject-4.0.0-RC11.jar:4.0.0-RC11]
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:202) ~[che-core-commons-inject-4.0.0-RC11.jar:4.0.0-RC11]
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindConf(CheBootstrap.java:185) ~[che-core-commons-inject-4.0.0-RC11.jar:4.0.0-RC11]
+    at org.eclipse.che.inject.CheBootstrap$ExtConfiguration.configure(CheBootstrap.java:165) ~[che-core-commons-inject-4.0.0-RC11.jar:4.0.0-RC11]
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements.getElements(Elements.java:110) ~[guice-4.0.jar:na]
+    at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:198) ~[guice-4.0.jar:na]
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements.getElements(Elements.java:110) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:138) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:104) [guice-4.0.jar:na]
+    at com.google.inject.Guice.createInjector(Guice.java:96) [guice-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.getInjector(EverrestGuiceContextListener.java:137) [everrest-integration-guice-1.12.1.jar:na]
+    at com.google.inject.servlet.GuiceServletContextListener.contextInitialized(GuiceServletContextListener.java:47) [guice-servlet-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.contextInitialized(EverrestGuiceContextListener.java:84) [everrest-integration-guice-1.12.1.jar:na]
+    at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4793) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5236) [catalina.jar:8.0.29]
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717) [catalina.jar:8.0.29]
+    at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:945) [catalina.jar:8.0.29]
+    at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1795) [catalina.jar:8.0.29]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_74]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_74]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_74]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_74]
+    at java.lang.Thread.run(Thread.java:745) [na:1.8.0_74]
+2016-03-13 08:25:26,045[ost-startStop-1]  [INFO ] [com.google.inject.Guice 42]          - An exception was caught and reported. Message: org.eclipse.che.inject.ConfigurationException: Property che.home is not found as system property or environment variable.
+org.eclipse.che.inject.ConfigurationException: Property che.home is not found as system property or environment variable.
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:243) ~[che-core-commons-inject-4.0.0-RC11.jar:4.0.0-RC11]
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:202) ~[che-core-commons-inject-4.0.0-RC11.jar:4.0.0-RC11]
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindConf(CheBootstrap.java:185) ~[che-core-commons-inject-4.0.0-RC11.jar:4.0.0-RC11]
+    at org.eclipse.che.inject.CheBootstrap$WebInfConfiguration.configure(CheBootstrap.java:143) ~[che-core-commons-inject-4.0.0-RC11.jar:4.0.0-RC11]
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements.getElements(Elements.java:110) ~[guice-4.0.jar:na]
+    at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:177) ~[guice-4.0.jar:na]
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements.getElements(Elements.java:110) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:138) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:104) [guice-4.0.jar:na]
+    at com.google.inject.Guice.createInjector(Guice.java:96) [guice-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.getInjector(EverrestGuiceContextListener.java:137) [everrest-integration-guice-1.12.1.jar:na]
+    at com.google.inject.servlet.GuiceServletContextListener.contextInitialized(GuiceServletContextListener.java:47) [guice-servlet-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.contextInitialized(EverrestGuiceContextListener.java:84) [everrest-integration-guice-1.12.1.jar:na]
+    at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4793) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5236) [catalina.jar:8.0.29]
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717) [catalina.jar:8.0.29]
+    at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:945) [catalina.jar:8.0.29]
+    at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1795) [catalina.jar:8.0.29]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_74]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_74]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_74]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_74]
+    at java.lang.Thread.run(Thread.java:745) [na:1.8.0_74]
+2016-03-13 08:25:26,834[ost-startStop-1]  [ERROR] [o.a.c.c.C.[.[localhost].[/ide] 4799] - Exception sending context initialized event to listener instance of class org.eclipse.che.inject.CodenvyBootstrap
+com.google.inject.CreationException: Unable to create injector, see the following errors:
+
+1) No implementation for java.lang.Boolean annotated with @com.google.inject.name.Named(value=machine.docker.pull_image) was bound.
+  while locating java.lang.Boolean annotated with @com.google.inject.name.Named(value=machine.docker.pull_image)
+    for parameter 11 at org.eclipse.che.plugin.docker.machine.DockerInstanceProvider.<init>(DockerInstanceProvider.java:107)
+  at org.eclipse.che.plugin.docker.machine.DockerMachineModule.configure(DockerMachineModule.java:27) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.local.LocalDockerModule -> org.eclipse.che.plugin.docker.machine.DockerMachineModule)
+
+2) No implementation for java.lang.Boolean annotated with @com.google.inject.name.Named(value=user.self.creation.allowed) was bound.
+  while locating java.lang.Boolean annotated with @com.google.inject.name.Named(value=user.self.creation.allowed)
+    for parameter 4 at org.eclipse.che.api.user.server.UserService.<init>(UserService.java:105)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:68)
+
+3) No implementation for java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.default_mem_size_mb) was bound.
+  while locating java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.default_mem_size_mb)
+    for parameter 5 at org.eclipse.che.api.machine.server.MachineManager.<init>(MachineManager.java:115)
+  while locating org.eclipse.che.api.machine.server.MachineManager
+    for parameter 0 at org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry.<init>(RuntimeWorkspaceRegistry.java:86)
+  while locating org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry
+    for parameter 1 at org.eclipse.che.api.workspace.server.WorkspaceManager.<init>(WorkspaceManager.java:85)
+  while locating org.eclipse.che.api.workspace.server.WorkspaceManager
+    for parameter 0 at org.eclipse.che.api.workspace.server.WorkspaceService.<init>(WorkspaceService.java:117)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:55)
+
+4) No implementation for java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.default_mem_size_mb) was bound.
+  while locating java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.default_mem_size_mb)
+    for parameter 5 at org.eclipse.che.api.machine.server.MachineManager.<init>(MachineManager.java:115)
+  while locating org.eclipse.che.api.machine.server.MachineManager
+    for parameter 0 at org.eclipse.che.api.machine.server.MachineService.<init>(MachineService.java:86)
+  at org.eclipse.che.plugin.docker.machine.local.LocalDockerModule.configure(LocalDockerModule.java:43) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.local.LocalDockerModule)
+
+5) No implementation for java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.default_mem_size_mb) was bound.
+  while locating java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.default_mem_size_mb)
+    for parameter 5 at org.eclipse.che.api.machine.server.MachineManager.<init>(MachineManager.java:115)
+  while locating org.eclipse.che.api.machine.server.MachineManager
+    for parameter 2 at org.eclipse.che.plugin.docker.machine.ext.DockerMachineTerminalLauncher.<init>(DockerMachineTerminalLauncher.java:52)
+  at org.eclipse.che.plugin.docker.machine.ext.DockerTerminalModule.configure(DockerTerminalModule.java:29) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.ext.DockerTerminalModule)
+
+6) No implementation for java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.default_mem_size_mb) was bound.
+  while locating java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.default_mem_size_mb)
+    for parameter 5 at org.eclipse.che.api.machine.server.MachineManager.<init>(MachineManager.java:115)
+  while locating org.eclipse.che.api.machine.server.MachineManager
+    for parameter 0 at org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry.<init>(RuntimeWorkspaceRegistry.java:86)
+  while locating org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry
+    for parameter 1 at org.eclipse.che.api.workspace.server.WorkspaceManager.<init>(WorkspaceManager.java:85)
+  while locating org.eclipse.che.api.workspace.server.WorkspaceManager
+    for parameter 0 at org.eclipse.che.api.workspace.server.event.MachineStateListener.<init>(MachineStateListener.java:47)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:132)
+
+7) No implementation for java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.default_mem_size_mb) was bound.
+  while locating java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.default_mem_size_mb)
+    for parameter 5 at org.eclipse.che.api.machine.server.MachineManager.<init>(MachineManager.java:115)
+  while locating org.eclipse.che.api.machine.server.MachineManager
+    for parameter 2 at org.eclipse.che.ide.ext.machine.server.ssh.KeysInjector.<init>(KeysInjector.java:53)
+  at org.eclipse.che.ide.ext.machine.server.MachineModule.configure(MachineModule.java:21)
+
+8) No implementation for java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.default_mem_size_mb) was bound.
+  while locating java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.default_mem_size_mb)
+    for parameter 5 at org.eclipse.che.api.machine.server.MachineManager.<init>(MachineManager.java:115)
+  while locating org.eclipse.che.api.machine.server.MachineManager
+    for parameter 0 at org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry.<init>(RuntimeWorkspaceRegistry.java:86)
+  while locating org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry
+    for parameter 1 at org.eclipse.che.api.workspace.server.WorkspaceManager.<init>(WorkspaceManager.java:85)
+  while locating com.google.inject.Provider<org.eclipse.che.api.workspace.server.WorkspaceManager>
+    for parameter 1 at org.eclipse.che.plugin.docker.machine.local.node.provider.LocalWorkspaceFolderPathProvider.<init>(LocalWorkspaceFolderPathProvider.java:65)
+  at org.eclipse.che.plugin.docker.machine.local.LocalDockerModule.configure(LocalDockerModule.java:54) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.local.LocalDockerModule)
+
+9) No implementation for java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.default_mem_size_mb) was bound.
+  while locating java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.default_mem_size_mb)
+    for parameter 5 at org.eclipse.che.api.machine.server.MachineManager.<init>(MachineManager.java:115)
+  while locating com.google.inject.Provider<org.eclipse.che.api.machine.server.MachineManager>
+    for parameter 0 at org.eclipse.che.api.machine.server.WsAgentLauncherImpl.<init>(WsAgentLauncherImpl.java:65)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:133)
+
+10) No implementation for java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.ws_agent.ping_conn_timeout_ms) was bound.
+  while locating java.lang.Integer annotated with @com.google.inject.name.Named(value=machine.ws_agent.ping_conn_timeout_ms)
+    for parameter 5 at org.eclipse.che.api.machine.server.WsAgentLauncherImpl.<init>(WsAgentLauncherImpl.java:65)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:133)
+
+11) No implementation for java.lang.Long annotated with @com.google.inject.name.Named(value=machine.ws_agent.max_start_time_ms) was bound.
+  while locating java.lang.Long annotated with @com.google.inject.name.Named(value=machine.ws_agent.max_start_time_ms)
+    for parameter 3 at org.eclipse.che.api.machine.server.WsAgentLauncherImpl.<init>(WsAgentLauncherImpl.java:65)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:133)
+
+12) No implementation for java.lang.Long annotated with @com.google.inject.name.Named(value=machine.ws_agent.ping_delay_ms) was bound.
+  while locating java.lang.Long annotated with @com.google.inject.name.Named(value=machine.ws_agent.ping_delay_ms)
+    for parameter 4 at org.eclipse.che.api.machine.server.WsAgentLauncherImpl.<init>(WsAgentLauncherImpl.java:65)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:133)
+
+13) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=api.endpoint) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=api.endpoint)
+    for parameter 6 at org.eclipse.che.api.machine.server.MachineManager.<init>(MachineManager.java:115)
+  while locating org.eclipse.che.api.machine.server.MachineManager
+    for parameter 0 at org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry.<init>(RuntimeWorkspaceRegistry.java:86)
+  while locating org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry
+    for parameter 1 at org.eclipse.che.api.workspace.server.WorkspaceManager.<init>(WorkspaceManager.java:85)
+  while locating org.eclipse.che.api.workspace.server.WorkspaceManager
+    for parameter 0 at org.eclipse.che.api.workspace.server.WorkspaceService.<init>(WorkspaceService.java:117)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:55)
+
+14) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=api.endpoint) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=api.endpoint)
+    for parameter 6 at org.eclipse.che.api.machine.server.MachineManager.<init>(MachineManager.java:115)
+  while locating org.eclipse.che.api.machine.server.MachineManager
+    for parameter 0 at org.eclipse.che.api.machine.server.MachineService.<init>(MachineService.java:86)
+  at org.eclipse.che.plugin.docker.machine.local.LocalDockerModule.configure(LocalDockerModule.java:43) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.local.LocalDockerModule)
+
+15) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=api.endpoint) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=api.endpoint)
+    for parameter 6 at org.eclipse.che.api.machine.server.MachineManager.<init>(MachineManager.java:115)
+  while locating org.eclipse.che.api.machine.server.MachineManager
+    for parameter 2 at org.eclipse.che.plugin.docker.machine.ext.DockerMachineTerminalLauncher.<init>(DockerMachineTerminalLauncher.java:52)
+  at org.eclipse.che.plugin.docker.machine.ext.DockerTerminalModule.configure(DockerTerminalModule.java:29) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.ext.DockerTerminalModule)
+
+16) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=api.endpoint) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=api.endpoint)
+    for parameter 6 at org.eclipse.che.api.machine.server.MachineManager.<init>(MachineManager.java:115)
+  while locating org.eclipse.che.api.machine.server.MachineManager
+    for parameter 0 at org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry.<init>(RuntimeWorkspaceRegistry.java:86)
+  while locating org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry
+    for parameter 1 at org.eclipse.che.api.workspace.server.WorkspaceManager.<init>(WorkspaceManager.java:85)
+  while locating org.eclipse.che.api.workspace.server.WorkspaceManager
+    for parameter 0 at org.eclipse.che.api.workspace.server.event.MachineStateListener.<init>(MachineStateListener.java:47)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:132)
+
+17) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=api.endpoint) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=api.endpoint)
+    for parameter 6 at org.eclipse.che.api.machine.server.MachineManager.<init>(MachineManager.java:115)
+  while locating org.eclipse.che.api.machine.server.MachineManager
+    for parameter 2 at org.eclipse.che.ide.ext.machine.server.ssh.KeysInjector.<init>(KeysInjector.java:53)
+  at org.eclipse.che.ide.ext.machine.server.MachineModule.configure(MachineModule.java:21)
+
+18) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=api.endpoint) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=api.endpoint)
+    for parameter 6 at org.eclipse.che.api.machine.server.MachineManager.<init>(MachineManager.java:115)
+  while locating org.eclipse.che.api.machine.server.MachineManager
+    for parameter 0 at org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry.<init>(RuntimeWorkspaceRegistry.java:86)
+  while locating org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry
+    for parameter 1 at org.eclipse.che.api.workspace.server.WorkspaceManager.<init>(WorkspaceManager.java:85)
+  while locating com.google.inject.Provider<org.eclipse.che.api.workspace.server.WorkspaceManager>
+    for parameter 1 at org.eclipse.che.plugin.docker.machine.local.node.provider.LocalWorkspaceFolderPathProvider.<init>(LocalWorkspaceFolderPathProvider.java:65)
+  at org.eclipse.che.plugin.docker.machine.local.LocalDockerModule.configure(LocalDockerModule.java:54) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.local.LocalDockerModule)
+
+19) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=api.endpoint) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=api.endpoint)
+    for parameter 6 at org.eclipse.che.api.machine.server.MachineManager.<init>(MachineManager.java:115)
+  while locating com.google.inject.Provider<org.eclipse.che.api.machine.server.MachineManager>
+    for parameter 0 at org.eclipse.che.api.machine.server.WsAgentLauncherImpl.<init>(WsAgentLauncherImpl.java:65)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:133)
+
+20) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=machine.docker.machine_extra_hosts) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=machine.docker.machine_extra_hosts)
+    for parameter 8 at org.eclipse.che.plugin.docker.machine.DockerInstanceProvider.<init>(DockerInstanceProvider.java:107)
+  at org.eclipse.che.plugin.docker.machine.DockerMachineModule.configure(DockerMachineModule.java:27) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.local.LocalDockerModule -> org.eclipse.che.plugin.docker.machine.DockerMachineModule)
+
+21) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=machine.server.ext.archive) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=machine.server.ext.archive)
+    for parameter 0 at org.eclipse.che.plugin.docker.machine.ext.DockerMachineExtServerChecker.<init>(DockerMachineExtServerChecker.java:39)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:108)
+
+22) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=machine.server.terminal.archive) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=machine.server.terminal.archive)
+    for parameter 0 at org.eclipse.che.plugin.docker.machine.ext.DockerMachineTerminalChecker.<init>(DockerMachineTerminalChecker.java:40)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:109)
+
+23) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=machine.ws_agent.agent_api.path) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=machine.ws_agent.agent_api.path)
+    for parameter 7 at org.eclipse.che.api.machine.server.WsAgentLauncherImpl.<init>(WsAgentLauncherImpl.java:65)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:133)
+
+24) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=oauth.github.authuri) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=oauth.github.authuri)
+    for parameter 3 at org.eclipse.che.security.oauth.GitHubOAuthAuthenticator.<init>(GitHubOAuthAuthenticator.java:42)
+  at org.eclipse.che.security.oauth.GithubModule.configure(GithubModule.java:28)
+
+25) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=oauth.github.clientid) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=oauth.github.clientid)
+    for parameter 0 at org.eclipse.che.security.oauth.GitHubOAuthAuthenticator.<init>(GitHubOAuthAuthenticator.java:42)
+  at org.eclipse.che.security.oauth.GithubModule.configure(GithubModule.java:28)
+
+26) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=oauth.github.clientsecret) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=oauth.github.clientsecret)
+    for parameter 1 at org.eclipse.che.security.oauth.GitHubOAuthAuthenticator.<init>(GitHubOAuthAuthenticator.java:42)
+  at org.eclipse.che.security.oauth.GithubModule.configure(GithubModule.java:28)
+
+27) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=project.template_descriptions_dir) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=project.template_descriptions_dir)
+    for parameter 0 at org.eclipse.che.api.project.server.ProjectTemplateDescriptionLoader.<init>(ProjectTemplateDescriptionLoader.java:63)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:57)
+
+28) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=project.template_location_dir) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=project.template_location_dir)
+    for parameter 1 at org.eclipse.che.api.project.server.ProjectTemplateDescriptionLoader.<init>(ProjectTemplateDescriptionLoader.java:63)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:57)
+
+29) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=stack.predefined.icons.folder) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=stack.predefined.icons.folder)
+    for parameter 2 at org.eclipse.che.api.workspace.server.stack.StackLoader.<init>(StackLoader.java:58)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:123)
+
+30) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=stack.predefined.list.json) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=stack.predefined.list.json)
+    for parameter 1 at org.eclipse.che.api.workspace.server.stack.StackLoader.<init>(StackLoader.java:58)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:123)
+
+31) No implementation for java.lang.String[] annotated with @com.google.inject.name.Named(value=notification.server.propagate_events) was bound.
+  while locating java.lang.String[] annotated with @com.google.inject.name.Named(value=notification.server.propagate_events)
+    for parameter 0 at org.eclipse.che.api.core.notification.EventOriginServerPropagationPolicy.<init>(EventOriginServerPropagationPolicy.java:28)
+  while locating org.eclipse.che.api.core.notification.ServerEventPropagationPolicy
+    for parameter 1 at org.eclipse.che.api.core.notification.WSocketEventBusServer.<init>(WSocketEventBusServer.java:40)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:93)
+
+32) No implementation for java.lang.String[] annotated with @com.google.inject.name.Named(value=oauth.github.redirecturis) was bound.
+  while locating java.lang.String[] annotated with @com.google.inject.name.Named(value=oauth.github.redirecturis)
+    for parameter 2 at org.eclipse.che.security.oauth.GitHubOAuthAuthenticator.<init>(GitHubOAuthAuthenticator.java:42)
+  at org.eclipse.che.security.oauth.GithubModule.configure(GithubModule.java:28)
+
+33) An exception was caught and reported. Message: Property che.home is not found as system property or environment variable.
+  at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:177)
+Caused by: org.eclipse.che.inject.ConfigurationException: Property che.home is not found as system property or environment variable.
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:243)
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:202)
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindConf(CheBootstrap.java:185)
+    at org.eclipse.che.inject.CheBootstrap$WebInfConfiguration.configure(CheBootstrap.java:143)
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62)
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340)
+    at com.google.inject.spi.Elements.getElements(Elements.java:110)
+    at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:177)
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62)
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340)
+    at com.google.inject.spi.Elements.getElements(Elements.java:110)
+    at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:138)
+    at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:104)
+    at com.google.inject.Guice.createInjector(Guice.java:96)
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.getInjector(EverrestGuiceContextListener.java:137)
+    at com.google.inject.servlet.GuiceServletContextListener.contextInitialized(GuiceServletContextListener.java:47)
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.contextInitialized(EverrestGuiceContextListener.java:84)
+    at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4793)
+    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5236)
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+    at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725)
+    at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701)
+    at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+    at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:945)
+    at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1795)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run(Thread.java:745)
+
+34) An exception was caught and reported. Message: Property che.home is not found as system property or environment variable.
+  at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:198)
+Caused by: org.eclipse.che.inject.ConfigurationException: Property che.home is not found as system property or environment variable.
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:243)
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:202)
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindConf(CheBootstrap.java:185)
+    at org.eclipse.che.inject.CheBootstrap$ExtConfiguration.configure(CheBootstrap.java:165)
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62)
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340)
+    at com.google.inject.spi.Elements.getElements(Elements.java:110)
+    at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:198)
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62)
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340)
+    at com.google.inject.spi.Elements.getElements(Elements.java:110)
+    at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:138)
+    at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:104)
+    at com.google.inject.Guice.createInjector(Guice.java:96)
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.getInjector(EverrestGuiceContextListener.java:137)
+    at com.google.inject.servlet.GuiceServletContextListener.contextInitialized(GuiceServletContextListener.java:47)
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.contextInitialized(EverrestGuiceContextListener.java:84)
+    at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4793)
+    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5236)
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+    at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725)
+    at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701)
+    at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+    at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:945)
+    at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1795)
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run(Thread.java:745)
+
+35) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=docker.registry.auth.url) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=docker.registry.auth.url)
+    for field at org.eclipse.che.plugin.docker.client.DockerRegistryChecker.registryUrl(DockerRegistryChecker.java:30)
+  at org.eclipse.che.plugin.docker.machine.local.LocalDockerModule.configure(LocalDockerModule.java:60) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.local.LocalDockerModule)
+
+36) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=machine.docker.che_api.endpoint) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=machine.docker.che_api.endpoint)
+    for field at org.eclipse.che.plugin.docker.machine.ext.provider.ApiEndpointEnvVariableProvider.apiEndpoint(ApiEndpointEnvVariableProvider.java:25)
+  at org.eclipse.che.plugin.docker.machine.ext.DockerExtServerModule.configure(DockerExtServerModule.java:45) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.ext.DockerExtServerModule)
+
+37) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=machine.server.ext.archive) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=machine.server.ext.archive)
+    for field at org.eclipse.che.plugin.docker.machine.ext.provider.ExtServerVolumeProvider.extServerArchivePath(ExtServerVolumeProvider.java:37)
+  at org.eclipse.che.plugin.docker.machine.ext.DockerExtServerModule.configure(DockerExtServerModule.java:39) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.ext.DockerExtServerModule)
+
+38) No implementation for java.net.URI annotated with @com.google.inject.name.Named(value=api.endpoint) was bound.
+  while locating java.net.URI annotated with @com.google.inject.name.Named(value=api.endpoint)
+    for field at org.eclipse.che.plugin.docker.machine.ext.provider.TerminalServerConfProvider.apiEndpoint(TerminalServerConfProvider.java:27)
+  at org.eclipse.che.plugin.docker.machine.ext.DockerTerminalModule.configure(DockerTerminalModule.java:39) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.ext.DockerTerminalModule)
+
+39) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=machine.server.terminal.archive) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=machine.server.terminal.archive)
+    for field at org.eclipse.che.plugin.docker.machine.ext.provider.TerminalVolumeProvider.terminalArchivePath(TerminalVolumeProvider.java:34)
+  at org.eclipse.che.plugin.docker.machine.ext.DockerTerminalModule.configure(DockerTerminalModule.java:43) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.ext.DockerTerminalModule)
+
+40) No implementation for java.net.URI annotated with @com.google.inject.name.Named(value=api.endpoint) was bound.
+  while locating java.net.URI annotated with @com.google.inject.name.Named(value=api.endpoint)
+    for field at org.eclipse.che.plugin.docker.machine.ext.provider.WsAgentServerConfProvider.apiEndpoint(WsAgentServerConfProvider.java:28)
+  at org.eclipse.che.plugin.docker.machine.ext.DockerExtServerModule.configure(DockerExtServerModule.java:34) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.ext.DockerExtServerModule)
+
+41) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=che.user.workspaces.storage) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=che.user.workspaces.storage)
+    for field at org.eclipse.che.plugin.docker.machine.local.provider.CheHostVfsRootDirProvider.fsRootDir(CheHostVfsRootDirProvider.java:34)
+  at org.eclipse.che.plugin.docker.machine.local.LocalDockerModule.configure(LocalDockerModule.java:57) (via modules: org.eclipse.che.api.deploy.ApiModule -> org.eclipse.che.plugin.docker.machine.local.LocalDockerModule)
+
+42) No implementation for java.lang.String annotated with @com.google.inject.name.Named(value=auth.oauth.access_denied_error_page) was bound.
+  while locating java.lang.String annotated with @com.google.inject.name.Named(value=auth.oauth.access_denied_error_page)
+    for field at org.eclipse.che.security.oauth.OAuthAuthenticationService.errorPage(OAuthAuthenticationService.java:63)
+  at org.eclipse.che.api.deploy.ApiModule.configure(ApiModule.java:78)
+
+42 errors
+    at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:466) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:155) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107) ~[guice-4.0.jar:na]
+    at com.google.inject.Guice.createInjector(Guice.java:96) ~[guice-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.getInjector(EverrestGuiceContextListener.java:137) ~[everrest-integration-guice-1.12.1.jar:na]
+    at com.google.inject.servlet.GuiceServletContextListener.contextInitialized(GuiceServletContextListener.java:47) ~[guice-servlet-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.contextInitialized(EverrestGuiceContextListener.java:84) ~[everrest-integration-guice-1.12.1.jar:na]
+    at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4793) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5236) [catalina.jar:8.0.29]
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701) [catalina.jar:8.0.29]
+    at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717) [catalina.jar:8.0.29]
+    at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:945) [catalina.jar:8.0.29]
+    at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1795) [catalina.jar:8.0.29]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_74]
+    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_74]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_74]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_74]
+    at java.lang.Thread.run(Thread.java:745) [na:1.8.0_74]
+2016-03-13 08:25:26,956[ost-startStop-1]  [ERROR] [o.a.c.core.StandardContext 5237]     - One or more listeners failed to start. Full details will be found in the appropriate container log file
+2016-03-13 08:25:26,957[ost-startStop-1]  [ERROR] [o.a.c.core.StandardContext 5288]     - Context [/ide] startup failed due to previous errors
+2016-03-13 08:25:26,990[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]        - Deployment of web application archive /opt/eclipse-che-4.0.0-RC11/tomcat/webapps/ide.war has finished in 5,642 ms
+2016-03-13 08:25:26,991[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 1036]       - Deploying web application directory /opt/eclipse-che-4.0.0-RC11/tomcat/webapps/ROOT
+2016-03-13 08:25:27,070[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 1152]       - Deployment of web application directory /opt/eclipse-che-4.0.0-RC11/tomcat/webapps/ROOT has finished in 79 ms
+2016-03-13 08:25:27,077[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 470]  - Starting ProtocolHandler ["http-nio-8080"]
+2016-03-13 08:25:27,086[main]             [INFO ] [o.a.catalina.startup.Catalina 638]   - Server startup in 6589 ms

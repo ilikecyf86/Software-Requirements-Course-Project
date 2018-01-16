@@ -1,0 +1,3 @@
+Bootstrapper uses bash as shell interpreter
+kind/bug severity/P2 team/platform target/che6 status/open-for-dev sprint/current-sprint 
+Currently, bootstrapper uses /bin/bash as the only shell interpreter which makes it impossible to run workspaces that have no bash installed. Bootstrapper should be configured to use shell interpreter from the container just like other agents.

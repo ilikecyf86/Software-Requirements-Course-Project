@@ -1,0 +1,3 @@
+Move plugin-pullrequest from Codenvy to che
+kind/task sprint/next-sprint status/open-for-dev team/platform sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Move plugin-pullrequest from Codenvy to che

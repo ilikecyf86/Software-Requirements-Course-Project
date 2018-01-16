@@ -1,0 +1,3 @@
+Remove explicit workspace snapshot creation from IDE
+kind/enhancement team/platform sprint/next-sprint status/open-for-dev team/enterprise team/platform sprint/current-sprint team/platform sprint/next-sprint team/enterprise sprint/current-sprint 
+Remove UI controls from the machine perspective Machine -> Create Snapshot Remove dialog that asks whether to restore from snapshot or not Deprecate workspace api methods for creating/getting snapshots information So IDE simply uses workspace start method without any additional logic, while server is responsible for restoring workspace when configuration says so and snapshot exists.

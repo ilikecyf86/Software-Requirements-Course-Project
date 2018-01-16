@@ -1,0 +1,3 @@
+There is a blank screen in the Editor after refreshing web page
+kind/bug severity/P2 team/ide 
+Reproduction Steps: Create a workspace with the web-java-spring project; Open in the Editor any file from the External libraries; Refresh the web page. Expected behavior: The opened file is not restored and in the Editor is visible link for creating new project. Observed behavior: The file is not restored but there is a blank screen in the Editor. Che version: 5.21.0-SNAPSHOT OS and version: Fedora 25 Additional information:

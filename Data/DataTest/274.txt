@@ -1,0 +1,3 @@
+.SymbolMap Files
+kind/question 
+Can you please share what is the use of .symbolMaps file which is in WEB-INF/deploy/_app/symbolMaps folder? I cannot see any real use for symbol maps in che application. It is mapped with client java files with FQN. Awaiting for your reply. Please clarify.

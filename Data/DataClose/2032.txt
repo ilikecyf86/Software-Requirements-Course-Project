@@ -1,0 +1,3 @@
+Upload files into workspace?
+kind/question 
+Hi, is ist possible to upload files from the computer into a workspace (imported from git repo)? For example an existing sqlite database for a rails project? I do not want to add this database to the git repo of course. Thanks in advance! Max

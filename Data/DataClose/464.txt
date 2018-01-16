@@ -1,0 +1,3 @@
+[SPI-Branch] Adapt selenium tests from debugger package
+kind/task 
+We should clarify reasons why the tests from debugger package failed. If problem in the tests - this sould be fixed. If problem on SPI - issue should be created.

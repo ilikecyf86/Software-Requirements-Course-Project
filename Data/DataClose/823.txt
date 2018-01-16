@@ -1,0 +1,3 @@
+Startup issues on Windows 10 Pro
+kind/question 
+At an #EclipseCon talk we were recommended to run docker run eclipse/che dir up. This did not work, but the output help (indirectly) suggested to run docker run -it --rm -e DOCKER_HOST=tcp://localhost:2375 eclipse/che dir up (Refs https://twitter.com/TylerJewell/status/877602018478612480) Reproduction Steps: OS and version: Microsoft Windows 10 Pro 10.0.15063 Docker 17.03.1-ce Diagnostics: Cannot connect to the Docker daemon. Is the docker daemon running on this host?

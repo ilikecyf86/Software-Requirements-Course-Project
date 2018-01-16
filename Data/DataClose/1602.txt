@@ -1,0 +1,3 @@
+selected stack does not update samples list (regression)
+kind/bug severity/blocker team/plugin sprint/current-sprint status/open-for-dev status/open-for-dev sprint/current-sprint 
+you I choose JAVA stack it shows me all samples.

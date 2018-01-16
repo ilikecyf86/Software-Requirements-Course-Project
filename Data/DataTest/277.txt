@@ -1,0 +1,3 @@
+Watching for project files external changes
+kind/question 
+Hi! I want to use Che in parallel with another tool that may modify project files source code, say add getters and setter to the class. The problem now is that Che doesn't track that external changes. For example, I have a version 1 of the file opened in Che, then I modify the file with external tool and go back to file editor in Che. Che wil still display version 1 of the file. If I make any change in the file in Che then version 1 + this change will be saved and the changes made by external tool will be lost. Maybe you have a solution for this issue? Thanks.

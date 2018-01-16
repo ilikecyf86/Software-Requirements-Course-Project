@@ -1,0 +1,51 @@
+Workspace runtime response
+kind/task team/platform sprint/next-sprint status/open-for-dev sprint/next-sprint 
+NOTE: The format is NOT backward compatible to the 5.x versions as for current date. Discussion about applying needed. Proposed new format for workspace -> runtime response:   "runtime": {
+     "activeEnv": "default",   **<- reference to one of configured environment**
+     "owner": "userr1h32l7fu3z2uidc",   **<- ID of user who run the workspace**
+     "userToken": "123456789012345567788",  **<- generated token for access**
+     "machines": {  **<- map of running machines**
+       "dev-machine": { **<- machine name (the key)**
+         "servers": { **<- map of servers exposed (either configured as 'server' or provided by agents)**
+           "wsagent": { <- server name (the key) 
+             "url": "https://codenvy.io/37643_node8.codenvy.io/api" **<- server URL**
+           },
+           "wsagent-channel": {
+             "url": "wss://codenvy.io/37643_node8.codenvy.io/api/ws"
+           },
+           "tomcat8": {
+             "url": "http://node8.codenvy.io:37639"
+           },
+           "ssh": {
+             "url": "ssh://node8.codenvy.io:37644"
+           },
+           "codeserver": {
+             "url": "http://node8.codenvy.io:37638"
+           },
+           "terminal": {
+             "url": "wss://codenvy.io/37641_node8.codenvy.io/pty"
+           },
+           "exec": {
+             "url": "https://codenvy.io/37641_node8.codenvy.io/"
+           },
+           "exec-channel": {
+             "url": "wss://codenvy.io/37641_node8.codenvy.io/connect"
+           },
+           "tomcat8-debug": {
+             "url": "http://node8.codenvy.io:37640"
+           },
+           "tcp/37999": { **<- in case if server exposed but not declared unique reference is formed as <protocol>/<port>**
+             "url": "tcp://node8.codenvy.io:37999"
+           }
+         },
+         "properties": { **<- any "specified" and implementation specific properties provided by machine**
+           "projectsRoot": "/projects", **<- for example root dir for projects (actual for dev machine)**
+           "containerId": "058865bd90650443249a284221526e1816efcc6f3e9f972495fb238e9c8a5456", **<- for example container Id (actual for Docker implementation)**
+           "containerName": "/workspacebxleg8nx2ks0of27_machine6alnyqxuzawmhmpw_gazarenkov_dev-machine",
+           "user": "user"
+         }
+       }
+     },
+   },
+ 
+ Needs #4429

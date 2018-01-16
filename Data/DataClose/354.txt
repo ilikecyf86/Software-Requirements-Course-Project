@@ -1,0 +1,3 @@
+[Multi-user] Authentication is not enabled in golang based agents
+kind/bug status/in-progress target/branch team/platform 
+Authentication is not enabled in golang based Che agents, so anyone can access terminal and exec server. To enable it add -enable-auth flag to command line of the agents. Also, we need to add the token to the connection to the terminal since IDE doesn't do this. And check how this works in CLI, IDE. Reproduction Steps: OS and version: Diagnostics:

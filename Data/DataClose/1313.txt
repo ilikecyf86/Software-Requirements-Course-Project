@@ -1,0 +1,3 @@
+The copy-paste function is not work correct in the project explorer (regression)
+kind/bug 
+After copy a file there is only one possibility to paste. Reproduction Steps: Create a project Copy a file and paste it in a folder Try to paste again in a other folder Expected behavior: Copy of the file is on the both folders Observed behavior: The file was copied only in the first folder. Che version: 5.6.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.3 Che install: Docker container

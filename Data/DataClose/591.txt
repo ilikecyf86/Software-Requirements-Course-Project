@@ -1,0 +1,3 @@
+Add hotkeys for the most usefull git actions
+kind/task sprint/next-sprint status/open-for-dev team/enterprise status/analyzing status/open-for-dev status/in-progress status/analyzing status/code-review status/in-progress sprint/next-sprint sprint/current-sprint status/code-review sprint/current-sprint 
+It will be useful to add hotkeys for the most usefull git operations. Also it will be great to have separate group of shortcuts for git operations in the keybinding list. List of shortcuts: git commit Alt + c git push Alt + Shift + c git pull Alt + p git branches Ctrl + b

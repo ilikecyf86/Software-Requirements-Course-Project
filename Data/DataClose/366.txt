@@ -1,0 +1,3 @@
+PostreSQL container doesn't stop gracefully on each stop of multi-user Che
+kind/bug target/branch team/production sprint/current-sprint status/open-for-dev status/in-progress status/open-for-dev target/branch status/in-progress 
+When multi-user Che is restarted it takes 3 minutes to stop PosgreSQL container. After 3 minutes it is killed by Docker compose. Docker Compose should be able to stop it gracefully. Reproduction Steps: Start multi-user Che. Stop multi-user Che. OS and version: Diagnostics:

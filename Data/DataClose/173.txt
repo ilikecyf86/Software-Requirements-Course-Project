@@ -1,0 +1,3 @@
+Investigate reasons of fails selenium tests which runs on OCP platform
+kind/task status/in-progress team/production sprint/current-sprint status/in-progress 
+We have a big regression in the Che6 branch that runs in the OCP platform. The Current state of OCP is 58 % (https://ci.codenvycorp.com/view/qa/job/che-integration-tests-che6-ocp/13/Selenium_tests_report/) , for example Che6 (Docker) 91 % (https://ci.codenvycorp.com/view/qa/job/che-integration-tests-che6/71/Selenium_tests_report/) We need investigate the reasons of fails.

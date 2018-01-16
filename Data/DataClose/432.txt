@@ -1,0 +1,3 @@
+Memory leaks on Chrome after saving files.
+kind/question 
+This is not 100% (but highly frequency) reproduction to me for now. My workspace is hang up after saving action. CPU usage becomes mostly 100%. Memory usage increases from 300M to over 800MB. Reproduction Steps: Open Workspace Open text. Edit it Save it. OS and version: Browser Chrome : 60.0.3112.114（Official Build） （64 bit） Che Version :5.18.0-SNAPSHOT Revision :20d596648cb1bf4b Build Time :2017-09-15 16:12:46 May not be specific versions. I got this error for a few weeks. Diagnostics: Some additional info: It got this issue even if I set auto-save off. My Che server is on my cloud (not intranet).

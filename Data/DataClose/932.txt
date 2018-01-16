@@ -1,0 +1,3 @@
+Change title of tab
+kind/question 
+Hello, I'm currently trying to change the title of a tab (CHE 5.10.0). I have for example this project: and when I open the file README, I got this: Is there a simple way to change the title of the tab without modifying the existing CHE source code, with an extension for example ?

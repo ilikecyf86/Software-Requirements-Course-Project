@@ -1,0 +1,3 @@
+[Multiuser] The organizations list of the system administrator includes sub-organizations
+kind/bug severity/P2 team/plugin selenium/failure 
+Reproduction Steps: Login in CHE as system admin. Create a root organization. Create a new sub-organization in the root organization. Open the Organizations list. Expected behavior: In the Organizations list visible only the root organization Observed behavior: In the Organizations list the sub-organization visible too Che version: 5.21.0-SNAPSHOT Multiuser OS and version: Fedora 25 Failed test: SystemAdminOrganizationTest Additional information:

@@ -1,0 +1,3 @@
+OpenShift Container Platform - Keycloak
+kind/question 
+Description I got Che working successfully with OpenShift without authentication. How do I get keycloak authentication working with Che on OpenShift Origin? I set the following environment variables for Che pod but che dashboard just opens without being redirected to keycloak authentication page. CHE_MULTIUSER=true CHE_KEYCLOAK_AUTH__SERVER__URL=http://keycloak-keycloak.devcomb.com/auth CHE_KEYCLOAK_DISABLED=false

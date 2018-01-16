@@ -1,0 +1,3 @@
+Custom stack for a custom assembly
+kind/question 
+Hello, I want to have a custom stack for a custom CHE assembly. For the moment I have just tried to remove all defined Stacks and only keep the Default Java Stack with JDK 8, Maven and Tomcat. Later, I will define my own Stack and only keep this one. I tried to do what was done here but without success. The source code of my custom CHE assembly can be found here. Can you please give more details on how to do it ?

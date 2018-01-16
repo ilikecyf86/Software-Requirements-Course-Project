@@ -1,0 +1,3 @@
+After rename project , default commands not work
+kind/bug severity/P2 
+Reproduction Steps: Go to the spring project Rename project Try to run some command where project name is the part of the command Expected Behavior : After rename project , default commands will be works without any updates Observed Behavior : After rename project some default commands do not work. Attachment :

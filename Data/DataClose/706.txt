@@ -1,0 +1,3 @@
+Implement URLRewriter for Docker infrastructure
+kind/task target/branch team/platform 
+Related to SPI branch only. We replaced the concept of ServerEvaluationStrategy with URLRewriter in spi branch. Now URLRewriter impl doesn't change URLs at all. We need to create impl that can cover Docker infra needs, such as local Linux, remote Linux, Windows, Mac environments.

@@ -1,0 +1,3 @@
+Update the 'InitializeAndDeleteLocalRepositoryTest'
+kind/task status/in-progress target/che6 team/production status/code-review status/in-progress 
+Description Split the selenium test 'InitializeAndDeleteLocalRepositoryTest' on two test methods Add a test case when delete local repository Related to issue: #7562

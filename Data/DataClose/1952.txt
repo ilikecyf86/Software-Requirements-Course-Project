@@ -1,0 +1,3 @@
+Replace LSAPI wtih LSP4J
+kind/enhancement 
+The lsapi has been deprecated in favour of LSP4J and is no longer supported and there are few bugs such as the one mentioned on #1802 that affects Che.

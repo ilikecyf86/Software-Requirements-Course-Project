@@ -1,0 +1,110 @@
+Cann't open file with LS support
+kind/question 
+@TylerJewell @svenefftinge I try to launch the che LSP application in eclipse che 5.0.1 and 5.3.0-SNAPSHOT separately as Release Notes:Eclipse Che 5.0 mentioned,but both can not open file with LS support(like json,c#,php),which is always holding on the page showing "Initialzing Language Server for Json" for example So could you pls help to have a look at that if I missing some other operation based on below running steps?How can I use che LSP application successfully? Reproduction Steps: Run eclipse che by docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /che/data/:/data eclipse/che-cli:nightly start Add workspace with blank stack and confige its Runtime to enable the Dev-MACHINE Angents language server (like json,c#,php LSP) Create project like C#.NET Core,PHP,open file with LS support(like json,cs,php),it will be always holding on the page showing "Initialzing Language Server for Json" for example OS and version: Docker version 1.13.0 Linux platform as Centos7 Diagnostics: When running workspace ,the dev-machine console some errors as below, 2017-02-08 01:38:07,145[ost-startStop-1]  [INFO ] [o.e.c.a.p.s.WorkspaceHolder 59]      - Workspace ID: workspacecvt5dbbd0q024qh3
+2017-02-08 01:38:07,146[ost-startStop-1]  [INFO ] [o.e.c.a.p.s.WorkspaceHolder 60]      - API Endpoint: http://che-host:8080/wsmaster/api
+2017-02-08 01:38:07,147[ost-startStop-1]  [INFO ] [o.e.c.a.p.s.WorkspaceHolder 61]      - User Token  : true
+Wed Feb 08 01:38:08 UTC 2017 - [localhost-startStop-1] Product-specified preferences called before plugin is started
+2017-02-08 01:38:08,703[s polled Thread]  [INFO ] [o.e.c.p.m.server.rmi.RmiClient 130]  - Port/Name:51080/MavenRemoteServerImpl10bcbbc7
+ 
+2017-02-08 01:38:10,580[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 975]        - Deployment of web application archive /home/user/che/ws-agent/webapps/ROOT.war has finished in 13,054 ms
+2017-02-08 01:38:10,585[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 488]  - Starting ProtocolHandler ["http-nio-4401"]
+2017-02-08 01:38:10,592[main]             [INFO ] [o.a.catalina.startup.Catalina 642]   - Server startup in 13244 ms
+2017-02-08 01:38:10,795[nio-4401-exec-2]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-02-08 01:38:10,800[nio-4401-exec-1]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-02-08 01:38:10,801[nio-4401-exec-3]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+[STDOUT] Ign:1 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial InRelease
+[STDOUT] Ign:2 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial Release
+[STDOUT] Hit:3 http://ppa.launchpad.net/git-core/ppa/ubuntu xenial InRelease
+[STDOUT] Ign:4 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main amd64 Packages
+[STDOUT] Get:5 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
+[STDOUT] Ign:6 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main all Packages
+[STDOUT] Hit:7 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu xenial InRelease
+[STDOUT] Ign:4 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main amd64 Packages
+[STDOUT] Ign:6 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main all Packages
+[STDOUT] Ign:4 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main amd64 Packages
+[STDOUT] Ign:6 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main all Packages
+[STDOUT] Ign:4 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main amd64 Packages
+[STDOUT] Get:8 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [102 kB]
+[STDOUT] Get:9 http://archive.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
+[STDOUT] Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [592 kB]
+[STDOUT] Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [489 kB]
+[STDOUT] Ign:6 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main all Packages
+[STDOUT] Ign:4 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main amd64 Packages
+[STDOUT] Ign:6 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main all Packages
+[STDOUT] Err:4 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main amd64 Packages
+[STDOUT]   server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none
+[STDOUT] Ign:6 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main all Packages
+[STDOUT] Fetched 1,532 kB in 17s (86.1 kB/s)
+[STDOUT] Reading package lists...
+[STDERR] W: The repository 'https://apt-mo.trafficmanager.net/repos/dotnet-release xenial Release' does not have a Release file.
+[STDERR] E: Failed to fetch https://apt-mo.trafficmanager.net/repos/dotnet-release/dists/xenial/main/binary-amd64/Packages  server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none
+[STDERR] E: Some index files failed to download. They have been ignored, or old ones used instead.
+[STDOUT] Reading package lists...
+[STDOUT] Building dependency tree...
+[STDOUT] Reading state information...
+[STDOUT] apt-transport-https is already the newest version (1.2.19).
+[STDOUT] 0 upgraded, 0 newly installed, 0 to remove and 11 not upgraded.
+[STDOUT] Executing: /tmp/tmp.KfVJBu6V1R/gpg.1.sh --keyserver
+[STDOUT] apt-mo.trafficmanager.net
+[STDOUT] --recv-keys
+[STDOUT] 417A0893
+[STDERR] gpg: requesting key 417A0893 from hkp server apt-mo.trafficmanager.net
+[STDERR] gpg: key 417A0893: "MS Open Tech " not changed
+[STDERR] gpg: Total number processed: 1
+[STDERR] gpg:              unchanged: 1
+[STDOUT] Ign:1 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial InRelease
+[STDOUT] Ign:2 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial Release
+[STDOUT] Ign:3 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main amd64 Packages
+[STDOUT] Hit:4 http://ppa.launchpad.net/git-core/ppa/ubuntu xenial InRelease
+[STDOUT] Get:5 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
+[STDOUT] Ign:6 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main all Packages
+[STDOUT] Ign:3 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main amd64 Packages
+[STDOUT] Hit:7 http://ppa.launchpad.net/openjdk-r/ppa/ubuntu xenial InRelease
+[STDOUT] Hit:8 http://archive.ubuntu.com/ubuntu xenial-updates InRelease
+[STDOUT] Ign:6 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main all Packages
+[STDOUT] Ign:3 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main amd64 Packages
+[STDOUT] Ign:6 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main all Packages
+[STDOUT] Get:9 http://archive.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
+[STDOUT] Ign:3 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main amd64 Packages
+[STDOUT] Ign:6 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main all Packages
+[STDOUT] Ign:3 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main amd64 Packages
+[STDOUT] Ign:6 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main all Packages
+[STDOUT] Err:3 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main amd64 Packages
+[STDOUT]   server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none
+[STDOUT] Ign:6 https://apt-mo.trafficmanager.net/repos/dotnet-release xenial/main all Packages
+[STDOUT] Fetched 349 kB in 6s (52.8 kB/s)
+[STDOUT] Reading package lists...
+[STDERR] W: The repository 'https://apt-mo.trafficmanager.net/repos/dotnet-release xenial Release' does not have a Release file.
+[STDERR] E: Failed to fetch https://apt-mo.trafficmanager.net/repos/dotnet-release/dists/xenial/main/binary-amd64/Packages  server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none
+[STDERR] E: Some index files failed to download. They have been ignored, or old ones used instead.
+[STDOUT] Reading package lists...
+[STDOUT] Building dependency tree...
+[STDOUT] Reading state information...
+[STDERR] E: Unable to locate package dotnet-dev-1.0.0-preview2-003121
+[STDERR] E: Couldn't find any package by glob 'dotnet-dev-1.0.0-preview2-003121'
+[STDERR] E: Couldn't find any package by regex 'dotnet-dev-1.0.0-preview2-003121'
+[STDERR] 
+[STDERR] gzip: stdin: unexpected end of file
+[STDERR] tar: Child returned status 1
+[STDERR] tar: Error is not recoverable: exiting now
+[STDERR] 
+[STDERR] gzip: stdin: unexpected end of file
+[STDERR] tar: Child returned status 1
+[STDERR] tar: Error is not recoverable: exiting now
+[STDERR] 
+[STDERR] gzip: stdin: unexpected end of file
+[STDERR] tar: Child returned status 1
+[STDERR] tar: Error is not recoverable: exiting now
+[STDERR] 
+[STDERR] gzip: stdin: unexpected end of file
+[STDERR] tar: Child returned status 1
+[STDERR] tar: Error is not recoverable: exiting now
+[STDERR] 
+[STDERR] gzip: stdin: unexpected end of file
+[STDERR] tar: Child returned status 1
+[STDERR] tar: Error is not recoverable: exiting now
+[STDERR] sudo: pip3: command not found
+[STDOUT] 2017/02/08 01:38:49 A new channel with id 'channel-1' successfully opened
+2017-02-08 01:38:49,928[nio-4401-exec-3]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 49]   - Web socket session opened
+2017-02-08 01:38:49,929[nio-4401-exec-3]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 50]   - Endpoint: 1790797663
+[STDOUT] New terminal successfully initialized.

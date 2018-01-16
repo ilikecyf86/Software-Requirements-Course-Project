@@ -1,0 +1,3 @@
+Cannot create custom stack from Dashboard
+kind/bug 
+Steps to reproduce: Go to the Dashboard -> Click New Workspace -> Select Custom Stack and try to apply your stack. Wrong: the stack has not applied, in fact - has been used: codenvy/node recipe (first selected)

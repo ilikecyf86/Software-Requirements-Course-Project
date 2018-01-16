@@ -1,0 +1,3 @@
+changed the property of CHE_PREDEFINED_STACKS_RELOAD__ON__START to true in che.env
+
+Reproduction Steps: OS and version: Diagnostics:

@@ -1,0 +1,3 @@
+Find Project Symbol does not work
+kind/bug severity/P2 team/ide level/intermediate sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+Find Project Symbol popup does not work. Uninformative error messages are appeared in developer console when typing.

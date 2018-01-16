@@ -1,0 +1,3 @@
+[CHE6 branch] Macros in commands editor does not returns expected output
+kind/bug severity/P2 selenium/failure team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+Reproduction Steps Run java stack Go to the commands explorer and create new command Clear command editor and type "echo ${editor.current.project.type}" Click on "Run" button; Pay attention to terminal Expected behavior: The current type of project will be displayed Observed behavior: The empty row is displayed OS and version: Che(Che6 brunch) 6.0.0-M1 ; Chrome 59.0 ; Fedora 25 Additional information: Related selenium test: AutocompleteCommandsEditorTest

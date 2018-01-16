@@ -1,0 +1,3 @@
+Provide auth token with requests to the machines
+kind/task team/ide target/branch sprint/next-sprint sprint/next-sprint 
+In CHE 5 IDE links to the machines were provided by Workspace API with auth tokens as query parameters. In CHE 6 IDE we need to add auth token, provided by Workspace API, for sending authenticated requests to the machines. Related to Che6 branch only.

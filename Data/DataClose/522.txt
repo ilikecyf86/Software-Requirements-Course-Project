@@ -1,0 +1,3 @@
+Feature to add R script language
+kind/question 
+Hello.. How to add R language based workspace and ide centos7 64 bit

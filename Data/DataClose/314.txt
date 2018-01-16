@@ -1,0 +1,3 @@
+Improve editor loading mode
+kind/enhancement team/plugin 
+Description Improve editor placeholder for loading mode make it as on screenshot add animation Is needed for #5231

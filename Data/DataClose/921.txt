@@ -1,0 +1,3 @@
+Adapt existing selenium tests for new workspace creation
+kind/task sprint/next-sprint status/open-for-dev team/plugin sprint/current-sprint sprint/next-sprint status/open-for-dev sprint/current-sprint 
+The workspace creation is used in existing selenium tests - such tests should be listed, adapted - to ensure product is properly testable after merge of the feature.

@@ -1,0 +1,4 @@
+'conditional binary operator expected' error
+kind/bug 
+che/assembly-main/src/assembly/bin/che.sh Specifically line #341 if [[ "${LINUX_GROUPS}" =~ "docker" ]] ; then
+ It should be "==" (comparison symbol), not "=~" (Perl's regex?). When I ran the script, it threw "line 342: conditional binary operator expected" error. I ran the script in Windows 10. Changed the symbol myself and the error no longer happens. Let me know if you need more information or have comments on this.

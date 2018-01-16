@@ -1,0 +1,3 @@
+Implement environment provisioning in openshift spi
+kind/enhancement status/in-progress kind/task kind/enhancement 
+Openshift spi implementation doesn't have full environment provisioning like docker implementation does. Now it adds only CHE_WORKSPACE_ID and CHE_API environment variables to each pod It is needed to add servers(missing services and routes objects) and environment variables according to configured installers.

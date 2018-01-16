@@ -1,0 +1,12 @@
+Consider Adding Paramaterized Custom Commands
+kind/enhancement team/ide 
+Background Some development environments receive commands, especially for code generation. For example, in Rails, in order to generate a model, you use this command: rails generate model NAME [field[:type][:index] field[:type][:index]] [options] In the case "NAME" is a required field. This command modifies multiple files. There are many such commands in Rails, which are necessary to use Rails effectively. Another example is generating a project with Revel, where the user should typically specify a path that includes a repository location and a new application name, generally using their github account name to set up a typical Go workspace. The Request: We would like to be able to make our development containers easy to use in Che by wrapping obscure or difficult to discover and use commands in Che commands that appear in the IDE. However, the IDE does not currently support passing arguments to commands For example, we could provide JSON such as:     "commands": [
+      {
+        "name": "Create Project",
+        "prompt": "Provide your github username and a name for your new project",
+        "inputs", [{"text":"Github Id","name":"ghid"}, {"text":"Project Name","name":"proj"}]
+        "type": "custom",
+        "commandLine": "revel new {{ghid}}/{{proj}} && revel run {{ghid}}/{{proj}}",
+        "attributes": {}
+      }]
+ When run the IDE could pop open a dialog that collects the user input and runs the command (which in this specific case would create and run a properly named revel project). Some thought would need to be put into handling the user canceling, and also error handling. We could make development frameworks much easier to learn with such functionality.

@@ -1,0 +1,3 @@
+Proper handle the workspace snapshot creation state
+kind/enhancement team/plugin sprint/next-sprint status/info-needed sprint/current-sprint sprint/next-sprint sprint/next-sprint sprint/current-sprint sprint/current-sprint sprint/next-sprint status/in-progress status/info-needed sprint/current-sprint 
+When workspace is in the snapshot creation state - the UI should proper handle this state - show the info about the process to user and disable workspace interaction.

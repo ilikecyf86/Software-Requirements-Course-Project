@@ -1,0 +1,3 @@
+OpenShift infrastructure doesn't work on Minishift because of dependency on Docker runtime
+kind/bug team/platform kind/task kind/bug 
+Related to SPI branch only. In SPI branch both OpenShift and Docker infrastructures are working. On MiniShift Docker infra tries to reach Docker API and fails. This prevents us from testing OpenShift infrastructure on MiniShift. So, we need some way to Disable Docker infrastructure in this case. Probably, it should be done by some property. Note that it is supposed to be a temporary solution until we realize the proper way to fix it.

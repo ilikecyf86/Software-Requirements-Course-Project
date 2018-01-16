@@ -1,0 +1,3 @@
+'There are no projects' widget is absent after remove project
+kind/bug team/ide severity/P2 
+Description 'There are no projects' widget is absent in project tree when user removes project and there are no any projects.

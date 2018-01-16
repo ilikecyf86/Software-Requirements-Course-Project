@@ -1,0 +1,3 @@
+Make loading default stacks more obvious
+kind/enhancement status/code-review status/code-review 
+Now the stacks.json rewrites the existing stacks each time the user restarts che server. In this case - user makes his changes to existing stacks, restarts che and looses the changes. It should be better and more clear for user to load stacks.json only on the first che start - to fill database with predefined values.

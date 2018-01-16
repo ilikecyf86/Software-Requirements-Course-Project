@@ -1,0 +1,3 @@
+[SPI] Remove snapshot functionality from IDE
+kind/task team/ide sprint/next-sprint target/branch sprint/current-sprint sprint/next-sprint 
+We have an issue to remove the shapshot functionality in SPI branch. In this issue, we should remove any code related to snapshot functionality from the IDE client. Reproduction Steps OS and version: Diagnostics:

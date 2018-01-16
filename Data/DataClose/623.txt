@@ -1,0 +1,3 @@
+[ERROR] Error occurs while initializing command...
+kind/question 
+Diagnostics: I started Eclipse Che and did create a workspace, but when i tried to create a project it downloads and then prints: [ERROR] Error occurs while initializing command [/bin/sh, -c, trap '[ -z "$(jobs -p)" ] || kill $(jobs -p); [ -e /tmp/docker-exec-8.pid ] && rm /tmp/docker-exec-8.pid' EXIT; echo $$>/tmp/docker-exec-8.pid; # OS and version: Raspberry Pi Raspbian(up-to-date) I'm NOT using docker because there isn't a version for Raspberry! Reproduction Steps: I don't know if others have this problem, but at me it occurs when i just do that written above.

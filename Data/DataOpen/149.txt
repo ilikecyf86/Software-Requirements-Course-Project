@@ -1,0 +1,3 @@
+Add warnings to workspace when volumes config may prevent workspace start
+kind/enhancement status/open-for-dev team/platform 
+Description PR #7446 adds volumes to machine configuration. But in some cases, volumes configuration may lead to failure of workspace start. In particular, this is actual for the OpenShift environment. For example, volumes declared as shared between machines from different pods may lead to runtime start failure in most cases. Whether start will fail or not depends on read-write access settings of OpenShift volumes infrastructure, pods scheduling. So we should add warnings that would clarify to the user that his configuration may not be stable. Reproduction Steps OS and version: Diagnostics:

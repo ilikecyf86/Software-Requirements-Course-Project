@@ -1,0 +1,3 @@
+che-core-api-auth contains mix of different purpose classes.
+kind/task team/platform status/open-for-dev status/blocked status/open-for-dev status/blocked 
+This module contains classes for ws master AuthenticationService OAuthAuthenticationService - OAuth2. OAuthAuthenticationService - OAuth1. classes for ws-agent server side 1.OAuthAuthenticatorProvider, RemoteOAuthTokenProvider 2.OAuthAuthorizationHeaderProvider RemoteOAuthAuthorizationHeaderProvider ws-master <-> ide - DTO ws-master <-> ws-agent - DTO OAuth2.gwt.xml https://github.com/eclipse/che/blob/master/ide/commons-gwt/src/main/java/org/eclipse/che/security/oauth/JsOAuthWindow.java#L18-L18 We need to organise source code by separate modules according to their logical structure

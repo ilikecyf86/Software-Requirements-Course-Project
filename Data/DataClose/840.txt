@@ -1,0 +1,3 @@
+Rework server pinging to make it more interactive and fast
+kind/task status/in-progress status/in-progress 
+Now pinging of the servers is sequential and slow. We should rework it to allow a really interactive load of Workspace and speed up the whole process.

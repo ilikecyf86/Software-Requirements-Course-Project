@@ -1,0 +1,3 @@
+Do not show unclarified exceptions in the dev-machine console
+kind/bug severity/P2 team/ide 
+Reproduction Steps: A user can watch many exceptions that can be confused. The steps to reproduce is described in the issue: #6947. We should display this errors in other place

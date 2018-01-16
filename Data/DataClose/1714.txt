@@ -1,0 +1,3 @@
+Provide documentation for adding a stack to the default Che assembly
+kind/bug 
+Currently the docs are here: https://github.com/codenvy/che-docs/blob/master/src/main/_docs/workspace-administration/ws-stacks.md The section "Adding Stacks to the Che Default Assembly" currently just says "//TODO". The previous documentation at [1] instructs adding the stack to [2], however doing this has no effect and in fact this file can be removed completely and the list of default stacks in Che remains unchanged. [1] https://eclipse-che.readme.io/docs/stacks#adding-stacks-to-the-che-default-assembly [2] https://github.com/eclipse/che/blob/master/ide/che-core-ide-stacks/src/main/resources/stacks.json

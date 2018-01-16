@@ -1,0 +1,3 @@
+Files and folders are not visible in the Project Explorer if in the Editor opened a file from root of a project folder
+kind/bug status/open-for-dev severity/P2 sprint/next-sprint team/plugin sprint/current-sprint sprint/next-sprint severity/P1 severity/P2 sprint/current-sprint 
+Reproduction Steps: Create a workspace from Java stack with web-java-spring project. Open in the Editor README.md or pom.xml file. Refresh the page Observed behavior: After refreshing in the Project Explorer visible only files which opened in the Editor. This bug happens if open a file from root of a project folder. Che version: 5.7.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.3 Che install: Docker container

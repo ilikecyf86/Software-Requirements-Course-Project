@@ -1,0 +1,3 @@
+Improve experience when adding projects to a workspace
+kind/task team/plugin status/in-progress status/code-review status/in-progress status/code-review 
+With the new creation flow the UX of adding new projects is not clear enough. When the user is adding a project, he would select it from the list of templates or repo, but he might easily forgot (or missing) to click on "Add" button to validate the action. I propose the following improvements: We don't automatically show the popover to add project. We'll require the user to click on the blue button "Add or import project" We change the color of the primary action in the popover to be more present and avoid the user to miss it. We would use the primary blue button for the "Add".

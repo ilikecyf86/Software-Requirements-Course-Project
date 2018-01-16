@@ -1,0 +1,3 @@
+when create a c-simple-console project,the main function has no return value which is not correct
+kind/question 
+Description when create a c-simple-console project,the main function has no return value which is not correct Reproduction Steps create a c-simple-console c project from workspace OS and version: ubuntu 16.04.3 Diagnostics:

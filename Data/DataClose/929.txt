@@ -1,0 +1,3 @@
+How To Start Eclipse Che 5.10 or onwards in a VM Environment
+kind/question 
+Trying to startup Eclipse Che Version 5.10 or onwards in Docker installed in a VM Environment using the command below: docker run -it --rm -e CHE_PORT=18080 -v /var/run/docker.sock:/var/run/docker.sock -v ~/eclipse-che:/data eclipse/che start I manage to startup Eclipse Che but there is an issue when creating a workspace. OS and version: VM OS Version: Linux version 3.10.0-514.16.1.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-11) (GCC) ) #1 SMP Wed Apr 12 15:04:24 UTC 2017

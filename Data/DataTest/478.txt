@@ -1,0 +1,3 @@
+CHE-499Make Dashboard compatible with CHE-306
+
+Make Dashboard compatible with CHE-306

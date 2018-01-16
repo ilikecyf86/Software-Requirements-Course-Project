@@ -1,0 +1,3 @@
+Factory Text Overlap On Configure Action
+kind/bug severity/P1 team/plugin status/code-review status/code-review 
+Codenvy 5.9.0

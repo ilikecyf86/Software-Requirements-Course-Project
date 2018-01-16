@@ -1,0 +1,3 @@
+Project explorer cannot open any project if `WORKDIR` is not set to `/projects/`
+kind/bug severity/P1 team/ide status/in-progress status/code-review status/in-progress 
+For any custom stack that has a docker image with WORKDIR not set to /projects Project explorer cannot access expand projects. Reproduction Steps: Create a new workspace based on a custom docker image with WORKDIR /home/user After importing any project, the project has red cross, we can browse the project files from the terminal, we cannot browse project from explorer. Expanding a project, import project popup appears. we can see http 500 error code network errors when accessing to

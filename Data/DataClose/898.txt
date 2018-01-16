@@ -1,0 +1,3 @@
+Need help to be able to checkin into Perforce via Eclipse CHE editor
+kind/question 
+HI, I wanted to know how I can achieve being able to checkin code into Perforce via Eclipse CHE editor. OS and version: Windows 10 Thanks, Kevin

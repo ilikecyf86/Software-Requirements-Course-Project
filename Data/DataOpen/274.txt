@@ -1,0 +1,3 @@
+No code validation for C# files after workspace restart
+kind/bug team/ide severity/P2 
+Steps to reproduce: Start a .NET workspace with a sample project Open .cs file, ensure error marking is there. Stop a workspace Start a workspace. No code validation in the file. Refreshing the page fixes it.

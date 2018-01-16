@@ -1,0 +1,3 @@
+Javascript file not refreshed
+kind/question 
+Hi, i'm injecting native javascript code from javascript file, when i make changes in the javascript file and compile with superdevmode, it load the last javascript file loaded and don't take the changes !!! how can i load every time the last javascript file ???

@@ -1,0 +1,5 @@
+Add ability to create test workspaces for the non-default user
+kind/task team/production status/in-progress status/code-review status/in-progress status/code-review 
+We have describe owner of test workspace by usdin user of annotation @injecttestworkspace like the follow:   @InjectTestWorkspace(user = "editorsettingstestuser@some.email")
+  private TestWorkspace testWorkspace;
+ But now TestWorkspaceServiceClient class doesn't take into account non-default users and because of this some selenium tests are failing: com.codenvy.selenium.workspaces.CheckStoppingWsByTimeoutTest com.codenvy.selenium.preferences.EditorSettingsTest Also, we need to fix this issue to prevent creation of odd workspaces which leads to an error "You are not allowed to start more workspaces." when running selenium tests on nightly.codenvy-stg.com (an issue codenvy/codenvy#2397).

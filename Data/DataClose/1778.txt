@@ -1,0 +1,13 @@
+CLI upgrade command does not work
+kind/bug status/code-review status/code-review 
+I wanted to test upgrade from 5.0.0-M8 to 5.0.0 tag but seems upgrade does not work. steps to reproduce: run 5.0.0-M8 tag docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock \
+                    -v /Users/roman/development/codenvy_projects/.codenvy:/codenvy \
+                    -v /Users/roman/development/codenvy_projects/.codenvy/backup:/backup \
+                    codenvy/cli:5.0.0-M8 start
+ I;ve tried to follow https://github.com/codenvy/codenvy-docs/blob/master/src/main/_docs/admin-guide/admin-cli.md and I've executed following command: docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock \
+                    -v /Users/roman/development/codenvy_projects/.codenvy:/data \
+                    -v /Users/roman/development/codenvy_projects/.codenvy/backup:/backup \
+                    codenvy/cli:5.0.0 upgrade
+ this command failed with: INFO: (codenvy cli): Loading cli...
+INFO: (codenvy upgrade): codenvy is not installed or configured. Nothing to upgrade.
+ @TylerJewell I think this is a critical issue.

@@ -1,0 +1,3 @@
+Arm7 Remote Debug
+kind/bug 
+Not sure if I got all the debug setting right but it's not stopping at the markers. Trying a simple console java helloworld. The debugger attaches to host it seems. java -jar -Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y ${current.project.path}/target/*.jar pom file. 4.0.0 org.eclipse.che.examples console-java-simple jar 1.0-SNAPSHOT hello-app http://maven.apache.org junit junit 3.8.1 test org.apache.maven.plugins maven-compiler-plugin 2.4 true source org.apache.maven.plugins maven-jar-plugin 2.4 true lib/ org.eclipse.che.examples.HelloWorld

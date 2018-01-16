@@ -1,0 +1,3 @@
+Implement supporting of compose based recipes by OpenShift infrastructure
+kind/task status/open-for-dev target/che6 team/platform sprint/current-sprint sprint/current-sprint 
+Description Implement supporting of compose based recipes by OpenShift infrastructure.

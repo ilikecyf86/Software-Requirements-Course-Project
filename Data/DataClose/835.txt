@@ -1,0 +1,3 @@
+Use Keycloak token to authenticate request in DefaultHttpJsonRequestFactory from wsmaster to wsmaster.
+kind/task status/open-for-dev team/platform 
+In Eclipse Che in many places on server side we use DefaultHttpJsonRequestFactory to make requests to our api. To be able to authenticate this request we have add keycloak token and when later we should restore user identity according to this token

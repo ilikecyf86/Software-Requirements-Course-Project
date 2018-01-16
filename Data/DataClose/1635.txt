@@ -1,0 +1,44 @@
+Nightly che-cli did not auto detect IP
+kind/bug severity/P1 status/pending-merge status/pending-merge 
+Failed to auto detect it, even though there's nothing special in my Fedora's network config - it's just eth0: INFO: (che cli): Checking network... (hint: '--fast' skips nightly, version, network, and preflight checks)
+INFO: (che cli): Pulling image alpine:3.4
+INFO: (che cli): Pulling image eclipse/che-ip:nightly
+INFO: (che cli): Loading cli...
+INFO: Welcome to Eclipse Che!
+INFO:
+INFO: We did not auto-detect a valid HOST or IP address.
+INFO: Pass CHE_HOST with your hostname or IP address.
+INFO:
+INFO: Rerun the CLI:
+INFO:   docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock
+INFO:                       -v <local-path>:/data
+INFO:                       -e CHE_HOST=<your-ip-or-host>
+INFO:                          eclipse/che-cli:nightly start
+[root@fedora-4gb-fra1-01 ~]# ifconfig
+docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 0.0.0.0
+        inet6 fe80::42:fdff:fe58:2b65  prefixlen 64  scopeid 0x20<link>
+        ether 02:42:fd:58:2b:65  txqueuelen 0  (Ethernet)
+        RX packets 17  bytes 1135 (1.1 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 17  bytes 1933 (1.8 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 138.68.108.158  netmask 255.255.240.0  broadcast 138.68.111.255
+        ether 06:2b:49:cd:a7:c2  txqueuelen 1000  (Ethernet)
+        RX packets 82195  bytes 120643208 (115.0 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 13329  bytes 971120 (948.3 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@fedora-4gb-fra1-01 ~]#

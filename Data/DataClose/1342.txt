@@ -1,0 +1,3 @@
+Configure Stack section on factory page does nothing
+kind/bug status/open-for-dev team/plugin sprint/current-sprint status/open-for-dev sprint/current-sprint 
+Reproduction Steps: Go to any factory details page. Try to use "Configure Stack" section - switching radio buttons, clicking Validate button. Nothing happens.

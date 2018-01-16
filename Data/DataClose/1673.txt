@@ -1,0 +1,20 @@
+Allow combining multiple stacks to a new one
+kind/enhancement 
+Please add support for combining multiple stacks to a new one on the http://eclipse-che:8080/dashboard/#/create-project project dashboard. Since the custom stack documentation seems to be not available for now (at least the link in nightly points to a site telling me that) and I could easily put together what I need by just picking multiple items from the stack library, this seems like a natural thing to offer for people who have custom needs but which aren't deeply familiar with eclipse che just yet - at least from a usability perspective, I'm not sure how technically feasible it is. Reproduction Steps: Start fresh eclipse che install with empty data folder Go to project dashboard Try to somehow choose multiple stacks to be combined to a new one (what I observed: I see no obvious way on how to do it) Che version: Your CLI version is 'nightly'. Your installed version is 'nightly'. OS and version: Fedora 25 / Linux cyberman 4.9.3-200.fc25.x86_64 #1 SMP Fri Jan 13 01:01:13 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux Docker version: Client:
+ Version:      1.13.0
+ API version:  1.25
+ Go version:   go1.7.3
+ Git commit:   49bf474
+ Built:        Tue Jan 17 09:58:06 2017
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.13.0
+ API version:  1.25 (minimum version 1.12)
+ Go version:   go1.7.3
+ Git commit:   49bf474
+ Built:        Tue Jan 17 09:58:06 2017
+ OS/Arch:      linux/amd64
+ Experimental: false
+
+ Che cli.log output: Probably not relevant

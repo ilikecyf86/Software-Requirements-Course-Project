@@ -1,0 +1,3 @@
+Create selenium test to verify behavior of IDE with terminals during startup of a workspace
+kind/task team/production status/open-for-dev 
+Selenium test should check that there is proper output in terminals of Che, and Che operates with terminals properly during the startup of the workspace.

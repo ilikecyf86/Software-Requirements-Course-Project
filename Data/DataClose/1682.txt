@@ -1,0 +1,3 @@
+Help securing the websocket calls from the browser?
+kind/question 
+I'm trying to secure my own IDE on the cloud behind nginx and looking for any ideas on doing so. Currently it appears that the browser code is trying to connect through to the workspace on the 30XXX port using "ws://" instead of "wss://". I'm also relatively sure I haven't set up nginx to properly proxy those connections. I'm wondering if there is a proxied mode or something I can use to fix the websocket calls or if there is some other approach.

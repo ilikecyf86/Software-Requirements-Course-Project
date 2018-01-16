@@ -1,0 +1,3 @@
+Make a workspace status circle more informative and contrasted in Dashboard
+kind/enhancement team/plugin 
+Description In dashboard we can observe a workspace status: run workspace: stopped workspace: The problem is to hard recognize this status for example for people with protanopia. Possible solution is to make it more colorized and contrasted or use another glyphs to display the workspace status.

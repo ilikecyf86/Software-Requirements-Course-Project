@@ -1,0 +1,3 @@
+[CHE 6] There is the "Update workspace failed" error while adding a project to workspace
+kind/bug severity/P2 team/plugin selenium/failure sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Reproduction Steps: Try to add a new project from the workspace details Expected behavior: The workspace restarted and the project added Observed behavior: There is the "Update workspace failed" error. OS and version: Che(Che6 branch) 6.0.0-M2; Chrome 59.0; Fedora 25 Related selenium test: WorkspaceDetailsTest

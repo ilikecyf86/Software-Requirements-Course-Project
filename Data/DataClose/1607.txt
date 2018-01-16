@@ -1,0 +1,70 @@
+[Error] Che exited with error 137
+kind/question 
+Hi, I try to deploy eclipse/che + nginx with docker compose and I got a weird situation when running docker-compose up. (I am not an expert in docker so maybe I am doing wrong with my yml) Reproduction Steps: docker-compose.yml version: '2'
+
+services:
+   che:
+      container_name: che
+      image: eclipse/che:nightly
+      command: start
+      volumes:
+         - /home/che/data/:/data
+         - /var/run/docker.sock:/var/run/docker.sock
+      environment:
+         - CHE_HOST=172.17.0.1
+
+   nginx:
+      container_name: nginx
+      image: nginx:1.9
+      depends_on:
+          - che
+      ports:
+         - 9001:80
+      links:
+         - che
+      volumes:
+         - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+         - ./nginx/.htpasswd:/etc/nginx/.htpasswd:ro nginx.conf worker_processes 1;
+
+events { worker_connections 1024; }
+
+http {
+   sendfile on;
+
+   gzip on;
+   gzip_http_version 1.0;
+   gzip_proxied any;
+   gzip_min_length 500;
+   gzip_disable MSIE [1-6].
+   gzip_types text/plain text/xml text/css
+   text/comma-separated-values
+   text/javascript
+   application/x-javascript
+   application/atom+xml;
+
+   # List of application servers
+   upstream app_servers {
+      server che:8080 fail_timeout=5s max_fails=10;
+   }
+
+   # Configuration for the server
+   server {
+
+      listen 80; # Running port
+
+      # Proxying the connections
+      location / {
+
+         auth_basic Restricted;
+         auth_basic_user_file /etc/nginx/.htpasswd;
+
+         proxy_pass http://app_servers;
+         proxy_redirect off;
+         proxy_set_header Host $host;
+         proxy_set_header X-Real_IP $remote_addr;
+         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+         proxy_set_header X-Forwarded-Host $server_name;
+      }
+   }
+}
+ Then run the docker-compose up and I got the following output (when can observe the "exited code 137" at the end and just before the preflight checks an "integer expression expected" error) OS and version: Docker 1.13.0 eclipse/che:nightly Diagnostics: Output of info

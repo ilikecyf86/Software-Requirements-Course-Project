@@ -1,0 +1,9 @@
+Custom eclipse che assembly doesn't show all the features like for example creating projects in java.
+kind/question 
+Description Hi, all, I am creating a simple wizard on che, I followed the steps described on: https://www.eclipse.org/che/docs/assemblies/assembly-lifecycle/index.html I followed the steps: 1-3, generate, run, build. but when I ran eclipse che, only my wizard was being there, the othere features are lost, like: 1.- creating java projects, 2.- importing projects from svn. 3.- crating java, php files are not there. 4.- and much more. I saw that there is section called: Customizing, I tried following that, I added some dependencies, but I when ran che I, the result was the same. please could you help me, is there something I am missing? Reproduction Steps 1.- generate the archetype docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /c/Users/usuario/Documents/dev/eclipse_che/tmp/archetype:/archetype -v /c/Users/usuario/Documents/dev/eclipse_che/tmp/data:/data -v /c/Users/usuario/.m2/repository:/m2 eclipse/che-cli:5.14.0 archetype generate 2.- build it docker run -it --rm \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /c/Users/usuario/Documents/dev/eclipse_che/tmp/archetype:/archetype \
+  -v /c/Users/usuario/Documents/dev/eclipse_che/tmp/data:/data \
+  -v /c/Users/usuario/.m2/repository:/m2 \
+	eclipse/che-cli:5.14.0 archetype build
+ 3.- run it: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /c/Users/usuario/Documents/dev/eclipse_che/tmp/archetype:/archetype -v /c/Users/usuario/Documents/dev/eclipse_che/tmp/data:/data eclipse/che-cli:5.14.0 archetype run OS and version: Windows 10.

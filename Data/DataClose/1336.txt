@@ -1,0 +1,6 @@
+Debug panel displays variables of C++ project in broken view
+kind/bug team/enterprise severity/P2 
+Reproduction Steps: Create workspace from C++ stack and import project https://github.com/dmytro-ndp/simple-cpp-project into it. Open hello.cc file and set breakpoint at line 12. Make project and run gdbserver by executing the command: cd ${current.project.path} && make && gdbserver :8000 ./a.out Wait until command panel opens and there is message Listening on port 8000 appears. Create debug configuration for gdb and start debug. Wait until notification popup Remote debugger connected appears. Expected result There is next info displayed in Variables section of Debug Panel in the following view: this = 0x7fffffffe9fe
+name = {static npos = 18446744073709551615, _M_dataplus = {<std::allocator<char>> = {<__gnu_cxx::new_allocator<char>> = {<No data fields>}, <No data fields>},
+  _M_p = 0x7fffffffea10 "man"}, _M_string_length = 3, {_M_local_buf = "man\000\377\177\000\000q\021@\000\000\000\000", _M_allocated_capacity = 140733200621933}}
+ Actual misleading result: Screencast: OS and version: Ubuntu 14.04 LTS Browser: Chrome Version 55.0.2883.87 (64-bit) Che version: 5.6.0-SNAPSHOT. Revision: 4c3bd93 Diagnostics:

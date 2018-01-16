@@ -1,0 +1,36 @@
+CLI che-cli dockerimage build failed
+kind/bug severity/blocker severity/P1 severity/blocker status/code-review status/code-review 
+Im not able to build che-cli image with tests No tag provided, using nightly as default
+Building Docker Image eclipse/che-cli from /Users/roman/development/codenvy_projects/che/dockerfiles/cli directory with tag nightly
+Sending build context to Docker daemon 54.78 kB
+Step 1/5 : FROM eclipse/che-base:nightly
+nightly: Pulling from eclipse/che-base
+b7f33cc0b48e: Already exists
+949adc96e811: Already exists
+b475c3c29375: Already exists
+Digest: sha256:a07a9f1a11f20e5a766271df2cc993ab7d032de6b9b391bf6b5939deef755bf6
+Status: Downloaded newer image for eclipse/che-base:nightly
+ ---> 95c73fa14e23
+Step 2/5 : COPY scripts /scripts/
+ ---> 9d6ea5566511
+Removing intermediate container 05ad31a5572b
+Step 3/5 : COPY version /version/
+ ---> 29eb9cb8ee18
+Removing intermediate container 6258a0e60add
+Step 4/5 : RUN mkdir /che && chmod u+x /scripts/entrypoint.sh
+ ---> Running in 03d0adc7ca52
+ ---> afb8598ab7cf
+Removing intermediate container 03d0adc7ca52
+Step 5/5 : ENTRYPOINT /scripts/entrypoint.sh
+ ---> Running in 194ca664f3f7
+ ---> 43b54f1a5a88
+Removing intermediate container 194ca664f3f7
+Successfully built 43b54f1a5a88
+Script run successfully: eclipse/che-cli:nightly
+Running tests in container from image eclipse/che-bats:nightly
+Running functional bats tests for CLI prompts and usage
+Running functional bats tests for init and destroy commands
+Running functionals bats tests for start command
+
+[11:10:40]roman:cli[master]#: echo $?
+1

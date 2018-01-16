@@ -1,0 +1,3 @@
+IDE does not mark the project as a valid one after project problems are resolved
+kind/bug severity/P1 team/ide sprint/next-sprint status/in-progress status/in-progress sprint/next-sprint 
+Steps to reproduce: Create a workspace with a project. Delete project sources either on a host filesystem or right in the terminal Restart a workspace. Expand a project in the project tree. It is marked as a broken project. The popup will say that project is there in project config but not on a file system. Click import a project. Expected result: the project is imported and marked as a valid project in project tree Actual result: the project is still marked as broken. When collapsing and expanding the project again, the same popup shows up. Related to #5831 and perhaps #5832

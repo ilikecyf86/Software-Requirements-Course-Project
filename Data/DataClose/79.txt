@@ -1,0 +1,3 @@
+[CHE 6] cannot save any variable in machine env
+kind/bug 
+Description Reproduction Steps Open swagger UI. Try to write workspace with any variable in env:{} Get workspace. All env variables are empty. OS and version: Che(Che6 branch) 6.0.0-M2-SNAPSHOT; Chrome 61.0; Fedora 25 Diagnostics:

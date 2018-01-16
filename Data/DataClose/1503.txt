@@ -1,0 +1,102 @@
+Readme References in code base
+kind/docs 
+A grep of the code base shows these references to readme.io, which should not exist. These should either be evaluated to not have hard links back to docs, reference the right link that is deployed within Che, or updated to the eclipse.org/che/docs. C:\codenvy\che>grep -r readme.io c:\codenvy\che
+
+c:\codenvy\che/assembly/assembly-main/src/assembly/plugins/examples/che-ide-extension-client-server.txt:DOCS:     https://eclipse-che.readme.io/docs/developing-extensions#ide-extension-example
+
+c:\codenvy\che/assembly/assembly-main/src/assembly/plugins/examples/che-ide-extension-simple.txt:DOCS:     https://eclipse-che.readme.io/docs/developing-extensions#ide-extension-example
+
+c:\codenvy\che/assembly/assembly-main/src/assembly/plugins/examples/che-server-extension.txt:DOCS:     https://eclipse-che.readme.io/docs/developing-extensions
+
+c:\codenvy\che/assembly/assembly-main/src/assembly/README:See eclipse-che.readme.io
+
+c:\codenvy\che/assembly/assembly-main/target/eclipse-che-5.3.0-SNAPSHOT/eclipse-che-5.3.0-SNAPSHOT/plugins/examples/che-ide-extension-client-server.txt:DOCS:     https://eclipse-che.readme.io/docs/developing-extensions#ide-extension-example
+
+c:\codenvy\che/assembly/assembly-main/target/eclipse-che-5.3.0-SNAPSHOT/eclipse-che-5.3.0-SNAPSHOT/plugins/examples/che-ide-extension-simple.txt:DOCS:     https://eclipse-che.readme.io/docs/developing-extensions#ide-extension-example
+
+c:\codenvy\che/assembly/assembly-main/target/eclipse-che-5.3.0-SNAPSHOT/eclipse-che-5.3.0-SNAPSHOT/plugins/examples/che-server-extension.txt:DOCS:     https://eclipse-che.readme.io/docs/developing-extensions
+
+c:\codenvy\che/assembly/assembly-main/target/eclipse-che-5.3.0-SNAPSHOT/eclipse-che-5.3.0-SNAPSHOT/README:See eclipse-che.readme.io
+
+c:\codenvy\che/assembly/assembly-main/target/eclipse-che-5.3.0-SNAPSHOT/eclipse-che-5.3.0-SNAPSHOT/sdk/assembly-main/src/assembly/plugins/examples/che-ide-extension-client-server.txt:DOCS:     https://eclipse-che.readme.io/docs/developing-extensions#ide-extension-example
+
+c:\codenvy\che/assembly/assembly-main/target/eclipse-che-5.3.0-SNAPSHOT/eclipse-che-5.3.0-SNAPSHOT/sdk/assembly-main/src/assembly/plugins/examples/che-ide-extension-simple.txt:DOCS:     https://eclipse-che.readme.io/docs/developing-extensions#ide-extension-example
+
+c:\codenvy\che/assembly/assembly-main/target/eclipse-che-5.3.0-SNAPSHOT/eclipse-che-5.3.0-SNAPSHOT/sdk/assembly-main/src/assembly/plugins/examples/che-server-extension.txt:DOCS:     https://eclipse-che.readme.io/docs/developing-extensions
+
+c:\codenvy\che/assembly/assembly-main/target/eclipse-che-5.3.0-SNAPSHOT/eclipse-che-5.3.0-SNAPSHOT/sdk/assembly-main/src/assembly/README:See eclipse-che.readme.io
+
+c:\codenvy\che/dashboard/src/app/projects/create-project/create-project.controller.ts:            'https://eclipse-che.readme.io/docs/configuration#envrionment-variables')
+
+c:\codenvy\che/dashboard/src/app/stacks/list-stacks/list-stacks.html:<che-description che-link-title="Learn more." che-link="https://eclipse-che.readme.io/docs/stack">
+
+c:\codenvy\che/dashboard/src/app/workspaces/list-workspaces/list-workspaces.html:<che-description che-link-title="Learn more." che-link="https://eclipse-che.readme.io/docs/introduction">A workspace is where your projects live and run. Create workspaces from stacks that define projects, runtimes, and commands.</che-description>
+
+c:\codenvy\che/dashboard/src/app/workspaces/workspace-details/environments/add-machine-dialog/add-machine-dialog.html:          <a href="https://eclipse-che.readme.io/docs/recipes#section-authoring-custom-recipes" target="_blank">
+
+c:\codenvy\che/samples/sample-plugin-actions/README.md:Read the tutorial at: https://eclipse-che.readme.io/v5.0/docs/actions
+
+c:\codenvy\che/samples/sample-plugin-actions/README.md:- IDE Setup: https://eclipse-che.readme.io/v5.0/docs/setup-che-workspace
+
+c:\codenvy\che/samples/sample-plugin-actions/README.md:- Building Extensions: https://eclipse-che.readme.io/v5.0/docs/create-and-build-extensions
+
+c:\codenvy\che/samples/sample-plugin-actions/README.md:- Run local Eclipse Che binaries: https://eclipse-che.readme.io/v5.0/docs/usage-docker#local-eclipse-che-binaries
+
+c:\codenvy\che/samples/sample-plugin-embedjs/README.md:Read the tutorial at: https://eclipse-che.readme.io/v5.0/docs/embed-htmljs
+
+c:\codenvy\che/samples/sample-plugin-embedjs/README.md:- IDE Setup: https://eclipse-che.readme.io/v5.0/docs/setup-che-workspace
+
+c:\codenvy\che/samples/sample-plugin-embedjs/README.md:- Building Extensions: https://eclipse-che.readme.io/v5.0/docs/create-and-build-extensions
+
+c:\codenvy\che/samples/sample-plugin-embedjs/README.md:- Run local Eclipse Che binaries: https://eclipse-che.readme.io/v5.0/docs/usage-docker#local-eclipse-che-binaries
+
+c:\codenvy\che/samples/sample-plugin-filetype/README.md:Read the tutorial at: https://eclipse-che.readme.io/v5.0/docs/code-editors#section-file-types
+
+c:\codenvy\che/samples/sample-plugin-filetype/README.md:- IDE Setup: https://eclipse-che.readme.io/v5.0/docs/setup-che-workspace
+
+c:\codenvy\che/samples/sample-plugin-filetype/README.md:- Building Extensions: https://eclipse-che.readme.io/v5.0/docs/create-and-build-extensions
+
+c:\codenvy\che/samples/sample-plugin-filetype/README.md:- Run local Eclipse Che binaries: https://eclipse-che.readme.io/v5.0/docs/usage-docker#local-eclipse-che-binaries
+
+c:\codenvy\che/samples/sample-plugin-json/README.md:The **JSON Example** is a providing a plugin sample which is use as a continuous example in the plugin documentation. You can learn more about it at: https://eclipse-che.readme.io/docs/introduction-1#section-the-json-example
+
+c:\codenvy\che/samples/sample-plugin-json/README.md:- How to register a new file type and add code completion (Read the tutorial at: https://eclipse-che.readme.io/docs/code-editors#section-code-completion)
+
+c:\codenvy\che/samples/sample-plugin-json/README.md:- How to define a custom project type with project creation wizard and register project-specific actions (Read the tutorial at: https://eclipse-che.readme.io/docs/project-types)
+
+c:\codenvy\che/samples/sample-plugin-json/README.md:- IDE Setup: https://eclipse-che.readme.io/v5.0/docs/setup-che-workspace
+
+c:\codenvy\che/samples/sample-plugin-json/README.md:- Building Extensions: https://eclipse-che.readme.io/v5.0/docs/create-and-build-extensions
+
+c:\codenvy\che/samples/sample-plugin-json/README.md:- Run local Eclipse Che binaries: https://eclipse-che.readme.io/v5.0/docs/usage-docker#local-eclipse-che-binaries
+
+c:\codenvy\che/samples/sample-plugin-nativeaccess/README.md:Read the tutorial at: https://eclipse-che.readme.io/v5.0/docs/native-access-to-the-workspace
+
+c:\codenvy\che/samples/sample-plugin-nativeaccess/README.md:- IDE Setup: https://eclipse-che.readme.io/v5.0/docs/setup-che-workspace
+
+c:\codenvy\che/samples/sample-plugin-nativeaccess/README.md:- Building Extensions: https://eclipse-che.readme.io/v5.0/docs/create-and-build-extensions
+
+c:\codenvy\che/samples/sample-plugin-nativeaccess/README.md:- Run local Eclipse Che binaries: https://eclipse-che.readme.io/v5.0/docs/usage-docker#local-eclipse-che-binaries
+
+c:\codenvy\che/samples/sample-plugin-parts/README.md:Read the tutorial at: https://eclipse-che.readme.io/v5.0/docs/parts
+
+c:\codenvy\che/samples/sample-plugin-parts/README.md:- IDE Setup: https://eclipse-che.readme.io/v5.0/docs/setup-che-workspace
+
+c:\codenvy\che/samples/sample-plugin-parts/README.md:- Building Extensions: https://eclipse-che.readme.io/v5.0/docs/create-and-build-extensions
+
+c:\codenvy\che/samples/sample-plugin-parts/README.md:- Run local Eclipse Che binaries: https://eclipse-che.readme.io/v5.0/docs/usage-docker#local-eclipse-che-binaries
+
+c:\codenvy\che/samples/sample-plugin-serverservice/README.md:Read the tutorial at: https://eclipse-che.readme.io/v5.0/docs/serverworkspace-access
+
+c:\codenvy\che/samples/sample-plugin-serverservice/README.md:- IDE Setup: https://eclipse-che.readme.io/v5.0/docs/setup-che-workspace
+
+c:\codenvy\che/samples/sample-plugin-serverservice/README.md:- Building Extensions: https://eclipse-che.readme.io/v5.0/docs/create-and-build-extensions
+
+c:\codenvy\che/samples/sample-plugin-serverservice/README.md:- Run local Eclipse Che binaries: https://eclipse-che.readme.io/v5.0/docs/usage-docker#local-eclipse-che-binaries
+
+c:\codenvy\che/samples/sample-plugin-wizard/README.md:- IDE Setup: https://eclipse-che.readme.io/v5.0/docs/setup-che-workspace
+
+c:\codenvy\che/samples/sample-plugin-wizard/README.md:- Building Extensions: https://eclipse-che.readme.io/v5.0/docs/create-and-build-extensions
+
+c:\codenvy\che/samples/sample-plugin-wizard/README.md:- Run local Eclipse Che binaries: https://eclipse-che.readme.io/v5.0/docs/usage-docker#local-eclipse-che-binaries
+ Reproduction Steps: OS and version: Diagnostics:

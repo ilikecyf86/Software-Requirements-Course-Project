@@ -1,0 +1,3 @@
+Project lost configuration after rename
+kind/bug 
+Steps to reproduce: Create new Project from Spring sample; Select created project in the project explorer. Edit -> Rename. Type new project name. Click ok button. Refresh page with IDE. Actual result: project was renamed, but IDE lost project configuration and IDE require project configuration. Old project folder with previous project name is still exist. Expected result: IDE should save previous project configuration after rename and old project folder with previous name should be deleted.

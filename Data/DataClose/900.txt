@@ -1,0 +1,3 @@
+add more integration tests for che CLI
+kind/task sprint/current-sprint status/in-progress team/production sprint/current-sprint status/in-progress 
+today we have only 1 CLI test enabled and existing tests are does not work properly. Goal of this issue is to fix existing tests and cover more commands with tests.

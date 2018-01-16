@@ -1,0 +1,3 @@
+Revealing selection is broken for editors < 15 lines high
+kind/bug 
+To reproduce: Open a Java class that is more than 15 lines long Add "System.out.println()" some place after the 15th line Do a "Find Usages" (Alt-F7) Resize the editor to 10 lines high In the usages view, double click the occurrence you have created in step #2 Observe: there is no selection visible in the editor. The same thing works when the editor is > 15 lines high.

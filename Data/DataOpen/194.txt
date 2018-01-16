@@ -1,0 +1,40 @@
+Che fails to create workspace with a Traefik error (NullPointerException)
+kind/question kind/bug severity/P1 kind/question 
+Description che works behind a web proxy, with options single_port=true and a specific CHE_DOCKER_SERVER__EVALUATION__STRATEGY_CUSTOM_TEMPLATE. I can access che, and it starts creation of a workspace. I can see in web ui, the download of the docker image for my workspace (final message: [DOCKER] Status Image is up-to-date ...), but error occurs when Che tries to start the container. Shown error is: Could not start workspace wksp-d4ol. Reason: Start of environment 'default' failed. Error: null
+ Reproduction Steps Debian GNU/Linux 9.1 (stretch) Docker version 17.09.0-ce, build afdb6d4 Che: 5.20.0 Diagnostics: In Che Docker container, following error is shown when trying to start the workspace: 2017-11-08 11:55:57,172[aceSharedPool-1]  [ERROR] [o.e.c.a.w.s.WorkspaceManager 683]    - null
+org.eclipse.che.api.core.ServerException: null
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.startInstance(CheEnvironmentEngine.java:1005)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.startEnvironmentQueue(CheEnvironmentEngine.java:797)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.start(CheEnvironmentEngine.java:263)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.startEnvironmentAndPublishEvents(WorkspaceRuntimes.java:694)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.access$100(WorkspaceRuntimes.java:103)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes$StartTask.call(WorkspaceRuntimes.java:986)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes$StartTask.call(WorkspaceRuntimes.java:948)
+	at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalCallable.call(CopyThreadLocalCallable.java:31)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.eclipse.che.api.core.ServerException: null
+	at org.eclipse.che.plugin.docker.machine.MachineProviderImpl.startService(MachineProviderImpl.java:398)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.lambda$startEnvironmentQueue$6(CheEnvironmentEngine.java:768)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.startInstance(CheEnvironmentEngine.java:942)
+	... 11 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at java.util.HashMap.putMapEntries(HashMap.java:500)
+	at java.util.HashMap.putAll(HashMap.java:784)
+	at org.eclipse.che.plugin.traefik.TraefikCreateContainerInterceptor.invoke(TraefikCreateContainerInterceptor.java:89)
+	at org.eclipse.che.plugin.docker.machine.MachineProviderImpl.createContainer(MachineProviderImpl.java:645)
+	at org.eclipse.che.plugin.docker.machine.MachineProviderImpl.startService(MachineProviderImpl.java:354)
+	... 13 common frames omitted
+ I don't know if this is related but system/network messages appears: Nov  8 12:03:20 chedevide kernel: [ 3607.281695] IPv6: ADDRCONF(NETDEV_UP): vetha163065: link is not ready
+Nov  8 12:03:20 chedevide kernel: [ 3607.402766] eth0: renamed from veth99995c7
+Nov  8 12:03:20 chedevide kernel: [ 3607.418737] IPv6: ADDRCONF(NETDEV_CHANGE): vetha163065: link becomes ready
+Nov  8 12:03:20 chedevide kernel: [ 3607.420982] docker0: port 1(vetha163065) entered blocking state
+Nov  8 12:03:20 chedevide kernel: [ 3607.423025] docker0: port 1(vetha163065) entered forwarding state
+Nov  8 12:03:26 chedevide kernel: [ 3612.565886] docker0: port 1(vetha163065) entered disabled state
+Nov  8 12:03:26 chedevide kernel: [ 3612.569309] veth99995c7: renamed from eth0
+Nov  8 12:03:26 chedevide kernel: [ 3612.610339] docker0: port 1(vetha163065) entered disabled state
+Nov  8 12:03:26 chedevide kernel: [ 3612.615237] device vetha163065 left promiscuous mode
+Nov  8 12:03:26 chedevide kernel: [ 3612.617944] docker0: port 1(vetha163065) entered disabled stat
+ I have however no issue to run manually some containers.

@@ -1,0 +1,3 @@
+How to deploy eclipse-che on swarm?
+kind/question 
+I was just studying eclipse-che and now my duty is to deploy eclipse-che on swarm, but I have no idea about it, who can help me ,thanks

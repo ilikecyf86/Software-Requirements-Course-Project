@@ -1,0 +1,3 @@
+Please add Clojure support to Eclipse Che
+kind/enhancement 
+I have added a similar ticket on the CCW issue list: laurentpetit/ccw#871 I am currently building expert systems in Clojure and would love to use Che rather than Eclipse.

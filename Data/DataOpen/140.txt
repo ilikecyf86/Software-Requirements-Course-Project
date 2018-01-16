@@ -1,0 +1,3 @@
+[CHE 6] Set default memory limit for OpenShift workspaces
+kind/task status/open-for-dev target/che6 team/platform 
+Description There is default memory limit configuration property that is used by Docker infrastructure but not used by OpenShift infrastructure. So it is needed to set default memory limit for workspaces started by OpenShift infrastructure. For such purposes che.workspace.default_memory_mb can be used or new ones can be introduced while one property could be not enough because OpenShift Resources Limits allow setting memory request and memory limit and setting both of them can be useful.

@@ -1,0 +1,3 @@
+IDE Assembly GWT DtoClientImpls Compile Error
+
+Unable to compile Che IDE Assembly due to error related to some generated source codes. Reproduction Steps: Executing mvn clean install at che/assembly/ OS and version: Mac OS Sierra 10.12.5 Eclipse Che 5.15.0-SNAPSHOT

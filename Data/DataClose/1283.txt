@@ -1,0 +1,3 @@
+Machine API deprecated - How to execute a command over rest api
+kind/question 
+In the last release the machine api removed. So how is the best practice to run a command now ?

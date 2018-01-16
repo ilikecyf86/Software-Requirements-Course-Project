@@ -1,0 +1,3 @@
+Runtime links to workspace agent should contain both types of protocol: http and ws
+kind/bug 
+Now workspace runtime contains link with rel=wsagent and points to workspace agent through ws protocol. It should return http based protocol url, and for ws new one with proper rel name should be added.

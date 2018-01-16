@@ -1,0 +1,3 @@
+Eliminate necessity for the extensions to depend on the IDE App module
+kind/enhancement team/ide target/che6 
+There are about 30 IDE extensions, in the CHE/Codenvy assemblies, which must depend on the IDE App (che-core-ide-app module) in order to use just a few interfaces/classes. Like org.eclipse.che.ide.CoreLocalizationConstant, org.eclipse.che.ide.newresource.AbstractNewResourceAction, etc. Having a such dependency really is a bad practice for the IDE extensions. The goal of this task is to eliminate the necessity for the IDE extensions to depend on the che-core-ide-app module. This may require moving some interfaces/classes from che-core-ide-app to che-core-ide-api or improve IDE API in some way.

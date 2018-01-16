@@ -1,0 +1,3 @@
+Rework selenium tests for checking test runner plugin
+
+Existing selenium tests for checking Junit and TestNg are deprecated we should adapt existing tests and write new for the covering current state of the plugin. Also this tests should work on master and SPI branches.

@@ -1,0 +1,3 @@
+Creating workspace - wrong error visible
+kind/bug severity/P2 team/plugin sprint/current-sprint status/code-review status/code-review sprint/current-sprint 
+Description When trying to create new workspace and entering a name with 2 chars it returns error: "The name should not contain special characters like space, dollar, etc. and should start and end only with digits, latin letters or underscores." But it seems like this is not the problem, the problem is probably with length of name of workspace.

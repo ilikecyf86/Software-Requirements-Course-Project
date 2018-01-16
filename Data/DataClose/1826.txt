@@ -1,0 +1,3 @@
+Create selenium test for checking of restore splitted editor feature
+sprint/next-sprint kind/task status/open-for-dev team/production sprint/current-sprint sprint/next-sprint status/code-review sprint/current-sprint status/code-review status/open-for-dev 
+Scenario: User open some files (java and text). Split editor for this files. Set cursor under scroll. Refresh a browser. The files, scroll and cursor position, including split editor and their sizes and position should be restored.

@@ -1,0 +1,3 @@
+First draft of SPI specification
+kind/task sprint/next-sprint status/open-for-dev team/platform sprint/next-sprint 
+The goal of this issue is to provide a document with our current vision about changes in SPI, motivation about the things what we want to change, components interconnection, results of prototyping, vision on things to do. This is not a final specification, this document supposes to be a base for future issues and conversations.

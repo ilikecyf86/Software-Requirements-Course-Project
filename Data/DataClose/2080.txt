@@ -1,0 +1,3 @@
+Cannot create any project in the IDE
+kind/bug severity/blocker 
+Reproduction Steps: Try to create any project with the IDE Wizard Expected behavior: Project should be created Observed behavior: We have 500 internal server error Che version: 5.0.0-M8-SNAPSHOT, rev ae5f213 OS and version: UBUNTU 14.0 TLS Docker version: 12.1 Che install: local bundle

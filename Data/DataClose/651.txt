@@ -1,0 +1,11 @@
+Revise functionality of Profile & Security page
+kind/task team/plugin sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Now, these pages look like this. The functionality of this pages is supported by ProfileService. But in the case of integration of keycloak all this information are not stored in Che database and delighted to ID provide service (keycloak in our case). In this #5438 we are going provide an ability to get some information for ProfileService from Keycloak via OpenID protocol. In the first stage, it will be this fields {
+  "sub": "c8785721-f72d-4628-a9b5-391ff65f7b93",
+  "name": "max shaposhnik",
+  "preferred_username": "uy7c",
+  "given_name": "max",
+  "family_name": "shaposhnik",
+  "email": "uy7c2@yahoo.com"
+}
+ A couple of notes to consider. ProfileService will be readonly. Consider to redirect to profile and change passwor page insted of editing it directly.

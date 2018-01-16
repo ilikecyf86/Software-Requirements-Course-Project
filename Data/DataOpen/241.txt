@@ -1,0 +1,3 @@
+Provide JavaScript API for each existing client side API
+kind/epic team/ide 
+Provide JavaScript API for each existing client side API developed with GWT technology with JsType feature (here list of existed client side API) (new issues will be added soon) POC for Action API and loader for JavaScript plugins #6649 Adapt IDE Themes API for the JavaScript endpoint #7077 POC for IDE Part API for the JavaScript endpoint #7411 JavaScript endpoint for IDE EventBus ans Application Context #7441 JavaScript endpoint for Project/File management #7842 JavaScript endpoint for Editor #7853

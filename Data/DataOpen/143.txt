@@ -1,0 +1,3 @@
+Unexpected duplicates of DOM items of NavigateToUrl widget
+kind/bug severity/P2 
+Description Steps to reproduce: Create a workspace based on java stack with the Spring project Launch the Navigate to file widget and type into field 'h' symbol for instance See screenshot with describing the problem OS and version: Chrome browser CHE6 - M2

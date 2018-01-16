@@ -1,0 +1,3 @@
+Add another "Assert.fail()" to the 'RenamePackageTest'
+kind/task status/in-progress target/che6 team/production status/in-progress 
+Description Need to add another "Assert.fail()" into selenium test 'RenamePackageTest' which related to known issue Related known issue is: #7500 #7510

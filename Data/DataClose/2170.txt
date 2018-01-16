@@ -1,0 +1,3 @@
+Git history area is not restored after refresh page (regression)
+kind/bug severity/blocker status/open-for-dev sprint/next-sprint team/enterprise severity/blocker sprint/next-sprint status/open-for-dev 
+Reproduction Steps: Open some project Run "Show history" action from "Git" menu Refresh page Expected behavior: "Git history" area will be display info for current project Observed behavior: "Git history" area is empty Che version: 5.0.0-M7

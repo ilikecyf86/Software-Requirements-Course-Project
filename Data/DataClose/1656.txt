@@ -1,0 +1,21 @@
+Where's the Operations perspective?
+kind/question 
+The Operations perspective is not visible any more from inside the workspace. Reproduction Steps: Create a new workspace. Open the workspace. Look for the icons that allowed to switch between code and operations perspective on the right side of the play button icon (used to execute a command). Che version: nightly Version :5.2.0-SNAPSHOT
+Revision :c4bd4d0ee1d8fdeb
+Build Time :2017-01-24 16:34:56
+ OS and version: Windows 7 Docker version: $ docker version
+Client:
+ Version:      1.12.6
+ API version:  1.24
+ Go version:   go1.6.4
+ Git commit:   78d1802
+ Built:        Wed Jan 11 00:23:16 2017
+ OS/Arch:      windows/amd64
+
+Server:
+ Version:      1.12.6
+ API version:  1.24
+ Go version:   go1.6.4
+ Git commit:   78d1802
+ Built:        Wed Jan 11 00:23:16 2017
+ OS/Arch:      linux/amd64

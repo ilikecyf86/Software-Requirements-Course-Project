@@ -1,0 +1,80 @@
+[Q] Issue w/ ws-agent creation when creating project.
+
+I develop a plug'in for run some configuration with my api, on server side. To store my differents config, I wanted to use a LocalStorage via LocalStorageFactory. My issue happend when creating a project, nothing when I build che. This is my tomcat log. No implementation for org.eclipse.che.plugin.fpp.scriptrunner.server.dao.ConfigurationDao was bound. [STDOUT] while locating org.eclipse.che.plugin.fpp.scriptrunner.server.dao.ConfigurationDao [STDOUT] for field at org.eclipse.che.plugin.fpp.scriptrunner.server.ConfigurationManager.configDao(ConfigurationManager.java:29) [STDOUT] while locating org.eclipse.che.plugin.fpp.scriptrunner.server.ConfigurationManager [STDOUT] for field at org.eclipse.che.plugin.fpp.scriptrunner.server.ConfigurationService.configManager(ConfigurationService.java:31) [STDOUT] at org.eclipse.che.plugin.fpp.scriptrunner.server.inject.ScriptRunnerGuiceModule.configure(ScriptRunnerGuiceModule.java:25) But ConfigurationDao does have an implementation and was bounded. In WS-MASTER package: Here's my impl public class LocalConfigurationDaoImpl implements ConfigurationDao {
+    public static final String FILENAME = "configuration.json";
+    private static final Logger LOG = LoggerFactory.getLogger(LocalConfigurationDaoImpl.class);
+
+    private final HashMap<String, List<String>> configuration;
+    private final LocalStorage configStorage;
+
+    @Inject
+    public LocalConfigurationDaoImpl(LocalStorageFactory localStorageFactory) throws IOException {
+        configuration = new HashMap<>();
+        configStorage = localStorageFactory.create(FILENAME);
+    }
+ My LocalConfigModule public class LocalConfigModule extends AbstractModule { 
+    public LocalConfigModule() {}
+    
+    @Override
+    protected void configure() {
+        bind(ConfigurationDao.class).to(LocalConfigurationDaoImpl.class);
+        bind(LocalStorageFactory.class);
+    }
+}
+ And add this two lines to WSMasterModule bind(ConfigurationService.class);
+install(new org.eclipse.che.plugin.fpp.scriptrunner.wsmaster.LocalConfigModule());
+ In IDE package : I have a ScriptRunnerComponent with start method @Override
+    public void start(final Callback<Component, Exception> callback) {
+        manager.loadPreferences().then(new Operation<Map<String, List<String>>>() {
+            @Override
+            public void apply(Map<String, List<String>> preferences) throws OperationException {
+                /*currentUser.setPreferences(preferences);*/
+                if (appContext instanceof AppContextImpl) {
+                    ((AppContextImpl)appContext).setCurrentUser(currentUser);
+                }
+                callback.onSuccess(ScriptRunnerComponent.this);
+            }
+        }).catchError(new Operation<PromiseError>() {
+            @Override
+            public void apply(PromiseError arg) throws OperationException {
+                callback.onFailure(new Exception(/*locale.unableToLoadPreference()*/"", arg.getCause()));
+            }
+        });
+    }
+ Here's my service call with CONFIG_PATH = RestContext + "/config" @Override
+    public Promise<Map<String, List<String>>> getPreferences() {
+        return asyncRequestFactory.createGetRequest(CONFIG_PATH)
+                .header(ACCEPT, APPLICATION_JSON)
+                .header(CONTENT_TYPE, APPLICATION_JSON)
+                .loader(loaderFactory.newLoader("Getting user's configuration..."))
+                .send(new StringListMapUnmarshaller());
+    }
+ In SERVER package : Here's my service @Path("config")
+@Api(value = "config", description = "FPP Configuration REST API")
+public class ConfigurationService extends Service {
+
+    @Inject
+    private ConfigurationManager configManager;
+
+    @GET
+    @Produces(APPLICATION_JSON)
+    @GenerateLink(rel = "Configuration")
+    @ApiOperation(value = "Gets preferences of logged in user",
+            notes = "If not all the preferences needed then 'filter' may be used, " +
+                    "basically it is regex for filtering preferences by names")
+    @ApiResponses({@ApiResponse(code = 200, message = "Preferences successfully fetched"),
+            @ApiResponse(code = 500, message = "Internal Server Error")})
+    public Map<String, List<String>> find(@ApiParam("Regex for filtering preferences by names, e.g. '.*github.*' " +
+                                     "will return all the preferences which name contains github")
+                                     @QueryParam("filter")
+                                     String filter) throws ServerException {
+        return configManager.find();
+    }
+ ScriptRunnerModule @DynaModule
+public class ScriptRunnerGuiceModule extends AbstractModule{
+    @Override
+    protected void configure() {
+
+        bind(ConfigurationService.class);
+    }
+}

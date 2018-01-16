@@ -1,0 +1,3 @@
+Previews are broken
+kind/bug target/branch team/platform 
+This bug can be reproduced in spi branch. A server has port, protocol and path. Path isn't mandatory for user servers. As a result, if a server is missing path in its config, null is appended to preview url. Adding "path" : "/" fixes it but does not make much sense. If path isn't provided it should be ignored.

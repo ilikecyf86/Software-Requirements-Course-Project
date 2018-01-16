@@ -1,0 +1,14 @@
+Che on AWS EC2 to allow remote browser clients through SSH tunnel
+kind/question 
+I have set up Che on EC2 and can fully work on it through a firefox running locally on that host (using VNC for remote viewing). But I am not able to do the same if I access it on my laptop's browser: The security settings for EC2 are as follows:
+Type            Protocol        Port Range      Source
+Custom TCP Rule     TCP         32768 - 65535       73.XXX.XXX.XX/32
+SSH         TCP         22          73.XXX.XXX.XX/32
+ When setting up the SSH tunnel, I forward the following way: 8080/localhost/8080 When starting Che on the remote, I issue the following: ~/Applications/eclipse-che-4.2.0/bin/che.sh run --remote:localhost From my laptop browser's localhost:8080, I can view the dashboard and stop running workspaces. I can also start workspaces, even though I see the following log: https://gist.github.com/GuSuku/8e44a3c467a3414ec9be31940cd17f83 To wit, in spite of the warnings at the end (Client has aborted connection. Response writing omitted.), the workspace does get started. But, from my laptop browser client, when opening a running workspace in IDE, I get the following popup: window.IDE.eventHandlers.initializationFailed@http://localhost:8080/ide/wksp-65qm?uid=612032:39:27
+Wdb@_app-0.js:1782:21
+ieb@_app-0.js:1787:380
+_.Un@_app-0.js:4290:317
+gS/<@_app-0.js:1316:276 
+ And the IDE is stuck at LOADING: Starting workspace agent I am sure it has got something to do with ports, but not sure which port and what I should do. = More info: = When I do docker ps, I get the following: CONTAINER ID        IMAGE                                                        COMMAND                  CREATED             STATUS              PORTS                                                                                                                                                                         NAMES
+9ab79d815907        eclipse-che/che_workspaceu3p1r5ppkt1xb4ba_ws-machine_w5z4n   "/bin/sh -c 'sudo /us"   9 minutes ago       Up 9 minutes        0.0.0.0:32795->22/tcp, 0.0.0.0:32794->4401/tcp, 0.0.0.0:32793->4403/tcp, 0.0.0.0:32792->4411/tcp, 0.0.0.0:32791->8000/tcp, 0.0.0.0:32790->8080/tcp, 0.0.0.0:32789->9876/tcp   che_workspaceu3p1r5ppkt1xb4ba_ws-machine_w5z4n
+ For the command - docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq) - I get the following: /che_workspaceu3p1r5ppkt1xb4ba_ws-machine_w5z4n - 172.17.0.2

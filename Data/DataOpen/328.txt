@@ -1,0 +1,3 @@
+401 error when opening project from Multiuser Che Dashboard
+kind/bug team/platform 
+Reproduction Steps: Create workspace with projects. Goto Dashboard, find workspace and try to open project. Dashboard opened page with 401 error message: Also there was a problem with obtaining token: Screencast: This issue is related to #5362.

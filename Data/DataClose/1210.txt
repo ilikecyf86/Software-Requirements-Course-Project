@@ -1,0 +1,5 @@
+Intelligent Command Multiple Lines
+kind/bug severity/P1 kind/question kind/bug severity/P1 kind/bug severity/P1 kind/question kind/question kind/bug severity/P1 kind/bug severity/P1 kind/question 
+Multiple line commands do not execute all lines. Reproduction Steps: Create new custom command with : echo "hello" > /home/user/world
+cat /home/user/world
+ Codenvy 5.6.0

@@ -1,0 +1,48 @@
+Browser hangs up when moving/deleting many files in the terminal
+kind/question 
+Reproduction Steps: Create node.js app. npm install in Terminal view. rm -fr node_modules/ in Terminal view. But I think this doesn't depend on Node.js. Che-server's version is nightly image-id:3d2dcd195a90. Log in Chrome. Looks 500 error received and wasn't caught by Promise#catch(). _app-0.js:17582 GET http://40.115.251.65:33189/api/project/tree/frontend?depth=7&includeFiles=true 500 (Internal Server Error)
+mz @ _app-0.js:17582
+nz @ _app-0.js:8740
+Jqi @ _app-0.js:11255
+Iqi @ _app-0.js:15048
+Rqi @ _app-0.js:18368
+j8d @ _app-0.js:18337
+(anonymous) @ _app-0.js:11097
+h8d @ _app-0.js:11136
+ymf @ _app-0.js:15663
+rmi @ _app-0.js:17293
+pmi @ _app-0.js:17277
+zmi @ _app-0.js:10787
+oni @ _app-0.js:6978
+qni @ _app-0.js:18368
+(anonymous) @ _app-0.js:10705
+_app-0.js:11095 Uncaught (in promise) Error: Internal Server Error occurred, error time: 2017-03-25 00:58:55
+    at A8d (_app-0.js:11095)
+    at k8d (_app-0.js:8062)
+    at Sqi.Tqi [as Qp] (_app-0.js:18368)
+    at _Yg (_app-0.js:17416)
+    at dZg (_app-0.js:15552)
+    at Sqi.kZg [as Cn] (_app-0.js:18357)
+    at cz (_app-0.js:12651)
+    at uz.vz [as An] (_app-0.js:18331)
+    at XMLHttpRequest.eval (_app-0.js:11744)
+    at Dn (_app-0.js:8218)
+    at Gn (_app-0.js:11145)
+    at XMLHttpRequest.eval (_app-0.js:11815)
+A8d @ _app-0.js:11095
+k8d @ _app-0.js:8062
+Tqi @ _app-0.js:18368
+_Yg @ _app-0.js:17416
+dZg @ _app-0.js:15552
+kZg @ _app-0.js:18357
+cz @ _app-0.js:12651
+vz @ _app-0.js:18331
+(anonymous) @ _app-0.js:11744
+Dn @ _app-0.js:8218
+Gn @ _app-0.js:11145
+(anonymous) @ _app-0.js:11815
+ Che server doesn't show any special messages. 2017-03-25 00:23:00,056[ted-scheduler-9]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: []
+2017-03-25 00:50:54,236[aceSharedPool-3]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 692]   - Launching 'org.eclipse.che.terminal' agent at workspace workspacezrjhr8li87bneas3
+2017-03-25 00:50:56,527[aceSharedPool-3]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 692]   - Launching 'org.eclipse.che.ws-agent' agent at workspace workspacezrjhr8li87bneas3
+2017-03-25 00:51:26,444[aceSharedPool-3]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 692]   - Launching 'org.eclipse.che.ssh' agent at workspace workspacezrjhr8li87bneas3
+2017-03-25 00:51:26,996[aceSharedPool-3]  [INFO ] [o.e.c.a.w.s.WorkspaceManager 756]    - Workspace 'che/something' with id 'workspacezrjhr8li87bneas3' started by user 'che'

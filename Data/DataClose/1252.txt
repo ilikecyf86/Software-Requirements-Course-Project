@@ -1,0 +1,3 @@
+Try to unify code base of JSON-RPC server and client sides
+kind/enhancement team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+After switching to GWT 2.8.0 we can use Java 1.8 on server and client

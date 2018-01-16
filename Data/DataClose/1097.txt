@@ -1,0 +1,3 @@
+Maven build fails due missing jar in maven.codenvycorp repo
+kind/question 
+Maven build fails bc there is the release jar 5.9.0 for che-core-commons-lang missing here. Only the 5.9.0.SNAPSHOT jar is available. Reproduction Steps: mvn clean install in che-parent OS and version: Mac OS Diagnostics:

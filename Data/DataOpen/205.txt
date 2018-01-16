@@ -1,0 +1,3 @@
+Improve of using templates for creating workspaces
+kind/enhancement 
+Description We use for creation a workspace templates based on JSONs that hardcoded in the folder. But it may create problems with supporting this one in actual state. (QA team can lose moment of updating the configuration a workspace and in this case the files become outdated). So, we can try use this configuration as dependency from existing sources of CHE project.

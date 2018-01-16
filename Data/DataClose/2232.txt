@@ -1,0 +1,3 @@
+Service owned by current user
+kind/question 
+I am using swagger api for eclipse che. I need to get ssh key for workspace, for this I am using following api: http://ip-address/api/ssh/servicename Can you please tell me what is the "servicename" in this? Swagger url: http:///swagger/#!/ssh/getPairs

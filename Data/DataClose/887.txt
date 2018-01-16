@@ -1,0 +1,3 @@
+[Regression] A context menu in the Project Explorer doesn't appear if before that click right mouse button on external libraries
+kind/bug severity/P2 
+Reproduction Steps: Create and start a workspace with web-java-spring project. In the Project Explorer select the External Libraries and click right mouse button . Click right mouse button on any project file. Observed behavior: Context menu is not appeared. The context menu will appears if before that select any project file or folder. Che version: 5.12.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

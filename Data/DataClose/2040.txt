@@ -1,0 +1,12 @@
+Failed to change port (regression)
+kind/question kind/bug severity/blocker kind/question 
+Hi, I do not manage to get che running with a non-default port (9080). I tried on Arch Linux and Ubuntu 14.04 LTS. 8080 works but changing the port via export CHE_PORT=9080 does not work. Error message in the terminal where I start docker: INFO: ECLIPSE CHE: Found image eclipse/che-server:5.0.0-latest
+INFO: ECLIPSE CHE: Starting container...
+INFO: ECLIPSE CHE: Server logs at "docker logs -f che-server"
+INFO: ECLIPSE CHE: Server booting...
+---------------------------------------
+ERROR: !!!
+ERROR:      ECLIPSE CHE: Timeout waiting for server. Run "docker logs che-server" to inspect the issue.
+ERROR: !!!
+---------------------------------------
+ Docker log is attached here: https://gist.github.com/ne0h/7e07dd868bdb2a8fc42130471be261b0 Reproduction Steps: Follow the guide: https://www.eclipse.org/che/getting-started/download/ to download the startup file export CHE_PORT=9080 che start Expected behavior: Everything is fine. Observed behavior: Che "does not come up". Che version: 5.0.0-latest **OS and version:**Ubuntu 14.04 LTS, Arch Linux Docker version: 1.12.3, build 6b644ec Che install: Docker container Additional information: Problem started happening recently, didn't happen in an older version of Che: No Problem can be reliably reproduced, doesn't happen randomly: Yes Thanks in advance! Max

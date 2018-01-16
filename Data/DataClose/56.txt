@@ -1,0 +1,3 @@
+Adapt Swagger Test for launching on multiuser and single user assemblies
+kind/enhancement selenium/failure sprint/current-sprint team/production status/open-for-dev kind/bug kind/enhancement 
+On a multiuser assembly after redirecting to swagger the page reloads. As result - we have StaleElementException in the test. We should improve the depended method on this problem. In the method we should check the state of elements and start to interaction with it after full aviability. OS and version: Che6 assemblies, Fedora 25, Chrome browser.

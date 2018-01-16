@@ -1,0 +1,3 @@
+Document/support private SSH key
+
+Especially for Docker users, please document how to setup the SSH key that Che would use when trying to access Git repositories.

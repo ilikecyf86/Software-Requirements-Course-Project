@@ -1,0 +1,3 @@
+Add ability to view logs on start workspace
+Improvement 
+It's inconvenient for user to be able to start workspace on workspace details view without being able to view logs of this process. Need to add "Show More" button which will redirect to loading view. Instead of automatically opening workspace - will add Open button

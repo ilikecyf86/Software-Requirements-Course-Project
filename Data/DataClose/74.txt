@@ -1,0 +1,3 @@
+Configure the job on CI for make possible correct checking of selenium tests, that depended on C++ debugging
+kind/enhancement selenium/failure 
+Description For debugging projects based on CPP images, we should use special properties. The CI job ырщгдв take these features into account.

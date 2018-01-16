@@ -1,0 +1,9 @@
+maven-dependency-plugin issue
+kind/question 
+Hi, The maven-dependency-plugin is failing. Modules tree is heavy, and most of long runner developers doesn't observe the problem, since they use the fast profile, with <mdep.analyze.skip>true</mdep.analyze.skip> setting. Reproduction Steps: git clone https://github.com/eclipse/che.git
+cd che
+mvn -Dmaven.repo.local=$HOME/.my/other/repository install
+
+...
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-dependency-plugin:2.10:analyze-only (analyze) on project che-core-db: Dependency problems found -> [Help 1]
+ Observed with: Ubuntu 16.04.2 LTS Openjdk version "1.8.0_131" Apache Maven 3.3.9 I get locally some remediation, putting org.eclipse.che.core:che-core-commons-lang deps from che-core-db with scope>test</scope and putting org.everrest:everrest-core from che-core-api-auth with scope>test</scope as well Still in progress...

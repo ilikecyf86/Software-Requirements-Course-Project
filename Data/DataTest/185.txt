@@ -1,0 +1,3 @@
+Remove /local-storage folder from dev machine container in Che
+status/pending-merge 
+When we create workspace and launch dev machine folder */local-storage * is created. We don't need that. It is actual for Che only.

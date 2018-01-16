@@ -1,0 +1,3 @@
+UI performance tests
+kind/epic status/analyzing team/production 
+We have to start investigate ability to step up UI performance tests. Since the project is complex and changes in one component can effect others there is necessity to track performance changes. This is an epic issue where we can start discussing it. I can see several fields on investigation: frameworks infrastructure tests result stability run automatically for PR We should start from a single test and then continuously extends coverage.

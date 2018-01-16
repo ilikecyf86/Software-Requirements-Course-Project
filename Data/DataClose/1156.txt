@@ -1,0 +1,3 @@
+Bulk operation works wrong after filtering items
+kind/bug severity/P1 sprint/next-sprint team/plugin sprint/current-sprint sprint/next-sprint status/in-progress status/in-progress sprint/current-sprint 
+Precondition: Should be created some workspaces in account Reproduction Steps: Filter some workspaces by defined symbols Click the Bulk checkbox (select all items from this list) Click the Delete button Expected behavior: Only filtered workspaces deleted Observed behavior: All workspaces from list deleted Che version: 5.8.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

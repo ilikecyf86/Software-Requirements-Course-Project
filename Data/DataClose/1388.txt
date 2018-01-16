@@ -1,0 +1,11 @@
+Add the plugin emf4che to Eclipse Che
+kind/question 
+I try to add the plug-in emf4che to Che, in step did any own can help me. My Eclipse Che version is 5.1.2 Finally you need to make sure the in all the POM files under /plugins/plugin-emf match with your Che version (i.e. compare with your parent POM). This includes the files: /plugins/plugin-emf/pom.xml
+/plugins/plugin-emf/che-plugin-emf-ide/pom.xml
+/plugins/plugin-emf/che-plugin-emf-server/pom.xml
+/plugins/plugin-emf/che-plugin-emf-shared/pom.xml
+ the step to run Che: what is module that required to be builded: the plug-in root folder and sub-folder(emf-ide, emf-server and emf-shared)
+assembly-ide-war
+assembly-wsagent-war
+assembly-main
+che root??

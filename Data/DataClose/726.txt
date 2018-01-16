@@ -1,0 +1,79 @@
+Share (Project) files between two machines in workspace
+kind/question 
+I'd like to easily share files between different machines in workspace. basically i want the /project files available on all machines - is there a best practice for that? I started with a workspace recipe looks like that services:
+  dev-machine:
+    image: my-dtr.de/cloudia/6i-sdk
+  rt-machine:
+    image: my-dtr.de/cloudia/6i-runtime
+ On the dev-machine is the compiler, and my command triggers the make. The result of the build (executables) are lying on the same dev-machine. But they should be executed on runtime-machine. So i kind of need to copy and launch it there. I tried with CHE_WORKSPACE_VOLUME=/chetmp:/chetmp in the che.env file, but this created a shared volume /chetmp only available on the dev-machine - not available on the rt-machine additionally i started to extend the recipe/compose file with the two machines by using volumes_from like this: services:
+  dev-machine:
+    image: my-dtr.de/cloudia/6i-sdk
+  rt-machine:
+    image: my-dtr.de/cloudia/6i-runtime
+    depends_on:
+      - dev-machine
+    links:
+      - dev-machine
+    volumes_from:
+      - dev-machine
+ but in the rt-machine-terminal I could not see the /chetmp folder that i expected would be shared. adding a volume to the compose file: services:
+  dev-machine:
+    image: my-dtr.de/cloudia/6i-sdk
+	volumes:
+      - /chetmp2:/chetmp2
+  ...
+ does throw an Error on saying: Volumes binding is forbidden but found in machine 'dev-machine' of environment 'default' How can i access the files from dev-machine:/projects/my-project/ from the rt-machine? OS and version: Ubuntu 16.04. docker 17.06.0-ce che 5.14 Diagnostics: docker run -ti --rm -v /var/run/docker.sock:/var/run/docker.sock -v /home/sg82fe/che/5.14/:/data eclipse/che:5.14.0 info
+WARNING: No swap limit support
+INFO: Proxy: HTTP_PROXY=http://172.17.0.1:3128/, HTTPS_PROXY=http://172.17.0.1:3128/, NO_PROXY=172.17.0.1,localhost,127.0.0.1
+INFO: (che cli): 5.14.0 - using docker 17.06.0-ce / native
+
+CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che:5.14.0
+ Version:        5.14.0
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /home/sg82fe/che/5.14/
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          HTTP_PROXY=http://172.17.0.1:3128/, HTTPS_PROXY=http://172.17.0.1:3128/, NO_PROXY=172.17.0.1,localhost,127.0.0.1
+Internal:
+ CHE_VERSION:    5.14.0
+ CHE_HOST:       10.61.186.132
+ CHE_INSTANCE:   /home/sg82fe/che/5.14//instance
+ CHE_CONFIG:     /home/sg82fe/che/5.14/
+ CHE_BACKUP:     /home/sg82fe/che/5.14//backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   10.61.186.132
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:5.14.0
+ IMAGE_CHE=eclipse/che-server:5.14.0
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ IMAGE_TRAEFIK=traefik:v1.3.0-rc3
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.14.0
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.14.0
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:5.14.0
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:5.14.0
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.14.0
+che.env:
+ CHE_HOST=10.61.186.132
+ CHE_HTTP_PROXY=http://172.17.0.1:3128/
+ CHE_HTTPS_PROXY=http://172.17.0.1:3128/
+ CHE_NO_PROXY=172.17.0.1,localhost,127.0.0.1,10.61.186.132
+ CHE_WORKSPACE_HTTP__PROXY=http://172.17.0.1:3128/
+ CHE_WORKSPACE_HTTPS__PROXY=http://172.17.0.1:3128/
+ CHE_WORKSPACE_NO__PROXY=che-host,172.17.0.1,localhost,127.0.0.1,10.61.186.132
+ CHE_WORKSPACE_VOLUME=/chetmp:/chetmp
+ CHE_SINGLE_PORT=false

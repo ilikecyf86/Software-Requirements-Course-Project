@@ -1,0 +1,3 @@
+Improve classpath building for Maven multi module projects
+Improvement 
+Need put in module classpath another depended modules instead of jars. Also we can do download missing artifacts and sources for project and notify user more clearly what we are doing. And we don't need to do update dependency every time when pom.xml modified, we can detect what changed and perform some work only if some significant changed, like add/remove dependency or change source directories. It's allow as to perform refactoring on all modules where it's needed. Also this weary simplify job for GWT SuperDev mode support, as we can collect all necessary source directories for superdevmode server.

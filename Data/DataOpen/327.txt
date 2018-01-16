@@ -1,0 +1,3 @@
+JGit doesn't clone symbolic file inside project.
+kind/bug 
+Reproduction Steps: Git clone project https://github.com/winery/test-repository with help: Workspace -> Import project . Do git status: Git -> Status Actual behaviour: jgit didn't clone symbolic file "winery". Git status: Project name: test-repository On branch black Changes not staged for commit: deleted: winery Actual behavior: symbolic file should be cloned and git log should be clear like in the native git from terminal. OS and version: CHE version: 5.18.0-SNAPSHOT Browser: Google Chrome Version 59.0.3071.115 (Official Build) (64-bit)

@@ -1,0 +1,42 @@
+Running Che with Apache reverse proxy doesn't work
+kind/question 
+vendor-66eea7122d.js:106080 WebSocket connection to 'ws://172.17.0.1:32838/api/ws' failed: Error in connection establishment: net::ERR_CONNECTION_TIMED_OUT Reproduction Steps: Configure httpd (Apache 2) <VirtualHost *:80>
+	ProxyRequests     off
+	ProxyPreserveHost On
+	ProxyTimeout 15
+
+	# To invoke Eclipse Che this way:
+	# docker run -it --rm -e CHE_PORT=9793 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/che:/data eclipse/che start
+
+	ProxyPass /che http://127.0.0.1:9793/
+	ProxyPassReverse /che http://127.0.0.1:9793/
+
+	ProxyPass /dashboard http://127.0.0.1:9793/dashboard
+	ProxyPassReverse /dashboard http://127.0.0.1:9793/dashboard
+
+	ProxyPass /docs http://127.0.0.1:9793/docs
+	ProxyPassReverse /docs http://127.0.0.1:9793/docs
+
+	ProxyPass /api/ws ws://127.0.0.1:9793/api/ws  retry=0
+	ProxyPassReverse /api/ws ws://127.0.0.1:9793/api/ws  retry=0
+
+	ProxyPass /api http://127.0.0.1:9793/api
+	ProxyPassReverse /api http://127.0.0.1:9793/api
+
+	ProxyPass /_app http://127.0.0.1:9793/_app
+	ProxyPassReverse /_app http://127.0.0.1:9793/_app
+
+	ProxyPass /wsmaster http://127.0.0.1:9793/wsmaster
+	ProxyPassReverse /wsmaster http://127.0.0.1:9793/wsmaster
+
+	ProxyPass /swagger http://127.0.0.1:9793/swagger
+	ProxyPassReverse /swagger http://127.0.0.1:9793/swagger
+
+</VirtualHost>
+ OS and version: Ubuntu 16.04 server 64 bits Diagnostics: docker run -it --rm -e CHE_PORT=9793 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/che:/data eclipse/che start
+ docker ps
+CONTAINER ID        IMAGE                                                                           COMMAND                  CREATED             STATUS              PORTS                                                                                                                                                                                                  NAMES
+6fb28120a136        eclipse-che/workspace2m1x7j63yxe9qyei_machinejpgzj1dcgaevcpxd_che_dev-machine   "/home/user/entrypoin"   21 minutes ago      Up 21 minutes       0.0.0.0:32839->22/tcp, 0.0.0.0:32838->4401/tcp, 0.0.0.0:32837->4403/tcp, 0.0.0.0:32836->4411/tcp, 0.0.0.0:32835->4412/tcp, 0.0.0.0:32834->8000/tcp, 0.0.0.0:32833->8080/tcp, 0.0.0.0:32832->9876/tcp   workspace2m1x7j63yxe9qyei_machinejpgzj1dcgaevcpxd_che_dev-machine
+b197b25cbd12        eclipse/che-server:5.8.0                                                        "/entrypoint.sh"         4 hours ago         Up 41 minutes       8000/tcp, 8080/tcp, 0.0.0.0:9793->9793/tcp                                                                                                                                                             che-9793
+ When I try to open a java workspace using OPEN button, I get this error: vendor-66eea7122d.js:106080 WebSocket connection to 'ws://172.17.0.1:32838/api/ws' failed: Error in connection establishment: net::ERR_CONNECTION_TIMED_OUT
+ The URL is http://my-server.com/dashboard/#/ide/che/wksp-java

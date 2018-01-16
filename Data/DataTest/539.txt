@@ -1,0 +1,3 @@
+using che with nginx-proxy
+kind/question 
+Has anyone tried setting up Che with an nginx-proxy container in front? As part of our standard setup, we have nginx-proxy running and then generate custom URLs on the fly when we build new containers. If anyone has any pointers for this, I'd be keen to see them. Thanks /Thomas

@@ -1,0 +1,3 @@
+Workspace state Error removes Run button
+kind/bug 
+When starting a workspace and an error occurs, the Run button is removed so you cannot correct the error and start again (and you don't see what the error is from the ui, either). The page has to be refreshed to see the Run button again.

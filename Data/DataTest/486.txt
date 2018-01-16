@@ -1,0 +1,3 @@
+readme "Run Che as a Server" section links to non-existent documentation
+
+The readme contains: Run Che as a Server If you want to run Che as a server where non-localhost clients connect, there are additional flags that you may need to configure. Please see the usage documentation. The page https://dash.readme.io/project/eclipse-che/v4.0/docs/usage doesn't appear to exist.

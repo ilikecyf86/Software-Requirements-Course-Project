@@ -1,0 +1,3 @@
+Rework configuration of infra websocket endpoints
+target/branch team/platform kind/task status/in-progress status/code-review status/in-progress status/code-review 
+We have two different endpoints InstallerEndpoint and OutputEndpoint. The first one is desired for machine/installer statuses, the second one for machine/installer output. They are placed on a master side so there is no positive load effect at all. It is proposed to remove these two endpoints, provide the configuration property for default websocket endpoint on the master side and avoid the hard code of paths like this. In case of one default endpoint, the clients will get two identical links for output and statuses if the infrastructure does not provide its own link for output.

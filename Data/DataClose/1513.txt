@@ -1,0 +1,102 @@
+build Dashboard error
+kind/question 
+hi，I encountered a problem when using Maven to build Dashboard in che 5.2.2 Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.8:run (compile) on project che-dashboard-war: An Ant BuildException has occured: Replace: source file /home/user/source/dashboard/dist/index.html doesn't exist [ERROR] around Ant part ...... @ 7:63 in /home/user/source/dashboard/target/antrun/build-main.xml [ERROR] -> [Help 1] I compare che5.2.2 and che5.0.1 versions of the dashboard pom.xml ,Find some change : v5.0.1:                             <target>
+                                <!-- Download NPM dependencies -->
+                                <exec dir="${basedir}" executable="npm" failonerror="true">
+                                    <arg value="install" />
+                                </exec>
+                                <!-- Download Typings dependencies -->
+                                <exec dir="${basedir}" executable="typings" failonerror="true">
+                                    <arg value="install" />
+                                </exec>
+                                <!-- Download Bower dependencies -->
+                                <exec dir="${basedir}" executable="bower" failonerror="true">
+                                    <arg value="install" />
+                                </exec>
+                                <!-- Build the application -->
+                                <exec dir="${basedir}" executable="gulp" failonerror="true">
+                                    <arg value="build" />
+                                </exec>
+                                <!-- Change base HREF of the application that will be hosted on /dashboard -->
+                                <replace file="${basedir}/dist/index.html">
+                                    <replacetoken><![CDATA[<base href="/">]]></replacetoken>
+                                    <replacevalue><![CDATA[<base href="/dashboard/">]]></replacevalue>
+                                </replace>
+                            </target>
+                        </configuration>
+ v5.2.2:  <configuration>
+                            <target>
+                                <!-- Download NPM dependencies -->
+                                <exec dir="${basedir}" executable="npm" failonerror="true">
+                                    <arg value="install" />
+                                </exec>
+                                <!-- Change base HREF of the application that will be hosted on /dashboard -->
+                                <replace file="${basedir}/dist/index.html">
+                                    <replacetoken><![CDATA[<base href="/">]]></replacetoken>
+                                    <replacevalue><![CDATA[<base href="/dashboard/">]]></replacevalue>
+                                </replace>
+                            </target>
+                        </configuration>
+ I'm using a new machine (never built dashboard) ,I add code that has been deleted in che5.2.2 at dashboard pom.xml    <!-- Download Typings dependencies -->
+                                <exec dir="${basedir}" executable="typings" failonerror="true">
+                                    <arg value="install" />
+                                </exec>
+                                <!-- Download Bower dependencies -->
+                                <exec dir="${basedir}" executable="bower" failonerror="true">
+                                    <arg value="install" />
+                                </exec>
+                                <!-- Build the application -->
+                                <exec dir="${basedir}" executable="gulp" failonerror="true">
+                                    <arg value="build" />
+                                </exec>
+ use mvn clean install ,I get a success, but there are some errors in the log,Can I ignore it? [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ che-dashboard-war ---
+[INFO] Installing /home/user/source/dashboard/target/dashboard-war.war to /root/.m2/repository/org/eclipse/che/dashboard/che-dashboard-war/5.2.2/che-dashboard-war-5.2.2.war
+[INFO] Installing /home/user/source/dashboard/pom.xml to /root/.m2/repository/org/eclipse/che/dashboard/che-dashboard-war/5.2.2/che-dashboard-war-5.2.2.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ----------------
+ There are many similar error: ...
+     [exec] ERROR in [default] /home/user/source/dashboard/src/components/widget/text-info/che-text-info.directive.ts:24:9 
+     [exec] Property 'restrict' does not exist on type 'CheTextInfo'.
+     [exec] 
+     [exec] ERROR in [default] /home/user/source/dashboard/src/components/widget/text-info/che-text-info.directive.ts:25:9 
+     [exec] Property 'replace' does not exist on type 'CheTextInfo'.
+     [exec] 
+     [exec] ERROR in [default] /home/user/source/dashboard/src/components/widget/text-info/che-text-info.directive.ts:26:9 
+     [exec] Property 'transclude' does not exist on type 'CheTextInfo'.
+     [exec] 
+     [exec] ERROR in [default] /home/user/source/dashboard/src/components/widget/text-info/che-text-info.directive.ts:27:9 
+     [exec] Property 'templateUrl' does not exist on type 'CheTextInfo'.
+     [exec] 
+     [exec] ERROR in [default] /home/user/source/dashboard/src/components/widget/text-info/che-text-info.directive.ts:30:9 
+     [exec] Property 'scope' does not exist on type 'CheTextInfo'.
+     [exec] [15:56:51] Finished 'scripts' after 50 s
+ I have a suggestion : In dashboard pom.xml ,There is such a setup ：  <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${basedir}/bower_components</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                        <fileset>
+                            <directory>${basedir}/node_modules</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                        <fileset>
+                            <directory>${basedir}/dist</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
+            <plugin>
+ Can I get rid of this?Otherwise build very slow .  <fileset>
+                            <directory>${basedir}/bower_components</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+                        <fileset>
+                            <directory>${basedir}/node_modules</directory>
+                            <followSymlinks>false</followSymlinks>
+                        </fileset>
+ thanks!

@@ -1,0 +1,3 @@
+how to build cpp code/project with CHE
+kind/question 
+I am new to CHE, and trying to build some sample cpp code with CHE. How am I support to build cpp code with CHE command, where there is no gcc, g++ or make. or, how can I access gcc/g++/make. Thanks Leon

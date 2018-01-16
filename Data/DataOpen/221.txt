@@ -1,0 +1,3 @@
+Implement Move Refactoring
+kind/task 
+Implement "move" refactoring as in current Che Java support in the Che jdt.ls extension. The idea is to extend WorkspaceEdit objects with the possibility to move/rename files. See also Microsoft/language-server-protocol#191

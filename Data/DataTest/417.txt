@@ -1,0 +1,19 @@
+The swagger api is not displayed correct in the nightly build
+kind/bug 
+I've deployed the codenvy/che:nightly on my server, and visit: http://198.199.105.97:8080/swagger It can be visited, but doesn't display well. The screenshot is like this: And here some errors in Chrome console, like: GET http://198.199.105.97:8080/css/screen.css 
+swagger:15 GET http://198.199.105.97:8080/lib/jquery.slideto.min.js 
+swagger:16 GET http://198.199.105.97:8080/lib/jquery.wiggle.min.js 
+swagger:10 GET http://198.199.105.97:8080/css/reset.css 
+swagger:9 GET http://198.199.105.97:8080/css/typography.css 
+swagger:14 GET http://198.199.105.97:8080/lib/jquery-1.8.0.min.js 
+swagger:17 GET http://198.199.105.97:8080/lib/jquery.ba-bbq.min.js 
+swagger:19 GET http://198.199.105.97:8080/lib/underscore-min.js 
+swagger:18 GET http://198.199.105.97:8080/lib/handlebars-2.0.0.js 
+swagger:20 GET http://198.199.105.97:8080/lib/backbone-min.js 
+swagger:21 GET http://198.199.105.97:8080/swagger-ui.js 
+swagger:24 GET http://198.199.105.97:8080/lib/marked.js 
+swagger:23 GET http://198.199.105.97:8080/lib/jsoneditor.min.js 
+swagger:25 GET http://198.199.105.97:8080/lib/swagger-oauth.js 
+swagger:22 GET http://198.199.105.97:8080/lib/highlight.7.3.pack.js 
+swagger:33 Uncaught ReferenceError: $ is not defined(anonymous function) @ swagger:33
+swagger:13 GET http://198.199.105.97:8080/css/print.css 404 (Not Found)

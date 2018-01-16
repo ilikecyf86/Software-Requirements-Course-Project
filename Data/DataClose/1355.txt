@@ -1,0 +1,7 @@
+Add machine user token to workspace runtime response
+sprint/next-sprint status/open-for-dev team/platform kind/task sprint/next-sprint status/open-for-dev 
+Token itself is per-workspace per-user secret used to access workspace machine agents such as workspace-agent, terminal-agent or exec-agent. The idea is to include the token field into the workspace.runtime so it looks like defined by #3778 {
+    "runtime" : {
+        "userToken" : "machine0123456789abcdef"
+    }
+} The token must be dynamically calculated and added to the responses of corresponding WorkpsaceService methods for those users who call those methods. Along with that links returned by WorkspaceService must not include authentication token so it's going to be up to the client whether to use them with token or not. The token must be added to IDE AppContext and reused in the places where requests to agents are sent or websocket connections are established These changes allow to simplify the implementation of authentication logic and make response of workspace.runtime clearer and lighter. Needed for #3778

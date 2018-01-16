@@ -1,0 +1,3 @@
+Add missing docs for Java Formatter feature
+kind/docs team/ide 
+Here #5721 we added new functionality but don't have documentation for it

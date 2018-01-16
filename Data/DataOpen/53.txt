@@ -1,0 +1,3 @@
+Multiuser replace_stacks.sh
+kind/question 
+Description When using multiuser with minishift I cannot use https://github.com/eclipse/che/blob/master/dockerfiles/init/modules/openshift/files/scripts/replace_stacks.sh due to access error. Is there another way to replace the default stacks with the ones found at https://raw.githubusercontent.com/redhat-developer/rh-che/master/assembly/fabric8-stacks/src/main/resources/stacks.json ? Seems like there should be another docker image altogether for openshift versus running this script.

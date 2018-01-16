@@ -1,0 +1,3 @@
+Refresh page on user subsequent clicks on the appropriate menu item
+kind/bug status/open-for-dev team/plugin sprint/next-sprint sprint/current-sprint sprint/next-sprint status/pending-merge status/code-review status/open-for-dev status/pending-merge sprint/current-sprint severity/P2 
+When user clicks on the navbar menu item - the page is loaded. But the next click on the selected menu - does nothing, need to do the page refresh - for user to have more actual data displayed. Cause now user has to select another item and then get back to the needed one.

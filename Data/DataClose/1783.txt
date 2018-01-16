@@ -1,0 +1,3 @@
+Unable to stop sync process started from CLI
+kind/bug severity/P2 
+When starting the sync process from the CLI, it is not possible to kill it: CRTL + Cdoes not do anything. Keyboard: Mac, french layout Reproduction Steps: Started the command as this : docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /Users/stevanlemeur/dev:/data -v /Users/stevanlemeur/Desktop/local-sync:/sync eclipse/che sync wksp-a22n The sync process is starting properly informing that we can stop by using CRTL+ C Input CRTL+ C Expected behavior: The sync process is stopped Current behavior: The sync process is not stopped and the only way is to stop the Docker container (using Docker commands) Che version: 5.0.0 OS and version: MAC OS 10.12.2 Docker version: 1.12.3

@@ -1,0 +1,7 @@
+Che tries to pull local images (and fails)
+kind/question 
+When configuring a custom stack that uses an 'image' Che tries to pull the image. This fails if the image is purely local. Reproduction Steps: Build an image on the host, using '-t' to tag it. Then reference it (eg in an composer recipe) version: '2'
+services:
+  web:
+    image: my_image
+ In the default configuration, with CHE_DOCKER_ALWAYS__PULL__IMAGE set to true, che tries to pull the latest version, which obviously fails. If the image is not marked as coming from an upstream repository then it should not be pulled (or at least the failure to pull the image should not be considered a hard failure in this case.) The workaround is obviously to restart che with CHE_DOCKER_ALWAYS__PULL__IMAGE set to false, but as noted this has potential currency issues for other images.

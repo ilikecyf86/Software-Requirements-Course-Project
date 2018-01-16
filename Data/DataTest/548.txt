@@ -1,0 +1,3 @@
+"Error while creating the project - Internal Server Error: Unable get private ssh key"
+
+I've tried to setup a project, specifying an internal git url, the setup runs fine for a couple of minutes, but after it shows an error dialog : "Error while creating the project Internal Server Error: Unable get private ssh key" After I can't do anything, retry doesn't work - and I don't know how to configure this private ssh key thing.

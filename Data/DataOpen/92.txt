@@ -1,0 +1,3 @@
+Add an ability to exclude tests from test suite
+kind/enhancement 
+Description Sometimes we know that some tests will fail and it is a normal situation. For example, compose recipe is not supported by OpenShift infra, so tests that use compose fail. We need some way to exclude some tests to have an ability to get 100% tests success rate even in such situation. This would decrease the amount of time needed for analyzing tests results by QA and devs. Reproduction Steps OS and version: Diagnostics:

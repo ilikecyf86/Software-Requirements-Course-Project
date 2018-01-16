@@ -1,0 +1,3 @@
+Sometimes an error notification appears when rename a java class
+kind/bug severity/P2 
+Reproduction Steps: Open a project with java files Open in the Editor any java file, click on its Class name Menu -> Assistant -> Refactoring-> Rename Change name and press Enter button Expected behavior: Class and file names changed Observed behavior: There is "Failed to rename" error notification appeared. Che version: 5.8.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

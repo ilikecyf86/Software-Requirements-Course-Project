@@ -1,0 +1,98 @@
+archetype run.sh and stop.sh use wrong assembly
+kind/bug severity/P1 team/platform 
+The run and stop shell scripts created by archetype have ASSEMBLY_MOUNT hard coded to version 0.1-SNAPSHOT instead of detecting version that was generated for. The pom.xml in the same directory has the version number as expected. Reproduction Steps: mkdir /tmp/archetype && \
+mkdir /tmp/data && \
+docker run -it --rm  \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /tmp/archetype:/archetype \
+  -v /tmp/data:/data \
+  -v ~/.m2/repository:/m2 \
+  -v /etc/group:/etc/group:ro \
+  -v /etc/passwd:/etc/passwd:ro \
+  --user=1000:1000 \
+  --group-add 999 \
+    eclipse/che-cli:5.14.0 \
+      archetype generate
+cd /tmp/archetype/assembly
+mvn clean install
+bash run.sh --che
+ And the output shows a problem quickly as the CHE_ASSEMBLY variable printed out is defaulting to being in ~/.che INFO: (che cli): :/assembly mounted - using assembly from local host
+INFO: (che cli): nightly - using docker 17.06.0-ce / native
+INFO: (che download): Pulling image eclipse/che-cli:nightly
+
+nightly: Pulling from eclipse/che-cli
+Digest: sha256:b1227f0a75a38e451657596c11dd58ad8ccae95a113c0e7fcc4418e2b08bf477
+Status: Image is up to date for eclipse/che-cli:nightly
+
+WARN: (che init): 'nightly' installations cannot be upgraded to non-nightly versions
+INFO: (che init): Installing configuration and bootstrap variables:
+INFO: (che init):   CHE_HOST=172.17.0.1
+INFO: (che init):   CHE_VERSION=nightly
+INFO: (che init):   CHE_CONFIG=/home/jonah/.che/sample/data
+INFO: (che init):   CHE_INSTANCE=/home/jonah/.che/sample/data/instance
+INFO: (che init):   CHE_ASSEMBLY=/home/jonah/.che/sample/data/instance/dev/che-tomcat
+INFO: (che config): Generating che configuration...
+INFO: (che config): Customizing docker-compose for running in a container
+INFO: (che config): Copying local binaries to /home/jonah/.che/sample/data/instance/dev...
+INFO: (che start): Preflight checks
+WARNING: No swap limit support
+         mem (1.5 GiB):           [OK]
+         disk (100 MB):           [OK]
+         port 8080 (http):        [AVAILABLE]
+         conn (browser => ws):    [OK]
+         conn (server => ws):     [OK]
+
+INFO: (che start): Starting containers...
+INFO: (che start): Services booting...
+INFO: (che start): Server logs at "docker logs -f che"
+INFO: (che start): Booted and reachable
+INFO: (che start): Ver: nightly
+INFO: (che start): Use: http://172.17.0.1:8080
+INFO: (che start): API: http://172.17.0.1:8080/swagger
+
+ OS and version: XUbuntu 17.04 Diagnostics: $ docker run -it --rm    -v /var/run/docker.sock:/var/run/docker.sock   -v /tmp/archetype:/archetype   -v /tmp/data:/data   -v ~/.m2/repository:/m2   -v /etc/group:/etc/group:ro   -v /etc/passwd:/etc/passwd:ro   --user=1000:1000   --group-add 999     eclipse/che info
+WARN: Bound 'eclipse/che' to 'eclipse/che:5.14.0'
+WARNING: No swap limit support
+INFO: (che cli): 5.14.0 - using docker 17.06.0-ce / native
+
+CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che
+ Version:        5.14.0
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /tmp/data
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    5.14.0
+ CHE_HOST:       172.17.0.1
+ CHE_INSTANCE:   /tmp/data/instance
+ CHE_CONFIG:     /tmp/data
+ CHE_BACKUP:     /tmp/data/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   172.17.0.1
+ Initialized:    false
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:5.14.0
+ IMAGE_CHE=eclipse/che-server:5.14.0
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ IMAGE_TRAEFIK=traefik:v1.3.0-rc3
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.14.0
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.14.0
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:5.14.0
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:5.14.0
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.14.0
+che.env: not initialized

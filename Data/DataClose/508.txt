@@ -1,0 +1,21 @@
+Ports should not be exposed automatically, but rather be explicitly defined in workspace config
+target/branch team/platform kind/task status/open-for-dev status/in-progress status/open-for-dev sprint/current-sprint sprint/current-sprint 
+Related to SPI. Machine info from workspace config must contain information about the exposed port in servers property:     "workspaceConfig": {
+      "environments": {
+        "default": {
+          "machines": {
+            "app/main": {
+              "installers": [
+                "org.eclipse.che.exec", "org.eclipse.che.terminal", "org.eclipse.che.ws-agent"
+              ],
+              "servers": {
+                "web": {
+                  "protocol": "http",
+                  "port": "8080/tcp"
+                }
+              }
+            }
+.
+.
+.
+ This would make it easier and more straight forward creating workspaces on different infrastructures ( e.g. no need for inspecting image while creating workspace against dockerimage recipe)

@@ -1,0 +1,3 @@
+Can we have a prettier image name for Che pod on OCP?
+kind/question 
+Description We have a random name for Che pod image on OCP whereas other containers are created from images with pretty names. It is hard to figure out what Che container from docker ps output does. Probably it is related to image streams feature, so I'm not sure whether we can improve that. Reproduction Steps OS and version: Diagnostics:

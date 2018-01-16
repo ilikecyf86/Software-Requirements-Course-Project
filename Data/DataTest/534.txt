@@ -1,0 +1,3 @@
+MVN Clean Install Fails on windows 8.1
+kind/question 
+The build fails when trying to do an mvn clean install... everything else seems to be fine... I have included screenshots of the error log!

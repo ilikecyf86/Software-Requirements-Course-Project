@@ -1,0 +1,3 @@
+Unexpected fail in the CheckErrorsWarningsTabTest selenium test
+kind/bug selenium/failure status/in-progress team/production sprint/current-sprint status/open-for-dev status/in-progress status/open-for-dev 
+We have unexpected fail in the CheckErrorsWarningsTabTest selenium test on the che6. It looks like for some reasons less quantity of rows are displayed in the editor, than we expected in the test. We need to investigate reasons and fix them. Report with problem: https://ci.codenvycorp.com/view/qa/job/che-multiuser-integration-tests-che6/35/Selenium_tests_report/ Attachment: OS and version: Che - 6.0.0-M3 ; Chrome 59.0; Fedora 25 Diagnostics:

@@ -1,0 +1,3 @@
+Runtime error with Java 9
+kind/bug status/in-progress status/code-review status/in-progress status/code-review 
+Description When using Java 9 to launch Eclipse Che, there are errors NoClassDefFoundError for javax.activation package and also for javax.xml.bind it's because Java runtime disable by default access to javax.* API Fix can either be: add the -add-modules java.activation --add-modules java.xml.bind option at runtime package activation.jar / jaxb implementation in the war file so there is no need to expose API from the JVM Reproduction Steps Run Che with Java9 runtime OS and version: macOS High Sierra Related to epic #5326

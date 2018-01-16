@@ -1,0 +1,3 @@
+IDE doesn't execute a command after start of workspace
+kind/bug target/branch 
+Related to SPI branch only. When I start workspace either in IDE or UD client doesn't connect to exec server. So when I try to execute any command IDE doesn't show the result of the command since it doesn't send command execution request to exec server. Also, IDE should not activate RUN panel when there is no connection with exec server. BTW reloading the page fixes the issue. Reproduction Steps: OS and version: Diagnostics:

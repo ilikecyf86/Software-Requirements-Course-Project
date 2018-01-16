@@ -1,0 +1,3 @@
+Recover servers logs streaming
+target/branch status/in-progress status/in-progress team/platform 
+Bootstrapper continues streaming logs after workspace is started and there is at least one server. But right now there is no way to reconnect to the logs stream after master is restarted. I see several ways to solve this issue: Bootstrapper attempts to reconnect to master once disconnected. Master asks bootstrapper to continue logs streaming sending push-logs-endpoint to it. Master connects to bootstrapper and asks to stream logs using established connection. I would start from the option 1, as it is the simplest way to achieve recovery. The logs format is defined in the bootstrapper spec. Needed for #5097 Needs #5814

@@ -1,0 +1,3 @@
+Rework resolving of machine's servers
+kind/enhancement kind/task team/platform kind/enhancement status/in-progress status/code-review status/in-progress status/code-review 
+OpenShift spi resolves machines servers when everything is created and ready to work. It is needed to rework it to resolving all servers before pod creation to avoid analyzing openshift objects on each request and to have the same servers as configuration has in the case when some route, service is not configured properly.

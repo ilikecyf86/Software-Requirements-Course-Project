@@ -1,0 +1,6 @@
+Fix leak of connection to OpenShift
+kind/task team/platform status/info-needed status/in-progress sprint/current-sprint status/in-progress 
+When OpenShift workspace is started we have following output in logs of tomcat: 2017-08-03 15:44:15,559[aceSharedPool-0]  [INFO ] [o.e.c.a.w.s.WorkspaceManager 411]    - Workspace 'che:testx19' with id 'workspace8go3un4udnwr1pfd' started by user 'undefined'
+Aug 03, 2017 3:49:01 PM okhttp3.internal.platform.Platform log
+WARNING: A connection to https://192.168.42.246:8443/ was leaked. Did you forget to close a response body? To see where this was allocated, set the OkHttpClient logger level to FINE: Logger.getLogger(OkHttpClient.class.getName()).setLevel(Level.FINE);
+ Creation of all OpenShift clients placed in try with resources section. So it is needed to investigate why leak is done and fix it.

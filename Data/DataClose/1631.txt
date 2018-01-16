@@ -1,0 +1,6 @@
+Workspace created from dockerfile doesn't start behind a proxy
+kind/bug severity/P1 team/platform sprint/current-sprint sprint/current-sprint 
+When workspace recipe is dockerfile and it contains instructions sensitive to proxy settings it doesn't start. Reproduction Steps: Start WS from docker file FROM ubuntu
+RUN apt-get update && apt-get install mc
+CMD tail -f /dev/null
+ It is because Che doesn't pass proxy settings into docker build parameters. All we need is to add proxy settings to build request. OS and version: Ubuntu 16.04

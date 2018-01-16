@@ -1,0 +1,3 @@
+How to migrate existing Eclipse RCP application to Eclipse Che?
+kind/question 
+Hi, How to migrate existing Eclipse RCP application to Che? How stack should be configured. what are basic steps needed? For e.g. I have developed one RCP application. Now I want to migrate it to Eclipse Che. How to migrate? I want to see the output for application like view, perspective, application window, menus. If it's launched from Eclipse Che. Does eclipse Che support's such migration? If yes, how to do that?. As in desktop IDE we set target platform, it consists of set of plugins which are required to launch the application. Eclipse che provide's such functionality, if we migrate rcp plugins to Eclipse Che? Let me know if more data is required. Thanks, Swanand

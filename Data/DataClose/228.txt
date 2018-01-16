@@ -1,0 +1,6 @@
+Cannot run Che in multi-user mode
+kind/bug sprint/current-sprint team/production 
+Description I got an error when tried to start Che in multi-user mode. Reproduction Steps Run in terminal docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v $CHE_MULTIUSER_DATA:/data -v $CHE_REPO:/repo -e CHE_MULTIUSER=true eclipse/che-cli:nightly start OS and version: OS: Linux Mint 18.2 Sonya Docker version: 17.09.0-ce, build afdb6d4 Diagnostics: Here is the error: /repo/dockerfiles/base/scripts/base/library.sh: line 306: IMAGE_CHE: unbound variable
+flag provided but not defined: -I
+See 'docker run --help'.
+/repo/dockerfiles/base/scripts/base/library.sh: line 330: 1: unbound variable

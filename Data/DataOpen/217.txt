@@ -1,0 +1,67 @@
+Thread-unsafe handling of FS events
+kind/bug target/che6 team/ide 
+Sometimes log of ConcurrentModificationException appears on ws agent. Reproduction the simplest way to reproduce such problem is performed few concurrent call of handle method like in the following test: ConcurrentHandleTest public class ConcurrentHandleTest {
+  private static final String PROJECT_FILE = "/project/file";
+
+  @Rule public TemporaryFolder rootFolder = new TemporaryFolder();
+
+  FileWatcherEventHandler handler;
+
+  @Mock Consumer<String> create;
+  @Mock Consumer<String> modify;
+  @Mock Consumer<String> delete;
+
+  Path root;
+
+  @Before
+  public void setUp() throws Exception {
+    root = rootFolder.getRoot().toPath();
+    handler = new FileWatcherEventHandler(rootFolder.getRoot());
+  }
+
+  @Test
+  public void testConcurrentHandle() throws Exception {
+    class HandleTask implements Callable<Void> {
+
+      WatchEvent.Kind<Path> eventType;
+
+      public HandleTask(WatchEvent.Kind<Path> eventType) {
+        this.eventType = eventType;
+      }
+
+      @Override
+      public Void call() {
+        final Path path = root.resolve(PROJECT_FILE);
+        handler.register(path, create, modify, delete);
+        handler.handle(path, eventType);
+        return null;
+      }
+    }
+    final int n = 50;
+    final ExecutorService executor = newFixedThreadPool(5);
+    final ArrayList<Callable<Void>> tasks = new ArrayList<>(n);
+    final ImmutableList<Kind<Path>> operations = of(ENTRY_CREATE, ENTRY_MODIFY, ENTRY_DELETE);
+    for (int i = 0; i < n; i++) {
+      tasks.add(new HandleTask(operations.get(ThreadLocalRandom.current().nextInt(0, operations.size()))));
+    }
+    final List<Future<Void>> futures = executor.invokeAll(tasks, n, SECONDS);
+    long count =
+        futures
+            .stream()
+            .filter(
+                future -> {
+                  try {
+                    future.get();
+                    return false;
+                  } catch (ExecutionException ex) {
+                    System.out.println(ex.getMessage());
+                    return ex.getCause() instanceof ConcurrentModificationException;
+                  } catch (Exception ignored) {
+                    return false;
+                  }
+                })
+            .count();
+    assertEquals(count, 0);
+  }
+}
+ screenshot:

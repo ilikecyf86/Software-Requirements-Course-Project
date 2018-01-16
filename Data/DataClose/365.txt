@@ -1,0 +1,3 @@
+Improve swagger test
+kind/task 
+In the test we should consider that in the test account may be run several workspaces

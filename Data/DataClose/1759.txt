@@ -1,0 +1,16 @@
+UTILITY_IMAGE_CHEIP: unbound variable
+kind/question 
+When starting a project it returns UTILITY_IMAGE_CHEIP: unbound variable Reproduction Steps: I have cloned and compiled a fresh che about an hour ago. When I start is as docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v ~/che:/repo -v ~/che:/data eclipse/che-cli start it returns WARN: You are using CLI image version 'latest' which is set to '5.0.0'.
+WARNING: No swap limit support
+INFO: (che cli): :/repo mounted - using binaries from your local repository
+INFO: (che cli): Checking network... (hint: '--fast' skips version and network checks)
+INFO: (che cli): Loading cli...
+/repo/dockerfiles/cli/scripts/cli.sh: line 10: UTILITY_IMAGE_CHEIP: unbound variable
+ Previously this error did not occure. Che version: 5.0.0 OS and version: Ubuntu 16.04 Docker version: 1.12.5 Che cli.log output: Fri Jan 13 09:53:55 UTC 2017
+INFO: (che cli): Checking network... (hint: '--fast' skips version and network checks)
+/usr/bin/curl  "-I -k dockerhub.com -s -o /dev/null --write-out %{http_code}"
+INFO: (che cli): Loading cli...
+Fri Jan 13 09:54:22 UTC 2017
+INFO: (che cli): Checking network... (hint: '--fast' skips version and network checks)
+/usr/bin/curl  "-I -k dockerhub.com -s -o /dev/null --write-out %{http_code}"
+INFO: (che cli): Loading cli...

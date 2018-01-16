@@ -1,0 +1,3 @@
+Filters widget improving
+kind/enhancement status/in-progress 
+Add possibility closing of the Filters widget by Esc button Close the filters widget after setting focus into other place Unexpected resetting in the input dags field after type , symbol Add selecting of the Suggestions: items by mouse clicking Use left narrow and right narrow buttons instead of up and down narrows for selecting of Suggestions The widget does not respect special symbols like . for example .NET searching

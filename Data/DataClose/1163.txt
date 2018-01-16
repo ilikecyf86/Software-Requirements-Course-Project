@@ -1,0 +1,3 @@
+Machine docs are outdated
+kind/docs severity/P1 kind/bug 
+This page needs an overhaul: https://www.eclipse.org/che/docs/devops/runtime-machines/index.html

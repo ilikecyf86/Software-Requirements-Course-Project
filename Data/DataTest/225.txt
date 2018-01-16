@@ -1,0 +1,3 @@
+Debugger fails to add a breakpoint when client and server aren't on the same host
+kind/bug 
+The issue has been reported by a user who runs Che on a remote instance. When debugging a Hello World Java console app, it turned out that the jar gets executed and it does not stop at the breakpoint. This behavior wasn't reproduced on localhost. Adding thread.sleep(1000) fixed the problem. [~abazko] has further details.

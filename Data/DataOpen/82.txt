@@ -1,0 +1,3 @@
+Users are not removed from a sub-organization after removing them from an organization
+status/info-needed team/plugin team/platform kind/bug 
+Problem: Users should be removed from sub-organizations if they are removed from organizations. Reproduction Steps: create an organization and add a member in the organization create a sub-organization and add the same member to the sub-organization remove the member from the organization Expected: the member is also removed from the sub-organization Observed: the member is not removed from the sub-organization Che version: 6.0.0-M2 and todays nightly (Dec, 4th 2017) OS and version: Ubuntu 16.04

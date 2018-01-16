@@ -1,0 +1,3 @@
+The title of the command editor tab isn't updated after changing command's name and saving it
+kind/bug team/ide status/pending-merge status/pending-merge 
+The title of the command editor tab isn't updated after changing command's name and saving it. Reproduction Steps: Open any command in the editor Modify it's name Click Save button Expected behavior: Editor's tab label should be updated after saving the command with new name. Observed behavior: Additional information: branch icom

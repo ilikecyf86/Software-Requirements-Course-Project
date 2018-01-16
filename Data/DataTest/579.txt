@@ -1,0 +1,3 @@
+Can't connect to ws://che-host:8080 when creating new project
+
+I started a new che by docker run -it --privileged -p 8080:8080 codenvy/che:nightly, then open the dashboard: http://myip:8080/dashboard, and create the first project. But it fails: The error information is: [STDOUT] 2016-01-01 03:21:42,614[rrest.WSClient8] [INFO ] [.c.a.c.n.WSocketEventBusClient 223] - Open connection to ws://che-host:8080/che/api/eventbus/?token=dummy_token. [STDOUT] 2016-01-01 03:21:44,608[ventBusClient-0] [WARN ] [.c.a.c.n.WSocketEventBusClient 256] - Not able to connect to ws://che-host:8080/che/api/eventbus/?token=dummy_token because Connection timeout. Retrying

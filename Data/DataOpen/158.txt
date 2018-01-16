@@ -1,0 +1,3 @@
+FileWatcherManager uses file system path matcher instead of workspace path matcher
+team/ide kind/bug severity/P2 
+Actual org.eclipse.che.api.watcher.server.FileWatcherManager interface uses java.nio.file.PathMatcher to identify a file system item to bind operation set to. PathMatcher interface has no restrictions for pathing and allows a developer to track events that goes not only from workspace file system but from any file system item. In order to prevent a developer from going beyond the bounds of workspace file system we should somehow limit PathMatcher effective scope to workspace or provide a new interface that is applicable only inside workspace file system.

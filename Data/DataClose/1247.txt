@@ -1,0 +1,3 @@
+Not correctly work shortcuts for default "Run" and "Debug" commands (Alt+R , Alt+D)
+kind/bug severity/P1 team/plugin status/open-for-dev sprint/current-sprint team/ide team/plugin status/in-progress status/open-for-dev status/code-review status/in-progress status/code-review 
+Reproduction Steps: Go to spring project Run some command from toolbar Press Alt+R Create, update or move some command Press Alt+R again Pay attention to result Attachment :

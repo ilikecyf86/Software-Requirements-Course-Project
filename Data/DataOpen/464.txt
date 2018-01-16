@@ -1,0 +1,3 @@
+There is a duplicate commands goal in a project context menu after changing a command settings
+kind/bug severity/P2 team/ide 
+Reproduction Steps: From the Commands Explorer in one of goal(for example "Run") create at least two command. Do some change for one command and click Save button. Observed behavior: In Commands context menu are two "Run" goals. Che version: 5.9.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

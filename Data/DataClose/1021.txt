@@ -1,0 +1,6 @@
+Build a custom assembly for each platform
+kind/question 
+Hello, I just want to know if I have to build a custom assembly for each platform or not. For example if I am on Windows and I run this command: docker run -it --rm
+      ...
+      archetype build
+ Now I have a generated custom assembly that can be executed (on my Windows machine). If I want to execute this generated custom assembly on a Linux machine, do I have to re-build it on Linux to have a new custom assembly specially for Linux or can I re-used the generated custom assembly and just run it ?

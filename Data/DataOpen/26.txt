@@ -1,0 +1,36 @@
+Unable to access eclipse/che instance from another machine through proxy
+kind/question 
+Description Unable to access eclipse/che instance from another machine through proxy Machine 1 IP - 10.187.33.1 docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v ~/che:/data eclipse/che:5.20.1 start --fast Eclipse Che is accessible from localhost:8080 Machine 2 In Browser, access che on http://10.187.33.1:8080 Issue Dashboard shows up, but unable to bring up any workspace. Chrome Devtools -> Network Requests -> you will see there is a GET http://localhost:8080/api which is wrong. localhost should be replaced with the IP address. OS and version: Docker for Mac - 17.09.1-ce Got the same result with latest version (5.21.1) as well. Later I tried the same by changing the following env vars: CHE_HOST=10.187.33.1 CHE_API=http://10.187.33.1:${SERVER_PORT}/wsmaster/api CHE_DOCKER_IP=10.187.33.1 CHE_DOCKER_IP_EXTERNAL=10.187.33.1 CHE_SINGLE_PORT=false And Added the following configuration in NGINX http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  logs/access.log  main;
+    map $http_upgrade $connection_upgrade {
+        default upgrade;
+        ''      close;
+    }
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    server {
+        listen       8000;
+        server_name  localhost;
+
+        location / {
+            proxy_pass http://10.187.33.1:8080;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection $connection_upgrade;
+        }
+}
+ Expected result Once this is working, I want to ultimately put in NGINX proxy in front of it, so that all the communication goes through the proxy.

@@ -1,0 +1,3 @@
+Rework code dependent on the deprecated WsAgentStateEvent
+team/ide kind/enhancement kind/task target/branch status/in-progress kind/enhancement status/code-review status/in-progress status/code-review 
+Need to rework code dependent on the deprecated WsAgentStateEvent. In the most cases, such code should depend on the servers/machines/workspaces statuses or should be called on extension initialization phase. Related to SPI branch only.

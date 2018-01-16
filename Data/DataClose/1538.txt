@@ -1,0 +1,3 @@
+Rework GWT, UD clients to use new install agent API for logs streaming/downloading
+kind/task 
+Rework GWT, UD clients to use new install agent API for logs streaming/downloading

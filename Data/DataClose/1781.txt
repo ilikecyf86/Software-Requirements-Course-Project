@@ -1,0 +1,9 @@
+enviromental variables are not inherited in the web ide
+kind/question 
+user doesn't inherit enviromental variables when executing a command in IDE. Reproduction Steps: I have created a custom stack with a custom image. The image bases on codenvy/ubuntu_jdk8 and some environment variables are set in the .bashrc file in the image (e.g. HTTP_PROXY). When I do whoami && echo $HTTP_PROXY && echo HELLOWORLD in a terminal of the workspace then it returns user
+http://proxy.blah.blah:8080/
+HELLOWORLD
+ as it is supposed to be. However if I create the same command as a custom command and push 'start' button it returns only user
+
+HELLOWORLD
+ Ther first question is if this is a normal behaviour? If so, then how to inherit the environment variables for the both cases? (Let's assume that duplicating environment variables in a workspace config is a bad solution). Che version: 5.0.0 OS and version: Ubuntu 16.06 Docker version: 1.12.5

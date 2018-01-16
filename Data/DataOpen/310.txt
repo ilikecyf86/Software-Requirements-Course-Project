@@ -1,0 +1,3 @@
+Presentation mode
+kind/enhancement team/ide kind/epic kind/enhancement 
+It would be great to have a presentation mode similar to IntelliJ's. Because the terminal and command panel are pretty key for Che I think we'd handle it a little differently by having two presentation modes - with and without terminal / command panel: With Terminal / Command Panel Hide the left nav Leave top menu but hide toolbar and tabs Hide project explorer Collapse terminal and command panel so it's 5 terminal lines tall Increase font size for editor and terminal / command output Without Terminal / Command Panel Above plus... Hide top menu Hide terminal and command panel

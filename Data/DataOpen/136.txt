@@ -1,0 +1,16 @@
+Remove deprecated strategy comments from env file
+kind/bug severity/P2 target/branch team/platform 
+The following in che.env in che6 branch is not true. There is just one way to organize communication between server and agent. # Workspace Address Resolution Strategy
+#     The strategy to determine how workspace servers users launch will be exposed. 
+#     If the Che server and your workspaces are on different networks that flow through a
+#     firewall, those firewalls can prevent communications between Che and workspaces.
+#     The default strategy exposes workspaces with the IP of Docker and ephemeral ports.
+#     A Docker local strategy uses internal Docker network IP addresses and exposed ports.
+#
+#     Options:
+#       - 'default':      internal address is DOCKER_HOST with ephemeral ports
+#       - 'docker-local': internal address is Docker network container address with
+#                         exposed ports (not ephemeral)
+#     on the same Docker network.
+#CHE_DOCKER_SERVER__EVALUATION__STRATEGY=docker-local
+ There are other inconsistencies in che.env comments too, mostly related to networking.

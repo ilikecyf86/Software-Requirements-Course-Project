@@ -1,0 +1,4 @@
+Temporary files doesent cleared by che-plugin-svn-ext-server
+kind/bug severity/P2 status/open-for-dev team/enterprise 
+Found out that che-plugin-svn-ext-server doesn't clear temporary files Over the time it may lead to out of disk space situation In /tmp folder lots of floders like org.eclipse.che.plugin.svn.server.SubversionApiITest-1000244451859738986/
+ Reproduction Steps Run tests Observe /tmp folder for leftovers OS and version: Che/Codenvy 5.18.0

@@ -1,0 +1,4 @@
+Heap on master filled with JSON-RPC message Strings
+kind/bug team/ide severity/P1 severity/blocker sprint/current-sprint severity/P1 
+Got monitoring alert that heap is bumped to maximum on master. After heap dump quick analysis spot big number of JSON-RPC messages about errors that happened like several days ago. {"jsonrpc":"2.0","method":"event:ws-agent-output:message","params":["[STDOUT] 2017-10-05 12:05:42,656[ool-17-thread-1]  [INFO ] [o.e.c.a.l.r.CheLanguageClient 80]    - {\"Event\":\"Diagnostic\",\"Body\":{\"Results\":[{\"FileName\":\"/projects/dotnet-web-si... <truncated>
+ Looks like we are storing messages that we are unable send via web-socket forever. Reproduction Steps Don't sure, probably inspect heap and look for a JSON-RPC messages about past events OS and version: Codenvy 5.19.0-SaaS

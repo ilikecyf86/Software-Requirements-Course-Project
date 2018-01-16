@@ -1,0 +1,3 @@
+How to hide the projects belong to other workspaces?
+
+Finally, I got eclipse-che 4.x running, and created several different workspace, and created different projects in some of them: But the problem is, when I open the lipeng3 workspace http://localhost:8080/che/lipeng3, it will also show the test_another_spring project which belongs to another workspace I can even edit it: Since I want to create workspaces for different users, they should not see other's projects. Is there any way to hide them?

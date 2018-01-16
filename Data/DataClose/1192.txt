@@ -1,0 +1,3 @@
+The same processes in the process bar disappeared after relaunch process
+kind/bug severity/P2 team/ide sprint/next-sprint status/in-progress status/code-review status/in-progress status/code-review 
+Reproduction Steps: Go to any project Launch three times the one command Click on process bar and wait drop-down list Relaunch some command from this list Pay attention to result Expected behavior : The commands will be relaunched and stay in the list . Observed behavior : The commands relaunched but disappeared from drop-down list . Attachment :

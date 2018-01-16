@@ -1,0 +1,3 @@
+Factory creation from dashboard works wrong
+kind/bug severity/P1 
+Reproduction Steps: Create a workspace with the Spring project. Dashboard ->Factory ->Create factory->Select just created workspace. Expected result: the factory should be created Actual result: we have Create factory failed message. More details: after POST request for creation of the factory we have HTTP response from server with 415 code and next error message: Media type multipart/form-data;boundary=----WebKitFormBoundaryvbYudw59o8KDYd06 is not supported OS and version: Chrome browser, Ubuntu 14.0 TLS, Che version: 5.12.0-SNAPSHOT, server location: nightly.codenvy-stg.com

@@ -1,0 +1,3 @@
+Make sshd optional
+kind/task target/che6 team/platform 
+Description Since not we are not able to truly run sshd in all infrastructures. We want to do a couple of things. Remove ssh installer from default stacks

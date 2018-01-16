@@ -1,0 +1,3 @@
+Switch Language Server functionality to the websocket JSONRPC API endpoint
+kind/enhancement team/ide status/code-review 
+For now we communicate with different Language Services via our REST Services. This is introduce some problem in case we send a lot of request in the same time form one browser tab. For avoiding such problem need to switch to the webscoket communications. Here related issues: python language server doesn't work #4976 Updating file... popup message interrupts development #2154 Modal message "Initializing Language Server for ts" not disappearing and blocking the ui #2155 Cannot re-start php workspace #5042 codenvy IDE hangs/freeze codenvy/codenvy#2146

@@ -1,0 +1,3 @@
+Getting an error /bin/sh: 102: let: not found
+kind/question kind/bug team/enterprise kind/question status/open-for-dev status/open-for-dev 
+OS : Ubuntu 16.04.3 Che : 5.19.0 Mode : Multi-User Last night Che 5.19.0 working perfectly, but today once i reopen my workspace, i getting an error as below picture.

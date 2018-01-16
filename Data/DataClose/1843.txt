@@ -1,0 +1,19 @@
+Problems when building new dockerfiles
+kind/bug severity/P2 
+I'm using: Che version 5.0.0 Mac OSX 10.11.6 Docker 1.13.0-rc4 Trying to build centOS based Che I came up against some problems that I'm listing below. 1/ Bulding dockerfiles/lib fails The error is ./lib-typescript/src/api/dto/che-dto.ts(10126,9): error TS2393: Duplicate function implementation.
+The command '/bin/sh -c cd /lib-typescript/ && npm install && cd /runtime && npm install && /lib-typescript/node_modules/.bin/tsc --project /lib-typescript/ && mv /lib-typescript/lib /che-lib && cd /lib-typescript/src && find . -name "*.properties" -exec install -D {} /che-lib/{} \;    && rm -rf /lib-typescript && mv /runtime/node_modules /che-lib && rm -rf /runtime' returned a non-zero code: 2
+ to reproduce it run cd dockerfiles/lib
+./build.sh 2/ Version nightly of che-base is used when building che-cli latest Running dockerfiles/cli/build.sh <tag> builds image eclipse/che-cli:<tag>. But the base image used to build it is always eclipse/che-base:nightly. There is no way to use eclipse/che-base:<tag> instead. 3/ I wasn't able to run Che with a version that is not in dockerfiles/cli/version/ Running dockerfiles/build-all.sh latest-centos builds all images with tag latest-centos. When I try to start Che using that version I get an error: docker run -ti --rm -v /Users/mloriedo/.che:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che-cli:latest-centos start
+INFO: (che cli): Checking registry for version 'latest-centos' images
+
+We could not find version 'latest-centos'. Available versions:
+ 4.7.2
+ 5.0.0-M5
+ 5.0.0-M6
+ 5.0.0-M7
+ 5.0.0-M8
+ latest
+ latest.ver
+ nightly
+
+Set CHE_VERSION=<version> and rerun. And setting CHE_VERSION doesn't help: docker run -e CHE_VERSION=latest-centos -ti --rm -v /Users/mloriedo/.che:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che-cli:latest-centos start NOTE: None of these issue is blocking (i.e. I've been able to build a CentOS based Che). I'm sorry if these have already been reported: I've briefly searched for similar problems among existing issues but haven't found anything.

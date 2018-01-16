@@ -1,0 +1,3 @@
+Create test user at start of selenium tests execution on Eclipse Che Multi User
+kind/task status/open-for-dev team/production status/in-progress sprint/current-sprint target/che6 status/open-for-dev 
+Description We need to have an ability to create test user of Eclipse Che Multi User and to setup Keycloak server automatically at the start of execution of selenium tests. Now creation of test user is done by build script on CI and it's hard to support it at the number of jobs. Also, test user is usually being created manually through the Keycloak Web admin console when someone is starting selenium tests locally. OS and version: Eclipse Che Multi User 6.x.

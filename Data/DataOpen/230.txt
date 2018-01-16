@@ -1,0 +1,23 @@
+ERROR: org.eclipse.che.api.core.ServerException: null
+kind/bug severity/P1 
+Got several exceptions like: 2017-10-12 05:47:58,377[ceSharedPool-15]  [ERROR] [o.e.c.a.w.s.WorkspaceManager 683]    - null
+org.eclipse.che.api.core.ServerException: null
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.startInstance(CheEnvironmentEngine.java:1002)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.startEnvironmentQueue(CheEnvironmentEngine.java:794)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.start(CheEnvironmentEngine.java:262)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.startEnvironmentAndPublishEvents(WorkspaceRuntimes.java:694)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.access$100(WorkspaceRuntimes.java:103)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes$StartTask.call(WorkspaceRuntimes.java:986)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes$StartTask.call(WorkspaceRuntimes.java:948)
+	at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalCallable.call(CopyThreadLocalCallable.java:30)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.eclipse.che.api.core.ServerException: null
+	at org.eclipse.che.plugin.docker.machine.MachineProviderImpl.startService(MachineProviderImpl.java:396)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.lambda$startEnvironmentQueue$6(CheEnvironmentEngine.java:765)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.startInstance(CheEnvironmentEngine.java:939)
+	... 11 common frames omitted
+Caused by: java.lang.ClassCastException: null
+ Can't fine similar exception in logs Reproduction Steps Don't know OS and version: Centos 7.3 Codenvy 5.18.0-SaaS

@@ -1,0 +1,3 @@
+A web page is not redirected correctly, if after "http:" a link has only one slash
+kind/bug severity/P2 team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+Reproduction Steps: Start a workspace and in a project create a html file. Create a link in this file with only one slash after 'http'. Click on this link. Observed behavior: The IDE frame opens itself Che version: 5.10.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

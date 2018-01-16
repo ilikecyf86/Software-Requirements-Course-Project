@@ -1,0 +1,3 @@
+[REGRESSION] Progress of the importing project is not displayed
+kind/bug severity/P2 severity/P1 severity/P2 status/open-for-dev status/in-progress status/open-for-dev status/code-review status/in-progress 
+Reproduction Steps: Create java stack with CHE project ("che-in-che") Wait until WS will be ran Pay attention that project folder exists in the project explorer but without files. Files are importing in the background (fone) but progress of this process is not shown . OS and version: CHE 5.15.0 ; Chrome 59.0 ; Fedora 25

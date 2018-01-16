@@ -1,0 +1,3 @@
+[dashboard] Use JSON RPC instead websocket requests on workspace agent API
+kind/enhancement team/plugin sprint/next-sprint sprint/current-sprint sprint/next-sprint status/code-review sprint/current-sprint status/code-review 
+Due to switch-over JSON RPC from everrest websocket requests to workspace master API - dashboard client need to be adapted as well.

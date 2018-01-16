@@ -1,0 +1,15 @@
+Errors on building Che CLI docker images
+kind/bug team/production target/branch severity/P1 status/in-progress sprint/current-sprint status/in-progress 
+I needed to rebuild Che CLI images in the repo and got several issues with it. When I build images using the script that builds all the images it fails with a message: che/build.sh: line 37: cd: che: No such file or directory When the previous problem is workarounded I got another error: Script run successfully: eclipse/che-cli:nightly
+Running tests in container from image eclipse/che-bats:nightly
+Running functional bats tests for CLI prompts and usage
+ ✓ test CLI prompt to provide volume for docker sock
+ ✓ test CLI prompt to provide directory for user data
+ ✓ test CLI 'usage' when running container without command
+
+3 tests, 0 failures
+Running functionals bats tests for config command
+ ✗ test CLI 'config' command
+   (in test file /dockerfiles/cli/tests/cmd_config_tests.bats, line 29)
+     `[[ -d "${container_tmp_path}"/instance/config/che ]]' failed
+ Folder with binaries tracked by git appears: dockerfiles/che/eclipse-che/ Reproduction Steps: OS and version: Diagnostics:

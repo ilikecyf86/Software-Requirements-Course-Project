@@ -1,0 +1,3 @@
+[CHE6 branch] Adapt the 'GitColorsTest' according new client
+kind/task status/in-progress status/open-for-dev team/production status/code-review status/in-progress 
+Need to add changes to 'GitColorsTest' according to new client in the 'che6' branch

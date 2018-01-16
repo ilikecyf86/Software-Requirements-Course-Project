@@ -1,0 +1,11 @@
+how to resume installation after crash
+kind/question 
+I have a wifi connection which has collisions once in a while. It sometimes causes a crash when building che (usually not). It's not an issue if the build process has recently begun, but it's really painfull to see BUILD FAILED after half an hour of waiting. The last time it was Extention Maven Server [INFO] Che Plugin :: Maven :: Archetype Generator ......... SUCCESS [  7.934 s]
+[INFO] Che Plugin :: Maven :: Extension Maven Client ...... SUCCESS [ 10.787 s]
+[INFO] Che Plugin :: Maven :: Extension Maven Server ...... FAILURE [01:41 min]
+[INFO] Che Plugin :: GDB :: Parent ........................ SKIPPED
+
+ I tried mvn -rf che-plugin-maven-server install but it only threw an error [INFO] Scanning for projects...
+[ERROR] [ERROR] Could not find project to resume reactor build from: che-plugin-maven-server vs [MavenProject: org.eclipse.che:che-parent:5.0.0-M9-SNAPSHOT @ /home/alex/che/pom.xml, MavenProject: org.eclipse.che.core:che-core-parent:5.0.0-M9-SNAPSHOT
+.....
+ The question is how to either resume a build process from the last crash, or to force to continue building after crash? Che version: latest OS and version: Ubuntu 16 Problem can be reliably reproduced, doesn't happen randomly: No

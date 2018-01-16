@@ -1,0 +1,6 @@
+Allow to cancel workspace start from dashboard
+kind/enhancement sprint/next-sprint status/open-for-dev team/plugin sprint/current-sprint sprint/next-sprint status/in-progress status/open-for-dev status/code-review status/in-progress status/code-review sprint/current-sprint 
+#3701 introduces server-side changes that allow user to stop the STARTING workspace. The goal of this issue is to allow workspace start cancellation from UI. A few words about start cancellation behaviour: Status map: STOPED -> STARTING -> RUNNING             (successfully started)
+STOPED -> STARTING -> STOPPING -> STOPPED (start cancelled)
+STOPED -> STARTING -> STOPPED             (error while starting)
+ so basically if workspace is STARTING and then stop is called the workspace start is interrupted and STOPPING + STOPPED events are sent. Please note that there is no SNAPSHOTTING event as the workspace wasn't fully started so there is nothing to snapshot yet.

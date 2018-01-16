@@ -1,0 +1,28 @@
+How to use SelectionChangedHandler
+kind/question 
+I want to make possible that everytime I change project, I get a notification. This is a code snippet that I tried but it doesn't work. public class SelectionChangedUpdater implements SelectionChangedHandler{
+
+private NotificationManager notificationManager; 
+private EventBus 			eventBus; 
+private EventService 	    eventService; 
+
+@Inject
+public SelectionChangedUpdater(NotificationManager notificationManager, EventBus eventBus, EventService eventService)
+{
+	this.notificationManager = notificationManager; 
+	this.eventBus = eventBus; 
+	this.eventService = eventService; 
+	
+	this.eventBus.addHandler(SelectionChangedEvent.TYPE, this);
+	this.eventService.subscribe(new EventSubscriber<SelectionChangedEvent>(){
+		@Override
+		public void onEvent(SelectionChangedEvent event) {
+			notificationManager.notify("Selection is changed ! ! !", Status.SUCCESS, DisplayMode.FLOAT_MODE);
+		}		
+	});
+}
+@Override
+public void onSelectionChanged(SelectionChangedEvent 
+	notificationManager.notify("SELECTION IS CHANGED ! ! !", Status.SUCCESS, DisplayMode.FLOAT_MODE);
+}	
+ } I am pretty sure I am not supposed to use both EventBus and EventService, but I added it to my class for testing purposes.

@@ -1,0 +1,3 @@
+Create CI job for running "che-multiuser" branch tests for single-user mode
+kind/task team/production sprint/current-sprint 
+We need to create new job on the CI for monitoring "che-multiuser" tests state for the single-user mode

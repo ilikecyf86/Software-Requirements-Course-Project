@@ -1,0 +1,3 @@
+Remove data about model entities/fields removed in Che6 from Che DB
+kind/bug target/che6 team/platform 
+Description We have plenty of data from Che5 which are not needed in Che6. We should remove them if we don't want to wipe the old DB. Some of the entities to remove: MachineSourceImpl ServerConfImpl (or ServerConf2Impl) Reproduction Steps OS and version: Diagnostics:

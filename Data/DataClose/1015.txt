@@ -1,0 +1,3 @@
+5.11.0 Milestone Overview
+kind/planning 
+Milestone Overview Stability, bugs, performance issues, and archetypes for custom development. Schedule This release will be an Eclipse-signed and marketed release. For more information about our development process please see our development process page. Schedule Detail Code complete milestone Milestone issues complete Smoke tests started Release candidate created milestone Release candidate created Test cycles started Docs complete GitHub release complete (QA verified) milestone Release completed and QA verified Release notes updated Final release information updated on GitHub Docs reviewed and live Target Milestone Pull Requests(TBD)

@@ -1,0 +1,25 @@
+Docker opens container log files many times, seems we don't close every time
+kind/bug status/open-for-dev team/production team/platform team/production sprint/next-sprint status/in-progress sprint/current-sprint sprint/next-sprint status/open-for-dev status/blocked sprint/current-sprint severity/P1 status/blocked status/blocked status/in-progress status/blocked 
+Investigating errors in tomcat about response from docker "socket: too many open files" I found that some of container's log files is has opened many times by docker daemon. Possible reason is that when we reopening log file we don't properly close preciously opened connections. # lsof -P -p $(cat /run/docker.pid) | awk '{print $9 $10}' | sort | uniq -c | sort -n | tail -n 10
+     13 protocol:TCP
+     13 /var/lib/docker/containers/8d513e395e1c7c72e26787e3757b4c59fecf85ee323c222ebc8c6a0de46ae022/8d513e395e1c7c72e26787e3757b4c59fecf85ee323c222ebc8c6a0de46ae022-json.log
+     13 /var/lib/docker/containers/f9e2e15afa432e1249d5f2128cd82a1a66ebf14e80c3644fa738469886fc6e67/f9e2e15afa432e1249d5f2128cd82a1a66ebf14e80c3644fa738469886fc6e67-json.log
+     19 protocol:UDP
+     59 /var/lib/docker/containers/aae5323b29c48974c0cce5268dcca914c81823173618eb73b938682b4a00597f/aae5323b29c48974c0cce5268dcca914c81823173618eb73b938682b4a00597f-json.log
+     82 inotify
+     83 [eventpoll]
+    164 pipe
+    215 /var/lib/docker/containers/b8e6386a37e5105cc3770d70d34df317ec5fd0b4d338a061a38483711dc7e201/b8e6386a37e5105cc3770d70d34df317ec5fd0b4d338a061a38483711dc7e201-json.log
+   1001 protocol:NETLINK
+ or on other docker node: # lsof -P -p $(cat /run/docker.pid) | awk '{print $9 $10}' | sort | uniq -c | sort -n | tail -n 10
+      5 /var/lib/docker/containers/ab766613fe6d33765d120abd52043602a95744670ec1f66a7907790ff4e18f4b/ab766613fe6d33765d120abd52043602a95744670ec1f66a7907790ff4e18f4b-json.log
+      7 protocol:TCPv6
+      9 /var/lib/docker/containers/ab7d6e9d3f7f1745adbf39a240faac24ae81ca67587aaf595ccc659883041615/ab7d6e9d3f7f1745adbf39a240faac24ae81ca67587aaf595ccc659883041615-json.log
+     12 protocol:UDP
+     15 protocol:TCP
+    102 inotify
+    103 [eventpoll]
+    136 /var/lib/docker/containers/7a660740e586b96bffbfc9b930be005be0022b501e8e2e1357bb6a01ba75342a/7a660740e586b96bffbfc9b930be005be0022b501e8e2e1357bb6a01ba75342a-json.log
+    204 pipe
+   1064 protocol:NETLINK
+ Reproduction Steps: Start workspace and let it stay for some hours, like 10 or 20 On docker node inspect output of lsof -P -p $(cat /run/docker.pid) | awk '{print $9 $10}' | sort | uniq -c | sort -n | tail -n 10 Expected behavior: Log file appears in output of lsof only once. Observed behavior: Log file appears in output of lsof hundred of times. Che version: 5.0.0-M6 OS and version: Centos 7.2 Docker version: 1.11.1 Che install: Codenvy Additional information: Problem started happening recently, didn't happen in an older version of Che: Don't know Problem can be reliably reproduced, doesn't happen randomly: Yes

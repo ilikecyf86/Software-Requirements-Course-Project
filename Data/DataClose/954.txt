@@ -1,0 +1,3 @@
+In the editor split mode not displayed changes
+kind/bug severity/P2 team/ide 
+Go to the spring project Open any java class Open context menu on this class editor tab and click on "Split in two column" Refresh the page Set cursor on any place in the second column and do some changes Pay attention to the screen Expected behavior Changes in one window will be shown and in second window too Observed behavior Changes in one window not displayed in the others Attacment

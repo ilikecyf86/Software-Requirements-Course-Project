@@ -1,0 +1,15 @@
+Port stripped from request when behind a reverse proxy
+kind/question 
+I've been working on a custom implementation of a reverse proxy filter based on Wildfly with quite a success. The idea behind the proxy is quite simple, provide a basic credential system and re-routing based on request subdomain, so that the same port on the WAN could be used for different local machines, nothing to fancy. This have been working perfectly fine with all web services I've tested except with Eclipse Che. For example for the following super simple configuration: NAT: 
+<wan-ip>:8080 forwarded to <proxy-ip>:8080
+
+Proxy: 
+<proxy-ip>:8080 forwarded to <che-server-ip>:8080
+
+With the following address:
+proxy: 192.168.0.110
+che-server: 192.168.0.111
+
+ The dashboard loads fine, but when I try to open a workspace angular throws: Blocked loading resource from url not allowed by $sceDelegate policy.  URL: http://192.168.0.110/che/wksp-opo2?uid=427793
+ The problem is as you can see for some reason port gets stripped of the url but only for workspaces. While in dashboard things works fine, in fact if I open the same workspace url that fails adding the port manually it also works fine. WORKS: http://192.168.0.110:8080/che/wksp-opo2?uid=427793
+ I really doubt it has something to do with sceDelegate policy itself. This kind of setup should be transparent to the services running behind the reverse proxy I've tested the proxy with other complex services even with websockets and also tested the setup bypassing the proxy forwarding the WAN directly to Che to discard any docker port issue and it worked fine. Furthermore currently i'm using the proxy on port 80 so that when port are stripped, the request will still be valid urls since default port on http is 80 and its quite nice very similar to what people are trying to achieve with Keycloak but being forced to use port 80 is not fun and quite limiting. So I was really wondering how or what could be causing this magical ports strip issue. My wild guess is that Che behind the proxy is missing some kind of information and handles workspace in a different way that if it had that information or maybe angular needs some sort of header perhaps any clues of what could be going on?

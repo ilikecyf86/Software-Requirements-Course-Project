@@ -1,0 +1,3 @@
+Disable workspace creation if there are no available resources
+kind/eclipse-che kind/enhancement status/open-for-dev team/plugin kind/eclipse-che 
+From @ashumilova on January 30, 2017 13:27 When the number of the workspaces limit is set and user do not have available resources - need to disable workspace creation in the this very team. Copied from original issue: codenvy/codenvy#1648

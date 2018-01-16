@@ -1,0 +1,3 @@
+Workspace freezes since 5.17.0
+kind/question kind/bug severity/P1 status/in-progress kind/question team/ide 
+Since 5.17.0 every workspace on Codenvy has the issue that it starts freezing at some point. I normaly experience it first when not being able to save files any more. The issue starts when the following requests freeze at (pending): After a while (most likely because of the reached limit of pending requests) all request are stuck at (pending) state. (These are file-save-requests triggered by me) If waiting longer the Workspace will crash and ask you to restart at some time.

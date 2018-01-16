@@ -1,0 +1,3 @@
+The "Delete" button in the "Factories" list is visible after deleting a factory
+kind/bug status/open-for-dev team/plugin sprint/next-sprint severity/P2 sprint/next-sprint 
+Reproduction Steps: In the Factories list create any factory. Try to delete this factory. Expected behavior: The factory deleted and the Delete button isn't visible. Observed behavior: The factory deleted but the Delete button is still visible. Che version: 5.7.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

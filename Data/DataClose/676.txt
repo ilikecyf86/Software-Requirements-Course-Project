@@ -1,0 +1,3 @@
+Integrate JDT-language server to Che
+kind/task team/osio sprint/current-sprint 
+Moved from https://issues.jboss.org/browse/CHE-29 Integrate the JDT language server to Che as a PoC and also to understand the gap of features. Report gaps on JDT LS to upstream project.

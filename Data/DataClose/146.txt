@@ -1,0 +1,3 @@
+[CHE6 branch] Can't switch to another tab in the bottom panel
+kind/bug target/che6 team/plugin sprint/current-sprint sprint/current-sprint 
+Description Sometimes it's impossible to switch to another tab in the bottom panel because Workspace-start tab is always active. Reproduction Steps Che version: 6.0.0-M2 OS and version: Fedora 25 Docker version: 17.06 API docker version: 1.30 Che install: Docker container Diagnostics:

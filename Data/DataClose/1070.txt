@@ -1,0 +1,3 @@
+The Editor cannot open a file if its name ended with space
+kind/bug team/ide severity/P2 sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+Reproduction Steps: Start a workspace. Change any file name and add a space in the end of file name. Observed behavior: There is a error notification without a text and this file doesn't open in the Editor. Che version: 5.10.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

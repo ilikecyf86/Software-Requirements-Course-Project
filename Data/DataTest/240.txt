@@ -1,0 +1,3 @@
+[dashboard] Make che-simple-selecter component use images
+kind/bug 
+Make it possible for che-simple-selecter use images as well, needed for new stack icon to display in ready-to-go-section.

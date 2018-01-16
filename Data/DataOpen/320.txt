@@ -1,0 +1,3 @@
+[Proposal] Keycloak theme for Eclipse Che
+kind/enhancement 
+I've noticed that Eclipse Che would borrow the same design from Codenvy's Login, however, I felt like it needs a little refresh Login Screen (Inactive) Login Screen (With fields filled) Because Eclipse Che uses mostly Material Design on its Dashboard and such, it would be nice if the login too is Material-like I did not make the registration portion as the following fields design can be used throughout too. (Note: This is just a mockup and does not reflect the actual product)

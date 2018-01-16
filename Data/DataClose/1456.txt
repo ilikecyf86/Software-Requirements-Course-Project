@@ -1,0 +1,3 @@
+Update xterm.js to the latest version.
+kind/task team/enterprise status/in-progress status/in-progress sprint/current-sprint status/open-for-dev status/code-review status/open-for-dev sprint/current-sprint 
+We should update xterm.js to the latest version for bug fixing. This issue consist of steps: create and pass cq. add latest xterm.js souce code to CHE. update gulp tasks to build xterm.js and maybe fix some new css styles. Apply our custom changes.

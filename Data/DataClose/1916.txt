@@ -1,0 +1,20 @@
+404 error opening my workspace.
+kind/question 
+[Short description of problem here] Reproduction Steps: Install che CLI as /opt/bin/che Run che start Open IDE Create a workspace Open the workspace Expected behavior: the dev-machine should be spawn. Observed behavior: 404 error is reported like this. Che version: 5.0.0-M8 OS and version: CoreOS 1185.5.0 (MoreOS) Docker version: Client:
+ Version:      1.11.2
+ API version:  1.23
+ Go version:   go1.6.3
+ Git commit:   bac3bae
+ Built:        
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.11.2
+ API version:  1.23
+ Go version:   go1.6.3
+ Git commit:   bac3bae
+ Built:        
+ OS/Arch:      linux/amd64
+ Che install: Docker container Additional information: Debug log by docker.service is: Dec 18 04:18:33 CoreOS-Che dockerd[16910]: time="2016-12-18T04:18:33.624473012Z" level=debug msg="form data: {\"AttachStderr\":false,\"AttachStdin\":false,\"AttachStdout\":false,\"Cmd\":[],\"CpuShares\":0,\"Entrypoint\":[],\"Env\":[\"CHE_LOCAL_CONF_DIR=/mnt/che/conf\",\"USER_TOKEN=dummy_token\",\"JAVA_OPTS=-Xms256m -Xmx2048m -Djava.security.egd=file:/dev/./urandom\",\"CHE_WORKSPACE_ID=workspacehheo0x88x10cqsaj\",\"CHE_PROJECTS_ROOT=/projects\",\"CHE_API=http://che-host:8080/wsmaster/api\"],\"ExposedPorts\":{\"22/tcp\":{},\"4401/tcp\":{},\"4403/tcp\":{},\"4411/tcp\":{}},\"HostConfig\":{\"Binds\":[\"/data/workspaces/wksp-lyhl:/projects:Z\",\"/home/user/che/lib/linux_amd64/terminal:/mnt/che/terminal:ro,Z\",\"/home/user/che/lib/ws-agent.tar.gz:/mnt/che/ws-agent.tar.gz:ro,Z\"],\"CpuShares\":0,\"ExtraHosts\":[\"che-host:172.17.0.3\"],\"Links\":[],\"Memory\":2.147483648e+09,\"MemorySwap\":-1,\"MemorySwappiness\":-1,\"NetworkMode\":\"workspacehheo0x88x10cqsaj_ae273w180w2jv0vq\",\"PidsLimit\":-1,\"PortBindings\":{},\"Privileged\":false,\"PublishAllPorts\":true,\"ReadonlyRootfs\":false,\"VolumesFrom\":[]},\"Hostname\":\"\",\"Image\":\"eclipse-che/workspacehheo0x88x10cqsaj_machineyioofy4wl6xv3s9k_che_dev-machine\",\"Labels\":{\"che:server:22/tcp:ref\":\"ssh\",\"che:server:4401/tcp:path\":\"/api\",\"che:server:4401/tcp:protocol\":\"http\",\"che:server:4401/tcp:ref\":\"wsagent\",\"che:server:4411/tcp:protocol\":\"http\",\"che:server:4411/tcp:ref\":\"terminal\"},\"NetworkDisabled\":false,\"NetworkingConfig\":{\"EndpointsConfig\":{\"workspacehheo0x88x10cqsaj_ae273w180w2jv0vq\":{\"Aliases\":[\"dev-machine\"],\"Links\":[]}}},\"OpenStdin\":false,\"StdinOnce\":false,\"Tty\":false,\"User\":\"\",\"Volumes\":{},\"WorkingDir\":\"\"}"
+Dec 18 04:18:33 CoreOS-Che dockerd[16910]: time="2016-12-18T04:18:33.632070540Z" level=error msg="Handler for POST /v1.20/containers/create returned error: no such file or directory"
+ Problem started happening recently, didn't happen in an older version of Che: Unknown Problem can be reliably reproduced, doesn't happen randomly: Yes (at least on my server)

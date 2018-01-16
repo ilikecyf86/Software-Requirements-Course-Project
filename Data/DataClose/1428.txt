@@ -1,0 +1,3 @@
+Webkit font-smoothing bug when the IDE is opened in dashboard iframe
+kind/bug team/plugin sprint/current-sprint status/open-for-dev sprint/current-sprint 
+It looks Webkit browser has a bug with font rendering when a page is opened in iframe and contains flash object. The problem with font rendering is on the first screenshot. On the second the flash object is hidden and text is rendered properly. StackOverflow has a discussion about that. http://stackoverflow.com/questions/11748082/webkit-font-smoothing-bug-when-iframe-with-flash-is-on-page-is-there-a-work-aro

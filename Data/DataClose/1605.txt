@@ -1,0 +1,12 @@
+Cannot create workspace with `create-project`
+kind/bug severity/blocker team/plugin status/open-for-dev status/in-progress status/open-for-dev status/in-progress 
+Trying to create workspace with create-project fails on crane loading screen. The browser gives the following error. This problem effects 5.2.0 Dockerhub latest images and needs to be changed back to previous version 5.1.2 until new 5.2.1 bug fix version is released. TypeError: Cannot read property 'source' of undefined
+    at e.value (app-efcf19c278.js:19593)
+    at e.value (app-efcf19c278.js:19557)
+    at fn (eval at compile (vendor-b2dfa25cb3.js:34226), <anonymous>:4:586)
+    at vendor-b2dfa25cb3.js:105780
+    at h.$eval (vendor-b2dfa25cb3.js:36913)
+    at h.$apply (vendor-b2dfa25cb3.js:37013)
+    at HTMLButtonElement.<anonymous> (vendor-b2dfa25cb3.js:105779)
+    at HTMLButtonElement.dispatch (vendor-b2dfa25cb3.js:16085)
+    at HTMLButtonElement.g.handle (vendor-b2dfa25cb3.js:15771)

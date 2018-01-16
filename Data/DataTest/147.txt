@@ -1,0 +1,9 @@
+can't connect to bitbucket with OAuth
+
+Hi, I'm using eclipse-che-4.2.0-RC1-SNAPSHOT on a CentOS 7 machine, I've configured OAuth for my user in BitBucket and got key/secret pair as you can see here: in my che.properties I've put this: oauth.github.clientid=<Key from BitBucket>
+oauth.github.clientsecret=<Secret from BitBucket>
+oauth.github.authuri= https://bitbucket.org/site/oauth2/authorize
+oauth.github.tokenuri= https://bitbucket.org/site/oauth2/access_token
+oauth.github.redirecturis= http://<my external IP>/:${SERVER_PORT}/ide/api/oauth/callback
+auth.oauth.access_denied_error_page=/error-oauth
+ When I try to import project from my bitbucket repo I get this: Remote repository requires authentication, but no OAuth provider found for this url Any idea what am I doing wrong?

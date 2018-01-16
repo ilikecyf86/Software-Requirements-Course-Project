@@ -1,0 +1,3 @@
+Install `openjdk-8-source` package into all JDK images
+team/production sprint/current-sprint kind/task status/in-progress sprint/current-sprint status/in-progress 
+To fix #3722 we need to have OpenJDK sources for rt.jar, openjdk-8-source package contains that sources i.e. src.zip.

@@ -1,0 +1,3 @@
+Git markers are not displayed for mounted project
+kind/bug team/enterprise status/open-for-dev status/analyzing status/open-for-dev status/open-for-dev sprint/current-sprint status/analyzing status/open-for-dev sprint/current-sprint 
+Description Git markers in editor are displayed for created/imported project, but are not displayed for mounted project Che version: 6.0.0-M1 If project doesn't have vcs provider then we have to ask a parent and so on.

@@ -1,0 +1,3 @@
+Provide ability to cancel workspace start
+kind/task sprint/current-sprint status/in-progress status/open-for-dev 
+This issue related to #3249 The goal is to cancel workspace start by calling workspace/stop method

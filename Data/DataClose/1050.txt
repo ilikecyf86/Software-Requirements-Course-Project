@@ -1,0 +1,3 @@
+there is no stacks
+kind/question 
+Reproduction Steps: OS and version: che 5.8.0 ubuntu 14.04 Diagnostics: when i add a new agent for che and run che the stacks is empty,can you help me?

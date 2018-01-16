@@ -1,0 +1,3 @@
+Update documentation with the new panels in IDE
+kind/docs sprint/next-sprint status/open-for-dev team/plugin sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+The Che documentation should be reviewed to detect screenshots that should be updated due to changes in IDE panels. New implemented stuff should be described in documentation as well.

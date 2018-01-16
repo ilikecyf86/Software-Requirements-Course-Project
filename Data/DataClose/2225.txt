@@ -1,0 +1,3 @@
+Documentation Feedback
+kind/docs team/pm 
+Hello, We like to raise a correction request for the Hello World documentation. Hello World (https://eclipse-che.readme.io/v5.0/docs/helloworld-extension#section-2-add-dependencies-and-parent-definition-to-the-pom-xml) pom.xml <artifactId>che-helloworld-extension</artifactId> and ADD EXTENSION TO ROOT POM OF CHE (https://eclipse-che.readme.io/v5.0/docs/helloworld-extension#section-6-add-extension-to-root-pom-of-che) pom.xml <artifactId>che-helloworld-sample</artifactId> The name need to match (either extension or sample) otherwise it is falling to build with errors. You may correct it so that developers who follow it shall not experience issues. @nitingudleunvired

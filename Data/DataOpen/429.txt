@@ -1,0 +1,10 @@
+Workspace Config, minimum memory limit for a machine
+kind/enhancement team/plugin 
+Hello, When creating a workspace, we can defined all the machines we want. For a mysql machine, I will have somehing like that: ...
+"mysql": {
+   "attributes": {
+       "memoryLimitBytes": 1073741824
+   }
+}
+...
+ But for a mysql machine, 1 GB of memory is too much. However it is not possible to put less memory... Will you change this limit ?

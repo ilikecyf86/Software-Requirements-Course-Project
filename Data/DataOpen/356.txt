@@ -1,0 +1,104 @@
+Recovered che-server has different ip than the one defined in machine /etc/hosts
+kind/task team/platform status/open-for-dev severity/P2 
+If che-server container is stopped or killed it might have different ip address from the one defined in the /etc/hosts/ in workspace containers. The problem here is that severs( like wsagent) which use che-host won't be able to access che-server after it is restarted and its ip address changed. workspace container /etc/hosts content user@9eaf1acd3814:~$ cat /etc/hosts
+127.0.0.1       localhost
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+172.17.0.4      che-host
+172.17.0.2      9eaf1acd3814
+172.18.0.2      9eaf1acd3814
+ che-server network settings "NetworkSettings": {
+  "Bridge": "",
+  "SandboxID": "55af3ac5098e76d069a7f0c38192f1605b61adcedfa741785dee8c15c083b542",
+  "HairpinMode": false,
+  "LinkLocalIPv6Address": "",
+  "LinkLocalIPv6PrefixLen": 0,
+  "Ports": {
+    "8000/tcp": [
+      {
+        "HostIp": "0.0.0.0",
+        "HostPort": "8000"
+      }
+    ],
+    "8080/tcp": [
+      {
+        "HostIp": "0.0.0.0",
+        "HostPort": "8080"
+      }
+    ]
+  },
+  "SandboxKey": "/var/run/docker/netns/55af3ac5098e",
+  "SecondaryIPAddresses": null,
+  "SecondaryIPv6Addresses": null,
+  "EndpointID": "84c0c6304523670371df941015165e7b7087ec2721f958018def703966df43f7",
+  "Gateway": "172.17.0.1",
+  "GlobalIPv6Address": "",
+  "GlobalIPv6PrefixLen": 0,
+  "IPAddress": "172.17.0.4",
+  "IPPrefixLen": 16,
+  "IPv6Gateway": "",
+  "Networks": {
+    "bridge": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": null,
+      "NetworkID": "33522275ceb39508c4f7a0e8083c9a759b71aed837f240bf9d5dc50d1b24dd03",
+      "EndpointID": "84c0c6304523670371df941015165e7b7087ec2721f958018def703966df43f7",
+      "Gateway": "172.17.0.1",
+      "IPAddress": "172.17.0.4",
+      "IPPrefixLen": 16,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0
+    }
+  }
+}
+ che-server network settings after restart "NetworkSettings": {
+  "Bridge": "",
+  "SandboxID": "1affec968c1173450b75fab7a903d0e8ce1ccc925d8d2e54b30ac99b2d21926f",
+  "HairpinMode": false,
+  "LinkLocalIPv6Address": "",
+  "LinkLocalIPv6PrefixLen": 0,
+  "Ports": {
+    "8000/tcp": [
+      {
+        "HostIp": "0.0.0.0",
+        "HostPort": "8000"
+      }
+    ],
+    "8080/tcp": [
+      {
+        "HostIp": "0.0.0.0",
+        "HostPort": "8080"
+      }
+    ]
+  },
+  "SandboxKey": "/var/run/docker/netns/1affec968c11",
+  "SecondaryIPAddresses": null,
+  "SecondaryIPv6Addresses": null,
+  "EndpointID": "e7e1e419fa2fde610cae291c3c5cf230144888061cff03cc62f6ad9a0aba45cb",
+  "Gateway": "172.17.0.1",
+  "GlobalIPv6Address": "",
+  "GlobalIPv6PrefixLen": 0,
+  "IPAddress": "172.17.0.5",
+  "IPPrefixLen": 16,
+  "IPv6Gateway": "",
+  "Networks": {
+    "bridge": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": null,
+      "NetworkID": "33522275ceb39508c4f7a0e8083c9a759b71aed837f240bf9d5dc50d1b24dd03",
+      "EndpointID": "e7e1e419fa2fde610cae291c3c5cf230144888061cff03cc62f6ad9a0aba45cb",
+      "Gateway": "172.17.0.1",
+      "IPAddress": "172.17.0.5",
+      "IPPrefixLen": 16,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0
+    }
+  }
+}

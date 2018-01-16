@@ -1,0 +1,3 @@
+Content of file is not update after git checkout (regression)
+kind/bug severity/blocker team/ide 
+Reproduction Steps: Open a project in the IDE(e.g. web-java-spring), create local branch. Open a file in the editor and checkout to another local branch. Change content of the file and commit it. Checkout to master branch. Expected behavior: Content of the file should be updated Observed behavior: Content of the file is not updated Che version: 5.0.0 OS and version: Ubuntu 14.04 Docker version: 1.12 Che install: [Docker container] Additional information: Problem started happening recently, didn't happen in an older version of Che: [Yes] Problem can be reliably reproduced, doesn't happen randomly: [Yes] See the attachment:

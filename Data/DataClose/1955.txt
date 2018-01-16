@@ -1,0 +1,27 @@
+wsmaster/che-core-api-workspace sometimes fails to compile
+kind/question 
+wsmaster/che-core-api-workspace sometimes failes to compile. I could observe this behaviour on commits: commit ad718fd commit d15915c commit 349be48 Reproduction Steps: git clone https://github.com/eclipse/che.git cd che/wsmaster/che-core-api-workspace mvn clean compile Expected behavior: BUILD SUCCESS Observed behavior: sometimes BUILD SUCCESS, sometimes BUILD FAILURE Tests run: 453, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 21.473 sec <<< FAILURE! - in TestSuite
+performAsyncStartShouldUseProvidedEnvInsteadOfDefault(org.eclipse.che.api.workspace.server.WorkspaceManagerTest)  Time elapsed: 0.046 sec  <<< FAILURE!
+org.mockito.exceptions.base.MockitoException: 
+'stop' is a *void method* and it *cannot* be stubbed with a *return value*!
+Voids are usually stubbed with Throwables:
+    doThrow(exception).when(mock).someVoidMethod();
+***
+If you're unsure why you're getting above error read on.
+Due to the nature of the syntax above problem might occur because:
+1. The method you are trying to stub is *overloaded*. Make sure you are calling the right overloaded version.
+2. Somewhere in your test you are stubbing *final methods*. Sorry, Mockito does not verify/stub final methods.
+3. A spy is stubbed using when(spy.foo()).then() syntax. It is safer to stub spies - 
+   - with doReturn|Throw() family of methods. More in javadocs for Mockito.spy() method.
+
+	at org.eclipse.che.api.workspace.server.WorkspaceManagerTest.performAsyncStartShouldUseProvidedEnvInsteadOfDefault(WorkspaceManagerTest.java:477)
+
+
+Results :
+
+Failed tests: 
+  WorkspaceManagerTest.performAsyncStartShouldUseProvidedEnvInsteadOfDefault:477 Mockito
+
+Tests run: 453, Failures: 1, Errors: 0, Skipped: 0
+
+ Che version: latest OS and version: Ubuntu 16.04 LTE Problem started happening recently, didn't happen in an older version of Che: Yes Problem can be reliably reproduced, doesn't happen randomly: No

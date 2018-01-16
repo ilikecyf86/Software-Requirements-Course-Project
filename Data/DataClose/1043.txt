@@ -1,0 +1,3 @@
+swagger.json shows old API for factory
+kind/question 
+Hello, I'm currently try to generate a client for swagger so I can use the che api. While working on that I regonized a lot of things I don't fully understood. First thing is that the factory api has an impl which has two methods one with application/json and one with multipartinput which is depricated. The swagger json only contains the deprecated method. Is that intentional? Next I would like to know why some things appear in the wsmaster like an auth api for login and logout but they are not displayed in the api even an impl exists? How are they excluded? Can I activate them somehow to play with simple authentication?

@@ -1,0 +1,3 @@
+Make sure user context is present when logs of a machine is streamed
+kind/bug status/in-progress team/platform 
+We found that MachineProviderImpl doesn't save user context when it creates a thread for streaming machines logs. Reproduction Steps: OS and version: Diagnostics:

@@ -1,0 +1,3 @@
+Can't get a che workspace created over OSIO
+kind/bug 
+Reproduction Steps: After successful creation of a new project/codebase in OSIO, I initiated creation of a che workspace for it via 'Create workspace', but got following message: 'Failed to create workspace' and no workspace is shown on OSIO GUI. OS and version: Tested on OpenShift.io, using Google Chrome on Fedora Diagnostics: Output from Che server pod on OpenShift console shows that a workspace was created but afterwards a NullPointerException was thrown, see: https://gist.github.com/pkettman/62ef8a9edc67f24b1dabfdef6466d41d

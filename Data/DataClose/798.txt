@@ -1,0 +1,22 @@
+Start Che with customized assembly failed
+kind/question kind/bug severity/P2 
+Hi, I am a beginner about Che Extension. I am trying to follow the guide https://www.eclipse.org/che/docs/assemblies/assembly-lifecycle/index.html to test how to cutomize assembly. But I always get error when opening Che page. Here are my steps, is there any additional steps needed? generate build and select 2) plugin-menu-archetype - Assembly with IDE extension to customize menu docker run -it --rm \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /data/Che/test/archetype:/archetype \
+  -v /data/Che/test/data:/data \
+  -v /root/.m2/repository:/m2 \
+    eclipse/che-cli:5.13.0 \
+      archetype generate
+ build by archetype: docker run -it --rm \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /data/Che/test/archetype:/archetype \
+  -v /data/Che/test/data:/data \
+  -v /root/.m2/repository:/m2 \
+    eclipse/che-cli:5.13.0 archetype build 
+ start server docker run -it --rm --name run-che \
+    -e CHE_HOST=<my_ip> \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v /data/Che/test/data:/data \
+    -v /data/Che/test/archetype/assembly/assembly-che/assembly-main/target/eclipse-che-5.13.0/eclipse-che-5.13.0:/assembly \
+    eclipse/che:5.13.0 start --skip:nightly  
+ But I always get error in browser and the pages is always black.

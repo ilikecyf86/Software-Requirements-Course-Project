@@ -1,0 +1,29 @@
+ProjectServiceClient refactoring
+kind/epic team/plugin kind/epic 
+PoC There is a requirement to refactor existed org.eclipse.che.ide.api.project.ProjectServiceClient. Due to upgrade a GWT library to 2.8, we can use java 8 features. So, there is no need to work with Promises library and according to refactoring resource management (#3248) and we can perform some refactoring tasks: Needed for: #4222 Changes Refactor AsyncRequestCallback There is a proposal to create an adapter for the org.eclipse.che.ide.rest.AsyncRequestCallback which can operate with java 8 consumers. (issue link) Class diagram Example of usage consumers in client service to obtain a DTO obejct:     public void getItemMetaData(Consumer<DTO> success, Consumer<Throwable> fail) {
+        reqFactory.createGetRequest(...)
+                  .send(new RequestCallbackToConsumerAdapter<DTO>(unmarshallerFactory.newUnmarshaller(DTO.class)) {
+                      @Override
+                      public Consumer<DTO> getSuccessConsumer() {
+                          return success;
+                      }
+
+                      @Override
+                      public Consumer<Throwable> getErrorConsumer() {
+                          return fail;
+                      }
+                  });
+    } Example of usage consumers in client service to obtain just success result (w/o DTO):     public void getItemMetaData(Consumer<Void> success, Consumer<Throwable> fail) {
+        reqFactory.createGetRequest(...)
+                  .send(new RequestCallbackToConsumerAdapter<Void>() {
+                      @Override
+                      public Consumer<Void> getSuccessConsumer() {
+                          return success;
+                      }
+
+                      @Override
+                      public Consumer<Throwable> getErrorConsumer() {
+                          return fail;
+                      }
+                  });
+    } Refactor AsyncRequest Deprecations Mark methods as deprecated (issue link): org.eclipse.che.ide.rest.AsyncRequest#send(org.eclipse.che.ide.rest.Unmarshallable<R>) org.eclipse.che.ide.rest.AsyncRequest#send() Remove deprecated methods in next sprints (issue link) As far as these methods operates with Promises they aren't efficient. Refactor ProjectServiceClient There is a proposal do decouple ProjectServiceClient component into two standalone components that will perform separate operations based on the physical objects (files, folders) and logical (projects). Physical operations (issue link) There is no need to mix file based operations with logical, so we can extract resource-based operations into component called FileSystemClient. Class diagram Participants FileSystemClient - main entry point for operating with resources' metadata; injects FileSystemClientImplementorFactory and creates a new instance of FileSystemClientImp which holds in the class and not public for developers; provides public consumer-based API for the operating with resources: getItemMetaData; createEmptyFile; readFileContentAsText; writeNewFileContent; createFolder; deleteItemMetaData; copyItemMetaData; moveItemMetaData; getChildrenMetaData; getTreeMetaData; search; delegates requests from the public API into FileSystemClientImp. FileSystemClientImp - implementation bridge for the FileSystemClient that allows to be extended independently from the FileSystemClient, at the moment duplicates the public API. FileSystemClientImplementorFactory - factory for producing implementation for the implementor bridge. FileSystemApiModule - Gin module for configuring main components that works together on the ide-app part; binds FileSystemClient as Singleton; binds FileSystemClientImplementorFactory to WsAgentFileSystemImplementorFactory as Singleton. WsAgentFileSystemImplementor - bridge implementation for the communicating with particular workspace agent, implements FileSystemClientImp. WsAgentFileSystemImplementorFactory - factory for producing a new instance of WsAgentFileSystemImplementor. Logical operations (issue link) As far as file based operations moved to the standalone component, operations with projects also might be moved to component called ProjectClient Class diagram Participants ProjectClient - main entry point for operating with projects' metadata; injects ProjectClientImplementorFactory and creates a new instance of ProjectClientImp which holds in the class and not public for developers; provides public consumer-based API for the operating with project configurations: getProjectsConfiguration; getProjectConfiguration; updateProjectConfiguration; createProject; createProjects; importProject; resolveFolder; estimateFolder; delegates requests from the public API into ProjectClientImp. ProjectClientImp - implementation bridge for the ProjectClient that allows to be extended independently from the ProjectClient, at the moment duplicates the public API. ProjectClientImplementorFactory - factory for producing implementation for the implementor bridge. ProjectApiModule - existed Gin module, that adds additional configuration for main components that works together on the ide-app part; binds ProjectClient as Singleton; binds ProjectClientImplementorFactory to WsAgentProjectCLientImplementorFactory as Singleton. WsAgentProjectClientImplementor - bridge implementation for the communicating with particular workspace agent, implements ProjectClientImp. WsAgentProjectClientImplementorFactory - factory for producing a new instance of WsAgentProjectClientImplementor.

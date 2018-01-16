@@ -1,0 +1,3 @@
+Run QA in multiuser branch and figure out what should be done to adapt QA to multiuser branch
+kind/task team/platform sprint/next-sprint status/open-for-dev team/production team/platform team/platform status/in-progress sprint/next-sprint team/platform 
+Run QA in multi-user branch and figure out what should be done to adapt QA to multiuser branch

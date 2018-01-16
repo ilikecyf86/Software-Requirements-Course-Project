@@ -1,0 +1,3 @@
+Properly maximize console and terminal tabs
+kind/enhancement team/plugin 
+Hide processes tree and maximize processes part when double click on terminal or console tab. See the screenshot how the terminal should look like.

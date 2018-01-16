@@ -1,0 +1,3 @@
+[languageserver] Ensure order of events
+kind/enhancement team/ide 
+It is critical that the order of read and write messages/notifications is kept when invoking the language server. Currently if the client sends a read and write request to the agent the order might be changed and as a consequence the read operation would be executed on the wrong state. I think to preserve that we need to communicate document version ids with every REST call. See also : Microsoft/vscode-languageserver-protocol#12

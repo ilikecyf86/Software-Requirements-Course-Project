@@ -1,0 +1,12 @@
+workspace does not start with CHE6 on ocp 3.7
+kind/bug target/che6 team/platform sprint/next-sprint status/in-progress status/in-progress 
+more info: 2017-12-12 13:46:32,842[default.svc/...]  [ERROR] [.k.c.d.i.ExecWebSocketListener 213]  - Exec Failure: HTTP:400. Message:you must specify at least 1 of stdin, stdout, stderr
+--
+  | java.net.ProtocolException: Expected HTTP 101 response but was '400 Bad Request'
+  | at okhttp3.internal.ws.RealWebSocket.checkResponse(RealWebSocket.java:216)
+  | at okhttp3.internal.ws.RealWebSocket$2.onResponse(RealWebSocket.java:183)
+  | at okhttp3.RealCall$AsyncCall.execute(RealCall.java:141)
+  | at okhttp3.internal.NamedRunnable.run(NamedRunnable.java:32)
+  | at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+  | at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+  | at java.lang.Thread.run(Thread.java:748)

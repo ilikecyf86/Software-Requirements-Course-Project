@@ -1,0 +1,3 @@
+Workspace is in editing mode when opening details in dashboard
+kind/bug severity/P1 team/plugin 
+Reproduction Steps: Go into the list of workspaces Select an existing workspace to display its details Expected behaviors There is no editing mode as nothing has been changed in the workspace configuration and settings. Current behavior: The workspace is opened in edit mode and displaying "Save" button + toolbar instead. See animated gif: OS and version: Che 5.4.1 and Codenvy 5.4.1 + 5.5.0-snapshot

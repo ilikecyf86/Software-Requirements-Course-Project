@@ -1,0 +1,3 @@
+Che6 replace binding of Set<Infra> to single Infra
+kind/task status/open-for-dev team/platform sprint/current-sprint status/in-progress status/open-for-dev status/in-progress 
+Description Initially, we thought that multiple infrastructure running at the same time may be a useful use case. But now we see that it produces more conflicts then profits. We would like to reduce the scope to single infrastructure at one point in time.

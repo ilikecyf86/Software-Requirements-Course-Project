@@ -1,0 +1,3 @@
+Add an ability to set exact number of rerun of selenium tests
+kind/task status/open-for-dev team/production sprint/current-sprint status/code-review status/open-for-dev status/code-review 
+We need to have an ability to rewrite default rerun number = 3 when execute selenium tests. Number should be accepted by webdriver.sh parameter --rerun=NN.

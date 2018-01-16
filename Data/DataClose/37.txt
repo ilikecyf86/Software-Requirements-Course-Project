@@ -1,0 +1,3 @@
+Terminal is not focused in some cases
+kind/bug status/code-review team/ide status/code-review 
+Reproduction Steps Open a terminal Run some process Close tab with output of process Observed behavior Tab is closed, terminal node is selected in processes tree, terminal tab is selected, BUT terminal is not focused You can see the same incorrect behavior when close another terminal Expected behavior Terminal is focused and ready for typing OS and version: Fedora 25

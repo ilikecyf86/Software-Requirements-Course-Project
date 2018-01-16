@@ -1,0 +1,8 @@
+Che doesn't pick up the custom WAR files when assembly is mounted
+kind/question 
+Hi , Am trying to deploy a custom WAR file on the che server tomcat. I have added this WAR file in c/temp/eclipse-che-5.8.1/tomcat/webapps . I had started the che container in the following way docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock \
+            -v /c/Users/myuserid/che_data2:/data \
+	    -v /c/temp/eclipse-che-5.8.1:/assembly \	   	   
+            eclipse/che:5.8.1 start\
+             --skip:scripts
+ After debugging the che docker logs, I found that the tomcat is deploying only the WAR files shipped along with che say( Root.war , docs.war , wsmaster.war, dashboard.war , swagger.war ) and ignoring the remaining war files. Also the che_tomcat folder which gets generated inside the che_data folder is empty. Is this a bug or am I doing something wrong in the configuration ? Regards Santhosh

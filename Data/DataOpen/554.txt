@@ -1,0 +1,3 @@
+HTML preview and extra plugins
+kind/enhancement 
+May be this goes into plugins but I found some important (to us) HTML features to be missing: Emmet HTML entities encode/decode HTML preview of current file (not the most important if a good Docker server can run in the cloud and expose for example port 8080 but depends when that would be available)

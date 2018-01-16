@@ -1,0 +1,5 @@
+After renaming host workspace is not starting from snapshots
+kind/enhancement team/enterprise status/open-for-dev 
+From @skryzhny on May 23, 2017 15:7 I renamed host in codenvy.env and now unable to start workspace from snapshot [DOCKER] Step 1/1 : FROM some-host.com:5000/machine_snapshot_z7mij6c43mghah5d:latest
+[DOCKER] [ERROR] Get https://some-host.com:5000/v1/_ping: http: server gave HTTP response to HTTPS client
+ It may be workarounded by putting two insecure registries in docker daemon configuration like --insecure-registry some-host.com:5000 --insecure-registry old-host.com:5000 but this require maintaining both host names, old one solely for snapshots. I think if we using registry from codenvy installation then after renaming host starting workspace from snapshot should work. Probably we should not store hostname part of snapshot image in DB and add curent one in runtime, or provide scripts for renaming hostname. WDYT? Reproduction Steps: Stop workspace with snapshot. Rename host. Try to start workspace. Codenvy version: 5.10.0 Copied from original issue: codenvy/codenvy#2227

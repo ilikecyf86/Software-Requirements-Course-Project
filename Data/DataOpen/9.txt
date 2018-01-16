@@ -1,0 +1,3 @@
+Machine is absent in workspace runtime after receiving an event that machine become starting
+kind/bug severity/P2 team/platform 
+Description Client subscribes on machine/statusChanged events and listens changing states of machines. After machine status has been changed to RUNNING client must send internal MachineStartingEvent. But before sending the event IDE updates the workspace by sending GET request to /api/workspace. As it turns out the workspace runtime doesn't contain machine which status has changed to STARTING and it appears in the runtime after few seconds. This leads to internal MachineStartingEvent is not sent and IDE does not react on changing of the machine state.

@@ -1,0 +1,7 @@
+Selenium tests don't execute several tests from the package
+kind/bug selenium/failure status/open-for-dev team/production status/info-needed selenium/failure status/info-needed status/open-for-dev sprint/current-sprint 
+Description According to the documentation, Maven Failsafe Plugin is able to run several tests during the single execution, but selenium tests doesn't work in such case: Command line: /home/tolusha/projects/che/selenium/che-selenium-test/selenium-tests.sh --test=org.eclipse.che.selenium.debugger.* [TEST]
+[TEST] Local results:
+[TEST]     - Run:           0
+[TEST]     - Failed:     0
+[TEST]

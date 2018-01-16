@@ -1,0 +1,3 @@
+Parameter --compare-with-ci doesn't work in selenium webdriver.sh script
+kind/bug team/production status/in-progress status/code-review status/in-progress status/code-review 
+Run of selenium-tests.sh script with "--compare-with-ci" parameter produces the same result as before, that is the script doesn't compare local result with actual result of selenium tests execution on CI.

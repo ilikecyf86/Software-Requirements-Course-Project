@@ -1,0 +1,21 @@
+PHP autocompletion does not insert proposals selected in the auto completion box
+kind/bug 
+As per subject. Steps to reproduce: Create a php workspace with a sample php project. Call auto completion and choose anything Expected result: Chose proposal gets inserted into the editor at cursor position Actual result: Nothing happens When smth is chosen in the autocompletion box and Enter is hit, the following exception occurs. VM381 php?uid=630044:1 Uncaught (in promise) C7k {a: Gle}a: Gle {a: -27000, b: "org.eclipse.lsp4j.jsonrpc.ResponseErrorException: …on-rpc/lib/Dispatcher.php on line 164 and defined"}__proto__: Object
+Promise rejected (async)
+e$e @ _app-0.js:5147
+dXk @ _app-0.js:17991
+a1g @ _app-0.js:9520
+_1g @ _app-0.js:9558
+g_d @ _app-0.js:3310
+kom @ _app-0.js:3308
+iq @ _app-0.js:443
+lq @ _app-0.js:446
+(anonymous) @ _app-0.js:445
+x_d @ _app-0.js:3327
+u1g @ _app-0.js:9540
+f2g @ _app-0.js:9561
+(anonymous) @ _app-0.js:9902
+invokeAction @ built-codeEdit-amd.js:21756
+_doAction @ built-codeEdit-amd.js:24070
+_handleKeyDown @ built-codeEdit-amd.js:23096
+handler @ built-codeEdit-amd.js:25641

@@ -1,0 +1,3 @@
+Send RuntimeStatusEvents from Docker
+kind/task team/platform status/open-for-dev status/analyzing status/open-for-dev status/analyzing 
+Related to SPI branch only. Some runtime implementation specific events might be sent by infrastructure implementation. An example of these events is snapshotting related events, docker pull/build, etc.

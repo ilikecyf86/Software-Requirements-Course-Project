@@ -1,0 +1,3 @@
+Make sure that colors used in plugin-svn are ok for both dark and white themes
+status/pending-merge 
+Make sure that all colors used in plugin-svn are ok for both dark and white themes.

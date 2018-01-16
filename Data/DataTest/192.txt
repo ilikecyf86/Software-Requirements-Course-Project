@@ -1,0 +1,3 @@
+Killing machine process doesn't kill children processes
+kind/bug 
+Killing machine process kills children processes but doesn't kill grandchildren processes. In this case some heavy processes can live in the system but user won't know that. It happens when process children doesn't process finishing of their own children. To reproduce: Run Che in Che using machine commands. Do it using che.sh script. Kill this process from the UI Expected: There is no bash process that runs command (our wrapper of any process in docker machine), ther is no che.sh and java process of tomcat. Actual: Bash wrapper process is killed, che.sh is killed, java process that runs tomcat is alive and consumes a lot of memory.

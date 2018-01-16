@@ -1,0 +1,11 @@
+Unable to create workspace on Windows 7 eclipse che rc11, "cannot find or open /mnt/che/ws-agent.zip"
+
+[STDERR] unzip: cannot find or open /mnt/che/ws-agent.zip, /mnt/che/ws-agent.zip.zip or /mnt/che/ws-agent.zip.ZIP. Using diagnostic commands as mentioned in 240 get workspace container ID docker ps get information on bindings and mounts docker inspect --format '{{ .Mounts}}' ${containerID}
+docker inspect --format '{{.HostConfig.Binds}}' ${containerID}
+
+ The terminal and ws-agent.zip are not being mounted properly to workspace VMs OS windows 7 pro 64 Che version 4.0.0-RC11 {eclipse.org latest}, unzipped at z:\Che {z is just another disk mount point like c/d, nothing special, not external, its internal, another logical partition} GIT 64 bit installed at z:\Apps too and bash runs fine just in it own Oracle java jdk1.8-40-b25, jre is installed and even jdk. It picked up tools from jre Docker toolbox docker 1.10.3 virtualbox 4.3.12 {have DG so cannot update vbox} No error when I start the che tomcat server, UI opens but workspace create fails with above message in step 3.Docker ps is fine. Mount point using above diag command shows the proper dirs being mounted from my %userprofile%\appdata\local\eclipse che as needed even if I delete it recreates and files are present and correct.The problem is when I check inside the VM.They are mounted as folders with no files, whatever I do. In che.properties I specified direct path but was ignored /apps/DockerToolbox:./docker exec 889edcad9ee1 ls -l /mnt/che/
+total 0
+drwxr-xr-x 2 root root 40 Mar 11 11:40 terminal
+drwxr-xr-x 2 root root 40 Mar 11 11:40 ws-agent.zip
+
+ Really stuck

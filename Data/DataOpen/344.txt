@@ -1,0 +1,3 @@
+Add possibility run Junit suites from editor
+kind/enhancement 
+On this moment we can run tests defined in a Junit testsuite only through project explorer. But many users launch a tests from suite using Editor (if junit testsuite class has been opened in an editor). Also all main IDE support this fuctionality. I think we should implement this in the CHE

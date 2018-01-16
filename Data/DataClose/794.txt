@@ -1,0 +1,3 @@
+Endless stream of notifications about external file modification
+team/ide kind/bug severity/blocker severity/blocker 
+Seems like in some situations we get an endless stream of notifications when edit files. According to @asacamano comment we have the following: Just upgraded to 5.14 yesterday - and I saw similar behavior creating a new file and editing it. Is this the same issue? Steps to reproduce: Create a workspace with an empty project (e.g. Ubuntu workspace, blank project) Create a new file - docker-compose.yml, or edit the README file. Wait for the file to open in the editor. Result An (apparently) endless stream of "External Operation: File docker-compose.tml is updated." notifications.

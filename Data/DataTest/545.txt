@@ -1,0 +1,3 @@
+any documentation for backup workspaces before upgrade/rebuild new github updates?
+
+Hi, I'm not very familiar with maven (I'm converted from Microsoft and run asp.net 5 on Eclipse Che), is there a way to keep all my workspace and project source files? I always keep myself pioneered with latest github update of Eclipse Che however whenever I run "mvn clean install" it obviously deletes everything so I have to create my workspace, download source code of my projects and modify build commands again which is very not productive. (I use my own aspnet stack). Is there a way to preserve all my work already in current Che? Anyone throw me some lights please... thx.

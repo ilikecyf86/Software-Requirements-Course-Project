@@ -1,0 +1,7 @@
+Can't set keybindings for Editor
+kind/docs kind/bug status/code-review kind/docs status/code-review 
+The editor docs show a "Keybindings" setting, and imply that there's a vim mode. I'd love to use that, but the option is not showing up for me. Reproduction Steps: start Eclipse Che with docker run -it --rm \
+ -v /var/run/docker.sock:/var/run/docker.sock \
+ -v /some/new/dir:/data \
+ eclipse/che start
+ Create a new workspace (I chose the default Python stack) When it starts up, select Profile -> Preferences, then Editor (under IDE) Observe that there's no keybindings settings OS and version: MacOS Sierra 10.12.6 Eclipse Che 5.15.0 Docker 17.06.0-ce / docker4mac

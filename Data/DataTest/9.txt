@@ -1,0 +1,5 @@
+Doesn't report HTML validation errors
+kind/enhancement 
+Having the following HTML doesn't report any errors (i.e. doesn't mark any lines are being invalid): <psdgsdg/f>
+sdgsdg
+</xx>

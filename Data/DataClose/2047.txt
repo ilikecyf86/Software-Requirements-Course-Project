@@ -1,0 +1,3 @@
+Add Markdown for Handlebars
+kind/enhancement kind/question kind/docs kind/question 
+So, I use .hbs files (handlebars) in my work, and I just imported my all my files to Eclipse Che. I now notice, though, that Eclipse Che doesn't have markdown for .hbs files. Are there anyways to fix this, like making Eclipse Che think the .hbs file is a .html file? Plus, why does Eclipse Che think all of this is wrong? In JetBrains Webstorm it was fine.

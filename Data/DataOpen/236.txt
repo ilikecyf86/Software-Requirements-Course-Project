@@ -1,0 +1,3 @@
+[Regression] Not expected error message after succesful added command in the command explorer
+kind/bug severity/P2 team/ide 
+Steps to reproduce: Create workspace from java stack with default spring project Go to the commands explorer Click on "+" button in any goal ( "RUN", "BUILD" ... ) Click on any type of commands ("GWT", "Maven", "Java" ... ) Wait until command will be displayed Pay attention to the error message Expected behavior: Command is created and confirm message is displayed Observed behavior: Command is created but error message is shown OS and version: CHE 5.19.0 ; Ubuntu 16.04 ; Fedora 25 ; Chrome 59.0 Attachment:

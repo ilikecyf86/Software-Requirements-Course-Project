@@ -1,0 +1,3 @@
+Need to document the process of deployment Che on OpenShift
+
+Need to provide full documentation with instructions of deployment Che on OpenShift: Update configuration page of the setup section with information of how to enable openshift io.fabric8 API for container management - https://www.eclipse.org/che/docs/setup/configuration/index.html Once CLI is extended with commands for running Che on OpenShift need to create a separate OpenShift deploy section with deployment instructions - https://www.eclipse.org/che/docs/openshift/config/index.html Make sure that documentation covers all relevant instructions / implementation details from "Packaging Che to run on OpenShift" epic - #2847 Update Changelog: #3798 Add release notes: #3798

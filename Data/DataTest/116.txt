@@ -1,0 +1,3 @@
+Arm7 terminal websocket error.
+
+I cannot get terminal to work on arm7 board with websocket error. I run the following custom stack. FROM james10174/armhf-archlinux-che EXPOSE 4403 8000 8080 9876 22 32768-32770 USER user LABEL che:server:8080:ref=tomcat8 che:server:8080:protocol=http che:server:8000:ref=tomcat8-debug che:server:8000:protocol=http che:server:9876:ref=codeserver che:server:9876:protocol=http ENV JAVA_HOME /opt/jdk1.8.0_91 ENV M2_HOME /home/user/apache-maven-3.3.9 ENV TOMCAT_HOME /home/user/tomcat8 ENV PATH $JAVA_HOME/bin:$M2_HOME/bin:$PATH ENV PATH_TO_CBUILD_PROJECTS_FOLDER /projects ENV PATH_TO_CBUILD_LIBRARY_FOLDER /home/user/cbuild CMD sudo /usr/sbin/sshd && tail -f /dev/null

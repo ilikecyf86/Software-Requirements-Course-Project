@@ -1,0 +1,3 @@
+Support for EditorConfig
+kind/enhancement team/ide 
+Description We should support the EditorConfig to define coding styles and honor .editorconfig files that exists on a project.

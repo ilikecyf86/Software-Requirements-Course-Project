@@ -1,0 +1,3 @@
+Improve performance and usability of File Management System
+kind/epic team/ide 
+The big part of IDE functionality is concentrated around file management operations. The most common operations performed on files or groups of files include creating, viewing, editing, renaming (including refactoring), moving or copying, deleting and searching. Folders and files may be displayed in a project tree based on their directory structure. Current implementation has some week places in our product, this issue is an umbrella issue for fixing those problems. Replace previous implementation of file watchers that is used for search index (based on inotify) with scheduled file tree walking #4248 Client side resource management framework refactoring #3248 Remove redundant VFS layer #4249

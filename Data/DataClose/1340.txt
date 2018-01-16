@@ -1,0 +1,3 @@
+Support window container based workspace
+kind/question kind/enhancement kind/question 
+Has anyone scceeded in creating a recipe that is based on window container(nano server or windowcoreserver)?

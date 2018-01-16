@@ -1,0 +1,3 @@
+Cannot input tab in Makefile
+kind/question 
+Description tabs in makefile must be real tab,but eclipse che changed tab into 4 spaces as default. Now I can change the configuration to input real tab,but I think che can recognize where tab should not be changed to spaces Reproduction Steps create a makefile and input tab. OS and version: ubuntu 16.04.3 Diagnostics:

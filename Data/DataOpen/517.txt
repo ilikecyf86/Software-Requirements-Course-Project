@@ -1,0 +1,3 @@
+Responsive design doesn't work properly in Command section of stack details
+kind/bug severity/P2 team/plugin sprint/next-sprint sprint/next-sprint 
+Sometimes it is very uncomfortable to edit stack's commands. Reproduction Steps: Open dashboard, go to Stacks tab Select Eclipse CHE stack Scroll to Commands section Expected behavior: All controls should be visible. Observed behavior: Text of commands is cut. Edit and Delete buttons are behind right border and there is no scroll bars. Che version: 5.0.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: Version: 1.12.5 , API version: 1.24 Che install: cli, nightly Additional information: Problem can be reliably reproduced, doesn't happen randomly: Yes, but only for some stacks.

@@ -1,0 +1,53 @@
+Autocomplete not working no idea why, not sure how to debug
+kind/question kind/enhancement 
+Description of problem: I have a maven project in Che, I ran Update dependencies. First time it failed without any error messages in the outputs panel (although it appeared to be frozen, so maybe it was a timeout). There was an event indicating a failure.I ran it a second time and it appeared to complete in the outputs panel and a success event was added. At this point I opened some of my java files and attempted to goto definition and to autocomplete (implicitly and explicitly ... assume the keyboard shortcut is control-tab?) In any case non of this worked and there were no errors I could find (even looking in the console where the Che container was running) to help me find out why it was failing. Che version: 4.0.0-beta-13-1 Che install directory: ~/Downloads/eclipse-che-4.0.0-beta-13-1 Docker version: Client:
+ Version:      1.10.0
+ API version:  1.22
+ Go version:   go1.5.3
+ Git commit:   590d5108
+ Built:        Thu Feb  4 18:18:11 2016
+ OS/Arch:      darwin/amd64
+Server:
+ Version:      1.10.0
+ API version:  1.22
+ Go version:   go1.5.3
+ Git commit:   590d5108
+ Built:        Thu Feb  4 19:55:25 2016
+ OS/Arch:      linux/amd64
+ Docker Info: Containers: 1
+ Running: 1
+ Paused: 0
+ Stopped: 0
+Images: 4
+Server Version: 1.10.0
+Storage Driver: aufs
+ Root Dir: /mnt/sda1/var/lib/docker/aufs
+ Backing Filesystem: extfs
+ Dirs: 20
+ Dirperm1 Supported: true
+Execution Driver: native-0.2
+Logging Driver: json-file
+Plugins:
+ Volume: local
+ Network: bridge null host
+Kernel Version: 4.1.17-boot2docker
+Operating System: Boot2Docker 1.10.0 (TCL 6.4.1); master : b09ed60 - Thu Feb  4 20:16:08 UTC 2016
+OSType: linux
+Architecture: x86_64
+CPUs: 1
+Total Memory: 1.956 GiB
+Name: default
+ID: S6GZ:TD7N:M4BZ:J6DK:RN3E:455I:YTPI:BDY4:32XR:ONHD:MGDJ:HFVC
+Debug mode (server): true
+ File Descriptors: 20
+ Goroutines: 39
+ System Time: 2016-02-07T22:56:03.470098201Z
+ EventsListeners: 0
+ Init SHA1:
+ Init Path: /usr/local/bin/docker
+ Docker Root Dir: /mnt/sda1/var/lib/docker
+Username: binduwavell
+Registry: https://index.docker.io/v1/
+Labels:
+ provider=virtualbox
+ Java version: N/A I'm using che.sh run -i (so whatever you have in your container) Environment details (AWS, VirtualBox, physical, etc.): I'm on my mac using the default dockertoolbox 0.10 and default che 4.0.0-beta-13-1.

@@ -1,0 +1,3 @@
+Implement recovery for OpenShift infrastructure
+kind/task team/platform target/branch target/che6 
+OpenShift workspaces are considered as stopped when workspace master is restarted. It is needed to implement recovery for OpenShift workspaces, so workspaces will be considered as running after the restart of the master.

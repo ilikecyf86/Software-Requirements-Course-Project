@@ -1,0 +1,3 @@
+Debugger watch list
+kind/task status/analyzing team/enterprise sprint/next-sprint status/open-for-dev sprint/current-sprint status/analyzing sprint/next-sprint status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+Epic: #2611 Add/Remove/Change expressions functionality are required jdt.ls debugger in progress and it will be eventually integrated into Eclipse Che. We have to be ready and added missed UI parts. No need to change server-side functionality. Client keeps list of expressions and evaluate them when debugger is stopped.

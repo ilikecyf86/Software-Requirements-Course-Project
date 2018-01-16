@@ -1,0 +1,2 @@
+A lot of space is used for empty panel
+kind/bug severity/blocker status/in-progress team/ide 

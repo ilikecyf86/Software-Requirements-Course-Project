@@ -1,0 +1,3 @@
+[CHE 6] A workspace has two Workspace API installers
+kind/bug team/plugin sprint/current-sprint status/open-for-dev status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+Reproduction Steps: Create any workspace In the workspace details click on the Installers tab Observed behavior: There are two Workspace API installers OS and version: Che(Che6 branch) 6.0.0-M1; Chrome 59.0; Fedora 25 Additional information:

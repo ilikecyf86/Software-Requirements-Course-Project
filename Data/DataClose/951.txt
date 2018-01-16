@@ -1,0 +1,3 @@
+Provide "Show Whitespace Characters" functionality for editors
+
+In Eclipse IDE there is a button which provides functionality for showing spaces / tabs in editors. Would be great to have something similar in Che.

@@ -1,0 +1,3 @@
+Create a test for checking that workspace name length can be from 3 to 100 chars.
+kind/task team/production status/in-progress status/in-progress 
+Description We need create test for checking that workspace name length can be from 3 to 100 chars. RenameWorkspaceTest will be reworked for checking workspace name length.

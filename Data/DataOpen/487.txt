@@ -1,0 +1,3 @@
+A workspace doesn't restart automatically after stopping the process(regression)
+kind/bug severity/P1 team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint selenium/failure sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+Reproduction Steps: Start any wokrspace Run in the terminal a command kill -9 $(ps ax | grep java | grep ws-agent | grep conf | grep -v grep | awk '{print $1}') Expected behavior: The workspace will restarts Observed behavior: There is a error message widget This bug sometimes is reproduced on CHE. Che version: 5.5.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Failed test: CheckRestoringWorkspaceAfterStoppingWsAgentProcess Docker version: 1.12.3 Che install: Docker container

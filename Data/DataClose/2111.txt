@@ -1,0 +1,3 @@
+Wrong tooltip in Project Explorer
+kind/enhancement 
+Wrong tooltip in Project Explorer Reproduction Steps: 1,Put the mouse on the refresh button, there is no tooltip. 2,Put the mouse on the collapse button, the tooltip is "collapse all". Expected behavior: 1,the tooltip is "refresh selected path" 2,the tooltip is "collapse all" Observed behavior: 1, There is not tooltip for the button "refresh" 2, There is wrong tooltip "refresh selected path". Che version: 5.0.0-M5 4.5.1 OS and version: Ubuntu 14.04 LTS Docker version: 1.12.2 Browser：chrome53 （in winows7） Problem started happening recently, didn't happen in an older version of Che: No Problem can be reliably reproduced, doesn't happen randomly: Yes

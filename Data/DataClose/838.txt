@@ -1,0 +1,3 @@
+Revise Docker infrastructure implementation code to find what should be fixed or implemented
+kind/task status/in-progress status/in-progress 
+Docker infrastructure implementation has a lot of things implemented to get POC. We should revise it to find out whether there is anything that should be reimplemented or fixed and might influence SPI design.

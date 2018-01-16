@@ -1,0 +1,3 @@
+How to define another environment and switch between environments?
+kind/question 
+I see in the che documents, there is a concept "environment" and a workspace may have multiple environments. But in a workspace, I can find a way to define other environments and switch between them. Is there feature already provided? Or do I miss anything?

@@ -1,0 +1,3 @@
+create ci job for testing che6 in multiuser mode
+kind/task sprint/current-sprint team/production 
+as soon as we will have che6 multiuser assembly working on docker we should create ci job for testing che6 in multiuser mode

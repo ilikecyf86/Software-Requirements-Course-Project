@@ -1,0 +1,32 @@
+Preview port and macro expansion for additional servers/services provided via Docker compose
+kind/eclipse-che kind/enhancement team/plugin kind/eclipse-che 
+From @larrytalley on November 16, 2016 17:28 I have a workspace built with a custom recipe that is a Docker compose file. It creates two "machines", one is "dev-machine", the other is "messagebus". In a command specified on "dev-machine" I want to publish a preview URL for a service exposed on "messagebus". Note that the service is working, and by going to the "operations perspective" and "Servers" tab I can find the URL and successfully access it. But it would be cool if the preview URL worked from commands and published a link to the ephemeral port like I expect. I've been attempting to use the documentation at: https://eclipse-che.readme.io/docs/commands#macros and I've tried all the permutations in macro documentation. I've tried: http://${server.messagebus.8161}/admin http://${server.messagebus}/admin http://${Server-8161-tcp}/admin <-- not based on docs, but on looking at "operations perspective" Here is my recipe: version: '2'
+
+services:
+  messagebus:
+    image: larrytalley/activemq-docker-deployable
+    environment:
+      ACTIVEMQ_NAME: "messagebus1"
+      ACTIVEMQ_REMOVE_DEFAULT_ACCOUNT: "true"
+      ACTIVEMQ_ADMIN_LOGIN: "admin"
+      ACTIVEMQ_ADMIN_PASSWORD: "admin"
+      ACTIVEMQ_WRITE_LOGIN: "producer_login"
+      ACTIVEMQ_WRITE_PASSWORD: "producer_password"
+      ACTIVEMQ_READ_LOGIN: "consumer_login"
+      ACTIVEMQ_READ_PASSWORD: "consumer_password"
+      ACTIVEMQ_JMX_LOGIN: "jmx_login"
+      ACTIVEMQ_JMX_PASSWORD: "jmx_password"
+      ACTIVEMQ_STATIC_TOPICS: "log;auth;akfish"
+      ACTIVEMQ_STATIC_QUEUES: "queue1;queue2;queue3"
+      ACTIVEMQ_MIN_MEMORY: "1024"
+      ACTIVEMQ_MAX_MEMORY: "1024"
+      ACTIVEMQ_ENABLED_SCHEDULER: "true"
+    mem_limit: 1073741824
+    command:  ["/bin/sh", "-c", "bin/activemq console"]
+    
+  dev-machine:
+    image: codenvy/ubuntu_jdk8
+    mem_limit: 1073741824
+    depends_on:
+      - messagebus
+ Copied from original issue: codenvy/codenvy#1169

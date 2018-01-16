@@ -1,0 +1,3 @@
+Clojure support
+kind/enhancement 
+Hi all, Is there any plugin (paredit, autocomplete, repl, build, etc) for Clojure, either existing or planned? It would be great to have Clojure support in Che. Thanks!

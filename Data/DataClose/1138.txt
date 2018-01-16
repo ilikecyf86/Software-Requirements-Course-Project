@@ -1,0 +1,3 @@
+how to run che
+kind/question 
+Can you tell me how to run binaries of che that I have complied?

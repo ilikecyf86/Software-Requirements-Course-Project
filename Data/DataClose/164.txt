@@ -1,0 +1,3 @@
+Create ci job for working wit jdt.ls extension
+kind/task team/production sprint/current-sprint 
+Now we have own extension of jdt.ls - https://github.com/eclipse/che-ls-jdt, so we should create ci job for getting artifact in che project when jd.ls is starting. The location of the artifact is: che-ls-jdt/org-eclipse-che-jdt-ls-extension/jdt.ls.extension.product/target/distro/jdt-language-server-latest.tar.gz

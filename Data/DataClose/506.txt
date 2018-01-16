@@ -1,0 +1,3 @@
+Swagger is inaccessible in Multiuser Che
+kind/bug 
+Reproduction Steps: Login into the Multiuser Che and go to the Swagger page http://172.17.0.1:8080/swagger Expected result: page with Swagger UI is opened in browser: Actual wrong result: There was redirection to http://172.17.0.1:8080/dashboard/#/ page: This issue is related to #5362.

@@ -1,0 +1,3 @@
+Github
+kind/question 
+Does github require oauth? I have been having trouble getting push(you are not authorized error) and import with ssh to work. Wh I switched to bitbucket.org and everything works fine. I get the following trying to setup github. Do I have to modify che.conf to get this to work?

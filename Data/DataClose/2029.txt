@@ -1,0 +1,3 @@
+Vertical/horizontal scrollbar is absent in Che
+kind/bug 
+1.Open the terminal. Type or paste a huge content. Expected behavior: User should have Vertical/horizonta scrolling Observed behavior: User does not have possibility scroll to the content below visible area Che version: 5.0.0-M8 OS and version: Ubuntu 14.0 TLS Docker version: 1.12.3 Che install: local bundle

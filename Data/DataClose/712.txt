@@ -1,0 +1,3 @@
+Show user email somewhere
+kind/eclipse-che kind/enhancement team/plugin kind/eclipse-che 
+From @vitaliy-guliy on January 30, 2017 14:2 I cannot see email of the current user. It's displayed only when creating a team. It would be great to display email in user menu or somewhere else. Copied from original issue: codenvy/codenvy#1650

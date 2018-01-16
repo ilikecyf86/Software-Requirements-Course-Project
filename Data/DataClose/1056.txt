@@ -1,0 +1,3 @@
+Incorrect behavior at refactoring
+kind/bug severity/P2 sprint/next-sprint team/ide sprint/next-sprint 
+External operation event is displayed at refactoring Reproduction Steps: Create "spring" project Create java classes "A" and "B" for example Create a new field of "B" type in the "A" class Select "B" type of the created field and rename this one by Assistant -> Refactoring -> Rename action You can see "B" type is renamed but external operation event is displayed Che version: 5.10.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

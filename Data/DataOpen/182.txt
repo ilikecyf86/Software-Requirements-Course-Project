@@ -1,0 +1,3 @@
+SVN commit doest not work using ALT + c
+kind/question 
+SVN commit doest not work using ALT + c but there sould definitely be a hotkey for this.

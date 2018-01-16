@@ -1,0 +1,3 @@
+Ram indicator missing in `create project`
+kind/bug severity/blocker sprint/current-sprint team/plugin status/open-for-dev status/open-for-dev sprint/current-sprint 
+Ram indicator missing in create project

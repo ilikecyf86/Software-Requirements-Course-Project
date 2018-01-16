@@ -1,0 +1,3 @@
+[CHE-6] Update selenium tests to actual state
+kind/task status/in-progress sprint/current-sprint team/production status/in-progress 
+Description We need to update next selenium tests after changes in the IDE6 (UI and API parts): StepIntoStepOverStepReturnWithChangeVariableTest ChangeVariableWithEvaluatingTest ServerRuntimeInfoTest OS and version: Che6, chrome browser, Fedora 25 Diagnostics:

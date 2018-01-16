@@ -1,0 +1,112 @@
+IDE will randomly stop updating PHP files, then lock
+kind/bug severity/blocker status/open-for-dev team/ide 
+When editing PHP files the IDE will stop saving the changes to the files. This occurs with both the PHP and Composer project types. Sometimes you can continue to edit a different file. Sometimes, if you have the same file open in multiple panes closing one will cause the file to be flushed. Shortly after this you will get an "Updating file" modal message, or the attempt to open a folder in the Projects Explorer will not complete, just sitting on the barbers pole effect. The only way to clear this is to refresh. My guess is that this is somehow related to the PHP Language Server because it appears that the syntax/code checks stop as well (although this could be chicken/egg) Reproduction Steps: Edit PHP files. Once the problem occurs then making the same changes to the same file after the refresh will often cause it to lock, but not always. Changing the order of the edits sometimes works after a refresh. OS and version: Ubuntu 16.04; Docker version 1.12.6 Diagnostics: Info CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che
+ Version:        5.9.1
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /che
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          /path/to/sync
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    5.9.1
+ CHE_HOST:       1.1.1.1
+ CHE_INSTANCE:   /che/instance
+ CHE_CONFIG:     /che
+ CHE_BACKUP:     /che/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   1.1.1.1
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:5.9.1
+ IMAGE_CHE=eclipse/che-server:5.9.1
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.9.1
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.9.1
+ UTILITY_IMADIR=eclipse/che-dir:5.9.1
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:5.9.1
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.9.1
+che.env:
+ The main container is derived from the following Dockerfile (based on the main che PHP example) FROM debian:jessie
+
+ENV DEBIAN_FRONTENT noninteractive
+ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+ENV PATH $JAVA_HOME/bin:$PATH
+
+RUN echo "deb http://ftp.debian.org/debian testing main" >> /etc/apt/sources.list && \
+	apt-get update && \
+	apt-get -y install \
+		openssh-server \
+		sudo \
+		procps \
+		openjdk-8-jdk-headless \
+		openjdk-8-source \
+		wget \
+		unzip \
+		mc \
+		locales \
+		ca-certificates \
+		curl \
+		bash-completion \
+		apache2 \
+		php5 \
+		php5-mhash \
+		php5-mcrypt \
+		php5-curl \
+		php5-cli \
+		php5-pgsql \
+		php5-gd \
+		libapache2-mod-php5 \
+		php5-json \
+		php5-cgi \
+		php5-ldap \
+		php5-sqlite && \
+	sudo sed -i 's/\/var\/www\/html/\/projects\/mis/g' /etc/apache2/sites-available/000-default.conf && \
+	sudo sed -i 's/None/All/g' /etc/apache2/apache2.conf && \
+	sudo sed -i 's/\/var\/www/\/projects/g' /etc/apache2/apache2.conf && \
+	echo "ServerName localhost" | sudo tee -a /etc/apache2/apache2.conf && \
+	a2enmod rewrite && \
+	curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer && \
+	mkdir -p /home/user && \
+	apt-get clean && \
+	apt-get -y autoremove && \
+	apt-get -y clean && \
+	rm -rf /var/lib/apt/lists/* && \
+	mkdir /var/run/sshd && \
+	sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd && \
+	echo "%sudo ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
+	useradd -u 1000 -G users,sudo -d /home/user --shell /bin/bash -m user && \
+	usermod -p "*" user && \
+	sudo echo -e "deb http://ppa.launchpad.net/git-core/ppa/ubuntu precise main\ndeb-src http://ppa.launchpad.net/git-core/ppa/ubuntu precise main" >> /etc/apt/sources.list.d/sources.list && \
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A1715D88E1DF1F24 && \
+	sudo apt-get update && sudo apt-get install git subversion -y && \
+	apt-get clean && \
+	apt-get -y autoremove && \
+	apt-get -y clean && \
+	rm -rf /var/lib/apt/lists/* && \
+	echo "#! /bin/bash\n set -e\n sudo /usr/sbin/sshd -D &\n exec \"\$@\"" > /home/user/entrypoint.sh && \
+	chmod a+x /home/user/entrypoint.sh
+ENV LANG C.UTF-8
+USER user
+RUN sudo localedef -i en_US -f UTF-8 en_US.UTF-8 && \
+    sudo chmod -R 777 /home/user && \
+    svn --version && \
+    sed -i 's/# store-passwords = no/store-passwords = yes/g' /home/user/.subversion/servers && \
+    sed -i 's/# store-plaintext-passwords = no/store-plaintext-passwords = yes/g' /home/user/.subversion/servers
+EXPOSE 22 4403 80
+WORKDIR /projects
+ENTRYPOINT ["/home/user/entrypoint.sh"]
+CMD tail -f /dev/null

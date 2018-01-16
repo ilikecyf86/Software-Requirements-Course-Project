@@ -1,0 +1,3 @@
+Node.js linter seems to only look for modules defined in package.json
+kind/question 
+Seems that che's module resolver only checks on package.json for modules which results in false-positives for missing modules. The following screenshot is a statement referencing a local non-npm module OS and version: Windows 7 on Codenvy 5.13.0

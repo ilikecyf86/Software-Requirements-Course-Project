@@ -1,0 +1,59 @@
+Adding a table to a view
+kind/question 
+So I want to add a custom table to a custom view, however I am not sure how to do that... Here is my code ` public class HelloWorldViewImpl extends BaseView<HelloWorldView.ActionDelegate> implements HelloWorldView { /**
+ * Constructor.
+ *
+ * @param resources the {@link PartStackUIResources}
+ */
+@Inject
+public HelloWorldViewImpl(PartStackUIResources resources){
+    super(resources);
+    // Create a CellTable.
+    CellTable<Contact> table = new CellTable<Contact>();
+
+    // Create name column.
+    TextColumn<Contact> nameColumn = new TextColumn<Contact>() {
+      @Override
+      public String getValue(Contact contact) {
+        return contact.name;
+      }
+    };
+
+    // Create address column.
+    TextColumn<Contact> addressColumn = new TextColumn<Contact>() {
+      @Override
+      public String getValue(Contact contact) {
+        return contact.address;
+      }
+    };
+
+    // Add the columns.
+    table.addColumn(nameColumn, "Name");
+    table.addColumn(addressColumn, "Address");
+
+    // Set the total row count. This isn't strictly necessary, but it affects
+    // paging calculations, so its good habit to keep the row count up to date.
+    table.setRowCount(CONTACTS.size(), true);
+
+    // Push the data into the widget.
+    table.setRowData(0, CONTACTS);
+
+    Label label = new Label("Hello World");
+    setContentWidget(table);
+}
+
+private static List<Contact> CONTACTS = Arrays.asList(
+        new Contact("John", "123 Fourth Road"),
+        new Contact("Mary", "222 Lancer Lane"));
+
+// A simple data type that represents a contact.
+private static class Contact {
+  private final String address;
+  private final String name;
+
+  public Contact(String name, String address) {
+    this.name = name;
+    this.address = address;
+  }
+}
+ } ` However something seems to be a bit off... when i build this , it all compiles and seems to be fine... but when i start che, my plugin does not load at all... What am I doing wrong? Is there an example of creating a table in a che view?

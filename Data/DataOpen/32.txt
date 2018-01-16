@@ -1,0 +1,3 @@
+JavaScript endpoint for Editor API
+kind/enhancement team/ide 
+Description We need to provide ability for JavaScript Plugins. For start we need to only basic functionality like get document, cursor position and etc. This should work for any editor not dependence will we switch to Monaco or not

@@ -1,0 +1,3 @@
+Update the ConvertToProjectWithPomFileTest selenium test
+kind/task team/production status/in-progress 
+Description We need: update ConvertToProjectWithPomFileTest selenium test to cover use case from #4376; add checking that after changing artifactId in pom.xml file name of Editor tab changed too.

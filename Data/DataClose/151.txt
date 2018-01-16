@@ -1,0 +1,3 @@
+Investigate the reason falling tests from 'git' package on the CHE6-ocp
+kind/task status/in-progress status/open-for-dev sprint/current-sprint team/production status/open-for-dev status/in-progress 
+Description Running on the CHE6-ocp the selenium tests from package 'git' has a quite big regress to CHE6 (single/multi) We need to find the reason (or reasons) of it and fix up Goal of this issue is to get result selenium tests of 'git' package on CHE6-ocp such on CHE6 (single/multi)

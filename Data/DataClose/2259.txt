@@ -1,0 +1,3 @@
+Amount of machines is not correctly displayed in process tree [Regression]
+kind/bug severity/blocker team/ide status/in-progress status/in-progress 
+Reproduction Steps: Create workspace from custom stack by using compose file Expected behavior. In tree of processes is displayed dev-machine and db Observed behavior: In tree of processes is displayed only dev-machine Che version: 5.0.0-M6-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.2 Che install: Docker container Additional information: Problem started happening recently, didn't happen in an older version of Che: Yes Problem can be reliably reproduced, doesn't happen randomly: Yes

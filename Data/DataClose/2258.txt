@@ -1,0 +1,9 @@
+Docker Launcher: Versions and Nightly Builds doesn't work
+kind/bug 
+Can't use nightly builds. Try to use this docs https://eclipse-che.readme.io/docs/usage-docker#versions-and-nightly-builds 1.docker run --rm -t -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:nightly start Unable to find image 'eclipse/che:nightly' locally
+  Pulling repository docker.io/eclipse/che
+  docker: Tag nightly not found in repository docker.io/eclipse/che.
+  See 'docker run --help'.
+ docker run --rm -t -v /var/run/docker.sock:/var/run/docker.sock -e CHE_VERSION=4.6.0 eclipse/che start INFO: ECLIPSE CHE: Pulling image codenvy/che-server:4.6.0
+Pulling repository docker.io/codenvy/che-server
+FATA[0004] Tag 4.6.0 not found in repository docker.io/codenvy/che-server

@@ -1,0 +1,5 @@
+Workspace can not be started on minishift
+kind/bug team/platform target/che6 
+Description Workspace creation failed with following 2017-12-16 19:14:42,298[aceSharedPool-0]  [WARN ] [w.i.o.OpenShiftInternalRuntime 136]  - Failed to start OpenShift runtime of workspace workspacerossm6fybuht9nvm. Cause: Failure executing: POST at: https://kubernetes.default.svc/api/v1/namespaces/workspacerossm6fybuht9nvm/pods. Message: pods "workspacerossm6fybuht9nvm.dockerimage" already exists. Received status: Status(apiVersion=v1, code=409, details=StatusDetails(causes=[], group=null, kind=pods, name=workspacerossm6fybuht9nvm.dockerimage, retryAfterSeconds=null, uid=null, additionalProperties={}), kind=Status, message=pods "workspacerossm6fybuht9nvm.dockerimage" already exists, metadata=ListMeta(resourceVersion=null, selfLink=null, additionalProperties={}), reason=AlreadyExists, status=Failure, additionalProperties={}).
+--
+ Reproduction Steps create a workspace (I have used Che-in-Che) shutdown minishift start minishift start your earlier created workspace. OS and version: This was on OSX with minishift 1.10

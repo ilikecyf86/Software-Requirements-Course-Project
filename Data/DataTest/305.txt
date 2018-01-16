@@ -1,0 +1,12 @@
+Authenticating my GitHub Account with Eclipse Che Won't Work
+
+I am trying this on eclipse-che-4.0.0-RC11 the application is installed in : /Users/mac/Documents/Apps/eclipse-che-4.0.0-RC11 Docker Version  Version:      1.10.3
+ API version:  1.22
+ Go version:   go1.5.3
+ Git commit:   20f81dd
+ Built:        Thu Mar 10 21:49:11 2016
+ OS/Arch:      darwin/amd64
+ Java Version java version "1.8.0_45"
+Java(TM) SE Runtime Environment (build 1.8.0_45-b14)
+Java HotSpot(TM) 64-Bit Server VM (build 25.45-b02, mixed mode)
+ Whenever I try to connect my GitHub account to the IDE get the following window To reproduce: 1- Start a workspace. 2- workspace > Import Project 3- Select GitHub as source control 4- Define repo URL 5- Click Import the following will show 6- Click OK with the check box ticked ( to generate key ) the following will show

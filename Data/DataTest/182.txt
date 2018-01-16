@@ -1,0 +1,3 @@
+Create Che-4 Videos
+kind/epic 
+For the release of Che 4 beta, we need to record few videos based on scripts documented in the following document: https://docs.google.com/document/d/1czbegoiF3BuYswdMXlzDA7UiMiBFkUUgD29qEiht-gM/edit#

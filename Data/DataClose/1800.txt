@@ -1,0 +1,24 @@
+Cleaner of abandoned Docker containers and networks fails on Docker 1.12.x if no custom networks created
+kind/bug team/platform severity/P2 status/blocked 
+Discovered by @AndrienkoAleksandr. Looks like there is a bug in docker. When no custom network exists and docker cleaner tries to retrieve networks with filter type=custom docker returns response 200 with body null. So Che throws NullPointerException because expects empty array in that case. Reproduction Steps: Ensure that no non-default networks exists with docker network ls. Default ones are: bridge, host, none Start Che Expected behavior: No errors appear. Observed behavior: Next error appears: 2017-01-06 11:42:14,391[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbMigrate 44]        - Schema "PUBLIC" is up to date. No migration necessary.
+2017-01-06 11:42:16,645[ted-scheduler-1]  [INFO ] [ockerAbandonedResourcesCleaner 123]  - List containers registered in the api: []
+2017-01-06 12:36:41,689[ted-scheduler-1]  [ERROR] [o.e.c.c.s.e.LoggedRunnable 64]       - null
+java.lang.NullPointerException: null
+    at org.eclipse.che.plugin.docker.machine.cleaner.DockerAbandonedResourcesCleaner.cleanNetworks(DockerAbandonedResourcesCleaner.java:164) ~[che-plugin-docker-machine-5.0.0-SNAPSHOT.jar:5.0.0-SNAPSHOT]
+    at org.eclipse.che.plugin.docker.machine.cleaner.DockerAbandonedResourcesCleaner.run(DockerAbandonedResourcesCleaner.java:91) ~[che-plugin-docker-machine-5.0.0-SNAPSHOT.jar:5.0.0-SNAPSHOT]
+    at org.eclipse.che.commons.schedule.executor.LoggedRunnable.run(LoggedRunnable.java:43) ~[che-core-commons-schedule-5.0.0-SNAPSHOT.jar:5.0.0-SNAPSHOT]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_111]
+    at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308) [na:1.8.0_111]
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180) [na:1.8.0_111]
+    at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294) [na:1.8.0_111]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_111]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_111]
+    at java.lang.Thread.run(Thread.java:745) [na:1.8.0_111]
+2017-01-06 12:36:41,934[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 975]        - Deployment of web application archive /assembly/tomcat/webapps/wsmaster.war has finished in 3,277,724 ms
+2017-01-06 12:36:41,934[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 911]        - Deploying web application archive /assembly/tomcat/webapps/swagger.war
+2017-01-06 12:36:42,057[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 975]        - Deployment of web application archive /assembly/tomcat/webapps/swagger.war has finished in 122 ms
+2017-01-06 12:36:42,062[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 911]        - Deploying web application archive /assembly/tomcat/webapps/ROOT.war
+2017-01-06 12:36:43,177[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 975]        - Deployment of web application archive /assembly/tomcat/webapps/ROOT.war has finished in 1,115 ms
+2017-01-06 12:36:43,189[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 488]  - Starting ProtocolHandler ["http-nio-8080"]
+2017-01-06 12:36:43,200[main]             [INFO ] [o.a.catalina.startup.Catalina 642]   - Server startup in 3284605 ms
+ And container and network cleaner doesn't work after that. Che version: 5.0.0-Snapshot OS and version: Fedora 24 Docker version: 1.12.1 Che install: Docker container Additional information: Problem started happening recently, didn't happen in an older version of Che: [Yes] Problem can be reliably reproduced, doesn't happen randomly: [Yes]

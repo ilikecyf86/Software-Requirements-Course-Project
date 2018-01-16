@@ -1,0 +1,3 @@
+Not able to load eclipse che workspace url in iframe
+kind/question 
+I am trying to load eclipse che workspace url in ifram but getting following error: refuse to display in iframe because it set 'X-Frame-Options' to 'SAMEORIGIN'. can anyone knows how to resolve it? Thanks!!

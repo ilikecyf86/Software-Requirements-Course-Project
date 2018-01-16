@@ -1,0 +1,3 @@
+Improve UX to delete a command
+kind/enhancement team/plugin 
+Following: openshiftio/openshift.io#1502 We should be improving the UX to delete a command. The icon does not look intuitive We are missing a right click action on commands (to duplicate, rename, delete, move) We are also missing a delete button in the command editor.

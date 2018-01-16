@@ -1,0 +1,9 @@
+Usability improvements to che-server container model
+kind/question kind/epic kind/question kind/enhancement 
+I propose a series of improvements to the che-server Docker container to make it easier to work with local Docker installations and orchestrators. For example the launcher cannot be used with docker-compose (at least to have docker-compose ps correctly report running processes and such) and cannot be used with Kubernetes. Also I'm sure there are many other Docker runner which wouldn't work well with the current launcher. What I'd suggest is something like: Have che-server handle sign TERM to perform the clean shutdown (currently code in ~/che/bin/che.sh stop). Reduce the number of mount required for persistence to /data (or whatever name) with storage and workspaces contained under it (and only those). Ideally move them to the root to have a simpler more constant mounting point. #2598 If possible avoid requiring to mount lib-copy by copying the files another way. Reduce required arguments (once #1560 is done it should actually be able to use default arguments, until then only --remote:<HOST_OF_DOCKER> is required and it could be a ENV variable for now) That'd simplify startup, shutdown, reduce complexity, make it a lot easier to use on platforms like Kubernetes... to something like: $ docker run -d --name docker --privileged -v $PWD/storage:/data/storage docker:dind
+$ docker run --rm \
+    -p 8080:8080 \
+    -v $PWD:/data \
+    --link docker \
+    codenvy/che-server
+ I believe this is possible and nothing more would be required. Note: I believe currently /home/user/che/storage must be mounted on the docker host under a specific path. I'd suggest making that path configurable via an environment variable.

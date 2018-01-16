@@ -1,0 +1,3 @@
+[REGRESSION] Preview feature doesn`t work
+kind/bug severity/P2 team/ide severity/blocker severity/P2 
+Related with #5517 Reproduction Steps: Create Java Spring project from project wizard Run "build and run" command Wait "server startup" message in console Click on preview button in the intelligence toolbar In the drop down list click on the link "ws-machine:8080" Pay attention to result Expected result: Link will be opened in the new window Actual result: Link doesn`t work OS and version: Che - 5.15.0 ; Chrome - 59.0 ; Fedora - 25 Attachment:

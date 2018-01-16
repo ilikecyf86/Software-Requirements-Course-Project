@@ -1,0 +1,3 @@
+Developping extensions to newest Che version
+kind/question team/platform 
+I recently migrated to the 5.5.0 version of che and I did notice a lot of changes on some modules especially the assembly-ide-war . So how we can develop extension for this new version and how to use SuperDev mode if there is no more GWT modules for the IDE?

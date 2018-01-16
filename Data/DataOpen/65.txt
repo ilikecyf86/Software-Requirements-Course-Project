@@ -1,0 +1,3 @@
+Cursor does not return after undo operation in a big file
+kind/bug severity/P1 team/ide 
+Reproduction Steps Create ws. base on Eclipse Che stack. Clone the che project, checkout on che6 stack. Wait resolving dependency. Open Editor PageObject. Refactor some methods. Perform ctrl+z. Expected result: The cursor should return to previews position Actual result: The cursor loses position, all content becomes selected OS and version: Chrome browser, CHE 6.0.0-M3. Diagnostics:

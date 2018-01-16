@@ -1,0 +1,10 @@
+Che CLI should not notify about images for branches in development
+kind/enhancement 
+The Che CLI is raising a notification when a new Che version is available. This flow works nicely for images like: 5.17.0 5.18.0 We have recently introduce a image for a branch that is currently in development: multiuser. As a result, when starting Che, the CLI notify the user that a new image is available - as the latest version of Che. This behaviour is misleading the users and we should not show our images for dev in progress to end-users. See the output of the CLI: INFO: (che cli): :/assembly mounted - using assembly from local host  
+INFO: (che cli): Pulling image alpine:3.4  
+INFO: (che cli): Pulling image eclipse/che-ip:5.17.0  
+INFO: (che cli): 5.17.0 - using docker 17.05.0-ce / native  
+WARN: Newer version 'multiuser' available  
+INFO: (che config): Generating che configuration...  
+Unable to find image 'eclipse/che-init:5.17.0' locally  
+5.17.0: Pulling from eclipse/che-init

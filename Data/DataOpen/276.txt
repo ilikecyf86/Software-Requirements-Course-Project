@@ -1,0 +1,3 @@
+Invitation of non-existent users to Eclipse Che organization
+kind/task sprint/next-sprint team/platform status/open-for-dev sprint/next-sprint 
+We need to port functionality from codenvy. Flow. If a user exists in Eclipse Che database - just add permissions. 2.1 If a user doesn't exist in Eclipse Che database - send an email with an invitation to Che. 2.2 When invited user first-time login - give user permissions to access to the workspace from 2.1

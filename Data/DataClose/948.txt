@@ -1,0 +1,3 @@
+Wrong editor behavior in the split mode
+kind/bug severity/P2 team/ide status/in-progress status/code-review status/in-progress status/code-review 
+Reproduction Steps: Go to any java project Open java class On the editor tab with class name open the context menu and click on "Split in two columns" Refresh page Click on the second column and add "}" symbol to the end of the class Wait until both classes will be highlighted by red Remove "}" symbol that you added before Click on the first column Pay attention to the screen Expected behavior The changes will be the same in the both columns Observed behavior Unexpected changes in the first column Attachment

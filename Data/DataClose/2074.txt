@@ -1,0 +1,3 @@
+Maven dependency resolver continues to run after workspace is stopped
+kind/bug sprint/next-sprint team/ide status/in-progress status/in-progress 
+Maven dependency resolver continues his work after workspace stop. Reproduction Steps: Create Java workspace Import Che as maven project Stop workspace Expected behavior: Maven dependency resolver will be stopped. Observed behavior: Che version: 5.0.0-M8 Snapshot OS and version: macOS Sierra

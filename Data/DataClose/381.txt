@@ -1,0 +1,3 @@
+Log uncaught exceptions in ws-agent
+kind/enhancement team/platform status/open-for-dev sprint/current-sprint status/open-for-dev 
+The default exception handler in Java logs to the console. In the wsagent process, only uncaught exceptions for particular threads are logged, the rest goes unnoticed. I suggest we replace the default exception handler with one that logs exceptions.

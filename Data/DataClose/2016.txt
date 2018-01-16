@@ -1,0 +1,3 @@
+Add Clojure Support
+kind/question 
+Add Clojure support to Che The two other bugs mentioning Cloure got closed referencing each other. So I'm adding this bug back b/c Clojure support should be added to Che. Thanks, Sam Griffith

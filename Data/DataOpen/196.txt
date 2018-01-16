@@ -1,0 +1,3 @@
+[Multiuser] Value in the Available RAM field is not correct when create a new workspace for organization
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: Create an organization and don't change organization Caps Start to create a new workspace Observed behavior: If the Workspace RAM Cap isn't set than the Available RAM field equals -0.0009765625GB Che version: 5.21.0-SNAPSHOT Multiuser OS and version: Fedora 25 Additional information:

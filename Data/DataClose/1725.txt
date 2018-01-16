@@ -1,0 +1,3 @@
+Add ability to set different settings for different text editors
+team/ide status/in-progress status/pending-merge status/in-progress sprint/current-sprint status/pending-merge 
+Now, the same editor's settings are applying to all opened editors. Need to add ability to set different settings for every editor. Now it's need for hiding Zoom ruler and Overview ruler in command line and preview URL editors. Related to #2681

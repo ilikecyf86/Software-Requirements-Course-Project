@@ -1,0 +1,3 @@
+Missing functionality to Generate Getters & Setters in a Java class
+kind/enhancement 
+As this is often used, I believe it would really be great to have it implemented.

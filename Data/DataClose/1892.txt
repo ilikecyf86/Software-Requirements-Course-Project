@@ -1,0 +1,3 @@
+Project explorer shows removed folder
+team/ide kind/bug severity/P2 
+Steps to reproduce: Import https://github.com/eclipse/che Create folder in root folder using terminal Remove the folder using terminal Refresh page Enjoy Expected behavior: after removal the folder is never shown again Actual behavior: after removal it is not shown just until page is refreshed and then it is always shown Branch: https://github.com/eclipse/che/tree/dynamic-fw

@@ -1,0 +1,3 @@
+Revisit agents metadatas
+kind/task 
+The agent names are not consistent. They should be: a) "First second",not "First-second", "First-Second", or "First Second" b) There is no need to add "agent" in the name, so it's "Git" not "Git Agent" or "Exec Agent" The description for the Git agent was too long, and did not provide an explanation. This agent should be activated by default. Let's be super concise on what this agent does. If we need more details on what the agent does with a long description, we should have a hover help message where we can then provide docs-like explanations.

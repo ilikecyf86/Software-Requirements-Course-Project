@@ -1,0 +1,3 @@
+Make Che-in-che stack more usable for Che development
+kind/task target/che6 team/platform 
+Description Use eclipse/che-dev image instead of codenvy/alpine_jdk8 Make sure che-dev image is set up for Che build Upgrade golang and nodejs version Add commands to build maven project and module Set up memory limit to 7G try Centos based image

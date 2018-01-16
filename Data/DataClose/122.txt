@@ -1,0 +1,3 @@
+Add changes to 'WorkingWithJavaMySqlStackTest' and 'WorkingWithNodeWsTest' selenium tests
+kind/task status/in-progress status/open-for-dev target/che6 status/in-progress status/open-for-dev sprint/current-sprint team/production 
+Description Sometime these selenium tests fail when running on CI We can see from screenshot the project is not selected on the project tree, because loader form is still open Need to add waiting to closing loader

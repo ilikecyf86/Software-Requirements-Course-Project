@@ -1,0 +1,3 @@
+Allow configuration of syntax highlighting
+kind/enhancement kind/question 
+We need a way to configure orion with syntax highlighting for additional mime types. Currently it seems like the way is to patch embeddedToolingPlugin.js, which is inconvenient.

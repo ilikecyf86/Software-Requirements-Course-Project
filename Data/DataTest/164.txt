@@ -1,0 +1,14 @@
+Avoid "Contact support" wording in error messages
+Improvement kind/enhancement Improvement 
+_1 Upvote_ It's a bit confusing to stumble upon error messages asking to "contact support", when running OSS Che. I think those error messages could be improved to point people to GH, or wherever you think support for Che "happens" :-) 12:13 $ ack 'contact support' -i
+core/che-core-api-core/src/main/java/org/eclipse/che/api/core/rest/ApiInfoService.java
+79:            throw new ServerException("Unable read info about API. Contact support for assistance.");
+
+plugins/plugin-docker/che-plugin-docker-machine/src/main/java/org/eclipse/che/plugin/docker/machine/DockerInstanceProvider.java
+323:            throw new MachineException("Machine creation failed. Snapshot state is invalid. Please, contact support.");
+
+plugins/plugin-machine/che-plugin-machine-ext-client/src/main/resources/org/eclipse/che/ide/extension/machine/client/MachineLocalizationConstant.properties
+135:terminal.error.start=Cannot launch Terminal. Try re-starting current machine and contact support if Terminal keeps failing.
+
+wsagent/che-core-api-git/src/main/java/org/eclipse/che/api/git/GitProjectImporter.java
+202:                    "or file system corruption. Please contact support for assistance.", FWW, regarding the "Cannot launch terminal" error, my impression is this might be cause by a workspace machine not exposing port 4411, correct? so maybe that particular message could be changed in that direction?

@@ -1,0 +1,3 @@
+It's impossible to import SVN-project in Multiuser Che
+kind/bug team/ide 
+Reproduction Steps: Create and open workpace. Open Import Project wizard. Expected result: There is SUBVERSION item in Source Control list: Actual wrong result: There is no SUBVERSION item in Source Control list: This issue is related to #5362.

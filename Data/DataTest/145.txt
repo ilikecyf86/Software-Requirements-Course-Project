@@ -1,0 +1,3 @@
+Dependencies between modules aren't resolved in multi-module maven project
+
+As I see now, in case of multi-module maven project Che doesn't see a dependencies to other modules until I install them to the local maven repo. Is this correct? And if it is so, do you plan to implement a kind of 'source-based' dependencies resolving? I use Che 4.1.0.

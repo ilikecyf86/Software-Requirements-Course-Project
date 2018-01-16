@@ -1,0 +1,3 @@
+Mobile application for Eclipse CHE
+kind/enhancement 
+It may be usefull to have mobile application for Eclipse CHE. Such application should be fast, light, simple, and obviously for user. It should consist of base functionality: editor, project explorer, terminal, base vcs function. It's not nessusary use GWT for this application, we can use some another technologies.

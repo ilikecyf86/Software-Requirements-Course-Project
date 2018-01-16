@@ -1,0 +1,85 @@
+Unable to copy text to workspace terminal in Safari
+kind/bug 
+Unable to copy text to workspace terminal in Safari. Works in Chrome. Tested on Safari [Version 10.0 (11602.1.50.0.10)] and Chrome [Version 53.0.2785.143 (64-bit)]. Reproduction Steps: copy text paste to workspace terminal Expected behavior: Text appears in the terminal Observed behavior: Nothing appears. Che version: nightly, updated 2016-oct-10 OS and version: OS X El Capitan - 10.11.6 Docker version: Client:
+ Version:      1.12.1
+ API version:  1.24
+ Go version:   go1.7.1
+ Git commit:   6f9534c
+ Built:        Thu Sep  8 10:31:18 2016
+ OS/Arch:      darwin/amd64
+
+Server:
+ Version:      1.12.1
+ API version:  1.24
+ Go version:   go1.6.3
+ Git commit:   23cf638
+ Built:        Thu Aug 18 17:52:38 2016
+ OS/Arch:      linux/amd64
+ Che install: [Vagrant, Docker container, server (zip), Bitnami, Yatta, or Codenvy?] local installation via `curl -sL https://raw.githubusercontent.com/eclipse/che/master/che.sh`` Additional information: INFO:  ---------------------------------------
+INFO:  -------------   CLI INFO   ------------
+INFO:  ---------------------------------------
+INFO:  
+INFO:  ---------  PLATFORM INFO  -------------
+INFO:  CLI DEFAULT PROFILE       = not set
+INFO:  CHE_VERSION               = latest
+INFO:  CHE_CLI_VERSION           = latest
+INFO:  CHE_UTILITY_VERSION       = nightly
+INFO:  DOCKER_INSTALL_TYPE       = docker4mac
+INFO:  DOCKER_HOST_IP            = 192.168.65.2
+INFO:  IS_NATIVE                 = NO
+INFO:  IS_WINDOWS                = NO
+INFO:  IS_DOCKER_FOR_WINDOWS     = NO
+INFO:  IS_DOCKER_FOR_MAC         = YES
+INFO:  IS_BOOT2DOCKER            = NO
+INFO:  HAS_DOCKER_FOR_WINDOWS_IP = NO
+INFO:  IS_MOBY_VM                = YES
+INFO:  HAS_CHE_ENV_VARIABLES     = NO
+INFO:  HAS_TEMP_CHE_PROPERTIES   = NO
+INFO:  IS_INTERACTIVE            = YES
+INFO:  IS_PSEUDO_TTY             = YES
+INFO:  
+INFO: ---------------------------------------
+INFO: ---------   LAUNCHER INFO  ------------
+INFO: ---------------------------------------
+INFO: 
+INFO: ---------  PLATFORM INFO  -------------
+INFO: DOCKER_INSTALL_TYPE       = docker4mac
+INFO: DOCKER_HOST_OS            = Alpine Linux v3.4
+INFO: DOCKER_HOST_IP            = 192.168.65.2
+INFO: DOCKER_HOST_EXTERNAL_IP   = localhost
+INFO: DOCKER_DAEMON_VERSION     = 1.12.1
+INFO: 
+INFO: 
+INFO: --------- CHE INSTANCE LIST  ----------
+INFO: 
+INFO: --------- CHE INSTANCE INFO  ----------
+INFO: CHE SERVER CONTAINER ID   = 72e36219e96b
+INFO: CHE SERVER CONTAINER NANE = che-server
+INFO: CHE CONTAINER EXISTS      = YES
+INFO: CHE CONTAINER STATUS      = running
+INFO: CHE SERVER STATUS         = running & api reachable
+INFO: CHE VERSION               = 4.7.2
+INFO: CHE IMAGE                 = codenvy/che-server:latest
+INFO: CHE CONF FOLDER           = not set
+INFO: CHE DATA FOLDER           = not set
+INFO: CHE USE URL               = http://192.168.65.2:8080
+INFO: CHE API URL               = http://192.168.65.2:8080/swagger
+INFO: CHE LOGS                  = run `docker logs -f che-server`
+INFO: 
+INFO: 
+INFO: ----  CURRENT COMMAND LINE OPTIONS  ---
+INFO: CHE_PORT                  = 8080
+INFO: CHE_VERSION               = latest
+INFO: CHE_RESTART_POLICY        = no
+INFO: CHE_USER                  = root
+INFO: CHE_HOST_IP               = 192.168.65.2
+INFO: CHE_LOG_LEVEL             = info
+INFO: CHE_DEBUG_SERVER          = false
+INFO: CHE_DEBUG_SERVER_PORT     = 8000
+INFO: CHE_HOSTNAME              = localhost
+INFO: CHE_DATA_FOLDER           = /home/user/che
+INFO: CHE_CONF_FOLDER           = not set
+INFO: CHE_LOCAL_BINARY          = not set
+INFO: CHE_SERVER_CONTAINER_NAME = che-server
+INFO: CHE_SERVER_IMAGE_NAME     = codenvy/che-server
+ Problem started happening recently, didn't happen in an older version of Che: To my knowledge, it has always been there Problem can be reliably reproduced, doesn't happen randomly: Yes

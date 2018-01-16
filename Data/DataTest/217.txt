@@ -1,0 +1,8 @@
+Che Server not starting via docker machine
+
+Description of problem: Running che.sh does not start the che server. Che version: 4.0.0-RC11 Che install directory: /Users/rrpolanco Docker version: Docker version 1.8.1 Java version: 1.8 Environment details (AWS, VirtualBox, physical, etc.): virtualbox How reproducible: I have the following docker-machine (via docker-machine ls): NAME   ACTIVE   DRIVER       STATE     URL   SWARM
+dev             virtualbox   Stopped
+ When I run che.sh, I get the following output: Could not find an existing docker machine.
+Creating docker machine named default... Please be patient, this takes a couple minutes the first time.
+Successfully started docker machine named default...
+ The che script doesn't seem to create a docker-machine named default nor does it run the server. Am I missing something?

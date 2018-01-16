@@ -1,0 +1,3 @@
+Cannot create factory from Git url
+kind/bug status/open-for-dev team/plugin sprint/current-sprint status/open-for-dev sprint/current-sprint 
+Reproduction Steps: Click create factory button. Go to Git tab. Provide Git URL and factory name. Expected: The button create should be enabled. Actual: Button create is disabled.

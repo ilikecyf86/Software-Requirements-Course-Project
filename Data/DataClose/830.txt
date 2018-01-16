@@ -1,0 +1,3 @@
+There is an error while adding a project to a workspace from the Dashboard
+kind/bug severity/P2 team/plugin severity/P1 severity/P2 
+Reproduction Steps: Create and start any workspace with a project In the Workspaces list click on this workspace and select the Projects tab Go in the project settings and delete it by the Delete button Try to add a new project by the Add Project button Expected behavior: The new project added to workspace Observed behavior: There is an error on Creating and initializing workspace step Che version: 5.14.0-SNAPSHOT OS and version: Fedora 25

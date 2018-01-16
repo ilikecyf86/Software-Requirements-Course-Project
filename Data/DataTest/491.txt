@@ -1,0 +1,28 @@
+Creating workspace with che running inside a docker container fails with certificates https error
+kind/question 
+As Che requires some dependencies (mainly java and docker), and that I have a server which does nothing else than running docker containers (it is basically a Ubuntu server 14.04 with nothing but docker installed on it), I didn't want to run Che on bare metal, but in fact having it part of my docker infrastructure. I have already containers that require access to the docker host, and this is not a problem. What I do for that is that I mount as a volume inside the container the /var/run/docker.sock file from the host, install docker in the container, create a user in the container in the 'docker' group. That works great, and indeed, inside the container this user is able to communicate with the docker daemon (ps, stop/start containers). I have been able to install and start eclipse-che in this container. No problem so far. Now when I try to create a workspace in my browser, I get a strange error about https: eclipse_1 | 2016-02-10 14:56:56,384[nio-8080-exec-2]  [INFO ] [o.e.c.a.w.s.WorkspaceManager 144]    - EVENT#workspace-created# WS#wksp-monr# WS-ID#workspaceu77takbif2m1dmj4# USER#che#
+eclipse_1 | 2016-02-10 14:57:11,755[kspaceManager-0]  [INFO ] [o.e.c.a.m.s.MachineManager 167]      - Creating machine [ws = workspaceu77takbif2m1dmj4: env = wksp-monr: machine = ws-machine]
+eclipse_1 | Exception in thread "WorkspaceManager-0" java.lang.IllegalArgumentException: Certificates are required for https connection.
+eclipse_1 |     at org.eclipse.che.plugin.docker.client.connection.TcpConnection.<init>(TcpConnection.java:41)
+eclipse_1 |     at org.eclipse.che.plugin.docker.client.connection.DockerConnectionFactory.openConnection(DockerConnectionFactory.java:52)
+eclipse_1 |     at org.eclipse.che.plugin.docker.client.DockerConnector.doBuildImage(DockerConnector.java:788)
+eclipse_1 |     at org.eclipse.che.plugin.docker.client.DockerConnector.buildImage(DockerConnector.java:222)
+eclipse_1 |     at org.eclipse.che.plugin.docker.client.DockerConnector.buildImage(DockerConnector.java:194)
+eclipse_1 |     at org.eclipse.che.plugin.docker.machine.DockerInstanceProvider.buildImage(DockerInstanceProvider.java:299)
+eclipse_1 |     at org.eclipse.che.plugin.docker.machine.DockerInstanceProvider.createInstance(DockerInstanceProvider.java:221)
+eclipse_1 |     at org.eclipse.che.api.machine.server.MachineManager.createInstance(MachineManager.java:360)
+eclipse_1 |     at org.eclipse.che.api.machine.server.MachineManager$$Lambda$36/1946055025.createInstance(Unknown Source)
+eclipse_1 |     at org.eclipse.che.api.machine.server.MachineManager.createMachine(MachineManager.java:337)
+eclipse_1 |     at org.eclipse.che.api.machine.server.MachineManager.createMachineSync(MachineManager.java:168)
+eclipse_1 |     at org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry.createMachine(RuntimeWorkspaceRegistry.java:454)
+eclipse_1 |     at org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry.startEnvironment(RuntimeWorkspaceRegistry.java:320)
+eclipse_1 |     at org.eclipse.che.api.workspace.server.RuntimeWorkspaceRegistry.start(RuntimeWorkspaceRegistry.java:146)
+eclipse_1 |     at org.eclipse.che.api.workspace.server.WorkspaceManager.performSyncStart(WorkspaceManager.java:642)
+eclipse_1 |     at org.eclipse.che.api.workspace.server.WorkspaceManager.lambda$performAsyncStart$1(WorkspaceManager.java:613)
+eclipse_1 |     at org.eclipse.che.api.workspace.server.WorkspaceManager$$Lambda$33/1545545276.run(Unknown Source)
+eclipse_1 |     at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalRunnable.run(CopyThreadLocalRunnable.java:28)
+eclipse_1 |     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+eclipse_1 |     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+eclipse_1 |     at java.lang.Thread.run(Thread.java:745)
+
+ Any hint about what I should do to fix this ?

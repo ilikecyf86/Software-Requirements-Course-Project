@@ -1,0 +1,3 @@
+Command Edit Wrong Button Text
+kind/bug severity/P2 sprint/next-sprint status/open-for-dev team/plugin sprint/current-sprint sprint/next-sprint status/code-review status/open-for-dev status/code-review sprint/current-sprint status/code-review status/code-review 
+Command edits in stacks shows "Edit" button but should be "Save". Codenvy 5.5.0

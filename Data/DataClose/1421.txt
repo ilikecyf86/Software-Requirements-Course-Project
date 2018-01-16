@@ -1,0 +1,3 @@
+Improve UX of usage of docker images that are source of containers that exits right after start
+kind/enhancement team/platform 
+Now if user uses some image that doesn't have cmd, entrypoint or have shell interpreter there Che shows weird error on workspace start. For such cases we can inspect image and if it is such image set entrypoint/cmd into container. Since we can't detect all possible variants where container exist immediately after start we should also inspect container after start and if it has state stopped then return pretty error with the explanation on why container exited. This enhancement was asked by @benoitf and @skryzhny Reproduction Steps: Create WS from image ubuntu Start this WS

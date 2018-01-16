@@ -1,0 +1,3 @@
+Callbacks send to WsAgentStateController#getMessageBus ignored
+
+Callbacks send are assigned to a field in the singleton. On multiple calls previous handlers get overwritten and never called. I will provide a PR in sec.

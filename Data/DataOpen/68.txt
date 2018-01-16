@@ -1,0 +1,11 @@
+Define common set of templates and tests for existing infrastructures in selenium module
+kind/enhancement target/che6 team/production 
+Description The idea is to have a well-defined set of test suites and templates that are should work with all existing infrastructures(currently its Docker and OpenShift). The specific cases must be tested separately for each particular infrastructure. Proposed structure: ../resources:
+    /suites           -> cover all the common features
+    /suites/docker    -> cover all the Docker specific features
+    /suites/openshift -> cover all the OpenShift specific features
+
+    /templates
+        /workspace           -> contains templates based on docker image(for now)
+        /workspace/docker    -> contains for e.g. template with dockerfile recipe
+        /workspace/openshift -> contains template with OpenShift recipe

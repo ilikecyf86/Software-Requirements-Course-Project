@@ -1,0 +1,3 @@
+Wrong text in tooltip
+kind/bug team/ide severity/P2 sprint/current-sprint status/in-progress status/code-review status/in-progress status/code-review 
+This is issue related with epic #4511 If run some command in the project with two machines , the name of the machine will be display in the tooltip. Reproduction Steps: Create some project with two machines . Run command from toolbar (like in attachment) . Hover the mouse on the "Run" button in the command toolbar . Pay attention to the tooltip . Expected Behavior : The name of launched command will be display in the tooltip . Observed behavior : The name of the machine displayed in the tooltip . Attachment :

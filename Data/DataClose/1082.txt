@@ -1,0 +1,3 @@
+Workspaces list is broken while create a new factory
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: Factories -> Create Factory In the New Factory From click on Git tab and then to the Workspace tab In the Workspace tab click on Search field Observed behavior: List of workspaces is broken Che version: 5.10.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

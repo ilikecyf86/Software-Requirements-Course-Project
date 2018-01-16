@@ -1,0 +1,3 @@
+Make it possible to skip DTOs generation passing -skip parameter for the che-core-api-dto-maven-plugin
+kind/enhancement target/che6 team/ide status/in-progress status/in-progress 
+The most of the maven plugins' goals provide the possibility to skip its execution providing skip parameter. Sometimes it's very helpful. We require it to speed-up GWT Super DevMode launch. See #7122 (comment) for more details.

@@ -1,0 +1,3 @@
+Use jdt.ls for "usages" view
+kind/enhancement sprint/current-sprint status/code-review target/branch target/che6 status/code-review 
+Come up with a way to use LSP "references" infrastructure to implement the "usages" view. Particularly, we need to implement: Tree view We'll need to map the Locations (url, Range) to a tree of elements. We'll have to know how to parse JDT urls Snippets The usages view shows excerpts of the source text with the searched symbol highlighted. We will have to look at the source text to extract those. Search only in source. Currently, jdt.ls also searches in application libraries (mvn dependencies, for example).

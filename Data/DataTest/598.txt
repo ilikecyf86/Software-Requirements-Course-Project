@@ -1,0 +1,4 @@
+Data is lost when I restart my che in docker, how to prevent it?
+
+I install eclipse-che via docker, following this article: http://eclipse-che.readme.io/docs/install-using-docker, and I start che as: docker run --privileged -it -p 8080:8080 -p 49152-49162:49152-49162 codenvy/che
+ The problem is when I restart my che, all data (including created projects/downloaded dependencies). How to prevent it? If I need to mount something when I start the docker to store the data outside the docker, which directories do I need to care?

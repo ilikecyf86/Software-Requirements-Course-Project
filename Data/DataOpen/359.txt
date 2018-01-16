@@ -1,0 +1,3 @@
+Current bottom panel is shown on workspace stop instead of dev-machine logs
+severity/P2 kind/bug team/ide 
+Reproduction Steps: Open a workspace Switch to non-precesses tab in the bottom Stop workspace Expected behaviour: Processes panel with dev-machine logs should be maximized Actual behaviour: Active panel is maximized Screencast: OS and version: Fedora 25

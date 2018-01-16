@@ -1,0 +1,3 @@
+Openshift - Workspace Creation fails with error "Unable to initialize IDE" because of 'Access-Control-Allow-Origin'
+kind/question 
+Hi, I tried to create a new workspace and I encounter "Unable to initialise IDE", when I see developer tool, it was because of 'Access-Control-Allow-Origin' Thanks, Jooho Lee

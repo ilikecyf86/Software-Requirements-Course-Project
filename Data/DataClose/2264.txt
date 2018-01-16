@@ -1,0 +1,3 @@
+Commands don't work in workspaces which were created from Bitnami stack [Regression]
+kind/bug 
+Reproduction Steps: Create workspace with project from Bitnami stack Try run command Observed behavior: Che version: 5.0.0-M6-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.2 Che install: Docker container Additional information: Problem started happening recently, didn't happen in an older version of Che: Yes Problem can be reliably reproduced, doesn't happen randomly: Yes

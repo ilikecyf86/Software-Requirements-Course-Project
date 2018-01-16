@@ -1,0 +1,3 @@
+Factories are not consumed properly
+kind/bug severity/P2 
+Description This issue is moved from "codenvy" repository: codenvy/codenvy#2255 If we launch for example CheckBitnamiSwiftFactory test, the factory that is consumed by test hangs on workspace creation operation. The test performs next steps: go to the login page, set authorization cookies, through WebDriver mechanism and get factory. Additional info: html traffic produced by test below. For analze - unpack file and load to HAR viewer. traffic.zip Har viewer: https://ericduran.github.io/chromeHAR/

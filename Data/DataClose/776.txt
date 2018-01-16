@@ -1,0 +1,3 @@
+DefaultOutputCustomizer#customize() throws NumberFormatException on some inputs
+
+The following input throw NumberFormatException on the following line: int lineNumber = Integer.valueOf(text.substring(column + ":".length(), closingBracket).trim()); Original message: "[STDOUT] 2017-07-06 08:58:34,647 [ForkJoinPool.commonPool-worker-3] DEBUG o.j.t.l.t.DocumentManager.findSelectedWord - Looking for word at Position 2 in 'textDocument/badWord:Warning:name:So bad! '" Html-Escaped (actual input to the "customize" method): "[STDOUT] 2017-07-06 08:58:34,647 [ForkJoinPool.commonPool-worker-3] DEBUG o.j.t.l.t.DocumentManager.findSelectedWord - Looking for word at Position 2 in 'textDocument/badWord:Warning:name:So bad! '"

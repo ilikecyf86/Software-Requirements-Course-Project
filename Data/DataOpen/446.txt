@@ -1,0 +1,4 @@
+Not enough information in ERROR message in case of websocket errors
+kind/enhancement 
+There is example of error messages: 2017-05-12 10:37:53,466[cessManager-571]  [ERROR] [.e.c.a.c.u.JsonRpcLineConsumer 38]   - Error trying to send a line: [STDOUT] 2017-05-12 10:37:53,464[nio-4401-exec-1]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 78]   - Web socket session error
+ To be useful error message should contains more info, like communication with whom failed. IP, port number, service we are trying connect to, etc. Reproduction Steps: Don't have precise steps. Probably block websocket connection with firewall after it esteblished. OS and version: Centos 7.3 codenvy-SaaS 5.10.0

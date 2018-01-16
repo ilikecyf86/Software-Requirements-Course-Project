@@ -1,0 +1,41 @@
+Configuring nginx as reverse proxy
+kind/question 
+Hello everyone. I'm trying to make eclipse\che work on centos 7.3 with nginx web server operating as reverse proxy. Without nginx everything works fine. With nginx handeling requests when i connect to workspace i got 2 sequential errors "Cannot initialize IDE" then "Workspace agent is no longer responding. To fix the problem, verify you have a good network connection and restart the workspace." When I create a new workspace process terminates with following error "Workspace Connection Error It seems that your workspace is running, but we cannot connect your browser to it. This commonly happens when Che was not configured properly. If your browser is connecting to workspaces running remotely, then you must start Che with the --remote: flag where the is the IP address of the node that is running your Docker workspaces.Please restart Che with this flag. You can read about what this flag does and why it is essential at: /docs/setup/configuration/index.html" the wed diagnostic tool gives following 3 errors REST Call on Workspace Agent Unable to perform call on http://servers_external_ip:32779/api: Status -1, statusText:/null Hint: Workspace Agent is running but browser is unable to connect to it. Please check CHE_HOST and CHE_DOCKER_IP_EXTERNAL in che.env and the firewall settings. Try WsAgent on browser host Unable to perform call on http://server_domain:32779/api: Status -1, statusText:/null Websocket on Workspace Agent No reply of websocket test after 5 seconds. Websocket is failing to connect to wss://servers_external_ip:32779/api/ws?token=dummy_token I have tried out couple manuals by searching similar cases, but they seems to be out-dated. Without nginx everything works fine, when i access remote instance by remote_host_ip:8080 The firewall-cmd is configured to open ports 32768-65535 with tcp protocol. The respective nginx config for the host. This is the part for 443. all requests to http 80 are redirected by 301 to https ... non related config removed for privacy reasons ...
+
+ssl_prefer_server_ciphers on;
+ssl_session_tickets     off;
+ssl_stapling            on;
+ssl_stapling_verify     on;
+resolver_timeout        5s;
+resolver                8.8.8.8 8.8.4.4 valid=300s;
+ssl_dhparam             /etc/ssl/certs/dhparam.pem;
+add_header              X-Frame-Options SAMEORIGIN;
+add_header              X-Content-Type-Options nosniff;
+add_header              Strict-Transport-Security "max-age=63072000; includeSubdomains";
+
+proxy_read_timeout      300;
+proxy_connect_timeout   300;
+proxy_redirect          off;
+
+proxy_set_header        X-Real-IP  $remote_addr;
+
+proxy_http_version 1.1;
+proxy_set_header Host $http_host;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $scheme;
+
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection "upgrade";
+
+error_log               /var/log/nginx/error-eclipse.log;
+access_log              /var/log/nginx/access-eclipse.log;
+
+location / {
+    proxy_pass http://localhost:8080;
+}
+
+location ~ /.well-known {
+    allow all;
+}
+ Any fine-tuning advices. Afterwise I have configured web-socket settings everything became a little better but problem is not solved totally. OS and version: CentOS Linux release 7.3.1611 (Core) Diagnostics: WARN: Bound 'eclipse/che' to 'eclipse/che:5.12.0' INFO: (che cli): 5.12.0 - using docker 17.05.0-ce / native CLI: TTY: true Daemon: /var/run/docker.sock Image: eclipse/che Version: 5.12.0 Command: info Parameters: info Mounts: /data: /var/docker/che /data/instance: not set /data/backup: not set /repo: not set /assembly: not set /sync: not set /unison: not set /chedir: not set System: Docker: native Proxy: not set Internal: CHE_VERSION: 5.12.0 CHE_HOST: servers_external_ip CHE_INSTANCE: /var/docker/che/instance CHE_CONFIG: /var/docker/che CHE_BACKUP: /var/docker/che/backup CHE_REGISTRY: /version CHE_DEBUG: false IP Detection: servers_external_ip Initialized: true Image Registry: IMAGE_INIT=eclipse/che-init:5.12.0 IMAGE_CHE=eclipse/che-server:5.12.0 IMAGE_COMPOSE=docker/compose:1.8.1 IMAGE_TRAEFIK=traefik:v1.3.0-rc3 BOOTSTRAP_IMAGE_ALPINE=alpine:3.4 BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.12.0 UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.12.0 UTILITY_IMAGE_CHEDIR=eclipse/che-dir:5.12.0 UTILITY_IMAGE_CHETEST=eclipse/che-test:5.12.0 UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.12.0 che.env: CHE_HOST=servers_external_ip CHE_SINGLE_PORT=false i'm sorry for inconvenience but real ip addresses were replaced with servers_external_ip due to privacy reasons. same for domain name.

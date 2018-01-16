@@ -1,0 +1,3 @@
+Python lsp is crashing
+kind/bug severity/P2 
+Hey Che Team, thanks for your work. You are doing a great job. The new python lsp is awesome. But when you write an char like (ä,ü,ö) in the editor the lsp crash and all features doesn't work anymore. So you had to delete the char and reload the workspace.

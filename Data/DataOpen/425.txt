@@ -1,0 +1,3 @@
+Remove Trailing Whitespace on Save
+kind/enhancement 
+In common with most popular IDEs, it would be great to have an option to have whitespace automatically removed on save. This is a feature request.

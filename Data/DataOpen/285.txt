@@ -1,0 +1,38 @@
+Documentation about starting custom Che assembly doesn't work
+kind/bug severity/blocker severity/blocker 
+I tried to start my custom che assembly by following this document. I've prepared my own assembly, built it and run this command: docker run -it --rm --name run-che -e "CHE_HOST=172.19.20.233" -v /var/run/docker.sock:/var/run/docker.sock -v /home/vetal/che-data2:/data -v /home/vetal/codenvy/che-plugin-perspective/assembly/assembly-main/target/eclipse-che-5.18.0-SNAPSHOT/eclipse-che-5.18.0-SNAPSHOT:/assembly eclipse/che:nightly start all containers strat succesfully. I've got this output: WARNING: No swap limit support
+INFO: (che cli): :/assembly mounted - using assembly from local host
+INFO: (che cli): nightly - using docker 17.04.0-ce / native
+INFO: (che download): Pulling image eclipse/che:nightly
+
+nightly: Pulling from eclipse/che
+Digest: sha256:0a18b6d3550ecb9bbbf881ffc1ef9b43557e25b19353c27d4fa8146720d3edd7
+Status: Image is up to date for eclipse/che:nightly
+
+WARN: (che init): 'nightly' installations cannot be upgraded to non-nightly versions
+INFO: (che init): Installing configuration and bootstrap variables:
+INFO: (che init):   CHE_HOST=172.19.20.233
+INFO: (che init):   CHE_VERSION=nightly
+INFO: (che init):   CHE_CONFIG=/home/vetal/che-data2
+INFO: (che init):   CHE_INSTANCE=/home/vetal/che-data2/instance
+INFO: (che init):   CHE_ASSEMBLY=/home/vetal/che-data2/instance/dev/che-tomcat
+INFO: (che config): Generating che configuration...
+INFO: (che config): Customizing docker-compose for running in a container
+INFO: (che config): Copying local binaries to /home/vetal/che-data2/instance/dev...
+INFO: (che start): Preflight checks
+WARNING: No swap limit support
+         mem (1.5 GiB):           [OK]
+         disk (100 MB):           [OK]
+         port 8080 (http):        [AVAILABLE]
+         conn (browser => ws):    [OK]
+         conn (server => ws):     [OK]
+
+INFO: (che start): Starting containers...
+INFO: (che start): Services booting...
+INFO: (che start): Server logs at "docker logs -f che"
+INFO: (che start): Booted and reachable
+INFO: (che start): Ver: nightly
+INFO: (che start): Use: http://172.19.20.233:8080
+INFO: (che start): API: http://172.19.20.233:8080/swagger
+
+ But this command always start default Che assemly OS and version: Ubuntu 16.04

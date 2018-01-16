@@ -1,0 +1,3 @@
+Add changes to the selenium tests in the 'intelligencecommand' package
+kind/task status/in-progress target/che6 team/production status/code-review status/in-progress sprint/current-sprint 
+Description We need to add changes in the selenium tests in the 'intelligencecommand' package according to new client Related selenium tests: MacrosCommandsEditorTest AutocompleteCommandsEditorTest CheckIntelligenceCommandFromToolbarTest Related issue is: #7691

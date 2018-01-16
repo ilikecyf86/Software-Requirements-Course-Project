@@ -1,0 +1,3 @@
+Unified preferences management
+kind/epic kind/enhancement kind/epic 
+Goal Today, we are providing settings and preferences into various places. The goal of this epic is to unify the experience related to user's preferences. Details We have preferences that are displayed from the IDE: (Profile > Preferences). Certain of those preferences are related to the editor and should stay in the IDE. But there are other preferences that should be unified and manage-able directly from the dashboard. For example, user should be able to manage from the dashboard: his VCS settings his SSH keys his Connected services (OAuth authorized services) Referenced issues #4701

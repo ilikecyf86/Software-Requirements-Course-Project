@@ -1,0 +1,3 @@
+Developping plugins for eclipse che
+kind/question 
+Hi, i'm trying too follow the tutorial DEVELOPER GUIDE - IDE PLUGINS that i find it on Eclipse Che website, i have a problem when i try to achieve the second step IDE Setup but when i run superdevmode i have this ERROR: Super Dev Mode starting up workDir: /tmp/gwt-codeserver-1827730222579086586.tmp Job org.eclipse.che.ide.IDE_1_0 Loading inherited module 'org.eclipse.che.ide.IDE' [ERROR] Unable to find 'org/eclipse/che/ide/IDE.gwt.xml' on your classpath; could be a typo, or maybe you forgot to include a classpath entry for source? Link for the second step "IDE Setup" : https://www.eclipse.org/che/docs/plugins/setup-che-workspace/index.html

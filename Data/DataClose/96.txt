@@ -1,0 +1,3 @@
+Don't Auto-Reveal "Workspace start" View
+kind/enhancement severity/P1 target/che6 
+When starting a workspace in Che 6, the view titled "Workspace start" is auto-revealed very often. This is very annonying when trying to observe the dev machine log during startup. Also, the view seems to auto-reveal even when there is no new information apparent in the view.

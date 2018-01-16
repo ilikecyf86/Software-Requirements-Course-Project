@@ -1,0 +1,10 @@
+Is there an easy way to change the log level of the tomcat in the che docker container?
+kind/question kind/enhancement kind/question 
+I want to show more debug level log when che is running, how can I do it if I start che with docker: docker run -ti --net=host 
+    -v /var/run/docker.sock:/var/run/docker.sock 
+    -v /home/user/che/lib:/home/user/che/lib-copy 
+    -v /home/user/che/workspaces:/home/user/che/workspaces 
+    -v /home/user/che/tomcat/temp/local-storage:/home/user/che/tomcat/temp/local-storage 
+    -e CHE_DOCKER_MACHINE_HOST=198.199.105.97 
+    codenvy/che:nightly
+ If I didn't understand mistakely, it is defined in the file /home/user/che/tomcat/conf/logback.xml of a docker container. I can change the log level to debug in it, but how can I make it affect? I tried to run che.sh stop, but the container exits immediately without having a chance to restart it. Or is there any easier way to do it?

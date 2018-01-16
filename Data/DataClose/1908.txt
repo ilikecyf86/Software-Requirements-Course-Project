@@ -1,0 +1,3 @@
+Reorganize Che repository to simplify location of agent storage
+team/platform kind/task kind/task kind/task status/analyzing team/platform sprint/current-sprint status/open-for-dev status/in-progress status/analyzing 
+We have started to add in various agents into Che. The code and packaging for these agents are located in different locations in the repository today. We should centralize all of the agent code into a single location. We would have a /agents folder in the root of the repository. exec-agent should be moved to /agents/exec. We should investigate and explore whether ws-agent, ssh agent, sync agent, and LSP agents can also be moved to a subfolder of /agents.

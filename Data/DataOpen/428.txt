@@ -1,0 +1,3 @@
+Broken links in CUSTOMIZING.md
+kind/docs 
+Hello, All links in CUSTOMIZING.md are broken.

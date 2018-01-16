@@ -1,0 +1,11 @@
+"OOM of process" in container
+kind/question 
+I'm trying to deploy Che on a AWS server. I'm using this command docker run \
+           --network=host \
+           --name che \
+           --rm \
+           -v /var/run/docker.sock:/var/run/docker.sock \
+           -v /home/user/che/lib:/home/user/che/lib-copy \
+           codenvy/che-server -d --remote:x.x.x.x
+ If I make it work on localhost works fine, but if I use --remote:x.x.x.x, I see a lot of these messages: [eStopDetector-0]  [INFO ] [d.m.DockerInstanceStopDetector 137]  - OOM of process in container 3b836e6781713374a5ffc8b369632b3a0ddffdf5e08be54134405df2d5e4f575 has been detected
+ The EC2 instance is a t2.large. I checked it and every moment there's 4GB free of memory. It seems the wsagent finally dies and the IDE is not able to connect to it. May you give me any advice about how to fix this? Ubuntu Xenial 16.04 Docker version 1.12.2, build bb80604

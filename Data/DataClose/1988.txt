@@ -1,0 +1,3 @@
+Extend the Che CLI with http proxy parameters
+kind/task 
+Extend the Che CLI so that if a user passes in -e HTTP_PROXY, ALL_PROXY, NO_PROXY, HTTPS_PROXY during an init() phase, that these values are automatically placed in the codenvy.env that is generated during initialization.

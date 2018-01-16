@@ -1,0 +1,3 @@
+Local folders aren't deleted when a workspace is deleted
+kind/bug 
+This can be reproduced on Windows 7 and 8 only. It looks like when we try to delete a workspace directory, .git folder cannot be deleted. Setting 777 permissions manually fixes the problem.

@@ -1,0 +1,3 @@
+404 /admin
+kind/bug 
+Whenever I load the ui through a browser, I see this in the console: GET http://xxx.net/admin/ 404 (Not Found) This happens in a remote or local browser.

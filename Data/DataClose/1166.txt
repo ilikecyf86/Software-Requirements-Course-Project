@@ -1,0 +1,4 @@
+Can't create stack from composefile
+kind/question 
+I want to create a stack from composefile which have three containers,but it's failed,I want to know whether can't create stack when containers more than two. also I want to expose a confirmed IP，like
+ expose 5234:5234，how can I do？also I can't create myserver machine from my custom image,show this error: Can't create machine from image. Cause: Error response from docker API, status: 500, message: Get https://registry-1.docker.io/v2/library/yxc-tomcat/manifests/latest: Get https://auth.docker.io/token?scope=repository%3Alibrary%2Fyxc-tomcat%3Apull&service=registry.docker.io: services: dev-machine: image: eclipse/gcc mem_limit: 2147483648 depends_on: - myserver - test myserver: image: yxc-tomcat mem_limit: 1073741824 test: image: yxc-test mem_limit: 1073741824

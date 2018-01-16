@@ -1,0 +1,3 @@
+Production mode
+kind/docs 
+Hello, When Production mode documentation will be updated ?

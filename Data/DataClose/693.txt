@@ -1,0 +1,3 @@
+Use links to the servers endpoints provided by Workspace API
+kind/task target/branch team/ide 
+Need to avoid hardcoding in IDE links to the servers endpoints (exec, terminal, ws-agent api) and use links provided by Workspace API. Depends on #5609 Related to SPI branch only.

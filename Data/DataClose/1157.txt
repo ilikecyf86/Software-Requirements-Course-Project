@@ -1,0 +1,3 @@
+Creating new additional editors to an existing file type "pom file Type"
+kind/question 
+I am trying to develop an editor like the basic maven pom editor for eclipse . The question is how can I register another type of editor beside the default one to open my file ? I looked into the org.eclipse.che.ide.api.event.FileEvent and org.eclipse.che.ide.actions.OpenFileAction all I had found is the basic open, close and save operations with the default editor. I dont want to regsiter the new editor to the pom file as default. So Any Ideas ?

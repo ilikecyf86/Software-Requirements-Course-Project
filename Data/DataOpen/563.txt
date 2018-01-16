@@ -1,0 +1,3 @@
+Formating xml files
+kind/enhancement team/plugin 
+Can't format xml files such as pom.xml

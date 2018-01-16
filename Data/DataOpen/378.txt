@@ -1,0 +1,8 @@
+Giving bad url to remote dockerfile causes build to hang
+kind/bug kind/eclipse-che severity/P1 kind/eclipse-che team/platform status/open-for-dev 
+From @jonathanjfshaw on March 26, 2017 12:10 Stack hangs when bad remote url is given as recipe location. Reproduction Steps: Clone the PHP stack Set the default environment recipe to:         "recipe": {
+          "location": "https://somebadurl.com/here",
+          "type": "dockerfile",
+          "contentType": "text/x-dockerfile"
+        },
+ Save the stack Press "Test" See it hang Codenvy version: online 5.5.0 OS and version: Docker version: Codenvy cli.log output: Copied from original issue: codenvy/codenvy#1985

@@ -1,0 +1,3 @@
+Adding usermanagement on top of che
+kind/question 
+Hi I understand che has a user management / authentication / authorization module, and it currently uses che as the default user. What is the best way to have a a user management module added to che, what are the extension points I should be looking at so I can have the user log in/sigup - as codenvy does - and pass that user info through the application ,have workspaces attached to the user. thanks

@@ -1,0 +1,28 @@
+minishift get-che.sh fails with runtime.Unknown
+kind/question 
+Description Following the instructions from https://www.eclipse.org/che/docs/setup/openshift/index.html#deploy-che-on-minishift Installing minishift (works fine) then running the bash files produces the following output minishift version
+minishift v1.9.0+a511b25
+
+kubectl version
+Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.4", GitCommit:"9befc2b8928a9426501d3bf62f72849d5cbcd5a3", GitTreeState:"clean", BuildDate:"2017-11-20T05:28:34Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"darwin/amd64"}
+Server Version: version.Info{Major:"1", Minor:"6", GitVersion:"v1.6.1+5115d708d7", GitCommit:"fff65cf", GitTreeState:"clean", BuildDate:"2017-08-01T06:24:02Z", GoVersion:"go1.7.6", Compiler:"gc", Platform:"linux/amd64"}
+
+bash ./get-che.sh
+[CHE] Checking if minishift is running...done!
+[CHE] Logging on using OpenShift endpoint "https://192.168.64.3:8443/"...done!
+[CHE] Checking if project "eclipse-che" exists...done!
+[CHE] Switching to "eclipse-che"...done!
+[CHE] Setting admin role to "che" service account...rolebinding "che" configured
+[CHE] Retrieving latest version of fabric8 tenant Che template...done! (v.2.0.73)
+
+[CHE] Deploying Che on minishift (image docker.io/eclipse/che-server:nightly)
+serviceaccount "che" configured
+service "che-host" configured
+persistentvolumeclaim "che-data-volume" configured
+persistentvolumeclaim "claim-che-workspace" configured
+configmap "che" configured
+error: unable to get type info from the object "*runtime.Unknown": no kind is registered for the type runtime.Unknown Reproduction Steps minishift start
+
+DEPLOY_SCRIPT_URL=https://raw.githubusercontent.com/eclipse/che/master/dockerfiles/init/modules/openshift/files/scripts/deploy_che.sh
+curl -fsSL ${DEPLOY_SCRIPT_URL} -o ./get-che.sh
+bash ./get-che.sh OSX 10.13.2 (17C88)

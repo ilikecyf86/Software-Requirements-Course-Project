@@ -1,0 +1,3 @@
+Plugin Repository/Plugin Manager for 3rd Party Enchancements
+
+In order to leverage the developer community in accelerating the development of Che as a mature code editor, I'd really like to see a Plugin Manager which allows users to install and enable/disable/update plugins which 3rd party developers have listed in a public plugin repository. As mentioned, there was plenty of developer interest at EclipseCon: During the Con, we had numbers of people coming to us to ask about how to build custom plugins. They are seeing us as a platform that their own tools need to be integrated with and which can provide advanced set of new features and use cases. Perhaps something to consider for the next sprint?

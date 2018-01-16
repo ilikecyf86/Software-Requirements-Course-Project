@@ -1,0 +1,3 @@
+Replace native git with jgit implementation
+kind/epic 
+This will allow not to require native git on ext server. Now to be able to work with git we assume that user image contains git by default. Also git have to be with some specific version. 1.9 or higher. Which is not actually true. Implementation based on jgit will allow us. Remove dependency on git in docker image More easy programming git features. Easy interpretation of git commands execution results

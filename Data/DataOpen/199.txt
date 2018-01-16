@@ -1,0 +1,3 @@
+Preview running server
+kind/question 
+Description Preview running server I run my server on a python project in command widget preview url appear but browser says not connected?

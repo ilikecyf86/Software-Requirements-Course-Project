@@ -1,0 +1,33 @@
+Che launcher is not working if CHE_VERSION is not set to 'nightly'
+kind/bug 
+Che launcher if CHE_VERSION is not set Reproduction Steps: [11:18:29]sj:~#: env | grep CHE
+CHE_LOGS_DIR=/Users/sj/.che/logs
+CHE_ASSEMBLY=/Users/sj/dev/src/codenvy/che/assembly/assembly-main/target/eclipse-che-5.0.0-M7-SNAPSHOT/eclipse-che-5.0.0-M7-SNAPSHOT
+CHE_LOCAL_CONF_DIR=/Users/sj/.che/
+[11:18:33]sj:~#: che start
+INFO: ECLIPSE CHE: Found image codenvy/che-server:latest
+INFO: ECLIPSE CHE: Starting container...
+INFO: ECLIPSE CHE: Server logs at "docker logs -f che-server"
+INFO: ECLIPSE CHE: Server booting...
+---------------------------------------
+ERROR: !!!
+ERROR:      ECLIPSE CHE: Timeout waiting for server. Run "docker logs che-server" to inspect the issue.
+ERROR: !!!
+---------------------------------------
+[11:19:50]sj:~#: docker logs -f che-server
+
+!!!
+!!! This Linux user is not in 'docker' group. See https://docs.docker.com/engine/installation/ubuntulinux/#create-a-docker-group
+!!!
+
+[11:19:55]sj:~#: che start
+---------------------------------------
+ERROR: !!!
+ERROR:      A container running ECLIPSE CHE named "che-server" already exists.
+             1. Use "info" to find it's URL.
+             2. Use "restart" to stop it and start anew.
+             3. Stop it with "stop".
+             4. Remove it manually (docker rm -f che-server) and try again. Or:
+             5. Set CHE_SERVER_CONTAINER_NAME to a different value and try again.
+ERROR: !!!
+ Che version: latest OS and version: MacOS Sierra 10.12.1 (16B2555) Docker version: 1.12 Che install: Che launcher Problem started happening recently, didn't happen in an older version of Che: Yes Problem can be reliably reproduced, doesn't happen randomly: Yes

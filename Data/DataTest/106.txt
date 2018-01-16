@@ -1,0 +1,3 @@
+Will che support additional parameters when it is going to create a new workspace container?
+
+In my location, network could be a little problem. And it's time-consuming for downloading all dependencies (also docker images). So I think if che support additional parameters when a new workspace container is going to be created, such as -v /host/.m2:/home/user/.m2, which can reuse my existing maven local repositories. That's could be so great.

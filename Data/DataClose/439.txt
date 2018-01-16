@@ -1,0 +1,3 @@
+Add guides panel
+kind/task status/open-for-dev team/enterprise sprint/current-sprint sprint/current-sprint sprint/current-sprint sprint/current-sprint 
+Right-side panel is opened if there is a default guide in specific folder of the project. It contains rendered guide (out of the scope of this issue), edit/refresh buttons. Edit button opens a file corresponding to the guide. I am thinking also about a check box to indicate that guide is studied and it isn't needed anymore to open it by default in the workspace. @slemeur Would you be so kind to provide a mock up. Epic: #6150

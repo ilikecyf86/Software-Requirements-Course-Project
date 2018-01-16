@@ -1,0 +1,5 @@
+Latest X>5 che-pullrequests-build failed due to git tests
+kind/bug severity/blocker status/open-for-dev team/enterprise sprint/next-sprint sprint/current-sprint sprint/next-sprint status/open-for-dev sprint/current-sprint 
+Due to this tests org.eclipse.che.git.impl.LsRemoteTest.testShouldBeAbleToGetResultFromPublicRepo
+org.eclipse.che.git.impl.LsRemoteTest.testShouldThrowUnauthorizedExceptionIfUserTryGetInfoAboutPrivateRepoAndUserIsUnauthorized
+ This is jenkins job that checks if proposed PR is working. Now it's constantly fails.Everybody ignore it. That is NOT acceptable. https://ci.codenvycorp.com/job/che-pullrequests-build/

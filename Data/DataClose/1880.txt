@@ -1,0 +1,3 @@
+Command editor styles should respect IDE's light theme
+kind/bug team/ide status/in-progress status/pending-merge status/in-progress status/pending-merge 
+Command editor styles should respect IDE's light theme. Reproduction Steps: Switch IDE's theme to Light Open any command in the editor Observed behavior: Additional information: branch icom

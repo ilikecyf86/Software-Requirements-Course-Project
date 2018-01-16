@@ -1,0 +1,3 @@
+[CHE-6] Adapt selenium tests from factory package according to latest changes
+kind/task team/production status/in-progress 
+Description On this moment we have next failed factory tests on che6: DirectUrlFactoryWithKeepDirectory DirectUrlFactoryWithRootFolder DirectUrlFactoryWithSpecificBranch CheckOpenFileFeatureTest CheckFactoryWithSincePolicyTest CheckFactoryWithUntilPolicyTest CheckRunCommandFeatureTest CreateFactoryFromUiWithKeepDirTest CheckFactoryWithSparseCheckoutTest We should adapt tests if it need. If the factories work wrong and tests show it - we need to create issues This issue depend on the issues: #6972 #6999

@@ -1,0 +1,3 @@
+Debugger doesn't reflect stopping of execution in an editor
+kind/bug severity/P1 
+Reproduction Steps: Open index.php file. Run debug php script [ -z ${editor.current.file.path} ] && echo "Open a PHP file in the editor before executing this command." || QUERY_STRING="start_debug=1&debug_host=localhost&debug_port=10137" php ${editor.current.file.path} Actual result: The debugger highlighter should be set Expected result: the highlighter is absent Note!!!: Other debuggers have similar problem: (for java and node.js files) Related selenium test: PhpProjectDebuggingTest OS and version: Ubuntu 14.0 TLS. Chrome browser, server-locations: nightly-onprem.codenvy-stg.com, nightly-onprem.codenvy-stg.com.

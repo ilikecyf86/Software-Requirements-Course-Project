@@ -1,0 +1,3 @@
+Apaide? Should maybe be Apache?
+kind/bug 
+The php-default stack has multiple mentions of an obscure and hitherto unknown piece of software called Apaide. I tried Google and found that it might be an anagram of the Latin word Apidae which means "Honeybees; carpenter bees; bumblebees".. I am not sure that's the right answer. Maybe someone mistepyd Apache? https://github.com/eclipse/che/blob/master/ide/che-core-ide-stacks/src/main/resources/stacks.json#L601 https://github.com/eclipse/che/blob/master/ide/che-core-ide-stacks/src/main/resources/stacks.json#L610

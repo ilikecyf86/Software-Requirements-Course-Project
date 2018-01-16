@@ -1,0 +1,45 @@
+`sudo: unable to send audit message: Operation not permitted` (Ubuntu 14.04)
+kind/bug kind/question kind/bug 
+I'm using docker compose, here is the config YAML:   che:
+    image: codenvy/che:latest
+    command: >
+      bash -c "
+      sudo rm -rf /home/user/che/lib-copy/* &&
+      sudo rm -rf /home/user/che/tomcat/temp/local-storage/* &&
+      mkdir -p /home/user/che/lib-copy/ &&
+      sudo chown -R user:user /home/user/che &&
+      cp -rf /home/user/che/lib/* /home/user/che/lib-copy &&
+      /home/user/che/bin/che.sh run -d
+      "
+    network_mode: "host"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/home/user/che/lib:/home/user/che/lib-copy"
+      - "/home/user/che/workspaces:/home/user/che/workspaces"
+      - "/home/user/che/tomcat/temp/local-storage:/home/user/che/tomcat/temp/local-storage"
+    container_name: che
+ Note that I'm using version 2 of the compose yml so instead of net: host it's now network_mode: host. I'm running a standard Ubuntu 14.04 server VM on EC2 with Docker 1.10.3 installed. Here's what I see: ubuntu@rarkins2:/app$ docker version
+Client:
+ Version:      1.10.3
+ API version:  1.22
+ Go version:   go1.5.3
+ Git commit:   20f81dd
+ Built:        Thu Mar 10 15:54:52 2016
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.10.3
+ API version:  1.22
+ Go version:   go1.5.3
+ Git commit:   20f81dd
+ Built:        Thu Mar 10 15:54:52 2016
+ OS/Arch:      linux/amd64
+ubuntu@rarkins2:/app$
+ubuntu@rarkins2:/app$ ls -l /var/run/docker.sock
+srwxrwxrwx 1 root docker 0 May 15 17:15 /var/run/docker.sock
+ubuntu@rarkins2:/app$ docker-compose up che
+Starting che
+Attaching to che
+che               | sudo: unable to send audit message: Operation not permitted
+che               | bash: line 1:     6 Segmentation fault      (core dumped) sudo rm -rf /home/user/che/lib-copy/*
+che exited with code 139 It seems like it's a combination of problems with Ubuntu 14.04, host networking, and sudo. Removing host networking instead gets the Running 'docker' succeeded, but 'docker ps' failed. This usually means that docker cannot reach its daemon. error.

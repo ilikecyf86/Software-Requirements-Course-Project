@@ -1,0 +1,3 @@
+[Factory] Renaming .codenvy.json
+kind/task sprint/current-sprint status/open-for-dev team/platform sprint/current-sprint 
+In Che, the .codenvy.json file can't be kept. The .codenvy.json file is also used in the JIRA plugin. We have customers and existing outsiders who are using the .codenvy.json file to instantiate factories. Proposal would be to: Maintain the .codenvy.json file for Codenvy- but deprecate it. Use a similar filename for both Codenvy/Che. Could be .factory.json which will be extended to certain capabilities with Codenvy

@@ -1,0 +1,3 @@
+[CHE 6] Improve navigation between proposals by keys
+kind/bug target/che6 
+Description There are two cases when navigation between proposals by keys works confused. Reproduction Steps Add usage of the unimported class. Open proposals to fix the error: 2.1. Click Down Arrow Expected: Selection is moved to the next item. Actual: Selection is moved to the next item BUT list is scrolled and the selected item in invisible. See gif file 2.2. Place mouse pointer somewhere on proposals pop up. Result: There are two highlighted items and it is not clear enough which item will be selected when Enter key will be pressed.

@@ -1,0 +1,3 @@
+GitHub oAuth in Che
+kind/question 
+Hi.... I am using my Multi-user Che..I have multiple users who use Eclipse-Che.. Each user will have their own Github account.Now how should I make my configuration in Eclipse-Che so that each and every user can push to their respective Github account??

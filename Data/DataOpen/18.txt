@@ -1,0 +1,3 @@
+Git amend is disabled without commit message
+kind/bug team/enterprise 
+Description In git commit dialog there is a flag that allows amending changes to the previous commit. But in case user didn't provide message button that does commit is disabled. This is supported by git and very common approach, so it would be useful to allow such a flow. Reproduction Steps OS and version: Diagnostics:

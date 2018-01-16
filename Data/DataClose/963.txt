@@ -1,0 +1,3 @@
+Add projects section to new workspace creation page
+sprint/next-sprint status/open-for-dev team/plugin kind/enhancement sprint/current-sprint sprint/next-sprint status/in-progress status/open-for-dev sprint/current-sprint status/in-progress 
+The projects section should contain: Add or Import project button (always at the top left corner) The list of projects buttons (each button opens popover with project details) New project popover should provide ability to choose project sample or import from github/git/zip or create blank project Add details for github section:

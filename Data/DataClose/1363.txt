@@ -1,0 +1,5 @@
+Suppress useless debug output from scheduler service tests
+
+During build, there is a lot of useless debug output on the console like: [main]             [INFO ] [o.e.c.c.s.e.CronExpressionTest 159]  - fireTime: Wed Jun 28 00:00:00 UTC 2017, previousFireTime: Mon May 29 00:00:00 UTC 2017
+[main]             [INFO ] [o.e.c.c.s.e.CronExpressionTest 159]  - fireTime: Sat Jul 29 00:00:00 UTC 2017, previousFireTime: Wed Jun 28 00:00:00 UTC 2017
+ Need to suppress it by decreasing logging level to DEBUG.

@@ -1,0 +1,3 @@
+Rework the tests for new TestNG and Junit test runner plugin
+kind/task status/in-progress 
+After implementation new runner plugin we should rework related tests that check this features: *JavaTestPluginJunit3Test *JavaTestPluginJunit4Test *JavaTestPluginTestNgTest

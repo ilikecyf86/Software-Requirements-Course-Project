@@ -1,0 +1,3 @@
+How to add a new view?
+kind/question 
+hi, How to add a new view that likes the debuggerView? Could you give me some tips or tutorials? And I want to add an action or button which will switch perspective when pushed. How to create a new perspective? Hope for your answer.

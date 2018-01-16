@@ -1,0 +1,3 @@
+Exposing less ports
+kind/question kind/enhancement kind/question 
+Related to issue #1554, is there a way to only expose something like 10 ports or less? I find it especially strange to require exposing so many port for a single-user system.

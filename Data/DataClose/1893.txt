@@ -1,0 +1,3 @@
+Can't expand folder in project explorer
+kind/bug 
+Steps to reproduce: Import project: https://github.com/google/web-starter-kit Run npm install Expand node_modules folder Enjoy Expected behavior: node_modules is expanded, its content is shown Actual behavior: node_modules is not expdanded

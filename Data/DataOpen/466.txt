@@ -1,0 +1,3 @@
+Add ability to use environment variables in preview URL
+kind/enhancement 
+It would be really helpful if you could support the use of environment variables in the preview URL. This would allow us to have a generic stack that pulls in an environment variable into the runtime like MY_HOSTNAME. The preview URL then might look like: https://${explorer.current.project.name}.$MY_HOSTNAME Saving any hardcoding of domains into our shared stack definition. Perhaps this could take the format ${env.MY_ENVIRONMENT_VARIABLE_NAME} A bonus would be to make this available in macros and preview URLs

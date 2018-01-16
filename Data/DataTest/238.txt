@@ -1,0 +1,3 @@
+Provide paging links to the AdminUserService.getList REST method
+status/pending-merge 
+Provide paging links to the AdminUserService.getList REST method The same like github https://developer.github.com/guides/traversing-with-pagination/ Link: https://api.github.com/search/code?q=addClass+user%3Amozilla&page=15; rel="next", https://api.github.com/search/code?q=addClass+user%3Amozilla&page=34; rel="last", https://api.github.com/search/code?q=addClass+user%3Amozilla&page=1; rel="first", https://api.github.com/search/code?q=addClass+user%3Amozilla&page=13; rel="prev"

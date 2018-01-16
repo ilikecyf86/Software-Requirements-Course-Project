@@ -1,0 +1,3 @@
+Automate generation of changelog
+
+We would like to completely automate the generation of the changelog when doing a release, by using: https://github.com/skywinder/github-changelog-generator The idea is the following: CI handle the generation of the changelog. The changelog is based on PRs merged. The changelog has sections to regroup PRs by kind/* labels We will need to see how we can distinguish the security and deprecation issues. (probably by introducing new labels)

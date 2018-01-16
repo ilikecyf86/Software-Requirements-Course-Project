@@ -1,0 +1,3 @@
+Remove old workspaces volumes in OpenShift infrastructure
+kind/bug target/branch team/platform status/in-progress status/in-progress 
+Related to SPI branch only. After workspace is removed projects files (including binaries) are not removed from persistent volumes of OpenShift. This means that after usage of several workspaces file system consumption of OpenShift is growing. When we tried to run selenium tests on OpenShift infrastructure VM fs was overblown system became unstable because of lack of free space on disk. OpenShiftConnector has such cleanup tool - OpenShiftWorkspaceFilesCleaner.

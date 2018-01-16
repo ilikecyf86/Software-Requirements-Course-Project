@@ -1,0 +1,7 @@
+@media Print CSS for eclipse-che.readme.io
+
+Could some print CSS be added to the eclipse-che.readme.io stylesheet. As a minimum I'd suggest: @media print {
+  .section-left, img[alt="Fork me on GitHub"], .nav.pull-right, .suggest, header h1 {display: none!important;}
+  body {font-size: 90%!important;}
+  header, .main-content { padding: 0!important;}
+}

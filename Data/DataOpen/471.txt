@@ -1,0 +1,3 @@
+List and open existing pull requests
+kind/enhancement 
+Having imported a Github project, A nice improvement of Che would be to have a new view that would list existing pull requests. Opening one of the listed pull requests would automatically fetch and checkout the right fork/branch and display the comments in the PR panel.

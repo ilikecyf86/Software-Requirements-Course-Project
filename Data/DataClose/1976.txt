@@ -1,0 +1,38 @@
+Append Override annotations to the overridden methods during generation dto implementation
+kind/enhancement status/open-for-dev 
+Findbugs plugin warns with the following messages during the build: /ide/che-core-ide-api/target/generated-sources/gen/org/eclipse/che/ide/api/dto/DtoClientImpls.java:312: warning: [MissingOverride] fromJson implements method in DtoProvider; expected @Override
+        public org.eclipse.che.api.debug.shared.dto.action.ResumeActionDto fromJson(String json) {
+                                                                           ^
+    (see http://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public org.eclipse.che.api.debug.shared.dto.action.ResumeActionDto fromJson(String json) {'?
+/ide/che-core-ide-api/target/generated-sources/gen/org/eclipse/che/ide/api/dto/DtoClientImpls.java:317: warning: [MissingOverride] getImplClass implements method in DtoProvider; expected @Override
+        public Class<? extends org.eclipse.che.api.debug.shared.dto.action.StartActionDto> getImplClass() {
+                                                                                           ^
+    (see http://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public Class<? extends org.eclipse.che.api.debug.shared.dto.action.StartActionDto> getImplClass() {'?
+/ide/che-core-ide-api/target/generated-sources/gen/org/eclipse/che/ide/api/dto/DtoClientImpls.java:321: warning: [MissingOverride] newInstance implements method in DtoProvider; expected @Override
+        public org.eclipse.che.api.debug.shared.dto.action.StartActionDto newInstance() {
+                                                                          ^
+    (see http://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public org.eclipse.che.api.debug.shared.dto.action.StartActionDto newInstance() {'?
+/ide/che-core-ide-api/target/generated-sources/gen/org/eclipse/che/ide/api/dto/DtoClientImpls.java:325: warning: [MissingOverride] fromJson implements method in DtoProvider; expected @Override
+        public org.eclipse.che.api.debug.shared.dto.action.StartActionDto fromJson(String json) {
+                                                                          ^
+    (see http://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public org.eclipse.che.api.debug.shared.dto.action.StartActionDto fromJson(String json) {'?
+/ide/che-core-ide-api/target/generated-sources/gen/org/eclipse/che/ide/api/dto/DtoClientImpls.java:330: warning: [MissingOverride] getImplClass implements method in DtoProvider; expected @Override
+        public Class<? extends org.eclipse.che.api.debug.shared.dto.action.StepIntoActionDto> getImplClass() {
+                                                                                              ^
+    (see http://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public Class<? extends org.eclipse.che.api.debug.shared.dto.action.StepIntoActionDto> getImplClass() {'?
+/ide/che-core-ide-api/target/generated-sources/gen/org/eclipse/che/ide/api/dto/DtoClientImpls.java:334: warning: [MissingOverride] newInstance implements method in DtoProvider; expected @Override
+        public org.eclipse.che.api.debug.shared.dto.action.StepIntoActionDto newInstance() {
+                                                                             ^
+    (see http://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public org.eclipse.che.api.debug.shared.dto.action.StepIntoActionDto newInstance() {'?
+/ide/che-core-ide-api/target/generated-sources/gen/org/eclipse/che/ide/api/dto/DtoClientImpls.java:338: warning: [MissingOverride] fromJson implements method in DtoProvider; expected @Override
+        public org.eclipse.che.api.debug.shared.dto.action.StepIntoActionDto fromJson(String json) {
+                                                                             ^
+    (see http://errorprone.info/bugpattern/MissingOverride)
+  Did you mean '@Override public org.eclipse.che.api.debug.shared.dto.action.StepIntoActionDto fromJson(String json) {'?
+ and so on. So maven dto generation plugin should be improved to respect method overridden and append @Override annotation into generated implementation if need.

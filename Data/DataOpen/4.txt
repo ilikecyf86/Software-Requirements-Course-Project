@@ -1,0 +1,87 @@
+Workspace Runtime returns servers non-declared in the Workspace Config
+kind/bug severity/P1 team/platform 
+Reproduced on version 6.0.0-M4 SNAPSHOT Docker infra Workspace created with following config:  {
+  "defaultEnv": "default",
+  "environments": {
+    "default": {
+      "machines": {
+        "typescript-ls-machine": {
+          "servers": {
+            "ls": {
+              "attributes": {
+                "internal": "true",
+                "type": "ls",
+                "config": "{\"id\":\"org.eclipse.che.plugin.web.typescript\", \"documentFilters\":[  {  \"languageId\":\"typescript\",  \"pathRegex\":\".*\\\\.(ts|tsx)\"} ]}"
+              },
+              "port": "4417",
+              "protocol": "tcp"
+            }
+          },
+          "volumes": {
+            "projects": {
+              "path": "/projects"
+            }
+          }
+        }
+      },
+      "recipe": {
+        "type": "dockerimage",
+        "content": "eivantsov/tsls"
+      }
+    }
+  },
+  "projects": [],
+  "name": "ws4",
+  "commands": [],
+  "links": []
+}
+ Retrieves following Workspace Runtime (fragment): "typescript-ls-machine": {
+"attributes": {},
+"servers": {
+"5000/tcp": {
+"url": "tcp://typescript-ls-machine:5000",
+"attributes": {}
+},
+"exec-agent/ws": {
+"url": "ws://a1.codenvy-stg.com:45133/connect",
+"attributes": {}
+},
+"3000/tcp": {
+"url": "tcp://typescript-ls-machine:3000",
+"attributes": {}
+},
+"1337/tcp": {
+"url": "tcp://typescript-ls-machine:1337",
+"attributes": {}
+},
+"8003/tcp": {
+"url": "tcp://typescript-ls-machine:8003",
+"attributes": {}
+},
+"exec-agent/http": {
+"url": "http://a1.codenvy-stg.com:45133/process",
+"attributes": {},
+"status": "RUNNING"
+},
+"4200/tcp": {
+"url": "tcp://typescript-ls-machine:4200",
+"attributes": {}
+},
+"22/tcp": {
+"url": "tcp://typescript-ls-machine:22",
+"attributes": {}
+},
+"4403/tcp": {
+"url": "tcp://typescript-ls-machine:4403",
+"attributes": {}
+},
+"9000/tcp": {
+"url": "tcp://typescript-ls-machine:9000",
+"attributes": {}
+},
+"terminal": {
+"url": "ws://a1.codenvy-stg.com:45134/pty",
+"attributes": {},
+"status": "RUNNING"
+}
+ All of those servers are unexpected since are not configured (and terminal and exec do not exist).

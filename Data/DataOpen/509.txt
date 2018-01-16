@@ -1,0 +1,3 @@
+Feature Request : Proper Intellisense and Code Linting for Node.js projects
+kind/enhancement 
+JavaScript linting is supported in Che and there's Node.js support for it too but JS Linting is limited to browser JS and seems to error out some ES6 Syntax and global variables and such. ( I might be wrong but this is what I see on the current state of Che) Proposed Changes add proper Intellisense for Node.js Projects (Code Hinting and Completion from locally-installed npm modules) .eslintrc and .eslintrc.json support for custom defenition of rules for ESLint Support for Testing Frameworks for Node (PhantomJS, Jasmine, etc.)

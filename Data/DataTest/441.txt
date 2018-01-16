@@ -1,0 +1,144 @@
+Workspace startup freezes on Catalina startup
+kind/question 
+Description of problem: Unable to startup workspace, stuck on step 3 "Injecting and starting workspace agent" Che version: 4.0.0-RC3 Che install directory: /etc/eclipse-che Docker version: Docker version 1.10.1, build 9e83765 Java version: JRE 1.8.0_72 (OracleJRE) Environment details (AWS, VirtualBox, physical, etc.): A Ubuntu Instance running in Hyper-V Virtual Machine on a dedicated Windows Server 2012 R2 How reproducible: 100% on my environment Steps to Reproduce: Fresh install Create Workspace Click Open In IDE instead of "start" Actual Results: Stuck on step 3 Injecting and starting workspace agent Log output of step 2 "Starting workspace master": [DOCKER] Step 1 : FROM codenvy/node
+[DOCKER] latest: Pulling from codenvy/node 
+[DOCKER] 03e1855d4f31: Already exists 
+[DOCKER] a3ed95caeb02: Already exists 
+[DOCKER] a3ed95caeb02: Already exists 
+[DOCKER] a3ed95caeb02: Already exists 
+[DOCKER] a3ed95caeb02: Already exists 
+[DOCKER] 76cbda9acd90: Already exists 
+[DOCKER] a3ed95caeb02: Already exists 
+[DOCKER] a3ed95caeb02: Already exists 
+[DOCKER] a3ed95caeb02: Already exists 
+[DOCKER] a3ed95caeb02: Already exists 
+[DOCKER] 7eae9fe3790e: Already exists 
+[DOCKER] a3ed95caeb02: Already exists 
+[DOCKER] 0e37b9ebfe40: Already exists 
+[DOCKER] aec735af35f2: Already exists 
+[DOCKER] a3ed95caeb02: Already exists 
+[DOCKER] Digest: sha256:8229fd4ff8ab888e03bf5200f3943fce5a3bf276a96f5acb794cefaa4dbe6afc 
+[DOCKER] Status: Image is up to date for codenvy/node:latest 
+[DOCKER] ---> 373384fc382a
+[DOCKER] Successfully built 373384fc382a
+ Log output of step 3 "Injecting and starting workspace agent": [STDOUT] Archive:  /mnt/che/ws-agent.zip
+[STDOUT]    creating: /home/user/che/ws-agent/conf/
+[STDOUT]   inflating: /home/user/che/ws-agent/conf/server.xml  
+[STDOUT]   inflating: /home/user/che/ws-agent/LICENSE-mit.txt  
+[STDOUT]    creating: /home/user/che/ws-agent/bin/
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/setenv.sh  
+[STDOUT]    creating: /home/user/che/ws-agent/endorsed/
+[STDOUT]    creating: /home/user/che/ws-agent/lib/
+[STDOUT]    creating: /home/user/che/ws-agent/logs/
+[STDOUT]    creating: /home/user/che/ws-agent/temp/
+[STDOUT]    creating: /home/user/che/ws-agent/work/
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/bootstrap.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/catalina.bat  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/catalina.sh  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/commons-daemon.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/configtest.bat  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/configtest.sh  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/daemon.sh  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/digest.bat  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/digest.sh  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/setclasspath.bat  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/setclasspath.sh  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/shutdown.bat  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/shutdown.sh  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/startup.bat  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/startup.sh  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/tomcat-juli.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/tool-wrapper.bat  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/tool-wrapper.sh  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/version.bat  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/version.sh  
+[STDOUT]   inflating: /home/user/che/ws-agent/conf/catalina.policy  
+[STDOUT]   inflating: /home/user/che/ws-agent/conf/catalina.properties  
+[STDOUT]   inflating: /home/user/che/ws-agent/conf/context.xml  
+[STDOUT]   inflating: /home/user/che/ws-agent/conf/logback-access-localhost.xml  
+[STDOUT]   inflating: /home/user/che/ws-agent/conf/logback.xml  
+[STDOUT]   inflating: /home/user/che/ws-agent/conf/logging.properties  
+[STDOUT]   inflating: /home/user/che/ws-agent/conf/tomcat-users.xsd  
+[STDOUT]   inflating: /home/user/che/ws-agent/conf/web.xml  
+[STDOUT]   inflating: /home/user/che/ws-agent/endorsed/activation-1.1.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/endorsed/jul-to-slf4j-1.7.6.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/endorsed/log4j-over-slf4j-1.7.6.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/endorsed/logback-classic-1.1.2.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/endorsed/logback-core-1.1.2.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/endorsed/mail-1.4.4.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/endorsed/slf4j-api-1.7.6.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/annotations-api.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/catalina-ant.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/catalina-ha.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/catalina-storeconfig.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/catalina-tribes.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/catalina.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/ecj-4.4.2.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/el-api.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/jasper-el.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/jasper.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/jsp-api.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/logback-access-1.1.2.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/servlet-api.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/tomcat-api.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/tomcat-catalina-jmx-remote-8.0.28.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/tomcat-coyote.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/tomcat-dbcp.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/tomcat-i18n-es.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/tomcat-i18n-fr.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/tomcat-i18n-ja.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/tomcat-jdbc.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/tomcat-jni.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/tomcat-util-scan.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/tomcat-util.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/tomcat-websocket.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/lib/websocket-api.jar  
+[STDOUT]   inflating: /home/user/che/ws-agent/LICENSE  
+[STDOUT]   inflating: /home/user/che/ws-agent/LICENSE-logback.txt  
+[STDOUT]   inflating: /home/user/che/ws-agent/LICENSE-slf4j.txt  
+[STDOUT]   inflating: /home/user/che/ws-agent/NOTICE  
+[STDOUT]   inflating: /home/user/che/ws-agent/RELEASE-NOTES  
+[STDOUT]   inflating: /home/user/che/ws-agent/RUNNING.txt  
+[STDOUT]   inflating: /home/user/che/ws-agent/temp/safeToDelete.tmp  
+[STDOUT]   inflating: /home/user/che/ws-agent/bin/setenv.bat  
+[STDOUT]    creating: /home/user/che/ws-agent/webapps/
+[STDOUT]   inflating: /home/user/che/ws-agent/webapps/ide.war  
+[STDOUT] Listening for transport dt_socket at address: 4403
+[STDOUT] 2016-02-18 14:49:58,558[main]             [INFO ] [o.a.c.s.VersionLoggerListener 89]    - Server version:        Apache Tomcat/8.0.28
+[STDOUT] 2016-02-18 14:49:58,561[main]             [INFO ] [o.a.c.s.VersionLoggerListener 91]    - Server built:          Oct 7 2015 18:25:21 UTC
+[STDOUT] 2016-02-18 14:49:58,562[main]             [INFO ] [o.a.c.s.VersionLoggerListener 93]    - Server number:         8.0.28.0
+[STDOUT] 2016-02-18 14:49:58,563[main]             [INFO ] [o.a.c.s.VersionLoggerListener 95]    - OS Name:               Linux
+[STDOUT] 2016-02-18 14:49:58,563[main]             [INFO ] [o.a.c.s.VersionLoggerListener 97]    - OS Version:            3.19.0-25-generic
+[STDOUT] 2016-02-18 14:49:58,563[main]             [INFO ] [o.a.c.s.VersionLoggerListener 99]    - Architecture:          amd64
+[STDOUT] 2016-02-18 14:49:58,564[main]             [INFO ] [o.a.c.s.VersionLoggerListener 101]   - Java Home:             /opt/jre1.8.0_65
+[STDOUT] 2016-02-18 14:49:58,564[main]             [INFO ] [o.a.c.s.VersionLoggerListener 103]   - JVM Version:           1.8.0_65-b17
+[STDOUT] 2016-02-18 14:49:58,565[main]             [INFO ] [o.a.c.s.VersionLoggerListener 105]   - JVM Vendor:            Oracle Corporation
+[STDOUT] 2016-02-18 14:49:58,565[main]             [INFO ] [o.a.c.s.VersionLoggerListener 107]   - CATALINA_BASE:         /home/user/che/ws-agent
+[STDOUT] 2016-02-18 14:49:58,566[main]             [INFO ] [o.a.c.s.VersionLoggerListener 109]   - CATALINA_HOME:         /home/user/che/ws-agent
+[STDOUT] 2016-02-18 14:49:58,567[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.config.file=/home/user/che/ws-agent/conf/logging.properties
+[STDOUT] 2016-02-18 14:49:58,567[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+[STDOUT] 2016-02-18 14:49:58,568[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Xms256m
+[STDOUT] 2016-02-18 14:49:58,568[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Xmx1024m
+[STDOUT] 2016-02-18 14:49:58,569[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.logs.dir=/home/user/che/ws-agent/logs
+[STDOUT] 2016-02-18 14:49:58,569[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote
+[STDOUT] 2016-02-18 14:49:58,570[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.ssl=false
+[STDOUT] 2016-02-18 14:49:58,570[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.authenticate=false
+[STDOUT] 2016-02-18 14:49:58,571[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.local.conf.dir=/mnt/che/conf
+[STDOUT] 2016-02-18 14:49:58,571[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -agentlib:jdwp=transport=dt_socket,address=4403,server=y,suspend=n
+[STDOUT] 2016-02-18 14:49:58,572[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.endorsed.dirs=/home/user/che/ws-agent/endorsed
+[STDOUT] 2016-02-18 14:49:58,573[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.base=/home/user/che/ws-agent
+[STDOUT] 2016-02-18 14:49:58,573[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.home=/home/user/che/ws-agent
+[STDOUT] 2016-02-18 14:49:58,574[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.io.tmpdir=/home/user/che/ws-agent/temp
+[STDOUT] 2016-02-18 14:49:58,755[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 424]  - Initializing ProtocolHandler ["http-nio-4401"]
+[STDOUT] 2016-02-18 14:49:58,782[main]             [INFO ] [o.a.t.util.net.NioSelectorPool 72]   - Using a shared selector for servlet write/read
+[STDOUT] 2016-02-18 14:49:58,789[main]             [INFO ] [o.a.catalina.startup.Catalina 587]   - Initialization processed in 845 ms
+[STDOUT] 2016-02-18 14:49:58,816[main]             [INFO ] [c.m.JmxRemoteLifecycleListener 332]  - The JMX Remote Listener has configured the registry on port 32001 and the server on port 32101 for the Platform server
+[STDOUT] 2016-02-18 14:49:58,817[main]             [INFO ] [o.a.c.core.StandardService 433]      - Starting service Catalina
+[STDOUT] 2016-02-18 14:49:58,818[main]             [INFO ] [o.a.c.core.StandardEngine 259]       - Starting Servlet Engine: Apache Tomcat/8.0.28
+[STDOUT] 2016-02-18 14:49:58,907[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]        - Deploying web application archive /home/user/che/ws-agent/webapps/ide.war
+[STDOUT] Thu Feb 18 14:50:12 UTC 2016 - [localhost-startStop-1] Product-specified preferences called before plugin is started
+[STDOUT] 2016-02-18 14:50:12,344[rrest.WSClient1]  [INFO ] [.c.a.c.n.WSocketEventBusClient 223]  - Open connection to ws://che-host:8080/ide/api/eventbus/?token=dummy_token. 
+[STDOUT] 2016-02-18 14:50:12,922[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]        - Deployment of web application archive /home/user/che/ws-agent/webapps/ide.war has finished in 14,014 ms
+[STDOUT] 2016-02-18 14:50:12,956[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 469]  - Starting ProtocolHandler ["http-nio-4401"]
+[STDOUT] 2016-02-18 14:50:12,964[main]             [INFO ] [o.a.catalina.startup.Catalina 638]   - Server startup in 14173 ms
+ Nothing happens no matter how long I have waited after [o.a.catalina.startup.Catalina 638], and the UI shows "Retry" button. Also nothing happen when I click the "Retry" button. Expected Results: Startup workspace successfully

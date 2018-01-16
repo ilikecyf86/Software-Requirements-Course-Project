@@ -1,0 +1,12 @@
+Consolidate Workspace Config format
+kind/task 
+NOTES: content type serializing WSConfig is out of scope, we can imagine other than JSON (for instance YAML) as an alternative. serialization mechanism and accessibility are out of scope as well. We can imagine storing WSConfig anywhere (DB, local file etc) and keep it locally or remotely (accessible via http using URL for ex) Context: For the time we have several formats and mechanisms to start Workspace such as (Factory, Stack, Chefile) which extends WorkspaceConfiguration to add additional automation ability and semantic. I suppose for the time being we have enough experience to formalize consolidated model of WSConfig which would add "useful" metainfo from Factory and Stack definition and so remove different evolution branches of it and in perspective retire other formats from the Che core model. Proposal It is proposed to extend it adding two top-level objects: tags (inherited from stack) ide (inherited from factory) config: {
+  name: "",
+  description: "",
+  defaultEnv: "",
+  environments: {},
+  projects: {},
+  commands: {}
+  tags: [],     --  from stack, things like "java", "maven", "sample" etc
+  ide: {}        --  from factory, things like handlers for IDE app events etc
+}

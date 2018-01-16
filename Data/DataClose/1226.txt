@@ -1,0 +1,3 @@
+Ports limits in stack edit
+sprint/next-sprint status/open-for-dev team/plugin kind/bug severity/P2 sprint/current-sprint status/code-review sprint/next-sprint status/open-for-dev status/code-review sprint/current-sprint 
+I cannot add port 80 via server add in stack editor. I can though do this via raw configuration. Why do we not allow this? codenvy 5.5.0

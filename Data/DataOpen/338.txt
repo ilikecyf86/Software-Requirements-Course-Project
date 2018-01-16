@@ -1,0 +1,3 @@
+Implement heartbeat mechanism with JSON RPC protocol
+kind/enhancement team/ide sprint/next-sprint status/in-progress sprint/current-sprint target/branch sprint/next-sprint status/code-review status/in-progress 
+Need to implement ping-pong mechanism for detecting websocket connections or ability to use heartbeats for keeping connections alive. We already have it in everrest websocket implementation.

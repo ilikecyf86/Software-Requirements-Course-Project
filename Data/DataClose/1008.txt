@@ -1,0 +1,3 @@
+Cleanup Docker implementation
+kind/task status/in-progress team/platform sprint/current-sprint sprint/current-sprint 
+Docker SPI implementation is in POC state now. There is a lot of code commented and hard coded. We need to revise it and fix to make it more full blown implementation.

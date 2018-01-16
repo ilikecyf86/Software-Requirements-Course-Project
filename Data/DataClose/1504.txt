@@ -1,0 +1,11 @@
+Exec Agent stop responding after http access
+kind/enhancement kind/bug kind/enhancement severity/P2 
+Connect with http on /pty url of exec agent and it dies. Reproduction Steps: Start a workspace Wait the boot of exec-agent it displays [STDOUT] Channel Routes:
+[STDOUT] ✓ Connect to Exec-Agent(webscoket) ........ GET /connect
+[STDOUT] 
+[STDOUT] Terminal routes:
+[STDOUT] ✓ Connect to pty(webscoket) ............... GET /pty
+ Connect with curl in http to the pty curl http://localhost:32786/pty
+curl: (52) Empty reply from server
+ (Yeah we should use websocket) but remotely the exec agent stops with the error and exit 2017/02/16 15:37:38 Websocket upgrade failed: websocket: version != 13
+ OS and version: macOs sierra Che 5.3.0

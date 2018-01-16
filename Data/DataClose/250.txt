@@ -1,0 +1,3 @@
+[Che-6] Improve CheckMavenPluginTest for more stability
+kind/task team/production 
+The tests works with project explorer by native selenium clicks but this functionality is already checked in Prject Explorer tests. But too often usage of native selenium double clicks may have potential problem like StaleElementReferenceException. I think we should replace native invokations on Javascript for expand project explorer tree

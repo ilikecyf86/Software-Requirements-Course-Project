@@ -1,0 +1,3 @@
+Avoid jumping selection in the file tree after selecting files
+kind/bug team/plugin 
+When tree has visible area more than it can show tree can jumps during file selection.

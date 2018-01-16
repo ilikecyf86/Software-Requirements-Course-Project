@@ -1,0 +1,3 @@
+Workspace with blank project
+kind/question 
+Hi, In Che, use factory to create workspace. The factory configuration with project empty is not allowed and on Save - we have this error : You are missing a mandatory parameter getProjects. For more information, please visit http://docs.codenvy.com/user/project-lifecycle/#configuration-reference"} Is there any way to acheive this ? (Note: As an alternative, if i try to create directly a workspace - with empty project => works , but if it is non empty, Save with WorkspaceConfigDto.create => works on load => gives error that "Project exists in workspace but not in file system" )

@@ -1,0 +1,3 @@
+Using "Escape" on keyboard should close any popup
+kind/enhancement target/che6 team/plugin 
+Description Testing Che6, I found few popups that can't be closed by using the "escape" touch from the keyboard. Configure Classpath Update Project Configuration Upload Folder Reproduction Steps Che 6

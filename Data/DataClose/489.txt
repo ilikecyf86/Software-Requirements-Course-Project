@@ -1,0 +1,106 @@
+Uncaught (in promise) TypeError: Cannot read property 'length' of undefined.
+kind/bug 
+Error is shown in the browser's log. Reproduction Steps: Access to Che. Open workspace in Che. Watch client side logs. OS and version: ChromeOS 60.0.3112.112（Official Build） (Client) Che's version: Version :5.18.0-SNAPSHOT Revision :c80b423fef3b82dd Build Time :2017-09-06 08:59:39 _app-0.js:9416 Uncaught (in promise) TypeError: Cannot read property 'length' of undefined
+    at sVg (_app-0.js:9416)
+    at tVg.uVg [as Ps] (_app-0.js:9418)
+    at eval (_app-0.js:5020)
+    at <anonymous>
+sVg @ _app-0.js:9416
+uVg @ _app-0.js:9418
+(anonymous) @ _app-0.js:5020
+Promise resolved (async)
+kSe @ _app-0.js:5020
+qVg @ _app-0.js:9414
+AFk @ _app-0.js:17539
+CFk @ _app-0.js:17541
+(anonymous) @ _app-0.js:5020
+Promise resolved (async)
+kSe @ _app-0.js:5020
+zFk @ _app-0.js:17539
+Edg @ _app-0.js:7643
+Mdg @ _app-0.js:7647
+(anonymous) @ _app-0.js:5020
+Promise resolved (async)
+kSe @ _app-0.js:5020
+Kdg @ _app-0.js:7646
+gdg @ _app-0.js:7630
+lB @ _app-0.js:830
+_8j @ _app-0.js:16417
+fak @ _app-0.js:16458
+Eq @ _app-0.js:464
+vq @ _app-0.js:455
+Iq @ _app-0.js:469
+Cq @ _app-0.js:462
+hq @ _app-0.js:442
+kq @ _app-0.js:445
+(anonymous) @ _app-0.js:444
+e @ _app-0.js:465
+setTimeout (async)
+Fq @ _app-0.js:466
+xq @ _app-0.js:457
+zq @ _app-0.js:459
+$8j @ _app-0.js:16416
+t9j @ _app-0.js:16431
+(anonymous) @ _app-0.js:5020
+Promise resolved (async)
+kSe @ _app-0.js:5020
+p9j @ _app-0.js:16429
+Ddg @ _app-0.js:7642
+Sdg @ _app-0.js:7651
+Rdg @ _app-0.js:7650
+H1j @ _app-0.js:16108
+K1j @ _app-0.js:16110
+DXh @ _app-0.js:11657
+GXh @ _app-0.js:11660
+NXh @ _app-0.js:11666
+HB @ _app-0.js:846
+$B @ _app-0.js:860
+(anonymous) @ _app-0.js:3259
+hq @ _app-0.js:442
+kq @ _app-0.js:445
+(anonymous) @ _app-0.js:444
+XMLHttpRequest.send (async)
+RB @ _app-0.js:851
+SB @ _app-0.js:852
+qmj @ _app-0.js:14862
+pmj @ _app-0.js:14861
+L1j @ _app-0.js:16110
+G1j @ _app-0.js:16108
+Ddg @ _app-0.js:7642
+Sdg @ _app-0.js:7651
+Rdg @ _app-0.js:7650
+bYi @ _app-0.js:13906
+dYi @ _app-0.js:13908
+(anonymous) @ _app-0.js:5020
+Promise resolved (async)
+kSe @ _app-0.js:5020
+aYi @ _app-0.js:13906
+Ddg @ _app-0.js:7642
+Sdg @ _app-0.js:7651
+zog @ _app-0.js:8216
+Ddg @ _app-0.js:7642
+Sdg @ _app-0.js:7651
+mLg @ _app-0.js:9016
+Ddg @ _app-0.js:7642
+Sdg @ _app-0.js:7651
+jAi @ _app-0.js:13094
+Ddg @ _app-0.js:7642
+Hdg @ _app-0.js:7645
+vog @ _app-0.js:8212
+oog @ _app-0.js:8205
+Nmd @ _app-0.js:2056
+h @ _app-0.js:2
+hq @ _app-0.js:442
+kq @ _app-0.js:445
+(anonymous) @ _app-0.js:444
+Emd @ _app-0.js:3
+(anonymous) @ _app-0.js:20758
+(anonymous) @ VM166:1
+m @ _app.nocache.js:9
+(anonymous) @ _app.nocache.js:10
+d @ _app.nocache.js:6
+(anonymous) @ _app.nocache.js:7
+setInterval (async)
+l @ _app.nocache.js:7
+A._app.onScriptDownloaded @ _app.nocache.js:10
+(anonymous) @ 4BF129B835CBA310BC967275F23A2FA1.cache.js:1

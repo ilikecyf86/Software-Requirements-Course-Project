@@ -1,0 +1,3 @@
+Getting of cursor position for a split editor does not work properly in selenium tests
+kind/bug severity/P2 kind/task status/open-for-dev team/production kind/bug kind/bug kind/task 
+Description We apply id for the CursorPosition widget in the IDE for increase stability tests depended on this. In the editor PageObject and related methods also have been updated. But methods do not take into account the situation when the widget may be displayed in some split editors. We have problem: #7729 As temporary solution we can add separated method for handling cursor position in a split editor and use this one in the CheckRestoringSplitEditorTest. But much better will be a solution based on GWT side.

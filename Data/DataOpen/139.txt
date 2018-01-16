@@ -1,0 +1,3 @@
+Find usages results partiallly unredable
+kind/enhancement 
+Description Find Usages feature highlight occurrences in very unreadable way. Reproduction Steps Open any java class which is used somewhere, move cursor to its name. Press Alt + F7 or Assistant -> Find Usages Maybe it should be consistent with Find feature (Ctrl + Shift + f)

@@ -1,0 +1,3 @@
+Implement snapshotting concept in Docker SPI implementation
+kind/task sprint/current-sprint status/open-for-dev team/platform sprint/current-sprint 
+New SPI moves snapshotting concept on the implementation side. We need to implement this idea in Docker implementation of SPI to give a try to this idea.

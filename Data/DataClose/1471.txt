@@ -1,0 +1,3 @@
+Refactor org.eclipse.che.ide.resources.impl.ResourceManager#findResource
+kind/task team/plugin 
+Due to improved mechanism to work with file watchers there is a requirement to refactor method org.eclipse.che.ide.resources.impl.ResourceManager#findResource to send a request to the server for getting particular item metadata instead of caching whole tree with depth equal to segment count in absolute path. Although, there is a proposal to refactor ProjectServiceClient which serves above method to operate with java 8 features, especially with consumers (#4221).

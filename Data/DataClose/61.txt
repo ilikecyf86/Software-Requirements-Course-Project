@@ -1,0 +1,3 @@
+SLF4J: Class path contains multiple SLF4J Bindings
+
+Found this during Workspace init This seems to happen on the latest version but not on preceding versions OS and Version: Codenvy 5.21.0 on Windows 7

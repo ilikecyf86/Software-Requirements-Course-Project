@@ -1,0 +1,3 @@
+After appearance of a context menu there is no way to select items by keyboard keys
+kind/bug kind/enhancement kind/bug kind/bug severity/P2 
+We need ability to select menu items by keyboard in a context menu Step to reproduce: Invoke context menu Try using the keyboard to select the menu item Observed behavior: We can only select menu items using the mouse

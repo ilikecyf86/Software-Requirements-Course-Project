@@ -1,0 +1,3 @@
+"Restoring project structure..." loader doesn't hide in the workspace without projects.
+kind/bug status/in-progress status/code-review status/in-progress status/code-review 
+Reproduction Steps: Create new empty workspace without projects. Run workspace. Stop workspace. Run workspace again. Expected behavior: Loader "Restoring project structure..." should not appear at all, because we haven't projects, nothing to restore. Observed behavior: "Restoring project structure..." loader appears and doesn't hide. Che version: 5.0.0-M8-SNAPSHOT Additional information: Problem started happening recently, didn't happen in an older version of Che: [Yes] Problem can be reliably reproduced, doesn't happen randomly: [Yes]

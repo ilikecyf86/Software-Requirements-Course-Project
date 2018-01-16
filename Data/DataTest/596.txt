@@ -1,0 +1,84 @@
+404 after install
+
+After installing and running in the browser address on port 8080. In response comes a 404 error. OS: CentOS 6.7 JDK: 1.8.0 When you start seeing errors: 2015-12-07 15:08:39,838[ost-startStop-1]  [INFO ] [com.google.inject.Guice 42]          - An exception was caught and reported. Message: org.eclipse.che.inject.ConfigurationException: Property HOSTNAME%%.* is not found as system property or environment variable.
+org.eclipse.che.inject.ConfigurationException: Property HOSTNAME%%.* is not found as system property or environment variable.
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:243) ~[che-core-commons-inject-4.0.0-M5-SNAPSHOT.jar:4.0.0-M5-SNAPSHOT]
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:214) ~[che-core-commons-inject-4.0.0-M5-SNAPSHOT.jar:4.0.0-M5-SNAPSHOT]
+    at org.eclipse.che.inject.CheBootstrap$ExtConfiguration.configure(CheBootstrap.java:160) ~[che-core-commons-inject-4.0.0-M5-SNAPSHOT.jar:4.0.0-M5-SNAPSHOT]
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements.getElements(Elements.java:110) ~[guice-4.0.jar:na]
+    at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:198) ~[guice-4.0.jar:na]
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements.getElements(Elements.java:110) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:138) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:104) [guice-4.0.jar:na]
+    at com.google.inject.Guice.createInjector(Guice.java:96) [guice-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.getInjector(EverrestGuiceContextListener.java:137) [everrest-integration-guice-1.10.0.jar:na]
+    at com.google.inject.servlet.GuiceServletContextListener.contextInitialized(GuiceServletContextListener.java:47) [guice-servlet-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.contextInitialized(EverrestGuiceContextListener.java:84) [everrest-integration-guice-1.10.0.jar:na]
+    at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4738) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5181) [catalina.jar:8.0.28]
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717) [catalina.jar:8.0.28]
+    at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:945) [catalina.jar:8.0.28]
+    at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1798) [catalina.jar:8.0.28]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_60]
+    at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_60]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_60]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_60]
+    at java.lang.Thread.run(Unknown Source) [na:1.8.0_60]
+2015-12-07 15:08:40,557[ost-startStop-1]  [ERROR] [o.a.c.c.C.[.[localhost].[/che] 4744] - Exception sending context initialized event to listener instance of class org.eclipse.che.inject.CodenvyBootstrap
+com.google.inject.CreationException: Unable to create injector, see the following errors:
+
+1) An exception was caught and reported. Message: Property HOSTNAME%%.* is not found as system property or environment variable.
+  at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:198)
+
+1 error
+    at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:466) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.initializeStatically(InternalInjectorCreator.java:155) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:107) ~[guice-4.0.jar:na]
+    at com.google.inject.Guice.createInjector(Guice.java:96) ~[guice-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.getInjector(EverrestGuiceContextListener.java:137) ~[everrest-integration-guice-1.10.0.jar:na]
+    at com.google.inject.servlet.GuiceServletContextListener.contextInitialized(GuiceServletContextListener.java:47) ~[guice-servlet-4.0.jar:na]
+    at org.everrest.guice.servlet.EverrestGuiceContextListener.contextInitialized(EverrestGuiceContextListener.java:84) ~[everrest-integration-guice-1.10.0.jar:na]
+    at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4738) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5181) [catalina.jar:8.0.28]
+    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701) [catalina.jar:8.0.28]
+    at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717) [catalina.jar:8.0.28]
+    at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:945) [catalina.jar:8.0.28]
+    at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1798) [catalina.jar:8.0.28]
+    at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [na:1.8.0_60]
+    at java.util.concurrent.FutureTask.run(Unknown Source) [na:1.8.0_60]
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_60]
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_60]
+    at java.lang.Thread.run(Unknown Source) [na:1.8.0_60]
+Caused by: org.eclipse.che.inject.ConfigurationException: Property HOSTNAME%%.* is not found as system property or environment variable.
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:243) ~[che-core-commons-inject-4.0.0-M5-SNAPSHOT.jar:4.0.0-M5-SNAPSHOT]
+    at org.eclipse.che.inject.CheBootstrap$AbstractConfigurationModule.bindProperties(CheBootstrap.java:214) ~[che-core-commons-inject-4.0.0-M5-SNAPSHOT.jar:4.0.0-M5-SNAPSHOT]
+    at org.eclipse.che.inject.CheBootstrap$ExtConfiguration.configure(CheBootstrap.java:160) ~[che-core-commons-inject-4.0.0-M5-SNAPSHOT.jar:4.0.0-M5-SNAPSHOT]
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements.getElements(Elements.java:110) ~[guice-4.0.jar:na]
+    at com.google.inject.util.Modules$OverrideModule.configure(Modules.java:198) ~[guice-4.0.jar:na]
+    at com.google.inject.AbstractModule.configure(AbstractModule.java:62) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements$RecordingBinder.install(Elements.java:340) ~[guice-4.0.jar:na]
+    at com.google.inject.spi.Elements.getElements(Elements.java:110) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InjectorShell$Builder.build(InjectorShell.java:138) ~[guice-4.0.jar:na]
+    at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:104) ~[guice-4.0.jar:na]
+    ... 17 common frames omitted
+2015-12-07 15:08:40,943[ost-startStop-1]  [ERROR] [o.a.c.core.StandardContext 5182]     - One or more listeners failed to start. Full details will be found in the appropriate container log file
+2015-12-07 15:08:41,861[ost-startStop-1]  [INFO ] [o.a.c.u.SessionIdGeneratorBase 241]  - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [914] milliseconds.
+2015-12-07 15:08:41,862[ost-startStop-1]  [ERROR] [o.a.c.core.StandardContext 5233]     - Context [/che] startup failed due to previous errors
+2015-12-07 15:08:41,880[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]        - Deployment of web application archive /home/che/assembly-sdk/target/assembly-sdk-4.0.0-M5-SNAPSHOT/assembly-sdk-4.0.0-M5-SNAPSHOT/webapps/che.war has finished in 8,899 ms
+2015-12-07 15:08:41,881[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]        - Deploying web application archive /home/che/assembly-sdk/target/assembly-sdk-4.0.0-M5-SNAPSHOT/assembly-sdk-4.0.0-M5-SNAPSHOT/webapps/dashboard.war
+2015-12-07 15:08:41,964[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]        - Deployment of web application archive /home/che/assembly-sdk/target/assembly-sdk-4.0.0-M5-SNAPSHOT/assembly-sdk-4.0.0-M5-SNAPSHOT/webapps/dashboard.war has finished in 83 ms
+2015-12-07 15:08:41,965[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 1036]       - Deploying web application directory /home/che/assembly-sdk/target/assembly-sdk-4.0.0-M5-SNAPSHOT/assembly-sdk-4.0.0-M5-SNAPSHOT/webapps/ROOT
+2015-12-07 15:08:42,028[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 1152]       - Deployment of web application directory /home/che/assembly-sdk/target/assembly-sdk-4.0.0-M5-SNAPSHOT/assembly-sdk-4.0.0-M5-SNAPSHOT/webapps/ROOT has finished in 63 ms
+2015-12-07 15:08:42,037[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 469]  - Starting ProtocolHandler ["http-nio-8080"]
+2015-12-07 15:08:42,046[main]             [INFO ] [o.a.catalina.startup.Catalina 638]   - Server startup in 9483 ms

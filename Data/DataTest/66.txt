@@ -1,0 +1,3 @@
+Workspace Commands Import
+kind/enhancement 
+Is there any way to import or execute commands(clean install, etc) from each project? Maybe have a json file that can be imported to list of available execute commands. Placed in the correct folder maybe it could be detected and loaded automatically after asking user of course.

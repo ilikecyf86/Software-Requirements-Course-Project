@@ -1,0 +1,3 @@
+Stack from Workspace Configuration
+kind/enhancement 
+We should have something to save an existing workspace as a new stack. I typically use a base stack to create new stack and modify it inside IDE with new commands and imported projects. There should be an easy way to then save the workspace configuration from dashboard > workspaces as a new stack. Version 5.5.0

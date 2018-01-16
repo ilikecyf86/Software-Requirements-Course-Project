@@ -1,0 +1,3 @@
+Commands not properly installed when creating project from a template in a workspace
+kind/bug 
+When creating a project from "/create-project", and selecting e.g the "console-java-simple" ready-to-run sample, I end up with a new workspace, and a new project that has "mvn build" and "mvn run" properly installed. All good. If I instead navigate in an existing workspace (created from /create-workspace) and create the console-java-simple project from there (Workspace / Create Project... menu entry), the commands do not get installed. Sounds like a bug?

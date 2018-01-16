@@ -1,0 +1,3 @@
+Add possibility to have addon.env in init addons
+kind/task sprint/current-sprint status/in-progress team/production sprint/current-sprint status/in-progress 
+today we have addon functionality in CHE which allows custom assemblies to have custom configuration. It allows to generate configs but as che.env is the place where user manage configuration addon should have addon.env which will be added to che.env to allow addon configuration. this is needed for: #5077 and openshift custom assembly.

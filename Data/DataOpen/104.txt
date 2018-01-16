@@ -1,0 +1,11 @@
+[CHE 6] Revert renaming of "Agents" by "Installers"
+target/che6 kind/task team/platform kind/question kind/task team/platform team/platform kind/task kind/question 
+Description For some reasons, "Agents" have been renamed to "Installers" in our model. This nomenclature is unfortunate and must be reverted. The meaning behind "installers" is completely different from end-user point of view. An installer does not provide any features or capabilities - it is just a component that handle the installation of a "software". "Installer" is unfortunated because: On some infrastructures there is nothing which can be installed in a workspace machine(s) Agents might be packaged in the workspace machine(s) Agents can be running as sidecars of the workspace machine(s) "Installers" nomenclature is more confusing than anything for end-users - and very specific to one scenario. Example showing how it is exposed to end-user: Here, the user is supposed to enable features and capabilities provided by "Agents" not "Installers" That renaming also breaks any workspace definition (used in chefile, factories) between che5 and che6: "dev-machine": {
+  "installers": [
+    "org.eclipse.che.exec",
+    "org.eclipse.che.terminal",
+    "org.eclipse.che.ws-agent",
+    "org.eclipse.che.ssh"
+  ],
+}
+ Here it looks equally unappropriated.

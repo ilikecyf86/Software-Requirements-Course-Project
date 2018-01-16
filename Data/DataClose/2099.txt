@@ -1,0 +1,7 @@
+Invalid docker ip address when running by cli
+kind/question kind/enhancement 
+When starting eclipse che cli it's trying to detect what user IP should be used by calling get_docker_host_ip. For docker 1.12.3 on mac this URL would be localhost. Mentioned function: https://github.com/eclipse/che/blob/master/cli.sh#L285-L297 Urls returned: INFO: ECLIPSE CHE: Use: http://192.168.65.2:8080
+INFO: ECLIPSE CHE: API: http://192.168.65.2:8080/swagger
+ Valid urls INFO: ECLIPSE CHE: Use: http://localhost:8080
+INFO: ECLIPSE CHE: API: http://localhost:8080/swagger
+ Problem is most likely to be platform related (OSX and docker) This is really minor issue. Reproduction Steps: run che start Wait for command to execute Go to url provided in INFO: ECLIPSE CHE: Use: http://192.168.65.2:8080 Should finish with browser timeout Go to http://localhost:8080 - it works Che version: master (ebe8ed9) OS and version: MacOs X El Capitan Docker version: Docker version 1.12.3, build 6b644ec Che install: [command line/source code]

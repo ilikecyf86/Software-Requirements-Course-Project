@@ -1,0 +1,3 @@
+Provide all endpoints of an server as separate servers in Runtime
+kind/task team/platform status/in-progress 
+Related to SPI branch only. Some servers have several endpoints for clients. For example, exec server has REST API and websocket JSON_RPC API. wsagent has REST API and websocket JSON_RPC API. It is not convenient for a client to know insights of these servers deployments to findout how to change server URL to connect to different endpoints. So, we decided that if for example, an installer provides a server with several endpoints these endpoints should be represented as several servers with different references. In that case, client wouldn't need to modify server URL to connect to different endpoints.

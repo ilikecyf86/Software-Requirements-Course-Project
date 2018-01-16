@@ -1,0 +1,3 @@
+Improve python language server
+kind/question 
+Hey guys, is there any reason why Che doesnt use the plantir language server for python ? (https://github.com/palantir/python-language-server) Is there a problem I doesn´t see ? When not I would try to integrate it. Best regards :)

@@ -1,0 +1,3 @@
+ability to use docker-compose.yml instead of docker file for dev environments
+kind/enhancement 
+_1 Upvote_ Our dev environment is a composition of a few different pieces so we use compose to orchestrate them when spinning up a new developers environment. Ideally che could support this configuration in the future (or does currently and i'm missing something in the docs?).

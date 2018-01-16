@@ -1,0 +1,3 @@
+SPI OpenShift Infrastructure: support dockerfile based recipes
+kind/enhancement team/osio team/platform team/osio 
+In SPI branch, OpenShift infrastructure only support recipes of type openshift but we want users to be able start workpace on OpenShift based on a dockerfile recipes too. That's something that the existing OpenShiftConnector is not capable of and therefore should be implemented from scratch.

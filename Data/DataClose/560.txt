@@ -1,0 +1,3 @@
+liblzma.so.5: no version information available on alpine_jdk8
+
+Using for example the PHP plugin in a Che workspace based on Docker image codenvy/alpine_jdk8 will show the follow error: Failed to initialized LS org.eclipse.che.plugin.php.languageserver: org.eclipse.che.api.languageserver.exception.LanguageServerException: Can't initialize Language Server org.eclipse.che.plugin.php.languageserver on file:///.... /home/user/che/ls-php/php7-minimal/php: /usr/lib/liblzma.so.5: no version information available (required by /home/user/che/ls-php/php7-minimal/libxml2.so.2) Segmentation fault (core dumped) Try doing sudo apk upgrade but didn't help.

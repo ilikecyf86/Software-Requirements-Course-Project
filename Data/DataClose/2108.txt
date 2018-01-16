@@ -1,0 +1,3 @@
+Release and ship Che 5.0.0-M7
+kind/task sprint/current-sprint status/open-for-dev team/production status/in-progress status/open-for-dev sprint/current-sprint status/in-progress 
+release Che 5.0.0-M7 ship Che 5.0.0-M7

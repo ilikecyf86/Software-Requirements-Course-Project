@@ -1,0 +1,3 @@
+Receive event about created file after resuming file watching
+kind/enhancement kind/bug kind/task kind/enhancement kind/bug 
+It seems there is a problem particular with create file operation and file watcher. Reproduction Steps: suspend file watching service via client; send a request to project service to create a new file; wait some time; resume file watching service via client; receive a notification about created file. Che revision: 9c0eec2

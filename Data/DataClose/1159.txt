@@ -1,0 +1,3 @@
+Wordwrap Highlighting
+kind/bug severity/P2 team/ide 
+Highlighting a word wrapped line does not highlight other lines. Codenvy 5.7.2

@@ -1,0 +1,3 @@
+Intelligent Commands Default Command is Not Project Specific
+kind/enhancement 
+The default command when set is not project specific. This forces user to select a new default each time they select a different project in project explorer. Codenvy 5.6.0

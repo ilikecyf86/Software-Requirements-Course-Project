@@ -1,0 +1,3 @@
+Why is google and facebook in the factory extension?
+kind/question 
+Hi recently I saw facebook and google calls within che. Is there a techincal reason why facebook and google is included? in here: https://github.com/eclipse/che/tree/5b373e6cf5bfeb16f278c4d750fe64361445eeb4/ide/che-core-ide-app/src/main/java/org/eclipse/che/ide/factory

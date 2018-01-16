@@ -1,0 +1,3 @@
+Improve layout of command's editor to avoid having fields with different width
+kind/enhancement status/pending-merge status/pending-merge 
+The layout of the command's editor is looking strange with the different fields that are not using the same width. We should improve that by limiting the width of the editor's fields. See the following mockup:

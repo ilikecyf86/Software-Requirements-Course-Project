@@ -1,0 +1,18 @@
+Runtime Exception `Message: Can't find IClasspathEntry`
+kind/question 
+[STDOUT] 2017-09-10 08:07:27,430[equestProcessor]  [ERROR] [oggingUncaughtExceptionHandler 31]   - Runtime exception caught in thread ServerSideRequestProcessor. Message: Can't find IClasspathEntry for path /che/wsagent/che-core-api-project/src/main/java/org/eclipse/che/api/vfs/watcher/FileWatcherService.java
+[STDOUT] java.lang.RuntimeException: Can't find IClasspathEntry for path /che/wsagent/che-core-api-project/src/main/java/org/eclipse/che/api/vfs/watcher/FileWatcherService.java
+[STDOUT] 	at org.eclipse.che.plugin.java.testing.AbstractJavaTestRunner.getRuntimeException(AbstractJavaTestRunner.java:257)
+[STDOUT] 	at org.eclipse.che.plugin.java.testing.AbstractJavaTestRunner.findCompilationUnitByPath(AbstractJavaTestRunner.java:191)
+[STDOUT] 	at org.eclipse.che.plugin.java.testing.AbstractJavaTestRunner.detectTests(AbstractJavaTestRunner.java:80)
+[STDOUT] 	at org.eclipse.che.api.testing.server.TestingRPCService.handleTestDetection(TestingRPCService.java:95)
+[STDOUT] 	at org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerManager$OneToOneHandler.handle(RequestHandlerManager.java:328)
+[STDOUT] 	at org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerManager$OneToOneHandler.access$1000(RequestHandlerManager.java:315)
+[STDOUT] 	at org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerManager.handle(RequestHandlerManager.java:212)
+[STDOUT] 	at org.eclipse.che.api.core.jsonrpc.commons.RequestDispatcher.dispatch(RequestDispatcher.java:51)
+[STDOUT] 	at org.eclipse.che.api.core.jsonrpc.commons.JsonRpcMessageReceiver.processRequest(JsonRpcMessageReceiver.java:97)
+[STDOUT] 	at org.eclipse.che.api.core.jsonrpc.commons.JsonRpcMessageReceiver.lambda$receive$0(JsonRpcMessageReceiver.java:72)
+[STDOUT] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+[STDOUT] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+[STDOUT] 	at java.lang.Thread.run(Thread.java:745)
+ Reproduction Steps: Import https://github.com/eclipse/che.git Edit FileWatcherService.java Watch dev-machine console. OS and version: Container Linux by CoreOS 1520.1.0 (Ladybug) Che's version Version :5.18.0-SNAPSHOT Revision :5231059555dc1838 Build Time :2017-09-08 13:45:52

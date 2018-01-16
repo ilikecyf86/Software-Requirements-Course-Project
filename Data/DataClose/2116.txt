@@ -1,0 +1,3 @@
+Add contextual menu associated to right-click action in the editor
+kind/enhancement team/ide status/in-progress sprint/current-sprint status/code-review status/in-progress sprint/current-sprint status/code-review 
+The goal of this issue to provide a new contextual menu in the editor when the user is doing a right-click. We need to add all the capabilities that we have in the "Edit" menu: Undo Redo ... Format Quick Documentation Quick Fix Open Declaration Refactoring (with rename and move options) File Structure ... Cut Copy Paste ... Find Close We will use the same style that for the contextual menu from the project explorer panel.

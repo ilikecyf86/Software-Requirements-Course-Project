@@ -1,0 +1,3 @@
+readme.io site is still unreachable. When would that documentation site be available?
+kind/question kind/docs kind/question kind/question 
+https://eclipse-che.readme.io/ redirects to an inactive site

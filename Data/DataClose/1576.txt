@@ -1,0 +1,155 @@
+"Project" > "Configuration..." doesn't do anything
+kind/question 
+I just created a workspace with a new project without errors. When I click "Project" > "Configuration...", absolutely nothing happens.. However, due to #4041 I did somehow end up having a nested second clone of the project in a subfolder which I deleted, maybe that is possibly related. In any case, a proper error message would be in order. Reproduction Steps: Create project ?? Click "Project" > "Configuration..." Nothing happens, but I get this error on the browser console: Tue Feb 07 14:54:55 GMT+100 2017 com.google.gwt.logging.client.LogConfiguration
+SEVERE: undefined
+java.lang.IllegalStateException
+	at Unknown.tm(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.xm(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.dud(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.Wc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.s8d(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.kAi(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.AAi(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.m4c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.U5c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.on(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.rn(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.qn/<(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.EventHandlerNonNull*Q5c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.Z5c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.qXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.DXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.kXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.wXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.o7c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.m7c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.l6c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.kXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.wXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.HXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.JXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.pXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.v6c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.B6c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.Msh(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.xsh(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.Hsh(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.m4c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.U5c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.on(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.rn(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.qn/<(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.EventHandlerNonNull*Q5c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.Z5c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.qXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.DXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.kXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.wXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.o7c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.m7c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.l6c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.kXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.wXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.HXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.JXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.o7c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.m7c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.l6c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.kXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.wXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.o7c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.m7c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.l6c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.kXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.ybd(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.o7c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.m7c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.l6c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.kXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.ybd(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.o7c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.m7c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.l6c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.kXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.Sfd(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.pXc(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.fjd(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.$7c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.i8c(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.YOi(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.Qgf(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.dhf(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.chf(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.Lsf(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.Ln(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.Cn(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.Pn(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.Jn(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.on(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.rn(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.qn/<(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.d(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.setTimeout handler*Mn(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.En(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.Gn(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.wjd(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.ANi(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.Kxh(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.bHh(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.RRi(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.GSi(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.JSi(http://localhost:8080/che/chicraft-ws?uid=540833)
+	at Unknown.anonymous(Unknown)
+  chicraft-ws:1:16803
+ OS and version: Your CLI version is 'nightly'.
+Your installed version is 'nightly'.
+ Fedora 25, uname -a: Linux cyberman 4.9.3-200.fc25.x86_64 #1 SMP Fri Jan 13 01:01:13 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux Diagnostics:  WARNING: Usage of loopback devices is strongly discouraged for production use. Either use `--storage-opt dm.thinpooldev` or use `--storage-opt dm.no_warn_on_loop_devices=true` to suppress this warning.
+INFO: (che cli): nightly - using docker 1.13.0 / native
+INFO: (che download): Pulling image eclipse/che:nightly
+
+nightly: Pulling from eclipse/che
+Digest: sha256:7e48e2ab646d49d9bbfd6e2589cb220df551102a6297f2113010f3763875a896
+Status: Image is up to date for eclipse/che:nightly
+
+
+CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che:nightly
+ Version:        nightly
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /home/jonas/Develop/eclipse-che/data
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    nightly
+ CHE_HOST:       172.17.0.1
+ CHE_INSTANCE:   /home/jonas/Develop/eclipse-che/data/instance
+ CHE_CONFIG:     /home/jonas/Develop/eclipse-che/data
+ CHE_BACKUP:     /home/jonas/Develop/eclipse-che/data/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   172.17.0.1
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:nightly
+ IMAGE_CHE=eclipse/che-server:nightly
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+che.env:
+ CHE_HOST=172.17.0.1

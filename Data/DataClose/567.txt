@@ -1,0 +1,3 @@
+Ability to add connections in the IDE
+kind/question 
+currently the only way to do it is going to dashboard and adding it as a machine or use the ssh command from the terminal. It would be nice if we can add connections from the IDE itself

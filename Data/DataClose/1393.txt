@@ -1,0 +1,3 @@
+Extend the Eclipse Che editor by an new graphical editor
+kind/question 
+Hello, I am looking to develop a UML software (graphic editor containing a palette and an editor). I am looking for the different possibilities to extend the publisher Che. Reproduction Steps: OS and version: Diagnostics:

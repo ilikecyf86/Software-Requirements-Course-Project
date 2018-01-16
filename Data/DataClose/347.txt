@@ -1,0 +1,24 @@
+Runaway CPU on Che 5.18
+kind/question kind/bug team/ide sprint/next-sprint kind/question sprint/current-sprint sprint/next-sprint 
+We're using the latest release. We keep having server performance degrade to an unusable level until the offending workspace container is stopped. This seems to happen at some random point I've traced this down each to the process which was using 100% CPU: 6708                sshd                /usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java -Dnop -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Xms256m -Xmx2048m -Djava.security.egd=file:/dev/./urandom -Dche.logs.dir=/home/user/che/ws-agent/logs -Dche.logs.level=INFO -Djuli-logback.configurationFile=file:/home/user/che/ws-agent/conf/tomcat-logger.xml -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -agentlib:jdwp=transport=dt_socket,address=4403,server=y,suspend=n -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Dche.local.conf.dir=/mnt/che/conf -classpath /home/user/che/ws-agent/conf/:/usr/lib/jvm/java-1.8.0-openjdk-amd64/lib/tools.jar:/home/user/che/ws-agent/bin/bootstrap.jar:/home/user/che/ws-agent/bin/tomcat-juli.jar -Dcatalina.base=/home/user/che/ws-agent -Dcatalina.home=/home/user/che/ws-agent -Djava.io.tmpdir=/home/user/che/ws-agent/temp org.apache.catalina.startup.Bootstrap start
+ And then to the workspace container, with docker top, bashing in shows the below from top: top - 12:25:49 up 5 days, 20:49,  0 users,  load average: 10.89, 13.09, 7.83
+Tasks:  13 total,   1 running,  12 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 47.7 us, 22.1 sy,  0.0 ni, 25.7 id,  4.3 wa,  0.0 hi,  0.1 si,  0.1 st
+KiB Mem : 31399588 total,  6503432 free, 15478728 used,  9417428 buff/cache
+KiB Swap:        0 total,        0 free,        0 used. 14093836 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND     
+  209 user      20   0 5764560 2.239g  16952 S 101.7  7.5  27:46.68 java        
+   14 root      20   0   65520   5240   4540 S   0.0  0.0   0:00.00 sshd        
+  545 user      20   0   21096   5100   3420 S   0.0  0.0   0:00.07 bash        
+  305 user      20   0   21096   4996   3312 S   0.0  0.0   0:00.04 bash        
+  139 user      20   0   15644   4040   3092 S   0.0  0.0   0:00.32 che-websoc+ 
+   12 root      20   0   47008   3644   3220 S   0.0  0.0   0:00.00 sudo        
+  567 user      20   0   40384   3524   3064 R   0.0  0.0   0:00.06 top         
+   85 user      20   0   11116   2544   1800 S   0.0  0.0   0:00.00 che-exec-a+ 
+  108 user      20   0    4512   1704   1584 S   0.0  0.0   0:00.02 sh          
+   49 user      20   0    4512   1644   1520 S   0.0  0.0   0:00.03 sh          
+  152 user      20   0    4516   1632   1496 S   0.0  0.0   0:00.03 sh          
+    1 user      20   0    4508    852    776 S   0.0  0.0   0:00.03 sh          
+   45 user      20   0    6044    784    712 S   0.0  0.0   0:00.00 tail
+ How can we trace the cause of this? The workspace seems to consume as constant ~25% of CPU until it hits this point so something isn't right.

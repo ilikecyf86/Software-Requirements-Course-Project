@@ -1,0 +1,3 @@
+A command macro that returns the name of the file without the file extension
+kind/enhancement team/plugin team/ide 
+Currently, the only way to get the name of a file that is open or selected is with the extension on the end (for example, main.java). A macro that would give the name of the file with no extension would be very helpful (returning just main, not main.java). I don't want to use maven or ant for simple java files and this macro would allow me to compile any file name (not just ones called Main.java) and run it. Version: 5.4.1 Revision: 2f8fd8a

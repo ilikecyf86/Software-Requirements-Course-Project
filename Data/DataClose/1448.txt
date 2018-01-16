@@ -1,0 +1,3 @@
+The "Move Item" widget appeared when press Ctr+X in the Terminal
+kind/bug severity/P2 team/ide kind/bug kind/bug 
+Reproduction Steps: Create a project with java files(like web-java-spring, web-java-petclinic) Open in the Editor any java file Start a new Terminal Press Ctr+X in the Terminal Expected behavior: Nothing happened. Observed behavior: The "Move Item" widget appeared. The widget appears only if a java file is opened in the Editor. Che version: 5.4.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.3 Che install: Docker container Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes]

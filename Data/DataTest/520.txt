@@ -1,0 +1,3 @@
+Eclipse Che che.sh script not compatible with bash
+kind/enhancement 
+When I try to run che.sh as sh che.sh it fails. further it gives syntax errors on all function declarations in the script file that I had to change all function declarations in the script from function ABC {} to ABC () {}

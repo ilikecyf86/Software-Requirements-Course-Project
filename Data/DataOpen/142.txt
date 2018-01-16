@@ -1,0 +1,3 @@
+The refactoring widget sometimes does not recognize refactoring data properly
+kind/bug selenium/failure 
+Reproduction Steps: It happens in multithreaded selenium mode on CI. Usually with RemamePackageTest. The test types correct values for refactoring, but we can have error like on screenshot: I think it happens because we send data for refactoring character by character. We should improve this. OS and version: Chrome browser, CHE6M2

@@ -1,0 +1,7 @@
+Suppress useless debug output from svn-server tests
+
+During build, there is a lot of useless debug output on the console like: [DEBUG] [o.e.c.p.s.s.u.UpstreamUtils 119]     - Running command: svn --non-interactive --trust-server-cert checkout 
+file:///tmp/1489152764772-0/ /tmp/org.eclipse.che.plugin.svn.server.SubversionApiITest-2652241780690728667
+15:32:45 2017-03-10 13:32:45,080
+ [DEBUG] [o.e.c.p.s.s.u.UpstreamUtils 119]     - Running command: svnadmin create /tmp/1489152765080-0
+ Need to suppress it by raising logging level to INFO.

@@ -1,0 +1,9 @@
+Apply "Assert.fail()" in the failed tests which related to known bugs
+kind/task status/in-progress team/production status/code-review status/in-progress status/code-review sprint/current-sprint 
+We have a list of failed tests which related to bugs in the product (known bugs with issue). So we need to accept next design in the test`s places where we expect fails: try{
+        [failed method]
+    } catch( ... ) {
+      // remove try-catch block after issue has been resolved
+      fail("Known issue https://github.com/eclipse/che/issues/NNNN");
+}
+ it will give the better understanding for developers for tests result analise. The list of issue: filter issue by "selenium/failure" label.

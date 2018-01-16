@@ -1,0 +1,7 @@
+SPI: OpenShiftClient configuration properties
+kind/question 
+che.infra.openshift.master_url=
+che.infra.openshift.username=
+che.infra.openshift.password=
+che.infra.openshift.trust_certs=false
+ Not sure if we really need all those properties. Basically, those are useful if che-server is running via Docker as described in the doc [1], but IMO the dev environment for "openshift" infrastructure should be minishift (e.g. both che-server & workspaces are running there and for this scenario all those properties are not needed). For multi tenat che-server we would probably need to define some config during OpenShiftClient creation but for now it is difficult to say how would it look like (probably it would be smth. that is used in che-starter [2]). My proposal is removing all this properties and using default constructor during OpenShiftClient creation [1] https://github.com/redhat-developer/rh-che/blob/master/howtos/spi.adoc [2] https://github.com/redhat-developer/che-starter/blob/master/src/main/java/io/fabric8/che/starter/openshift/OpenShiftClientWrapper.java#L70

@@ -1,0 +1,3 @@
+[Multiuser] Sub-organization does not available to choose on the workspace page just after creating
+kind/bug severity/P2 team/plugin 
+Reproduction Steps Go to the "organization" page -> organization where you admin -> create sub-organization Click "Workspaces" on dashboard -> "add workspace" button Click on "Organization" drop-down list Pay attention to the organizations list Expected behavior: The list of organizations will include newly created organization Observed behavior: The list of organizations does not include newly created organization OS and version: Che (multiuser) 5.19.0 ; Fedora 25 ; Chrome 59.0

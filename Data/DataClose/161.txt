@@ -1,0 +1,3 @@
+Change of user story flow and improve preconditions for NavigateToFileTest
+kind/task team/platform team/production team/platform status/in-progress sprint/current-sprint 
+Description Why we need it?: The checking of hidden folders after git init is not actual. The duplicated methods should be removed. Also more simple steps - more stability. In the test we should make next changes: Remove all steps with git initialization for check items in the hidden folders Remove duplicated methods Simplify some steps for more stability OS and version: Fedora25, Chrome browser, Che-6.0.0.M2

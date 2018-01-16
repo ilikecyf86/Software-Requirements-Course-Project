@@ -1,0 +1,3 @@
+Add ability to try a command
+kind/enhancement status/pending-merge status/pending-merge 
+According to the specification #2681 , we need to let the user being able to test a command. In the command editor's toolbar, we will add a small "run" button, which allow to execute the command.

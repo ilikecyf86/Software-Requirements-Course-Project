@@ -1,0 +1,3 @@
+Update loading steps language
+kind/bug 
+Update loading steps language for project creation and open workspace flows to be the same as for loading factory.

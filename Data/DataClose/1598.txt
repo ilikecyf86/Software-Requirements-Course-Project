@@ -1,0 +1,55 @@
+"cannot enable tty mode on non tty input" when stopping che from non-tty process
+severity/P1 kind/bug status/code-review status/code-review 
+To reproduce, run eclipse Che and stop it using the following command. By capturing the output and piping it, the process doesn't get a tty/pty. (docker run -i --rm -v /var/run/docker.sock:/var/run/docker.sock -v /home/ubuntu/:/data eclipse/che stop) | cat You get the following output. WARN: Bound 'eclipse/che' to 'eclipse/che:5.2.0'
+WARNING: No swap limit support
+WARN: Did not detect TTY - interactive mode disabled
+INFO: (che cli): 5.2.0 - using docker 1.12.3 / native
+INFO: Waiting for graceful stop of services...
+cannot enable tty mode on non tty input
+ After this, the command exits (code 1), and che keeps on running. Looking at the trace output; the following line gets executed: ++ docker run --rm --env-file /tmp/docker_run_vars -v /var/run/docker.sock:/var/run/docker.sock -v /root:/root -w / -it eclipse/che-action:5.2.0 graceful-stop
+ As you can see, the -t flag is wrongfully added. This is because it is hardcoded in cmd_action.sh Full trace: http://pastebin.ubuntu.com/23911164/ OS and version: Ubuntu 16.04 Diagnostics: WARN: Bound 'eclipse/che' to 'eclipse/che:5.2.0'
+WARNING: No swap limit support
+WARN: Did not detect TTY - interactive mode disabled
+INFO: (che cli): 5.2.0 - using docker 1.12.3 / native
+WARN: CHE_HOST (xxxxxxxxxxxxxxx) overridden by che.env (xxxxxxxxxxxxxxx)
+
+CLI:
+ TTY:            false
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che
+ Version:        5.2.0
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /home/ubuntu/
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    5.2.0
+ CHE_HOST:       xxxxxxxxxxxxxxx
+ CHE_INSTANCE:   /home/ubuntu//instance
+ CHE_CONFIG:     /home/ubuntu/
+ CHE_BACKUP:     /home/ubuntu//backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   xxxxxxxxxxxxxxx
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:5.2.0
+ IMAGE_CHE=eclipse/che-server:5.2.0
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.2.0
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.2.0
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:5.2.0
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:5.2.0
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.2.0
+che.env:
+ CHE_HOST=xxxxxxxxxxxxxxx

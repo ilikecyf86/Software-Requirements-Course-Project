@@ -1,0 +1,3 @@
+Java Debugger refactoring
+status/pending-merge 
+The goal is to make debugger universal. Extract debugger related methods out of DebuggerPresenter and add to Debugger interface Make DebuggerPresenter depends on DebugManager and use current instance of Debugger

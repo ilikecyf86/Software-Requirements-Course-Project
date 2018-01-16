@@ -1,0 +1,3 @@
+Hide `Preview` for non-html items
+sprint/current-sprint status/open-for-dev team/plugin kind/enhancement status/open-for-dev sprint/current-sprint 
+Hide Preview context menu item for non-html items.

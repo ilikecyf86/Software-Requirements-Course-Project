@@ -1,0 +1,3 @@
+Allow to use SshServiceClient without need to inject che-core-api-ssh maven module
+kind/task status/open-for-dev team/enterprise 
+Sometimes SshServiceClient is used on ws-agent side. But since che-core-api-ssh is ws-master module it happens that we have a lot of unused dependencies on ws-agen war. It increases agent size and time of startup.

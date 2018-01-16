@@ -1,0 +1,3 @@
+Add changes to the 'PlainJavaProjectConfigureClasspathTest'
+kind/task status/in-progress status/open-for-dev target/che6 sprint/current-sprint team/production status/open-for-dev status/code-review status/in-progress 
+Description Selenium test is failed when run on 'ocp' platform The reason of it is the list of jar libraries which expected in the simple java project We need to add changes in selenium test for passing on 'ocp' platform

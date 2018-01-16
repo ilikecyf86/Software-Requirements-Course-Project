@@ -1,0 +1,3 @@
+[MultiUser-branch] Page crashed when to delete a workspace on the dashboard
+kind/bug severity/P1 target/branch status/in-progress 
+Reproduction Steps: Create a workspace and open it in the IDE Go to back on the dashboard Try to delete the workspace Expected behavior: the workspace should be deleted without any errors Observed behavior: we have unexpected crashing of the page Che version: 5.19.0 OS and version: Fedora 25 Docker version: 17.06 API docker version: 1.30 Che install: Docker container Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes] See the attachment:

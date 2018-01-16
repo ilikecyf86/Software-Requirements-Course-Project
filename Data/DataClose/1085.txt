@@ -1,0 +1,8 @@
+Warning marks in java script files works only after reopen file .
+kind/bug severity/P2 
+Reproduction Steps: Go to the spring project Create some javascript file Type : var a = 5; var c = 6;        function f(){
+           return 'test'
+       }
+
+      f();
+ Wait some times Pay attention to the screen. Expected behavior: Warnings marks will be displayed Observed behavior: Warnings marks are not display Attachment:

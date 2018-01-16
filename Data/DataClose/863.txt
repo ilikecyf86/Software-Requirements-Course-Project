@@ -1,0 +1,3 @@
+[Regression] PHP language server fails to start
+kind/bug severity/P1 team/ide severity/blocker severity/P1 
+Steps to reproduce: Create a php workspace, enable php language server Open .php file There's an error : Error fetching server capabilities php. org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Argument 2 passed to LanguageServer\LanguageServer::initialize() must be an instance of LanguageServer\Protocol\ClientCapabilities, string given, called in /home/user/che/ls-php/php-language-server/vendor/felixfbecker/advanced-json-rpc/lib/Dispatcher.php on line 164 This can be reproduced with the latest master.

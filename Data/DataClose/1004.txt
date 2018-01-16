@@ -1,0 +1,3 @@
+Make Docker SPI impl work on Mac and Windows again
+kind/task 
+Che in master has special workarounds for Mac and Windows due to their non-native container solution. We should investigate how it should work with new SPI, whether it works already and whether anything particular code should be changed to support it.

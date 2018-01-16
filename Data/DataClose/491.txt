@@ -1,0 +1,3 @@
+Workspace sync from Project API should not add to workspace configuration detected projects
+kind/bug sprint/current-sprint team/ide 
+Reproduction Steps: Create/start new workspace Go to the terminal create two new folders with commands: mkdir test1 mkdir test2 New folder will be shown in project explorer as broken project Select test1 folder and configure it as blank project Restart your workspace After restarting only test1 must be configured but instead both projects are configured as `blank'

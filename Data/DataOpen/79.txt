@@ -1,0 +1,89 @@
+Remove source from StackDto
+kind/task team/platform 
+Description Source section of StackDto duplicates recipe section of workspaceConfig and AFAIK is not used we need to remove this duplication to avoid confusions. Like why do we need to declare image twice. [
+  {
+    "id": "che-in-che",
+    "creator": "ide",
+    "name": "Eclipse Che",
+    "description": "Utilities to build Che in Che with JDK 8 and Maven.",
+    "scope": "general",
+    "tags": [
+      "Java",
+      "JDK",
+      "Maven",
+      "Git",
+      "SDK"
+    ],
+    "components": [
+      {
+        "name": "JDK",
+        "version": "1.8.0_92"
+      },
+      {
+        "name": "Maven",
+        "version": "3.3.9"
+      }
+    ],
+   "source": {    <------ REMOVE THIS
+      "type": "image",
+      "origin": "eclipse/che-dev:che6"
+    },
+    "workspaceConfig": {
+      "environments": {
+        "default": {
+          "machines": {
+            "dev-machine": {
+              "volumes": {
+                "m2": {
+                  "path": "/home/user/.m2/"
+                }
+              },
+              "installers": [
+                "org.eclipse.che.exec",
+                "org.eclipse.che.terminal",
+                "org.eclipse.che.ws-agent",
+                "org.eclipse.che.ls.js-ts"
+              ],
+              "servers": {
+                "dev-wsagent/wsagent": {
+                  "path": "wsagent",
+                  "protocol": "ws",
+                  "port": "8087"
+                },
+                "GWT-CodeServer": {
+                  "protocol": "http",
+                  "port": "9876"
+                },
+                "IDE-agent-server": {
+                  "protocol": "http",
+                  "port": "8085"
+                },
+                "dev-wsagent/http": {
+                  "path": "api",
+                  "protocol": "http",
+                  "port": "8087"
+                }
+              },
+              "attributes": {
+                "memoryLimitBytes": "7516192768"
+              }
+            }
+          },
+          "recipe": {
+            "location": "eclipse/che-dev:che6",
+            "type": "dockerimage"
+          }
+        }
+      },
+      "name": "default",
+      "defaultEnv": "default",
+      "description": null,
+      "commands": [
+ 
+    },
+    "stackIcon": {
+      "name": "type-che.svg",
+      "mediaType": "image/svg+xml"
+    }
+  }
+]

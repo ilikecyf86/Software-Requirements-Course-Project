@@ -1,0 +1,3 @@
+Network Diagnostic Tool Investigation
+kind/task 
+Investigate diagnostic tool that will test network to tell user problems that could prevent workspace from starting.

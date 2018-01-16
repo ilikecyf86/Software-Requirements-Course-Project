@@ -1,0 +1,3 @@
+Executing commands on Target through Eclipse che
+kind/question 
+Hi, When Eclipse Che executes commands on a target board, does it use an IP address to send the command to the target? or is there a serial interface for that? Is the command invoked on the target through ssh? regards Vijay

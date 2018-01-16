@@ -1,0 +1,3 @@
+Investigate reason of failing CheckWorkWithVSTSProviderTest
+kind/task 
+The tests that check VSTS oauth authorization have fallen last week. We need to clarify why it happened and fix the tests or create dependent issue if it need.

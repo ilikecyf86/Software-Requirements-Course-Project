@@ -1,0 +1,3 @@
+GitHub plugin
+kind/question kind/enhancement kind/question 
+Hi! I'd be interested whether there will be a GitHub plugin. Something like being able to check out various pull requests in an own workspace, give line comments, create issues, etc. Would simplify code reviews dramatically. There could be also a .cherc file (not GitHub-specific), basically a shell script that executes all steps on workspace startup to configure project-specific configuration. This would enable to check out and run/test any commit.

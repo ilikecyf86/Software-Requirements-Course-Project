@@ -1,0 +1,3 @@
+Develop plugins on windows
+kind/question 
+whether support develop on windows？I want to build che source code on windows use eclipse，and add a sample plugins in che.if it is feasible？

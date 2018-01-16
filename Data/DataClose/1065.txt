@@ -1,0 +1,3 @@
+Terminal loses text selection in the first line.
+kind/bug team/enterprise status/open-for-dev 
+Reproduction Steps: Run workspace. Select text in the first line of the terminal and only one line. Actual result: terminal loses selection in the first line Expected result: text selection should not be lost. OS and version: Fedora 25, but I think it's doesn't matter. CHE version: 5.10.0-SNAPSHOT Google Chrome version: 58.0.3029.81 Firefox version: 53

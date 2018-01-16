@@ -1,0 +1,3 @@
+After deleting project , project commands still present
+kind/bug 
+This is issue related with epic #4511 Reproduction Steps: Go to spring project Delete this project Go to the command explorer Pay attention to the commands list Expected behavior : Commands will be remove with project . Observed behavior : Commands stay after deleting project . See attachment :

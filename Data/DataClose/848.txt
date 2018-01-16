@@ -1,0 +1,3 @@
+Custom graphic editors mixed with text editors
+
+Hello, I am trying to create a custom graphic editor which can act like text editors (open/close and side by side): File1.txt and File2.txt are classic text editors while Custom editor and Custom editor 2 are graphic editors whose the content will be filled by using JavaScript. Of course the above screenshot is a montage. I'm using CHE 5.10.0. EDIT: I also want to say that the graphical editor is not linked with a file.

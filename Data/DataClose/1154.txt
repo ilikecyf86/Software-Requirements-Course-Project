@@ -1,0 +1,21 @@
+Wrong inner loop indexer
+kind/question kind/bug kind/question team/enterprise severity/P2 sprint/next-sprint status/open-for-dev sprint/current-sprint sprint/next-sprint sprint/current-sprint status/open-for-dev 
+Hi In a recent snapshot, I've found the following suspicious code at plugins/plugin-debugger/che-plugin-debugger-ide/src/main/java/org/eclipse/che/plugin/debugger/ide/debug/VariableNodeDataAdapter.java 123         for (int i = 0; i < relativeNodePath.size(); i++) {
+124             String path = relativeNodePath.get(i);
+125             if (localRoot != null) {
+126                 List<MutableVariable> variables = new ArrayList<>(localRoot.getVariables());
+127                 localRoot = null;
+128                 for (int j = 0; j < variables.size(); j++) {
+129                     MutableVariable variable = variables.get(i);
+130                     if (variable.getName().equals(path)) {
+131                         localRoot = variable;
+132                         break;
+133                     }
+134                 }
+135 
+136                 if (i == (relativeNodePath.size() - 1)) {
+137                     return localRoot;
+138                 }
+139             }
+140         }
+ In Line 129, should the indexer, i, in variables.get(i) be j? This might be a trivial issue but wanted to report just in case. Thanks!

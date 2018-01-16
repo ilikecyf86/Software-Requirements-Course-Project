@@ -1,0 +1,137 @@
+Could not start workspace workspace-man. Reason: Start of environment 'workspace-man' failed. Error: Can't create folder for the logs of machine
+kind/question 
+I was advised in #3923 to write my own Dockerfile to workaround the stack ui issue described in #3883 . However, doing that I cannot launch the resulting workspace, and I get this error: Could not start workspace workspace-man. Reason: Start of environment 'workspace-man' failed. Error: Can't create folder for the logs of machine
+ Reproduction Steps: Create new Workspace + Project in one go at the initial dashboard view you get on first launch with no workspaces/projects present, and choose "Stack Authoring" with a custom Dockerfile: FROM Ubuntu
+
+RUN apt-get install -y git python3 gcc gcc-c++
+ Wait for loading screen to show up. It will not terminate, so navigate away to the actual workspace listed on the left It will show the IDE interface in an attempt to open up the workspace, and then show the error: Could not start workspace workspace-man. Reason: Start of environment 'workspace-man' failed. Error: Can't create folder for the logs of machine Che version: Your CLI version is 'nightly'.
+Your installed version is '<not-installed>'.
+ (don't ask me why, it runs fine and didn't show <not-installed> before) OS and version: Fedora 25 / Linux cyberman 4.9.3-200.fc25.x86_64 #1 SMP Fri Jan 13 01:01:13 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux Docker version: Client:
+ Version:      1.13.0
+ API version:  1.25
+ Go version:   go1.7.3
+ Git commit:   49bf474
+ Built:        Tue Jan 17 09:58:06 2017
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.13.0
+ API version:  1.25 (minimum version 1.12)
+ Go version:   go1.7.3
+ Git commit:   49bf474
+ Built:        Tue Jan 17 09:58:06 2017
+ OS/Arch:      linux/amd64
+ Experimental: false
+ Che cli.log output: [root@cyberman eclipse-che]# cat data/cli.log 
+Fri Jan 27 09:40:59 UTC 2017
+INFO: (che cli): Checking network... (hint: '--fast' skips nightly, version, network, and preflight checks)
+/usr/bin/curl  "-I -k dockerhub.com -s -o /dev/null --write-out %{http_code}"
+Checking registry for version 'nightly' images
+eval BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+eval BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+eval IMAGE_INIT=eclipse/che-init:nightly
+eval IMAGE_CHE=eclipse/che-server:nightly
+eval UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+eval UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+eval UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+eval UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+INFO: (che cli):  Loading cli...
+DEBUG: docker_run
+DEBUG: update_image
+INFO: (che download):  Pulling image eclipse/che:nightly
+
+docker pull eclipse/che:nightly >> "/data/cli.log" 2>&1
+
+DEBUG: is_initialized
+DEBUG: cli_parse
+DEBUG: cmd_start
+DEBUG: is_initialized
+DEBUG: is_docker_for_mac
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che start):  Eclipse Che is already running
+INFO: (che start):  Server logs at "docker logs -f che"
+DEBUG: is_initialized
+INFO: (che start):  Ver: <not-configed>
+INFO: (che start):  Use: http://172.17.0.1:8080
+INFO: (che start):  API: http://172.17.0.1:8080/swagger
+Fri Jan 27 12:14:22 UTC 2017
+INFO: (che cli): Checking network... (hint: '--fast' skips nightly, version, network, and preflight checks)
+/usr/bin/curl  "-I -k dockerhub.com -s -o /dev/null --write-out %{http_code}"
+Checking registry for version 'nightly' images
+eval BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+eval BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+eval IMAGE_INIT=eclipse/che-init:nightly
+eval IMAGE_CHE=eclipse/che-server:nightly
+eval UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+eval UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+eval UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+eval UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+INFO: (che cli):  Loading cli...
+DEBUG: docker_run
+DEBUG: update_image
+INFO: (che download):  Pulling image eclipse/che:nightly
+
+docker pull eclipse/che:nightly >> "/data/cli.log" 2>&1
+
+DEBUG: is_initialized
+DEBUG: cli_parse
+DEBUG: cmd_version
+Your CLI version is 'nightly'.
+DEBUG: is_initialized
+Your installed version is '<not-installed>'.
+
+Available on DockerHub:
+/usr/bin/curl  "-s https://hub.docker.com/v2/repositories/eclipse/che/tags/"
+  nightly
+  latest
+  5.1.2
+  5.1.1
+  5.1.0
+  5.0.1
+  5.0.0
+  5.0.0-latest
+  5.0.0-M8
+  5.0.0-M7
+  See older versions at: "https://hub.docker.com/v2/repositories/eclipse/che/tags/?page=2"
+Fri Jan 27 12:15:14 UTC 2017
+INFO: (che cli): Checking network... (hint: '--fast' skips nightly, version, network, and preflight checks)
+/usr/bin/curl  "-I -k dockerhub.com -s -o /dev/null --write-out %{http_code}"
+Checking registry for version 'nightly' images
+eval BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+eval BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+eval IMAGE_INIT=eclipse/che-init:nightly
+eval IMAGE_CHE=eclipse/che-server:nightly
+eval UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+eval UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+eval UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+eval UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+INFO: (che cli):  Loading cli...
+DEBUG: docker_run
+DEBUG: update_image
+INFO: (che download):  Pulling image eclipse/che:nightly
+
+docker pull eclipse/che:nightly >> "/data/cli.log" 2>&1
+
+DEBUG: is_initialized
+DEBUG: cli_parse
+DEBUG: cmd_version
+Your CLI version is 'nightly'.
+DEBUG: is_initialized
+Your installed version is '<not-installed>'.
+
+Available on DockerHub:
+/usr/bin/curl  "-s https://hub.docker.com/v2/repositories/eclipse/che/tags/"
+  nightly
+  latest
+  5.1.2
+  5.1.1
+  5.1.0
+  5.0.1
+  5.0.0
+  5.0.0-latest
+  5.0.0-M8
+  5.0.0-M7
+  See older versions at: "https://hub.docker.com/v2/repositories/eclipse/che/tags/?page=2"
+[root@cyberman eclipse-che]#

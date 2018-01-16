@@ -1,0 +1,3 @@
+[Regression] Commit window doesn't appear if any file is locked while working with subversion
+kind/bug selenium/failure severity/P2 selenium/failure 
+Reproduction Steps: Create any workspace and start import project Open from the project any file and from the Subversion menu select the Get Lock Do some changes in the file and from the Subversion menu select the Commit Expected behavior: The commit window appeared. Observed behavior: Nothing changed. In browsers console there is error: _app-0.js:16424 ERROR (org.eclipse.che.plugin.svn.ide.commit.CommitPresenter):. The Commit window will appear if unlock the file. Che version: 5.19.0-SNAPSHOT OS and version: Fedora 25 Failed test: LockFileTest

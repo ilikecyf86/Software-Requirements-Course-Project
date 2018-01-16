@@ -1,0 +1,3 @@
+Simplify and unify golang agents dependencies structure
+kind/task 
+We use some golang libraries for our golang based agents. we moved some of them several times and now structure is not very clean. We should: Vendor this commit of gorilla/websocket instead of using this dependency. Remove this lib because it is already vendored in the main Che repo. Vendor this commit of kr/pty instead of using this dependency and patch it with commit 1 and commit 2 Remove folders pty, websocket-terminal, websocket from Che lib

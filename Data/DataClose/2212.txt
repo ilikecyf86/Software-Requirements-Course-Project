@@ -1,0 +1,3 @@
+The eclipse che can't start a workspace
+
+when I create a workspace the ide keeps telling me initializing the workspace for ever! 1i used bitnami to initialize for me a machine with eclipse che in the cloud 2I tried to create a worksapace i allocated 4 GB of RAM and used java stack for it then it keeps initializing it 4 ever SPECS: Docker version : 1.12.1 machine ram: 13 GB diskspace 500GB

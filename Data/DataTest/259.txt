@@ -1,0 +1,3 @@
+Refactor SVN plugin console to be displayed in 'Consoles' tab
+Improvement 
+Currently Subversion console opens in a new console tab named 'Subversion'. Refactor SVN plugin to display its console in 'Consoles' tab properly same as Git console does.

@@ -1,0 +1,3 @@
+Slow workspace startup caused by chmod
+kind/question 
+Please could someone kindly explain what the purpose of this chmod line in the ws-agent startup is? find /projects -type d -exec ${SUDO} chmod 755 {} \; We run on EBS so IO is not as good as local and with our very large projects, this can take some time to complete making WS startup slow. Why do all workspace sub directories need to be 755 and have that done to them on every startup?

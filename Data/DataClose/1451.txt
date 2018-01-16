@@ -1,0 +1,3 @@
+Create maven plugin and generate resulting IDE.gwt.xml
+kind/task sprint/next-sprint status/open-for-dev team/platform sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Create(modify existed) a maven plugin and generate resulting IDE.gwt.xml from the parts of XXX.gwt.xml files that can be found in classpath.

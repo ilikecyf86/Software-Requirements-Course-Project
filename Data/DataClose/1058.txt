@@ -1,0 +1,11 @@
+String Written to Dev-Machine stdout not Escaped Properly
+kind/bug 
+For debugging purposes, I have written the following string to stdout of the ws-agent: <span>
+<?php
+        echo "Hallo, ich bin ein PHP-Skript!";
+?>
+</span> 
+ The text shows up in the console like this: [STDOUT] 
+[STDOUT]         echo "Hallo, ich bin ein PHP-Skript!";
+[STDOUT] ?>
+ I suspect there is unsufficient quoting for html text at work here. My expectation would be that the html tags show up in the output.

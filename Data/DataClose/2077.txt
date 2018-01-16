@@ -1,0 +1,3 @@
+Failed to inject orion editor
+kind/question 
+I am opening che workspace url(http://ip-address/dashboard/#/ide/che/wksp-3h29) and the trying to open project file bur getting an error "failed to inject orion editor" Is there any ip address getting blocked??

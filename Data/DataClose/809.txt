@@ -1,0 +1,3 @@
+Adapt JUnit4 runner according new API
+kind/enhancement team/ide status/in-progress 
+No description provided.

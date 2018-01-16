@@ -1,0 +1,3 @@
+ide/gwt-logger Project not Compatible with M2E
+kind/enhancement 
+The structure of the project ide/gwt-logger is not properly readable in Eclipse with M2E (target folders being nested and folder structure does not match package statements in files). I believe we can easily restructure the project to work in Eclipse. Stand by for PR.

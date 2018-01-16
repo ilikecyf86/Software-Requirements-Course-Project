@@ -1,0 +1,3 @@
+gpu support with docker eclipse-che/workspace
+kind/question 
+I'm using eclipseche for my python development, and I need to use gpu during programming. but currentlt there is no gpu option when creating workspace. Is there any work around or plan for implementation of gpu support on eclipse che?

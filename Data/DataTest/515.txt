@@ -1,0 +1,23 @@
+Documentation for running Che using docker-compose + potentially nginx-proxy & on carina
+kind/question 
+Background: I'm trying to run Che on Carina. I'm also using nginx-proxy, but that's important for #238. Problem: I can't create a new workspace. I have the following docker-compose.yml: che_app:
+  image: "codenvy/che:no_dnd"
+  restart: "always"
+  environment:
+    - "VIRTUAL_HOST=sub.yourdomain.org"
+    - "VIRTUAL_PORT=8080"
+    - "TZ=America/Mountains"
+  volumes:
+    - "/var/run/docker.sock:/var/run/docker.sock"
+  volumes_from:
+    - "che_data"
+
+che_data:
+  image: "codenvy/che:no_dnd"
+  environment:
+    - "TZ=America/Mountains"
+  volumes:
+    - "/home/user/che/lib-copy"
+    - "/home/user/che/workspaces"
+    - "/home/user/che/tomcat/temp/local-storage"
+  entrypoint: "true" The trouble is I'm seeing [ERROR] org.eclipse.che.plugin.docker.client.DockerException: Error response from docker API, status: 500, message: Cannot start container a9ab4a017b3f7a68dc952eb7440cb964af60900a42ef620e86110368ca7b0c1a: [8] System error: permission denied. I'm guessing the problem is that by leaving DOCKER_MACHINE_HOST as localhost, Che is unable to get permission to spin up new containers. I'm considering (and briefly tried a few combinations of): adding net: "host" adding pid: "host" sed -e "s/HOSTIP/$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' swarm-manager)/g" docker-compose.yml | docker-compose --file - u And suggestions as to how to get past permission denied would be greatly appreciated. I'll post anything I figure out. Spun out of #257. I release all rights to the following information (i.e. feel free to use it in the docs if it's useful and correct). I'm not a pro though so take what I say and double check it's true.

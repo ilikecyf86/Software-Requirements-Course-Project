@@ -1,0 +1,3 @@
+CHE-6: Persist workspace logs
+severity/P1 target/che6 team/platform team/platform 
+Currently, workspace logs are not saved anywhere which makes debugging and investigating issues quite problematic.

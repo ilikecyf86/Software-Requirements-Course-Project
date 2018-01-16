@@ -1,0 +1,14 @@
+console-python3-simple has strange attribute
+kind/bug kind/task sprint/next-sprint team/platform status/open-for-dev kind/task status/pending-merge status/open-for-dev sprint/current-sprint sprint/next-sprint status/pending-merge sprint/current-sprint 
+"name": "console-python3-simple",
+    "displayName": "console-python3.5-simple",
+    "path": "/console-python3-simple",
+    "description": "Simple Python3.5 Project.",
+    "projectType": "python",
+    "mixins": [],
+    "attributes": {
+      "language": [
+        "ruby"
+      ]
+    },
+ Looks like language have to be python

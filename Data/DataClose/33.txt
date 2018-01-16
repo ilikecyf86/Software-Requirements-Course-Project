@@ -1,0 +1,3 @@
+Adapt ci job for working wit jdt.ls extension
+kind/task team/production sprint/current-sprint level/intermediate status/in-progress level/intermediate status/in-progress 
+Description che-ls-jdt project has old version of parent pom and the build is failed. [FATAL] Non-resolvable parent POM: Could not find artifact org.eclipse.che.depmgt:maven-depmgt-pom:pom:6.0.0-M2-SNAPSHOT in codenvy-public-repo Need to use old version of the parent for building che-ls-jdt project. Parent of jdt.ls extension is https://github.com/eclipse/che-dependencies/tree/5730_java_ls_poc

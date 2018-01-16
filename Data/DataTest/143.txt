@@ -1,0 +1,9 @@
+Impossible the update the copyright header
+kind/question 
+I am working on a fix and I tried to update the copyright header in the source code. Whatever change I make results in a fail in the Maven build: [INFO] --- license-maven-plugin:2.10:check (check-headers) @ che-core-api-machine ---
+[INFO] Checking licenses...
+[WARNING] Missing header in: /home/kraev/git/che/wsmaster/che-core-api-machine/src/main/java/org/eclipse/che/api/machine/server/MachineInstanceProviders.java
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+ This way it is impossible for contributors to denote their contributions in the copyright header.

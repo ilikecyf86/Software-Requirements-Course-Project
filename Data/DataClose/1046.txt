@@ -1,0 +1,11 @@
+Save Factory Api
+kind/question 
+Hi, Am trying to use POST request based on /factory/resolver to create a factory. The request is failing with status code 400. Here are the details: URL:
+http://servername:portname/api/factory/resolver?validate=false
+Request Headers:
+Accept: application/json
+Content-Type: application/json
+User-Agent: Swagger-Codegen/1.0.0/java
+Request Content:
+{"name":"Ticket-12345-Factory-1494394672825","workspace":{"name":"Ticket-12345","defaultEnv":"wksp-54hm","environments":{"wksp-54hm":{"recipe":{"type":"dockerfile","content":"FROM eclipse/ubuntu_jre \n# This Dockerfile creates an DockerImage based on Ubuntu\n# Adds the 6i Platform SDK tools compiler, etc.\n# in addition to that are other tools installed xz, python, git, ...\nENV http_proxy http://172.17.0.1:3128\nENV https_proxy http://172.17.0.1:3128\nUSER root\nRUN apt-get update \u0026\u0026 apt-get install -y apt-utils xz-utils python make cmake git-core \nADD http://nexus.emt.cdg-smt.de.bosch.com:8280/nexus/content/repositories/6i/SDK/poky-glibc-x86_64-core-image-6ipf-corei7-64-toolchain-2.1.sh script.sh\nRUN chmod +x script.sh \u0026\u0026 chown user script.sh\nUSER user\nRUN bash script.sh\n \nENV TICKET 12345\n","contentType":"text/x-dockerfile"},"machines":{"dev-machine":{"attributes":{"memoryLimitBytes":"2147483648","ticket":"12345"},"agents":["org.eclipse.che.ws-agent","org.eclipse.che.ssh","org.eclipse.che.terminal","org.eclipse.che.exec"],"servers":{}}}}},"projects":[{"name":"cppsample","type":"blank","path":"/cppsample","attributes":{},"source":{"location":"https://github.com/che-samples/console-cpp-simple.git","type":"git","parameters":{}},"links":[],"problems":[],"mixins":[]}],"commands":[{"name":"run","type":"custom","attributes":{"goal":"Run","previewUrl":""},"commandLine":"cd ${current.project.path} \u0026\u0026 make \u0026\u0026 ./a.out"}],"links":[]},"v":"4.0"}
+ Post request with /factory url is working fine but is deprecated. [http://servername:portname/api/factory. What is wrong with /factory/resolver call ?

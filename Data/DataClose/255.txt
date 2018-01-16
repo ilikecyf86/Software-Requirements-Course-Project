@@ -1,0 +1,3 @@
+Stabilization selenium tests in "intelligencecommand", "autocomplete", "projectexplorer" packages
+kind/task status/in-progress team/production sprint/current-sprint status/code-review status/in-progress status/code-review 
+After completed this issue #6876 we have results. According to this results we need to stabilize : DeleteProjectTest NavigationByKeyboardTest AutocompleteProposalJavaDocTest InheritClassTest And rework xpath in ContextMenuEditorTest

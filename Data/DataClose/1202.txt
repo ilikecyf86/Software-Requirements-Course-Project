@@ -1,0 +1,58 @@
+Che doesn't display warning for workspace which is stopped after the several hours of inactivity.
+kind/bug team/ide sprint/next-sprint severity/P1 sprint/current-sprint sprint/next-sprint 
+Reproduction Steps: Create and open java workspace, create java project and open some class in editor. Switch to another tab of browser for several hours. Go to dashboard and stop workspace. Return to tab with Che. Expected behavior: There is warning message at the top of Che: Workspace is not running Actual wrong behavior: Che looks like there is okay with workspace. OS and version: Ubuntu 14.04 Chrome Version 57.0.2987.110 (64-bit) Che version 5.7.0-SNAPSHOT, revision :6e0986b3c55bd39d build time :2017-04-02 17:08:28 Diagnostics: ndp@ndp:~/projects/che$ che info
+WARNING: No swap limit support
+INFO:  ---------------------------------------
+INFO:  -------------   CLI INFO   ------------
+INFO:  ---------------------------------------
+INFO:  
+INFO:  ---------  PLATFORM INFO  -------------
+INFO:  CLI DEFAULT PROFILE       = not set
+INFO:  CHE_VERSION               = latest
+INFO:  CHE_CLI_VERSION           = latest
+INFO:  CHE_UTILITY_VERSION       = nightly
+INFO:  DOCKER_INSTALL_TYPE       = native
+INFO:  DOCKER_HOST_IP            = 172.17.0.1
+INFO:  IS_NATIVE                 = YES
+INFO:  IS_WINDOWS                = NO
+INFO:  IS_DOCKER_FOR_WINDOWS     = NO
+INFO:  IS_DOCKER_FOR_MAC         = NO
+INFO:  IS_BOOT2DOCKER            = NO
+INFO:  HAS_DOCKER_FOR_WINDOWS_IP = NO
+INFO:  IS_MOBY_VM                = NO
+INFO:  HAS_CHE_ENV_VARIABLES     = YES
+INFO:  HAS_TEMP_CHE_PROPERTIES   = NO
+INFO:  IS_INTERACTIVE            = YES
+INFO:  IS_PSEUDO_TTY             = YES
+INFO:  
+INFO: ---------------------------------------
+INFO: ---------   LAUNCHER INFO  ------------
+INFO: ---------------------------------------
+INFO: 
+INFO: ---------  PLATFORM INFO  -------------
+INFO: DOCKER_INSTALL_TYPE       = native
+WARNING: No swap limit support
+INFO: DOCKER_HOST_OS            = Ubuntu 14.04.5 LTS
+INFO: DOCKER_HOST_IP            = 172.17.0.1
+INFO: DOCKER_HOST_EXTERNAL_IP   = not set
+INFO: DOCKER_DAEMON_VERSION     = 17.03.0-ce
+INFO: 
+INFO: 
+INFO: --------- CHE INSTANCE LIST  ----------
+INFO: 
+INFO: 
+INFO: ----  CURRENT COMMAND LINE OPTIONS  ---
+INFO: CHE_VERSION               = latest
+INFO: CHE_DATA                  = /home/user/che
+INFO: CHE_CONF                  = not set
+INFO: CHE_ASSEMBLY              = not set
+INFO: CHE_PORT                  = 8080
+INFO: CHE_HOST_IP               = 172.17.0.1
+INFO: CHE_RESTART_POLICY        = no
+INFO: CHE_USER                  = root
+INFO: CHE_LOG_LEVEL             = info
+INFO: CHE_DEBUG_SERVER          = false
+INFO: CHE_DEBUG_SERVER_PORT     = 8000
+INFO: CHE_HOSTNAME              = localhost
+INFO: CHE_SERVER_CONTAINER_NAME = che-server
+INFO: CHE_SERVER_IMAGE_NAME     = codenvy/che-server

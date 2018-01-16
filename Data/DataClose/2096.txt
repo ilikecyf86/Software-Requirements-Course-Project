@@ -1,0 +1,3 @@
+Set uncaught exception handler for executors
+kind/task status/open-for-dev team/platform sprint/next-sprint status/open-for-dev sprint/next-sprint 
+Now in Che uncaught exception handler is not set. Due to this we may miss some bugs. I suggest to set it with com.google.common.util.concurrent.ThreadFactoryBuilder#setUncaughtExceptionHandler or similar method.

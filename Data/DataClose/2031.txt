@@ -1,0 +1,3 @@
+No refresh in project explorer
+
+No refresh happen in project explorer when : you rename a resource you copy/paste a file/folder you create a folder via mkdir cmd Even when you hit the dedicated button, it s random. Che version: 4.7.0

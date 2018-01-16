@@ -1,0 +1,34 @@
+python language server doesn't work
+kind/question kind/bug kind/question severity/P1 status/open-for-dev team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+Hello python language server doesn't work. It is sending http request but e.g. hover doesn't return anything. Is there any log where i can check why nothing returned? Last time I try (before updating) this problem sometimes appear but I could fixed it with restart the python language server. Reproduction Steps: Started workspace from python stack activate python language server OS and version: Mac OS 10.12.4 che 5.9.1 [STDOUT] 2017-05-02 12:15:21,387[nio-4401-exec-5]  [INFO ] [.c.a.l.r.ServerInitializerImpl 168]  - Initialized Language Server python on project /projects/First-Project
+[STDERR] May 02, 2017 12:15:23 PM org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor run
+[STDERR] SEVERE: java.lang.IllegalStateException: Expected STRING but was BEGIN_OBJECT
+[STDERR] com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected STRING but was BEGIN_OBJECT
+[STDERR] 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:200)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:810)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:875)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapterFactory$Adapter.createMessage(MessageTypeAdapterFactory.java:162)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapterFactory$Adapter.read(MessageTypeAdapterFactory.java:130)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapterFactory$Adapter.read(MessageTypeAdapterFactory.java:54)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:810)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:775)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:724)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:696)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.MessageJsonHandler.parseMessage(MessageJsonHandler.java:70)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:148)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:77)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:68)
+[STDERR] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+[STDERR] 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[STDERR] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+[STDERR] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+[STDERR] 	at java.lang.Thread.run(Thread.java:745)
+[STDERR] Caused by: java.lang.IllegalStateException: Expected STRING but was BEGIN_OBJECT
+[STDERR] 	at com.google.gson.internal.bind.JsonTreeReader.nextString(JsonTreeReader.java:154)
+[STDERR] 	at com.google.gson.internal.bind.TypeAdapters$13.read(TypeAdapters.java:358)
+[STDERR] 	at com.google.gson.internal.bind.TypeAdapters$13.read(TypeAdapters.java:346)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:78)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:54)
+[STDERR] 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1.read(ReflectiveTypeAdapterFactory.java:103)
+[STDERR] 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:196)
+[STDERR] 	... 18 more

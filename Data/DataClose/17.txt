@@ -1,0 +1,3 @@
+Http11Processor in two threads, leading to java.lang.IllegalStateException: Unexpected state: headers already parsed. Buffer not recycled
+team/platform kind/bug target/che6 
+Description We noticed this issue during integration test che 6 on ocp https://bz.apache.org/bugzilla/show_bug.cgi?id=60918

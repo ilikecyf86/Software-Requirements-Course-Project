@@ -1,0 +1,15 @@
+Starting eclipse che with parameters in docker outputs "You are missing a mandatory parameter"
+kind/question 
+Reproduction Steps: I am trying to run eclipse che following the documentation. Upon providing the command : docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/docker eclipse/che start
+ Always provides this output: INFO: Welcome to Eclipse Che!
+INFO:
+INFO: You are missing a mandatory parameter:
+INFO:    1. Mount 'docker.sock' for accessing Docker with unix sockets.
+INFO:    2. Or, set DOCKER_HOST to Docker's daemon location (unix or tcp).
+INFO:
+INFO: Mount Syntax:
+INFO:    Start with 'docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock' ...
+INFO:
+INFO: DOCKER_HOST Syntax:
+INFO:    Start with 'docker run -it --rm -e DOCKER_HOST=<daemon-location> ...'
+ Which I do not understand as I am explicitly providing the same parameters. OS and version: Ubuntu 16.04 I am new to docker. Point to note that I am not the sudo user, my user just have been added to docker group.

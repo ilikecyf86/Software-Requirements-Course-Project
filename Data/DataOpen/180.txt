@@ -1,0 +1,3 @@
+[CHE 6] Handle an error on starting a workspace during workspace creation flow
+kind/bug status/open-for-dev target/che6 team/plugin 
+Description Handle an error on starting a workspace during workspace creation flow. See gif file

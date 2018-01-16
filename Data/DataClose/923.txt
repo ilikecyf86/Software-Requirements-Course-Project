@@ -1,0 +1,3 @@
+debugging golang with gdb - cannot connect to localhost:8080
+kind/question 
+Reproduction Steps: Running Che with the following docker run: docker run -it --privileged --rm -v /var/run/docker.sock:/var/run/docker.sock -v $(PWD):/data eclipse/che:latest start Create Workspace; selecting go stack with web-go-simple install gdb: sudo apt-get update sudo apt-get install gdb In the Che editor menu: "Run / Edit Debug Configuration" Select the "gdb/ remote gdb" with port 8080. Press "Debug" Error message: "Can not connect to: localhost:8080." OS and version: Mac 10.12.3 Docker version: 17.03.1-ce

@@ -1,0 +1,6 @@
+Cannot start eclipse/che:5.10.0 due to wrong version check
+kind/bug severity/P1 status/code-review status/code-review 
+When executing docker run with eclipse/che:5.10.0 or eclipse/che:latest the start process aborts with WARN: Newer version '5.9.1' available Reproduction Steps: # docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /eclipse-che:/data eclipse/che:5.10.0 start Output: WARNING: No swap limit support
+INFO: (che cli): 5.10.0 - using docker 17.05.0-ce / native
+WARN: Newer version '5.9.1' available
+ My assumption is that there is an error in startup_04_pre_cli_init.sh (line 291) The function less_than() only works if the strings are the same length. Why is version_lt() not used instead? Before: line 291: if less_than $BASE_VERSION $TAG; then After: line 291: if version_lt $BASE_VERSION $TAG; then

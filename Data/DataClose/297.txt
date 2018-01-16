@@ -1,0 +1,3 @@
+[REGRESSION] import from github does not work if ssh key wasn't added before
+kind/bug severity/P1 team/ide selenium/failure selenium/failure 
+can be reproduced on che / che-multiuser / codenvy steps to reproduce: open IDE go to Workspaces > Import project select GITHUB and click Load Repo chose any loaded repo and click import expected behaviour: ssh key will be added for github and project will be imported actual results: error: NOTE: Import works OK if ssh key for git hub added first manually from preferences.

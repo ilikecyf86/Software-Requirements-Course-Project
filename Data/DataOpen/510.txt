@@ -1,0 +1,3 @@
+Wish - CLI notifies admin upon start that newer image exists if using "latest" tag
+kind/enhancement severity/P1 severity/P2 severity/P1 severity/P2 
+When running the following Che CLI command to start Che: docker run eclipse/che start It started the previously download image while new ones are available. We have added some enhancement for the nightly images: #3640 #3671 But it seems we are still having the problem with latest Reproduction Steps: Che version: 5.0.0 / 5.0.1 / 5.1.0

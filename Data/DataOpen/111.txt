@@ -1,0 +1,3 @@
+Document JSON-RPC best practices
+kind/docs team/ide 
+This piece of doc should talk about how JSON-RPC is used in Che and communication between components. Ideally, point to real life examples with, say, project import. Maybe look for closed PRs with initial description of JSON-RPC related things.

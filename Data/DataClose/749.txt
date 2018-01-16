@@ -1,0 +1,3 @@
+[Regression] Some workspaces which created from the Dashboard don't have commands
+kind/bug severity/P2 team/plugin status/open-for-dev sprint/next-sprint severity/blocker severity/P2 sprint/current-sprint sprint/next-sprint status/in-progress status/open-for-dev status/code-review status/in-progress status/code-review sprint/current-sprint 
+Reproduction Steps: Create and start a workspace from the Java stack with the web-java-spring project Check availability of the project's command by in the project context menu Observed behavior: The project's commands aren't exist in the context menu and will appear there after refreshing a page. This problem are in the Java, Bitnami, My-Sql, Node stacks Che version: 5.15.0-SNAPSHOT OS and version: Fedora 25

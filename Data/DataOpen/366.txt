@@ -1,0 +1,3 @@
+Editor is not restored after refresh page sometimes
+kind/bug 
+Reproduction Steps: Open some java class Split this one Refresh page Also please see video. The issue is not reproduced permanently. OS and version: Fedora 25 Che version: Version: 5.15.0-SNAPSHOT Revision: 8d2e43bf6e44aa86

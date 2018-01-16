@@ -1,0 +1,3 @@
+autobracket in C-Like Languages Seems to follow only JS-like bracket syntax
+kind/question 
+After meddling with the C# for a while, I noticed the autobracket behaviour only sticks with the JS-style bracket syntax. C# Standards define it's brackets to be a line after it's statement along with some other C-like langs (like C++) OS and version: Codenvy 5.15.0 on Docker Toolbox on Windows 10 10586

@@ -1,0 +1,8 @@
+Add action to highlight a specific excerpt of code in the editor
+team/enterprise kind/task status/open-for-dev 
+This action extends functionality of guides #6150 The parameters of the action to highlight a specific snippet: fromLine 
+fromCharacter
+toLine
+toCharacter
+ to highlight a whole line: line
+ Use Editor standard selection to highlight the excerpt.

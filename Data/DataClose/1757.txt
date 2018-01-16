@@ -1,0 +1,3 @@
+Decouple different agents on different maven modules
+kind/task sprint/next-sprint status/open-for-dev team/enterprise status/in-progress status/open-for-dev sprint/current-sprint sprint/next-sprint sprint/next-sprint status/code-review sprint/current-sprint status/in-progress status/code-review sprint/next-sprint 
+In this Pr #3647 we will move all agent related code to single folder agents But now they are all couples in single folder. The goal of this issues is to decouple in on different maven modules

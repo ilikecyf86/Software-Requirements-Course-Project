@@ -1,0 +1,3 @@
+Create widget for displaying popover
+kind/enhancement sprint/next-sprint status/open-for-dev team/plugin sprint/current-sprint sprint/next-sprint status/in-progress status/open-for-dev sprint/current-sprint status/code-review status/in-progress status/code-review 
+Need to create widget for displaying advanced filter and also can be used for import project source popup. The sample:

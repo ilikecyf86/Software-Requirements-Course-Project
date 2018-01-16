@@ -1,0 +1,3 @@
+Changes to files not being reflected in IDE
+kind/bug severity/P1 team/ide status/in-progress status/info-needed status/in-progress 
+Files which are open in the workspace are not updated in IDE when updated on the file system. Reproduction Steps: Open file and edit in IDE Save file git reset --hard HEAD Expected result File should appear in IDE as it was in the last commit Actual result File remains the same Close file, and reopen required to update file in IDE OS and version: Ubuntu Che 5.17 Google Chrome

@@ -1,0 +1,3 @@
+We need refresh opened java files after changing Java Compile Preferences
+Improvement 
+Steps to reproduce: Create new project from Spring sample. Open project and wait until IDE resolves dependencies. Open GreetingController class from created project. Add code "int l = 0;" to the method "handleRequest"; IDE should create warning marker for added code line. Go to: Profile -> Preferences -> Java Compiler Set value "error" for properties: "Value of local variable is not used": . Click "Save" button. Actual result: In the opened editor still exist warning marker. It'll be changed only after reopen file. Expected result: editor should change warning marker to the error marker because java compiler preference was changed.

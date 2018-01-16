@@ -1,0 +1,105 @@
+Can't create workspace
+
+Description When trying to create a workspace I get the following error: I first tried this with eclipse/che:5.1.2 where I had no issues. Using eclipse/che:latest returns me with the error. I used the following command to start Che: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /home/ubuntu:/data -e CHE_HOST="172.28.0.58" eclipse/che:$version start Che server is running on a remote server. I connect to the server via VPN. OS and version: OS: Ubuntu Xenial Docker version 1.12.6 Diagnostics: Log from docker logs -f che: ubuntu@busy-ox:~$ docker logs -f che
+Using embedded assembly...
+ERROR: user root does OK have write permissions to /conf
+Using embedded che.properties... Copying template to /conf/che.properties
+2017-11-09 14:03:41,875[main]             [INFO ] [o.a.c.s.VersionLoggerListener 89]    - Server version:        Apache Tomcat/8.5.11
+2017-11-09 14:03:41,879[main]             [INFO ] [o.a.c.s.VersionLoggerListener 91]    - Server built:          Jan 10 2017 21:02:52 UTC
+2017-11-09 14:03:41,880[main]             [INFO ] [o.a.c.s.VersionLoggerListener 93]    - Server number:         8.5.11.0
+2017-11-09 14:03:41,880[main]             [INFO ] [o.a.c.s.VersionLoggerListener 95]    - OS Name:               Linux
+2017-11-09 14:03:41,880[main]             [INFO ] [o.a.c.s.VersionLoggerListener 97]    - OS Version:            4.4.0-98-generic
+2017-11-09 14:03:41,881[main]             [INFO ] [o.a.c.s.VersionLoggerListener 99]    - Architecture:          amd64
+2017-11-09 14:03:41,881[main]             [INFO ] [o.a.c.s.VersionLoggerListener 101]   - Java Home:             /usr/lib/jvm/java-1.8-openjdk/jre
+2017-11-09 14:03:41,881[main]             [INFO ] [o.a.c.s.VersionLoggerListener 103]   - JVM Version:           1.8.0_111-internal-alpine-r0-b14
+2017-11-09 14:03:41,882[main]             [INFO ] [o.a.c.s.VersionLoggerListener 105]   - JVM Vendor:            Oracle Corporation
+2017-11-09 14:03:41,882[main]             [INFO ] [o.a.c.s.VersionLoggerListener 107]   - CATALINA_BASE:         /home/user/eclipse-che/tomcat
+2017-11-09 14:03:41,882[main]             [INFO ] [o.a.c.s.VersionLoggerListener 109]   - CATALINA_HOME:         /home/user/eclipse-che/tomcat
+2017-11-09 14:03:41,883[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dnop
+2017-11-09 14:03:41,883[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+2017-11-09 14:03:41,884[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Xms512m
+2017-11-09 14:03:41,884[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Xmx2048m
+2017-11-09 14:03:41,884[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.security.egd=file:/dev/./urandom
+2017-11-09 14:03:41,885[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -XX:+HeapDumpOnOutOfMemoryError
+2017-11-09 14:03:41,885[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -XX:+UseConcMarkSweepGC
+2017-11-09 14:03:41,885[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -XX:+CMSParallelRemarkEnabled
+2017-11-09 14:03:41,885[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -XX:+UseCMSInitiatingOccupancyOnly
+2017-11-09 14:03:41,886[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -XX:+ScavengeBeforeFullGC
+2017-11-09 14:03:41,886[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -XX:+CMSScavengeBeforeRemark
+2017-11-09 14:03:41,886[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.local.conf.dir=/conf
+2017-11-09 14:03:41,887[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.docker.network=bridge
+2017-11-09 14:03:41,887[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dport.http=8080
+2017-11-09 14:03:41,887[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.home=/home/user/eclipse-che/
+2017-11-09 14:03:41,887[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.logs.dir=/logs
+2017-11-09 14:03:41,888[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.logs.level=INFO
+2017-11-09 14:03:41,888[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djuli-logback.configurationFile=file:/home/user/eclipse-che//tomcat/conf/tomcat-logger.xml
+2017-11-09 14:03:41,888[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+2017-11-09 14:03:41,888[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+2017-11-09 14:03:41,889[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote
+2017-11-09 14:03:41,889[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.ssl=false
+2017-11-09 14:03:41,889[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.authenticate=false
+2017-11-09 14:03:41,890[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.local.conf.dir=/conf
+2017-11-09 14:03:41,890[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.base=/home/user/eclipse-che//tomcat
+2017-11-09 14:03:41,890[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.home=/home/user/eclipse-che//tomcat
+2017-11-09 14:03:41,890[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.io.tmpdir=/home/user/eclipse-che//tomcat/temp
+2017-11-09 14:03:41,967[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 525]  - Initializing ProtocolHandler ["http-nio-8080"]
+2017-11-09 14:03:41,982[main]             [INFO ] [o.a.t.util.net.NioSelectorPool 67]   - Using a shared selector for servlet write/read
+2017-11-09 14:03:41,985[main]             [INFO ] [o.a.catalina.startup.Catalina 617]   - Initialization processed in 431 ms
+2017-11-09 14:03:42,004[main]             [INFO ] [c.m.JmxRemoteLifecycleListener 336]  - The JMX Remote Listener has configured the registry on port 32001 and the server on port 32101 for the Platform server
+2017-11-09 14:03:42,005[main]             [INFO ] [o.a.c.core.StandardService 416]      - Starting service Catalina
+2017-11-09 14:03:42,005[main]             [INFO ] [o.a.c.core.StandardEngine 259]       - Starting Servlet Engine: Apache Tomcat/8.5.11
+2017-11-09 14:03:42,595[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 923]        - Deploying web application archive /home/user/eclipse-che/tomcat/webapps/swagger.war
+2017-11-09 14:03:42,759[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 987]        - Deployment of web application archive /home/user/eclipse-che/tomcat/webapps/swagger.war has finished in 162 ms
+2017-11-09 14:03:42,762[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 923]        - Deploying web application archive /home/user/eclipse-che/tomcat/webapps/ROOT.war
+2017-11-09 14:03:43,466[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 987]        - Deployment of web application archive /home/user/eclipse-che/tomcat/webapps/ROOT.war has finished in 704 ms
+2017-11-09 14:03:43,467[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 923]        - Deploying web application archive /home/user/eclipse-che/tomcat/webapps/docs.war
+2017-11-09 14:03:44,005[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 987]        - Deployment of web application archive /home/user/eclipse-che/tomcat/webapps/docs.war has finished in 538 ms
+2017-11-09 14:03:44,007[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 923]        - Deploying web application archive /home/user/eclipse-che/tomcat/webapps/wsmaster.war
+2017-11-09 14:03:48,321[ost-startStop-1]  [INFO ] [.e.c.c.d.JNDIDataSourceFactory 59]   - This=org.eclipse.che.core.db.h2.H2SQLJndiDataSourceFactory@7a66086d obj=ResourceRef[className=javax.sql.DataSource,factoryClassLocation=null,factoryClassName=org.apache.naming.factory.ResourceFactory,{type=scope,content=Shareable},{type=auth,content=Container},{type=singleton,content=true},{type=factory,content=org.eclipse.che.core.db.h2.H2SQLJndiDataSourceFactory}] name=che Context=org.apache.naming.NamingContext@32866ad9 environment={}
+2017-11-09 14:03:50,752[ost-startStop-1]  [INFO ] [o.e.c.p.o.c.OpenShiftConnector 294]  - openshiftWorkspaceEnvironmentProvider = class org.eclipse.che.plugin.openshift.client.OpenshiftWorkspaceEnvironmentProvider
+2017-11-09 14:03:50,999[ost-startStop-1]  [INFO ] [ogDirSetterEnvVariableProvider 38]   - WsAgentLogDirProvider = org.eclipse.che.plugin.docker.machine.WsAgentLogDirProvider@25d87c48
+2017-11-09 14:03:51,001[ost-startStop-1]  [INFO ] [ogDirSetterEnvVariableProvider 37]   - ExecAgentLogDirProvider = org.eclipse.che.plugin.docker.machine.ExecAgentLogDirProvider@6bbb6116
+2017-11-09 14:03:51,389[ost-startStop-1]  [INFO ] [o.f.c.i.d.DbSupportFactory 44]       - Database: jdbc:h2:che (H2 1.4)
+2017-11-09 14:03:51,443[ost-startStop-1]  [INFO ] [o.f.c.i.util.VersionPrinter 44]      - Flyway 4.0.3 by Boxfuse
+2017-11-09 14:03:51,445[ost-startStop-1]  [INFO ] [o.f.c.i.d.DbSupportFactory 44]       - Database: jdbc:h2:che (H2 1.4)
+2017-11-09 14:03:51,465[ost-startStop-1]  [INFO ] [i.f.CustomSqlMigrationResolver 157]  - Searching for sql scripts in locations [classpath:che-schema]
+2017-11-09 14:03:51,504[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbValidate 44]       - Successfully validated 11 migrations (execution time 00:00.040s)
+2017-11-09 14:03:51,523[ost-startStop-1]  [INFO ] [o.f.c.i.m.MetaDataTableImpl 44]      - Creating Metadata table: "PUBLIC"."schema_version"
+2017-11-09 14:03:51,553[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbMigrate 44]        - Current version of schema "PUBLIC": << Empty Schema >>
+2017-11-09 14:03:51,554[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbMigrate 44]        - Migrating schema "PUBLIC" to version 5.0.0.8.1 - 1__init.sql
+2017-11-09 14:03:51,719[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbMigrate 44]        - Migrating schema "PUBLIC" to version 5.0.0.9.1 - 1__add_index_on_workspace_temporary.sql
+2017-11-09 14:03:51,729[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbMigrate 44]        - Migrating schema "PUBLIC" to version 5.0.0.9.2 - 2__update_local_links_in_environments.sql
+2017-11-09 14:03:51,738[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbMigrate 44]        - Migrating schema "PUBLIC" to version 5.2.0.1 - 1__increase_project_attributes_values_length.sql
+2017-11-09 14:03:51,764[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbMigrate 44]        - Migrating schema "PUBLIC" to version 5.4.0.1 - 1__drop_user_to_account_relation.sql
+2017-11-09 14:03:51,801[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbMigrate 44]        - Migrating schema "PUBLIC" to version 5.4.0.2 - 2__create_missed_account_indexes.sql
+2017-11-09 14:03:51,810[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbMigrate 44]        - Migrating schema "PUBLIC" to version 5.6.0.1 - 1__add_exec_agent_where_terminal_agent_is_present.sql
+2017-11-09 14:03:51,817[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbMigrate 44]        - Migrating schema "PUBLIC" to version 5.7.0.1 - 1__add_factory.sql
+2017-11-09 14:03:51,863[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbMigrate 44]        - Migrating schema "PUBLIC" to version 5.7.0.2 - 2__remove_match_policy.sql
+2017-11-09 14:03:51,903[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbMigrate 44]        - Migrating schema "PUBLIC" to version 5.8.0.1 - 1__add_foreigh_key_indexes.sql
+2017-11-09 14:03:51,924[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbMigrate 44]        - Migrating schema "PUBLIC" to version 5.11.0.1 - 1__optimize_user_search.sql
+2017-11-09 14:03:51,934[ost-startStop-1]  [INFO ] [o.f.c.i.command.DbMigrate 44]        - Successfully applied 11 migrations to schema "PUBLIC" (execution time 00:00.412s).
+2017-11-09 14:03:53,870[ost-startStop-1]  [WARN ] [o.e.c.a.w.s.stack.StackLoader 134]   - No configured image found for stack che-in-che
+2017-11-09 14:03:53,879[ost-startStop-1]  [INFO ] [o.e.c.a.w.s.stack.StackLoader 103]   - Stacks initialization finished
+2017-11-09 14:03:54,062[ost-startStop-1]  [INFO ] [o.e.c.a.m.s.r.RecipeLoader 74]       - Recipes initialization finished
+2017-11-09 14:03:54,083[ost-startStop-1]  [INFO ] [e.c.a.w.s.i.ServerIdleDetector 58]   - Idling che server scheduled [timeout=1800] seconds]
+2017-11-09 14:03:54,086[ted-scheduler-2]  [INFO ] [ockerAbandonedResourcesCleaner 126]  - List containers registered in the api: []
+2017-11-09 14:03:54,093[ted-scheduler-2]  [ERROR] [o.e.c.p.d.c.DockerConnector 1439]    - Docker response doesn't contain any data, though it was expected to contain some.
+2017-11-09 14:03:54,097[ted-scheduler-2]  [ERROR] [ockerAbandonedResourcesCleaner 201]  - Failed to get list of docker networks
+java.io.IOException: Internal server error. Unexpected response body received from Docker.
+	at org.eclipse.che.plugin.docker.client.DockerConnector.parseResponseStreamAndClose(DockerConnector.java:1441)
+	at org.eclipse.che.plugin.docker.client.DockerConnector.getNetworks(DockerConnector.java:1247)
+	at org.eclipse.che.plugin.docker.machine.cleaner.DockerAbandonedResourcesCleaner.cleanNetworks(DockerAbandonedResourcesCleaner.java:180)
+	at org.eclipse.che.plugin.docker.machine.cleaner.DockerAbandonedResourcesCleaner.run(DockerAbandonedResourcesCleaner.java:93)
+	at org.eclipse.che.commons.schedule.executor.LoggedRunnable.run(LoggedRunnable.java:45)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2017-11-09 14:03:54,338[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 987]        - Deployment of web application archive /home/user/eclipse-che/tomcat/webapps/wsmaster.war has finished in 10,331 ms
+2017-11-09 14:03:54,339[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 923]        - Deploying web application archive /home/user/eclipse-che/tomcat/webapps/dashboard.war
+2017-11-09 14:03:54,699[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 987]        - Deployment of web application archive /home/user/eclipse-che/tomcat/webapps/dashboard.war has finished in 360 ms
+2017-11-09 14:03:54,705[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 570]  - Starting ProtocolHandler [http-nio-8080]
+2017-11-09 14:03:54,712[main]             [INFO ] [o.a.catalina.startup.Catalina 668]   - Server startup in 12726 ms

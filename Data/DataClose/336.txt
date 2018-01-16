@@ -1,0 +1,9 @@
+SPI: 'deploy_che.sh' is broken in spi branch
+target/branch kind/bug severity/P1 
+Description Currently it is not possible to deploy che from spi branch to minishift / osio cluster / ocp due to: [CHE] Deploying Che on OSIO (image docker.io/eclipse/che-server:spi)
+sed: -e expression #1, char 11: unknown command:-'
+error: no objects passed to apply`
+ Look like the problem started to appear after the last merge of multi-uesr branch to spi which introduced new MT env. vars: sed "$MULTI_USER_REPLACEMENT_STRING" | \
+sed "$MULTI_USER_HEALTH_CHECK_REPLACEMENT_STRING" | \
+append_after_match "env:" "${MULTI_USER_REPLACEMENT_STRING}" | \
+ Reproduction Steps Run the deploy_che.sh script: OS and version: Linux x64

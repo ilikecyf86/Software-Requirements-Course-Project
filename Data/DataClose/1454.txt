@@ -1,0 +1,3 @@
+The file watcher notification appears when deleting a file
+kind/bug team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint severity/P2 
+Reproduction Steps: Start any workspace with a project Open a file in the Editor Double-click on the file multiple times Delete the file Expected behavior: The file is deleted Observed behavior: The file deleted, "Failed to update content of file(s)" event and the file watcher notifications "External operation File 'file name' is removed" appears Che version: 5.4.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.3 Che install: Docker container Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes]

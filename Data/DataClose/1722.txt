@@ -1,0 +1,3 @@
+Double error notification
+kind/bug team/ide sprint/current-sprint status/in-progress 
+Empty error notification shows, when workspace starting is failed Reproduction Steps: Create new ws and start it; Brake existing WS config and try to start it again Che version: 5.1.0-SNAPSHOT OS and version: Ubuntu-16.04

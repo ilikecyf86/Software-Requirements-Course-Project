@@ -1,0 +1,3 @@
+Add machine button in add workspace has no label.
+kind/bug severity/P2 team/plugin 
+Add machine button in add workspace has no label. Bottom left of image below.

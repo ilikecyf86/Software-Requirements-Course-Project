@@ -1,0 +1,3 @@
+Default Che Java formater should use Google formater rules
+kind/enhancement 
+As we are going to use google formater rules in our coding standards #5772, it makes sense to make it the default formater in Eclipse Che.

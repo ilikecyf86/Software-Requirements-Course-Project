@@ -1,0 +1,3 @@
+Visual mode of terminal is broken when user presses CTRL-\, ENTER in midnight commander
+kind/bug severity/P2 team/plugin 
+Visual mode of terminal is broken when user presses CTRL-L, ENTER in midnight commander. Reproduction Steps: Start WS Open mc in terminal Press CTRL-, ENTER

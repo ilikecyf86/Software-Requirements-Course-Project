@@ -1,0 +1,9 @@
+graceful-stop shouldn't fail if system is not in RUNNING state
+kind/enhancement status/open-for-dev kind/bug kind/enhancement kind/enhancement kind/bug status/code-review status/open-for-dev status/code-review 
+Current approach is to fail if system is not RUNNING. But as we expose public API for preparing system to shutdown it makes sense to analyze current system state and wait for READY_TO_SHUTDOWN instead of failing immediately. The example of output i got when after i played with API and called cli stop. Status: Image is up to date for eclipse/che:nightly
+
+INFO: Waiting for graceful stop of services...
+ERROR: (che action/graceful-stop): Status is not in RUNNING state so the graceful can't be called.
+ Currently the system can't go back to running state, so if system is in the state different from running all that cli needs to do is to wait for it to become READY_TO_SHUTDOWN. Proposed action map for cli: RUNNING -> call stop and wait for system to be in READY_TO_SHUTDOWN state
+READY_TO_SHUTDOWN -> do nothing(maybe print something useful)
+ANY_OTHER_STATE -> wait for system to be in READY_TO_SHUTDOWN state

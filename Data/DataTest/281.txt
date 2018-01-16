@@ -1,0 +1,3 @@
+Running 'docker' succeeded, but 'docker ps' failed. This usually means that docker cannot reach its daemon.
+
+When I docker run codenvy/che

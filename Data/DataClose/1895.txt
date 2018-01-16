@@ -1,0 +1,3 @@
+Duplicate entry in project explorer after import
+
+When we import project we have two same entries in a project explorer window however after we refresh page it all looks fine. Steps to reproduce: Start java workspace Import che project Enjoy Branch: https://github.com/eclipse/che/tree/dynamic-fw

@@ -1,0 +1,3 @@
+Maven project does not display a content with invalid POM file
+kind/bug severity/P2 team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint status/in-progress team/plugin status/in-progress team/ide sprint/current-sprint 
+Reproduction Steps: show screencast below: OS and version: Ubuntu 14, chrome browser, CHE-5.11.0-SNAPSHOT, rev. 79e7c44

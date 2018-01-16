@@ -1,0 +1,7 @@
+Documentation for CHE DTO Framework
+kind/question kind/docs 
+I am trying to use the Che DTO api for Request /Response for my model object, but I am not able to find any documentation regarding the same, could you please provide me the link where I can read and understand the framework to introduce DTOs for my IDE plugin. @DTO
+DtoFactoryVisitor
+  @org.eclipse.che.dto.shared.DTOImpl("server")
+and use of maven plugin  **che-core-api-dto-maven-plugin**
+ Reproduction Steps: OS and version: Diagnostics:

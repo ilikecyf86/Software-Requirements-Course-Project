@@ -1,0 +1,6 @@
+Error message is not sent when workspace failed
+kind/bug severity/P1 target/che6 
+Description Error message is described in WorkspaceStatusEvent. But when an error is occurred the error message is not send. Reproduction Steps open installer script org.eclipse.che.terminal.script.sh write following at the beginning echo "Test error message" >&2
+# exit with error
+exit 1
+ rebuild che and run OS and version: Diagnostics:

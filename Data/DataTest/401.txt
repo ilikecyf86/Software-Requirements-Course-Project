@@ -1,0 +1,3 @@
+No feedback from ui when starting workspace
+
+If a workspace is stopped, and I press Run to start, there is no feedback at all from the UI. If (when) the container fails to start, there is no feedback from the UI.

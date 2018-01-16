@@ -1,0 +1,3 @@
+Building a custom Che CLI
+kind/docs sprint/next-sprint status/open-for-dev team/production sprint/current-sprint sprint/current-sprint sprint/next-sprint status/open-for-dev 
+Docs to be written: How to build a custom Che CLI that can reference custom images (server, utilities images etc) Suggestions on setting up CI around it. The same set of docs should be written for Codenvy. A few users have asked for it. Once of them is #5076

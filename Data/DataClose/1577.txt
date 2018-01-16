@@ -1,0 +1,54 @@
+"Retry" button on workspace creation screen doesn't actually work if workspace creation worked but project import failed, just gives an error that workspace already exists and gets stuck
+kind/bug status/open-for-dev team/plugin severity/P2 
+The "Retry" button on workspace creation screen doesn't actually work if workspace creation worked but project import failed, instead it just gives an error that workspace already exists and gets stuck. The expected behavior would be that if I create a workspace from http://localhost:8080/dashboard/#/create-project right along with a project import and the process aborts with an error at the project import stage, that either 1. the workspace gets deleted again due to the not fully completed process and "Retry" will work as expected, or 2. the workspace still opens despite that error and offers me a dialog to retry project import from another URL. Reproduction Steps: On a fresh Che with no projects, visit http://localhost:8080/dashboard/#/create-project for project creation Choose project URL with "Import from existing Location" and "Git repository", and enter a HTTPS url that will return 404 Click "Create" Wait for error that git clone failed with 404 Click retry Change the project URL in the "Git repository" tab Click "Create" again Observe instant-failure with error that workspace already exists OS and version: Your CLI version is 'nightly'.
+Your installed version is 'nightly'.
+ Fedora 25, uname -a: Linux cyberman 4.9.3-200.fc25.x86_64 #1 SMP Fri Jan 13 01:01:13 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux Diagnostics:  WARNING: Usage of loopback devices is strongly discouraged for production use. Either use `--storage-opt dm.thinpooldev` or use `--storage-opt dm.no_warn_on_loop_devices=true` to suppress this warning.
+INFO: (che cli): nightly - using docker 1.13.0 / native
+INFO: (che download): Pulling image eclipse/che:nightly
+
+nightly: Pulling from eclipse/che
+Digest: sha256:7e48e2ab646d49d9bbfd6e2589cb220df551102a6297f2113010f3763875a896
+Status: Image is up to date for eclipse/che:nightly
+
+
+CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che:nightly
+ Version:        nightly
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /home/jonas/Develop/eclipse-che/data
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    nightly
+ CHE_HOST:       172.17.0.1
+ CHE_INSTANCE:   /home/jonas/Develop/eclipse-che/data/instance
+ CHE_CONFIG:     /home/jonas/Develop/eclipse-che/data
+ CHE_BACKUP:     /home/jonas/Develop/eclipse-che/data/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   172.17.0.1
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:nightly
+ IMAGE_CHE=eclipse/che-server:nightly
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+che.env:
+ CHE_HOST=172.17.0.1

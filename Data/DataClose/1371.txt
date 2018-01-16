@@ -1,0 +1,3 @@
+Module parameter in org.eclipse.che.ide.api.extension.Extension
+kind/task team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+This parameter is a link between java code of extension and XX.gwt.xml file. In #4373 we are going to reuse this parameter to generate single gwt.xml file for GWT compilation. Eventually we will generate gwt.xml only by modules from Extension annotation. Also we will have an ability to fail fast if module is not exists with nice message before actual GWT compilation

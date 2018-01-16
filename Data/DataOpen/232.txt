@@ -1,0 +1,98 @@
+Item Reference attributes provider
+kind/enhancement status/analyzing team/ide 
+Description There is a need to create a mechanism which will help to inject various properties from the third-party plugins into item reference attributes. Currently we have method org.eclipse.che.api.project.shared.dto.ItemReference#getAttributes which returns a map with attributes, but at the moment we don't provide any attributes in it. So there is a proposal to create an interface: public interface FileAttributesProvider {
+  Map<String, String> getAttributes(String projectPath, String filePath);
+} Somewhere in ProjectService or ProjectManager will be a method:   @Inject private final Set<FileAttributesProvider> attributesProviders;
+
+  ...
+
+  private Map<String, String> doCollectAttributes(VirtualFileEntry entry) {
+    Map<String, String> attributes = new HashMap<>();
+
+    for (FileAttributesProvider attributesProvider : attributesProviders) {
+      Map<String, String> map = attributesProvider.getAttributes(entry);
+
+      if (map != null) {
+        attributes.putAll(map);
+      }
+    }
+
+    return attributes;
+  } in package org.eclipse.che.api.project.server in che-core-api-project. At first, it will help to provide various attributes, such as equivalence of source folder (for java related projects), or if folder is package fragment, or even if some file has special attributes, we don't know. At second, this will offload the client side in term of an odd computations. Example of usage, PoC: Check if directory is package fragment root (source directory in java project) public class JavaAttributesProvider implements FileAttributesProvider {
+
+  private static final JavaModel model = JavaModelManager.getJavaModelManager().getJavaModel();
+
+  @Override
+  public Map<String, String> getAttributes(String projectPath, String filePath) {
+
+    IJavaProject javaProject = model.getJavaProject(projectPath);
+
+    if (!javaProject.exists()) {
+      return null;
+    }
+
+    Map<String, String> attributes = new HashMap<>();
+
+    attributes.computeIfAbsent(
+        "sourceDirectory",
+        __ -> String.valueOf(isSourceFolder(javaProject, filePath)));
+
+    return attributes;
+  }
+
+  private boolean isSourceFolder(IJavaProject javaProject, String entryPath) {
+
+    try {
+      return stream(javaProject.getAllPackageFragmentRoots())
+          .anyMatch(isFragmentSource().and(hasFragmentSourceSamePath(entryPath)));
+    } catch (JavaModelException e) {
+      return false;
+    }
+  }
+
+  private Predicate<IPackageFragmentRoot> isFragmentSource() {
+    return fragmentRoot -> {
+      try {
+        return fragmentRoot.getKind() == IPackageFragmentRoot.K_SOURCE;
+      } catch (JavaModelException e) {
+        return false;
+      }
+    };
+  }
+
+  private Predicate<IPackageFragmentRoot> hasFragmentSourceSamePath(String path) {
+    return fragmentRoot -> fragmentRoot.getPath().equals(Path.fromOSString(path));
+  }
+} Extract artifactId to represent a pom.xml in editor with provided artifactId public class MavenAttributesProvider implements FileAttributesProvider {
+
+  private final MavenProjectManager mavenProjectManager;
+
+  @Inject
+  public MavenAttributesProvider(MavenProjectManager mavenProjectManager) {
+    this.mavenProjectManager = mavenProjectManager;
+  }
+
+  @Override
+  public Map<String, String> getAttributes(String projectPath, String filePath) {
+
+    if (!filePath.endsWith("pom.xml")) {
+      return null;
+    }
+
+    Map<String, String> attributes = new HashMap<>();
+
+    attributes.computeIfAbsent(DISPLAY_NAME, __ -> extractArtifactId(projectPath));
+
+    return attributes;
+  }
+
+  private String extractArtifactId(String projectPath) {
+    MavenProject mavenProject = mavenProjectManager.getMavenProject(projectPath);
+
+    if (mavenProject == null) {
+      return null;
+    }
+
+    return mavenProject.getMavenKey().getArtifactId();
+  }
+}

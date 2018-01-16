@@ -1,0 +1,5 @@
+Perform migration of same domain recipe links to the relative form.
+kind/task status/open-for-dev team/platform sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+After #2769 is done, we need to migrate environment recipes links in DB of form http://beta.codenvy.com/api/recipe/recipe41q6skmejibe0w1h/script
+ to form  /recipe/recipe41q6skmejibe0w1h/script
+ Depends on #2768 because of need of DB migration schema.

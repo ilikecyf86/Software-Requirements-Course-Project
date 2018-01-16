@@ -1,0 +1,3 @@
+How to extend edtior to support syntax error checking on new language
+kind/question 
+For Orion, it allow register service to show syntax errors in editor, does Che provide similar api? And is there any example/guide on how to extend Editor to support syntax validating(show syntax error in editor)?

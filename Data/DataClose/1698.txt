@@ -1,0 +1,3 @@
+Code Style Export for Mains IDEs
+kind/question 
+I tried to follow https://github.com/codenvy/codenvy-dev-resources/tree/master to configure my IDE and be sure to not break the whole code format. And it wasn't as easy, and do not seems to be perfect. But, I think it could be useful for contributors to have an exports for mains IDEs, like IDEA and Eclipse. It will ensure to use the same configurations as core Che's devs. Do you know where I can find them? Or can a core dev export it and publish in a repository? Thanks

@@ -1,0 +1,3 @@
+Unable to create workspaces
+kind/question 
+free-standing local installation, OSX El Capitan, eclipse-che-4.0.0-RC1-SNAPSHOT, java 1.8.0_65-b17 ./bin/che.sh pont browser to localhost:8080 new workspace, using recipe, ready-to-go-stack, java, 1G, click 'create' creates successfully. 'run in IDE' it gets to step 3, and get the error message: [STDERR] unzip: cannot find or open /mnt/che/ws-agent.zip, /mnt/che/ws-agent.zip.zip or /mnt/che/ws-agent.zip.ZIP. (see screenshot). eventually get a 'workspace agent not responding' error. Thanks for the help!

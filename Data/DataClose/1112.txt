@@ -1,0 +1,11 @@
+Unable to open this guide docs
+kind/question team/pm kind/task kind/question 
+some guide docs cannot open like this. Extension Development An extension is a set of code and resources that are packaged into a plugin that alter the behavior of the system. Extensions can be IDE extensions, workspace extensions (they are injected into the workspace agent running within each workspace), or Che extensions (injected into the Che server). Extensions are authored in Java and maven, and then packaged into JAR / ZIP files for deployment into Eclipse Che. Extension Intro
+Developing Extensions
+JSON Extension Tutorial
+Authoring Extensions in Che
+Authoring Extensions in Eclipse
+Authoring Extensions in IntelliJ
+Dependency Injection
+Extensions Packaged With Che
+Extension SDK JavaDoc

@@ -1,0 +1,3 @@
+Error creating simple java project in che
+duplicate kind/question 
+I am unable to create a java project in the workspace created using java-stack. Whenever I create a new java project it gives me an error saying project name already exists. But when i try to create a java project in the workspace created using php-stack the project is created successfully. Any idea on what could be the issue?

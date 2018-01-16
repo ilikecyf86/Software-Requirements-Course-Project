@@ -1,0 +1,3 @@
+Scrollbars are too small on windows
+kind/bug 
+When there is a large list of users, there is a VERY TINY scrollbar that you don't see...

@@ -1,0 +1,15 @@
+Custom Stack by 'stacks-archetype' does not work
+kind/question 
+Hi, I am try to custom stack by Archetype assembly, add our stacks by default in Che server. I try following code from archetype generate and template 'stacks-archetype'. But the stacks are not customized after start the server, all the stacks are displayed and I do not see the custom stack. Here are the steps I try: generate assembly docker run -it --rm \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /data/Che/test/archetype_stack:/archetype \
+  -v /data/Che/test/data_stack:/data \
+  -v /root/.m2/repository:/m2 \
+    eclipse/che:5.14.0 archetype generate --archid=stacks-archetype --che
+ And select 7) 7) stacks-archetype               - Assembly with sample stack packaging module, for using custom stacks in assemblies
+Please enter your choice: 7
+ run 'mvn clean install' under /data/Che/test/archetype_stack/assembly start Che docker run -it --rm --name run-che \
+           -v /var/run/docker.sock:/var/run/docker.sock \
+           -v /data/Che/test/data_stack:/data \
+           -v /data/Che/test/archetype_stack/assembly/assembly/assembly-main/target/eclipse-che-5.14.0/eclipse-che-5.14.0:/assembly \
+              eclipse/che:5.14.0 start --skip:nightly

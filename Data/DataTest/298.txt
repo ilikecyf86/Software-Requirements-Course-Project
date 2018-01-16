@@ -1,0 +1,3 @@
+unable to type | (pipe) in ssh terminal
+kind/bug team/plugin 
+Using che 4 rc12, firefox 38.2.1 No problem typing | in java code source But no effect when typing | in ssh terminal window.

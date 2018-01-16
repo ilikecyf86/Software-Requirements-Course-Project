@@ -1,0 +1,3 @@
+User management
+
+How to manage registered users and allow each of them have their own projects? I'm going to set a che on a server, and allow the students of the class have their own workspace and own projects. But I found for a che instance, there is only one shared workspace and not support for user registering or custom workspace.

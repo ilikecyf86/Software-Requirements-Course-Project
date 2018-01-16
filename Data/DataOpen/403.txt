@@ -1,0 +1,3 @@
+Create stacks oriented commands
+kind/enhancement 
+Pasted from redhat-developer/rh-che#119: At the moment we have quite general commands among stacks. We have e.g. "mvn clean install" or "java -jar target/*.jar" etc. We could have more technology oriented commands. For example, vertx booster has maven vertx plugin with goal vertx:run. This would improve UX, because now, user has to at first build, then run. With vertx:run, it is one-click-to-go command. Same could apply for other stacks as well (springboot, wildfly...).

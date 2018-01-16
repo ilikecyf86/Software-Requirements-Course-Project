@@ -1,0 +1,3 @@
+Rework Navigate to File feature to avoid using Everrest based Websocket calls
+kind/enhancement team/ide status/in-progress status/in-progress 
+Navigate to File feature works using Everrest based Websocket calls. See NavigateToFilePresenter. Need to replace it with JSON-RPC.

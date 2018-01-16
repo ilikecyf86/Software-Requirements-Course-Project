@@ -1,0 +1,22 @@
+Process errors during parsing of response body and return 400(BadRequest) response code instead of 500
+kind/task team/platform status/open-for-dev sprint/next-sprint kind/bug kind/task sprint/next-sprint severity/P2 
+Process errors during parsing of response body and return 400(BadRequest) response code instead of 500 (Internal Server Error). It's needed to do that because it can be confused to see 500 with message that says nothing when there is small mistake in json. Reproduction Steps: Open http://localhost:8080/swagger/#!/workspace/create Try to send invalid json as body, e.g. {,}
+ or valid json but with incompatible with DTO types like {
+  "commands": "",
+  "defaultEnv": 123,
+  "description": "",
+  "name": "string"
+}
+ Expected behavior: See 400 response code and clear error message Observed behavior: Response wit code 500 and error message "Internal Server Error occurred, error time: 2016-12-09 09:08:36" Log file contains following stack trace in case incompatible types 2016-12-09 11:08:36,492[nio-8080-exec-2]  [ERROR] [c.a.c.r.RuntimeExceptionMapper 47]   - Internal Server Error occurred, error time: 2016-12-09 09:08:36
+java.lang.IllegalStateException: This is not a JSON Array.
+        at com.google.gson.JsonElement.getAsJsonArray(JsonElement.java:106) ~[gson-2.3.1.jar:na]
+        at org.eclipse.che.api.workspace.server.dto.DtoServerImpls$WorkspaceConfigDtoImpl.fromJsonElement(DtoServerImpls.java:3171) ~[che-core-api-workspace-shared-5.0.0-M9-SNAPSHOT.jar:5.0.0-M9-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.dto.DtoServerImpls$WorkspaceConfigDtoImpl.fromJsonString(DtoServerImpls.java:3204) ~[che-core-api-workspace-shared-5.0.0-M9-SNAPSHOT.jar:5.0.0-M9-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.dto.DtoServerImpls$9.fromJson(DtoServerImpls.java:216) ~[che-core-api-workspace-shared-5.0.0-M9-SNAPSHOT.jar:5.0.0-M9-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.dto.DtoServerImpls$9.fromJson(DtoServerImpls.java:206) ~[che-core-api-workspace-shared-5.0.0-M9-SNAPSHOT.jar:5.0.0-M9-SNAPSHOT]
+ and following output when body contains invalid JSON com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected name at line 1 column 2 path $.
+        at com.google.gson.internal.Streams.parse(Streams.java:56) ~[gson-2.3.1.jar:na]
+        at com.google.gson.JsonParser.parse(JsonParser.java:84) ~[gson-2.3.1.jar:na]
+        at com.google.gson.JsonParser.parse(JsonParser.java:59) ~[gson-2.3.1.jar:na]
+        at com.google.gson.JsonParser.parse(JsonParser.java:45) ~[gson-2.3.1.jar:na]
+ Che version: Version :5.0.0-M9-SNAPSHOT Additional information: Problem started happening recently, didn't happen in an older version of Che: [No] Problem can be reliably reproduced, doesn't happen randomly: [Yes]

@@ -1,0 +1,3 @@
+GitLab oAuth blocked by GitLab bug
+kind/task status/blocked 
+Currently it's not possible for Eclipse Che to use oAuth integration with GitLab. Although GitLab supports oAuth for clone operations, pushes are not supported. We are tracking this GitLab issue for updates.

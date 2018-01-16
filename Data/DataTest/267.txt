@@ -1,0 +1,3 @@
+Plugin NodeJS
+kind/bug 
+Add NodeJs file type Add NodeJs project type NodeJs Editor (with syntax highlighter only)

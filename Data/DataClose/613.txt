@@ -1,0 +1,3 @@
+Importing project notification always displayed as in progress
+kind/bug team/ide sprint/next-sprint target/branch status/in-progress sprint/next-sprint status/code-review status/in-progress status/code-review 
+After finishing importing a project, Importing project notification still displayed as in progress. Reproduction Steps: Import any project with Workspace -> Import Project... menu item. OS and version: Related to SPI branch only. Diagnostics:

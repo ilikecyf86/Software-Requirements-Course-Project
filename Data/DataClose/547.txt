@@ -1,0 +1,3 @@
+Created files that matches a specific entry in .gitignore does not save after Workspace restart
+
+I somehow found this "bug" while adding a ignored file from .gitignore on our project. A Factory has been created for easier reproduction Reproduction Steps: 1:) using the factory above, create a file named config.json 2:) restart the workspace Expected: The file should persist even in restart Result: The file disappears after restart OS and version: Codenvy 5.17.0-SNAPSHOT on Windows 10

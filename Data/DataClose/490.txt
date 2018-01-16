@@ -1,0 +1,3 @@
+After creating new folder via terminal, folder displayed as well configured project in Project Explorer but should be mark as broken project
+kind/bug sprint/current-sprint team/ide 
+Reproduction Steps: Create new folder via terminal: mkdir test Check Project Explore, just created folder will be displayed as well configured blank project - this is wrong Refresh IDE page Check Project Explore, just created folder will be displayed as well broken project - this is ok

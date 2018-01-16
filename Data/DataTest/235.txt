@@ -1,0 +1,3 @@
+Workspace snapshots are not removed on workspace removal
+kind/bug 
+When user removes workspace Che doesn't remove snapshot of the workspace (if exists).

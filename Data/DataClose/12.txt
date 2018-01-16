@@ -1,0 +1,7 @@
+workspace API JSON self link is not correct
+kind/bug level/beginner team/platform target/che6 severity/P2 
+Description Let's create a workspace and analyze the returned content or check list of workspaces at /api/workspace "self": "http://localhost:8080/api/workspace/workspace/workspaceena6ef06phude196",
+"ide": "http://localhost:8080/che/wksp-bnce",
+"environment/outputChannel": "ws://localhost:8080/api/websocket",
+"environment/statusChannel": "ws://localhost:8080/api/websocket"
+ self link contains twice /workspace/ Reproduction Steps $ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/che6:/data eclipse/che-cli:che6 start --fast OS and version: macOS High Sierra Diagnostics:

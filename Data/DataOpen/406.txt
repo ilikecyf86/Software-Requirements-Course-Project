@@ -1,0 +1,3 @@
+Error messages in console after start php language server
+kind/bug severity/P1 severity/P2 severity/P1 
+Reproduction Steps: Create php project Open php file Wait until language server will be started Pay attention to "dev-machine" console Expected Behavior: Message about successful language server start Observed Behavior: Error messages are displayed OS and version: CHE 5.14.0 ; Fedora 25 ; Chrome 59.0 Attachment

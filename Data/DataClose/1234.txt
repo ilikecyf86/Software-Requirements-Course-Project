@@ -1,0 +1,3 @@
+Remove file notification while rename refactoring
+team/ide kind/bug sprint/next-sprint severity/P2 sprint/current-sprint sprint/next-sprint 
+Seems like something goes wrong when we use rename refactoring. We get external operation notification about file removal like we first remove file and then stop file watchers. Normally should be opposite: first stop file watchers then remove file.

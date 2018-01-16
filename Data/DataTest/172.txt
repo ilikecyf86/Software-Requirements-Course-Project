@@ -1,0 +1,3 @@
+Cannot configure project as Maven after clonning
+kind/bug 
+Steps to reproduce: Workspace -> Import Project -> GITHUB -> https://github.com/idexmai/Spring_Simple.git ->Import ->Maven Project Wrong The wizard does not close, importing is hung

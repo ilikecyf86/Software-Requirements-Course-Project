@@ -1,0 +1,3 @@
+Stack text goes out from the boundaries of describing stack library
+kind/bug status/open-for-dev team/plugin severity/P2 
+Reproduction Steps: Go to the Dashboard -> Stacks Create a duplicated stack for BITNAMI CODEIGNITER "Dashboard" -> "Create Workspace" -> Create new workspace from the stack library Expected behavior: The text should not go beyond the boundaries of describing the stack library Observed behavior: The text goes out from the boundaries of describing the stack library Che version: 5.4.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.3 Che install: Docker container Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes]

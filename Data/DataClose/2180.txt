@@ -1,0 +1,3 @@
+OrionEditorInit and TextEditorInit classes have a lot of code duplication
+kind/task team/ide 
+No description provided.

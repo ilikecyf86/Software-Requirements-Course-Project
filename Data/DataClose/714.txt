@@ -1,0 +1,3 @@
+Improve User Management page
+kind/eclipse-che kind/enhancement team/plugin kind/eclipse-che 
+From @vitaliy-guliy on January 30, 2017 14:40 Improve User Management page: don't scroll action buttons and table header apply scroll only to the user list Copied from original issue: codenvy/codenvy#1651

@@ -1,0 +1,3 @@
+Starting Workspace Agent
+
+On my local machine I can start a project IDE but when I try to do it remotely it seems to be getting stuck on Loading "Starting Workspace Agent". Not sure what could be causing the issue. Remote Local

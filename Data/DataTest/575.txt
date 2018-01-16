@@ -1,0 +1,3 @@
+README.md - Link to Write Che IDE Plug-Ins broken
+
+Link to Write Che IDE Plug-Ins (https://eclipse-che.readme.io/docs/extension-development-workflow) broken on README.md, showing a 404 error. What's the correct link?

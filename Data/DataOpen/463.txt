@@ -1,0 +1,3 @@
+Add new terminal feature works wrong after closing split pane
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: In the Processes panel create a new Pane and add a terminal to it. Close this Pane and don't click on the Processes panel. Add a new terminal. Expected behavior: The new terminal added to the Processes Panel. Observed behavior: The new terminal tab isn't visible on the Processes Panel but exists in the Machines tree. If after closing Pane(step 2) click on the Processes panel a new terminal creates correctly. Che version: 5.10.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

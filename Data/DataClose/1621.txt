@@ -1,0 +1,3 @@
+Add check for success or fail for install-agents
+team/enterprise kind/task status/analyzing 
+We should check success of agents that installs software or performs some actions which doesn't leave processes at the end.

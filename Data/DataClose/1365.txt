@@ -1,0 +1,3 @@
+Unexpected exceptions after deleting a project (regression)
+kind/bug severity/P1 team/ide 
+Reproduction Steps: Create a maven project, open console, delete project. Wait a few seconds. OS and version: Ubuntu 14 TLS, chrome browser

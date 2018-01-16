@@ -1,0 +1,3 @@
+Che + Github Enterprise (VPN)
+kind/question 
+Description I am newbie to Eclipse che and would like to understand more on the Github enterprise integration. I would like to host the Che server and workspace on the public cloud instance(AWS). So anyone from the team can access the IDE from browser and contribute. And for the source code integration I would like to connect the Github enterprise repository inside my organization. My organization requires VPN connection to access the Github repository. Can you provide some information on how to access the github private repository inside firewall from Che IDE?

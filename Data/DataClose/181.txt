@@ -1,0 +1,118 @@
+Can't start multi-user che on windows docker
+kind/question 
+Description I want to run che multi user. It can't start. Logs and command are below. When I run start command, an error occured. But single user che start successfully on same machine. Reproduction Steps Start command: docker run -it -e CHE_MULTIUSER=true -e CHE_HOST=10.0.75.2 -v /var/run/docker.sock:/var/run/docker.sock -v D:/docker/
+che:/data eclipse/che start
+ OS and version: Windows 10 Pro x64, Version: 1709 Docker For Windows Community Edition x64, Version: 17.09.0-ce-win33 (13620) Che images version: 5.20 Diagnostics: Logs: Thu Nov  2 06:43:22 UTC 2017
+/usr/bin/curl  "-I -k https://hub.docker.com -s -o /dev/null --write-out %{http_code}"
+Checking registry for version '5.20.0' images
+eval BOOTSTRAP_IMAGE_ALPINE=${BOOTSTRAP_IMAGE_ALPINE:-alpine:3.4}
+eval BOOTSTRAP_IMAGE_CHEIP=${BOOTSTRAP_IMAGE_CHEIP:-eclipse/che-ip:5.20.0}
+eval IMAGE_INIT=${IMAGE_INIT:-eclipse/che-init:5.20.0}
+eval IMAGE_CHE=${IMAGE_CHE:-eclipse/che-server:5.20.0}
+eval IMAGE_CHE_MULTIUSER=${IMAGE_CHE_MULTIUSER:-eclipse/che-server-multiuser:5.20.0}
+eval IMAGE_COMPOSE=${IMAGE_COMPOSE:-docker/compose:1.10.1}
+eval IMAGE_POSTGRES=${IMAGE_POSTGRES:-centos/postgresql-96-centos7:9.6}
+eval IMAGE_KEYCLOACK=${IMAGE_KEYCLOACK:-jboss/keycloak-openshift:3.3.0.CR2-3}
+eval UTILITY_IMAGE_CHEACTION=${UTILITY_IMAGE_CHEACTION:-eclipse/che-action:5.20.0}
+eval UTILITY_IMAGE_CHEDIR=${UTILITY_IMAGE_CHEDIR:-eclipse/che-dir:5.20.0}
+eval UTILITY_IMAGE_CHETEST=${UTILITY_IMAGE_CHETEST:-eclipse/che-test:5.20.0}
+eval UTILITY_IMAGE_CHEMOUNT=${UTILITY_IMAGE_CHEMOUNT:-eclipse/che-mount:5.20.0}
+INFO: (che cli):  5.20.0 - using docker 17.09.0-ce / docker4windows
+INFO: (che cli):  'CHE_HOST=10.0.75.2' from command line overriding 'CHE_HOST=192.168.35.235' from che.env
+/usr/bin/curl  "-s https://hub.docker.com/v2/repositories/eclipse/che/tags/"
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 10.0.75.2:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+INFO: (che config):  Generating che configuration...
+docker_run                   --env-file="/data/che.env"                   --env-file=/version/5.20.0/images                   -v "/D/docker/che/instance":/opt/che:rw                    -e "CHE_MULTIUSER=true" -e "CHE_HOST=10.0.75.2"                   -e "CHE_ENV_FILE=D:\\docker\\che\\instance\\config\\che.env"                   -e "CHE_CONTAINER_ROOT=/data"                   -e "CHE_CONTAINER_NAME=che"                   -e "CHE_ENVIRONMENT=production"                   -e "CHE_CONFIG=/D/docker/che/instance"                   -e "CHE_USER=root"                   -e "CHE_INSTANCE=/D/docker/che/instance"                   -e "CHE_REPO=off"                   --entrypoint=/usr/bin/puppet                       eclipse/che-init:5.20.0                           apply --modulepath                                 /etc/puppet/modules/:/etc/puppet/addon/                                 /etc/puppet/manifests/ --show_diff >> "/data/cli.log"
+�[mNotice: Compiled catalog for 00c3ee4e6f01.localdomain in environment production in 0.30 seconds�[0m
+�[mNotice: /Stage[main]/Base/File[/opt/che/logs/keycloak]/owner: owner changed 'root' to '1000'�[0m
+�[mNotice: /Stage[main]/Base/File[/opt/che/logs/keycloak]/group: group changed 'root' to '1000'�[0m
+�[mNotice: /Stage[main]/Base/File[/opt/che/data/keycloak]/owner: owner changed 'root' to '1000'�[0m
+�[mNotice: /Stage[main]/Base/File[/opt/che/data/keycloak]/group: group changed 'root' to '1000'�[0m
+�[mNotice: /Stage[main]/Che/File[/opt/che/config/che/che.env]/content: 
+--- /opt/che/config/che/che.env
++++ /tmp/puppet-file20171102-1-1gpano6
+@@ -1,5 +1,6 @@
+ # Include all custom CHE_* properties that user may has defined in its che.env file
+ CHE_MULTIUSER=true
++CHE_HOST=10.0.75.2
+ CHE_ASSEMBLY_IN_REPO=assembly-multiuser/assembly-main/target/eclipse-che*/eclipse-che-*
+ CHE_ASSEMBLY_IN_REPO_MODULE_NAME=assembly-multiuser/assembly-main
+ CHE_BACKUP_FILE_NAME=che_backup.tar.gz
+@@ -31,13 +32,12 @@
+ CHE_ENV_FILE=D:\docker\che\instance\config\che.env
+ CHE_FOLLOW_LOGS=false
+ CHE_FORMAL_PRODUCT_NAME=Eclipse Che
+-CHE_HOST=192.168.35.235
+ CHE_HOST_BACKUP=/D/docker/che/backup
+ CHE_HOST_COMPOSE_FILE=docker-compose.yml
+ CHE_HOST_CONFIG=/D/docker/che
+ CHE_HOST_CONFIG_MANIFESTS_FOLDER=/D/docker/che/instance/manifests
+ CHE_HOST_CONFIG_MODULES_FOLDER=/D/docker/che/instance/modules
+-CHE_HOST_ENV=
++CHE_HOST_ENV=10.0.75.2
+ CHE_HOST_INSTANCE=/D/docker/che/instance
+ CHE_HOST_LOCAL=192.168.35.235
+ CHE_HOST_OFFLINE_FOLDER=/D/docker/che/backup
+@@ -79,7 +79,7 @@
+ CHE_INSTANCE=/D/docker/che/instance
+ 
+ 
+-CHE_IP=192.168.35.235
++CHE_IP=10.0.75.2
+ CHE_PORT=8080
+ #DOCKER_HOST=tcp://localhost:2375
+ #DOCKER_MACHINE_HOST=172.17.0.1
+�[0m
+�[mNotice: /Stage[main]/Che/File[/opt/che/config/che/che.env]/content: content changed '{md5}ae1a96f109cabac5b8b49d07d739d358' to '{md5}0ad1718516fa4db81845f76721a9e539'�[0m
+�[mNotice: /Stage[main]/Che/File[/opt/che/config/che/che.env]/mode: mode changed '0755' to '0644'�[0m
+�[mNotice: /Stage[main]/Che/File[/opt/che/config/che/jmxremote.access]/mode: mode changed '0755' to '0644'�[0m
+�[mNotice: /Stage[main]/Che/File[/opt/che/config/che/jmxremote.password]/mode: mode changed '0755' to '0644'�[0m
+�[mNotice: /Stage[main]/Traefik/File[/opt/che/config/traefik/traefik.toml]/mode: mode changed '0755' to '0644'�[0m
+�[mNotice: /Stage[main]/Postgres/File[/opt/che/data/postgres]/owner: owner changed 'root' to '26'�[0m
+�[mNotice: /Stage[main]/Keycloak/File[/opt/che/config/keycloak/che-realm.json]/content: 
+--- /opt/che/config/keycloak/che-realm.json
++++ /tmp/puppet-file20171102-1-l5ucyq
+@@ -58,8 +58,8 @@
+     "enabled" : true,
+     "clientAuthenticatorType" : "client-secret",
+     "secret" : "56abc663-1c41-4ab2-81d1-d4b704249221",
+-    "redirectUris" : [ "http://192.168.35.235:8080/*" ],
+-    "webOrigins" : [ "http://192.168.35.235:8080" ],
++    "redirectUris" : [ "http://10.0.75.2:8080/*" ],
++    "webOrigins" : [ "http://10.0.75.2:8080" ],
+     "notBefore" : 0,
+     "bearerOnly" : false,
+     "consentRequired" : false,
+�[0m
+�[mNotice: /Stage[main]/Keycloak/File[/opt/che/config/keycloak/che-realm.json]/content: content changed '{md5}62036ede183c141ef3e56f6a7a00afc1' to '{md5}b7a2910466f10a864e49eebf9fb67d63'�[0m
+�[mNotice: /Stage[main]/Keycloak/File[/opt/che/config/keycloak/che-realm.json]/mode: mode changed '0755' to '0644'�[0m
+�[mNotice: /Stage[main]/Keycloak/File[/opt/che/config/keycloak/che-users-0.json]/mode: mode changed '0755' to '0644'�[0m
+�[mNotice: /Stage[main]/Keycloak/File[/opt/che/config/keycloak/master-realm.json]/mode: mode changed '0755' to '0644'�[0m
+�[mNotice: /Stage[main]/Keycloak/File[/opt/che/config/keycloak/master-users-0.json]/mode: mode changed '0755' to '0644'�[0m
+�[mNotice: /Stage[main]/Compose/Compose::Generate_compose_file[docker-compose-container.yml]/File[/opt/che/docker-compose-container.yml]/mode: mode changed '0755' to '0644'�[0m
+�[mNotice: /Stage[main]/Compose/Compose::Generate_compose_file[docker-compose.yml]/File[/opt/che/docker-compose.yml]/mode: mode changed '0755' to '0644'�[0m
+�[mNotice: Applied catalog in 1.10 seconds�[0m
+INFO: (che config):  Customizing docker-compose for running in a container
+INFO: (che start):  Preflight checks
+         mem (1.5 GiB):           �[0;32m[OK]�[0m
+         disk (100 MB):           �[0;32m[OK]�[0m
+         port 8080 (http):        �[0;32m[AVAILABLE]�[0m
+331ef4780bb5f22706364177430be054beadf7d2c93493a79e14435dff980241
+/usr/bin/curl  "-I localhost:32768/alpine-release -s -o /dev/null --connect-timeout 5 --write-out %{http_code}"
+28
+/usr/bin/curl  "-I 10.0.75.2:32768/alpine-release -s -o /dev/null --connect-timeout 5 --write-out %{http_code}"
+         conn (browser => ws):    �[0;32m[OK]�[0m
+         conn (server => ws):     �[0;32m[OK]�[0m
+fakeagent-8080
+
+INFO: (che start):  Starting containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p="che" up -d >> "/data/cli.log" 2>&1
+Starting che_postgres_1
+
+ERROR: for che  Container "b52cf46ad37f" is unhealthy.
+
+ERROR: for keycloak  Container "b52cf46ad37f" is unhealthy.
+Encountered errors while bringing up the project.
+ERROR: Error during 'compose up' - printing 30 line tail of /D/docker/che/cli.log:

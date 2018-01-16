@@ -1,0 +1,3 @@
+Adapt creating workspaces by REST API for selenium test for SPI branch
+
+In the SPI branch have been changed many objects for new REST API. For selenium tests most workspaces create and prepare in background through REST. We should adapt creation workflow for selenium tets

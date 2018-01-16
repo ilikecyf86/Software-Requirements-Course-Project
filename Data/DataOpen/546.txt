@@ -1,0 +1,3 @@
+How to remove annotations and linting?
+status/open-for-dev team/plugin kind/enhancement 
+How do I turn off in editor warnings and errors? I've got a warning that won't go away and colors half of my screen yellow sigh. Cannot find any settings in editor to change this. Thanks!

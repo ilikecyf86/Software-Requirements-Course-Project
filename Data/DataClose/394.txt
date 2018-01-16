@@ -1,0 +1,3 @@
+[MultiUser-branch] cache.js must be cached on che multiuser
+kind/bug severity/P1 
+for multiuser che we must cache cache.js because it makes it super slow on workspace start when CHE is hosted on remote node like that: http://a5.codenvy-stg.com:8080

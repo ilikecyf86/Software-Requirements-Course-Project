@@ -1,0 +1,3 @@
+Extend core/process library with ability to kill process by timeout
+kind/task sprint/current-sprint status/open-for-dev team/platform sprint/current-sprint 
+According to install agent specification (5.iii.d): 5.iii.d - if installation doesn’t end when installation time expires agent is treated as failed core/process library should provide functionality to kill process by timeout if process is not died until expiration point. Depends on: #5131

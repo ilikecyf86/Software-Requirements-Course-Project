@@ -1,0 +1,3 @@
+There is not a possibility to delete a project from the Dashboard after restarting a workspace
+kind/bug severity/P2 
+Reproduction Steps: Create a workspace with two or more project and start it Wait importing of the projects and go to this workspace details In the Project tab delete any project Stop and start the workspace Try to delete project Observed behavior: The project was not deleted and there is "Delete failed" error message. The project can be deleted after refreshing the web page. Che version: 5.17.0-SNAPSHOT OS and version: Fedora 25 Additional information:

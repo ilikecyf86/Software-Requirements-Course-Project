@@ -1,0 +1,3 @@
+Request for Lombok plugin
+kind/question kind/enhancement kind/question 
+There is no lombok plugin. So lombok related methods highlighted as error Reproduction Steps: User Lombok annotation Expected behavior: Shouldn't be highlighted as error. Observed behavior: Lombok used classes shows error. Che version: [5.0.0-M7] Che install: Docker container Additional information: If anyone explain me about jdt implementation for eclipse che i will try to implement.

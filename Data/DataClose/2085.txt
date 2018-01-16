@@ -1,0 +1,3 @@
+Does Iresource Model supported in Che? How to achieve Iresource features ?
+kind/question 
+I know Iresource model is very tightly coupled with the Eclipse, Iresource model is not separated even as library but still I have below questions: Does Che have support for the Iresource model from Eclipse? How we can achieve Iresource capabilities in Eclipse Che? Is there any similar model/framework supported which acheive Iresource capabilities. I can see Iresource related code in che-plugin-java-ext-jdt, Is the support provided only for a specific language? How we can do it for the domain specific languages for example Xtext base languages?

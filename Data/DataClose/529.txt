@@ -1,0 +1,3 @@
+Modify selenium tests to test OpenShift infrastructure
+kind/task team/platform status/in-progress 
+Related to SPI branch only. We are eager to check how functional is OpenShift infrastructure comparing to Docker infrastructure in SPI branch. But our selenium tests use dockerimage environment to test different features of the product. Right now OpenShift infrastructure doesn't support running dockerimage and dockerfile environments, but support running openshift environment. We need some method to alternate default environment(s) in selenium tests to run tests on OpenShift infrastructure. It is supposed to be a temporary solution that won't be needed when dockerfile and dockerimage environment are supported by OpenShift infrastructure.

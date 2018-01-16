@@ -1,0 +1,6 @@
+User Friendly Error Message on git/svn Error
+kind/enhancement status/open-for-dev sprint/next-sprint team/enterprise status/info-needed status/open-for-dev sprint/next-sprint status/open-for-dev status/info-needed sprint/next-sprint status/in-progress status/open-for-dev sprint/current-sprint sprint/next-sprint status/code-review status/in-progress status/pending-merge status/code-review status/pending-merge sprint/current-sprint 
+When a user tries to push to a remote repository with git or svn the message just tells the user it fails to unauthorized. We should provide a better message that tells the user that it failed due to credentials but also direct them to docs to get additional information. Message: You are not authorized to perform this operation.
+This may be because you have not setup SSH keys, oAuth or a username/password.
+Check the documentation for using Git / SVN for more information on setting these up.
+ This will be the same message for codenvy. Referenced issue codenvy/codenvy#968

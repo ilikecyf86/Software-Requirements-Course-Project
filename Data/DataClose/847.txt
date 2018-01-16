@@ -1,0 +1,3 @@
+Workspace crashing when accessing from another machine in intranet
+kind/question 
+Hi, I have set up eclipse che server on my local box And trying to access it from another machine gives error attached error.docx Reproduction Steps: OS and version: Windows 2000 Do I need to add an external IP configuration to che environment configuration to prevent the crash? Thanks, Kevin

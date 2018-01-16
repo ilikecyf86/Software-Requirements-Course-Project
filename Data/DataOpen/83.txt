@@ -1,0 +1,17 @@
+Thread-unsafe collections used for subscription contexts
+kind/bug target/che6 
+Description After merge of #7567 we received the ConcurrentModificationException in Che server logs on qa tests execution. branch: che6 infrastructure: openshift ci-job: che-integration-tests-che6-ocp log 2017-12-01 19:11:12,192[equestProcessor]  [ERROR] [oggingUncaughtExceptionHandler 31]   - Runtime exception caught in thread ServerSideRequestProcessor. Message: null
+java.util.ConcurrentModificationException: null
+    at java.util.HashMap$HashIterator.nextNode(HashMap.java:1437)
+    at java.util.HashMap$KeyIterator.next(HashMap.java:1461)
+    at java.util.Collection.removeIf(Collection.java:414)
+    at org.eclipse.che.api.core.notification.RemoteSubscriptionManager.consumeUnSubscriptionRequest(RemoteSubscriptionManager.java:81)
+    at org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerManager$OneToNoneHandler.handle(RequestHandlerManager.java:379)
+    at org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerManager$OneToNoneHandler.access$1700(RequestHandlerManager.java:368)
+    at org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerManager.handle(RequestHandlerManager.java:248)
+    at org.eclipse.che.api.core.jsonrpc.commons.RequestDispatcher.dispatch(RequestDispatcher.java:55)
+    at org.eclipse.che.api.core.jsonrpc.commons.JsonRpcMessageReceiver.processRequest(JsonRpcMessageReceiver.java:97)
+    at org.eclipse.che.api.core.jsonrpc.commons.JsonRpcMessageReceiver.lambda$receive$0(JsonRpcMessageReceiver.java:72)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run(Thread.java:748)

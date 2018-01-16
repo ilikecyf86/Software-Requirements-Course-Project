@@ -1,0 +1,3 @@
+Synchronize user profile with keycloak database
+kind/task status/open-for-dev team/platform 
+We used such profile attributes in such products Eclipse Che "email" Codenvy "firstName" "country" "jobtitle" "phone" "email" "lastName" "employer" We need to find a way how to map it to keycloak attributes for two use-cases. API to read profile attributes to display it on UI. We might just need to implement ProfileDao.getById. API to update profile. Either find a way how to implement ProfileDao.update to update profile in keycloak database either made a redirect to profile page on Keycloak application.

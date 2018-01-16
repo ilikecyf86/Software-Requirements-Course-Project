@@ -1,0 +1,22 @@
+Revise ws-agent and ws-master war assembly for gwt dependencies that is not used
+kind/task team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+I've take a look on ws-agent war content and found a couple of gwt dependencies that is not used. -rw-r--r--  1 sj  staff    31M 17 жов 00:01 gwt-user-2.7.0.jar
+-rw-r--r--  1 sj  staff   8,7M 16 жов 23:53 eclipselink-2.6.2.jar
+-rw-r--r--  1 sj  staff   4,9M 11 січ 13:00 org-eclipse-jdt-core-repack-5.1.0-SNAPSHOT.jar
+-rw-r--r--  1 sj  staff   3,3M 13 січ 10:27 org.eclipse.jdt.ui-5.1.0-SNAPSHOT.jar
+-rw-r--r--  1 sj  staff   2,2M 17 жов 00:17 org.eclipse.jgit-4.3.1.201605051710-r.jar
+-rw-r--r--  1 sj  staff   2,2M 17 жов 00:16 lucene-core-5.2.1.jar
+-rw-r--r--  1 sj  staff   2,2M 16 жов 23:53 guava-18.0.jar
+-rw-r--r--  1 sj  staff   1,7M 16 жов 23:55 gwt-elemental-2.7.0.jar
+-rw-r--r--  1 sj  staff   1,5M 17 жов 00:16 lucene-analyzers-common-5.2.1.jar
+-rw-r--r--  1 sj  staff   1,2M 17 жов 00:16 org.eclipse.osgi-3.10.0.v20140606-1445.jar
+-rw-r--r--  1 sj  staff   1,1M 16 жов 23:58 jackson-databind-2.5.0.jar
+-rw-r--r--  1 sj  staff   1,0M 13 січ 10:25 che-core-commons-gwt-5.1.0-SNAPSHOT.jar
+-rw-r--r--  1 sj  staff   1,0M 16 жов 23:56 lib-gwt-svg-0.5.10.jar
+-rw-r--r--  1 sj  staff   893K 16 жов 23:53 jna-4.1.0.jar
+-rw-r--r--  1 sj  staff   698K 16 жов 23:53 javassist-3.18.2-GA.jar
+-rw-r--r--  1 sj  staff   658K 16 жов 23:53 guice-4.1.0.jar
+-rw-r--r--  1 sj  staff   605K 13 січ 10:27 che-plugin-java-ext-lang-shared-5.1.0-SNAPSHOT.jar
+-rw-r--r--  1 sj  staff   591K 13 січ 10:28 che-plugin-java-debugger-server-5.1.0-SNAPSHOT.jar
+
+ That goal of this task is to revise list of all ws-agent dependencies and remove that is not used

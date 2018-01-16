@@ -1,0 +1,3 @@
+Failed to update git index notification
+kind/bug team/enterprise sprint/current-sprint status/open-for-dev status/in-progress status/open-for-dev status/code-review status/in-progress status/code-review 
+Description Sometime, when try to add a new file to index a weird notification with error is shown. Reproduction Steps Open a workspace from java stack Create web-java-spring project from samples Open README.md, edit it. Wait until its status is set to edited. Delete README.md Open org.eclipse.che.examples package and create a java class here (context menu -> new -> Java Class) Select just created file in project explorer and try to add it to index with Main Menu -> Git -> Add To Index.... Then click Add. The notification with an error is shown.

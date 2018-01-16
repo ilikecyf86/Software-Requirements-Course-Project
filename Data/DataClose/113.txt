@@ -1,0 +1,3 @@
+[CHE 6] Foreign containers events are shown while a workspace starting
+kind/bug status/open-for-dev target/che6 team/platform 
+Description Foreign containers events are shown while a workspace starting. It can be reproduced only when CHE_INFRA_OPENSHIFT_PROJECT is specified (when all workspaces objects are created in one OpenShift project). Reproduction Steps Deploy Che server on minishift or ocp with configured CHE_INFRA_OPENSHIFT_PROJECT. Start two OpenShift workspaces at the same time. Check output tabs in Che IDE. See screenshot

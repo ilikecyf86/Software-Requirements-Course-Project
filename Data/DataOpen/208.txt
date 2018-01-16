@@ -1,0 +1,3 @@
+Position of the selection the file linked with editor may confuse users
+kind/enhancement severity/P2 team/plugin 
+Description Open the file under scroll in the Project explorer Enable link with editor feature. The selection set in the extreme lower/upper area. A user may not see this. OS and version: Che version: 6.0.0-M2

@@ -1,0 +1,3 @@
+Unable to mount volume to workspace - CHE-WORKSPACE-VOLUME
+kind/question 
+More a question than an issue. I tried different ways to mount a volume to my workspaces, but all failed (with 5.0 and the nightly builds). I run the following command: docker run --rm -t -v /var/run/docker.sock:/var/run/docker.sock -e CHE-WORKSPACE-VOLUME=/Users:/Users -e CHE_PORT=10083 -e CHE_DATA=/path/to/data eclipse/che-launcher:nightly start But with all variations I used, the Users folder never gets mounted into the workspaces. What do I do wrong or is this a bug?

@@ -1,0 +1,24 @@
+[build] mvn install in che-dev fails
+kind/question 
+Description I am trying to build Che locally, following the description here : https://github.com/eclipse/che/wiki/Development-Workflow#build-che-using-docker It fails with: ...
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:43 min (Wall Clock)
+[INFO] Finished at: 2017-10-11T08:12:29+00:00
+[INFO] Final Memory: 307M/1717M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.8:run (build-image) on project che-dashboard-war: An Ant BuildException has occured: Execute failed: java.io.IOException: Cannot run program "docker" (in directory "/home/user/che-build/dashboard"): error=2, No such file or directory
+[ERROR] around Ant part ...<exec failonerror="true" dir="/home/user/che-build/dashboard" executable="docker">... @ 4:85 in /home/user/che-build/dashboard/target/antrun/build-main.xml
+...
+ Reproduction Steps Clone Che checkout 5.18.0 run docker run -it --rm --name build-che \
+           -v "$HOME/.m2:/home/user/.m2" \
+           -v "$PWD":/home/user/che-build \
+           -w /home/user/che-build \
+           eclipse/che-dev \
+           mvn -DskipTests=true \
+               -Dfindbugs.skip=true \
+               -Dgwt.compiler.localWorkers=2 -T 1C \
+               -Dmdep.analyze.skip=true \
+               -Dlicense.skip=true \
+               clean install
+ OS and version: OS X

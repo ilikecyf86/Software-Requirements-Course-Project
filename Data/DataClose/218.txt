@@ -1,0 +1,7 @@
+Add volumes to machine configuration
+kind/enhancement status/open-for-dev target/che6 team/platform 
+Since in Che6 we move to multicontainer/sidecar way it become more important to be able to describe "interesting for workspace" persistence storage as a part of workspace configuration. Currently, there are two ways to describe in a case of attaching (mounting, syncing etc) volumes (folders) with persisted data: /projects folder attached to "ws-agent" machine is a sign to attach identified persistence storage to it everything else (like an arbitrary PVC) described in an infrastructure specific recipe (docker volume mount, PVC etc). It is proposed to add "volumes" section into workspace->environment->machine config, like:  volumes:
+    <name>:
+        path:</path/to/machine's/folder>
+        properties:{} - do we need that as option?
+ @garagatyi @sleshchenko @skabashnyuk

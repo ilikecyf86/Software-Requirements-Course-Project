@@ -1,0 +1,3 @@
+"Go into" item in context menu does not exist after used it in other module
+kind/bug severity/P2 
+Reproduction Steps: Go to the redhat.codenvy-stg.com Import some project by git Open context menu on some folder and click on "Go into" Click "Workspace" -> "Import Project" -> and import the same ptoject from git Try to use "Go into" in any folder of the new project . Expected behavior: "Go into" will be existed . Observed behavior: "Go into" is not exist . Attachment:

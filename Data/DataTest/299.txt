@@ -1,0 +1,3 @@
+Client hangs after changing theme
+kind/question kind/enhancement 
+When trying to switch to the light theme, the dialog hangs. I can only click the cross on the right top to get rid of it. The theme doesn't get updated unless I go back to the dashboard and reopen the project.

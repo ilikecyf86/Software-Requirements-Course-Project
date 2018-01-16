@@ -1,0 +1,3 @@
+Che version should be visible on the user dashboard
+kind/enhancement sprint/next-sprint status/open-for-dev team/plugin sprint/current-sprint status/in-progress sprint/next-sprint status/open-for-dev status/in-progress sprint/current-sprint 
+Currently to check the version of Che being run you have to open the IDE itself and go to the Help > About menu. It would be much faster when working on Che to be able to confirm the version from the user dashboard page. Perhaps there should be an "About" entry in the bottom menu for the user? Or maybe clicking on the Eclipse Che logo at the upper-left can bring up the About?

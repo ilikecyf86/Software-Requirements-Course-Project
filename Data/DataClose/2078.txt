@@ -1,0 +1,3 @@
+Add iPad Support
+kind/question 
+Hello, Just installed the latest version and when trying to access a new workspace from an IPad (Safari, Chrome and Firefox) an error stating "Unable to initialize IDE" is shown before the workspace creates a snapshot and stops. Thanks

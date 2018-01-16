@@ -1,0 +1,7 @@
+[Codenvy] New Project stuck at "Starting workspace runtime"
+kind/question 
+I was able to create a workspace, but everytime i try to create a project with any template, it gets stuck at starting workspace runtime... Creating and initializing workspace ... completed
+Starting workspace runtime
+Starting workspace agent
+Creating project
+ @bmicklea-ce

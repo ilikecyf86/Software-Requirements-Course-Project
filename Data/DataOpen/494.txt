@@ -1,0 +1,3 @@
+Remove deprecated methods from CommandOutputConsole.java
+kind/task team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Need to remove deprecated methods from CommandOutputConsole.java which were used in Artik-IDE project.

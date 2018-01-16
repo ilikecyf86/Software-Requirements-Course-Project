@@ -1,0 +1,3 @@
+Allow to configure and see default commands per goals
+kind/enhancement team/ide 
+Goal The goal of this enhancement is to allow the user to configure and see default commands per goals. At this moment, the only way for the user to select the default commands are to use the goal's button. There is no way to see and configure those default command for a particular workspace. So when sharing a workspace, there are no default commands associated with the buttons. Sub-tasks We will: Materialize the default commands in project explorer by adding "(default)" after the name of the command. Allow user to select the default command for the goal by using a contextual menu (right-click on the command): "Set as default".

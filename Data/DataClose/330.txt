@@ -1,0 +1,35 @@
+Keycloak start fails after restart
+kind/bug severity/blocker team/osio 
+After restart keycloak server it fails to start: =========================================================================
+
+  JBoss Bootstrap Environment
+
+  JBOSS_HOME: /opt/jboss/keycloak
+
+  JAVA: /usr/lib/jvm/java/bin/java
+
+  JAVA_OPTS:  -server -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true
+
+=========================================================================
+
+15:35:47,483 INFO  [org.jboss.modules] (main) JBoss Modules version 1.6.0.Final
+15:35:47,910 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.7.SP1
+15:35:48,102 INFO  [org.jboss.as] (MSC service thread 1-7) WFLYSRV0049: Keycloak 3.3.0.CR2 (WildFly Core 3.0.1.Final) starting
+15:35:49,916 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+15:35:49,950 ERROR [org.jboss.as.controller.management-operation] (ServerService Thread Pool -- 18) WFLYCTL0013: Operation ("add") failed - address: ([
+    ("subsystem" => "datasources"),
+    ("jdbc-driver" => "postgresql")
+]) - failure description: "WFLYCTL0212: Duplicate resource [
+    (\"subsystem\" => \"datasources\"),
+    (\"jdbc-driver\" => \"postgresql\")
+]"
+15:35:49,957 INFO  [org.wildfly.security] (ServerService Thread Pool -- 4) ELY00001: WildFly Elytron version 1.1.1.Final
+15:35:49,988 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 24) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+15:35:50,090 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) "WFLYCTL0193: Failed executing subsystem datasources boot operations"
+15:35:50,092 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("parallel-subsystem-boot") failed - address: ([]) - failure description: "\"WFLYCTL0193: Failed executing subsystem datasources boot operations\""
+15:35:50,099 FATAL [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0056: Server boot has failed in an unrecoverable manner; exiting. See previous messages for details.
+ steps to reproduce: run CHE in multi user mode: docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock \
+                    -v /Users/roman/development/codenvy_projects/.che_multi:/data \
+                    -e CHE_MULTIUSER=true \
+                    eclipse/che-cli:nightly start
+ please note that we use nightly tags as we already in master restart keycloak server docker restart <KEYCLOAK_CONTAINER_ID> OR stop codenvy with CLI and start it again

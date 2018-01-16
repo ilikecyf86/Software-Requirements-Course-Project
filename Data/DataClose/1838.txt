@@ -1,0 +1,3 @@
+Add ability upload file by public url.
+kind/enhancement 
+It would be nice to add ability upload file by public url. It can be useful when user want add some external files(f.e. jQuery, Requirejs...) directly into the project. For now user need download such files locally and upload them from host computer to project by "Upload file" feature.

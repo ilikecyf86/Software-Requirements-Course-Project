@@ -1,0 +1,3 @@
+After starting a workspace sometimes projects and commands aren't visible in the IDE (regression)
+kind/bug severity/blocker team/ide 
+Sometimes a workspace starts not correctly. There are no project and commands visible in the IDE and after refreshing a page they appears. List of tests that are failed because of this problem: ProjectStateAfterRefresh ProjectStateAfterWorkspaceRestart WorkingWithNodeWsTest WorkingWithJavaMySqlStackTest CheckExpressStackTest CheckCodeigniterStackTest CheckSwiftStackTest CheckLaravelStackTest CheckRailsStackTest CheckSymfonyStackTest

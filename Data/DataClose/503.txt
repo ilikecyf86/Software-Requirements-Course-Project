@@ -1,0 +1,3 @@
+CI build success if CLI tests are failing
+kind/bug sprint/current-sprint status/in-progress team/production status/in-progress 
+we have some failed CLI tests but CI job that check tests is green because tests finished with 0 exit code. actions: make tests fail job fix tests

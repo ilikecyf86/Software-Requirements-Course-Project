@@ -1,0 +1,3 @@
+Hotkeys for Project Explorer is active despite dialog window(s) on top
+kind/bug team/ide 
+If an item is selected in Project Explorer and a (dialog) window is shown to user, all hotkeys are working and can produce dialogs and popups on top of current state of the IDE. Reproduction Steps: Open an workspace, create a project. Select an item in project explorer. Click Workspace -> Create project from main menu. Hit delete key. As a result confirmation of files deleting will be shown. More, it doesn't depend on type of current window/popup, if only element in focus doesn't intercept a key combination it will be sent to Project Explorer.

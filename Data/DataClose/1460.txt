@@ -1,0 +1,3 @@
+Templates list of the stack has no default selection, when Dashboard page loaded at firs time
+kind/bug team/plugin sprint/current-sprint status/open-for-dev status/code-review status/open-for-dev status/code-review status/code-review status/code-review sprint/current-sprint 
+When Dasboard page loads at first time, no sample project selected in the templates list of the stack. Reproduction Steps: Use an accout without any workspaces Open Dasboard page (Do not select other stack) Scroll down to the templates list of the stack Expected: First sample project should be selected in the templates list. Actual: Templates list has no selection. OS and version: Ubuntu 16.0.4

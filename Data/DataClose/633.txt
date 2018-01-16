@@ -1,0 +1,3 @@
+Saving a file does not update file saved status symbol
+kind/question 
+Saving a file does not always update Che's file saved status with auto-save turned off. Reproduction Steps: Disable auto-save, open a file and add 1 new character. Press Ctrl + S, the * symbol on the filename will flash and remain. Press Ctrl + Z and the whole of the file will be selected. OS and version: Che 5.15.0 on Chrome 59, Docker 17.03.1 with AWS EBS filesystem

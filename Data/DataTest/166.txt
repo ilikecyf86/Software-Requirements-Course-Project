@@ -1,0 +1,3 @@
+Maven pom.xml and project configuration are not synced
+kind/bug team/ide severity/blocker kind/docs kind/bug severity/blocker team/ide 
+I added a maven pom using the project configuration. Afterwards I opened the pom-xml and changed the group id and version number. When reopening the project configuration I still see the old information.

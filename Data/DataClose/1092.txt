@@ -1,0 +1,3 @@
+Setting Environment variables Using Factories
+kind/question 
+Using Factories, do i have an option to use variables/attributes as environment variables. For example - during Factory creation - i would like to have a variable (say ticketID) as an attribute/some parameter in factory configuration json and would use the same inside my workspace as environment variable. Is there a possibility to achieve this ? Version: Eclipse Che 5.8.0 Docker 1.13.0

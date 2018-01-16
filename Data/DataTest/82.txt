@@ -1,0 +1,3 @@
+Git import style urls git://git@host:example.git
+kind/question kind/enhancement kind/question 
+Hi, How clone or import from url style git://user@example.git without pair key and without change at server? i.e git clone git ://git.kernel.org/pub/scm/git/git.git. Thanks

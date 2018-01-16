@@ -1,0 +1,5 @@
+Print selenium test statistics in the test log during the tests execution
+kind/enhancement status/open-for-dev team/production 
+Description Sometimes it is useful to know the current progress of selenium tests executing. For example, it could help to stop test execution in case of significant regression, or if there is too big latency at the product side. As a variant, we can print such statistics in test log at the start of each test: Start of test org.eclipse.che.selenium.miscellaneous.DialogAboutTest#dialogAboutTest
+Executed tests: 120
+Failed tests: 2

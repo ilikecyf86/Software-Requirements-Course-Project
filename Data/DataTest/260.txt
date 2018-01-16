@@ -1,0 +1,3 @@
+Make plugin-svn build & run as part of Codenvy onprem 4.x
+status/pending-merge 
+Refactor plugin-svn in order to have it build & run as part of: Che 4. Codenvy onprem 4.x.

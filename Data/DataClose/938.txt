@@ -1,0 +1,3 @@
+URL for zip file importing can be without "zip" extension
+kind/bug severity/P2 
+Reproduction Steps: Go to "Dashboard" -> "Import from existing location" -> "Zip" In the "Zip URL" field, try input address without "zip" extension Pay attention to result Expected behavior Some error message will be shown and "Create" button will be not active Observed behavior Error message not displayed and "Create" button is active Attachment

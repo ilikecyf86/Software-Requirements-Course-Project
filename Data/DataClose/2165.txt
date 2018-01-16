@@ -1,0 +1,3 @@
+Return the 'Scroll from source button' into nav. bar of Project explorer
+kind/enhancement 
+Many users need scrolling project tree to related opened file. We have this feature but for invocation we should: Edit -> Reveal resource. But for many users this is not evident. Invocation of this feature more simply from the project explorer navigation bar.

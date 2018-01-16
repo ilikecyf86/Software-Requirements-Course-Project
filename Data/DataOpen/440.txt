@@ -1,0 +1,3 @@
+Provide UI for system admin to set global stacks
+kind/enhancement sprint/next-sprint status/open-for-dev team/plugin sprint/next-sprint 
+The system admin should have the extended UI for managing system(global) stacks - change predefined, create new ones.

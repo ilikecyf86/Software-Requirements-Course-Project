@@ -1,0 +1,3 @@
+No notification that connection to server and ws agent has been lost
+kind/question kind/bug kind/question team/ide severity/P1 sprint/next-sprint status/in-progress sprint/current-sprint sprint/next-sprint 
+Not sure if this is a bug or an enhancement request. Steps to reproduce on Win 10. Start Che Start a workspace Stop all running containers. When in the IDE, should a user get a notification saying that connection to a server and ws agent has been lost? Right now, nothing happens. If I stop just ws container, then in the IDE, the workspace is correctly stopped. But if a server container goes down the IDE does not notify a user. @TylerJewell @vparfonov wdyt?

@@ -1,0 +1,3 @@
+Manual testing of the che-multiuser branch
+kind/task team/production 
+We have new multiuser functionality for che in the developing, on the current stage we need to do checking of the login page and all functionality that related with authentification : creating user, restoring password, negative testing for user creating, features that related with workspace creating and other.

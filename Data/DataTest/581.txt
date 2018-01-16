@@ -1,0 +1,6 @@
+compile error
+kind/question can't reproduce 
+git log commit d2ab49a Merge: 2815a83 1a5ee0d Author: Alexander Garagatyi agaragatyi@codenvy.com Date: Fri Dec 25 16:37:40 2015 +0200 Merge pull request #141 from codenvy/IDEX-3726
+
+IDEX-3726: adopt ws agent to run it as common machine process
+ [INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ assembly-ide-war --- [INFO] Changes detected - recompiling the module! [INFO] Compiling 5 source files to /home/wu560130911/projects/che/assembly-ide-war/target/classes warning: Supported source version 'RELEASE_6' from annotation processor 'org.jvnet.hudson.annotation_indexer.AnnotationProcessorImpl' less than -source '1.7' /home/wu560130911/projects/che/assembly-ide-war/src/main/java/org/eclipse/che/api/deploy/ApiModule.java:116: error: cannot find symbol bindConstant().annotatedWith(Names.named(DockerMachineExtServerLauncher.WS_AGENT_PROCESS_START_COMMAND)) ^ symbol: variable WS_AGENT_PROCESS_START_COMMAND location: class DockerMachineExtServerLauncher 1 error 1 warning

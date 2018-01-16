@@ -1,0 +1,3 @@
+How can I verify if my IDE plugins are successfully loaded into the CHE IDE
+kind/question 
+I have been struggling to verify whether my IDE plugin is loaded or not, as sometime it shows up and some time it doesn't. Are there some physical locations where i can verify if the jars are loaded or not.

@@ -1,0 +1,3 @@
+Error marker tooltip shouldn't be "on top" of dialogs
+kind/bug severity/P2 team/ide 
+Description Error marker tooltip should not be on top of dialogs. Best explained by this recording I made: https://youtu.be/8OOvjoDuYJ0 When new dialog was invoked (in this case debug config dialog and "go to line" dialog) the error marker tooltip was still visible on top of the dialog. I would expect the error marker tooltip to go away or stay behind the dialog. Reproduction Steps See screencast: https://youtu.be/8OOvjoDuYJ0 OS and version: Fedora 26, Che 6.0.0.M1 Diagnostics:

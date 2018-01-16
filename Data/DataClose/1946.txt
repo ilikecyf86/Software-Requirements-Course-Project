@@ -1,0 +1,3 @@
+failed to inject orion editor
+kind/question 
+from issue no: 3118 @TylerJewell i have attached screen shot of console for the same:

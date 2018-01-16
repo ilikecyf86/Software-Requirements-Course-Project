@@ -1,0 +1,3 @@
+Minishift HTTPS
+kind/question 
+Description Is there a guide to getting minishift to work with ssl/https? Currently I have everything working with http using https://www.eclipse.org/che/docs/setup/openshift/index.html.

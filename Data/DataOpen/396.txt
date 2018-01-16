@@ -1,0 +1,3 @@
+Delete Java class from Project Explorer should consider as Refactoring
+kind/enhancement team/ide team/enterprise status/analyzing team/ide team/ide team/enterprise 
+If user want to delete some class from from java project before deleting IDE must analyze code base and show warn message with information where this file are used. How it work now in Eclipse Che: Must be something like:

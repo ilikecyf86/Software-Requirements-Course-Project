@@ -1,0 +1,3 @@
+GitHub oAuth callback "http://${che_localhost}:8080/che/api/oauth/callback" not working
+
+hello, when I want to load repository from github, there is an error. By the way, I already registered Che at GitHub, and correctly configured che.properties.

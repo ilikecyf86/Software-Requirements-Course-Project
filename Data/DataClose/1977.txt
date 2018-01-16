@@ -1,0 +1,3 @@
+Create GET method to return snapshot configuration
+kind/task sprint/current-sprint status/open-for-dev team/platform status/code-review status/open-for-dev status/code-review sprint/current-sprint 
+On UD we need to know how our snapshots is configured. We need to know that over HTTP. Idea is to make similar to /user/settings service to return auto_restore , auto_snapshot configuration. Need for codenvy/codenvy#937

@@ -1,0 +1,3 @@
+Adapt IDE Action API for the JavaScript endpoint
+kind/enhancement target/branch team/ide status/code-review status/code-review 
+Add Action interface and declare all needed methods from absctract class Action Remove ImageResource class Cleanup constructors in absctract class Action

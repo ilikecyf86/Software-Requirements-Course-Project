@@ -1,0 +1,3 @@
+Add CDT Support
+New feature status/open-for-dev New feature kind/enhancement 
+Please support the CDT (as well as the JDT). I'd like to see support for the following features: Intellisense Build Debugging Types (hierarchy) Call graph Editor/Syntax

@@ -1,0 +1,3 @@
+"Workspace Loading" Animations Use Much CPU
+kind/bug severity/P2 target/che6 
+The anmations shown in Che 6 when starting a new workspace (or when the workspace has been idled) seem to take up a full core of my 4-core machine. I determined that by observing the chromium processes with "top" on my fedora 27 machine.

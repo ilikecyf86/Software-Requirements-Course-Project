@@ -1,0 +1,3 @@
+Add ability to configure admin for che-multiuser
+kind/task status/open-for-dev team/platform 
+Organization API are moved into Che multiuser packaging but it is not available for use while creating admin is not moved. It is required to add the ability to configure a user that will have all permissions from System Permissions Domain.

@@ -1,0 +1,3 @@
+Scala support
+new feature status/open-for-dev 
+_1 Upvote_ Hi All, Is there any plugin (autocomplete, build, etc) for scala ? Thanks much.

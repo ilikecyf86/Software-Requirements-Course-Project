@@ -1,0 +1,3 @@
+Agents installation specification
+kind/task sprint/next-sprint status/open-for-dev team/platform sprint/current-sprint sprint/next-sprint status/in-progress status/open-for-dev sprint/current-sprint 
+agent installation workflow agent installation API (how client should connect to it, stream and interpret data)

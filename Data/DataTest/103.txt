@@ -1,0 +1,3 @@
+Is there a way to skip pull docker images if there is already existing the target?
+
+I'm using Eclipse Che Server with docker through docker toolbox on win7 64bits. But I found each time I do start my workspace it will try to pull codenvy/ubuntu_jdk8 from docker.io, which would be very time-consuming. Could I just skip that if it is already there? By the way, I'm sure there are proper docker images existing. Command docker images showing like this: codenvy/ubuntu_jdk8 latest 37a7da3b7edc 5 weeks ago 685 MB Both virtual machine default and che have this docker image already.

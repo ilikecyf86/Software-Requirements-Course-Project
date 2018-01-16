@@ -1,0 +1,3 @@
+'Find' feature does not work in some cases
+kind/bug target/che6 
+Reproduction Steps Create spring sample Edit->Find action Type 'Developer Workspace' in 'Text to find' field (readme file contains this text) Press 'Search' button You can see 'No results found' message Another problem: Find Text window contains tip: "Replace one character by ? - Replace any string by *" Looks like the tip does not work for any cases. OS and version: Fedora25

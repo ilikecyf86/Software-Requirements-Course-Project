@@ -1,0 +1,3 @@
+Transplantation of codenvy dashboard stuff to che dashboard
+kind/task sprint/next-sprint status/open-for-dev team/plugin sprint/current-sprint sprint/next-sprint status/in-progress status/open-for-dev status/code-review status/in-progress status/code-review sprint/current-sprint 
+The following list of functionality should be moved from codenvy dashboard to che one: user management permissions interactions organization/team management resource management user's profile interaction

@@ -1,0 +1,18 @@
+Runtime exception caught in thread ServerSideRequestProcessor. Message: Can't find IClasspathEntry for path
+kind/bug 
+In the workspace ws-agent logs, I have bunch of error logs like this one: 2017-09-15 13:46:19,752[equestProcessor]  [ERROR] [oggingUncaughtExceptionHandler 31]   - Runtime exception caught in thread ServerSideRequestProcessor. Message: Can't find IClasspathEntry for path /rh-che/builds/fabric8-che/plugins/test-logback/src/test/java/com/redhat/che/testlogbackjson/Test.java
+java.lang.RuntimeException: Can't find IClasspathEntry for path /rh-che/builds/fabric8-che/plugins/test-logback/src/test/java/com/redhat/che/testlogbackjson/Test.java
+	at org.eclipse.che.plugin.java.testing.AbstractJavaTestRunner.getRuntimeException(AbstractJavaTestRunner.java:257)
+	at org.eclipse.che.plugin.java.testing.AbstractJavaTestRunner.findCompilationUnitByPath(AbstractJavaTestRunner.java:178)
+	at org.eclipse.che.plugin.java.testing.AbstractJavaTestRunner.detectTests(AbstractJavaTestRunner.java:80)
+	at org.eclipse.che.api.testing.server.TestingRPCService.handleTestDetection(TestingRPCService.java:95)
+	at org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerManager$OneToOneHandler.handle(RequestHandlerManager.java:328)
+	at org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerManager$OneToOneHandler.access$1000(RequestHandlerManager.java:315)
+	at org.eclipse.che.api.core.jsonrpc.commons.RequestHandlerManager.handle(RequestHandlerManager.java:212)
+	at org.eclipse.che.api.core.jsonrpc.commons.RequestDispatcher.dispatch(RequestDispatcher.java:51)
+	at org.eclipse.che.api.core.jsonrpc.commons.JsonRpcMessageReceiver.processRequest(JsonRpcMessageReceiver.java:97)
+	at org.eclipse.che.api.core.jsonrpc.commons.JsonRpcMessageReceiver.lambda$receive$0(JsonRpcMessageReceiver.java:72)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+ Reproduction Steps: probably import a java project open some java files see the ws logs: /home/user/che/ws-agent/logs/archive/..../catalina.out maybe, maybe not related to IDE freeze ?

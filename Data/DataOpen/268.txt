@@ -1,0 +1,3 @@
+SPI: enhance route name generation
+kind/question target/branch kind/enhancement kind/question 
+Currently route name generation in spi looks the folowing way: "route" + 8 random chars. Route generation could be treated as an internal thing, but once we switch to `spi, preview url would look the following way: http://routejos7cmy6-eclipse-che.192.168.42.144.nip.io/ This is less pretty in comparison to what is implemented in OpenShiftConnector where route's name are prefixed using labels coming from images e.g: http://vertx-1kj72hdklskslyq-ibuziuk-che.192.168.42.144.nip.io/ This issue could probably be treated as minor cosmetic, but it worth investigating to figure out if routes exposed to used could be more readable

@@ -1,0 +1,3 @@
+Che 5.2.2 Installation fails on Docker 1.13.0
+kind/question 
+Hi, Eclipse Che Installation on Docker 1.13.0 fails with the below errors: INFO: (che cli) : 5.2.2 - using docker 1.13.0 / native /scripts/base/library.sh: line 555: [: 10: unary operator expected /scripts/base/library.sh: line 308: 2 : unbound variable Reproduction Steps: docker run -it --rm -v /usr/local/codenvy/chedata:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che start OS and version: RHEL 7.3

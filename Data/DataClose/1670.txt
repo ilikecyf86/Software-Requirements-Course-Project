@@ -1,0 +1,3 @@
+circular dependency in dockerfiles
+kind/bug 
+@TylerJewell @benoitf during release I was faced with issue where I can't build tagged docker images due to circular dep we have: cli tests in base image wants to pull che-cli which is FROM che-base. hopefully @benoitf showed me that there is a way to skip those tests so Im able to continue release but we have to fix this.

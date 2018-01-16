@@ -1,0 +1,3 @@
+Che can't authorise to github
+kind/enhancement 
+I click on the menu: Help -> Preferences, then click the right bottom cat to authorise to github: But the popped page is a 404:

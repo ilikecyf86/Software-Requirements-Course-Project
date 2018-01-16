@@ -1,0 +1,3 @@
+anyone who can tell me where's the source code of che-terminal-server
+kind/question 
+where's the che-terminal-server source code used by che-4.5.1. where's the che-terminal-server source code used by latest che.

@@ -1,0 +1,3 @@
+WS Fails Creation - Zombie Docker Networks
+kind/bug team/production 
+In rare situations, it seems possible that zombie Docker networks are created. When we have too many zombie networks, then there is a networking pool connection error and workspace creation fails because docker network cannot create a new network. This probably happens when che servers are killed without che being able to destroy a network. We should test for this situation and have Che clean up zombie networks.

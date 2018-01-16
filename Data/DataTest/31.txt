@@ -1,0 +1,3 @@
+Please add native Avro schema json editing to Che
+kind/enhancement 
+Avro and ParquetAvro are the dominant serialization formats in big data. ParquetAvro uses the Avro metadata for Parquet storage, so they share a common JSON schema. Since Che is natively JavaScript on the front end, editing JSON Avro schemas with Che will perform better than alternatives, and also has the potential to be more feature-rich. http://avro.apache.org/docs/current/spec.html https://github.com/Parquet/parquet-mr/tree/master/parquet-avro It is important to support the core schema as well as allowing user-defined annotations.

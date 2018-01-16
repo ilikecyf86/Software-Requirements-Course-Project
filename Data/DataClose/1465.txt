@@ -1,0 +1,3 @@
+Validate extra_hosts env value before sending requests to Docker/Swarm
+kind/bug severity/P2 team/platform 
+Extra hosts are passed as host:ip,host1:ip1 etc, i.e. comma separated. We do not validate extra hosts, and if a user provides data in an invalid format, for example host,ip, request to Docker API is invalid, and Docker, instead of properly handling this error, throws http panic. Extra hosts properties should be validated before they are part of request to Docker/Swarm. We should also give a real example in codenvy.env

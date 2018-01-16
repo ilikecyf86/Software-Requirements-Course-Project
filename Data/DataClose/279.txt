@@ -1,0 +1,3 @@
+Navigate to file opens file that doesn't match search
+kind/bug team/ide sprint/next-sprint severity/P1 sprint/current-sprint sprint/next-sprint 
+Description For some reason when navigate to file doesn' provide any suggestion of a file a user looks for pressing enter opens a completely irrelevant file. Here are 2 examples: https://youtu.be/KwWechB9xNU https://youtu.be/LqTnEcOBFRI Reproduction Steps OS and version: Diagnostics:

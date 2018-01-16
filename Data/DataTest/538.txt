@@ -1,0 +1,3 @@
+Che force closes
+kind/question 
+I can't seem to run it, because every time I start the server it loads for around 3 seconds and then closes.

@@ -1,0 +1,3 @@
+Unsupported OAuth provider github for Ready-To-Run project
+kind/question 
+[Short description of problem here] I have installed che on windows che is running and workspaces are creating. But when i am trying to create ready to run projects. JAVA stack, web-java-spring project It's throwing error Unsupported OAuth provider github Che version: Version :5.0.0-M8Revision :1c15a44844c96ff9 Additional information: I have tried the resolution mentioned on #1694 But of no help. Can someone give me some pointers

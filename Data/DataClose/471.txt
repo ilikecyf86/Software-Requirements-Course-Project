@@ -1,0 +1,3 @@
+The Navigate to file widget is not closed by ESC
+kind/bug severity/P2 selenium/failure 
+Reproduction Steps: Go to a workspace and invoke CTRL+ ALT+'n' combination After appearance the Navigate to file widget press ESC Expected result: the widget should be closed Actual result the widget is not closed OS and version: Chrome browser, Fedora 25, CHE - 5.18.0-SNAPSHOT

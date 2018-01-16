@@ -1,0 +1,3 @@
+We have red output after launching tomcat for the Spring project
+kind/bug sprint/next-sprint status/open-for-dev team/enterprise status/in-progress status/open-for-dev sprint/current-sprint sprint/next-sprint status/code-review status/in-progress status/code-review sprint/current-sprint 
+[Short description of problem here] Reproduction Steps: Create Spring project in the CHE from dashboard Go to the IDE and launch tomcat using command Expected behavior: We should have tomcat log in the command output with gray style [Describe expected behavior here] Observed behavior: We have: Che version: 5.0.0-M9 OS and version: Ubuntu 14.0 TLS Docker version: 1.12.1 Che install: Docker container Additional information:

@@ -1,0 +1,3 @@
+Save CHE server / workspace logs after running tests on OCP
+kind/task status/in-progress team/production 
+Save CHE server / workspace logs after running tests on OCP

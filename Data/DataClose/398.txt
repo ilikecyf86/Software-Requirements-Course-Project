@@ -1,0 +1,3 @@
+SPI: Port AppStatesPreferenceCleaner to spi branch
+kind/bug team/ide 
+Looks like preference cleaning was implemented in master and not ported correctly in spi branch. We don't have this feature in spi but have a class that implements it in abandoned module che-plugin-docker-machine. Looks like it is the result of the merge of the master in the spi. Reproduction Steps: OS and version: Diagnostics:

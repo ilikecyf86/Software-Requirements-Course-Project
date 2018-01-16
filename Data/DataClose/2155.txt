@@ -1,0 +1,3 @@
+How to change location in origin(Git-->Remotes-->origin) using curl
+kind/question 
+Hi, I have created workspace and project successfully. Now i need to change location in origin(Git-->Remotes-->origin) using curl. Can you please help me with this Thanks, Worksamp

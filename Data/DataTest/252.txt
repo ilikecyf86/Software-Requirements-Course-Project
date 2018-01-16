@@ -1,0 +1,137 @@
+Unfinished loading while open http://localhost:8080
+
+While opening che from http://localhost:8080 it still loading and won't open the dashboard. I'm running on win7 64 bit. Step to reproduce the errors: Following http://www.eclipse.org/che/getting-started/ , when I run "che.bat run". This is what the error showing from the terminal: D:\eclipse-che-4.0.0-RC13\bin>che.bat
+
+#############################################################
+On Windows, Che projects can only reside in %userprofile% due
+to limitations of Docker. On this computer, %userprofile% is
+C:\Users\Administrator
+#############################################################
+
+Docker machine named default already exists...
+Setting environment variables for machine default...
+Docker is configured to use vbox docker-machine named default with IP 192.168.99
+.100...
+
+############## HOW TO CONNECT YOUR CHE CLIENT ###############
+After Che server has booted, you can connect your clients by:
+1. Open browser to http://localhost:8080, or:
+2. Open native chromium app.
+#############################################################
+
+Using CATALINA_BASE:   /D/ECLIPS~1.0-R/tomcat
+Using CATALINA_HOME:   /D/ECLIPS~1.0-R/tomcat
+Using CATALINA_TMPDIR: /D/ECLIPS~1.0-R/tomcat/temp
+Using JRE_HOME:        /d/eclipse-che-4.0.0-RC13/tools/jre/
+Using CLASSPATH:       /D/ECLIPS~1.0-R/tomcat/conf/:/d/eclipse-che-4.0.0-RC13/to
+ols/jre//lib/tools.jar:/D/ECLIPS~1.0-R/tomcat/bin/bootstrap.jar:/D/ECLIPS~1.0-R/
+tomcat/bin/tomcat-juli.jar
+2016-03-26 19:44:16,570[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 89]    - Server version:        Apache Tomcat/8.0.29
+2016-03-26 19:44:16,573[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 91]    - Server built:          Nov 20 2015 09:18:00 UTC
+2016-03-26 19:44:16,574[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 93]    - Server number:         8.0.29.0
+2016-03-26 19:44:16,575[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 95]    - OS Name:               Windows 7
+2016-03-26 19:44:16,575[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 97]    - OS Version:            6.1
+2016-03-26 19:44:16,576[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 99]    - Architecture:          amd64
+2016-03-26 19:44:16,577[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 101]   - Java Home:             D:\eclipse-che-4.0.0-RC13\tools\jre
+2016-03-26 19:44:16,577[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 103]   - JVM Version:           1.8.0_66-b18
+2016-03-26 19:44:16,578[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 105]   - JVM Vendor:            Oracle Corporation
+2016-03-26 19:44:16,579[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 107]   - CATALINA_BASE:         D:\eclipse-che-4.0.0-RC13\tomcat
+2016-03-26 19:44:16,579[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 109]   - CATALINA_HOME:         D:\eclipse-che-4.0.0-RC13\tomcat
+2016-03-26 19:44:16,580[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Djava.util.logging.config.file=D:/ECLIPS~1.0-R
+/tomcat/conf/logging.properties
+2016-03-26 19:44:16,582[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Djava.util.logging.manager=org.apache.juli.Cla
+ssLoaderLogManager
+2016-03-26 19:44:16,583[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Xms256m
+2016-03-26 19:44:16,584[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Xmx1024m
+2016-03-26 19:44:16,585[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Djava.security.egd=file:/dev/./urandom
+2016-03-26 19:44:16,586[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Dport.http=8080
+2016-03-26 19:44:16,587[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Dche.home=D:/ECLIPS~1.0-R
+2016-03-26 19:44:16,587[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Dche.logs.dir=D:/ECLIPS~1.0-R/tomcat/logs/
+2016-03-26 19:44:16,588[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Dcom.sun.management.jmxremote
+2016-03-26 19:44:16,589[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Dcom.sun.management.jmxremote.ssl=false
+2016-03-26 19:44:16,590[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Dcom.sun.management.jmxremote.authenticate=fal
+se
+2016-03-26 19:44:16,591[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Dche.local.conf.dir=D:/ECLIPS~1.0-R/conf/
+2016-03-26 19:44:16,592[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Djava.endorsed.dirs=D:/ECLIPS~1.0-R/tomcat/end
+orsed
+2016-03-26 19:44:16,592[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Dcatalina.base=D:/ECLIPS~1.0-R/tomcat
+2016-03-26 19:44:16,593[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Dcatalina.home=D:/ECLIPS~1.0-R/tomcat
+2016-03-26 19:44:16,594[main]             [INFO ] [o.a.c.s.VersionLoggerListener
+ 115]   - Command line argument: -Djava.io.tmpdir=D:/ECLIPS~1.0-R/tomcat/temp
+2016-03-26 19:44:16,805[main]             [INFO ] [o.a.c.http11.Http11NioProtoco
+l 425]  - Initializing ProtocolHandler ["http-nio-8080"]
+2016-03-26 19:44:16,905[main]             [INFO ] [o.a.t.util.net.NioSelectorPoo
+l 72]   - Using a shared selector for servlet write/read
+2016-03-26 19:44:16,909[main]             [INFO ] [o.a.catalina.startup.Catalina
+ 587]   - Initialization processed in 729 ms
+2016-03-26 19:44:16,970[main]             [INFO ] [c.m.JmxRemoteLifecycleListene
+r 332]  - The JMX Remote Listener has configured the registry on port 32001 and
+the server on port 32101 for the Platform server
+2016-03-26 19:44:16,972[main]             [INFO ] [o.a.c.core.StandardService 43
+3]      - Starting service Catalina
+2016-03-26 19:44:16,972[main]             [INFO ] [o.a.c.core.StandardEngine 259
+]       - Starting Servlet Engine: Apache Tomcat/8.0.29
+2016-03-26 19:44:17,039[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]
+        - Deploying web application archive D:\eclipse-che-4.0.0-RC13\tomcat\web
+apps\dashboard.war
+2016-03-26 19:44:17,503[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]
+        - Deployment of web application archive D:\eclipse-che-4.0.0-RC13\tomcat
+\webapps\dashboard.war has finished in 463 ms
+2016-03-26 19:44:17,507[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]
+        - Deploying web application archive D:\eclipse-che-4.0.0-RC13\tomcat\web
+apps\ide.war
+2016-03-26 19:44:23,143[ost-startStop-1]  [WARN ] [p.DockerExtConfBindingProvide
+r 51]   - DockerExtConfBindingProvider
+2016-03-26 19:44:24,768[ost-startStop-1]  [INFO ] [.c.p.d.c.DockerRegistryChecke
+r 43]   - Probing registry 'http://localhost:5000'
+2016-03-26 19:44:25,856[ost-startStop-1]  [WARN ] [.c.p.d.c.DockerRegistryChecke
+r 50]   - Docker registry http://localhost:5000 is not available, which means th
+at you won't be able to save snapshots of your workspaces.
+How to configure registry?
+        Local registry  -> https://docs.docker.com/registry/
+        Remote registry -> set up 'docker.registry.auth.*' properties
+2016-03-26 19:44:26,639[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]
+        - Deployment of web application archive D:\eclipse-che-4.0.0-RC13\tomcat
+\webapps\ide.war has finished in 9,132 ms
+2016-03-26 19:44:26,641[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]
+        - Deploying web application archive D:\eclipse-che-4.0.0-RC13\tomcat\web
+apps\swagger.war
+2016-03-26 19:44:26,705[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]
+        - Deployment of web application archive D:\eclipse-che-4.0.0-RC13\tomcat
+\webapps\swagger.war has finished in 64 ms
+2016-03-26 19:44:26,708[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 1036
+]       - Deploying web application directory D:\eclipse-che-4.0.0-RC13\tomcat\w
+ebapps\ROOT
+2016-03-26 19:44:26,781[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 1152
+]       - Deployment of web application directory D:\eclipse-che-4.0.0-RC13\tomc
+at\webapps\ROOT has finished in 73 ms
+2016-03-26 19:44:26,786[main]             [INFO ] [o.a.c.http11.Http11NioProtoco
+l 470]  - Starting ProtocolHandler ["http-nio-8080"]
+2016-03-26 19:44:26,797[main]             [INFO ] [o.a.catalina.startup.Catalina
+ 638]   - Server startup in 9887 ms

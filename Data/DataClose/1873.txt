@@ -1,0 +1,3 @@
+Docs maven build
+kind/docs 
+We need to build the che docs using jekyll 3.3.1. The following are requirements: Create war file to use in tomcat server running in docker container. Can be used by eclipse/che-server . Building requires jekyll. Need to provide docs to future codenvy docs maven build that requires the che docs source from src/main/ directory. I created a branch that can be worked from. It is an optional starting point only. Requirements are listed above. https://github.com/codenvy/che-docs/tree/build-pom

@@ -1,0 +1,3 @@
+Find in path does not work
+kind/bug severity/blocker team/ide status/in-progress status/code-review status/code-review status/in-progress 
+Open any project. Hit Ctrl+Shift+F to search for some text. 0 occurrences found even though files contain the text being searched.

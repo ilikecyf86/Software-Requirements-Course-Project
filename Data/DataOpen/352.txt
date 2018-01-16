@@ -1,0 +1,3 @@
+Rework CLI to avoid using Everrest based Websocket calls
+kind/task sprint/next-sprint team/osio 
+Founded usages: https://github.com/eclipse/che/blob/master/dockerfiles/lib/src/spi/websocket/messagebus.ts https://github.com/eclipse/che/blob/master/dockerfiles/lib/src/api/wsmaster/workspace/workspace.ts#L124-L134

@@ -1,0 +1,3 @@
+Add server health concept into infrastructure workflow.
+kind/task 
+Add health-check concept into the model of server conf. Add health status into the model of runtime server. Add implementation of server health-checking in Docker SPI impl.

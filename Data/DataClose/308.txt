@@ -1,0 +1,3 @@
+After stop workspace we should clear debugger panel.
+kind/bug team/enterprise status/open-for-dev sprint/current-sprint status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+Reproduction Steps Create Spring project Open GreetingController. Add breakpoint in the line 15; Debug Spring application. Stop workspace Actual behavior: debugger panel still contains all debug information. Expected behavior: debugger panel should be clear. OS and version: Fedora 25 Diagnostics: CHE versiion: 5.19.0-SNAPSHOT

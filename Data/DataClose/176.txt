@@ -1,0 +1,5 @@
+Wrong Git upstream can be set when importing a project with specified branch
+kind/bug team/enterprise status/in-progress sprint/current-sprint status/in-progress sprint/current-sprint 
+Description Wrong Git upstream can be set when importing a project with specified branch Reproduction Steps Clone Eclipse che project with specified che6 branch Open terminal, go to project and call git status Wrong: upstream is set to origin/avoid-jar-scan-che6: On branch che6
+Your branch is up-to-date with 'origin/avoid-jar-scan-che6'.
+ OS and version: Diagnostics:

@@ -1,0 +1,3 @@
+Error when adding a perspective
+kind/bug team/plugin 
+There is a cyclic loop when adding a new perspective.

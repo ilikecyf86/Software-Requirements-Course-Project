@@ -1,0 +1,3 @@
+Is there a demo server available?
+
+Is there an Eclipse Che demo server available to try without setup?

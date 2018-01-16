@@ -1,0 +1,36 @@
+Error when trying to create a workspace
+kind/question 
+Ran into the following error when trying to create a workspace with default options: [STDERR] error:  cannot open zipfile [ /mnt/che/ws-agent.zip ]
+[STDERR]         Permission denied
+[STDERR] unzip:  cannot find or open /mnt/che/ws-agent.zip, /mnt/che/ws-agent.zip.zip or /mnt/che/ws-agent.zip.ZIP.
+[ERROR] Timeout reached. The Che server has been unable to verify that your workspace's agent has successfully booted. Either the workspace is unreachable, the agent had an error during startup, or your workspace is starting slowly. You can configure machine.ws_agent.max_start_time_ms in Che properties to increase the timeout.
+ OS: Ubuntu 14.0.4 LTS Server Che version: eclipse-che-4.0.0-RC11 Started che with bin/che.sh run on a clean install of Ubuntu, Oracle JDK and Docker, with default che.properties file. System info: $ uname -ar
+Linux akari 4.2.0-27-generic #32~14.04.1-Ubuntu SMP Fri Jan 22 15:32:26 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+$ cat /etc/lsb-release
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=14.04
+DISTRIB_CODENAME=trusty
+DISTRIB_DESCRIPTION="Ubuntu 14.04.4 LTS"
+$ docker version
+$ docker version
+Client:
+ Version:      1.10.3
+ API version:  1.22
+ Go version:   go1.5.3
+ Git commit:   20f81dd
+ Built:        Thu Mar 10 15:54:52 2016
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.10.3
+ API version:  1.22
+ Go version:   go1.5.3
+ Git commit:   20f81dd
+ Built:        Thu Mar 10 15:54:52 2016
+ OS/Arch:      linux/amd64
+~/che$ ll lib
+total 44813
+drwxrwx--- 1 root vboxsf        0 Mar 22 03:23 ./
+drwxrwx--- 1 root vboxsf     4096 Mar 22 04:01 ../
+drwxrwx--- 1 root vboxsf        0 Mar  4 02:31 terminal/
+-rwxrwx--- 1 root vboxsf 45883817 Mar 22 03:23 ws-agent.zip*

@@ -1,0 +1,3 @@
+Autocomplete not working on nodejs
+
+Hi All, I'm not really sure if it's support yet or not. Is there any plugins for nodejs autocomplete on Eclipse Che ? Thanks a lot.

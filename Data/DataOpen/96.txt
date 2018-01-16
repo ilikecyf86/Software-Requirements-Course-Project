@@ -1,0 +1,3 @@
+Revise the OpenShiftProject cleanup
+kind/bug target/che6 team/platform 
+The cleanup of OpenShiftProject does not clean all the allocated resources if one step of cleanup is failed. So we need to implement this in another way for example: Perform the cleanup and write logs if one of the steps is failed, then return the boolean value as an indicator of the successful result of cleanup.

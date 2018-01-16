@@ -1,0 +1,3 @@
+Does Eclipse Che support importing projects from gitHub Enterprise?
+kind/question 
+It fails when I import a project from gitHub Enterprise host even if I have configured che.properties for oauth.github.***

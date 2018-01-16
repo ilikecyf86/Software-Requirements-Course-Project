@@ -1,0 +1,3 @@
+Building custom extension
+
+Hi, I'm trying to buid a custom extension by following this guide https://www.eclipse.org/che/docs/plugins/create-and-build-extensions/index.html or this guide https://www.eclipse.org/che/docs/plugins/helloworld-extension/index.html and when I arrive at the step of building the extension unsing mvn clean install i always have this error Failed to execute goal org.apache.maven.plugins:maven-dependency-plugin:2.10:analyze-only (analyze) on project che-helloworld-sample: Dependency problems found

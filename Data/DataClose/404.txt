@@ -1,0 +1,5 @@
+Starting a second container of eclipse/che will kill all the workspaces container of the first one
+kind/question 
+I'm trying to run 2 che-server in the same docker engine using the CLI. If I start a second che-server, the che launcher is killing all the workspaces started by the first one. This issue is very annoying when trying to launch another che instance from a che workspace (che in che) Reproduction Steps: Start a first che-server  docker run -t --rm  -v /var/run/docker.sock:/var/run/docker.sock -v /home/sutan/che-data:/data eclipse/che:nightly
+ Create and start a workspace from this new che-server Start another che-server with different name and port  docker run --rm -t -v /var/run/docker.sock:/var/run/docker.sock -v /home/sutan/data-dev:/data -e CHE_CONTAINER=che-dev -e CHE_PORT=8081 eclipse/che:nightly start
+ Then, the workspace created by the first che-server is killed OS and version: RHEL 7

@@ -1,0 +1,3 @@
+Is there a plan to support multiple extra column mapping in new workspace container creation?
+kind/enhancement team/platform 
+In my workspace, it's better to share .m2 and .ssh with my workspace container. If I import project from git and I want to push my changes then I need the private key to continue. Although new key pairs can solve this problem, but it's never a good practice for generating key pairs each time when you restart workspace. Please have a look. Thanks!

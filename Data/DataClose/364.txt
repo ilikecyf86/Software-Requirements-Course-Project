@@ -1,0 +1,3 @@
+There is no public API to check Che API liveness in multi-user branch
+kind/bug target/branch team/platform status/info-needed 
+Some scripts check /api/, some checks /api/system/state. Both of these APIs are restricted in multi-user branch. So CLI now checks /api/and counts Che alive when the response code is 200, 302, or even 403. We have a script that deploys Che on OpenShift which should check Che liveness somehow. We need to decide whether we should open some API, such as /api/ or /api/system/state or count response code 403 as such that show liveness of Che master. Depending on the solution we should apply this to multi-user branch. Reproduction Steps: OS and version: Diagnostics:

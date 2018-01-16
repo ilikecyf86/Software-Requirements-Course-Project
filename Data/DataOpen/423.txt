@@ -1,0 +1,3 @@
+Replace Orion based editor by Monaco
+kind/enhancement kind/epic kind/enhancement 
+Replace orion based editor with monaco editor. Monaco seems to be much more performant and provide a better typing experience. Also it has built-in features such as click navigation and command palette which can enhance the overall experience of Che Font size must be customizable in the editor window.

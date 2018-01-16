@@ -1,0 +1,18 @@
+Avoid compiling extra GWT permutations
+kind/enhancement team/ide sprint/next-sprint status/in-progress sprint/current-sprint sprint/next-sprint status/in-progress 
+Now there are 4 permutations are compiled during IDE GWT build. 9140E8C6AD026473F44CD167DDFC2B4A.cache.js
+mobile.user.agent android
+user.agent safari
+
+9140E8C6AD026473F44CD167DDFC2B4A.cache.js
+mobile.user.agent iphone
+user.agent safari
+
+9140E8C6AD026473F44CD167DDFC2B4A.cache.js
+mobile.user.agent not_mobile
+user.agent safari
+
+A7B9F2360F9AEC92236FBA255802F9F7.cache.js
+mobile.user.agent not_mobile
+user.agent gecko1_8
+ Actually, we don't require 2 of them: android, iphone. Need to get rid of them. It will allow reducing time of IDE GWT app compilation as follows: These extra permutations came into IDE a long time ago when we used Google Collide editor.

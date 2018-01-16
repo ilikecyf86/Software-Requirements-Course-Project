@@ -1,0 +1,3 @@
+How to add support for a new language in Che 5.0
+kind/docs team/enterprise kind/question team/pm team/enterprise kind/question 
+According to Che 5.0 Release Notes, Language servers provide distributed intellisense for a language and can include syntax highlighting, code analysis, error checking and auto-completion. Please let me know how to add support for a custom language.

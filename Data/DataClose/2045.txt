@@ -1,0 +1,3 @@
+Is there any way in ehich we can install eclipse che on any virtual machine
+kind/question 
+I have created azure virtual machine with bitnami eclipse che image. But is there any way in which i will install eclipse che on my virtual machine?

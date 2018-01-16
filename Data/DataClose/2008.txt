@@ -1,0 +1,3 @@
+Upload a new version of the PHP Language Server
+
+Please upload the below attachment to https://codenvy.com/update/repository/public/download/org.eclipse.che.ls.php.binaries Attachment: php-language-server.tar.gz This is a more stable version of the existing PHP Language Server. No big changes, mostly bugfixing. Completely backward compatible with the current version.

@@ -1,0 +1,5 @@
+Validate email error for codenvy.io
+kind/question 
+org.eclipse.che.api.core.BadRequestException: User mail king@kspider.xyz is forbidden.
+	com.codenvy.auth.sso.server.EmailValidator.validateUserMail(EmailValidator.java:117)
+ Is there something worng with this method?

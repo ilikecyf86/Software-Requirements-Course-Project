@@ -1,0 +1,3 @@
+Command execution rest API
+kind/question 
+I try to use API from this docs. Command starts successfully, but I don't understand how to create channel to pass it as an argument (POST /process?channel=channel-1&types=stderr,stdout body...) and then subscribe to it to listen events.

@@ -1,0 +1,3 @@
+After rename and deleting packages the new created packages are not displayed
+kind/bug severity/P2 team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+Reproduction Steps: Create spring java project Go to the root package and create new packages (p.p.p) Click on them and open refactor window (shift + F6) Rename one of the packages (p.r.p) After rename delete all three packages Click on root package and try to create new packages (n.n.n) Pay attention to the screen Expected Behavior: Packages will be displayed Observed behavior: Packages are displayed only after browser refresh Attachment:

@@ -1,0 +1,3 @@
+Question: chown: changing ownership of ‘/projects’: Read-only file system while creating a new project
+kind/question 
+I'm getting "chown: changing ownership of ‘/projects’: Read-only file system" while creating a sample java project. I'm using native/native-docker on Ubuntu 15.10, OpenJDK 1.8.0_66. The running user has uid 1000.

@@ -1,0 +1,3 @@
+GWT and AngularJS integration
+kind/question 
+I develop a small UML graphical editor with the following technologies: JointJS, angularJS, angular Bootstrap-ui, jquery. And when testing the addition of my editor I notice that the use of angularJS with GWT is not possible. Are there any solutions to do this?

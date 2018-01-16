@@ -1,0 +1,3 @@
+Use OpenJDK in che-server CentOS Dockerfile
+kind/task 
+CentOS JDK8 image is currently using Oracle JDK. The default Che image is already based on an Alpine with OpenJDK so it shouldn't be too difficult.

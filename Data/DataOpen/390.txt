@@ -1,0 +1,18 @@
+How to support highlights for comments
+kind/question 
+Hi, I try to enable highlights for single line comments. In orion, following code can be used to highlight comment in editor. id: "SQL",
+            contentTypes: ["text/sql", "text/sqlSegment"],
+            patterns: [
+                {include: "#comment_singleLine"}, 
+ and following code can be used to define the prefix of comment repository: {
+                comment_singleLine: {
+                    match: {match: "--.*", literal: "--"}, 
+                    name: "comment.line.double-dash", 
+                    patterns: [
+                        {
+                            include: "orion.lib#todo_comment_singleLine" //$NON-NLS-0$
+                        }
+                    ]
+                }
+            } 
+ Document from Orion: Implementations of orion.edit.highlighter define the following attributes: id String A name that uniquely identifies this grammar. contentTypes String[] An array of Content Type IDs that this grammar will be used for. patterns Object[] An array of pattern objects to be used to assign style classes. Pattern objects are described below. repository Object Optional. A set of named pattern objects that can be referenced by this grammar and others. In Che, I can enable highlight for some keywords by OrionHighlightingConfigurationOverlay. But#comment_singleLine does not work, comments is not highlighted. And OrionHighlightingConfigurationOverlay does not support set repository, so I can not set the comments prefix. Does any one know how to enable comments highlight in Che?

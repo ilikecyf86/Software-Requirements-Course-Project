@@ -1,0 +1,3 @@
+Link recipe and configuration machines
+kind/enhancement kind/task kind/enhancement 
+Launching and resolving (already started) machines is implemented by OpenShift spi in following way: Parse openshift recipe (aka kubernetes list in yaml format). Create all objects from the recipe. Bootstrap all containers with hardcoded installers. For fetching all started machines - fetch all pods in openshift project and resolve servers by existing services and routes. It is needed to rework this approach to: link recipe machines and configuration that are specified in the environment; bootstrap only specified in configuration installers; maybe store machines not to analyze openshift objects each time; publish events about machine status changes.

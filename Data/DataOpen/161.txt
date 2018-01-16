@@ -1,0 +1,3 @@
+Implement validation of OpenShift recipe
+kind/task status/open-for-dev target/che6 team/platform 
+Description We parse OpenShift list with fabric8 OpenShift client, but it doesn't perform any validation like checking required fields (metadata.name, pod.spec.containers). It is needed to implement validation of OpenShift recipe.

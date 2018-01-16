@@ -1,0 +1,5 @@
+Cannot change email address in multi user Che
+kind/bug team/platform status/analyzing sprint/current-sprint status/in-progress status/analyzing 
+Description Started a local multi user che (6.0.0-M2): docker run -it --rm -e CHE_MULTIUSER=true -v ~/chedata_plain600m2:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:6.0.0-M2 init
+docker run -it --rm -e CHE_MULTIUSER=true -v ~/chedata_plain600m2:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:6.0.0-M2 start
+ register a new user after registration this takes me to the "Account" page press "Edit" change email address, first name and last name press "Save" press "Back to Dashboard" This takes me back to my Account page. First and last name are updated, but the email address is not. OS and version: Chrome on Ubuntu VM Che running locally in the Ubuntu VM

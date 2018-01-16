@@ -1,0 +1,3 @@
+How can I make my project type extension to extends MAVEN project type ??
+kind/question 
+I am working on Eclipse che recently ,and I have to say this is a great project.But I have an issue for project type extension. I have built a new project type extension and had it deployed in the che server. After create a new project with my new project type wizzard, I have to configure the project type to java or maven project type, so it can have JAVA feature . How can I make my project type extension to extends MAVEN project type ??

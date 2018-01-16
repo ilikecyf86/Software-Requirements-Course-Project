@@ -1,0 +1,3 @@
+Command still exists in the Commands Editor after deleting
+kind/bug severity/P2 
+Reproduction Steps: Create any project with commands and open a command in the Commands Editor. Change the command name and without saving delete it. Expected behavior: The command deleted from the Command Explorer and the Commands Editor. Observed behavior: The commands is still exist in the Commands Editor. Che version: 5.10.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

@@ -1,0 +1,3 @@
+Che does not run on RHT 1.9.1 docker daemon
+kind/question kind/bug team/platform severity/blocker kind/question kind/question kind/bug severity/blocker team/platform 
+RedHat CDK is based on Docker 1.9.1. If we want to run Che inside CDK's docker (for Che/Openshift demos), then it is not possible because container creation are being rejected because of wrong SHM size. Seems related to kubernetes/kubernetes#24588

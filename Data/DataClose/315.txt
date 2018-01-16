@@ -1,0 +1,3 @@
+Create jdt.ls extension
+kind/task sprint/current-sprint team/ide 
+We need to add some functionality to jdt.ls (stuff like finding test methods in a class, for example), which are specific to che. jdt.ls allows to pass extra bundles at startup that will run inside the jdt.ls process. We can use this to move our uses of jdt into jdt.ls. We need to set up a project that builds this extension bundle and we need a way to inject the bundle when jdt.ls is started in the workspace.

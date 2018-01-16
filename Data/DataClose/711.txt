@@ -1,0 +1,3 @@
+Remove or replace api_token input on swagger landing page
+kind/eclipse-che kind/enhancement team/platform kind/eclipse-che status/blocked 
+From @skabashnyuk on November 9, 2016 14:26 api_token input is legacy field that comes from original swagger. In codenvy we use token query parameter so we should either remove it either replace with token Copied from original issue: codenvy/codenvy#1123

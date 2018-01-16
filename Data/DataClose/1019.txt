@@ -1,0 +1,3 @@
+Create and run a customized docker image based on a custom assembly
+kind/question 
+Current workflow. build a custom assembly mv the assembly with scp to the target runtime run the assembly as -v :/assembly mount with eclipse che What I want build a custom assembly and create a docker image from it run the custom dockerimage on the target runtime without mounting /assembly Would that be possible at all, can I create just a che-server image somehow? How could I integrate this with the CLI? Can I run the server without the CLI?

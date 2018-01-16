@@ -1,0 +1,37 @@
+Eclipse Che does not build with the Docker container
+kind/question 
+Reproduction Steps: git clone https://github.com/eclipse/che docker run -it --rm --name build-che --network=host -v $HOME/.m2:/home/user/.m2 -v $PWD/che:/home/user/che-build -w /home/user/che-build codenvy/che-dev bash mvn clean install -P fast .. or mvn -DskipTests=true -Dfindbugs.skip=true -Dgwt.compiler.localWorkers=2 -T 1C -Dmdep.analyze.skip=true -Dlicense.skip=true clean install Build works fine the mac host. Cleaning .m2 directory etc. had no affect. Does you nightly build of master with the Docker container and running a full build work? If so, could you assist with some of the gotchas! OS and version: Docker container codenvy/che-dev Diagnostics: [ERROR] Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.8:run (compile) on project che-dashboard-war: An Ant BuildException has occured: exec returned: 1
+[ERROR] around Ant part ...<exec failonerror="true" dir="/home/user/che-build/dashboard" executable="npm">... @ 4:82 in /home/user/che-build/dashboard/target/antrun/build-main.xml
+ 324226 info che-dashboard@4.0.0 Failed to exec postinstall script
+324227 verbose stack Error: che-dashboard@4.0.0 postinstall: `npm run bower && npm run typings && npm run build`
+324227 verbose stack Exit status 1
+324227 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:217:16)
+324227 verbose stack     at emitTwo (events.js:87:13)
+324227 verbose stack     at EventEmitter.emit (events.js:172:7)
+324227 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+324227 verbose stack     at emitTwo (events.js:87:13)
+324227 verbose stack     at ChildProcess.emit (events.js:172:7)
+324227 verbose stack     at maybeClose (internal/child_process.js:829:16)
+324227 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+324228 verbose pkgid che-dashboard@4.0.0
+324229 verbose cwd /home/user/che-build/dashboard
+324230 error Linux 4.8.0-58-generic
+324231 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+324232 error node v4.6.1
+324233 error npm  v2.15.9
+324234 error code ELIFECYCLE
+324235 error che-dashboard@4.0.0 postinstall: `npm run bower && npm run typings && npm run build`
+324235 error Exit status 1
+324236 error Failed at the che-dashboard@4.0.0 postinstall script 'npm run bower && npm run typings && npm run build'.
+324236 error This is most likely a problem with the che-dashboard package,
+324236 error not with npm itself.
+324236 error Tell the author that this fails on your system:
+324236 error     npm run bower && npm run typings && npm run build
+324236 error You can get information on how to open an issue for this project with:
+324236 error     npm bugs che-dashboard
+324236 error Or if that isn't available, you can get their info via:
+324236 error
+324236 error     npm owner ls che-dashboard
+324236 error There is likely additional logging output above.
+ [exec] [15:27:40] Error: EPERM: operation not permitted, chmod '/home/user/che-build/dashboard/src/app/colors/che-color.constant.ts'
+     [exec]     at Error (native)

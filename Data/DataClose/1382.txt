@@ -1,0 +1,3 @@
+File revision/history?
+kind/question 
+Hello, I am currently using another cloud IDE, but I am considering switching. However one of the main features I really rely on, is file revisions, to get access to previously saved files. Before I go ahead and install it Eclipse Che on my machine, does it support that feature? If not, are there any plans to implement this? Or are there any other popular ways of keeping a backup of each file change? Thanks.

@@ -1,0 +1,28 @@
+LSP didChange Parameters Wrong Line Number
+kind/enhancement sprint/next-sprint team/ide sprint/current-sprint sprint/next-sprint 
+While implementing open file handling in a test language server, I have received the following message in the language server when inserting a character at the end of a file: {
+   "jsonrpc": "2.0",
+   "method": "textDocument/didChange",
+   "params": {
+     "textDocument": {
+       "version": 4,
+       "uri": "file:///projects/console-java-simple/src/gurke.test"
+     },
+     "uri": "file:///projects/console-java-simple/src/gurke.test",
+     "contentChanges": [
+       {
+         "range": {
+           "start": {
+             "line": 0,
+             "character": 0
+           },
+           "end": {
+             "line": 0,
+             "character": 59
+           }
+         },
+         "text": "textDocument/badWord:Error:asdf:A Problem\n asdf asdf g3f gsf"
+       }
+     ]
+   }
+ } While reporting the whole file contents as changed is a bit overkill in this instance, that is not the problem: the problem is that the range given is simply wrong: the end of the range should be on line one, not line 0. A language server would be correct to reject this message as wrong.

@@ -1,0 +1,3 @@
+Why not all of my github repositories are shown in new project page?
+
+I cannot find some of my repositories. There's not any of my organization repository showed. But: What should I do?

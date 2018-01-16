@@ -1,0 +1,3 @@
+Keyboard control doesn't work in the Command Palette
+kind/bug team/ide severity/P2 sprint/next-sprint status/in-progress status/code-review status/in-progress status/code-review sprint/next-sprint 
+This is issue related with epic #4511 Reproduction Steps: Create spring project Go to the commands palette Try to close some goal by keyboard Pay attention that you will close some goal using keyboard only after click on the palette . Expected behavior : Goal is closed . Observed behavior : Goal not closed . Attachment :

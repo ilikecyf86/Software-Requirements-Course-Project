@@ -1,0 +1,3 @@
+No instructions to deploy Che6 to minishift
+kind/question 
+There are no working instructions that I can see for deploying Che6 to OpenShift. The current scripts for deploying to minishift does not work. Also I do not think the minishift add-on works for che-6. @gazarenkov minishift deployment through add-on is a release criteria

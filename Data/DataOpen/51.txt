@@ -1,0 +1,3 @@
+Speed search in trees
+kind/task target/che6 
+Description It would be nice if we will have a feature when in the tree you just need to start typing and quickly locate the necessary file.

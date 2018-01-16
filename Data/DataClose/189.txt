@@ -1,0 +1,3 @@
+Rework "getTextFromEditor" method
+kind/task status/open-for-dev team/production status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+We have a list of unstable tests which use getTextFromEditor method. This is related to wrong logic and that checks for existing elements do not exist. We need rework this method apply right logic and checks that elements are really present.

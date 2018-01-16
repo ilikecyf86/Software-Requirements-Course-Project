@@ -1,0 +1,3 @@
+deploy javascript changes
+kind/question 
+Given I made a couple of changes to the javascript code of the dashboard... How do I deploy the changes? When I execute " gulp serve " , i can see the changes in the browser , however when i restart the docker , everything looks unchanched... " mvn clean install " also results in an error: [ERROR] Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.8:run (compile) on project che-dashboard-war: An Ant BuildException has occured: Replace: source file /home/noroot/che/che/dashboard/dist/index.html doesn't exist [ERROR] around Ant part ...... @ 7:66 in /home/noroot/che/che/dashboard/target/antrun/build-main.xml So my question is, how to properly build and deploy dashboard ? Thank you in advance.

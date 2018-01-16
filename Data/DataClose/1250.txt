@@ -1,0 +1,3 @@
+Add option to preview image files in dedicated browser tab
+status/open-for-dev team/plugin kind/enhancement sprint/current-sprint status/in-progress sprint/current-sprint status/in-progress 
+There is no option to open images in dedicated browser tab. Large images can not be displayed without zooming. The option may be added as an item to the context menu or as a button to image previewer.

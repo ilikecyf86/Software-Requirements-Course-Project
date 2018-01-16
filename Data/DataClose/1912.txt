@@ -1,0 +1,77 @@
+Cannot open package in a particular project
+kind/bug severity/blocker 
+Create a project with the following structure: memberidlookup/
+├── api-metadata.properties
+├── config.json
+├── docs
+│   ├── activating-logging.md
+│   ├── add-apigee-edge-env.md
+│   ├── apigee-apiproxy-bundle.md
+│   ├── apigee-edge-config-json.md
+│   ├── Configuring-dockerfile.md
+│   ├── configuring-proxy.md
+│   └── ssl-import.md
+├── edge.json
+├── pom.xml
+├── src
+│   ├── gateway
+│   │   └── apiproxy
+│   │       ├── memberidlookup.xml
+│   │       ├── policies
+│   │       │   └── assign-x-variable.xml
+│   │       ├── proxies
+│   │       │   └── default.xml
+│   │       └── targets
+│   │           └── default.xml
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── hzn
+│   │   │           └── api
+│   │   │               └── member
+│   │   │                   └── memberidlookup
+│   │   │                       ├── Application.java
+│   │   │                       ├── config
+│   │   │                       │   └── ApplicationConfig.java
+│   │   │                       ├── controller
+│   │   │                       │   └── MemberIdLookupRestController.java
+│   │   │                       ├── model
+│   │   │                       │   ├── ErrorDetail.java
+│   │   │                       │   ├── Fault.java
+│   │   │                       │   ├── Identity.java
+│   │   │                       │   ├── MemberIdLookupReq.java
+│   │   │                       │   ├── MemberIdLookupRes.java
+│   │   │                       │   ├── MemberIdLookupResMemberIdLookupRes.java
+│   │   │                       │   ├── Member.java
+│   │   │                       │   ├── Response.java
+│   │   │                       │   ├── Subscriber.java
+│   │   │                       │   └── ValidationErrorDetail.java
+│   │   │                       ├── repository
+│   │   │                       │   ├── MemberIdLookupMongoRepository.java
+│   │   │                       │   ├── MemberIdLookupRepositoryImpl.java
+│   │   │                       │   └── MemberIdLookupRepository.java
+│   │   │                       ├── service
+│   │   │                       │   ├── MemberIdLookupServiceImpl.java
+│   │   │                       │   └── MemberIdLookupService.java
+│   │   │                       └── utility
+│   │   │                           └── MemberIdLookupUtility.java
+│   │   └── resources
+│   │       ├── application.yml
+│   │       ├── bootstrap.yml
+│   │       └── docker
+│   │           ├── default.env
+│   │           ├── docker-compose.yml
+│   │           ├── Dockerfile
+│   │           └── ssl
+│   │               ├── HorizonCA.cer
+│   │               └── placeholder.txt
+│   └── templates
+│       └── apiproxy
+│           ├── config.json
+│           ├── edge.json
+│           ├── proxies
+│           │   └── default.xml
+│           └── targets
+│               └── default.xml
+└── swagger.json
+ Navigate to src/main/java and try to expand package structure. It fails since the server returns the wrong path for project resources.

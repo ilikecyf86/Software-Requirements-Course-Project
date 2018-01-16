@@ -1,0 +1,3 @@
+There is no event about stopped ext server if it was killed by OOM
+kind/bug 
+There is no event about stopped ext server if it was killed by OOM. But IDE doesn't work properly and file tree disappeared (because of stopped extserver). Also we should stop dev machine if wsagent OOM detected.

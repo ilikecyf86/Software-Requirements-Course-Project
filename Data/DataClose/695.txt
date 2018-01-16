@@ -1,0 +1,3 @@
+Rework code that uses deprecated workspace model classes
+kind/enhancement team/ide kind/task target/branch status/in-progress kind/enhancement status/code-review status/in-progress status/code-review 
+Since we have new consistent workspace model classes in IDE need to rework code that uses deprecated model classes (DevMachine, ActiveRuntime, MachineEntityImpl, MachineServer, etc.) Related to SPI branch only.

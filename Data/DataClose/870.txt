@@ -1,0 +1,3 @@
+Sometimes the loader freezes after initialization of language server
+severity/P1 kind/bug team/ide 
+If language server cannot respond for some reason, the language server loader does not disappear and blocks the IDE. Reproduction Steps: enable the C# language server based on Codenvy java stack, create aspnet-web-simple application, open Program.cs file from the project OS and version: Ubuntu 14, chrome browser, CHE 5.12.0

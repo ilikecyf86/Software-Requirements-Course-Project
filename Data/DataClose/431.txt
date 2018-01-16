@@ -1,0 +1,3 @@
+[SPI branch] The snapshotting workspace failed to delete
+kind/bug severity/P1 team/platform 
+Reproduction Steps: Crate a workspace and open in the IDE Stop it with snapshot by context menu in the navbar After that try to delete the workspace Expected behavior: the workspace should be deleted Observed behavior: the deleting of the workspace is failed Che version: 5.18.0 OS and version: Fedora 25 Docker version: 17.06 API docker version: 1.30 Che install: Docker container Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes] See ther atachment:

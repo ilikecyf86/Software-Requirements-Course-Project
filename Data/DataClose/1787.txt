@@ -1,0 +1,3 @@
+Port Language Server Support to LSP4J
+kind/enhancement team/ide status/in-progress team/ide 
+As I understand it, Typefox has moved their LSP binding for Java to the LSP4J project at Eclipse (http://www.eclipse.org/lsp4j). I think it would make sense to port the langage server plugin to LSP4J in order to profit from ongoing work (bug fixes, etc.)

@@ -1,0 +1,19 @@
+Cannot create a workspace from a custom composefile
+kind/bug severity/P1 status/open-for-dev team/plugin status/in-progress status/open-for-dev status/code-review status/in-progress status/code-review 
+Steps to reproduce: Create a workspace from a custom composefile: services:
+  db:
+    image: eclipse/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: petclinic
+      MYSQL_USER: petclinic
+      MYSQL_PASSWORD: password
+    mem_limit: 1073741824
+  dev-machine:
+    image: eclipse/ubuntu_jdk8
+    mem_limit: 2147483648
+    depends_on:
+      - db
+ Create button is disabled and the following errors are displayed: Cannot parse recipe from line: services
+
+The environment should contain exactly one dev machine. Switch on Dev property to have terminal, SSH and IDE tooling injected to the machine

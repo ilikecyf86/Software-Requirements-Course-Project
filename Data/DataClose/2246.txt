@@ -1,0 +1,3 @@
+Che Mount - Accept Unison Profiles
+
+Add the ability to accept a unison profile, which is a document that allows a user to customize the list of files / directories that are replicated or ignored. Unison profiles are very flexible and can contain multiple overlapping rules, and use a variety of pattern matching techniques. Referenced pull request. eclipse/che-dockerfiles#28 . Referenced issue #2742 .

@@ -1,0 +1,3 @@
+Run to cursor
+kind/task status/analyzing team/enterprise sprint/current-sprint status/open-for-dev status/analyzing status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+Epic #2611 Enhance debugger functionality: Run to Cursor enables you to jump to the cursor position. Can be done with minimal affect on server side TODO: Add new action with hotkey to perform "Jump to cursor" Manage hitCounts property of the breakpoint on the server side. Once it hit then remove it. Add selenium test Add server side test

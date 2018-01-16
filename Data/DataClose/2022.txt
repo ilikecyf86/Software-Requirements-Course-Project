@@ -1,0 +1,9 @@
+Why is there connections between port 4411 and the host where the web browser is opened?
+kind/question 
+I'm currently trying to understand how the che-websocket-terminal works. And, to first understand the communications done, I wrote lsof -i:4411. I would like to know why you need to open ports on the host where the web page is opened? (By the way I'm using Eclipse Che 4.7.0 but I see the che-websocket-terminal project didn't change since). Result of lsof -i:4411: COMMAND ...   NAME 
+che-webso   .... xxxx:4411->ip.of.first.computer:57280 (ESTABLISHED)
+che-webso   .... xxxx:4411->ip.of.first.computer:57288 (ESTABLISHED)
+che-webso   .... xxxx:4411->ip.of.second.computer:59689 (ESTABLISHED)
+che-webso   .... xxxx:4411->ip.of.second.computer:59691 (ESTABLISHED)
+che-webso   .... xxxx:4411->ip.of.second.computer:57280 (ESTABLISHED)
+ ip.of.first.computer/ip.of.second.computer is the ip of the first/second host where I opened an Eclipse Che workspace in a web browser. Each time I click on "New terminal" that inputs a new terminal, a new connection is established. (by the way, when I close the terminal, the connection is still there).

@@ -1,0 +1,3 @@
+release che 5.8.0
+kind/task status/open-for-dev team/production 
+release che 5.8.0

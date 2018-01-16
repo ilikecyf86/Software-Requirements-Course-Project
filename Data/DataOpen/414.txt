@@ -1,0 +1,3 @@
+Conflicting keyboard shortcut ctrl + space on chromebook
+kind/enhancement 
+When working in che (5.12.0) using a chromebook the keyboard shortcuts ctrl+ space and ctrl+ shift + space call the system default "Change Input layout" (Keyboard language) instead of initializing the che code assistant. This should be fixable by using preventDefault on the shortcut event. Reproduction Steps: Use a chromebook Create php workspace Create a php file Try to use autocomplete OS and version: Chrome OS 58

@@ -1,0 +1,3 @@
+Che breaks some utf symbols
+kind/bug team/ide 
+Description If java file with UTF-8 encoding contains some language specific symbols, the symbols will be replaced with ? after save. Note, if autosave is enabled, then user will see the breaks immediately after save, but if autosave is disabled Che saves ? but continue displaying correct characters. The problem will be spotted when file reopened. Reproduction Steps Open a java file with some special symbol like ă or Ž or so. Make any changes and save changes (or wait autosave) Reopen file All special symbols will be replaced with ? Screencast: OS and version: Fedora 25, Che6, mounted Che in Che

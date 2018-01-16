@@ -1,0 +1,3 @@
+Is there a way to stop a workspace after a given time if there was no activity ?
+kind/question 
+This question concerns the last versions of Eclipse Che. I see there is a che.docker.cleanup_period_min that only copes with the orphaned containers (used in DockerContainerCleaner.java). But it would also be interesting to stop the containers after a certain time if there was no activity. I don't think it already exists?

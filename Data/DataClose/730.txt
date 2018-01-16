@@ -1,0 +1,3 @@
+How to set cookie to an AsyncRequest
+kind/question 
+Hi, is there a way to set cookie to an asyncRequest, and get cookie from response?

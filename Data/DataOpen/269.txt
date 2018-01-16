@@ -1,0 +1,3 @@
+Strange Look and feel of dashboard in Che6
+kind/bug target/branch team/plugin sprint/next-sprint sprint/next-sprint 
+See

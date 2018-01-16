@@ -1,0 +1,3 @@
+Add ability to get user public email from github
+kind/task status/in-progress team/production status/code-review status/in-progress status/code-review 
+For our tests we need to add ability to get user public email from github. This is related with cleanup tests which logins with github user name and password. Becouse when user login by github, created username will be not equals with github user name. Account will be created with github public email, so we need get this email from github for to do cleanup after test.

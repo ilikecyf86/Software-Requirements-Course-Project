@@ -1,0 +1,3 @@
+Display system servers as well in the list of servers
+sprint/current-sprint status/in-progress status/open-for-dev team/plugin team/plugin kind/enhancement status/open-for-dev team/plugin status/code-review sprint/current-sprint status/in-progress status/code-review 
+When workspace is not running - we will display only servers added by user. But when workspace has runtime - need to display user's servers and system ones. But the ability to modify system servers should be disabled.

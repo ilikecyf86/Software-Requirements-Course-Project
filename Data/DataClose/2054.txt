@@ -1,0 +1,3 @@
+Improve buttons on the part toolbar
+sprint/next-sprint status/open-for-dev team/plugin kind/enhancement sprint/current-sprint sprint/next-sprint sprint/next-sprint status/in-progress sprint/current-sprint sprint/current-sprint status/open-for-dev sprint/next-sprint status/code-review status/in-progress status/code-review sprint/current-sprint 
+As it was discussed buttons on the part toolbar have to be improved. @slemeur could you please provide details for the issue?

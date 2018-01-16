@@ -1,0 +1,7 @@
+Remove extra log messages from browser console
+kind/enhancement team/ide 
+There are huge amount of messages in the console when restarting the workspace. I had full console of the following Command macro ... is already registered.
+Command macro ... is already registered.
+Command macro ... is already registered.
+Command macro ... is already registered.
+ Reproduction Steps: Try stop and then start the workspace outside IDE.

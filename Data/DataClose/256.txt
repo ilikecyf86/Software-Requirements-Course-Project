@@ -1,0 +1,3 @@
+Rework CheckFindActionFeatureInCheTest for more stability
+kind/enhancement status/in-progress team/production sprint/current-sprint 
+We need to simplify the test because this one checks large list of matches. This lists may updated quietly often and the test will be fail after each small update. It complicates support the test. If we reduce the list - the test will become more robust and easier to support

@@ -1,0 +1,3 @@
+Show thread dumps when debug is suspended [GDB]
+kind/enhancement kind/task kind/enhancement status/open-for-dev team/enterprise 
+show list of available threads select frames show the name of the method and argumets in the frame show varialbes

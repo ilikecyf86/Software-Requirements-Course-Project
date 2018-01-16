@@ -1,0 +1,3 @@
+Implement cleanup mechanism for che docker infrastructure
+target/branch team/platform status/open-for-dev 
+The implementation of docker infrastructure in che does not provide proper cleanup mechanism for abandoned containers / networks / volumes, so it may produce the problems with resources for che users. This also leads to the inoperability of che because docker has resource limits as well so if you will try to start che workspace(with already reached networks limit) you will recieve response with 500 status.

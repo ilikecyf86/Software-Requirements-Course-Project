@@ -1,0 +1,3 @@
+Show thread dumps when debug is suspended [JDB]
+kind/task sprint/next-sprint status/in-progress team/enterprise sprint/current-sprint sprint/next-sprint status/open-for-dev sprint/current-sprint status/in-progress sprint/current-sprint status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+show list of available threads select frames show the name of the method and argumets in the frame show varialbes UI #3712

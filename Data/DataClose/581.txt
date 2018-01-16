@@ -1,0 +1,3 @@
+Remove legacy code from master source code
+kind/task team/platform 
+We have disabled since IDE3 plugins/plugin-java/che-plugin-java-ant-tools plugins/plugin-java/che-plugin-java-ext-ant I have proposal to remove it

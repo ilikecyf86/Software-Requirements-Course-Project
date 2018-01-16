@@ -1,0 +1,3 @@
+Make header of stacks list fixed - not scrollable
+kind/bug sprint/current-sprint status/open-for-dev team/plugin status/open-for-dev status/open-for-dev status/code-review status/open-for-dev sprint/current-sprint 
+The introduced stacks widget has the header, which scrolls with the content. It should be fixed on the page.

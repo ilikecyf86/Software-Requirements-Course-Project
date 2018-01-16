@@ -1,0 +1,3 @@
+Implement plugins for FindBugs, Checkstyle, PMD and Sonar
+kind/enhancement status/analyzing 
+Most developers coming to Che are used to having IDE plugins for find bugs, checkstyle, PMD, and Sonar. Che should offer these plugins either out of the box (as it does with Maven, git and SVN) or through add-on extensions. These would add inline markers for defects in the IDE and make using Che for most developers much more enjoyable.

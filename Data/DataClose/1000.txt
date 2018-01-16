@@ -1,0 +1,5 @@
+User Dashboard: Stop button never changes depending on snapshotting policy
+kind/bug status/open-for-dev team/plugin severity/P2 sprint/next-sprint sprint/current-sprint sprint/next-sprint status/open-for-dev sprint/current-sprint 
+Steps to reproduce: Make sure auto snapshotting and restoring is set to false Start a workspace Right click a workspace on the left side Dashboard bar Expected result: Stop
+Stop with Snapshot
+ Actual result: Stop without a snapshot barely makes sense since snapshotting is off. It should be Stop with snapshot, i.e. a user should be able to override global snapshotting policy.

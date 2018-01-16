@@ -1,0 +1,11 @@
+sample-json-plugin doesn't appear in IDE
+kind/question 
+I'm trying to equip che with sample-json-plugin, but I don't see the changes in the Web IDE. I followed the steps mentioned in #2330 with one exception , I didn't build che first, I started directly with the second step. Reproduction Steps: ~$ git clone https://github.com/eclipse/che.git I added dependency into ~/che/assembly/assembly-ide-war/pom.xml <dependency>
+            <groupId>org.eclipse.che.sample</groupId>
+            <artifactId>che-sample-plugin-json-ide</artifactId>
+</dependency>
+ I added dependency into ~/che/assembly/assembly-ide-war/src/main/resources/org/eclipse/che/ide/IDE.gwt.xml <inherits name="org.eclipse.che.plugin.jsonexample.JSONExample"/> I added dependency into ~/che/assembly/assembly-wsagent-war/pom.xml <dependency>
+        <groupId>org.eclipse.che.sample</groupId>
+            <artifactId>che-sample-plugin-json-server</artifactId>
+</dependency>
+ ~/che$ mvn sortpom:sort ~/che$ mvn clean install ~/che$ ./che.sh start I opened localhost:8080, then clicked on Create Workspace bar and I there was no json stack in the runtime tab I selected the BLANK stack and created a new workspace I started the workspace I clicked the Workspace menu and selected Create Project... and there was nothing like JSON in the popped dialog. I created a new project and when I added a new file to the project there is no json option (actually I did not expect it here, but I was not sure). Did I miss something? Expected behavior: I expect that there is a new stack named JSON or maybe an option JSON when creating a new project (I'm not sure). Observed behavior: I see no changes in the Web IDE comparing to that when no new dependencies are added. Che version: 5.0.0-latest OS and version: Ubuntu 16.04 LTS Docker version: 1.12.1, build 23cf638 Additional information: Problem started happening recently, didn't happen in an older version of Che: Yes Problem can be reliably reproduced, doesn't happen randomly: Yes

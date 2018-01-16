@@ -1,0 +1,3 @@
+404 cannot stat directory
+kind/question kind/docs kind/task 
+When starting a blank default che environment, using any stack the workspace cannot be created because che apparently does not create the workspace directory Reproduction Steps: docker run -it --rm -e CHE_HOST=192.168.0.5 -v /var/run/docker.sock:/var/run/docker.sock -v /volume1/Docker/che/data:/data eclipse/che-cli start create workspace Expected behavior: workspace to be created Observed behavior: Che version: 5.0.0 OS and version: Synology DS1515+ DSM 6.0 Docker version: 1.11.2 Che install: Docker container Additional information: Problem started happening recently, didn't happen in an older version of Che: [Not applicable] Problem can be reliably reproduced, doesn't happen randomly: [Yes]

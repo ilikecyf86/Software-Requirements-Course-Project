@@ -1,0 +1,3 @@
+Adapt configuration for factories that are checked by selenium test
+kind/task team/platform team/production team/platform sprint/current-sprint 
+Description: On this moment we have predefined JSON in the selenium tests that based on simple factory template for CHE6. For OCP this configuration is not compatible. e In this way we should use correct configuration in depend on product CHE6 or OCP. OS and version: OCP latest version, Fedora 25, Chrome browser.

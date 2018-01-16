@@ -1,0 +1,3 @@
+"Sharp language server" initialization fails on CHE launched from OS Fedora 25.
+kind/bug severity/P1 team/enterprise 
+Steps to reproduce: Run workspace from stack ".NET". Create project from template "aspnet-web-simple". Open project. Open file "Program.cs". After opening this file will begin initialization sharp language server. Actual result: sharp launguage server initialization fail with error: And loader didn't hidden. Main reason of the server error: Expected result: sharp language server should initialize successfully. In case server error, IDE should hide loader.

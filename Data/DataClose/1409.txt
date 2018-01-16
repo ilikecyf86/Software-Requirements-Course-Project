@@ -1,0 +1,3 @@
+Run Che custom assembly
+kind/question 
+what command to use to run eclipse che custom assembly ?

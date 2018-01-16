@@ -1,0 +1,3 @@
+Che loses connection with WS agent after the several hours of inactivity
+kind/bug 
+Before: !breakpoints_in_non-java_files_2016-02-29.png! After the several hours of inactivity of browser's tab with IDE: !che_lost_connection_with_WS_agent_2016-02-29.png! At the same time workspace was in RUNNING state.

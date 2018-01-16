@@ -1,0 +1,3 @@
+Keycloak
+kind/question 
+Wanted to know more about how and when Keycloak will be or planning to be implemented. Seen reference to it in multiple places for Che 6 but no issues or PR tracking it yet. So wanted to know if there is any update on it.

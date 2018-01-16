@@ -1,0 +1,3 @@
+[ Feature Request ] Emmet support
+kind/enhancement 
+Emmet is supported on all ide but not on Eclipse Che. This tool is very important for html & css developers.

@@ -1,0 +1,3 @@
+Add changes to the 'CheckErrorsWarningsTabTest' according to new client
+kind/task status/in-progress target/che6 team/production status/in-progress 
+Description We need to change the quantity expected of markers in the editor in selenium test 'CheckErrorsWarningsTabTest' according to new client Related issue is: #7569

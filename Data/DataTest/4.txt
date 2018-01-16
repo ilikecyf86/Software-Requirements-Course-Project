@@ -1,0 +1,3 @@
+placeholder for preview URL
+kind/enhancement 
+Menu "Run" > "Edit Commands...", the "Preview URL" input field should have a placeholder text like http://${server.port.8080}. I'd be useful to avoid having to go to the documentation to understand a common standard valid field.

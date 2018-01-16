@@ -1,0 +1,7 @@
+Workspace agent script should not contain sudo commands
+kind/question 
+org.eclipse.che.ws-agent.script.sh contains several sudo commands for java / tar / curl package installations and creation of the /projects dir. Those sudo commands can not be executed on OpenShift online, so we had to patch stack's Dockerfile (for now is done only for vertx [1] ) in order to include packages required by ws-agent and create /projects directory. By doing this, no sudo commands would be run as part of the ws-agent script. This ws-agent "sudo cleanup" could be done relatively easy step-by-step without breaking stacks that would still require sudo execution from ws-agent : The following check should be added to the ws-agent script [2] if [ ! -d "/projects" ]; then
+    ${SUDO} mkdir -p /projects
+    ${SUDO} sh -c "chown -R $(id -u -n) /projects"
+fi
+ Gradually stacks' Dockerfile would be patched with required instructions and both versions of stacks (sudo / non-sudo) would be supported by the ws-agent script. [1] eclipse/che-dockerfiles#70 [2] https://github.com/eclipse/che/pull/4349/files#diff-1bf4c5348e6dab351e2402e9888727aeR39

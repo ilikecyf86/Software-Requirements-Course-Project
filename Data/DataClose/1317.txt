@@ -1,0 +1,3 @@
+[Factory] Replace factory buttons
+kind/enhancement 
+The factory buttons have not been used a lot. It’s probably good time to remove the service that we have, which was allowing to use logo in the button - and just provide an SVG badge as on dashboard. We would remove their mention from docs too. We also need to replace the factory button that we are providing from the dashboard.

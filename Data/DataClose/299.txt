@@ -1,0 +1,3 @@
+[Regression] Cursor returns to top of file
+kind/bug severity/P1 
+As per previous issues #5850 #6043, since Che 5.19 we are seeing the cursor jump to the top of the file when switching away from the file and back. To reproduce, open a two files, make a change in one and leave the cursor at that position. Switch to the first file, then switch back - the cursor returns to the top of the file.

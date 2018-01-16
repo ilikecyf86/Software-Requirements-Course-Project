@@ -1,0 +1,3 @@
+Unable to start workspace after an agent start fail
+kind/bug severity/P1 team/platform status/in-progress status/code-review status/in-progress status/code-review 
+Reproduction Steps: Create an workspace Make an agent fail (use can use debug and fail an agent start with timeout) Try to start the workspace again It will fail with error: Could not start workspace wksp-s0qu. Reason: Start of environment 'wksp-s0qu' failed. Error: Environment of workspace 'workspace60e9wwakx9h1prhq' already exists OS and version: Ubuntu 16.04 Che version: 5.8.0

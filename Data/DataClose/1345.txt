@@ -1,0 +1,3 @@
+Multiple Che Servers Cleanup Wrong Workspaces
+kind/question kind/bug kind/question team/platform severity/P2 
+When running two Che servers on same docker daemon, a che server will destroy/remove workspace containers belonging to the another che server. There is currently now way based on the normalized container name to determine a workspace containers associated che server parent. Currently working on fix in fix-cleanup-2-che-servers-560 branch

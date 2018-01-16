@@ -1,0 +1,3 @@
+Cannot use GWT SDM launched from Che IDE
+kind/bug target/che6 team/ide status/in-progress status/in-progress 
+Description While developing Che in Che IDE, I launch GWT SDM from IDE (at a dev-machine). Since default GWT SDM's configuration has a restriction to allow loading js files (e.g. *.cache.js) from the localhost only, it's impossible to reload IDE with a recompiled js file from the CodeServer launched inside a container (at a dev-machine). There is the message in browser's Dev console: Ignoring non-whitelisted Dev Mode URL: http://172.19.20.35:32888/_app/_app.nocache.js Need to allow loading GWT permutation file in Super DevMode from any URL but not from the localhost only.

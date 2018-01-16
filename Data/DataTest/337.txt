@@ -1,0 +1,3 @@
+Does che supporting single step debugging now?
+kind/question kind/bug kind/question 
+Just want to know if che supports single step debugging for Java projects, like we normally do in eclipse. If I understand it correctly, it doesn't support now, since we can only run some simple commands for building or running, is it? If not, does this feature on the plan?

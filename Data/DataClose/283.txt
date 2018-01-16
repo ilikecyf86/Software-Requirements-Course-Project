@@ -1,0 +1,3 @@
+Che CLI pulls multi-user Che master image even though I use single user mode
+kind/question kind/enhancement kind/question 
+Description This adds quite a bit of time to start Che for local development. Reproduction Steps OS and version: Diagnostics:

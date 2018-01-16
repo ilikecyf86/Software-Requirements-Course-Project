@@ -1,0 +1,3 @@
+Italic text glyphs looks clipped.
+kind/bug severity/P2 team/plugin 
+Found this on current stable 5.x OS and version: Codenvy 5.20.0 in Windows 10

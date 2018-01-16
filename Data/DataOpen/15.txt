@@ -1,0 +1,3 @@
+Files are colored as changed during Git checkout if they are different in checkouted branch
+kind/bug team/enterprise 
+Description Files are colored as changed during Git checkout if they are different in checkouted branch Reproduction Steps 1 Clone a big project e.g. Eclipse CHE 2. Checkout to other branch witch contains same files but with changes. Wrong: such files are colored as edited during the checkout operation OS and version: Diagnostics:

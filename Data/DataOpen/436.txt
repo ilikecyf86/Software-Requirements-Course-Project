@@ -1,0 +1,3 @@
+It is not possible to associate files with a language server at runtime
+kind/question kind/enhancement kind/question 
+At the moment you can only specify which file extensions relate to which language server when building. It should be possible to specify this at the per-workspace level because the same extension may be used in different ways by different languages and applications. eg Drupal uses ".module" and ".inc" for PHP files.

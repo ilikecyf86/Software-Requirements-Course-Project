@@ -1,0 +1,3 @@
+File watcher service does not invoke consumer on create file event at first time after starting the workspace
+kind/bug team/ide severity/P1 sprint/next-sprint sprint/current-sprint sprint/next-sprint status/code-review status/code-review 
+File watcher service does not invoke consumer on create file event at first time after starting the workspace. Reproduction Steps: Register a watcher by matcher with create consumer. Start workspace. 3 Create a file with the name that registered in the watcher. Expected: Create consumer must be invoked. Actual: Create consumer is invoked only after deleting the file and creating it again. OS and version: Ubuntu 16.0.4 CHE 5.19.0-SNAPSHOT Diagnostics:

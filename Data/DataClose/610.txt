@@ -1,0 +1,3 @@
+Run XML test suite for TestNG
+kind/enhancement team/ide sprint/next-sprint status/in-progress 
+Add an ability to run xml test suite for TestNG framework.

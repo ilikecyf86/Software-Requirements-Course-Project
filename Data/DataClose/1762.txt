@@ -1,0 +1,3 @@
+Show list of threads when debug is suspended [UI]
+kind/enhancement sprint/next-sprint status/open-for-dev team/enterprise sprint/next-sprint status/open-for-dev 
+Show list of threads when debug is suspended in UI.

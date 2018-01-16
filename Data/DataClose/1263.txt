@@ -1,0 +1,3 @@
+Make che-plugin-product-info optional for IDE core
+kind/task sprint/current-sprint team/ide 
+Now this plugin is mandatory for GWT compilation of IDE. We want to make it optional Need for #4403

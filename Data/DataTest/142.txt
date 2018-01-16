@@ -1,0 +1,3 @@
+Cannot SSH to WS via Putty
+kind/bug 
+I'm able to connect via the IDE terminal to my docker machine but cannot do so via Putty, I get - Server unexpectedly closed network connection I'm using the port suggested by the IDE when clicking on the SSH button. also, using user/secret no SSH key right now.

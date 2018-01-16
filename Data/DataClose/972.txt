@@ -1,0 +1,3 @@
+Add ability to connect to jsonrpc websocket endpoint using core/rpc
+kind/task status/in-progress sprint/current-sprint team/platform status/open-for-dev sprint/current-sprint 
+Right now core/rpc package provides ability only to be jsonrpc server, while agent installer transport specification (IA Workflow 9.) says: IA open websocket connection to master and notify master that it was started. The goal of the issue is to extend core/rpc functionality so agent installer will be able to connect to the workspace master and push events.

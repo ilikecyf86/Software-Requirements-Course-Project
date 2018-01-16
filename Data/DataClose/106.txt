@@ -1,0 +1,3 @@
+[CHE 6] There is not a possibility to switch state of workspace installers
+kind/bug severity/P1 target/che6 team/plugin selenium/failure sprint/next-sprint status/in-progress sprint/next-sprint 
+Reproduction Steps: Create a workspace From the Workspace Details click on the Installers tab Try to switch state of any installer Observed behavior: There is not a possibility to switch state of workspace installers OS and version: Che(Che6 branch) 6.0.0-M2; Chrome 59.0; Fedora 25 Related selenium test: WorkspaceDetailsTest Additional information:

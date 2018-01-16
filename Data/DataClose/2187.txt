@@ -1,0 +1,3 @@
+Processes panel should be opened maximized
+team/plugin status/open-for-dev sprint/next-sprint sprint/current-sprint kind/enhancement sprint/next-sprint sprint/next-sprint sprint/current-sprint sprint/current-sprint sprint/next-sprint status/code-review status/open-for-dev status/code-review sprint/current-sprint 
+Maximize processes panel when IDE is opened

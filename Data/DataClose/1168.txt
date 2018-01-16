@@ -1,0 +1,27 @@
+Factories lose the per-project attributes
+kind/bug severity/P1 sprint/next-sprint status/open-for-dev team/platform sprint/next-sprint 
+Reproduction Steps: Create/edit a factory on /dashboard/#/factory Under "Configuration" section, give your project some attribute in the JSON like: {
+  "v": "4.0",
+  "workspace": {
+    "projects": [
+      {
+        "links": [],
+        "name": "foo",
+        "attributes": {
+          "commands": [
+            "{\"commandLine\":\"docker-compose up\", \"name\":\"Start server\", \"attributes\":{\"previewUrl\":\"\", \"goal\":\"Run\"}, \"type\":\"custom\"}"
+          ]
+        },
+        "type": "blank",
+        "source": {
+          "location": "example.com",
+          "type": "git",
+          "parameters": {}
+        },
+        "path": "/foo",
+        "problems": [],
+        "mixins": []
+      }
+    ],
+...
+ Click "Update" (you may reload and note that the attributes field has the commands. Use the UI to change any value, for example use the UI to add or remove a common command in "Configure Commands" It should have kept the attributes but it replaced them with empty ones: "attributes": {}. OS and version: 5.7.2 (Docker image)

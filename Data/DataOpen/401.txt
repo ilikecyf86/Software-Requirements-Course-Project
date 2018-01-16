@@ -1,0 +1,3 @@
+Will it be possible each of the new version can be clean up the docker images ID?
+kind/question kind/enhancement kind/question 
+Below it the multiple version of Eclipse Che, but with the same Images ID, and this will have a fall down that eating up some of the hard disk space (for current only three version, if let say 10 new version, than it will become a problem)

@@ -1,0 +1,3 @@
+Amazon ECR Support
+kind/question 
+I am attempting to use a private Amazon ECR registry. However, when adding the registry in Che, I am not to use the password as it is longer than 128 characters. Is Amazon ECR registry supported? If so, how can I add this registry?

@@ -1,0 +1,60 @@
+Create Workspace Dialog
+kind/question 
+When I try to create a new workspace from java stack dashboard then open IDE a create workspace dialog pops up in che version 4.4.0. I have eclipse-che-4.3.0-RC2-SNAPSHOT too which currently works. https://gist.github.com/james10174/1dcc91d98d3f906554eb708b80964780 Che Run Command: bin/che.sh -r:$(curl -s https://4.ifcfg.me/) start
+Che Version: eclipse-che-4.4.0-RC1-SNAPSHOT (downloaded today)
+
+Che directory:~/che/assembly/assembly-main/target/eclipse-che-4.4.0-RC1-SNAPSHOT/eclipse-che-4.4.0-RC1-SNAPSHOT
+
+docker version
+Client:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Tue Apr 26 23:43:49 2016
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.11.1
+ API version:  1.23
+ Go version:   go1.5.4
+ Git commit:   5604cbe
+ Built:        Tue Apr 26 23:43:49 2016
+ OS/Arch:      linux/amd64
+
+docker info
+Containers: 8
+ Running: 2
+ Paused: 0
+ Stopped: 6
+Images: 7
+Server Version: 1.11.1
+Storage Driver: aufs
+ Root Dir: /var/lib/docker/aufs
+ Backing Filesystem: extfs
+ Dirs: 92
+ Dirperm1 Supported: true
+Logging Driver: json-file
+Cgroup Driver: cgroupfs
+Plugins:
+ Volume: local
+ Network: bridge null host
+Kernel Version: 4.5.2-docker-2
+Operating System: Ubuntu 16.04 LTS
+OSType: linux
+Architecture: x86_64
+CPUs: 4
+Total Memory: 3.857 GiB
+Name: scw-5b8d2c
+ID: GQB2:KOK6:KEFI:CZLX:D7N7:5YOI:WOZ4:ARFV:BJC6:5IJW:FSJ2:NREJ
+Docker Root Dir: /var/lib/docker
+Debug mode (client): false
+Debug mode (server): false
+Registry: https://index.docker.io/v1/
+Labels:
+ provider=scaleway
+
+$JAVA_HOME/bin/java -version
+java version "1.8.0_91"
+Java(TM) SE Runtime Environment (build 1.8.0_91-b14)
+Java HotSpot(TM) 64-Bit Server VM (build 25.91-b14, mixed mode)

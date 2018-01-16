@@ -1,0 +1,3 @@
+Display version number in dashboard
+kind/enhancement team/plugin sprint/next-sprint status/open-for-dev sprint/current-sprint status/in-progress sprint/next-sprint status/open-for-dev status/in-progress sprint/current-sprint 
+Let's display the Che version from the dashboard. We could display it in the footer - next to the Che logo

@@ -1,0 +1,3 @@
+Broken link in the exception message
+kind/bug 
+In the thrown exception message at FactoryService.java#L161, the link http://docs.codenvy.com/user/creating-factories/factory-parameter-reference/ is broken.

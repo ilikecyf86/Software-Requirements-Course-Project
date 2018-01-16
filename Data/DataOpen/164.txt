@@ -1,0 +1,28 @@
+Enter text into the web elements in selenium tests effectively and reliably
+kind/enhancement team/production kind/bug sprint/current-sprint status/open-for-dev kind/enhancement 
+Description We have a lot of webElement.sendKeys(text) commands in our selenium tests which work unreliable and don't "enter" require keys from time to time. As a workaround there is a lot of code like the follow:     refactor.typeAndWaitNewName("yo");
+    refactor.sendKeysIntoField("ur.pa");
+    refactor.sendKeysIntoField("c");
+    refactor.sendKeysIntoField("k");
+    refactor.waitTextIntoNewNameField("your.pack"); and follow:   /**
+   * clear field, type a new user value into 'New Name field'
+   *
+   * @param newValue new name
+   */
+  public void typeNewName(String newValue) {
+    try {
+      new WebDriverWait(seleniumWebDriver, LOAD_PAGE_TIMEOUT_SEC)
+          .until(ExpectedConditions.visibilityOf(newNameFileInput))
+          .clear();
+      loader.waitOnClosed();
+      newNameFileInput.sendKeys(newValue);
+    } catch (Exception e) {
+      new WebDriverWait(seleniumWebDriver, LOAD_PAGE_TIMEOUT_SEC)
+          .until(ExpectedConditions.visibilityOf(newNameFileInput))
+          .clear();
+      newNameFileInput.sendKeys(newValue);
+    }
+    new WebDriverWait(seleniumWebDriver, ATTACHING_ELEM_TO_DOM_SEC)
+        .until(ExpectedConditions.textToBePresentInElementValue(newNameFileInput, newValue));
+  } We need to find effective and more elegant way to set value of fields reliably. Possible solution: enter text by using javascript: JavascriptExecutor executor = (JavascriptExecutor)driver;
+executor.executeScript("arguments[0].setAttribute('value', arguments[1])", element, text);

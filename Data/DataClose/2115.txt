@@ -1,0 +1,3 @@
+OpenShift API implementation
+kind/question 
+Implement DockerConnector APIs using OpenShift counterparts. [ ] Images - buildImage - commit - inspectImage - listImages - pull - push - removeImage - tag [ ] Network - connectContainerToNetwork - createNetwork - disconnectContainerFromNetwork - inspectNetwork - removeNetwork [ ] Exec - attachContainer - createExec - startExec [ ] Info - getContainerLogs - getEvents - getExecInfo - getNetworks - getNetworks - getSystemInfo - getVersion - top [ ] Containers - listContainers - getResource - putResource - removeContainer - startContainer - stopContainer - waitContainer

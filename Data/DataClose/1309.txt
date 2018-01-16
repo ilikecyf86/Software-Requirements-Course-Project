@@ -1,0 +1,3 @@
+After deleting project with related process - process still presents
+kind/bug 
+This is issue related with epic #4511 After deleting project with related process - process still presents (after refresh page - disappear) Reproduction Steps: Go to spring project Run any command by command toolbar Stop this process Delete project Pay attention to the process bar Expected behavior : The process bar will be clear after deleting project . Observed behavior : The process stay in the process bar after deleting project . See attachment :

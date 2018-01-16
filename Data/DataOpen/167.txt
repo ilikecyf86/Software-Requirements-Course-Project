@@ -1,0 +1,10 @@
+Che 6 should boot out of the box on Fedora without modifying firewall settings or disabling SELinux mode
+target/che6 team/platform kind/bug 
+Description In Che 5 there were options to start the server with custom security settings and using a custom network strategy on Fedora. sudo docker run -p 8080:8080 \
+           --name che \
+           -v /var/run/docker.sock:/var/run/docker.sock \
+           -v <LOCAL_PATH>:/data:Z \
+           --security-opt label:disable \
+           -e CHE_DOCKER_SERVER__EVALUATION__STRATEGY=docker-local \
+           eclipse/che-server:nightly
+ somehow it's no longer possible with Che6. Users shouldn't have to disable or add rules on the firewall, it should be possible by only selecting options on che. Reproduction Steps start Eclipse Che6 on default Fedora installation OS and version: Fedora 26

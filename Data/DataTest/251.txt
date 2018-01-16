@@ -1,0 +1,3 @@
+Add a project type for every ready-to-go stack
+kind/epic 
+"For all of the codenvy OOTB stacks, we should have very basic PT w/ no options that generates shell project of that type with commands. This would enable wizard driven." For example it includes "php", "nodejs", etc project-types

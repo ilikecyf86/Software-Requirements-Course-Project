@@ -1,0 +1,3 @@
+Create SystemService
+kind/task sprint/current-sprint status/open-for-dev team/platform sprint/current-sprint 
+We want to provide some REST API for CLI to make some activity before system shutdown. POST /system/stop Will iterate over all running workspaces and suspend them, also it will prevent new workspace starting. GET /system/status Will return json with system state:running|preparetoshutdown|readytoshutdown Moved from codenvy/codenvy#1568 (comment)

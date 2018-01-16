@@ -1,0 +1,3 @@
+JavaScript endpoint for Dialog API
+kind/enhancement team/ide status/in-progress 
+Description Need to give ability for JavaScript show ask value, confirmation, error messages and etc dialog from Che Dialog Factory class

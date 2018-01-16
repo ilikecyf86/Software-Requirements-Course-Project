@@ -1,0 +1,3 @@
+how to use docker swarm mode to start workspace
+kind/question 
+I want to manage workspaces in a cluster through swarm, does che support now? Or will support in the future?

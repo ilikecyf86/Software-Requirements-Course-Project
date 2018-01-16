@@ -1,0 +1,3 @@
+Add submit on enter to search dialogue
+kind/enhancement team/ide 
+It would be really great if one could press enter after typing a search term on the search through all files (Ctrl + Shift + F) dialogue to submit/start the search. It can be frustrating to get there with the keyboard only to need the mouse to submit.

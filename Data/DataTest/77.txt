@@ -1,0 +1,3 @@
+Problem View (and Markers)
+kind/enhancement 
+Errors in non-open editors should be shown on files in the project tree and in a dedicated problems view. AFAIU problems are only shown in open editors at the moment.

@@ -1,0 +1,3 @@
+Project registry works wrong if a factory has invalid mixin type
+kind/bug team/ide severity/P2 
+Reproduction Steps: Go to the Dashboard -> Factories ->Create factory ->Templates -> Complete Change value 'mixin' on invalid Consume the factory Expected behavior: An user should be informed about invalid mixin type. The workspace creation should be interrupted. Observed behavior: Infinity loop during a workspace creation Codenvy version: 5.0.0-M5 OS and version: Ubuntu 14.04 LTS Related issue: codenvy/codenvy#977 Stack trace: download.txt

@@ -1,0 +1,3 @@
+Add ability to lookup running machine instances
+kind/enhancement 
+Right now there is no way to lookup running machine instances using SPI. So it's proposed to extend MachineProvider interface and declare a method for looking up running machine instances. Returned instances must be functioning as well as if they are created by MachineProvider#startService method. This functionality allows to move forward in runtimes recovering, the minimum required data for mapping containers to machine instances is provided by container labels(#4104). Investigated by #3910 Depends on #4104

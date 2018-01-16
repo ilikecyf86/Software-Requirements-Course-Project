@@ -1,0 +1,3 @@
+'Creating' workspace state looks a little bit measleading in Dashboard
+kind/enhancement team/plugin status/open-for-dev sprint/next-sprint sprint/next-sprint status/open-for-dev 
+Reproduction Steps: Open dashboard and click on Add workspace button. There is Creating state label which could be understood as the situation when workspace is being created at the moment by system, and user should wait for a moment on status Created: There are two variants instead which look more suitable here as for me: State: New State: (isn't created yet) @slemeur, @TylerJewell what do you think?

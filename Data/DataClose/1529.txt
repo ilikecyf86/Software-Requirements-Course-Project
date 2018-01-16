@@ -1,0 +1,3 @@
+Add MySQL Docker Image to Eclipse
+kind/task severity/P2 kind/task severity/P2 
+Add mysql dockerfile to eclipse/che-dockerfiles repo. Add mysql docker image to eclipse dockerhub organization from codenvy/mysql to eclipse/che-recipe-mysql. Update server code to use new image eclipse/che-recipe-mysql. Currently recipe has image: mysql which should be image: codenvy/mysql so we need to figure out how che server is translating it. This task includes updating any tests using this image such as CommandDeserializerTest.java Remove codenvy/mysql docker image from codenvy dockerhub organization.

@@ -1,0 +1,3 @@
+Docker Volumes.
+kind/question kind/enhancement kind/question 
+I cannot mount a volume using the dockerfile/stacks. Is there a way to set command line arguments thru che? I know this breaks platform independence provided by a dockerfile but I think it would be useful to have the command line options for docker thru che's interface as an option. I need something like "docker run -v /host/directory:/container/directory ..." . Can you do this thru stacks.json file? This link explains the issue a little better. http://container-solutions.com/understanding-volumes-docker/

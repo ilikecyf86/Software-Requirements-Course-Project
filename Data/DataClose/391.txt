@@ -1,0 +1,3 @@
+Unable to start workspace from factory in selenium tests
+kind/task team/production 
+Reproduction Steps: There is selenium tests of factory which fail regularly because of start workspace error, for example: org.eclipse.che.selenium.factory.CheckBitnamiLaravelFactoryTest.checkLaravelUrl org.eclipse.che.selenium.factory.CheckBitnamiSwiftFactory.checkSwiftUrl The problem: there are broken links on removed branches: https://github.com/bitnami/bitnami-docker-codeigniter/tree/che https://github.com/bitnami/bitnami-docker-laravel/tree/che OS and version: Diagnostics:

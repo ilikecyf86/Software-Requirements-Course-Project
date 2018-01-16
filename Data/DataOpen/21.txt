@@ -1,0 +1,3 @@
+Smart Tree should return Promise for setExpanded()
+kind/enhancement 
+Our Tree Widget (org.eclipse.che.ide.ui.smartTree.Tree) expands Nodes asynchronously. It would be nice to return a Promise from the setExpanded() methods, since sometimes we want to do something once the expansion has finished.

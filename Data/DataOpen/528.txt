@@ -1,0 +1,3 @@
+Add ability to create/edit Samples
+kind/enhancement team/plugin 
+As preliminary, we will provide a basic way to create and edit Samples registered with Che.

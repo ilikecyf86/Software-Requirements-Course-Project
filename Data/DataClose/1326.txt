@@ -1,0 +1,3 @@
+override double click in project explorer
+kind/question 
+Hello I want to implement other action instead of opening the text editor for specific file in my custom project. How can i achieve this? Thanks

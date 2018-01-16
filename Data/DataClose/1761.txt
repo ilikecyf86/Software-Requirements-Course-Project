@@ -1,0 +1,3 @@
+Boot2Docker - eclipse/che - Are you trying to connect to a TLS-enabled daemon without TLS
+kind/question 
+Hi , m getting TLS error on running eclipse/che with boot2dockers on windows 10 Command used docker run -it --rm -e DOCKER_HOST="tcp://192.168.99.100:2376" eclipse/che action list-workspace Have tried disabling the TLS as per the blog https://coderwall.com/p/siqnjg/disable-tls-on-boot2docker it did not helped. Are there any specific steps for TLS to work with above command? Versions are : eclipse/che latest ad78fd3b5f11 6 days ago 51.06 MB Docker version: Docker version 1.12.5, build 7392c3b Windows 10

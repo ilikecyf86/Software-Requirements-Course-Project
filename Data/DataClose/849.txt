@@ -1,0 +1,3 @@
+java.net.UnknownHostException when downloading gradle in workspace terminal
+
+Hi, I have created a local workspace using the command: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v C:\kevin\data3:/data -v C:\kevin\data3:/chedir eclipse/che:latest dir up I have project which used gradlew and I am trying to execute the build using the command ./gradlew build command However it gives me error in attached image. This exception is probably because I am behind a proxy. At home when I do the same it works fine. Is there a way to specify the proxy in the workspace container? OS and version: Windows 2000 Thanks, Kevin

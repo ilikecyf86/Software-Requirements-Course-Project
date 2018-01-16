@@ -1,0 +1,3 @@
+Create spinner widget
+kind/enhancement sprint/next-sprint status/open-for-dev team/plugin sprint/current-sprint sprint/next-sprint status/code-review status/open-for-dev sprint/current-sprint status/code-review 
+Create new spinner widget for increment/decrement values.

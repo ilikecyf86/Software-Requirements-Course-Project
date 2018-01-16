@@ -1,0 +1,3 @@
+The project still present after deletion through terminal or project service
+kind/bug severity/P1 team/ide sprint/next-sprint sprint/next-sprint status/in-progress status/in-progress 
+Reproduction Steps: Go to the IDE and create 2 Spring projects: Spring#1, Spring#2 for example. Open terminal delete the Spring#1 Expected result: the Spring#1 should disappear from the Project Explorer. In the Events panel should present notification message about deleting project Actual result: the Spring project still present in the Project Explorer (but on the file system is deleted). There is no any notifications about deleting. OS and version: Fedora 25, chrome driver, CHE 5.16.0 Note: this usecase is not covered by authotets

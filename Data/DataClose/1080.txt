@@ -1,0 +1,11 @@
+Does ws-agent require JDK?
+kind/question kind/bug severity/P2 
+I'm getting the below error when starting a ubuntu workspace using a base image that doesn't have JDK. [STDOUT] 2017/04/28 10:20:12 Terminal routes:
+[STDOUT] 2017/04/28 10:20:12 ✓ Connect to pty(webscoket) ............... GET    /pty
+[STDOUT] 2017/04/28 10:20:12 
+[STDERR] /bin/sh: 57: [: Illegal number:  <<<<<<<<<<<<<<<<<
+[STDOUT] Reading package lists...
+[STDOUT] Building dependency tree...
+[STDOUT] Reading state information...
+[STDOUT] software-properties-common is already the newest version (0.96.20.6).
+ I think this refers to https://github.com/eclipse/che/blob/master/wsagent/agent/src/main/resources/org.eclipse.che.ws-agent.script.sh#L57 Is JDK required to use the ws-agent? We are developing with PHP in the ws not Java and the docs seem to imply it isn't required. Dockerfile in use https://github.com/outeredge/edge-docker-che-base/blob/master/Dockerfile

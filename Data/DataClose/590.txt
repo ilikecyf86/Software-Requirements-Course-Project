@@ -1,0 +1,3 @@
+Keycloak token expiration
+kind/bug team/platform 
+After some idle time, JS refresh token seems to expire:

@@ -1,0 +1,3 @@
+Scroll to line works incorrect for OpenFileAction
+kind/bug 
+Reproduction Steps: Run with help factory OpenFileAction to open some big file and scroll to some line: ... { "actions": [ { "actionId": "openFile", "properties": { "file": "path to file", "line": 100 } } ] }... Actual behavior: file is opened but IDE didn't scroll to line described in the action properties. Expected behavior: IDE should open file and scroll to the line. OS and version: Fedora 25 CHE version :5.18.0-SNAPSHOT

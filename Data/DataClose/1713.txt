@@ -1,0 +1,3 @@
+Restarting of workspace after terminating - works wrong with autosnapshotting
+kind/bug severity/P1 team/ide sprint/current-sprint severity/P2 severity/P1 
+Reproduction Steps: Go to a workspace and invoke command: kill -9 $(ps ax | grep java | grep ws-agent | grep conf | grep -v grep | awk '{print $1}'). Wait dialog message and click on restart button Actual behavior: After restarting we have creating snapshot from current workspace. Restart the workspace is failed after this one. Expected behavior: The restarting of workspace should be finish without errors Che version: 5.1.0 OS and version: Ubuntu 14 TLS Docker version: 1.13

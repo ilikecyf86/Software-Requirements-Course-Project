@@ -1,0 +1,27 @@
+Add supporting of DeploymentConfig objects in OpenShift recipe
+kind/task team/platform status/open-for-dev status/in-progress status/open-for-dev status/open-for-dev status/in-progress 
+The current implementation doesn't support deployment config objects in OpenShift recipe. It was implemented in this way because of a problem of matching environment configuration to containers specified by the recipe. It was decided to obligate OpenShift recipe objects with the following limits: pod name in a template of deployment config is mandatory; pod name must be unique whole pod objects and templates of pods in deployment configs objects. So it means that the following recipe is invalid: ---
+kind: List
+items:
+-
+    kind: Pod
+    metadata:
+        name: pod1
+    spec:
+        containers:
+        -
+            name: main
+            ...
+-
+    kind: DeploymentConfig
+        metadata:
+            name: dc
+        spec:
+            template:
+                metadata:
+                    pod1
+                spec:
+                    containers:
+                    -
+                        name: main
+                        ... Add supporting of DeploymentConfig objects in OpenShift recipe. Note that deployment config will generate names for pods, and it is needed to put something on labels or annotations to link Running pod and environment machine.

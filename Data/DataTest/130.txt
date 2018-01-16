@@ -1,0 +1,22 @@
+Cannot find ws-agent.zip with Docker
+
+Description of problem Hello Che team! I have a little problem to create a default project and I found some answer in old issues, but I still have the problem with the ws-agent.zippackage. I have access to the api http://176.XXX.XXX.XXX:8080/ide/api/: {"rootResources":[{"regex":"/project-template(/.*)?","fqn":"org.eclipse.che.api.project.server.template.ProjectTemplateService","path":"project-template"},{"regex":"/event-bus(/.*)?","fqn":"org.eclipse.che.api.core.notification.WSocketEventBusServer","path":"event-bus"},{"regex":"/workspace(/.*)?","fqn":"org.eclipse.che.api.workspace.server.WorkspaceService","path":"/workspace"},{"regex":"/machine(/.*)?","fqn":"org.eclipse.che.api.machine.server.MachineService","path":"/machine"},{"regex":"/profile(/.*)?","fqn":"org.eclipse.che.api.user.server.UserProfileService","path":"/profile"},{"regex":"/async/([^/]+?)(/.*)?","fqn":"org.everrest.core.impl.async.AsynchronousJobService","path":"/async/{ws-id}"},{"regex":"/recipe(/.*)?","fqn":"org.eclipse.che.api.machine.server.recipe.RecipeService","path":"/recipe"},{"regex":"/oauth(/.*)?","fqn":"org.eclipse.che.security.oauth.OAuthAuthenticationService","path":"oauth"},{"regex":"/stack(/.*)?","fqn":"org.eclipse.che.api.workspace.server.stack.StackService","path":"/stack"},{"regex":"/auth(/.*)?","fqn":"org.eclipse.che.api.auth.AuthenticationService","path":"/auth"},{"regex":"/docs(/.*)?","fqn":"org.eclipse.che.swagger.rest.SwaggerSpecificationService","path":"/docs"},{"regex":"/user(/.*)?","fqn":"org.eclipse.che.api.user.server.UserService","path":"/user"},{"regex":"/ssh(/.*)?","fqn":"org.eclipse.che.api.ssh.server.SshService","path":"/ssh"},{"regex":"(/.*)?","fqn":"org.eclipse.che.api.core.rest.ApiInfoService","path":"/"}]} Docker-compose configuration che:
+  image: codenvy/che:latest
+  command: >
+    bash -c "
+    sudo rm -rf /home/user/che/lib-copy/* &&
+    sudo rm -rf /home/user/che/tomcat/temp/local-storage/* &&
+    mkdir -p /home/user/che/lib-copy/ &&
+    sudo chown -R user:user /home/user/che &&
+    cp -rf /home/user/che/lib/* /home/user/che/lib-copy &&
+    /home/user/che/bin/che.sh run -d
+    "
+  net: "host"
+  volumes:
+    - "/var/run/docker.sock:/var/run/docker.sock"
+    - "/home/user/che/lib:/home/user/che/lib-copy"
+    - "/home/user/che/workspaces:/home/user/che/workspaces"
+    - "/home/user/che/tomcat/temp/local-storage:/home/user/che/tomcat/temp/local-storage"
+  container_name: che
+ environment:
+    - CHE_DOCKER_MACHINE_HOST=176.XXX.XXX.XXX I add the CHE_DOCKER_MACHINE_HOST with my server IP. Version Docker image: tag latest, I think is 4.1.1 OS: Debian Jessie Docker: 1.11.0 Docker-compose: 1.7.0 How reproducible Create a default java maven project . Actual Results Client side during the Starting workspace agent step [STDERR] unzip: cannot find or open /mnt/che/ws-agent.zip, /mnt/che/ws-agent.zip.zip or /mnt/che/ws-agent.zip.ZIP.

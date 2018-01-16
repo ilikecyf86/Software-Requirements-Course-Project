@@ -1,0 +1,3 @@
+Refactor client access to agents to respect workspace token in Che
+kind/task team/platform 
+Now Codenvy uses workspace token to access agents API in workspace. Che doesn't use that technique. Goals of this task are: to add token into WorkspaceRuntime inject this token on server if it is supported by Che implementation put this token into context of IDE adapt agent API clients implementation in IDE to respect token if it exists in WorkspaceRuntime

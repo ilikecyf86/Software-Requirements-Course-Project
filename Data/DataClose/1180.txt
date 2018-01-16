@@ -1,0 +1,29 @@
+auto-expand child folders containing exactly 1 folder like github does when browsing source
+kind/enhancement 
+when expanding the tree of maven projects things are often very deeply nested. e.g. a simple maven based microservice might have a path of src/main/java/com/acme/foo/bar/something/MyThing.java so thats 8 clicks of the folders to find some actual source code to view. When browsing projects on github its common to automatically open folders which contain only 1 folder. e.g. expand `src`
+src/
+  main/
+  test
+
+expand `src/main`
+
+src/
+  main/
+   java/
+   resources/
+  test
+
+expand `src/main/java`
+
+src/
+  main/
+   java/
+    com/
+      acme/
+       foo/
+        bar/
+          something/
+            MyThing.java
+   resources/
+  test
+ So the above helped speed the user through to the real content (the source code) by using the rule that if a folder containers only 1 child folder then just expand it too. If a project has no tests and no src/main/resources then a single expand of src could list source code.

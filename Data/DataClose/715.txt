@@ -1,0 +1,3 @@
+Imports aren't resolved after adding an external lib to classpath
+kind/bug severity/P2 team/ide status/in-progress status/code-review status/in-progress status/code-review 
+Reproduction Steps: Create a simple Java project Upload any JAR to bin. Do not add it to classpath yet Open Main.java and import any class from the JAR. A squiggly line says the import cannot be resolved which is expected. Do not close the file. Add the JAR to classpath. Expected result The squiggly line turns yellow (or disappears if the class is used further in code) Observed result The editor still shows an unresolved import, even though the library can be found in External Libraries in Project Explorer:

@@ -1,0 +1,3 @@
+Remove preliminary check for project type existence
+kind/enhancement team/production status/code-review status/code-review team/production 
+As we can pass any project type during creating a new project, the result project will be created with blank project type and marked as problematic project, so preliminary checking for project type existence is redundant and can be removed.

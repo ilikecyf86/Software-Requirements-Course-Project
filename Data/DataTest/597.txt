@@ -1,0 +1,3 @@
+How can I provide custom che properties outside the docker?
+
+I install eclipse-che via docker, I want to provide custom properties from outside docker, which file do I need to mount? I see there is /home/user/che-3.13.4.2/webapps/che/WEB-INF/classes/codenvy/che.properties inside the docker, is it correct file I need to mount with?

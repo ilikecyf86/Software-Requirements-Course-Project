@@ -1,0 +1,3 @@
+The Save button in the Workspace config tab appears only after adding second symbol to config
+kind/bug severity/P2 team/plugin status/open-for-dev severity/P1 kind/bug kind/bug severity/P2 
+Reproduction Steps: Create a workspace and click on the Workspace config tab Add one symbol to config Expected behavior: The Save button appeared Observed behavior: The Save button will appears only after adding second symbol Che version: 5.14.0-SNAPSHOT OS and version: Fedora 25 Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes]

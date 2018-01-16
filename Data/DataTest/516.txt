@@ -1,0 +1,3 @@
+Creating a Project for a different runtime within a Workspace fails to create a project that will compile/run
+kind/bug kind/bug 
+I was in the workspace that I created for console-java-simple. I said: Workspace->Create Project SAMPLES: web-nodejs-simple Press 'Create' BUG 'CMD' button still says 'consle-java-simple: build' instead of JS build commands Open a console (+) Type npm BUG: no npm From talking to people, my understanding is that all of the projects within a workspace must all be of the same type (ie. all Java). If this is so, then 'Create Project' needs to gray out runtimes that don't apply (or something like that) so I am unable to get into this error state from the UI.

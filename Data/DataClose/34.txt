@@ -1,0 +1,3 @@
+[CHE 6] Check versions of workspace installers
+kind/task target/che6 team/production status/in-progress status/in-progress 
+Description We need test versions of workspace installers in CHE-6 branch.

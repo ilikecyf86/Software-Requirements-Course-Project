@@ -1,0 +1,3 @@
+Rework SPI components to allow clients to get current state of Runtime while it is still starting.
+kind/task sprint/current-sprint status/in-progress status/open-for-dev team/platform status/in-progress sprint/current-sprint 
+To allow clients make a load of workspace more smooth and provide a feeling that it starts faster we should allow retrieving of the current state of runtime while it is in starting state. Goal: Rework WorkspaceRuntimes and WorkspaceManager - Workspace runtime should be available during workspace start Revise methods WorkspaceManager.removeWorkspace an DockerAbandonedResourcesCleaner.cleanNetworks . Now we have assumptions that WorkspaceRuntimes.hasRuntime true if a workspace is running. After 1. it wouldn't be true.

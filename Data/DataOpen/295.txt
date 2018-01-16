@@ -1,0 +1,3 @@
+Check and upgrade all packaged Language Servers
+kind/task team/ide 
+Goals We are packaging many different Language Server with Che. Some of them have not been updated since quite a long time - although the upstreams LS project made progress and released new versions. This issue is a task to check each versions of the Language Servers that are packaged with Che and upgrade them to their latest released version. Example: Typescript Language Server has been packaged in Che in November 2016, while there have been a lot of releases of it https://github.com/sourcegraph/javascript-typescript-langserver/releases.

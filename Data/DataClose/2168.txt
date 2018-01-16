@@ -1,0 +1,3 @@
+Processes panel's size is not restored after refresh page
+kind/bug team/ide 
+Reproduction Steps: Open Processes panel Resize this one Refresh page Expected behavior: Processes panel's size is restored to the previous value Processes panel opens and do not close. Observed behavior: Processes panel has default size Processes panel does extra steps: open, close and open again Che version: 5.0.0-M7

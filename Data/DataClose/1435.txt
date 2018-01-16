@@ -1,0 +1,56 @@
+Frequent 'Unable to initialize IDE' error on AWS
+kind/question status/analyzing team/ide kind/task kind/question kind/bug severity/P1 sprint/current-sprint sprint/current-sprint 
+I have an issue running Che on an AWS EC2 instance. The browser fails to initialize the Web IDE showing a popup dialog saying 'Unable to initialize IDE'. The workspace seems to be initialized correctly. I can verify this using the Che Terminal panel, which is not affected by the error. Unfortunately, the Project Explorer and Commands drop-down list are empty and the IDE is quite unusable. I noticed that the issue is quite frequent, but not 100% reproducible. It's more like 80% reproducible. It happens only with stacks that have Language Server agents enabled by default (like the PHP stack). I found the following error in the Chrome Console: ERROR (org.eclipse.che.plugin.languageserver.ide.LanguageServerFileTypeRegister): 
+java.lang.Exception: 
+	at Unknown.nm(_app-0.js)
+	at Unknown.vm(_app-0.js)
+	at Unknown.Qfj(_app-0.js)
+	at Unknown.Sfj(_app-0.js)
+	at Unknown.R_d(_app-0.js)
+	at Unknown.eval(_app-0.js)
+ The issue is not reproducible with an older installation of Che - version 5.0.0-M8. Reproduction Steps: I have a m4.large instance running on AWS EC2. All inbound and outbound traffic is allowed in the attached security group. Che is started with the following commands: export CHE_IP=`curl -s http://169.254.169.254/latest/meta-data/public-ipv4`
+docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /opt/che-data:/data -e CHE_DOCKER_IP_EXTERNAL=$CHE_IP eclipse/che start Open the Dashboard in the browser. Start a workspace with the PHP stack. The workspace will initialize correctly, but the browser will fail initializing the Web IDE. OS and version: Ubuntu 14.04.4 LTS (running on AWS EC2) Diagnostics: WARN: Bound 'eclipse/che' to 'eclipse/che:5.3.1'
+WARNING: No swap limit support
+INFO: (che cli): 5.3.1 - using docker 1.12.3 / native
+
+CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che
+ Version:        5.3.1
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /opt/che-data
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    5.3.1
+ CHE_HOST:       172.30.2.125
+ CHE_INSTANCE:   /opt/che-data/instance
+ CHE_CONFIG:     /opt/che-data
+ CHE_BACKUP:     /opt/che-data/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   172.30.2.125
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:5.3.1
+ IMAGE_CHE=eclipse/che-server:5.3.1
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.3.1
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.3.1
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:5.3.1
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:5.3.1
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.3.1
+che.env:
+ CHE_HOST=172.30.2.125

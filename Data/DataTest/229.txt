@@ -1,0 +1,3 @@
+Improve toolbar machines widget
+Improvement Improvement Improvement 
+On the toolbar we have machines widget (on the left of the commands one). Improve it by adding possibility to select machine(target) and adding item called "Edit Targets..."

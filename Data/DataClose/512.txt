@@ -1,0 +1,3 @@
+code formatting check is very late
+kind/enhancement team/production team/platform team/production 
+Build fails due to a code formatting error after it is almost done with the build. Can we please move the code formatting error to an earlier stage?

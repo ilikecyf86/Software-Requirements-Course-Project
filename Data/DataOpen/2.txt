@@ -1,0 +1,16 @@
+Tomcat IDE start fails for Che-in-Che
+kind/bug 
+Description When using che-in-che workspace on minishift the Tomcat8-IDE Start command fails to deploy the app with the following message 2017-12-16 20:54:48,224[ina-startStop-1]  [ERROR] [o.a.c.startup.HostConfig 1518]       - Unable to create directory for deployment: /home/user/tomcat8/conf/Catalina/localhost
+ Reproduction Steps Invoke the command OS and version: minishift 1.10.0 on OSX Diagnostics: I also see 20:54:47,508 |-ERROR in org.apache.juli.logging.ch.qos.logback.core.rolling.RollingFileAppender[file] - openFile(/home/user/tomcat8/logs/logs/catalina.log,true) call failed. java.io.FileNotFoundException: /home/user/tomcat8/logs/logs/catalina.log (No such file or directory)
+
+	at java.io.FileNotFoundException: /home/user/tomcat8/logs/logs/catalina.log (No such file or directory)
+
+	at 	at java.io.FileOutputStream.open0(Native Method)
+
+	at 	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+
+	at 	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+
+	at 	at org.apache.juli.logging.ch.qos.logback.core.recovery.ResilientFileOutputStream.<init>(ResilientFileOutputStream.java:26)
+
+	at 	at org.apache.juli.logging.ch.qos.logback.core.FileAppender.openFile(FileAppender.java:204)

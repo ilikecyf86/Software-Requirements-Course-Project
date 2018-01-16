@@ -1,0 +1,3 @@
+Invoking code completion is moving/scrolling the window
+kind/bug team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint status/code-review status/code-review 
+When invoking the code completion and selecting a value in the Java Editor, the screen is performing a scroll Reproduction Steps: as you see on the screencast, selecting a value in completion list and hitting enter is then moving the window editor OS and version: macOs Sierra Eclipse Che 5.5.0-SNAPSHOT

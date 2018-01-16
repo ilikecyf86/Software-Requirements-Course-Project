@@ -1,0 +1,7 @@
+[cli] Add check to avoid :/data and :/assembly being identical
+kind/question kind/enhancement kind/question 
+I have cloned and compiled che. When I start it docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v ~/che:/repo -v ~/che:/data eclipse/che-cli start --debug it throws an error WARN: Bound 'eclipse/che-cli' to 'eclipse/che-cli:5.2.2'
+WARNING: No swap limit support
+INFO: (che cli): :/repo mounted - using assembly and manifests from your local repository
+/scripts/base/startup_funcs.sh: line 468: /repo/dockerfiles/cli/scripts/cli.sh: No such file or directory
+ it used to work in the earlier versions (about a month ago).

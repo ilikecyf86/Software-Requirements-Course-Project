@@ -1,0 +1,33 @@
+Desktop IDE Sync - Help Message
+kind/bug severity/P2 
+Current error message does not seem correct. Reproduction Steps: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:/data -v $PWD:/sync eclipse/che sync Usage on Linux
+  docker run --rm -it --cap-add SYS_ADMIN --device /dev/fuse
+            --name che-mount
+            -v ${HOME}/.ssh:${HOME}/.ssh
+            -v /etc/group:/etc/group:ro
+            -v /etc/passwd:/etc/passwd:ro
+            -v <path-to-sync-profile>:/profile
+            -u $(id -u ${USER})
+            -v <local-mount>/:/mnthost eclipse/che-mount <workspace-id|workspace-name>
+
+     <workspace-id|workspace-name> ID or Name of the workspace or namespace:workspace-name
+
+Usage on Mac or Windows:
+  docker run --rm -it --cap-add SYS_ADMIN --device /dev/fuse
+            --name che-mount
+            -v <path-to-sync-profile>:/profile
+            -v <local-mount>/:/mnthost eclipse/che-mount <workspace-id|workspace-name>
+
+     <workspace-id|workspace-name> ID or Name of the workspace or namespace:workspace-name
+ No parameters or providing non-existing parameters like --foo bar should be treated as --help . docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:/data -v $PWD:/sync eclipse/che sync --help USAGE: eclipse/che sync WORKSPACE [PARAMETERS]
+
+Synchronizes a che workspace to a local path mounted to ':/sync'
+
+WORKSPACE:             Accepts workspace name, ID, or namespace:ws-name
+                       List all workspaces with 'action list-workspaces'
+
+PARAMETERS:
+  --url                Location of che
+  --user               User name of che if accessing authenticated system
+  --password           Password of che if accessing authenticated system
+  --unison-verbose     Verbose output of unison sync

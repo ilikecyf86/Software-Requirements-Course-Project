@@ -1,0 +1,3 @@
+Complete the RefactoringFeatureTest after fixing problem with file watchers after refactoring
+kind/bug selenium/failure team/production sprint/current-sprint status/open-for-dev 
+Description The test fault because we have issue: #7500 But after fixing issue, test fails in other step. It happens because in the test project only one package. But test should perform move operation in another package. We should add new package in the test project, performs move operation into another package and validate all test - steps OS and version: Chrome browser, Che6-M2, Fedora25

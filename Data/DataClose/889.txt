@@ -1,0 +1,37 @@
+Regression: Hover breaks PHP intellisense
+kind/bug severity/P1 team/ide sprint/next-sprint status/in-progress sprint/next-sprint status/code-review status/in-progress status/code-review 
+A simple hovering over an element in the PHP editor breaks the PHP intellisense. I see the below error in the dev-machine output and then no intellisense works anymore. [STDERR] Jun 12, 2017 7:31:08 AM org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor run
+[STDERR] SEVERE: java.lang.IllegalStateException: Expected STRING but was BEGIN_OBJECT
+[STDERR] com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected STRING but was BEGIN_OBJECT
+[STDERR] 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:200)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:810)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:875)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapterFactory$Adapter.createMessage(MessageTypeAdapterFactory.java:162)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapterFactory$Adapter.read(MessageTypeAdapterFactory.java:130)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapterFactory$Adapter.read(MessageTypeAdapterFactory.java:54)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:810)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:775)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:724)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:696)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.MessageJsonHandler.parseMessage(MessageJsonHandler.java:70)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:148)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:77)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:68)
+[STDERR] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+[STDERR] 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[STDERR] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+[STDERR] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+[STDERR] 	at java.lang.Thread.run(Thread.java:745)
+[STDERR] Caused by: java.lang.IllegalStateException: Expected STRING but was BEGIN_OBJECT
+[STDERR] 	at com.google.gson.internal.bind.JsonTreeReader.nextString(JsonTreeReader.java:154)
+[STDERR] 	at com.google.gson.internal.bind.TypeAdapters$13.read(TypeAdapters.java:358)
+[STDERR] 	at com.google.gson.internal.bind.TypeAdapters$13.read(TypeAdapters.java:346)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:78)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:54)
+[STDERR] 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1.read(ReflectiveTypeAdapterFactory.java:103)
+[STDERR] 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:196)
+[STDERR] 	... 18 more
+[STDERR] 
+ This seems to be related to the adoption of LSP4J (#4765), which implements newer version of LSP. The current version of the PHP language server in Che is quite old, based on LSP 1.x. I will prepare a PR with the latest version of the PHP language server. Considering how easy is to trigger a hover request, this is a pretty serious issue. Reproduction Steps: Start a PHP workspace Open a PHP file and have a code like this: <?php
+$x = "myvar";
+var_dump($x); Hover on var_dump The error will be printed in the dev-machine output and the intellisense will stop working. OS and version: Fedora 24 Diagnostics: CLI: TTY: true Daemon: /var/run/docker.sock Image: eclipse/che:5.11.2 Version: 5.11.2 Command: info Parameters: info Mounts: /data: /home/kraev/Work/che-data /data/instance: not set /data/backup: not set /repo: not set /assembly: /home/kraev/git/che/assembly/assembly-main/target/eclipse-che-5.12.0-SNAPSHOT/eclipse-che-5.12.0-SNAPSHOT /sync: not set /unison: not set /chedir: not set System: Docker: native Proxy: not set Internal: CHE_VERSION: 5.11.2 CHE_HOST: 172.17.0.1 CHE_INSTANCE: /home/kraev/Work/che-data/instance CHE_CONFIG: /home/kraev/Work/che-data CHE_BACKUP: /home/kraev/Work/che-data/backup CHE_REGISTRY: /version CHE_DEBUG: false IP Detection: 172.17.0.1 Initialized: true Image Registry: IMAGE_INIT=eclipse/che-init:5.11.2 IMAGE_CHE=eclipse/che-server:5.11.2 IMAGE_COMPOSE=docker/compose:1.8.1 IMAGE_TRAEFIK=traefik:v1.3.0-rc1 BOOTSTRAP_IMAGE_ALPINE=alpine:3.4 BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.11.2 UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.11.2 UTILITY_IMAGE_CHEDIR=eclipse/che-dir:5.11.2 UTILITY_IMAGE_CHETEST=eclipse/che-test:5.11.2 UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.11.2 che.env: CHE_HOST=172.17.0.1 CHE_SINGLE_PORT=false

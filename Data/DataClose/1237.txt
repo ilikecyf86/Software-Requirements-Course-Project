@@ -1,0 +1,3 @@
+After refresh page not restore processes list
+kind/bug 
+Reproduction Steps: Open spring project Run some commands Refresh page Pay attention to the process bar Expected behavior : Process list will be restore Observed behavior : Process list not restored Attachment :

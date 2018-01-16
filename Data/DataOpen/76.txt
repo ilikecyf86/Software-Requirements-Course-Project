@@ -1,0 +1,4 @@
+Factory reuses the same filesystem as the original workspace instead of cloning
+kind/bug team/platform 
+Description In Multiuser Che I created a workspace and cloned a git project. I created a factory for it I logged in as a different user and used the factory. A new workspace was created But the workspace did use the same filesystem as the original workspace. So any changes in the files of the workspaces (old and new) very visible in the other workspace. OS and version: Ubuntu 16.04 VM Started a local multi user che (6.0.0-M2, 5.19.0 and nightly) with empty data area: docker run -it --rm -e CHE_MULTIUSER=true -v ~/chedata_plain600m2:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:nightly init
+docker run -it --rm -e CHE_MULTIUSER=true -v ~/chedata_plain600m2:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:nightly  start

@@ -1,0 +1,10 @@
+Add required JS into GWT plugin.
+kind/question 
+As per this JS library the following dependencies are required , in GWT applicaiton I have added them in the index.html. <head>
+    <link rel="stylesheet" href="joint.css" />
+    <script src="jquery.js"></script>
+    <script src="lodash.js"></script>
+    <script src="backbone.js"></script>
+    <script src="joint.js"></script>
+</head>
+ But of CHE i am struggling to resolve the same, can someone please guide where to put them and how to resolve them. gwt.xml src/main/resources --com --test --plugin --public -joint.min.css -backbone.js -jquery.js -joint.min.css -callgraph.js using ScriptInjector.fromUrl(GWT.getModuleBaseURL() + "callgraph.js") I have loaded the callgraph.js. but other js files are not resolved. Reproduction Steps: OS and version: Diagnostics:

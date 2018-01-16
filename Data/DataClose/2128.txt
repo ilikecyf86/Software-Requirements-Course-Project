@@ -1,0 +1,6 @@
+Cannot start a workspace from centos:6.6
+kind/bug status/open-for-dev team/enterprise severity/blocker team/enterprise status/open-for-dev 
+Reproduction Steps: Create a workspace from a custom stack: FROM centos:6.6
+CMD tail -f /dev/null
+
+ che/wsmaster/che-core-api-agent/src/main/resources/agents/scripts/org.eclipse.che.ssh.script.sh Line 16 in 2f5ee43 LINUX_TYPE=$(cat /etc/os-release | grep ^ID= | tr '[:upper:]' '[:lower:]') There's no such file in centos:6.6

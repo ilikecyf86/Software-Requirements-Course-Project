@@ -1,0 +1,3 @@
+Eclipse Che - Debugging C++ code
+kind/question 
+Hi, In Che workspace (c++ stack), i created new c++ project (basic application with some cout statements). i could run the application successfully. In order to debug - as in https://www.eclipse.org/che/docs/ide/debug/index.html#gdb, configuration is done. But the debug windows does not show anything other than breakpoints, is this a known issue ? Any support would be helpful. Environment: Linux Che : 5.7.0

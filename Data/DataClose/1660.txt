@@ -1,0 +1,3 @@
+Don't sort node interceptors at initialization state
+kind/bug team/plugin 
+There is a problem which may occur during the org.eclipse.che.ide.ui.smartTree.NodeLoader initialization. org.eclipse.che.ide.api.data.tree.NodeInterceptors have priority status and set of incoming interceptors should be sorted according to this status. Using priority comparator might occur interceptors deletion. So at initialization state we shouldn't perform sorting.

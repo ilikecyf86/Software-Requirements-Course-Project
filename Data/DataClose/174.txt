@@ -1,0 +1,3 @@
+[CHE6 branch] In the light theme some toolbar items are not available
+kind/bug 
+Description Select light theme in the IDE. Apply it and enable toolbar. The delete/cut/copy commands are not shown. OS and version: Che version: 6.0.0-M2

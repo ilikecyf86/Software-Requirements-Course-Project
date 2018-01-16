@@ -1,0 +1,3 @@
+Improve Debugger Menu: Make it possible to Choose between available debuggers
+New feature 
+It should be possible for a user to choose between available debuggers (Java debugger and Gdb). Once chosen, a user should be able to specify host and port. In case of gdb, one should be able to provide a path to a binary file.

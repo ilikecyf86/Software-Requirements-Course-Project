@@ -1,0 +1,3 @@
+Unable to access eclipseche from host system
+kind/question 
+Hi, I have installed eclipseche on a centos 7 image running on virtual box. I have configured everything as described in the document. I am able to start eclipseche and access http://localhost:8080 and http://:8080 from the virtual machine. However I am unable to access the url http://:8080 from external systems. I am able to connect to the IP Address from external systems. Is there additional configuration that needs to be done to access eclipseche from other systems. Thanks and Regards, Leela

@@ -1,0 +1,3 @@
+New workspace get breakpoints from previous workspace
+kind/bug severity/P1 team/enterprise status/in-progress sprint/current-sprint status/in-progress sprint/current-sprint 
+When creating a new workspace, with a project already setup in another workspace, the breakpoints are automatically set in the new workspace. See discussion in #5116. Reproduction Steps: I created a workspace and imported a project. Use the debugger and setup a breakpoint. I stop workspace and delete it. Then: I created another workspace (with a different name) and import the same project. When I opened the file where I previously setup a breakpoint in the previous workspace, I was having the same breakpoint displayed back into this newly created workspace. See attached gif:

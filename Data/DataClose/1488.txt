@@ -1,0 +1,3 @@
+[cli] Implement backward compatible way to rename a property in che.env file
+kind/enhancement status/open-for-dev status/info-needed status/open-for-dev 
+It's needed to have backward compatible way to rename a property in che.env file. Proposed next ways to implement it: implement supporting old properties and using them in following priority: use old property if it's configured, otherwise use new property it is configured otherwise use default value. fail che start if there is any deprecated property, notify user about property deprecation and provide him instructions for reconfiguring system according to a new property.

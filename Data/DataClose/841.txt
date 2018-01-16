@@ -1,0 +1,3 @@
+Stop Docker runtime in case of appearance of internal error like OOM
+kind/task 
+When some Runtime finds out that an internal error happened in the runtime and it can not continue its work it should stop the runtime and notify SPI to clear up WS status.

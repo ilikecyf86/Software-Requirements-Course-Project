@@ -1,0 +1,45 @@
+eclipse/che-dev image does not have go on PATH, prevents building somethings
+kind/bug severity/P1 
+https://github.com/eclipse/che/wiki/Development-Workflow#build-che-using-docker demostates a build flow using a docker image called codeenvy/che-dev or eclipse/che-dev. As far as I can tell, this is built from dockerfiles/dev/Dockerfile. That dockerfile sets the PATH in bashrc to include go, but does not set the PATH when not using bash. Therefore the (simplified) example of doing docker run eclipse/che-dev mvn install does not work if go is required. This happens, for example, when building che-lib. Reproduction Steps: 
+$ cd <PATH to>/che-lib/websocket-terminal
+$ docker run -it --rm --name build-che -v "$HOME/.m2:/home/user/.m2" -v $PWD:/home/user/che-build -w /home/user/che-build  eclipse/che-dev mvn -DskipTests=true -Dfindbugs.skip=true -Dgwt.compiler.localWorkers=2 -T 1 -Dskip-validate-sources -Dmdep.analyze.skip=true -Dlicense.skip=true clean install
+
+ produces this error: [ERROR] Failed to execute goal com.soebes.maven.plugins:iterator-maven-plugin:0.4:iterator (compile-terminal) on project che-websocket-terminal: Command execution failed. Cannot run program "go" (in directory "/home/user/che-build/target/linux_arm5/go"): error=2, No such file or directory -> [Help 1] with diagnostics (-X) this is the key line that is a problem (note missing /opt/go/bin in PATH): 
+[DEBUG] Configuring mojo 'org.codehaus.mojo:exec-maven-plugin:1.4.0:exec' with basic configurator -->
+[DEBUG]   (f) executable = go
+[DEBUG]   (f) workingDirectory = /home/user/che-build/target/linux_arm5/go
+[DEBUG]   (f) arguments = [get, github.com/eclipse/che-lib/websocket]
+[DEBUG]   (f) environmentVariables = {GOARCH=arm, GOARM=5, GOOS=linux}
+[DEBUG]   (f) basedir = /home/user/che-build
+[DEBUG]   (f) classpathScope = runtime
+[DEBUG]   (f) longClasspath = false
+[DEBUG]   (f) project = MavenProject: com.renesas.e2cloud.lib:che-websocket-terminal:5.2.0 @ /home/user/che-build/pom.xml
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@4aed9e9f
+[DEBUG]   (f) skip = false
+[DEBUG] -- end configuration --
+[DEBUG] env: GOARCH=arm
+[DEBUG] env: GOARM=5
+[DEBUG] env: GOOS=linux
+[DEBUG] env: GOPATH=/home/user/gopath
+[DEBUG] env: GOROOT=/opt/go
+[DEBUG] env: HOME=/home/user
+[DEBUG] env: HOSTNAME=c6bd02adb51d
+[DEBUG] env: JAVA_HOME=/opt/jdk1.8.0_45
+[DEBUG] env: JAVA_VERSION=8u45
+[DEBUG] env: JAVA_VERSION_PREFIX=1.8.0_45
+[DEBUG] env: LANG=C.UTF-8
+[DEBUG] env: M2_HOME=/home/user/apache-maven-3.3.9
+[DEBUG] env: MAVEN_CMD_LINE_ARGS= -DskipTests=true -Dfindbugs.skip=true -Dgwt.compiler.localWorkers=2 -T 1 -Dskip-validate-sources -Dmdep.analyze.skip=true -Dlicense.skip=true clean install -X
+[DEBUG] env: MAVEN_PROJECTBASEDIR=/home/user/che-build
+[DEBUG] env: MAVEN_VERSION=3.3.9
+[DEBUG] env: NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat
+[DEBUG] env: NODE_PATH=/usr/local/lib/node_modules
+[DEBUG] env: NODE_VERSION=0.12.9
+[DEBUG] env: PATH=/opt/jdk1.8.0_45/bin:/home/user/apache-maven-3.3.9/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+[DEBUG] env: PWD=/home/user/che-build
+[DEBUG] env: TERM=xterm
+[DEBUG] env: TOMCAT_HOME=/home/user/tomcat8
+[DEBUG] env: XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt
+[DEBUG] Executing command line: [go, get, github.com/eclipse/che-lib/websocket]
+
+ OS and version: Ubuntu 16.10, docker 1.13 Diagnostics: n/a - issue is about build before che is run

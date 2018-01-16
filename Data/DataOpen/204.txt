@@ -1,0 +1,3 @@
+[CHE-6][Regression] The item from maven module does not appear in autocomplete proposal in some specific cases
+kind/bug severity/P1 
+Description Import the project: Clone the project: https://github.com/Tarrantella/check-maven-plugin-test.git Expand Project nodes like on screenshot: Create TestClass.java in the hello package Open Aclass.java. Type Test and launch autocomplete. Expected result: TestClass from hello package should present in the autocomplete proposal. Actual result: There is no expected item OS and version: Fedora 25, chrome browser, Che- CheckMavenPluginTest Diagnostics:

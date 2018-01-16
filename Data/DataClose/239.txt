@@ -1,0 +1,3 @@
+Common commands are not available in the dropdown
+kind/bug target/che6 team/ide 
+Description Common commands are not available in the drop-down. Stack che-in-che.

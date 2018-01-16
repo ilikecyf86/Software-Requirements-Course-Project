@@ -1,0 +1,3 @@
+Productise jdt.ls plugin
+kind/task sprint/current-sprint team/osio 
+The proof of concept jdt.ls based Java plugin must be brought to production quality. This means testing/fixing, I18N, etc.

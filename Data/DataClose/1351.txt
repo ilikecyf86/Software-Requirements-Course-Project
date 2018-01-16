@@ -1,0 +1,57 @@
+Command console became unclosable after its closing had been canceled
+kind/bug team/ide 
+Reproduction Steps: Create and open workspaces from the PHP stack. Execute preexisted command "start apache". Find command console at the bottom for "start apache" command and click on "Close" button. Wait on opening confirmation dialog and discard closing by clicking on "Cancel" button. Find Command Console for "start apache" command again and click on "Close" button. Expected behavior: Confirmation dialog popup appears in IDE. Actual wrong behavior: Clicking on "Close" button doesn't affect. Screencast: OS and version: Ubuntu 14.04 LTS Browser: Chrome Version 55.0.2883.87 (64-bit) Che version: 5.5.0-SNAPSHOT. Revision: 49a628c Diagnostics: ndp@ndp:~/projects/qa$ docker run -ti -v /home/ndp/data/che/:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:nightly info
+WARNING: No swap limit supportWARNING: No swap limit support
+INFO: (che cli): nightly - using docker 1.12.6 / native
+INFO: (che download): Pulling image eclipse/che:nightly
+
+nightly: Pulling from eclipse/che
+Digest: sha256:4df14b0fcd9567cac0ce137fb92ffdc6c180b7c2e75f7c840e7b996f839661af
+Status: Image is up to date for eclipse/che:nightly
+
+CLI:
+ TTY: true
+ Daemon: /var/run/docker.sock
+ Image: eclipse/che:nightly
+ Version: nightly
+ Command: info
+ Parameters: info
+Mounts:
+ /data: /home/ndp/data/che/
+ /data/instance: not set
+ /data/backup: not set
+ /repo: not set
+ /assembly: not set
+ /sync: not set
+ /unison: not set
+ /chedir: not set
+System:
+ Docker: native
+ Proxy: not set
+Internal:
+ CHE_VERSION: nightly
+ CHE_HOST: 172.19.20.32
+ CHE_INSTANCE: /home/ndp/data/che//instance
+ CHE_CONFIG: /home/ndp/data/che/
+ CHE_BACKUP: /home/ndp/data/che//backup
+ CHE_REGISTRY: /version
+ CHE_DEBUG: false
+ IP Detection: 172.19.20.32
+ Initialized: true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:nightly
+ IMAGE_CHE=eclipse/che-server:nightly
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+che.env:
+ CHE_HOST=172.19.20.32
+ CHE_OAUTH_GITHUB_CLIENTID=***
+ CHE_OAUTH_GITHUB_CLIENTSECRET=***
+ CHE_OAUTH_GITHUB_AUTHURI=https://github.com/login/oauth/authorize
+ CHE_OAUTH_GITHUB_TOKENURI=https://github.com/login/oauth/access_token
+ CHE_OAUTH_GITHUB_REDIRECTURIS=http://localhost:${SERVER_PORT}/wsmaster/api/oauth/callback

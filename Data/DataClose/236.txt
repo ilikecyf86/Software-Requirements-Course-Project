@@ -1,0 +1,3 @@
+Maximize contrast between panels
+kind/task target/che6 team/plugin sprint/current-sprint sprint/current-sprint 
+Description The contrast between the panel (1) and (2) is really low. It's very hard to understand where movement bar a located. Since of that is hard to resize panels.

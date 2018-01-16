@@ -1,0 +1,3 @@
+Can't find out IDE.gwt.xml
+kind/question 
+As eclipse che docs "To manually add your plug-in to the Che assembly, you update the IDE.gwt.xml",but I can't find out this file.I want to test example plugins .

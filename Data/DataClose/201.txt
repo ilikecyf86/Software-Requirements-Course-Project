@@ -1,0 +1,3 @@
+Unable to upload SSH key in multi-user Che
+kind/question kind/bug severity/P1 team/ide kind/question status/in-progress status/code-review status/in-progress status/code-review 
+Try to upload a VCS private key in a multi-user workspace. The request responds with a 403 error, possibly due to the missing user token from the request? OS and version: Che 5.19 (multi-user)

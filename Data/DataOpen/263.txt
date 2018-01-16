@@ -1,0 +1,3 @@
+Publish Maven artifacts to central repository
+kind/enhancement team/production 
+Eclipse Che artifacts should be available/synchronized on maven central repository instead of having only a private repository. Example: https://mvnrepository.com/search?q=eclipse+che users are not finding eclipse che while end users would expect to find it at http://central.maven.org/maven2/org/eclipse/ (with che folder) Also it would help ppl by having local mirrors. https://maven.apache.org/guides/mini/guide-central-repository-upload.html

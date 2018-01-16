@@ -1,0 +1,3 @@
+Change signature of the org.eclipse.che.ide.api.resources.Resource#getParent
+kind/task status/open-for-dev team/plugin status/open-for-dev 
+There is no need to return parent as optional. So method signature can be renamed to return actual instance of org.eclipse.che.ide.api.resources.Container instead of com.google.common.base.Optional. Name of the method won't be changed.

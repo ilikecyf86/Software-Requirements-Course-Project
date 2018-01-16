@@ -1,0 +1,3 @@
+Prepare integration tests for new workspace creation flow
+kind/task sprint/next-sprint status/open-for-dev team/plugin sprint/next-sprint 
+As far as new flow with workspace creation was reproduced - there is a need to provide selenium tests for it, which should cover following usecases: stack selection, filtering and grouping machine default RAM setting from stack definition and changing machine RAM workspace creation without project workspace creation with sample/git/github/zip/blank project(s) removing project added previously on workspace creation

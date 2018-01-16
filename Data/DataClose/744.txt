@@ -1,0 +1,3 @@
+No error notification when trying to create a workspace with wrong name
+kind/bug severity/P2 team/plugin status/code-review status/code-review 
+While creating a new workspace add to the workspace name "-" symbol. After clicking the Save button nothing changes.

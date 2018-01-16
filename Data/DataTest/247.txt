@@ -1,0 +1,3 @@
+Execs for SSH Machines
+New feature 
+It should be possible to execute commands against remote ssh machines - similar to what's happening with Docker execs. These should be ssh commands executed against the machine. It should be possible to parse the output.

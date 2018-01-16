@@ -1,0 +1,3 @@
+Refactoring feature works wrong in specified cases
+kind/bug 
+Import our qa project in the IDE. Open for example DialogAboutTest and try to rename methos like : IDE.PROJECT_EXPLORER.waitProjectExplorer(); Expected result: The method should be renamed (Amount of entries about 54) Actual result: Refactoring failed with Exception, after applying refactoring again - unexpected errors from server.

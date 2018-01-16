@@ -1,0 +1,3 @@
+Review the REST page with examples and verify their accuracy
+sprint/next-sprint status/open-for-dev team/platform kind/task sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+For the rest examples that are provided in the docs: Make sure the REST snippet is provided is accurate. Also provide a link to a commit in the source repo that shows how we use the same REST API in either the IDE or the UD as an example of usage. Related to #4555

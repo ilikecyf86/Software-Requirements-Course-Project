@@ -1,0 +1,8 @@
+Review and define agent bootstrapper events
+kind/task sprint/current-sprint status/open-for-dev team/platform status/open-for-dev sprint/current-sprint 
+Agent installation spec defines agent bootstrapper events(see Agent lifecycle events). According to new generation SPI, defined events - do not provide enough information. For example each agent event should provide machine identifier as well as its own identifier, it can be either structured id like "workspaceId" : "workspace123",
+"environment" : "main",
+"machine" : "dev"
+ or it can be a path like "machine" : "workpsace123/main/dev"
+ or it can be a machine id "machine" : "machine123"
+ Another point is that the format of events names should fit the concept of workspace master events. The DOD of the issue is to provide a list of jsonrpc2.0 events needed to be produced by bootstrapper, which allows to develop java client & installer separately.

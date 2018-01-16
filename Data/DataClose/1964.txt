@@ -1,0 +1,10 @@
+Docker CLI Usage Message
+
+Currently message is: INFO: Syntax:
+INFO:   docker run -it --rm  -v /var/run/docker.sock:/var/run/docker.sock
+INFO:                   che/cli
+ I think the image name needs to be changed to eclipse/che-cli which would make the message. INFO: Syntax:
+INFO:   docker run -it --rm  -v /var/run/docker.sock:/var/run/docker.sock
+INFO:                   eclipse/che-cli
+ Additionally, can we make this one line to help make copy/paste easier for user: INFO: Syntax:
+INFO:   docker run -it --rm  -v /var/run/docker.sock:/var/run/docker.sock eclipse/che-cli

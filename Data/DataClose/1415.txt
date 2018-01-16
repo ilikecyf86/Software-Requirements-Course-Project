@@ -1,0 +1,3 @@
+superdevmode using Intellij IDEA
+kind/question 
+Hi, how can i set up GWT superdevmode using intellij IDEA to run Eclipse Che ?

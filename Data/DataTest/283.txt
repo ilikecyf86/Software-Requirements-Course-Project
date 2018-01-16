@@ -1,0 +1,3 @@
+Save Option
+kind/question 
+Save Option in IDE: I need to do customization for saving a file. I found that, there is only three listeners and one filter in web.xml file. There is no any other servlets mapping over there. How is it mapped for saving a file? Which file does it refers when i save a file ? I was not able to get an idea from web.xml file to find the rool level structure of the code for all functionality . Can you please assist me how to check the functionally without web.xml file entries.

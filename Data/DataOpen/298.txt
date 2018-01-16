@@ -1,0 +1,3 @@
+Create selenium test for check interactions between machine processes
+kind/task team/production sprint/current-sprint status/open-for-dev sprint/current-sprint 
+Create selenium test which covers #4786 issue.

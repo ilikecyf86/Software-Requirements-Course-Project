@@ -1,0 +1,3 @@
+Better handle server disconnection
+kind/enhancement severity/P2 kind/bug severity/P1 severity/P2 
+If the Che server crashes while a workspace is running and the IDE is in use there is no visual indication of what has happened. The workspace indicator remains green, some editing can still be done and files can still be selected although they open as blank. We should have a way to notify clients (browser IDE, UD and Electron) that the server is unavailable so that the clients can create notifications for the user.

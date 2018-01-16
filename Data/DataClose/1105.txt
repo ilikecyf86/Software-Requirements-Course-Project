@@ -1,0 +1,3 @@
+Specify IDE Application state phases and make it more clear
+kind/enhancement severity/P1 team/ide sprint/next-sprint severity/P1 sprint/current-sprint sprint/next-sprint 
+IDE application initialization process was modified a lot of times and those modifications have different origins, so right now the whole process seems to be not transparent enough that results in poor code quality. So here we need to do several important things: we need to specify (functionally and technically) the initialization steps for the IDE in general and for each its component in particular, we also must refactor existing code base and align it to the new vision. Part of epic issue Workspace Infrastructure SPI next generation eclipse/che#4736

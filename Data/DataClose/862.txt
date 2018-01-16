@@ -1,0 +1,3 @@
+[Regression] The Create button is not active while creating a workspace from the Java-Mysql stack
+kind/bug severity/P2 
+Reproduction Steps: Create and start a workspace from the Java-Mysql stack with the web-java-petclinic project. In the Dashboard click the Create Workspace button. Select the created workspace and click the Create new workspace from stack radiobutton. Select the Java-Mysql stack. Observed behavior: There is an error "This project name is already used" for project name and the Create button is not active. Che version: 5.12.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

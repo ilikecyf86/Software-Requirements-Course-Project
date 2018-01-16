@@ -1,0 +1,3 @@
+Introducing a lprobe delay as a property
+kind/enhancement 
+Openshift Connector sets a liveness probe with a 120 second delay, but a workspace can take longer to start which causes Openshift to restart the container. We should add a property that will define the delay. @ibuziuk has recommended che.openshift.liveness.probe.timeout as the property name. Reproduction Steps: Try to start che on Openshift as described at https://github.com/l0rd/openche and create a workspace. The workspace sometimes won't be started correctly. OS and version: any The issue is always reproducible on my machine.

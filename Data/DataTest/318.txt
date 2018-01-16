@@ -1,0 +1,44 @@
+Unable to create project (project already exists)
+
+I'm unable to create project in che. I'm running it natively (bin/che.sh). After some digging i found that I'm unable to read/write into /projects folder in workspace container. I thought that it would be UID mismatch between host and workspace container, but it does not seem like that: In workspace container: user@62f51e408cb5:/$ id                                                                                                                                                                                                                        
+uid=1000(user) gid=1000(user) groups=1000(user),27(sudo),100(users)                                                                                                                                                                            
+user@62f51e408cb5:/$ ls -lan                                                                                                                                                                                                                   
+total 80                                                                                                                                                                                                                                       
+drwxr-xr-x.  23    0    0 4096 Mar 10 13:45 .                                                                                                                                                                                                  
+drwxr-xr-x.  23    0    0 4096 Mar 10 13:45 ..                                                                                                                                                                                                 
+-rwxr-xr-x.   1    0    0    0 Mar 10 13:45 .dockerenv                                                                                                                                                                                         
+-rwxr-xr-x.   1    0    0    0 Mar 10 13:45 .dockerinit                                                                                                                                                                                        
+drwxr-xr-x.   2    0    0 4096 Feb 26 19:22 bin                                                                                                                                                                                                
+drwxr-xr-x.   2    0    0 4096 Apr 10  2014 boot                                                                                                                                                                                               
+drwxr-xr-x.   5    0    0  360 Mar 10 13:45 dev                                                                                                                                                                                                
+drwxr-xr-x.  73    0    0 4096 Mar 10 13:45 etc                                                                                                                                                                                                
+drwxr-xr-x.   3    0    0 4096 Mar  1 14:00 home                                                                                                                                                                                               
+drwxr-xr-x.  12    0    0 4096 Mar  1 13:57 lib                                                                                                                                                                                                
+drwxr-xr-x.   2    0    0 4096 Feb 26 19:21 lib64                                                                                                                                                                                              
+drwxrwxr-x.   2 1000 1000 4096 Mar 10 13:51 local-storage                                                                                                                                                                                      
+drwxr-xr-x.   2    0    0 4096 Feb 26 19:21 media                                                                                                                                                                                              
+drwxr-xr-x.   3    0    0 4096 Mar 10 13:45 mnt                                                                                                                                                                                                
+drwxr-xr-x.   3    0    0 4096 Mar  1 13:58 opt                                                                                                                                                                                                
+dr-xr-xr-x. 353    0    0    0 Mar 10 13:45 proc                                                                                                                                                                                               
+drwxrwxr-x.   2 1000 1000 4096 Mar 10 13:45 projects                                                                                                                                                                                           
+drwx------.   2    0    0 4096 Feb 26 19:22 root                                                                                                                                                                                               
+drwxr-xr-x.   9    0    0 4096 Mar 10 13:45 run                                                                                                                                                                                                
+drwxr-xr-x.   2    0    0 4096 Feb 26 22:10 sbin                                                                                                                                                                                               
+drwxr-xr-x.   2    0    0 4096 Feb 26 19:21 srv                                                                                                                                                                                                
+dr-xr-xr-x.  13    0    0    0 Mar  7 13:07 sys                                                                                                                                                                                                
+drwxrwxrwt.   3    0    0 4096 Mar 10 13:45 tmp                                                                                                                                                                                                
+drwxr-xr-x.  10    0    0 4096 Mar  1 14:00 usr                                                                                                                                                                                                
+drwxr-xr-x.  11    0    0 4096 Mar  1 13:57 var 
+
+user@62f51e408cb5:/$ ls -lan projects/                                                                                                                                                                                                         
+ls: cannot open directory projects/: Permission denied 
+ On host (user rhopp is starting che up): ╭─rhopp@rhopp  ~/temp/che/eclipse-che-4.0.0-RC11/workspaces  
+╰─$ id
+uid=1000(rhopp) gid=1000(rhopp) groups=1000(rhopp),10(wheel),981(vboxusers),5604(jbds),17545(rhopp) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+
+╭─rhopp@rhopp  ~/temp/che/eclipse-che-4.0.0-RC11/workspaces  
+╰─$ ls -lan
+total 12
+drwxrwxr-x.  3 1000 1000 4096 Mar 10 14:45 .
+drwxrwxr-x. 11 1000 1000 4096 Mar 10 14:44 ..
+drwxrwxr-x.  2 1000 1000 4096 Mar 10 14:45 wksp-wry6

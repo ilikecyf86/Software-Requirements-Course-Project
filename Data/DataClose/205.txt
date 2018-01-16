@@ -1,0 +1,3 @@
+Show runtime/environment warnings in UD if any
+kind/task target/che6 team/plugin sprint/next-sprint sprint/current-sprint sprint/next-sprint status/code-review status/code-review sprint/current-sprint 
+Description In Che6 we have field warnings in Environment and in Runtime objects; These warnings might be useful for a user or even can be used by UD itself. But at first, it would be useful to show them on UI. Reproduction Steps OS and version: Diagnostics:

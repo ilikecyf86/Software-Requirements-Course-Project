@@ -1,0 +1,3 @@
+Contribute Part is empty after refresh page
+kind/bug target/che6 
+Reproduction Steps Refresh IDE with any project Open Contribute part Observed behavior Contribute part is empty even when you have some opened file. Selecting some item in project tree resolve the problem. OS and version: Fedora 25

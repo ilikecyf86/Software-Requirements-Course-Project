@@ -1,0 +1,3 @@
+Adapting existing selenium tests from 'miscellaneous', 'dashboard.stacks' according to SPI branch
+kind/task status/open-for-dev status/in-progress team/production status/code-review status/in-progress status/code-review status/open-for-dev 
+We need to rework next tests according to SPI branch : 'miscellaneous' package: TerminalTypingTest FindTextFeatureTest WorkingWithSplitPanelTest NavigateToFileTest FindUsagesBaseOperationTest CheckWsAgentAfterStopProcessTest ConvertToProjectFromConfigurationTest 'dashboard.stacks' package: CheckExpressStackTest CheckRailsStackTest CheckSwiftStackTest CheckLaravelStackTest CheckCodeigniterStackTest CheckSymfonyStackTest

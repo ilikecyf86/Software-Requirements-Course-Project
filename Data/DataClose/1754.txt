@@ -1,0 +1,3 @@
+Update Che editor to Orion 13
+kind/enhancement team/ide sprint/current-sprint status/in-progress 
+The thirteenth release of Orion was announced on December 21, 2016. There were over 180 bugs and enhancements fixed.

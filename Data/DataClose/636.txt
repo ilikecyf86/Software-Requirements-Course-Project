@@ -1,0 +1,3 @@
+[Regression] Step into feature does not open external class after applying the operation
+kind/bug severity/P1 
+Reproduction Steps: Go to the workspace based on java stack. Create the java spring project from wizard Open the Greeting controller class, set breakpoint in the 22 postion Run debug command Run -> Debug configuration -> select Java and click '+' icon -> Debud After activating breakpoint click on Step Into button of the debugger panel Expected result: The ModelAndView class should be opened. The highlighter should be set. Actual result: The ModelAndView class is not opened OS and version: Fedora 25, CHE 1.16.0

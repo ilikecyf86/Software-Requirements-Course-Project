@@ -1,0 +1,3 @@
+Unexpected UI behavior after user deleted his account from dashboard.
+kind/bug team/plugin 
+Reproduction Steps: Login and go to Dasboard. Click Profile & Account and go to Security Click 'Delete this account' and then confirm deleting with 'Delete'. Expected: Redirect from dashboard to somewhere and show the message "Your account has been deleted". Actual: There is no 'Account deleted' message and User is logged out but still on Dashboard page. Ubuntu 16.10 Diagnostics:

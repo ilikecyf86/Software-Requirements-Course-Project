@@ -1,0 +1,3 @@
+Create a list of use-cases for Che API stress testing
+kind/task target/che6 team/platform 
+Description We need to stress test different areas of API to check Che on a high load. Previously we stress-tested Workspace start/stop workflow, but these operations are very heavy so it is hard to use a lot of threads with workspace starts on a dev machine. We need use-cases that cover different APIs and workflows, so we can run them on CI and with different load parameters depending on a heaviness of API operations. The heaviness of operations greatly impacts stress tests flow since it is not the same to test login and workspace start operations. Reproduction Steps OS and version: Diagnostics:

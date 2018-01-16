@@ -1,0 +1,3 @@
+Incorrect icon for yml file extension
+kind/bug severity/P2 target/che5 team/plugin 
+Description .yml file extension has incorrect icon registered in Che. Take a look on below screenshot:

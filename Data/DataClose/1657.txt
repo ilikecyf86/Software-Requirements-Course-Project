@@ -1,0 +1,3 @@
+Replace CHE_EXTRA_VOLUME_MOUNT with CHE_WORKSPACE_VOLUME in cli.sh
+
+Per #3888 (comment) CHE_EXTRA_VOLUME_MOUNT has been replaced by CHE_WORKSPACE_VOLUME. Need to update https://github.com/eclipse/che/blob/master/cli.sh accordingly. @TylerJewell can you confirm if this is really a bug or I might have misunderstood your comment.

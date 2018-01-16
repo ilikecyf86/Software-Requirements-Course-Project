@@ -1,0 +1,3 @@
+che-cli would try to install docker/compose even though it's not found on dockerhub
+kind/question 
+Reproduction Steps: 1:) Docker Pull on the latest Eclipse Che (5.10.0) 2:) Run CLI Expected: would skip over and error out when docker/composer is not found Result: OS and version: Che 5.10.0 on Ubuntu 16.04.1 LTS

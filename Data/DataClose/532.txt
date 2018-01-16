@@ -1,0 +1,3 @@
+Project import is broken on slow networks
+kind/bug severity/P1 team/plugin team/ide team/plugin 
+Steps to reproduce: Turn on throttling in Chrome Create a workspace with a project in UD What the IDE loading Expected results: The project is imported Actual results: the project is marked as broken in project explorer and the import never happens. Project api returns problems: [{code: 10, message: "No project folder on file system /console-java-simple"}]

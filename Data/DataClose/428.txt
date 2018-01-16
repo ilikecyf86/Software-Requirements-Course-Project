@@ -1,0 +1,3 @@
+Preview refactoring widget does not display result of refactoring
+severity/P1 selenium/failure team/ide 
+Reproduction Steps: Create spring project, open GreetingController class, set cursor to userName field for example. Invoke the refactor form, set new name for field and click on preview button In the Rename Item widget open first node and double click on second node of refactor tree Expected result: We should see in preview area result of current refactoring Actual result: The preview shows only No preview available label

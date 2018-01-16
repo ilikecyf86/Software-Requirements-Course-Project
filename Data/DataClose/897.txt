@@ -1,0 +1,16 @@
+How to specify a dockerfile in recipe when create a new stack
+kind/question 
+I am trying to create a stack with my runtime environment. From the Che Doc https://www.eclipse.org/che/docs/devops/runtime-stacks-data-model/index.html, recipe can also reference to dockerfile like below: example: "source": {
+  "type": "dockerfile",
+  "location": "http://beta.codenvy.com/api/recipe/recipec0v4ta2uz6jok0bn/script"
+}
+"source": {
+  "type": "dockerfile",
+  "content": "FROM eclipse/ubuntu_jdk8
+              RUN echo hello world
+              ENV MYCUSTOM=VALUE"
+}
+ During creating stack, the default recipe format is as below. There will be syntax error if I change 'image' to 'dockerfile' new-machine:
+ image: codenvy/ubuntu_jdk8
+ mem_limit: 2147483648
+ The link 'Recipe Structure' links to 'http://localhost:8080/docs/workspace/recipes/index.html' return 404, so I do not find the correct format of Recipe file. What is the correct way to specify dockerfile in Recipe?

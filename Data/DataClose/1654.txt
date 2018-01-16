@@ -1,0 +1,20 @@
+mvn test fails with Exception StringIndexOutOfBounds
+
+Che Version : 5.1.2(?) Reproduction steps : 1:) run mvn test 2: ) you should get a error code like this (this was done on a Cloud9 environment) -------------------------------------------------
+constituent[0]: file:/usr/share/maven2/lib/maven-debian-uber.jar
+---------------------------------------------------
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+        at java.lang.AbstractStringBuilder.setLength(AbstractStringBuilder.java:173)
+        at java.lang.StringBuffer.setLength(StringBuffer.java:170)
+        at org.apache.maven.cli.CLIManager.cleanArgs(CLIManager.java:271)
+        at org.apache.maven.cli.CLIManager.parse(CLIManager.java:224)
+        at org.apache.maven.cli.MavenCli.main(MavenCli.java:119)
+        at org.apache.maven.cli.compat.CompatibleMain.main(CompatibleMain.java:60)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:606)
+        at org.codehaus.classworlds.Launcher.launchEnhanced(Launcher.java:315)
+        at org.codehaus.classworlds.Launcher.launch(Launcher.java:255)
+        at org.codehaus.classworlds.Launcher.mainWithExitCode(Launcher.java:430)
+        at org.codehaus.classworlds.Launcher.main(Launcher.java:375) I'm still not sure if this is Maven or within Che right now

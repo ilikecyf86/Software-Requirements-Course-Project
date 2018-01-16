@@ -1,0 +1,3 @@
+Che master doesn't restart properly in SPI branch
+kind/bug team/platform 
+Related to SPI branch only. After the start or start/stop of a workspace Che master container doesn't restart properly - it gets killed by compose. We should identify the cause of this issue and fix it.

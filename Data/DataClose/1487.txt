@@ -1,0 +1,3 @@
+Wrong commands are added into workspace when create sample project from IDE
+kind/bug team/ide severity/P2 
+Reproduction Steps: Create workspace from Java stack. Open it in IDE (no projects so far) Create project: Workspace->Create Project and select web-java-spring Actual result: Commands are wrong, as a result preview url is wrong: Expected: Correct commands should be added. Note, when create project from dashboard all commands are correct. OS and version: Ubuntu 16.04, CHE 5.4.0-SNAPSHOT

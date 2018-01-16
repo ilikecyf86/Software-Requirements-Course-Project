@@ -1,0 +1,6 @@
+Add CHE_DOCKER_ALWAYS__PULL__IMAGE for run portion, not just build
+kind/bug severity/P1 severity/blocker severity/P1 kind/enhancement severity/P2 kind/bug severity/blocker severity/P1 severity/P2 sprint/next-sprint team/enterprise sprint/current-sprint status/open-for-dev sprint/next-sprint status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+I'd like Che not to check if there's a newer stack image on Docker Hub. However, setting CHE_DOCKER_ALWAYS__PULL__IMAGE to false in che.env does not help: [DOCKER] latest: Pulling from eclipse/ubuntu_jdk8 
+[DOCKER] Digest: sha256:69f514b226808be7d251442096bcc61d85dcb77f91f453e1cfe090a8f350c854 
+[DOCKER] Status: Image is up to date for eclipse/ubuntu_jdk8:latest 
+ This makes it impossible to use Che in a purely offline mode.

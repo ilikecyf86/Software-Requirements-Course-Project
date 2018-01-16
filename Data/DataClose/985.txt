@@ -1,0 +1,3 @@
+Autocomplete does not work in Terminal
+kind/question 
+Autocomplete tab actions don't seem to work for programs like git (and others). For example, if you SSH into the workspace and type $ git pull <tab> it will autocomplete origin for example and then list the remote branches. This doesn't seem to work in the browser terminal and instead always only lists the files in the $PWD.

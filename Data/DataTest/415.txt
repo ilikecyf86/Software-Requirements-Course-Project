@@ -1,0 +1,3 @@
+Bug: equals called on same variable
+kind/bug 
+Description of problem: Spotted a bug in PasteAction class, line 207 in the project che-core-ide-app. Equals called on the same variable Che version: last trunk copy (commit 0235c85) Che install directory: not relevant Docker version: not relevant Java version: not relevant Environment details (AWS, VirtualBox, physical, etc.): not relevant How reproducible: Steps to Reproduce: find the line 207 Actual Results: if (fileDirectory.equals(fileDirectory)) {...} Expected Results: something like if (selectedNode.getStorablePath().equals(fileDirectory)) {...}

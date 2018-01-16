@@ -1,0 +1,3 @@
+"ipconfig" , "ipconfig", "ip addr" etc commands are not being recognized at terminal
+kind/question 
+Stack environment: java+ubuntu+tomcat+sql java+CentOs Issue Description: Unable to get IP of my virtual machine using commands like ipconfig, ifconfig or ip addr Steps to reproduce: Go to the terminal enter following commands #ipconfig #ifconfig #ip addr Expected output: Ip address should be listed on terminal console Actual output: bash: ip : command not found

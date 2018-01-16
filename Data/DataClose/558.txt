@@ -1,0 +1,3 @@
+There isn't syntax highlighting in cs files after a workspace restarting
+kind/bug severity/P2 status/in-progress status/in-progress team/ide 
+Reproduction Steps: Create a workspace from the .NET stack with the dotnet-web-simple project. Open the Program.cs file and wait initialization of the language server. Stop the workspace with snapshot and start it. Observed behavior: There isn't syntax highlighting in the Program.cs file. After refreshing the web page syntax highlighting will appear, but without notification markers. Che version: 5.17.0-SNAPSHOT OS and version: Fedora 25 Additional information:

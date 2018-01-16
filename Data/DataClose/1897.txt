@@ -1,0 +1,3 @@
+Provide docs and gifs for the new file watchers
+kind/docs team/ide sprint/current-sprint 
+Document all important information related to the new file system watchers configuration and usage, prepare animated GIF files for file content update and for Node.JS project npm install command.

@@ -1,0 +1,3 @@
+What does the asterisk on the left of the editor panel mean?
+kind/question 
+I opened a file and double clicked on the left of an editor panel, it show a small beautiful asterisk, as in this picture: Just want to know what does it mean? Just a mark for remembering?

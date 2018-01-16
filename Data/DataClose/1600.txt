@@ -1,0 +1,3 @@
+[IDE] ssh panel 'connect with ssh' is not working
+kind/bug team/ide sprint/current-sprint status/in-progress 
+On "ssh" panel, it says that there is no workspace ssh key while there is one IMHO it's about this change : 0fcfb6c#diff-a9bc2a25767f466231ee9e153fc07e5f looking at the calls, IDE is performing the call https://<che-host>/api/ssh/workspace/<workspace-id> while the expected call after the change of #3000 is https://<che-host>/api/ssh/workspace/find?name=<workspace-id> Reproduction Steps: Go into ssh panel and read the message OS and version: macOs sierra

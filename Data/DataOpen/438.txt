@@ -1,0 +1,3 @@
+Opening large file crashes browser
+kind/bug severity/P1 team/ide status/in-progress status/in-progress sprint/current-sprint 
+Opening (or copying and pasting) a large file into Che will crash the browser tab. Reproduction Steps: Upload the file below from the AWS SDK into a Che project and try to open it. https://raw.githubusercontent.com/aws/aws-sdk-php/master/src/data/iam/2010-05-08/api-2.json.php OS and version: Eclipse Che 5.10.0

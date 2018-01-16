@@ -1,0 +1,3 @@
+Che doesn't update Project Directories properly and Immideately when switching branches on Git
+kind/question 
+This is usually happens when you checkout a branch throught the CLI Reproduction Steps: 1:) Clone a Repository 2:) cd throught the folder and run checkout <branch> 3:) You would notice that the subfolders on the root folder doesn't update according to it's branch UPDATE : It does switch but requires the Docker Machine to reboot to be able to check everything properly. Refresh still doesn't update it properly Che version: Codenvy 5.1.0

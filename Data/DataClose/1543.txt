@@ -1,0 +1,3 @@
+Refactor exec + terminal agent to separate components
+kind/task sprint/current-sprint status/open-for-dev team/platform status/in-progress status/open-for-dev sprint/current-sprint 
+Refactor exec + terminal agent to separate components needed for: commons(place for utilities and structures like FileLogger) commands execution(execute cmd + subscriber interface for logs consumption) authentication transport REST(routing + request handling) WS + JSONRPC engine(routing + request handling + channel management) etc. It should be possible to create new agent that can reuse these components.

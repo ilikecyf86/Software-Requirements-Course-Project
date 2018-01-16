@@ -1,0 +1,22 @@
+Unable to create workspace on start
+kind/question 
+Cant create workspace Reproduction Steps: Fetch the setup script curl -sL https://raw.githubusercontent.com/eclipse/che/master/che.sh > /usr/local/bin/che Start the instance che start The following successful logs come up on the console WARNING: Usage of loopback devices is strongly discouraged for production use. Use `--storage-opt dm.thinpooldev` to specify a custom block storage device.
+WARNING: bridge-nf-call-iptables is disabled
+WARNING: bridge-nf-call-ip6tables is disabled
+INFO: ECLIPSE CHE: Pulling image eclipse/che-server:5.0.0-latest
+5.0.0-latest: Pulling from eclipse/che-server
+3690ec4760f9: Already exists 
+7fe36e46c847: Pull complete 
+dfadaee9cf2b: Pull complete 
+Digest: sha256:c26ae6e678db91c263be66410bdcd4611a455505ed6eea6db74af530f76c04d0
+Status: Downloaded newer image for eclipse/che-server:5.0.0-latest
+
+INFO: ECLIPSE CHE: Starting container...
+INFO: ECLIPSE CHE: Server logs at "docker logs -f che-server"
+INFO: ECLIPSE CHE: Server booting...
+INFO: ECLIPSE CHE: Booted and reachable
+INFO: ECLIPSE CHE: Ver: 5.0.0-M8
+INFO: ECLIPSE CHE: Use: http://172.17.0.1:8080
+INFO: ECLIPSE CHE: API: http://172.17.0.1:8080/swagger
+
+ Navigating to localhost:8080 and creating a new workspace gives the error Could not start workspace wksp-as0w. Reason: Start of environment default failed. Error: no such id: codenvy/ubuntu_jdk8. Expected behavior: Should create a workspace Observed behavior: Che version: 5.0.0-M8 OS and version: Ubuntu 14 Docker version: Docker version 1.12.3, build 6b644ec Che install: Docker Additional information: Problem started happening recently, didn't happen in an older version of Che: [First time install] Problem can be reliably reproduced : [Yes]

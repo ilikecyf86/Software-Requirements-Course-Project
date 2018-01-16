@@ -1,0 +1,3 @@
+Editor doesn't show diagnostics from LS on a large document
+kind/bug team/ide 
+I try to use custom LS (based on lsp4j) and it's OK on small files (<300 lines), but if it grows more then 300 lines all the next published diagnostics disappear. I have payed attention that Che establishes new WebSocket connection to ws-agent after all "didChanged" messages to server and thus publishDiagnostics can't be received due to re-connection time. Che version 5.16.0

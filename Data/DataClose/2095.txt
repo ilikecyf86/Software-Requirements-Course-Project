@@ -1,0 +1,3 @@
+How to run java project in eclipse che
+kind/question 
+I have created 1 java project in eclipse che Can please anyone tell how to run it? Beach when I am running project with given command it automatically get deleted

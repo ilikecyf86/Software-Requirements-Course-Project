@@ -1,0 +1,3 @@
+Cursor jumps to the top of the file
+kind/bug severity/P1 team/ide severity/blocker severity/P1 status/in-progress status/in-progress 
+Steps to reproduce: Use throttling in dev console to simulate slow connection. Open a Java class and start typing smth. Wait for auto save, then keep typing. Cursor jumps to the top of the file.

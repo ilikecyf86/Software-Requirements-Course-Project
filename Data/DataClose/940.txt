@@ -1,0 +1,3 @@
+No visual effect when choose project in the github projects list
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: Go to "Dashboard" -> "Import from existing location"' -> "GitHub" Try to choose any repository Pay attention to the screen Expected result After choosing project, selection will be shown by some visual effects Observed behavior Selection is not displayed Attachment

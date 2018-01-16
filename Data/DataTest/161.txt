@@ -1,0 +1,3 @@
+Macro for selected files in the project explorer
+Improvement kind/enhancement Improvement sprint/next-sprint team/plugin sprint/next-sprint sprint/next-sprint status/info-needed sprint/current-sprint sprint/next-sprint status/in-progress status/info-needed status/code-review status/pending-merge status/in-progress status/code-review status/pending-merge sprint/current-sprint 
+It would be handy to have a macro that points to the current selected file (multiple files could be separated by a comma) in the package explorer: e.g. ${explorer.selected} https://eclipse-che.readme.io/docs/commands#macros

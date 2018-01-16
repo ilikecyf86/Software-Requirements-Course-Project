@@ -1,0 +1,9 @@
+IdentityBinaryExpression: A binary expression where both operands are the same is usually incorrect; the value of this expression is equivalent to `UserAgent.isWebkit()`
+kind/bug team/ide sprint/next-sprint status/code-review sprint/next-sprint status/code-review 
+/home/sj/dev/src/codenvy/che/ide/commons-gwt/src/main/java/org/eclipse/che/ide/util/browser/QuirksConstants.java:61: error: [IdentityBinaryExpression] A binary expression where both
+ operands are the same is usually incorrect; the value of this expression is equivalent to `UserAgent.isWebkit()`.
+            UserAgent.isWebkit() || UserAgent.isWebkit();
+                                 ^
+    (see http://errorprone.info/bugpattern/IdentityBinaryExpression)
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.

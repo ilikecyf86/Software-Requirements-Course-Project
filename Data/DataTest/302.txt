@@ -1,0 +1,3 @@
+Can't find any GWT Modules on this page.
+
+when I try to use super dev mode to debug assembly-ide-war, everything is okay in localhost:9876, and I add dev mode on bookmark, and then, In IDE page, I got the error like this: "Can't find any GWT Modules on this page." Eclipse version: 4.5 gwt version: 2.7 che: 4.0.0-RC11 arguments: -noincremental -src target/generated-sources/gen -src D:/che-source/che-ide-extension/src/main/java org.eclipse.che.ide.IDE

@@ -1,0 +1,9 @@
+Can not start a project with my customized stack
+kind/question 
+Hi, I want to create a project with my customized stack. In my stack, I add a new node named db2 with a local docker image: db2:
+   image: 'db2server:v11.1.2fp2_1'
+   mem_limit: 2147483648
+   environment:
+   LICENSE: accept
+   DB2INST1_PASSWORD: passw0rd
+ When I click the test button to test this stack, an error dialog shows can not find my docker image But I can see my docker image is stored in my local with docker images And I try to set CHE_DOCKER_ALWAYS__PULL__IMAGE=false in my data/che.env, but it does not work. Any suggestions about this kind of issue would be appreciate, thanks.

@@ -1,0 +1,3 @@
+Double clicking a line number adds a star. What is it for?
+kind/question 
+When double clicking a line number in the code, a small blue star appears to the left of the line number. What is the star for? I wasn't able to find anything about it in the docs.

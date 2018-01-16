@@ -1,0 +1,3 @@
+Properly handle changing workspace
+kind/enhancement severity/P2 team/plugin sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Don't show error dialog when switching between workspaces. Reproduction Steps: create two workspaces quick switch between them in RECENT WORKSPACES section

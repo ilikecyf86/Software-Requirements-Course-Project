@@ -1,0 +1,7 @@
+Launching Che with docker as explained in documentation doesn't work
+kind/question 
+I have a vm in amazon with Ubuntu 14.04, with port 8080 opened. Runing as explained in doc, starts container: docker run --privileged --name che -it -p 8080:8080 -p 32768-32788:32768-32788 codenvy/che I can access throught IP:8080, and see che running I go to Projects Press "New Project", then PHP and CREATE PROJECT Che creates workspace (1) ok, and start workspace master (2) ok, in step (3) it hangs, on: [...]
+[STDOUT] 2016-02-10 07:19:48,418[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]        - Deploying web application archive /home/user/che/ws-agent/webapps/ide.war
+[STDOUT] Wed Feb 10 07:20:36 UTC 2016 - [localhost-startStop-1] Product-specified preferences called before plugin is started
+[ERROR] Workspace agent is not responding. Workspace workspacek5as9cb01gqb8q6a will be stopped
+ With following message: Error when starting workspace Unable to start workspace. Error when trying to start the workspace: Workspace agent is not responding. Workspace workspacek5as9cb01gqb8q6a will be stopped

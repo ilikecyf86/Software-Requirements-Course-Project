@@ -1,0 +1,150 @@
+Unable to run che on a CentOS/7 server
+kind/question 
+When I try to run che i am getting network erros (tried both latest & nightly). I am able to run other machines and docker opens the ports (masquerades em) properly, except for CHE. With this command I can start che, but i cannot create/connect to a workspace: docker run -d -p 8080:8080 --name che --rm -v /var/run/docker.sock:/var/run/docker.sock -v /data/che/:/data -v /data/:/shared:ro eclipse/che-server:5.0.0-latest Reproduction Steps: # docker run -it --name che --rm -e CHE_HOST=<THE_SERVERS_EXTERNAL_IP> -e CHE_PORT=18080 -v /var/run/docker.sock:/var/run/docker.sock -v /data/che/:/data  eclipse/che:nightly start
+INFO: (che cli): nightly - using docker 17.07.0-ce-rc3 / native
+INFO: (che download): Pulling image eclipse/che:nightly
+
+nightly: Pulling from eclipse/che
+Digest: sha256:102ef43ebe14f6bce38a892912254c2960e9eff5b950be8b1e8824480c7cc5dd
+Status: Image is up to date for eclipse/che:nightly
+
+INFO: (che download): Pulling image eclipse/che-init:nightly
+
+nightly: Pulling from eclipse/che-init
+Digest: sha256:51cae270e54fa48249bf46a96b817568882e41862d6724dab0689ecce987fb73
+Status: Image is up to date for eclipse/che-init:nightly
+
+INFO: (che download): Pulling image eclipse/che-server:nightly
+
+nightly: Pulling from eclipse/che-server
+Digest: sha256:2fe24954ba6b9c1f33800e101565b215320744b72232a26c03c59c8e557d747e
+Status: Image is up to date for eclipse/che-server:nightly
+
+INFO: (che download): Pulling image docker/compose:1.8.1
+
+1.8.1: Pulling from docker/compose
+Digest: sha256:028833587aba5ce443693a7c75415fb05e9f374fa309f8b89e1efd13d1cd22db
+Status: Image is up to date for docker/compose:1.8.1
+
+INFO: (che download): Pulling image traefik:v1.3.0-rc3
+
+v1.3.0-rc3: Pulling from library/traefik
+Digest: sha256:3c97d19bb79fd39f24799133c1e90ed6351baa9ce32534017cdc96038126ba81
+Status: Image is up to date for traefik:v1.3.0-rc3
+
+INFO: (che download): Pulling image alpine:3.4
+
+3.4: Pulling from library/alpine
+Digest: sha256:833ad81ace8277324f3ca8c91c02bdcf1d13988d8ecf8a3f97ecdd69d0390ce9
+Status: Image is up to date for alpine:3.4
+
+INFO: (che download): Pulling image eclipse/che-ip:nightly
+
+nightly: Pulling from eclipse/che-ip
+Digest: sha256:699dc12235ede43016e37dc4eaf385c173269d85befd5f33948c0d2faa037aed
+Status: Image is up to date for eclipse/che-ip:nightly
+
+INFO: (che download): Pulling image eclipse/che-action:nightly
+
+nightly: Pulling from eclipse/che-action
+Digest: sha256:c1ece56ed31c2bbe14a054ab377b2f10cd0ca3e714b1767f8e85874bf7c519e3
+Status: Image is up to date for eclipse/che-action:nightly
+
+INFO: (che download): Pulling image eclipse/che-dir:nightly
+
+nightly: Pulling from eclipse/che-dir
+Digest: sha256:25190cf2e07b9b707a9083de5d05686beeebfee21cb62d89adc6b640150456cb
+Status: Image is up to date for eclipse/che-dir:nightly
+
+INFO: (che download): Pulling image eclipse/che-test:nightly
+
+nightly: Pulling from eclipse/che-test
+Digest: sha256:3334a4ea0f4e09d25f85d03fcfc6c2d91c0fb1884fe766e63700eb94e3f34f58
+Status: Image is up to date for eclipse/che-test:nightly
+
+INFO: (che download): Pulling image eclipse/che-mount:nightly
+
+nightly: Pulling from eclipse/che-mount
+Digest: sha256:c237a5af3798b71b57468c5fe243f69dc49dfead8bed47658e3ceff0c3b93bd8
+Status: Image is up to date for eclipse/che-mount:nightly
+
+INFO: (che config): Generating che configuration...
+INFO: (che config): Customizing docker-compose for running in a container
+INFO: (che start): Preflight checks
+         mem (1.5 GiB):           [OK]
+         disk (100 MB):           [OK]
+         port 18080 (http):        [AVAILABLE]
+         conn (browser => ws):    [NOT OK]
+         conn (server => ws):     [NOT OK]
+
+
+ERROR: Try 'docker run <options> eclipse/che:nightly info --network' for more tests.
+ OS and version: CENTOS/7 Diagnostics: # docker run -it --name che --rm -e CHE_HOST=<THE_SERVERS_EXTERNAL_IP> -e CHE_PORT=18080 -v /var/run/docker.sock:/var/run/docker.sock -v /data/che/:/data  eclipse/che:nightly info
+INFO: (che cli): nightly - using docker 17.07.0-ce-rc3 / native
+INFO: (che download): Pulling image eclipse/che:nightly
+
+nightly: Pulling from eclipse/che
+Digest: sha256:102ef43ebe14f6bce38a892912254c2960e9eff5b950be8b1e8824480c7cc5dd
+Status: Image is up to date for eclipse/che:nightly
+
+
+CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che:nightly
+ Version:        nightly
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /data/che/
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    nightly
+ CHE_HOST:       <THE_SERVERS_EXTERNAL_IP>
+ CHE_INSTANCE:   /data/che//instance
+ CHE_CONFIG:     /data/che/
+ CHE_BACKUP:     /data/che//backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   172.17.0.1
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:nightly
+ IMAGE_CHE=eclipse/che-server:nightly
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ IMAGE_TRAEFIK=traefik:v1.3.0-rc3
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+che.env:
+ CHE_HOST=<THE_SERVERS_EXTERNAL_IP>
+ CHE_SINGLE_PORT=false
+ # docker run -it --name che --rm -e CHE_HOST=<THE_SERVERS_EXTERNAL_IP> -e CHE_PORT=18080 -v /var/run/docker.sock:/var/run/docker.sock -v /data/che/:/data  eclipse/che:nightly info --network
+INFO: (che cli): nightly - using docker 17.07.0-ce-rc3 / native
+INFO: (che download): Pulling image eclipse/che:nightly
+
+nightly: Pulling from eclipse/che
+Digest: sha256:102ef43ebe14f6bce38a892912254c2960e9eff5b950be8b1e8824480c7cc5dd
+Status: Image is up to date for eclipse/che:nightly
+
+INFO:
+INFO: ---------------------------------------
+INFO: --------   CONNECTIVITY TEST   --------
+INFO: ---------------------------------------
+INFO: (che network): eclipse/che-ip:nightly: <THE_SERVERS_EXTERNAL_IP>
+INFO: (che network): Browser => Workspace Agent (localhost): Connection failed
+INFO: (che network): Browser => Workspace Agent (<THE_SERVERS_EXTERNAL_IP>): Connection failed
+INFO: (che network): Server  => Workspace Agent (External IP): Connection failed
+INFO: (che network): Server  => Workspace Agent (Internal IP): Connection succeeded

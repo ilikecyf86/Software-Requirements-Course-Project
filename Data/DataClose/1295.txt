@@ -1,0 +1,3 @@
+New created commands not added to the toolbar drop-down list
+
+This is issue related with epic #4511 Reproduction Steps: Create spring project . Go to the commands explorer . Create any command in any goal . Click on the command toolbar drop-down list . Pay attention to the commands list . Expected behavior : Command will be add to the list . Expected behavior : Command was not added to the list . See attachment :

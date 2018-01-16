@@ -1,0 +1,3 @@
+Improve recent file list to allow store and restore list of last opened files
+kind/enhancement status/open-for-dev team/plugin 
+As we have mechanism to store state of any component in IDE, we can improve mechanism of recent file list to allow: separate functionality to show recent file list to the dedicate ui component implement recent file list with org.eclipse.che.ide.api.component.StateComponent create dedicate file switcher for the opened files in the IDE cover with unit tests

@@ -1,0 +1,3 @@
+Add status for machines in workspace runtime
+kind/enhancement severity/P1 team/platform severity/P1 
+Description Add status for each machine in workspace runtime section. Reproduction Steps OS and version: Diagnostics:

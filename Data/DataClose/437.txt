@@ -1,0 +1,3 @@
+OAuth service authentication with keycloak
+kind/task status/open-for-dev team/platform status/in-progress status/open-for-dev 
+To start OAuth authentification we use a separate window to initiate login. We can't use GWT iframe since some IP do not allow this. Goal of this task is to send keycloak accesstoken with query parameter and make sure all oauth flow is working as expected.

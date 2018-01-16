@@ -1,0 +1,3 @@
+Reject machine configs with cyclic dependencies of installers
+target/branch team/platform status/open-for-dev status/open-for-dev 
+Since we can store workspace config with a machine which contains cyclic dependencies between installers(without the ability to run it log) we need to consider reworking the logic of installers dependency resolving and move it into workspace validator.

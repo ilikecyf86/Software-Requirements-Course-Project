@@ -1,0 +1,3 @@
+Handle errors, fails of the workspace start
+kind/bug status/open-for-dev target/che6 team/plugin 
+The workspace loading flow need to handle properly the errors and fails of the start process. Now it can display popup with the error or in some cases just stuck on one of the steps.

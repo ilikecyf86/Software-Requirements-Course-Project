@@ -1,0 +1,3 @@
+The laravel project for the Bitnami Laravel stack imports from wrong repository
+kind/bug severity/P2 
+Reproduction Steps: Create a workspace from the Bitnami Laravel stack with the laravel project Check this project Expected behavior: There is the laravel project imported from https://github.com/bitnami/bitnami-docker-laravel. Observed behavior: There is just blank project from https://github.com/bitnami/bitnami-docker-che-blank-sample. Che version: 5.18.0-SNAPSHOT OS and version: Fedora 25

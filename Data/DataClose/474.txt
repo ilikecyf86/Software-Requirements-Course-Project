@@ -1,0 +1,3 @@
+Adapting existing selenium tests from "preferences", "editor.autocomplete" packages according to changes in SPI branch
+kind/task severity/P2 team/production status/in-progress status/open-for-dev severity/P2 status/in-progress status/in-progress status/code-review status/in-progress status/code-review status/open-for-dev 
+We need to rework next tests according to SPI changes : CheckErrorsWarningsTabTest AutocompleteProposalJavaDocTest FormatterTest

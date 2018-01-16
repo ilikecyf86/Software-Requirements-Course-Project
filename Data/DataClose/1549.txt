@@ -1,0 +1,3 @@
+Move factory functionality from codenvy to che except dashboard part
+kind/task sprint/next-sprint status/open-for-dev team/platform sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Move factory functionality from codenvy to che except dashboard part

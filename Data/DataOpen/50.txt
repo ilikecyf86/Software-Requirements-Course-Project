@@ -1,0 +1,3 @@
+Add an ability to configure logs dir for agents
+kind/task status/analyzing target/che6 team/platform 
+Description Che 5 on OSIO have an ability to configure logs dir for agents (like workspace agent and exec agent). But agents in Che 6 hold own logs in their default logs folders and there is no an ability to configure that. So it is needed to have an ability to configure logs dir for agents redhat-developer/rh-che#461 (comment)

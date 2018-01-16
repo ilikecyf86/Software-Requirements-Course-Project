@@ -1,0 +1,3 @@
+IDE doesn't update opened files after hard reset of git repository
+kind/bug 
+Use case Open IDE Clone git repo Open file from index and change it without closing file's tab. Call Git > Reset.. command and execute hard reset. Expected result IDE updates opened file Actual misleading result opened file stayed as unchanged. See [attached screencast for details|https://jira.codenvycorp.com/secure/attachment/81075/out.ogv].

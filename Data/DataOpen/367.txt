@@ -1,0 +1,3 @@
+Stacks, Samples and Factories administration in Che
+kind/epic team/plugin 
+From @slemeur on March 8, 2017 16:41 Goals Che system allow to control: Stacks Templates Factories Recipes Today, a Che admin can provision Stacks and Templates for all users, but only by editing the stacks.json or samples.json files. The goals of this epic are to: Allow a Che admin to provision Stacks and Templates from Admin Dashboard (without having to edit the configuration files) for users + organizations Similarly, we'll need to allow the Che admin to provision Factories and Recipes. Linked issues: codenvy/codenvy#1002 codenvy/codenvy#1780 Copied from original issue: codenvy/codenvy#1902

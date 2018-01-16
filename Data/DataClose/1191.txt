@@ -1,0 +1,3 @@
+Unexpected reset just added configuration into json factory
+kind/bug severity/P1 sprint/next-sprint team/plugin sprint/current-sprint sprint/next-sprint status/in-progress sprint/current-sprint status/code-review status/in-progress status/code-review 
+Reproduction Steps: Create factory -> Click template tab -> go to the end of line 3 and add for example "policies": { "until": 1491391358000 }, fragment of json -> Click create button Expected result: just added json fragment should present in the created factory. If json is not valid or was pasted in the wrong place - we should inform about it user Actual result: just created json is not present in the factory. We do not have any warning messages. User may be very confused this.

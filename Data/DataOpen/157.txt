@@ -1,0 +1,3 @@
+Key binding 'print' does not work properly
+kind/bug team/ide 
+Description Print feature for key bindings does not work. One of the possible problems is that this action produces opening of a new window(which is not always possible). Maybe it's better to change it to an iframe or some other dom element. Reproduction Steps take a look at attached files: OS and version: Che revision: 861ef8e Chrome Version: 61.0.3163.79 (Official Build) (64-bit)

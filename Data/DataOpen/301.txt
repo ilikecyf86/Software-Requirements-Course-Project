@@ -1,0 +1,3 @@
+Clean up svn-server containers after termination of test execution
+kind/enhancement team/production severity/P2 
+There is svn-server container could remain after termination of tests execution, and they stay after restarting of docker: We need to remove odd svn-server containers in time of termination.

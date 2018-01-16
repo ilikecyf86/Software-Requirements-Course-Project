@@ -1,0 +1,3 @@
+Inconsistent editor behavior with autosave
+kind/bug severity/P1 team/ide sprint/current-sprint status/in-progress status/code-review status/pending-merge status/in-progress status/code-review status/pending-merge 
+While the user is editing code and the autosave is processing, the editor is missing some edits. Reproduction Steps: 0- Keep autosave mode active 1- Open a file 2- Add content into a file Expected: The file's tab is displaying a blue "*" icon on the filename 3- Wait a little bit and just when the blue star is removed try to input some text Current: There are troubles with the content which is getting new inputs. Workaround: Disable autosave. OS and version: Che-OSIO-291 Refer to: openshiftio/openshift.io#603

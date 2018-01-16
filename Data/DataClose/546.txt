@@ -1,0 +1,3 @@
+Port server side of Permissions, organization , resource management from Codenvy to Eclipse Che
+kind/task sprint/next-sprint status/open-for-dev team/platform status/in-progress status/open-for-dev sprint/next-sprint status/in-progress 
+To be able to support @ashumilova 's team in #5802 We need to port all these server-side components from Codenvy to Eclipse Che. It has to be done in che-multiuser branch. Progress: Permissions Organizations Resources

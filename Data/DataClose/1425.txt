@@ -1,0 +1,3 @@
+Sometimes project-explorer tree expands needless paths
+kind/bug severity/P2 team/plugin 
+In some cases after page refreshing project explorer expands folders which weren't open before refresh. Reproduction Steps: Create a workspace Clone ticket-monster through import project and configure as blanck project Open some path in ticket-monster->demo->...., do not open cordova folder Refresh page After refreshing folder cordova is open, which shouldn't happen. OS and version: Ubuntu 16.04 LTS

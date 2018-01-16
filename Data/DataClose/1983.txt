@@ -1,0 +1,3 @@
+Docs reference image eclipse/che-file which doesn't exist
+kind/question 
+The docs are referencing a docker image that doesn't exist: eclipse/che-file.

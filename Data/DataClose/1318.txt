@@ -1,0 +1,3 @@
+[Factory] Remove {username} from named URL factories
+kind/task 
+A named factory on Codenvy is attached to a username. We support the various format: /f?user={username}&name={factoryname} /factory?user={username}&name={factoryname} We need to remove the {username} for Che as it will be always {che}. We can keep the /f?user=che&name={factoryname} but we need to handle that kind of url: /f?name={factoryname} /factory?name={factoryname}

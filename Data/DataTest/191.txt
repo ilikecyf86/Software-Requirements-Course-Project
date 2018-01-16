@@ -1,0 +1,3 @@
+After applying formatting to a class under debug mode - the highlighter becomes lost
+kind/bug 
+Create for example the Spring project and set breakpoint, do request from the application and wait red highlighter. Apply format to the code.

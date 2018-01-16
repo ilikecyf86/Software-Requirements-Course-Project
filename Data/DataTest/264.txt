@@ -1,0 +1,3 @@
+Bring Che plugin-examples into Che 4
+Improvement 
+Once the che plug-in utilities on the CLI have been re-added into Che, we need to perform the following work: Port the github.com/codenvy/che/examples to work on Che 4. Move the /examples directory to be in assembly/src/assembly/examples/plugin Update the assembly.xml file to have the /examples directory copied into root of Che assembly. Move the /archetypes folder from Che 3 into new module labeled assembly-archetypes in Che 4 repo. Update the archetypes to build properly Change the Jenkins build system to automatically build and publish these archetypes. Update Che 4.0 docs with how plug-ins now work in 4.

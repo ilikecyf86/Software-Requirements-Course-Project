@@ -1,0 +1,3 @@
+Error in archetype documentation
+kind/docs kind/question severity/P1 kind/question 
+Reproduction Steps: See above OS and version: Windows 7, Ubuntu 16.04 Diagnostics:

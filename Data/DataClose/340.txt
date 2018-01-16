@@ -1,0 +1,3 @@
+How to add CMake to C/C++ stack?
+kind/question 
+Description I cannot determine how to add CMake to the default C++ stack. Reproduction Steps I go to the "Stacks" page in the browser. I find the "C++" stack. I copy it. I open the copy (note that I run into issue #6571 and cannot change the name). I scroll down to the "Components" part. I add a component "cmake" and put in a version "3.2.0" I save the new stack. I create a new workspace using the new stack. I enter "cmake" in the Terminal. user@34735d068b6e:/projects$ cmake bash: cmake: command not found user@34735d068b6e:/projects$ OS and version: Host is Ubuntu 17.04. Che is release 5.18.0. I am doing all this remotely off of a Chromebook and I cannot figure out how to make screen shots...

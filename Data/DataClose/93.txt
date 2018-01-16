@@ -1,0 +1,3 @@
+JavaScript endpoint for IDE EventBus and Application Context
+kind/enhancement team/ide status/in-progress status/in-progress 
+Description Under this issue we want to cover two major features: JS Plugins should have ability to fire and handle events via EventBus JS Plugins should have ability to take state of Application (like current ws, current projects and etc)

@@ -1,0 +1,3 @@
+Python 2.7 Syntax Highlighting Fails on Multi-Line Strings
+kind/question 
+Reproduction Steps: In a python workspace, entering the following line fools the syntax highlighter into thinking the word "see?" should be highlighted, when in fact it is not part of the string. ''' failed syntax highlighting'''' see? OS and version: Che version 5.8.1

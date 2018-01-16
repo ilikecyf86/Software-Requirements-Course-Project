@@ -1,0 +1,28 @@
+NPE in o.e.c.a.w.s.WorkspaceManager
+status/in-progress team/enterprise kind/bug sprint/current-sprint status/in-progress sprint/current-sprint 
+Got several ERRORs in logs: 2017-06-29 13:46:06,992[aceSharedPool-8]  [ERROR] [o.e.c.a.w.s.WorkspaceManager 780]    - null
+org.eclipse.che.api.core.ServerException: null
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.startInstance(CheEnvironmentEngine.java:1007)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.startEnvironmentQueue(CheEnvironmentEngine.java:813)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.start(CheEnvironmentEngine.java:268)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.startEnvironmentAndPublishEvents(WorkspaceRuntimes.java:712)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.access$100(WorkspaceRuntimes.java:106)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes$StartTask.call(WorkspaceRuntimes.java:977)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes$StartTask.call(WorkspaceRuntimes.java:941)
+	at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalCallable.call(CopyThreadLocalCallable.java:30)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.eclipse.che.api.core.ServerException: null
+	at org.eclipse.che.plugin.docker.machine.MachineProviderImpl.startService(MachineProviderImpl.java:395)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.lambda$startEnvironmentQueue$6(CheEnvironmentEngine.java:785)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.startInstance(CheEnvironmentEngine.java:949)
+	... 11 common frames omitted
+Caused by: java.lang.NullPointerException: null
+	at org.eclipse.che.plugin.docker.machine.MachineProviderImpl.setNonExitingContainerCommandIfNeeded(MachineProviderImpl.java:685)
+	at com.codenvy.machine.HostedMachineProviderImpl.setNonExitingContainerCommandIfNeeded(HostedMachineProviderImpl.java:322)
+	at org.eclipse.che.plugin.docker.machine.MachineProviderImpl.createContainer(MachineProviderImpl.java:625)
+	at org.eclipse.che.plugin.docker.machine.MachineProviderImpl.startService(MachineProviderImpl.java:338)
+	... 13 common frames omitted
+ @garagatyi: Any ideas? Reproduction Steps: Don't know. OS and version: Centos 7.2 Codenvy 5.13.0-SaaS

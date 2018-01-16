@@ -1,0 +1,88 @@
+che sync does not work on windows 10
+kind/bug severity/P1 status/pending-merge status/pending-merge 
+C:\Users\Codenvy>docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /c/Users/Codenvy/data-one:/data -v /c/Users/Codenvy/projects-io:/sync eclipse/che sync wksp-bv0j --unison-verbose --user xxx@gmail.com --password xxx --url https://codenvy.io
+WARN: Bound 'eclipse/che' to 'eclipse/che:5.2.2'
+INFO: (che cli): 5.2.2 - using docker 1.13.1 / docker4windows
+INFO: (che mount): Starting sync process to /c/Users/Codenvy/projects-io
+INFO: INFO: (che mount): Mounting user@node8.codenvy.io:/projects with SSHFS
+mkdir: can't create directory '/root/.ssh': File exists
+INFO: INFO: (che mount): Successfully mounted user@node8.codenvy.io:/projects (36205)
+INFO: INFO: (che mount): Initial sync...Please wait.
+INFO: using verbose mode
+DEBUG: Using command unison /mntssh /mnthost -batch -auto -prefer=newer
+Contacting server...
+Looking for changes
+Warning: No archive files were found for these roots, whose canonical names are:
+        /mntssh
+        /mnthost
+This can happen either
+because this is the first time you have synchronized these roots,
+or because you have upgraded Unison to a new version with a different
+archive format.
+
+Update detection may take a while on this run if the replicas are
+large.
+
+Unison will assume that the 'last synchronized state' of both replicas
+was completely empty.  This means that any files that are different
+will be reported as conflicts, and any files that exist only on one
+replica will be judged as new and propagated to the other replica.
+If the two replicas are identical, then no changes will be reported.
+
+If you see this message repeatedly, it may be because one of your machines
+is getting its address from DHCP, which is causing its host name to change
+between synchronizations.  See the documentation for the UNISONLOCALHOSTNAME
+environment variable for advice on how to correct this.
+
+Donations to the Unison project are gratefully accepted:
+http://www.cis.upenn.edu/~bcpierce/unison
+
+Reconciling changes
+file     ---->            console-java-simple/.che/classpath
+file     ---->            console-java-simple/.codenvy.json
+dir      ---->            console-java-simple/.git
+file     ---->            console-java-simple/.gitignore
+file     ---->            console-java-simple/README.md
+file     ---->            console-java-simple/pom.xml
+dir      ---->            console-java-simple/src
+dir      ---->            console-java-simple/target
+Propagating updates
+UNISON 2.48.4 started propagating changes at 14:15:36.77 on 17 Feb 2017
+[BGN] Copying console-java-simple/.che/classpath from /mntssh to /mnthost
+  1%  00:17 ETAFailed: Failed to set permissions of file /mnthost/console-java-simple/.che/.unison.classpath.6d5b938b0b3bd7ef825ef558f28c0bb2.unison.tmp to rw-r--r--: the permissions was set to rwxr-xr-x instead. The filesystem probably does not support all permission bits. If this is a FAT filesystem, you should set the "fat" option to true. Otherwise, you should probably set the "perms" option to 0o1666 (or to 0 if you don't need to synchronize permissions).
+  1%  00:17 ETAFailed [console-java-simple/.che/classpath]: Failed to set permissions of file /mnthost/console-java-simple/.che/.unison.classpath.6d5b938b0b3bd7ef825ef558f28c0bb2.unison.tmp to rw-r--r--: the permissions was set to rwxr-xr-x instead. The filesystem probably does not support all permission bits. If this is a FAT filesystem, you should set the "fat" option to true. Otherwise, you should probably set the "perms" option to 0o1666 (or to 0 if you don't need to synchronize permissions).
+[BGN] Copying console-java-simple/.codenvy.json from /mntssh to /mnthost
+ 11%  00:04 ETAFailed: Failed to set permissions of file /mnthost/console-java-simple/.unison..codenvy.json.6d5b938b0b3bd7ef825ef558f28c0bb2.unison.tmp to rw-r--r--: the permissions was set to rwxr-xr-x instead. The filesystem probably does not support all permission bits. If this is a FAT filesystem, you should set the "fat" option to true. Otherwise, you should probably set the "perms" option to 0o1666 (or to 0 if you don't need to synchronize permissions).
+[BGN] Copying console-java-simple/.git from /mntssh to /mnthost
+ 11%  00:04 ETAFailed [console-java-simple/.codenvy.json]: Failed to set permissions of file /mnthost/console-java-simple/.unison..codenvy.json.6d5b938b0b3bd7ef825ef558f28c0bb2.unison.tmp to rw-r--r--: the permissions was set to rwxr-xr-x instead. The filesystem probably does not support all permission bits. If this is a FAT filesystem, you should set the "fat" option to true. Otherwise, you should probably set the "perms" option to 0o1666 (or to 0 if you don't need to synchronize permissions).
+ 11%  00:06 ETAFailed: Failed to set permissions of file /mnthost/console-java-simple/.unison..git.6d5b938b0b3bd7ef825ef558f28c0bb2.unison.tmp/FETCH_HEAD to rw-r--r--: the permissions was set to rwxr-xr-x instead. The filesystem probably does not support all permission bits. If this is a FAT filesystem, you should set the "fat" option to true. Otherwise, you should probably set the "perms" option to 0o1666 (or to 0 if you don't need to synchronize permissions).
+ 87%  00:00 ETAFailed [console-java-simple/.git]: Failed to set permissions of file /mnthost/console-java-simple/.unison..git.6d5b938b0b3bd7ef825ef558f28c0bb2.unison.tmp/FETCH_HEAD to rw-r--r--: the permissions was set to rwxr-xr-x instead. The filesystem probably does not support all permission bits. If this is a FAT filesystem, you should set the "fat" option to true. Otherwise, you should probably set the "perms" option to 0o1666 (or to 0 if you don't need to synchronize permissions).
+ 87%  00:00 ETA[BGN] Copying console-java-simple/.gitignore from /mntssh to /mnthost
+Failed: Failed to set permissions of file /mnthost/console-java-simple/.unison..gitignore.6d5b938b0b3bd7ef825ef558f28c0bb2.unison.tmp to rw-r--r--: the permissions was set to rwxr-xr-x instead. The filesystem probably does not support all permission bits. If this is a FAT filesystem, you should set the "fat" option to true. Otherwise, you should probably set the "perms" option to 0o1666 (or to 0 if you don't need to synchronize permissions).
+[BGN] Copying console-java-simple/README.md from /mntssh to /mnthost
+ 87%  00:00 ETAFailed [console-java-simple/.gitignore]: Failed to set permissions of file /mnthost/console-java-simple/.unison..gitignore.6d5b938b0b3bd7ef825ef558f28c0bb2.unison.tmp to rw-r--r--: the permissions was set to rwxr-xr-x instead. The filesystem probably does not support all permission bits. If this is a FAT filesystem, you should set the "fat" option to true. Otherwise, you should probably set the "perms" option to 0o1666 (or to 0 if you don't need to synchronize permissions).
+ 90%  00:00 ETAFailed [console-java-simple/README.md]: Failed to set permissions of file /mnthost/console-java-simple/.unison.README.md.6d5b938b0b3bd7ef825ef558f28c0bb2.unison.tmp to rw-r--r--: the permissions was set to rwxr-xr-x instead. The filesystem probably does not support all permission bits. If this is a FAT filesystem, you should set the "fat" option to true. Otherwise, you should probably set the "perms" option to 0o1666 (or to 0 if you don't need to synchronize permissions).
+ 90%  00:00 ETAFailed: Failed to set permissions of file /mnthost/console-java-simple/.unison.README.md.6d5b938b0b3bd7ef825ef558f28c0bb2.unison.tmp to rw-r--r--: the permissions was set to rwxr-xr-x instead. The filesystem probably does not support all permission bits. If this is a FAT filesystem, you should set the "fat" option to true. Otherwise, you should probably set the "perms" option to 0o1666 (or to 0 if you don't need to synchronize permissions).
+[BGN] Copying console-java-simple/pom.xml from /mntssh to /mnthost
+ 96%  00:00 ETAFailed [console-java-simple/pom.xml]: Failed to set permissions of file /mnthost/console-java-simple/.unison.pom.xml.6d5b938b0b3bd7ef825ef558f28c0bb2.unison.tmp to rw-r--r--: the permissions was set to rwxr-xr-x instead. The filesystem probably does not support all permission bits. If this is a FAT filesystem, you should set the "fat" option to true. Otherwise, you should probably set the "perms" option to 0o1666 (or to 0 if you don't need to synchronize permissions).
+ 96%  00:00 ETAFailed: Failed to set permissions of file /mnthost/console-java-simple/.unison.pom.xml.6d5b938b0b3bd7ef825ef558f28c0bb2.unison.tmp to rw-r--r--: the permissions was set to rwxr-xr-x instead. The filesystem probably does not support all permission bits. If this is a FAT filesystem, you should set the "fat" option to true. Otherwise, you should probably set the "perms" option to 0o1666 (or to 0 if you don't need to synchronize permissions).
+[BGN] Copying console-java-simple/src from /mntssh to /mnthost
+ 97%  00:00 ETAFailed: Failed to set permissions of file /mnthost/console-java-simple/.unison.src.6d5b938b0b3bd7ef825ef558f28c0bb2.unison.tmp/main/java/org/eclipse/che/examples/HelloWorld.java to rw-r--r--: the permissions was set to rwxr-xr-x instead. The filesystem probably does not support all permission bits. If this is a FAT filesystem, you should set the "fat" option to true. Otherwise, you should probably set the "perms" option to 0o1666 (or to 0 if you don't need to synchronize permissions).
+[BGN] Copying console-java-simple/target from /mntssh to /mnthost
+100%  00:00 ETAFailed [console-java-simple/src]: Failed to set permissions of file /mnthost/console-java-simple/.unison.src.6d5b938b0b3bd7ef825ef558f28c0bb2.unison.tmp/main/java/org/eclipse/che/examples/HelloWorld.java to rw-r--r--: the permissions was set to rwxr-xr-x instead. The filesystem probably does not support all permission bits. If this is a FAT filesystem, you should set the "fat" option to true. Otherwise, you should probably set the "perms" option to 0o1666 (or to 0 if you don't need to synchronize permissions).
+---------------------------------------
+!!!
+!!! ERROR: Fatal error occurred (2)
+!!!
+---------------------------------------
+[END] Copying console-java-simple/target
+UNISON 2.48.4 finished propagating changes at 14:15:38.69 on 17 Feb 2017
+Saving synchronizer state
+Synchronization incomplete at 14:15:38  (1 item transferred, 0 skipped, 7 failed)
+  failed: console-java-simple/.che/classpath
+  failed: console-java-simple/.codenvy.json
+  failed: console-java-simple/.git
+  failed: console-java-simple/.gitignore
+  failed: console-java-simple/README.md
+  failed: console-java-simple/pom.xml
+  failed: console-java-simple/src

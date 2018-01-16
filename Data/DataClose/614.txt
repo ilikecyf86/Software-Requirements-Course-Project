@@ -1,0 +1,3 @@
+Go to line feature does not set selection in editor
+kind/bug severity/P1 team/ide sprint/next-sprint sprint/next-sprint 
+Reproduction Steps: Create the console java simple project form wizard, in a workspace based on java stack Open AppTest.java class, set cursor to 13 line position for instance Run the test Ctrl+l, set in the Go to line widget 16 Expected result: the current selection should be set in the Editor Actual result: the selection still set in the test result tree OS and version: Fedora 15.0, Chrome browser, CHE 5.16.0

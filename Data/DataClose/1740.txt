@@ -1,0 +1,37 @@
+getting Che to execute an imported Node.js hello world
+kind/question 
+I am an ops guy, not a developer, trying to demo a DevOps pipeline: Eclipse Che -> committing to Github -> triggering Jenkins to build -> a new container version on Docker hub -> then deploying to Mesos. I have all the last parts working, now I am trying to add Eclipse Che at the front end. I imported a hello world node.js app into Eclipse Che, but I don’t understand how to execute it to actually say “hello world” inside the Che GUI. Could someone help me? Background: my node.js app consists of 3 files package.json, app.js, and Dockerfile (contents given below), in a top level subfolder called nodejs_app. I have them in my github repository https://github.com/mmalyj/nodejs_app. I was able use this code to build a container called mmalyj/nodejs_app which I loaded into Docker Hub at https://hub.docker.com/r/mmalyj/nodejs_app/. I successfully tested this nodejs app it from my CentOS 7.2 command prompt with these commands: $ cd nodejs_app $ docker run -d --name node_app_test -p 8000:8000 mmalyj/nodejs_app:${version} $ curl -s GET http://127.0.0.1:8000 | grep Hello I have shell scripts with these commands working from Jenkins, and am able to successfully deploy the app to Mesos and pull up the resulting “Hello World” from a browser. Finally, I was able to import my github project with my scripts and Node.js files into my Eclipse Che 5.0.1. Here is a screenshot: But I have no clue how to execute my imported node.js code inside Eclipse Che! Could someone please tell me how to do that? I am expecting to run a CMD command somewhere that will give me a working link to http://127.0.0.1:8000 that will say “Hello World”. I used “Stack Authoring” when I created my Che workspace, and I specified: FROM mmalyj/nodejs_app:21
+EXPOSE 8000
+ Here are my three node.js files, taken from Pini Reznik’s sample in the Docker Cookbook http://www.integratedbook.com/docker-cookbook/, section 10.1: //package.json
+{
+        "name": "hello-world",
+        "description": "hello world",
+        "version": "0.0.1",
+        "private": true,
+        "dependencies": {
+                "express": "3.x"
+        },
+        "scripts": {"start": "node app.js"}
+}
+ //app.js
+// Load the http module to create an http server.
+var http = require('http');
+// Configure our HTTP server to respond with Hello World to all requests.
+var server = http.createServer(function (request, response) {
+        response.writeHead(200, {"Content-Type": "text/plain"});
+        response.end("Hello World 30");
+});
+// Listen on port 8000, IP defaults to "0.0.0.0"
+server.listen(8000);
+// Put a friendly message on the terminal
+console.log("Server running at http://127.0.0.1:8000/");
+ //Dockerfile
+FROM google/nodejs
+WORKDIR /app
+ADD package.json /app/
+RUN npm install
+ADD . /app
+EXPOSE 8000
+CMD []
+ENTRYPOINT ["/nodejs/bin/npm", "start"]
+ Che version: 5.0.1 OS and version: CentOS 7.2 Docker version: 1.12.6 ~ Mark

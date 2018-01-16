@@ -1,0 +1,3 @@
+[CHE6-OCP] Investigate the failing of 'AutocompleteProposalJavaDocTest'
+kind/task selenium/failure status/in-progress target/che6 team/production 
+Description The selenium test 'AutocompleteProposalJavaDocTest' is fail when run on che6-ocp platform Need to find the reason of it and fix up Related selenium test: AutocompleteProposalJavaDocTest

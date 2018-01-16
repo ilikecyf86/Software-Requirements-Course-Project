@@ -1,0 +1,30 @@
+Che on a cloud server - Not able to create a workspace
+kind/question 
+I am not able to create a workspace (my first workspace) after installing and opening che from the browser (I tried firefox and chrome browsers) Reproduction Steps: The cloud server where che is running has the public IP address as "10.39.89.244". I configured CHE_HOST_IP=10.39.89.244 and start che on the cloud server. When I try creating a new workspace from the Che UI, I see an error as below. Start of environment default failed. Error: Timeout. The Che server is unable to ping your workspace. This implies a network configuration issue, workspace boot failure, or an unusually slow workspace boot.
+java.util.concurrent.ExecutionException: org.eclipse.che.api.core.ServerException: Start of environment default failed. Error: Timeout. The Che server is unable to ping your workspace. This implies a network configuration issue, workspace boot failure, or an unusually slow workspace boot.
+ Expected behavior: The workspace should be created Observed behavior: Issue with the workspace creation as mentioned above. Che version: 5.0.0-latest OS and version: Ubuntu 16.04 LTS Docker version: 1.12.5 Che install: Docker container Additional information: The stack trace from the docker logs is as below. 2016-12-30 12:15:33,585[spaceRuntimes-1]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 600]   - Launching 'org.eclipse.che.terminal' agent at workspace workspacedd3fi05pctss4py3
+2016-12-30 12:15:35,739[spaceRuntimes-1]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 600]   - Launching 'org.eclipse.che.terminal' agent at workspace workspacedd3fi05pctss4py3
+2016-12-30 12:15:37,880[spaceRuntimes-1]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 600]   - Launching 'org.eclipse.che.ws-agent' agent at workspace workspacedd3fi05pctss4py3
+2016-12-30 12:18:37,994[spaceRuntimes-1]  [ERROR] [.c.a.w.s.l.WsAgentLauncherImpl 127]  - Fail pinging ws agent. Workspace ID:workspacedd3fi05pctss4py3. Url:http://10.39.89.244:32829/api/. Timestamp:{}
+2016-12-30 12:18:38,813[kspaceManager-1]  [ERROR] [o.e.c.a.w.s.WorkspaceManager 660]    - org.eclipse.che.api.core.ServerException: Start of environment default failed. Error: Timeout. The Che server is unable to ping your workspace. This implies a network configuration issue, workspace boot failure, or an unusually slow workspace boot.
+java.util.concurrent.ExecutionException: org.eclipse.che.api.core.ServerException: Start of environment default failed. Error: Timeout. The Che server is unable to ping your workspace. This implies a network configuration issue, workspace boot failure, or an unusually slow workspace boot.
+        at java.util.concurrent.FutureTask.report(FutureTask.java:122) ~[na:1.8.0_111]
+        at java.util.concurrent.FutureTask.get(FutureTask.java:192) ~[na:1.8.0_111]
+        at org.eclipse.che.api.workspace.server.WorkspaceManager.lambda$performAsyncStart$4(WorkspaceManager.java:639) ~[che-core-api-workspace-5.0.0-M8.jar:5.0.0-M8]
+        at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalRunnable.run(CopyThreadLocalRunnable.java:28) ~[che-core-commons-lang-5.0.0-M8.jar:5.0.0-M8]
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_111]
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_111]
+        at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_111]
+Caused by: org.eclipse.che.api.core.ServerException: Start of environment default failed. Error: Timeout. The Che server is unable to ping your workspace. This implies a network configuration issue, workspace boot failure, or an unusually slow workspace boot.
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.doStart(WorkspaceRuntimes.java:665) ~[che-core-api-workspace-5.0.0-M8.jar:5.0.0-M8]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.lambda$startAsync$1(WorkspaceRuntimes.java:245) ~[che-core-api-workspace-5.0.0-M8.jar:5.0.0-M8]
+        at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalCallable.call(CopyThreadLocalCallable.java:30) ~[che-core-commons-lang-5.0.0-M8.jar:5.0.0-M8]
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_111]
+        ... 3 common frames omitted
+Caused by: org.eclipse.che.api.core.ServerException: Timeout. The Che server is unable to ping your workspace. This implies a network configuration issue, workspace boot failure, or an unusually slow workspace boot.
+        at org.eclipse.che.api.workspace.server.launcher.WsAgentLauncherImpl.launch(WsAgentLauncherImpl.java:128) ~[che-core-api-workspace-5.0.0-M8.jar:5.0.0-M8]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.launchAgents(WorkspaceRuntimes.java:604) ~[che-core-api-workspace-5.0.0-M8.jar:5.0.0-M8]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.launchAgents(WorkspaceRuntimes.java:676) ~[che-core-api-workspace-5.0.0-M8.jar:5.0.0-M8]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.doStart(WorkspaceRuntimes.java:640) ~[che-core-api-workspace-5.0.0-M8.jar:5.0.0-M8]
+        ... 6 common frames omitted
+ Problem started happening recently, didn't happen in an older version of Che: No (First time issue - new user) Problem can be reliably reproduced, doesn't happen randomly: Yes

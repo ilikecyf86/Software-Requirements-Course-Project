@@ -1,0 +1,3 @@
+[CHE 6] The Yaml language server doesn't exist in the Installers tab
+kind/bug severity/P2 selenium/failure target/che6 team/enterprise status/open-for-dev team/production team/enterprise 
+Reproduction Steps: Create a workspace and go to its workspace details. Open the Installers tab. Observed behavior: There is not the Yaml language server installer in the Installers list OS and version: Che(Che6 branch) 6.0.0-M1 ; Chrome 59.0 ; Fedora 25 Additional information: Related selenium test: WorkspaceDetailsTest

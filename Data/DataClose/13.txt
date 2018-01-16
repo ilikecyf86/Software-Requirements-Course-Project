@@ -1,0 +1,3 @@
+Use OCP 3.7.0 version for testing
+kind/task status/open-for-dev target/che6 team/production 
+Description There is a plan to update OpenShift online in OSIO to 3.7.0 version. For testing, we use OCP 3.6.0. It is needed to use OCP version of 3.7.0.

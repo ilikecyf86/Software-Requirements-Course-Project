@@ -1,0 +1,3 @@
+Add autocompletion for che actions in edit mode
+kind/task status/open-for-dev team/enterprise 
+Since a LS is not a task for several days we need to provide basic autocompletion for che actions. Once it is done Technology provider can start writing guides. Epic: #6150

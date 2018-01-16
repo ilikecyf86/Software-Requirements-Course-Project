@@ -1,0 +1,3 @@
+Implement interruption of start for OpenShift workspaces
+kind/task team/platform status/open-for-dev 
+InternalRuntime declares that workspace should be stopped if its start is STARTING or RUNNING. But OpenShiftRuntime doesn't support stopping of starting workspace. It is needed to implement interruption of start for OpenShift workspaces.

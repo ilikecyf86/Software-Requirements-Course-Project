@@ -1,0 +1,3 @@
+[CHE6-OCP] Investigate reasons of fails selenium tests which runs on OCP platform (second iteration)
+kind/task status/in-progress team/production sprint/current-sprint status/in-progress 
+After first investigate (#7174) we found a regression reasons. The biggest one was fixed (problem with resolve maven dependency #7210) But was merged the new functionality (#7225), and some bugs could be hidden behind maven bug. So we need to check the ci report with fixed problem (https://ci.codenvycorp.com/view/qa/job/che-integration-tests-che6-ocp/35/Selenium_tests_report/) and update our report (https://docs.google.com/spreadsheets/d/1NCMxSCeSWVCjg46MRCq6X6vkahVJimklbRH0y3cnfhU/edit#gid=2086870609) according to investigate result.

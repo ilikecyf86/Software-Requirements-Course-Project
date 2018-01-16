@@ -1,0 +1,3 @@
+Terminal Copy/Paste with Ubuntu Firefox
+kind/question kind/bug kind/question 
+Copy Paste does not function (ctrl-c or ctrl-v) Context menu does not appear on right click Edit menu shows no option for copy or paste OS: Ubuntu 16.04.1 Browser: Firefox 47.0 Che Server: 5.2.2

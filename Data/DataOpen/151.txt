@@ -1,0 +1,3 @@
+[CHE 6] Sometimes the Processes area is not restored from the Panel Selector
+kind/bug severity/P2 target/che6 
+Reproduction Steps: Create and start a workspace Do double click on split panel between the Editor and the Processes panel Try to restore the Processes area from the Panel Selector Observed behavior: The Processes area is not restored OS and version: Che(Che6 branch) 6.0.0-M2; Chrome 59.0; Fedora 25 Additional information:

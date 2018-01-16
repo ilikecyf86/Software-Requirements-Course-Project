@@ -1,0 +1,3 @@
+Diagnostics would spin up a empty stack but doesn't delete it
+kind/enhancement team/plugin status/open-for-dev 
+Done on a local Copy Reproduction Steps: 1:) Run Diagnostics 2:) Expected Diagnostics workspace to be deleted after diagnostics has finished but diagnostics stack stays on there. OS and version: Che 5.8.0 on Docker Toolbox on Windows 10 1607

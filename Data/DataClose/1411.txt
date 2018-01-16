@@ -1,0 +1,3 @@
+After deleting a file from a project its name still exists in the Recent List
+kind/bug severity/P2 team/plugin sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Reproduction Steps: Open any file in editor Delete this file Go to the Edit - > Recent menu Expected behavior: The recent list doesn't show the deleted file name Observed behavior: The deleted file name is still in the recent list Che version: 5.5.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.3 Che install: Docker container

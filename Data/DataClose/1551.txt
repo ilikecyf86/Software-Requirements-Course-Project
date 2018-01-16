@@ -1,0 +1,51 @@
+Question about dto factory using childs classes
+kind/question 
+Actually I've 4 interfaces : @DTO
+public interface Class Garage {
+   public List<Vehicle> getVehicle();
+   public void setVehicle(List<Vehicle> vehicle);
+}
+
+@DTO
+public interface Vehicle {
+   public String getBrand();
+   public void setBrand(String brand);
+}
+
+@DTO
+public interface Car extends Vehicle{
+   public int getSeat();
+   public void setSeat(int seat);
+}
+
+@DTO
+public interface Motorbike extends Vehicle {
+   public String getName();
+   public void setName(String name);
+} 
+ Server side I create my dto garage adding a car in vehicle : @Path("Garage")
+@POST
+public Garage getGarage() throws ServerException{
+
+...
+Car car = DtoFactory.getInstance().createDto(Car.class);
+car.setBrand("brand");
+car.setSeat(5);
+Garage garage = DtoFactory.getInstance().createDto(Garage.class);
+List<Vehicle> vehicleList = new ArrayList<Vehicle>();
+vehicleList.add(car);
+garage.setVehicle(vehicleList);
+...
+return garage; 
+ Client side I try to get back the car : Promise<PricingDataDto> promise = serviceClient.getGarage();
+promise.then(new Operation<Garage>() {
+@Override
+public void apply(Garage garage) throws OperationException {
+   Vehicle vehicle = garage.getVehicle().get(0);
+   Car car = (Car) vehicle;
+ But I got a class cast exception. When I look in the Json using for deserialization I see classes aren't stored, so class Vehicle specified in dto Garage is used and I lost all specifics parameters about Car. I also try to use generic in Garage : @DTO
+public interface Class Garage {
+   public List<? extends Vehicle> getVehicle();
+   public void setVehicle(List<? extends Vehicle> vehicle);
+}
+ but I got an error during mvn clean install : ...:generate failed: We do not handle this type -> [Help 1] Do you know if I can used dto factory this way or if I need to do semething else ?

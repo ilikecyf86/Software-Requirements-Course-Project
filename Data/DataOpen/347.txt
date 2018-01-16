@@ -1,0 +1,12 @@
+Adapt current alpine-based che-server image to run on OpenShift
+kind/enhancement team/osio team/platform team/osio 
+Currently only the centos-based Docker image (eclipse/che-server:nighlty-centos) can be bootstrapped on minishift. The alpine-based (eclipse/che-server:nightly, the default che-server Docker image) cannot be bootstrapped because of permissions problems when it's run as non-privileged user. To test che-server on minishift just copy paste the following lines: # set the image repo and tag
+export CHE_IMAGE_REPO=eclipse/che-server
+export CHE_IMAGE_TAG=nighlty-centos
+
+# retrive the deployment script
+export DEPLOY_SCRIPT=https://raw.githubusercontent.com/redhat-developer/rh-che/master/dev-scripts/openshift_deploy.sh
+curl -fsSL ${SCRIPT_URL} -o get-che.sh
+
+# run Che deployment
+sh get-che.sh

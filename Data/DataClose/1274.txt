@@ -1,0 +1,3 @@
+Rename command is disabled in context menu of Project Explorer within the java package
+kind/bug team/ide severity/P2 
+Reproduction Steps: Create java project with package. Go to java package in the Project Explorer. Click on right mouse button to open context menu for the package item and java class item. Actual wrong result Context menu of Project Explorer has disabled "Rename" item for the package item for the java class item OS and version: Ubuntu 14.04 Chrome 57.0 Che 5.5.0 Che 5.6.0-SNAPSHOT

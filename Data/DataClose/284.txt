@@ -1,0 +1,3 @@
+Add search filter by branch name for git "Branches" window.
+kind/enhancement team/enterprise status/open-for-dev sprint/current-sprint status/in-progress status/open-for-dev status/code-review status/in-progress sprint/current-sprint status/code-review 
+It would be very useful add search filter for git "Branches" window ("Git" -> "Branches"). It's very useful in case when you have a project with big branch list and you want to find branch by name. Handle dom events (if necessary) Add label at right side of the filter drop box Backspace removes the last character Esc cleans filter Add selenium test Consider general approach to filter list if all items are loaded (if possible)

@@ -1,0 +1,3 @@
+Add servers to Agent description and propagate them to Workspace Runtime
+kind/task status/open-for-dev sprint/current-sprint team/enterprise status/in-progress status/open-for-dev status/code-review status/in-progress status/code-review sprint/current-sprint 
+Motivation: Some agents (such as ws, terminal etc) suppose launching named servers which have to be visible runtime same way as configured Servers. Add Servers to Agent declaration (List getServers() method) and make sure they propagated to Workspace Runtime

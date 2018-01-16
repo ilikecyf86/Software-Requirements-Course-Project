@@ -1,0 +1,3 @@
+Adapt swagger to use keycloak openid authentication
+kind/enhancement team/platform selenium/failure 
+We need to make swagger functional with keycloak auth on api. That probably means adding /docs/ URL to KC filter exlusions and add KC JS library into swagger to sigh every request (similar like it did in dashb)

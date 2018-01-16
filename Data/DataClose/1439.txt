@@ -1,0 +1,3 @@
+UD automatically change WS configuration in unexpected way
+kind/bug team/plugin severity/P2 sprint/next-sprint status/open-for-dev sprint/next-sprint 
+When I create WS, go into WS config section and change type of environment from dockerimage to dockerfile UD change environment into compose for some reason. Reproduction Steps: Press create WS Choose ubuntu jdk 8 stack Go to workspace config section Change dockerimage to dockerfile Expected UD change value and does nothing. Actual UD changes WS config completely. Now environment type is compose.

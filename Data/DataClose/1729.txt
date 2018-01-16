@@ -1,0 +1,3 @@
+Update Wiki for PR Policy
+kind/docs kind/planning status/in-progress 
+Provide single line in PR description that will be included into change log. PR with features need to link to an associated issue/pr in docs repo before merge. PR needs release notes section before merge. Bug PRs change log is release notes. No need for PM sign off. PM need to sign off on PRs with new features. Does dev or TL need to add team/pm once it's ready for PM review? Can we add link in generated description into all PR to wiki?

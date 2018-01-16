@@ -1,0 +1,3 @@
+Remove code added in beta of Che5 for compatibility of workspace configuration to Che4
+kind/task target/che6 team/platform 
+Description Here we have classes needed in Che5 for compatibility of workspace config to Che4. It was added before Che5 GA. Now it seems not needed anymore since workspaces of Che4 are no more in use. Reproduction Steps OS and version: Diagnostics:

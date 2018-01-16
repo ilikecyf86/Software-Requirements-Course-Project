@@ -1,0 +1,3 @@
+[languageserver] Goto Definition
+
+Should be supported https://github.com/Microsoft/vscode-languageserver-protocol#goto-definition

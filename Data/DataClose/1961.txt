@@ -1,0 +1,3 @@
+Remove org.eclipse.che.ide.api.resources.VirtualFile#getMediaType deprecated method
+kind/task status/open-for-dev team/plugin status/open-for-dev 
+As method org.eclipse.che.ide.api.resources.VirtualFile#getMediaType is going to be deprecated in 5.0.0-M9, we can remove it after release M9. Depends on: #3235

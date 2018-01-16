@@ -1,0 +1,3 @@
+How to change the encoding/locale of editing area
+kind/question kind/enhancement kind/question 
+No description provided.

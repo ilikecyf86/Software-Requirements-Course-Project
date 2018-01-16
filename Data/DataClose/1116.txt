@@ -1,0 +1,3 @@
+Workspace machine API
+kind/docs 
+Docs vs Issue? Where the truth? Actually, it's complicated to find out the right way to use API, swagger expose just little and docs give just examples.

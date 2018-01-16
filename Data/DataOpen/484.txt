@@ -1,0 +1,37 @@
+Suggestions for improving `eclipse/che start` on a host with SELinux enabled
+kind/question kind/enhancement kind/question 
+Running docker run -v /var/run/docker.sock:/var/run/docker.sock eclipse/che start on my Fedora 25 installation fails. It does not matter if the /var/run/docker.sock has been assigned to the docker group, of given chmod 777... Reproduction Steps: On Fedora 25, using docker, run docker run -v /var/run/docker.sock:/var/run/docker.sock eclipse/che start Welcome to Eclipse Che
+
+You are missing a mandatory parameter:
+   1. Mount 'docker.sock' for accessing Docker with unix sockets.
+   2. Or, set DOCKER_HOST to Docker's location (unix or tcp).
+...
+ Che version: 5.5.0. OS and version: Fedora 25 (updated) Docker version: Client:
+ Version:         1.12.6
+ API version:     1.24
+ Package version: docker-common-1.12.6-4.gitf499e8b.fc25.x86_64
+ Go version:      go1.7.4
+ Git commit:      f499e8b/1.12.6
+ Built:           Fri Jan 13 11:03:22 2017
+ OS/Arch:         linux/amd64
+
+Server:
+ Version:         1.12.6
+ API version:     1.24
+ Package version: docker-common-1.12.6-4.gitf499e8b.fc25.x86_64
+ Go version:      go1.7.4
+ Git commit:      f499e8b/1.12.6
+ Built:           Fri Jan 13 11:03:22 2017
+ OS/Arch:         linux/amd64
+ Solution: The Che container needs to be run with --privileged, else docker ps within the Che container will fail on: /scripts/base/startup_02_pre_docker.sh, init_check_docker(), L289 ref Although inside the Che container: bash-4.3# ls -al /var/run/docker.sock
+srw-rw---- 1 root 1000 0 Mar 17 08:20 /var/run/docker.sock
+ access to the socket will still result in Permission denied. When started as: $ docker run --privileged -v /var/run/docker.sock:/var/run/docker.sock eclipse/che start
+ Bound 'eclipse/che' to 'eclipse/che:5.5.0'
+WARNING: Usage of loopback devices is strongly discouraged for production use. Either use `--storage-opt dm.thinpooldev` or use `--storage-opt dm.no_warn_on_loop_devices=true` to suppress this warning.
+WARNING: bridge-nf-call-ip6tables is disabled
+Welcome to Eclipse Che!
+
+We could not detect a location to save data.
+Volume mount a local directory to ':/data'.
+...
+ allows this check to pass. However, successive interaction with the data volume will also fail. Cause: Likely caused by SELinux. If so, setenforce 0 (disable SELinux) should be described as part of the installation instructions or start banner. Better would be to describe steps that allow to function WITH SELinux enabled.

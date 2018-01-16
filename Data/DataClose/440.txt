@@ -1,0 +1,5 @@
+Specify Che actions format for guides
+kind/task status/open-for-dev team/enterprise 
+Issue requires specification concerning Che actions format. Format has to be intuitively understand for Technology provider and any person who wants to write guide. Epic: #6150 @eivantsov 's suggestion: [action type=ide actionID=helpAboutAction]
+[action type=openFile path=/path/to/file scroll=23 highlight=23:25]
+[action type=command name=build and run]

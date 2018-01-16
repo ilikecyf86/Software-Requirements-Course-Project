@@ -1,0 +1,41 @@
+CLI does not use a local che assembly
+kind/question 
+When I start che as $ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v ~/che/assembly/assembly-main/target/eclipse-che-5.0.0-SNAPSHOT/eclipse-che-5.0.0-SNAPSHOT:/che -e CHE_ASSEMBLY=~/che/assembly/assembly-main/target/eclipse-che-5.0.0-SNAPSHOT/eclipse-che-5.0.0-SNAPSHOT eclipse/che start Then it does not use the local version of che. When I start che as $ ~/che/assembly/assembly-main/target/eclipse-che-5.0.0-SNAPSHOT/eclipse-che-5.0.0-SNAPSHOT/bin/che.sh start then the local che starts. (~/che/assembly/assembly-main/target/eclipse-che-5.0.0-SNAPSHOT/eclipse-che-5.0.0-SNAPSHOT is a correct the path to the assembly.) Che version: latest OS and version: Ubuntu 14.04 Docker version: 1.12.15 Additional information: $ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v ~/che/assembly/assembly-main/target/eclipse-che-5.0.0-SNAPSHOT/eclipse-che-5.0.0-SNAPSHOT:/che -e CHE_ASSEMBLY=~/che/assembly/assembly-main/target/eclipse-che-5.0.0-SNAPSHOT/eclipse-che-5.0.0-SNAPSHOT eclipse/che start returns WARN: You are using CLI image version 'latest' which is set to '5.0.0-M8'.
+INFO: (che cli): Loading cli...
+INFO: (che cli): Checking registry for version '5.0.0-M8' images
+INFO: (che config): Generating che configuration...
+INFO: (che config): Customizing docker-compose for running in a container
+INFO: (che start): Preflight checks
+         port 8080 (http):       [AVAILABLE]
+
+INFO: (che start): Starting containers...
+INFO: (che start): Services booting...
+INFO: (che start): Server logs at "docker logs -f che"
+INFO: (che start): Booted and reachable
+INFO: (che start): Ver: 5.0.0-M8
+INFO: (che start): Use: http://10.44.104.213:8080
+INFO: (che start): API: http://10.44.104.213:8080/swagger
+ and $ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v ~/che/assembly/assembly-main/target/eclipse-che-5.0.0-SNAPSHOT/eclipse-che-5.0.0-SNAPSHOT:/che -e CHE_ASSEMBLY=~/che/assembly/assembly-main/target/eclipse-che-5.0.0-SNAPSHOT/eclipse-che-5.0.0-SNAPSHOT eclipse/che info returns WARN: You are using CLI image version 'latest' which is set to '5.0.0-M8'.
+INFO: (che cli): Loading cli...
+INFO: ---------------------------------------
+INFO: ------------   CLI INFO   -------------
+INFO: ---------------------------------------
+INFO:
+INFO: -----------  CHE INFO  ------------
+INFO: CHE_VERSION           = 5.0.0-M8
+INFO: CHE_INSTANCE              = /home/d067440/che/assembly/assembly-main/target/eclipse-che-5.0.0-SNAPSHOT/eclipse-che-5.0.0-SNAPSHOT/instance
+INFO: CHE_CONFIG                = /home/d067440/che/assembly/assembly-main/target/eclipse-che-5.0.0-SNAPSHOT/eclipse-che-5.0.0-SNAPSHOT
+INFO: CHE_HOST              = 10.44.104.213
+INFO: CHE_REGISTRY          = /version
+INFO: CHE_DEVELOPMENT_MODE  = off
+INFO: CHE_BACKUP            = /home/d067440/che/assembly/assembly-main/target/eclipse-che-5.0.0-SNAPSHOT/eclipse-che-5.0.0-SNAPSHOT/backup
+INFO:
+INFO: -----------  PLATFORM INFO  -----------
+INFO: DOCKER_INSTALL_TYPE       = native
+INFO: IS_NATIVE                 = YES
+INFO: IS_WINDOWS                = NO
+INFO: IS_DOCKER_FOR_WINDOWS     = NO
+INFO: HAS_DOCKER_FOR_WINDOWS_IP = NO
+INFO: IS_DOCKER_FOR_MAC         = NO
+INFO: IS_BOOT2DOCKER            = NO
+ Problem can be reliably reproduced, doesn't happen randomly: Yes

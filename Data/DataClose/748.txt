@@ -1,0 +1,3 @@
+Add CODEOWNERS files to eclipse / codenvy repos
+kind/task sprint/current-sprint status/open-for-dev team/production sprint/current-sprint status/open-for-dev 
+We decided to try that new GH feature to simplify review process. more info: https://github.com/blog/2392-introducing-code-owners

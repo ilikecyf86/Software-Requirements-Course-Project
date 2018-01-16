@@ -1,0 +1,3 @@
+Remove CHE_LOCAL_CONF_DIR support
+team/platform kind/question team/platform 
+Description Che agent or wsmaster assemblies are based on CheBootstrapclass allowing to use CHE_LOCAL_CONF_DIR as a property to specify an alternate configuration file. In Che, there is already support of che.env (in addition to overriding default .properties in custom war assemblies) and system or environment variables so it would be nice to fully get rid of this alternate configuration file override. It has been done for WSMaster as part of #7299 we should do it for Agent and for all instances.

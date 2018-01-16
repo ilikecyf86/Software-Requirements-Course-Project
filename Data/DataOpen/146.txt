@@ -1,0 +1,3 @@
+Introduce documentation about developing flow for JavaScript Plugin for Che IDE
+kind/docs 
+At the moment we are working on the support of Che IDE plugins written in JavaScript. This is an experimental feature that we expect to get in a long term perspective (more information about the process here #6642). At same time we need to provide documentation that describes: Che plugins model Plugin life-cycle Allowed JS API Samples

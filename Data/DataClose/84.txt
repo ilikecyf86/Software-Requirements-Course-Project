@@ -1,0 +1,3 @@
+Remove warnings field from environment config model
+kind/task status/open-for-dev target/che6 team/platform sprint/current-sprint status/in-progress status/open-for-dev status/in-progress 
+Description In che6 we have warnings field in environment config object. It is not used and doesn't represent any part of a workspace configuration. We need to remove it from the model. One more thing around warnings to do in this issue is to copy warnings from InternalEnvironment to Runtime. Reproduction Steps OS and version: Diagnostics:

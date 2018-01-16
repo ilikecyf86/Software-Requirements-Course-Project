@@ -1,0 +1,3 @@
+How to finish an inline-rename of a field with vi-mode enabled?
+kind/bug 
+In a java file, I initiated an in-line rename (command-shift-a rename) on a member variable. When I pressed return it inserted a newline rather than finishing the rename operation. I have vi mode enabled. I disabled vi mode and tried again. Updated the field name and then pressed return and it completed the rename operation. The rename failed with a red toast indicating some sort of 500 error however the rename was partially reflected in the editor. I used command-z to get back to a place before the rename. I ran the rename again and this time it worked without any errors.

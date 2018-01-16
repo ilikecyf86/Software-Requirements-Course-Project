@@ -1,0 +1,3 @@
+Vanilla Kubernetes support
+kind/enhancement target/che6 team/platform 
+Description We need to support kubernetes either by removing Openshift specific bits or creating a kubernetes SPI implementation for Che 6. @l0rd had a demo at JavaOne that worked with Che5 which can be useful here is the branch, and the bash script to install Che on k8s, and mariolet/che-server:kube-201710101353 is a che image ready to use with k8s.

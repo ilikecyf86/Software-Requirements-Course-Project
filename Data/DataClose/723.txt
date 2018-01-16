@@ -1,0 +1,3 @@
+A project, imported from github by url without '.git' ending, is not added to a workspace
+kind/bug severity/P2 team/plugin sprint/current-sprint status/in-progress status/in-progress sprint/current-sprint 
+Reproduction Steps: On the Dashboard click the Add Workspace button Select any stack and in the PROJECTS click on Git button Put in the Git URL field a project's url without ".git" ending (https://github.com/idexmai/Spring_Project for example) and click the Add button Expected behavior: A new project added to the workspace Observed behavior: Nothing changed. If start this workspace there is not any project . Che version: 5.15.0-SNAPSHOT OS and version: Fedora 25

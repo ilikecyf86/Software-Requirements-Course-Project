@@ -1,0 +1,3 @@
+[CHE6] Adapt the 'FindTextFeatureTest'
+kind/task status/open-for-dev team/production sprint/current-sprint status/in-progress status/open-for-dev status/code-review status/in-progress status/code-review 
+Need to adapt the selenium test 'FindTextFeatureTest' according to che6 assembly

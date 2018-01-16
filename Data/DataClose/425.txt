@@ -1,0 +1,3 @@
+Upgrade base java to 8u131 or above
+kind/task 
+Eventually, we would like to use some docker specific jvm option like -XX:+UseCGroupMemoryLimitForHeap or XX:MaxRAM we not yet decided which one but it would be nice to upgrade java to most recent one. Related to this issue #4152 See more https://blogs.oracle.com/java-platform-group/java-se-support-for-docker-cpu-and-memory-limits

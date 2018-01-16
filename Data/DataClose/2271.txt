@@ -1,0 +1,3 @@
+Handle DOCKER_HOST better
+kind/question kind/enhancement kind/question 
+/home/user/che/bin/che.sh around line 381 should check if file /var/run/docker.sock exist to avoid failing without error.

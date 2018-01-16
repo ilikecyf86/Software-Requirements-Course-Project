@@ -1,0 +1,3 @@
+Add Javadoc for DTO
+kind/docs 
+Our DTO can be used by contributors and are not documented. Example: https://github.com/eclipse/che/blob/5.0.0-Mx/wsmaster/che-core-api-machine-shared/src/main/java/org/eclipse/che/api/machine/shared/dto/MachineConfigDto.java Having javadoc will be helpful to better understand the model and get documentation as you code.

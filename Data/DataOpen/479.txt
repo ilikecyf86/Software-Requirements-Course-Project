@@ -1,0 +1,3 @@
+InitializeEventMessenger should not use Gson
+sprint/next-sprint status/analyzing team/ide kind/enhancement sprint/next-sprint kind/task kind/enhancement 
+org.eclipse.che.api.languageserver.messager.InitializeEventMessenger uses new Gson().toJson(message)); instead of using the DtoFactoryclass. The problem with this that the marshaling of collections is different in the two cases. When two instances of LanguageDescriptionDto are compared on the client side, they may not be equal even though they represent the same object on the server side.

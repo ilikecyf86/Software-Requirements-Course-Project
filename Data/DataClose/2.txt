@@ -1,0 +1,3 @@
+colored console output looks weird
+kind/enhancement 
+Description When a command produces a colored output the console just looks weird. Che console should support colored output.

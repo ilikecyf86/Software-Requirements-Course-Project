@@ -1,0 +1,3 @@
+Dockerfile for the codenvy/mysql image?
+kind/question 
+The Java-MySQL stack uses the codenvy/mysql docker image. I searched in the codenvy/dockerfile repository, but could not find the Dockerfile. Could you publish the Dockerfile of this image? I want to study it, so I can better understand how to create a PHP-MySQL stack.

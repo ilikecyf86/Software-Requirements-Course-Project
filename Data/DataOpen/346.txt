@@ -1,0 +1,3 @@
+SPI Kubernetes infrastructure
+kind/enhancement team/osio team/platform team/osio 
+Currently only Docker and OpenShift infrastructure have been implemented. Once OpenShift infrastructure is mature enough we should extract the Kubernetes parts and make a new infrastructure. OpenShift infrastructure should be an extension of Kubernetes.

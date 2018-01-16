@@ -1,0 +1,3 @@
+Notify user in IDE of unavailable workspace
+status/pending-merge 
+We need a way to notify the user about an unavailable workspace from the IDE. This is a client-side check that will have two parts and two different notifications: 1) Bad connection If the client can't connect to the server then display the following popup (use the Start Workspace popup as a model): Title: Connection Unavailable Message: Can't connect to the workspace. Check your network connection. Buttons: "Ok"[blue] Button Action: [Ok] dismisses the popup

@@ -1,0 +1,3 @@
+User preferences are not cleaned
+kind/bug team/platform team/ide team/platform team/platform severity/P1 status/in-progress status/code-review status/in-progress status/code-review 
+Workspace information which stores in user preferences isn't cleaned after deleting the workspace. So as a result a json (user preferences) gets bigger and bigger when user creates new workspace. Reproduction Steps: Create a workspace with some project and open some file; Refresh IDE and look on http://localhost:8080/api/preferences - here you can find an information about your ws; Delete this ws and create new one; If you go to http://localhost:8080/api/preferences again you can find an info about your previous ws.

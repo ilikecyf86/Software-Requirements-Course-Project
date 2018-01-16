@@ -1,0 +1,3 @@
+Update Che docs with new workspace details pages
+kind/docs sprint/next-sprint status/open-for-dev team/plugin status/in-progress status/open-for-dev status/in-progress sprint/next-sprint 
+Update Che documentation with new workspace details stuff.

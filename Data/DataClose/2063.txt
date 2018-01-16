@@ -1,0 +1,3 @@
+org.eclipse.che.ws-agent should check java version before starting
+kind/task team/enterprise sprint/next-sprint status/open-for-dev severity/blocker kind/bug kind/task status/in-progress status/open-for-dev sprint/current-sprint sprint/next-sprint status/in-progress sprint/current-sprint 
+If java is installed and its version is lower or equal to 1.7 than agent has to download and install it

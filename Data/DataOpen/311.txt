@@ -1,0 +1,3 @@
+Clean up subscriptions for expired websocket sessions
+kind/bug team/ide sprint/current-sprint 
+We should handle expired sessions and clean up subscriptions on events by JSON RPC on server side. For example, we have subscription to track file watcher events for a opened file. Client subscribe on these events every time we open/refresh page. So on server side number of subscriptions for the same event will be increase with every opening/refreshing page.

@@ -1,0 +1,3 @@
+[CHE6-OCP] Investigate reason of failing tests to regenerate and upload SSH key on GitHub when running on CI job
+kind/task status/in-progress target/che6 team/production 
+Description There are some tests where performing generate and upload ssh key on GitHub by UI form. When the tests run on CI job (slave qa-builder) on the ocp platform they fail in this case Need to find the reason of it and fix up See the attachment: Che version: 6.0.0-M4 CI job slave: qa-builder Che install: OCP Additional information: Related selenium test: ImportProjectIntoSpecifiedBranchTest, ImportRecursiveSubmoduleTest, PullRequestPluginTest, PullRequestPluginWithForkTest, KeepDirectoryGitImportTest

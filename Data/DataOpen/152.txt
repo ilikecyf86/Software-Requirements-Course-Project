@@ -1,0 +1,3 @@
+Refactor installers provisioning in machine config
+kind/task status/open-for-dev target/che6 team/platform 
+Description As result of the following discussion #7126 (comment) Now we add common environment variables and apply installers servers and env vars on machines configs while preparation step in RuntimeInfrastructure. It's needed to move this logic to the creation of InternalEnvironment. It's also needed to remove InfrastructureProvisioner extension point on SPI level, including ProjectsVolumeForWsAgentProvisioner. To accomplish this redesign we want to add volumes and env fields to Installer object which would synchronize installer and machine models.

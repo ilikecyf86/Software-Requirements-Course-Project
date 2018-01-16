@@ -1,0 +1,26 @@
+I cannot create a fully functional CHE workspace using Docker beta for mac
+
+The issue The configuration is illustrated in the following diagram : Both Che server and its workspaces are running in a Docker container. Both container are running in a Mac xhyve VM. With Docker for Mac beta, wsagent URL is localhost (URL1) when connecting from outside the VM (i.e. the browser) whereas wsmaster need to use the VM IP address to connect to the wsagent (URL2). However I could not manage to configure two distinct values for URL1 and URL2. Both are set through the same property: machine.docker.local_node_host. How to reproduce the issue Install Docker for Mac Beta Retrieve the IP of the xhyve VM. To get a shell into the VM screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty and to retrieve the IP ip a show eth0 | grep 'inet ' | cut -d/ -f1 | awk '{ print $2}' Create che.properties file: export DOCKER_VM_IP=<put the IP here>
+echo "machine.docker.local_node_host=$DOCKER_VM_IP" > che.properties
+ Run docker from the che.properties folder to start a shell in a new Che container: docker run --name=che \
+       -v /home/user/che/lib:/home/user/che/lib-copy \
+       -v /home/user/che/workspaces:/home/user/che/workspaces \
+       -v /home/user/che/storage:/home/user/che/storage \
+       -v /var/run/docker.sock:/var/run/docker.sock \
+       -v $(pwd)/che.properties:/home/user/.che/che.properties \
+       -p 8080:8080 \
+       -ti \
+       --entrypoint=bash \
+       codenvy/che:nightly
+# Retrieve the container IP address and add a property to che.properties
+export CHE_SERVER_IP=$(ip address show eth0 | grep 'inet ' |  cut -d/  -f1 | awk '{ print $2}')
+echo "machine.docker.che_api.endpoint=http://${CHE_SERVER_IP}:8080/wsmaster/api" >> /home/user/.che/che.properties
+# Add user to the group with gid=50 (that's the VM docker group)
+sudo usermod -aG 50 user
+sudo su -l user
+export JAVA_HOME=/opt/jre1.8.0_65
+export PATH=$JAVA_HOME/bin:$PATH
+export CHE_LOCAL_CONF_DIR=/home/user/.che
+# Run che
+/home/user/che/bin/che.sh -c run Use a browser to open http://localhost:8080 and try to create a new project. The websocket should fail to connect to the wsagent because it's using the VM internal IP instead of localhost: Set machine.docker.local_node_host=localhost in che.properties and restart the che server. This time the che server fails to connect to the wsagent: 016-06-10 15:56:59,252[kspaceManager-0]  [ERROR] [.c.a.m.s.w.WsAgentLauncherImpl 103]  - Fail pinging ws agent. Workspace ID:workspace7p1virvy0wws6pno. Url:http://localhost:33041/wsagent/ext/. Timestamp:{}
+ Workaround We can add an alias for the loopback interface in Mac OSX to forward every $DOCKER_VM_IP connection to localhost: sudo ifconfig lo0 alias $DOCKER_VM_IP revert machine.docker.local_node_host in che.properties: machine.docker.local_node_host=$DOCKER_VM_IP Restart Che and verify that it's possible to create a new project.

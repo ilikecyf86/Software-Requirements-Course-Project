@@ -1,0 +1,16 @@
+Override application state when workspace has beed stopped
+kind/bug severity/blocker team/plugin 
+Problem represents when workspace is stopped but IDE looses focus and following code snipped trigger save state: AppContextImpl.java: Elements.getWindow()
+        .addEventListener(
+            Event.BLUR, evt -> appStateManager.get().persistWorkspaceState(getWorkspaceId()));
+
+   ...
+
+ @Override
+  public String getWorkspaceId() {
+    if (userWorkspace == null) {
+      throw new IllegalArgumentException(getClass() + " Workspace can not be null.");
+    }
+
+    return userWorkspace.getId();
+  } Reproduction Steps: Stop workspace Blur the browser window Discovered during check #5067

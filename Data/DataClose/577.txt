@@ -1,0 +1,3 @@
+Che multiuser: allow to configure database settings over environment variables of che-server image
+kind/task status/open-for-dev team/platform status/in-progress status/in-progress 
+Che multiuser: allow to configure database settings over environment variables of che-server image In codenvy we use to configure datasource over server.xml from the mounted folder. But this way is not very easy to implement if you want to run che-server image on openshift. It would be easier to run it if datasource would be possible to configure over environment variables.

@@ -1,0 +1,3 @@
+One of project disappears from project explorer after 'Go back'
+kind/bug severity/P2 
+Reproduction Steps: Open the IDE and import project (e.g. https://github.com/artaleks9/java-multimodule) Perform Go into for my-lib module After that import a project again (e.g. https://github.com/artaleks9/java-multimodule2) Perform Go back for my-lib module Expected behavior: Both projects should be displayed into project explorer Observed behavior: the second project is not displayed into project explorer need to do refresh web page Che version: 5.19.0 OS and version: Fedora 25 Docker version: 17.06 API docker version: 1.30 Che install: Docker container Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes] See the attachment:

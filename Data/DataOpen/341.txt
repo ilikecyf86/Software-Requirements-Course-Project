@@ -1,0 +1,3 @@
+The Print button of the Key Bindings widget doesn't work
+kind/bug severity/P2 
+Reproduction Steps: Create a workspace Menu Assistant -> Key Bindings Click the Print button Observed behavior: Nothing changed. If the workspace has a project then after clicking will opens the first file(by alphabet sorting) of the project. Che version: 5.16.0-SNAPSHOT OS and version: Fedora 25 Additional information:

@@ -1,0 +1,3 @@
+[CHE 6] Move creation of folders in PVCs into start runtime phase
+kind/bug status/open-for-dev target/che6 team/platform status/in-progress status/open-for-dev status/in-progress 
+Description OpenShift Infrastructure creates folders (inits subpathes) in PVCs while preparing of an environment. But prepare operation should be quick while now it takes about 15 seconds on Che server that is deployed on OCP and start workspaces on openshift.io cluster. It is needed to move performing such logic into start runtime phase.

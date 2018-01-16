@@ -1,0 +1,3 @@
+Disable findbugs check from default build
+kind/question 
+I think fixing all issues reported by findbugs is quite idealistic but not achievable goal. I can assume that 99% of developers ignore or skip this check. And it just became some sort of masochism when it just takes time and never used.

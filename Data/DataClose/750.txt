@@ -1,0 +1,3 @@
+Create a new workspace: show quick starts tab first
+kind/enhancement team/plugin sprint/next-sprint status/open-for-dev sprint/current-sprint status/code-review sprint/next-sprint status/open-for-dev status/code-review sprint/current-sprint 
+It'd be really great if we show Quick start tab by default. Also, in quick starts, we should consider priority loading, i.e. show java, php and other popular stacks first.

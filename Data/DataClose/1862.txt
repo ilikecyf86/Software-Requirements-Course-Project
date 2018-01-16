@@ -1,0 +1,3 @@
+Integration xterm.js to GWT code.
+kind/task team/enterprise status/in-progress sprint/next-sprint sprint/current-sprint sprint/next-sprint status/in-progress sprint/current-sprint 
+We need completely integrate xterm.js (js scripts and css) code to GWT code of CHE.

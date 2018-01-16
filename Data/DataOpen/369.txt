@@ -1,0 +1,3 @@
+Implement workspace activity tracking for JSON_RPC communication between IDE and wsagent
+kind/task team/ide 
+When IDE was using Everrest-based websocket connection we tracked workspace activity when any data frame arrives on a wsagent. When we moved to JSON_RPC we haven't implemented the same workflow in that communication flow. Without this activity tracking on wsagent workspace stop on inactivity heavily depends on client-side based activity notification. It is not convenient for the implementation of any new clients. I suppose implementation is an easy task since wsagent always knows to which workspace it belongs, so we can send activity when new frames from a client come to wsagent.

@@ -1,0 +1,4 @@
+LanguageServerInitializationHandler is not performed
+kind/question 
+I created a launcher which extend LanguageServerLauncher. And the launcher is bind by Multibinder.newSetBinder(binder(), LanguageServerLauncher.class).addBinding().to(MyLanguageServerLauncher.class).asEagerSingleton();
+ But I find this launcher is not performed when I start workspace. After I refresh browser several times, sometimes it can not called. I find the root cause is LanguageServerInitializationHandler is not performed. If LanguageServerInitializationHandler is performed, the launcher works. I don't know why LanguageServerInitializationHandler is not performed (it occasionally performed after refresh browser several times ) . To let LanguageServerInitializationHandler work, what configuration need be done?

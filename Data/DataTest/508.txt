@@ -1,0 +1,53 @@
+Some issues with keyboard bindings
+
+Description of problem: The Find Action menu item on mac indicates that the key binding is command-A however the binding actually command-shift-A. It would also be great if this binding worked from the terminal, tree, etc... i.e. not just the code editor. command-shift-A "select command" does not allow one to change the currently selected command or seem to do anything at all. It would be nice to be able to change the current command from the keyboard. Would be great to have a way to open/close panels (such as the Project Explorer) via the keyboard, even if it was from the Find Action HUD, although a few of them probably deserve dedicated keys. Option-command-n does not open the Navigate to File dialog as indicated in the menu. If I open the dialog from the menu and type pom.xml (I have a several in my poms) nothing is returned. Strangely if I try to find TODO I do find several files... Would be nice if we could use ESC to close all dialogs (the commands dialog for example does not close when you tap ESC.) Che version: 4.0.0-beta-13-1 Che install directory: ~/Downloads/eclipse-che-4.0.0-beta-13-1 Docker version: Client:
+ Version:      1.10.0
+ API version:  1.22
+ Go version:   go1.5.3
+ Git commit:   590d5108
+ Built:        Thu Feb  4 18:18:11 2016
+ OS/Arch:      darwin/amd64
+Server:
+ Version:      1.10.0
+ API version:  1.22
+ Go version:   go1.5.3
+ Git commit:   590d5108
+ Built:        Thu Feb  4 19:55:25 2016
+ OS/Arch:      linux/amd64
+ Docker Info: Containers: 1
+ Running: 1
+ Paused: 0
+ Stopped: 0
+Images: 4
+Server Version: 1.10.0
+Storage Driver: aufs
+ Root Dir: /mnt/sda1/var/lib/docker/aufs
+ Backing Filesystem: extfs
+ Dirs: 20
+ Dirperm1 Supported: true
+Execution Driver: native-0.2
+Logging Driver: json-file
+Plugins:
+ Volume: local
+ Network: bridge null host
+Kernel Version: 4.1.17-boot2docker
+Operating System: Boot2Docker 1.10.0 (TCL 6.4.1); master : b09ed60 - Thu Feb  4 20:16:08 UTC 2016
+OSType: linux
+Architecture: x86_64
+CPUs: 1
+Total Memory: 1.956 GiB
+Name: default
+ID: S6GZ:TD7N:M4BZ:J6DK:RN3E:455I:YTPI:BDY4:32XR:ONHD:MGDJ:HFVC
+Debug mode (server): true
+ File Descriptors: 20
+ Goroutines: 39
+ System Time: 2016-02-07T22:56:03.470098201Z
+ EventsListeners: 0
+ Init SHA1:
+ Init Path: /usr/local/bin/docker
+ Docker Root Dir: /mnt/sda1/var/lib/docker
+Username: binduwavell
+Registry: https://index.docker.io/v1/
+Labels:
+ provider=virtualbox
+ Java version: N/A I'm using che.sh run -i (so whatever you have in your container) Environment details (AWS, VirtualBox, physical, etc.): I'm on my mac using the default dockertoolbox 0.10 and default che 4.0.0-beta-13-1.

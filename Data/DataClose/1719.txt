@@ -1,0 +1,3 @@
+Performance optimization activity
+kind/epic 
+The goal of this epic is to collect all activities that can optimize performance of the product Reduce amount of calls on get workspaces API call #3082 Investigate the ways to measure bootstrap performance using jvisualvm for codenvy in docker codenvy/codenvy#1466 Avoid caching problem in http resources #3492 Revise referencing side of foreign keys #3876 Dto streaming #3103 Consider to disable sendfile capability in Tomcat configuration #3791 Remove unused GWT compiler permutation #3784

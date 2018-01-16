@@ -1,0 +1,3 @@
+There is a wrong message when creating a new workspace
+kind/bug severity/P2 sprint/next-sprint status/open-for-dev team/plugin sprint/current-sprint sprint/next-sprint sprint/next-sprint severity/P2 sprint/current-sprint sprint/next-sprint 
+Reproduction Steps: Workspaces -> "Add Workspaces". In "Runtime" tab click on "Stack import" and then on "Ready-to-go Stacks". Click on the "Workspace Config". Observed behavior: There is a message "Runtime tab contains error(s): Recipe URL: URL is required." under the "Workspace config". Che version: 5.10.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

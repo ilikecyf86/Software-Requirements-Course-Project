@@ -1,0 +1,34 @@
+Che CLI: Improve diagnostic and `info` output
+kind/enhancement 
+With the new CLI, many more people are able to run Che. However, there are challenges with providing timely support for those that are running the system. We would like to extend the system to make the output necessary for Che engineers to do diagnostics easier to capture. This issue captures the specification for what should be done with the work. Combine the concept of a support command with info. Have a basic info command, similar to docker info. Simplify the output so that it's single line output with headers and indents Display the digest of images that were loaded by interrogating the registry Pull the list of all che.env properties that were customized Simplify the output of cli.log - it's not readable Add date / time stamp to cli.log output Print out the full syntax line provided by the user when running the CLI - all arguments. Optionally let "set -x" option for tracing perhaps with a global --trace option that can be applied to any command Include the output of "docker info" in the output, if you were properly daemon connected Potentially create a diagnostic package that includes /logs, cli.log, and docker info output Include info --network detailed output in security package Concept syntax and output. info [--trace] [--network] [--bundle] CLI:
+ TTY: on/off
+ Daemon: /var/run/docker.sock ... or DOCKER_HOST=<value>
+ Image: <image-name>
+ Command:
+ Parameters: 
+Mounts:
+ :/data:
+ :/sync:
+ and so on...
+System:
+ Docker: docker4windows
+ Proxy: <proxy-info>
+ is_fast:
+ is_initialized:
+ is_offline:
+ local_repo:
+ local_assembly:
+Internal:
+ CHE_VERSION: <value> 
+ CHE_INSTANCE          = /c/tmp/instance
+ CHE_CONFIG            = /c/tmp
+ CHE_HOST              = 10.0.75.2
+ CHE_REGISTRY          = /version
+ CHE_DEBUG             = false
+ CHE_BACKUP            = /c/tmp/backup
+Image Registry:
+ image1=<value>
+ ...
+User Configuration: <not-initialized>
+ FIRST_VALUE_UNSET=<value>
+ ... List all values from che.env that are uncommented

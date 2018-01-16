@@ -1,0 +1,3 @@
+Properly handle width for new commands toolbar of execution
+kind/bug sprint/current-sprint team/ide sprint/current-sprint severity/P2 
+During the issue #3519 we have not handle properly small width screen, so the toolbar can be not visible. We need to handle it properly with 2 mode for the toolbar: menu mode: it displays all menus toolbar mode: it will display the toolbar with run, debug, commands and preview In order to switch between the two modes, we will add two arrows in the right which will be visibled only when the screen width does not allow to display menu + all toolbar.

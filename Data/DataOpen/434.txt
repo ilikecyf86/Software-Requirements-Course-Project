@@ -1,0 +1,3 @@
+Markdown Support
+kind/enhancement 
+Che seems not to have support for Markdown and I find it tricky sometimes to work with Markdown without live preview. Having some basic functionality like syntax highlighting for Markdown would be nice. There's a readily-available Language Server for Markdown in VS Code if I remember

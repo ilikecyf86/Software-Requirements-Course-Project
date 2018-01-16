@@ -1,0 +1,3 @@
+Multi User Che: Can't use identiy provider delegation for login because the che theme doesn't support it
+kind/question kind/bug severity/P1 team/enterprise kind/question status/open-for-dev 
+Description Goal: As a User I want to login with a custom idP into multiuser che. Reproduction Steps The idP has been configured in the che realm. Login to che No element shown to choose the configured provider OS and version: 5.19.0

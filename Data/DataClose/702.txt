@@ -1,0 +1,3 @@
+Add health checks for servers in openshift spi
+kind/enhancement kind/task kind/enhancement status/in-progress target/branch status/in-progress 
+Add health checks for servers in openshift spi for updating server statuses. Also it is needed to publish statuses of servers to clients.

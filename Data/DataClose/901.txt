@@ -1,0 +1,3 @@
+A project name and description don't change when adding the project to a workspace
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: On the Dashboard click the Create Workspace button From the Ready-to-go Stacks select the Java stack From the projects Template select the console-java-simple project sample Change the project name and description Select the web-java-spring sample Expected behavior: The project name changed to "web-java-spring" Observed behavior: The project name and description didn't change. Che version: 5.12.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

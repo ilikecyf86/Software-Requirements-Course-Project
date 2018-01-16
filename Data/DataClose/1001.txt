@@ -1,0 +1,3 @@
+Implement channel with infrastructure specific messages/logs in Docker SPI implementation.
+kind/task status/in-progress status/in-progress 
+New SPI adds a concept of Infrastructure channel that provides heavyweight events from infrastructure, such as logs of machines, agents. We need to implement it to be able to use it on the client side. Logs list: agents logs machines logs docker image pull logs docker image build logs snapshot (docker push) logs

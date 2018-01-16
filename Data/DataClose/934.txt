@@ -1,0 +1,4 @@
+Sometimes Java debugger doesn't highlight current position in decompiled class
+kind/bug team/enterprise status/open-for-dev sprint/next-sprint sprint/current-sprint sprint/next-sprint status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+Reproduction Steps: Create a workspace from codenvy/jboss-eap7 image. Clone sample kitchen sink project: https://github.com/codenvy-templates/redhat-kitchensink-webapp.git Run JBoss in debug mode, compile and deploy the project. Open MemberController, and set breakpoints on line: facesContext.addMessage(null, m);
+ Connect debugger. Open the application and register a user. When the debugger stops on the first breakpoint use step into. Expected behavior: Current debugger position should be highlighted. Actual behavior: Partially decompiled class is opened, but no highlight is shown.

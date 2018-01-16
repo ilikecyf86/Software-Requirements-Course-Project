@@ -1,0 +1,3 @@
+Add stack with predefined options
+kind/enhancement 
+Maybe should create some action buttons on all default stacks, who will be redirecting to the create stack page with this stack predefined options. Or maybe should redirecting to the "dashboard/#/stacks" page after click on "Add Stack" button. And in this page rename "Add Stack" button on "Add New Stack". In my opinion, this is not very usable - one default stack (Java) on all cases.

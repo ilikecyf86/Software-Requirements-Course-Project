@@ -1,0 +1,3 @@
+Add --che and --codenvy options for CLI build/run of archetypes
+kind/task 
+Add options --che --codenvy for CLI archetype run and build commands, for specifying what assembly to work with. If none declared, use Che as default

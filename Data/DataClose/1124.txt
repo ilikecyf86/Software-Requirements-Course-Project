@@ -1,0 +1,6 @@
+Workspace does not start with Java 1.7 installed
+kind/bug severity/P1 severity/blocker sprint/current-sprint status/open-for-dev team/enterprise severity/P1 status/code-review sprint/current-sprint status/code-review status/open-for-dev 
+Steps to reproduce: Create a workspace from the following recipe: FROM codenvy/jdk7
+CMD tail -f /dev/null
+
+ Workspace agent does not start since it uses JDK 1.7 that is pre installed in the image. However, this piуce of script https://github.com/eclipse/che/blob/master/wsagent/agent/src/main/resources/org.eclipse.che.ws-agent.script.sh#L52-L57 should have detected that Java version installed in a workspace is not 1.8 and install openjdk package from a debian repo.

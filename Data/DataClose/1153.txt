@@ -1,0 +1,3 @@
+Create workspace from stack definition.
+kind/enhancement status/open-for-dev team/plugin 
+Add create workspace button inside stack definition(next to test) that will start workspace. Similar to test button but permanent. Codenvy 5.7.2

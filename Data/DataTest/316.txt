@@ -1,0 +1,3 @@
+How to configure docker image to use unicode ?
+
+install Che 4.0.0 RC11 on Mac OS X 10.11.3 create a new project for jgit clone jgit git repository from https://git.eclipse.org/r/jgit/jgit open project in Che open terminal in Che run $mvn install in root folder of jgit's source tree -> build and tests take ~54min (directly on my Mac they take around 3min) some tests fail since locale in docker image is POSIX How can I configure the docker image to use LC_ALL="en_US.UTF-8" ? I think it would make sense to configure this by default

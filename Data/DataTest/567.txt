@@ -1,0 +1,3 @@
+How can I know if a file is in git index or not, from IDE?
+kind/enhancement 
+I'm trying the git feature provided by che. But I have a problem that I can't figure out which of the files are in git index just from IDE. You can see there are three files: and they have the same icons. I tried to click on the "status" option from "git" menu: But it reports an error: So I have to open the terminal tab, use git status command: I wonder if we can know this information just from IDE and menus, without typing commands?

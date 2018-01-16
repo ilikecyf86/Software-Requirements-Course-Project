@@ -1,0 +1,11 @@
+Rearrange Assembly Module
+kind/enhancement 
+It is confusing to new users on how an assembly is constructed. The final assembly directory is the combination of assets that are generated across 4 different modules in the assembly directory of Che. Two of those four modules use the maven-assembly-plugin to construct an output directory. That plugin has a convention where the source files that are used in the construction of the output are located in /src/assembly. That plugin is also able to install files that are located in various repositories. It's not logical nor sensible to have users traversing through four different modules to determine where various files that go into an assembly are source from. I propose to reorganize the assembly so that the maven-assembly-plugin uses a single source assembly that is saved at the root of the assembly directory. This source assembly would contain all base files used in the assembly, unless those files are copied in as part of a pull from a repository, such as the JAR files for plug-ins or the ZIP file for Tomcat. Existing Assembly Structure /assembly
+/assembly/assembly-main
+/assembly/assembly-ide-war
+/assembly/assembly-machine-war
+/assembly/assembly-machine-server
+ Proposed Assembly Structure /assembly-che/server       # Generates the Che server
+/assembly-che/webapp       # Generates the IDE client web app
+/assembly-machine/server   # Generates the machine server for a workspace
+/assembly-machine/webapp   # Generates the web app that goes into machine server

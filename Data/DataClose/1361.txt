@@ -1,0 +1,3 @@
+Integrating JoinJS library in Che View
+kind/question 
+Hi, i'm developping a plugin for eclipse che and i want to integrate JoinJS library into a view, but i don't know how to do it... any help please ????

@@ -1,0 +1,4 @@
+Missing java quick fix
+kind/enhancement 
+In Che 3.x, we have quick fix: In a java method, a user write message = "helloworld"
+ the message is underlined red "message could not be resolved to a variable" an action should be available (clicking on the red cross, or with a short cut ...) and propose to fix create a local variable create a field

@@ -1,0 +1,3 @@
+A last page button in the Factories list doesn't work
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: Create at least 16 factories In the Factories list click on a last page button Observed behavior: The button is not clickable Che version: 5.10.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

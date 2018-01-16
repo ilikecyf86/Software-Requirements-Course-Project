@@ -1,0 +1,20 @@
+Creation project from archetype - maven-plugin API
+kind/question 
+I tried POST request //project/batch. It is working with maven type (defined in maven plugin) and it provides ability to use archetype.  {
+  "name": "ABC",
+  "path": "/ABC",
+  "attributes": {
+      "maven.groupId": ["com.xxx.yyy"]
+      "maven.artifactId": ["ABC"],
+      "maven.version": ["1.0.0-SNAPSHOT"],
+  },
+  "type": "maven",
+  "options": {
+     "type": "archetype",
+     "archetypeGroupId": "com.xxx.yyy.archetype",
+     "archetypeArtifactId": "com.xxx.yyy-service-archive",
+     "archetypeVersion": "1.0.0",
+     "archetypeRepository": null
+  }
+}
+ This API is official? It can be changed in future? From which version it supported?

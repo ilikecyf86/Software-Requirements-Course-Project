@@ -1,0 +1,3 @@
+Add autocomplete for macros in command line and preview URL editors
+kind/enhancement team/ide status/pending-merge status/pending-merge 
+In addition to already existing macros explorer, need to add autocomplete for macros in command line and preview URL editors. Additional information: branch icom

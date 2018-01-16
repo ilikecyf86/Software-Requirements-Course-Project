@@ -1,0 +1,3 @@
+Adapt IDE to the new SPI (v6) model
+kind/epic team/ide sprint/current-sprint sprint/next-sprint sprint/current-sprint sprint/current-sprint sprint/next-sprint target/branch 
+Under this epic will be done several issues around changes in client side related to changes in workspace model such as: other behavior on workspace events (it will affect as core IDE part and plugins initialization itself); workspace config/runtime changes; server available/unavailable events; plugin initialization procedure; switch some services to JSON-RPC Related to: Client-Master-Infrastructure v6 communication #5144

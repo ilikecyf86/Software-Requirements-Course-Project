@@ -1,0 +1,3 @@
+The Version field is not filled after creating a maven project from archetype
+kind/bug severity/P2 
+Reproduction Steps: Preconditions: create a workspace based on java stack. Go to the IDE, Alt+X -> Select maven in the wizard -> set a name of the project -> Next -> set check Box From Archetype -> Select Expected result: the version field should have the predefined version Actual result: the field is empty OS and version: chrome browser, fedora v.25, CHE v.5.16.0

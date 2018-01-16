@@ -1,0 +1,3 @@
+how can I upgrade dot.net core version to 2 .0 preview from to 1.0
+kind/question 
+Reproduction Steps: OS and version: Diagnostics:

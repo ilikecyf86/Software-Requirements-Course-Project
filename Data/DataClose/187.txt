@@ -1,0 +1,3 @@
+Rework selenium tests from organization package
+kind/task team/production sprint/current-sprint status/open-for-dev status/in-progress status/open-for-dev status/in-progress 
+We need rework selenium tests from organization package(delete unused user, stabilize methods from page objects).

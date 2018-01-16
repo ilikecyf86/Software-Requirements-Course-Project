@@ -1,0 +1,3 @@
+Add action to open selected file in editor
+kind/enhancement severity/P1 severity/P1 team/ide 
+Description Using Eclipse Che on an iPad user may discover a problem when double tapping the screen will zoom in display instead of process a double click. So, it would be useful to add action in Edit menu which will open selected file from application context in editor.

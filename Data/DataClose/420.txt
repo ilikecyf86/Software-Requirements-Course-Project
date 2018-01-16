@@ -1,0 +1,74 @@
+Some projects become not valid after consuming a factory
+kind/bug severity/P1 selenium/failure 
+Note! the problem reproduces randomly Reproduction Steps: Create the factory based on template and consume this one:    "v":"4.0",
+   "name":"factorykz72r4",
+   "workspace":{
+      "defaultEnv":"wss",
+      "environments":{
+         "wss":{
+            "machines":{
+               "dev-machine":{
+                  "attributes":{
+
+                  },
+                  "servers":{
+
+                  },
+                  "agents":[
+                     "org.eclipse.che.terminal",
+                     "org.eclipse.che.ws-agent",
+                     "org.eclipse.che.ssh"
+                  ]
+               }
+            },
+            "recipe":{
+               "type":"compose",
+               "content":"services:\n  dev-machine:\n    image: codenvy/ubuntu_jdk8\n    mem_limit: 2147483648",
+               "contentType":"application/x-yaml"
+            }
+         }
+      },
+      "projects":[
+         {
+            "links":[
+
+            ],
+            "name":"projectnt2sf2",
+            "attributes":{
+               "languageVersion":[
+                  "1.6"
+               ],
+               "language":[
+                  "java"
+               ]
+            },
+            "type":"maven",
+            "source":{
+               "location":"https://github.com/Tarrantella/gitPullTest.git",
+               "type":"git",
+               "parameters":{
+                  "branch":"master"
+               }
+            },
+            "path":"projectnt2sf2",
+            "problems":[
+
+            ],
+            "mixins":[
+               "git"
+            ]
+         }
+      ],
+      "name":"factorykz72r4",
+      "commands":[
+
+      ],
+      "links":[
+
+      ]
+   },
+   "links":[
+
+   ]
+}`
+ OS and version: Fedora 25, chrome browser, https://nightly.codenvy-stg.com/. Expected result: The project should be cloned and configured as maven Actual result: Sometimes we have 405 http error from server and broken project type see screenshot:

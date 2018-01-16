@@ -1,0 +1,3 @@
+Workspace crashing browser
+kind/question 
+One of my colleagues @minlare is experiencing Che locking up his browser (Chrome 58) window and according to top the tab is stuck using over 100% CPU. At the moment we are struggling to find a pattern for this one as often he is just writing code and not using any workspace functions. It can happen after an hour or more of running the workspace running fine. Opening the same workspace in another tab at the same time works without any problems. What debug information can we provide to help isolate the issue? Che 5.10 on Docker

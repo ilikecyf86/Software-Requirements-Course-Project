@@ -1,0 +1,3 @@
+Java open type action (like Eclipse Ctrl Shift T)
+kind/enhancement 
+should have an action open type that is similar to Eclipse Ctrol shift T should works event for types in external libraries

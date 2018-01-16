@@ -1,0 +1,3 @@
+Populate rangeLenth on didChange
+kind/bug 
+When sending "didChange" notifications over LSP, we are currently sending the "rang", but not the "rangLength" field. Language servers (like jdt.ls) could assume rangeLenght to be valid if range is set, since this is not clearly specified in the LSP spec. This is already done on the branch "5730_java_ls_poc", in commit 862b759 . Since the jdt.ls work may take some time, it might make sense to cherry pick that commit onto master, though.

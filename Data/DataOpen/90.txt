@@ -1,0 +1,3 @@
+Ctrl + l key binding still works in the IDE without opened files
+kind/bug severity/P2 
+Reproduction Steps Go to the IDE create a project and open file. Invoke ctrl+l. Go to line widget works as well. Close all opened files. Delete the project. Invoke ctrl+l again Wrong: we should not have possibility set cursor position when there is no any opened files. OS and version: Fedora 25, chrome browser, CHE-6.0.0-M3

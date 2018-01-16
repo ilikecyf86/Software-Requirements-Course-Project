@@ -1,0 +1,3 @@
+Add proper IDE events/handlers for workspace loading flow
+kind/task status/open-for-dev target/che6 team/plugin sprint/current-sprint 
+Description The workspace loading flow is not processing all of the events that server can provide for workspace/machines/server statuses or logs. Need to review following document and implement missing ones.

@@ -1,0 +1,3 @@
+Stack renaming doesn't work properly
+kind/bug team/plugin sprint/current-sprint status/in-progress status/code-review status/in-progress status/code-review sprint/current-sprint 
+Description Stack editing has weird behaviour. Reproduction Steps Create a stack (or duplicate existing one) Open it for editing Try to change name The stack name is lag behind for one symbol: Also it is possible to save a stack without name by deleting its name and typing one symbol; Then click Save button. Such strange behaviour is present for Description field. One more problem: back arrow button saves changes, so, no way to discard current edits. OS and version: Fedora 25

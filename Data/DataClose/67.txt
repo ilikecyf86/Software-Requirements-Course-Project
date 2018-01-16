@@ -1,0 +1,5 @@
+Add ability to wait until selenium web element animation is ended
+kind/enhancement status/open-for-dev team/production status/in-progress status/open-for-dev status/code-review status/in-progress sprint/current-sprint status/code-review 
+Some of the web elements in Eclipse Che like the buttons are shown in animated manner and can't be normally used in selenium tests until their sizes are became as permanent. Otherwise there could be an error like the follow: org.openqa.selenium.WebDriverException: unknown error: Element <button class="che-button md-accent md-raised md-hue-2 md-button md-chedefault-theme md-ink-ripple" type="button" ng-transclude="" md-theme="chedefault" ng-click="listMembersController.showAddDialog($event)">...</button> is not clickable at point (560, 380). 
+ Another example: fail of all the tests inside the class CheckOnValidAndInvalidPackageNameTest: unknown error: Element <div class="GIWAMGHBODB" style="padding-left: 48px;">...</div> is not clickable at point (130, 131).
+ Solution: Keep track of web element size and wait until it stabilizes. Proof of concept is prepared by @Ohrimenko1988 in the separate branch.

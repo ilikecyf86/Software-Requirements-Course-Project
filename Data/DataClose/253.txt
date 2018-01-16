@@ -1,0 +1,3 @@
+Health checker fails to retrieve machine token for test server state
+kind/bug team/platform 
+The original problem was found while selenium tests run. At a certain moment, the wsmaster checks the agent servers state and do a request with keycloak token instead of a machine, and get 403 error. For more information take look logs: catalina.log access.log

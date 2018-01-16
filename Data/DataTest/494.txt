@@ -1,0 +1,3 @@
+Windows 10 - Eclipse che fails to create 'projects' folder
+kind/question 
+i do not see 'projects' folder being created in the default location specified in che.properties - CHE_HOME====D:\eclipse-che-4.0.0-beta-13-1 On Windows, Che projects can only reside in %userprofile% due to limitations of Docker. On this computer, %userprofile% is C:\Users\manjit.s I tried looking for it and i do not see it anywhere.

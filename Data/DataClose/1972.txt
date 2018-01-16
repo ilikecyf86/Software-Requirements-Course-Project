@@ -1,0 +1,120 @@
+Sorry to bother, but I really need help to solve the network problem.
+
+I ran che-server on an ubuntu vm via vmware player. I installed it by sudo che start, and it seems to have started well: (yusiwen@vm-ubuntu-guest) ~ % sudo che start
+INFO: ECLIPSE CHE: Found image eclipse/che-server:5.0.0-latest
+INFO: ECLIPSE CHE: Starting container...
+INFO: ECLIPSE CHE: Server logs at "docker logs -f che-server"
+INFO: ECLIPSE CHE: Server booting...
+INFO: ECLIPSE CHE: Booted and reachable
+INFO: ECLIPSE CHE: Ver: 5.0.0-M7
+INFO: ECLIPSE CHE: Use: http://172.17.0.1:8080
+INFO: ECLIPSE CHE: API: http://172.17.0.1:8080/swagger
+ Then, I opened firefox on the same machine, and can access http://172.17.0.1:8080 to open the dashboard. But I can't create workspace, logs as below: 2016-12-06 09:20:07,994[spaceRuntimes-0]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 587]   - Launching 'org.eclipse.che.ws-agent' agent at workspace workspacel9z5duz829di7ku2
+2016-12-06 09:22:05,020[nio-8080-exec-4]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2016-12-06 09:23:08,235[spaceRuntimes-0]  [ERROR] [.c.a.w.s.l.WsAgentLauncherImpl 127]  - Fail pinging ws agent. Workspace ID:workspacel9z5duz829di7ku2. Url:http://172.17.0.1:32773/wsagent/ext/. Timestamp:{}
+2016-12-06 09:23:21,421[kspaceManager-0]  [ERROR] [o.e.c.a.w.s.WorkspaceManager 650]    - org.eclipse.che.api.core.ServerException: Start of environment default failed. Error: Timeout. The Che server is unable to ping your workspace. This implies a network configuration issue, workspace boot failure, or an unusually slow workspace boot.
+java.util.concurrent.ExecutionException: org.eclipse.che.api.core.ServerException: Start of environment default failed. Error: Timeout. The Che server is unable to ping your workspace. This implies a network configuration issue, workspace boot failure, or an unusually slow workspace boot.
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122) ~[na:1.8.0_101]
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192) ~[na:1.8.0_101]
+	at org.eclipse.che.api.workspace.server.WorkspaceManager.lambda$performAsyncStart$4(WorkspaceManager.java:634) ~[che-core-api-workspace-5.0.0-M7.jar:5.0.0-M7]
+	at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalRunnable.run(CopyThreadLocalRunnable.java:28) ~[che-core-commons-lang-5.0.0-M7.jar:5.0.0-M7]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_101]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_101]
+	at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_101]
+Caused by: org.eclipse.che.api.core.ServerException: Start of environment default failed. Error: Timeout. The Che server is unable to ping your workspace. This implies a network configuration issue, workspace boot failure, or an unusually slow workspace boot.
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.doStart(WorkspaceRuntimes.java:652) ~[che-core-api-workspace-5.0.0-M7.jar:5.0.0-M7]
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.lambda$startAsync$1(WorkspaceRuntimes.java:238) ~[che-core-api-workspace-5.0.0-M7.jar:5.0.0-M7]
+	at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalCallable.call(CopyThreadLocalCallable.java:30) ~[che-core-commons-lang-5.0.0-M7.jar:5.0.0-M7]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[na:1.8.0_101]
+	... 3 common frames omitted
+Caused by: org.eclipse.che.api.core.ServerException: Timeout. The Che server is unable to ping your workspace. This implies a network configuration issue, workspace boot failure, or an unusually slow workspace boot.
+	at org.eclipse.che.api.workspace.server.launcher.WsAgentLauncherImpl.launch(WsAgentLauncherImpl.java:128) ~[che-core-api-workspace-5.0.0-M7.jar:5.0.0-M7]
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.launchAgents(WorkspaceRuntimes.java:591) ~[che-core-api-workspace-5.0.0-M7.jar:5.0.0-M7]
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.launchAgents(WorkspaceRuntimes.java:663) ~[che-core-api-workspace-5.0.0-M7.jar:5.0.0-M7]
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.doStart(WorkspaceRuntimes.java:627) ~[che-core-api-workspace-5.0.0-M7.jar:5.0.0-M7]
+	... 6 common frames omitted
+ My browser, Che server and Che workspace are all on the same node, I don't know what else should be configured. sudo docker network ls output: NETWORK ID          NAME                                         DRIVER              SCOPE
+d3b3eee67be8        bridge                                       bridge              local               
+c65d24ee57eb        host                                         host                local               
+78449d7fcc35        none                                         null                local               
+286e91744cc6        workspacel9z5duz829di7ku2_ebd5jcmj9gs3ijzu   bridge              local
+ My ifconfig output: br-286e91744cc6 Link encap:Ethernet  HWaddr 02:42:45:31:2c:4e  
+          inet addr:172.18.0.1  Bcast:0.0.0.0  Mask:255.255.0.0
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+docker0   Link encap:Ethernet  HWaddr 02:42:62:50:15:9b  
+          inet addr:172.17.0.1  Bcast:0.0.0.0  Mask:255.255.0.0
+          inet6 addr: fe80::42:62ff:fe50:159b/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3298 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2778 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:6458064 (6.4 MB)  TX bytes:239465 (239.4 KB)
+
+ens33     Link encap:Ethernet  HWaddr 00:0c:29:96:7f:dd  
+          inet addr:192.168.2.155  Bcast:192.168.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::8986:fc0b:eca0:fd7b/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:225833 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:123148 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:319470904 (319.4 MB)  TX bytes:8631432 (8.6 MB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:2382 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2382 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:235478 (235.4 KB)  TX bytes:235478 (235.4 KB)
+
+veth44505bd Link encap:Ethernet  HWaddr 46:e0:8b:c0:bf:58  
+          inet6 addr: fe80::44e0:8bff:fec0:bf58/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:153 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:172 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:21039 (21.0 KB)  TX bytes:16911 (16.9 KB)
+ My sudo iptables --list output: Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+DOCKER-ISOLATION  all  --  anywhere             anywhere            
+DOCKER     all  --  anywhere             anywhere            
+ACCEPT     all  --  anywhere             anywhere             ctstate RELATED,ESTABLISHED
+ACCEPT     all  --  anywhere             anywhere            
+ACCEPT     all  --  anywhere             anywhere            
+DOCKER     all  --  anywhere             anywhere            
+ACCEPT     all  --  anywhere             anywhere             ctstate RELATED,ESTABLISHED
+ACCEPT     all  --  anywhere             anywhere            
+ACCEPT     all  --  anywhere             anywhere            
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain DOCKER (2 references)
+target     prot opt source               destination         
+ACCEPT     tcp  --  anywhere             172.17.0.3           tcp dpt:http-alt
+ACCEPT     tcp  --  anywhere             172.17.0.2           tcp dpt:9876
+ACCEPT     tcp  --  anywhere             172.17.0.2           tcp dpt:http-alt
+ACCEPT     tcp  --  anywhere             172.17.0.2           tcp dpt:8000
+ACCEPT     tcp  --  anywhere             172.17.0.2           tcp dpt:4411
+ACCEPT     tcp  --  anywhere             172.17.0.2           tcp dpt:4403
+ACCEPT     tcp  --  anywhere             172.17.0.2           tcp dpt:4401
+ACCEPT     tcp  --  anywhere             172.17.0.2           tcp dpt:ssh
+
+Chain DOCKER-ISOLATION (1 references)
+target     prot opt source               destination         
+DROP       all  --  anywhere             anywhere            
+DROP       all  --  anywhere             anywhere            
+RETURN     all  --  anywhere             anywhere 
+ sudo docker ps output: CONTAINER ID        IMAGE                                                                           COMMAND                  CREATED             STATUS              PORTS                                                                                                                                                                         NAMES
+c73915826413        eclipse-che/workspacel9z5duz829di7ku2_machine9f21hmznkoxq6gsl_che_dev-machine   "/bin/sh -c 'sudo /us"   3 minutes ago       Up 3 minutes        0.0.0.0:32816->22/tcp, 0.0.0.0:32815->4401/tcp, 0.0.0.0:32814->4403/tcp, 0.0.0.0:32813->4411/tcp, 0.0.0.0:32812->8000/tcp, 0.0.0.0:32811->8080/tcp, 0.0.0.0:32810->9876/tcp   workspacel9z5duz829di7ku2_machine9f21hmznkoxq6gsl_che_dev-machine
+b0ce2b22db92        eclipse/che-server:5.0.0-latest                                                 "/home/user/che/bin/d"   12 minutes ago      Up 12 minutes       8000/tcp, 0.0.0.0:8080->8080/tcp                                                                                                                                              che-server
+ Che version: [5.0.0-latest] OS and version: [guest Ubuntu 16.04 x64 on vmware] Docker version: [1.12.3] Che install: [by script che] Thanks for any adivce.

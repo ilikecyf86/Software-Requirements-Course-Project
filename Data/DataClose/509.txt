@@ -1,0 +1,40 @@
+Php debugger does not open editor with debugging file in certain case
+kind/bug severity/P2 selenium/failure 
+Reproduction Steps: Precondition: Create the workspace based on PHP stack. Remove all existed php files and create next files: index.php with next content: /*
+ * Copyright (c) 2012-2017 Red Hat, Inc.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   Red Hat, Inc. - initial API and implementation
+ */
+<?php
+/*
+ * Copyright (c) 2012-2017 Red Hat, Inc.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   Red Hat, Inc. - initial API and implementation
+ */
+
+echo sayHello("man");
+ lib.php with content: /*
+ * Copyright (c) 2012-2017 Red Hat, Inc.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *   Red Hat, Inc. - initial API and implementation
+ */
+function sayHello($name) {
+    return "Hello, " + $name;
+}
+
+ Steps to reproduce: Create debug connection: Run -> Edit debug configuration -> PHP Launch just created command and launch it. Wait notification like: Remote debugger connected Open the lib.php file, set breakpoint in 14, wait active state, close the file 4 . Open index.php file, launch command with name 'debug php script' by Command Palete. Wait highlighter in the first position. Open debugger panel, click resume button. Expected result: The lib.php file, should be opened and highlighter should be set in 14 position. Actual relsut The lib.php file is not opened. OS and version: Fedore 25, Chrome browser, CHE 5.17.0 Additional info: The usecase can be reproduces also with PhpProjectDebuggingTest

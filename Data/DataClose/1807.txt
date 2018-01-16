@@ -1,0 +1,3 @@
+Remove client side Machine API form IDE
+kind/enhancement team/ide sprint/next-sprint 
+we do not manipulate machines separately but in a context of environment

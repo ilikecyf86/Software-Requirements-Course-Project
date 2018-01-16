@@ -1,0 +1,3 @@
+Feature Request: Creating Snapshots of a Workspace from the UI.
+kind/enhancement Improvement Improvement 
+Hello. I found eclipse che a very usefull tool for developing software but i would like to be able to preserve every action i do in a workspace (eg apt, or edited files). So is it possible to add from the web UI the action to snapshot, import, export(the current snapshot to public or private docker registries), and even rollback snapshots of a workspace? Thanks in advance.

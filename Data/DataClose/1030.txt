@@ -1,0 +1,3 @@
+Display updating dependencies progress in baloon notification
+kind/enhancement severity/P2 
+Remove bottom panel containing progress bar widget and display the updating dependencies progress in baloon notification.

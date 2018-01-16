@@ -1,0 +1,3 @@
+NPE when editor in splitted mode in some cases
+kind/bug team/ide severity/P2 status/in-progress status/code-review status/in-progress status/code-review 
+We have NPE in dev-machine console when editor in splitted mode Reproduction Steps: Open some java file in editor Split in two columns (cursor will be in the second column) Set cursor in first column See error in dev-machine console OS and version: Fedora 25

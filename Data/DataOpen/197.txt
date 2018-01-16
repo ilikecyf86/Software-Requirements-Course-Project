@@ -1,0 +1,3 @@
+[Multiuser] Member can still work with shared workspace after removing him from organization
+kind/bug severity/P2 team/platform 
+Reproduction Steps: Create an organization and add a member in the organization Create an workspace in this organization and share it with the member Remove this member from the organization Expected behavior: The member removed from the organization and the workspace is not visible in his workspaces list Observed behavior: The member still can work with the workspace. Che version: 5.21.0-SNAPSHOT Multiuser OS and version: Fedora 25 Additional information:

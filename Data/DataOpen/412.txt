@@ -1,0 +1,3 @@
+Investigate if we need to limit amount of threads which are used for processing of JSON-RPC messages
+kind/task 
+I've noticed that in ServerSideRequestProcessor we use cached thread pool and I'm afraid that it may be a problem in future when we will start publishing logs via JSON-RPC. This may result in a huge number of JSON-RPC requests which potentially may cause uncontrolled grows of threads in the pool. I believe we should investigate if such indeed may occur and take all necessary measures, for example change cached thread pull to fixed thread pool or something similar.

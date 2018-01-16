@@ -1,0 +1,3 @@
+Unable to run custom assembly
+
+Reproduction Steps: Build and run the custom assembly at: https://github.com/BarryDrez/softwareag-che.git To build, run the build.sh script. To run, use run.sh --che. If necessary, run dos2unix against the scripts. OS and version: Windows 7 running Oracle Virtual Box Diagnostics: cli.log.txt

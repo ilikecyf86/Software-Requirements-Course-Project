@@ -1,0 +1,3 @@
+How to get the workspace port in previewUrl?
+kind/enhancement New feature Improvement 
+Hi, is it possible to get only the workspace port in the previewUrl? I want to achieve something like this: http://ws-${workspace.port}.mydomain.com/${current.project.relpath} Where ${workspace.port} is the hypothetical variable Thanks in advance

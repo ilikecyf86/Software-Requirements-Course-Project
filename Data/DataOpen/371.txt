@@ -1,0 +1,3 @@
+No warning message when admin try assign himself as developer
+kind/eclipse-che kind/enhancement status/open-for-dev team/plugin kind/eclipse-che 
+From @Ohrimenko1988 on March 2, 2017 15:0 Reproduction Steps: Go to the any team as admin -> "Members" tab Assign himself as "Developer" Expected behavior : Warning message or some request will be shown Observed behavior : Warning message was not shown OS and version : Ubuntu 16.04 LTS Docker version : 1.13.1 Host : nightly.codenvy-stg.com Additional information : Problem can be reliably reproduced, doesn't happen randomly: [Yes] Copied from original issue: codenvy/codenvy#1868

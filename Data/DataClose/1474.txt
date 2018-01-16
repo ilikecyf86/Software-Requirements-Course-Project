@@ -1,0 +1,3 @@
+Investigate the possibility of performing actions after transaction commit/rollback
+team/platform kind/enhancement severity/P2 
+We have several places where it is necessary to perform some operations after successfully transaction commit e.g. removing snapshots after workspace removal, sending emails after organization removal and so on. In case of single action(not cascade) it is possible to do that, but when there is need to do such things in case of cascade operation(like user removal) we can't do it because there is no indicator about transaction rollback/commit. Notes One of possible solutions : Provide custom implementation of transactional interceptor such as JpaLocalTxnInterceptor with events propagation.

@@ -1,0 +1,3 @@
+Rework Maven plugin to avoid using Everrest based Websocket calls
+kind/enhancement team/ide 
+MavenMessagesHandler uses WsAgentStateController#getMessageBus for listening the events from the Maven server. Need to replace it with JSON-RPC.

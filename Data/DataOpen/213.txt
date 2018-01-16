@@ -1,0 +1,3 @@
+Slow debugger response
+kind/bug team/enterprise 
+Description Sometimes after debugger stops on a breakpoint it takes more than 10 seconds while frames and local variables displayed. Reproduction Steps Open Che in Che (che-dev image) Start another Che instance Open a elenium test which uses importJavaApp method and make url wrong From host OS start the test and stop execution with breakpoint on the method. Open Network tab in browser and do Step over When debugger stops on exception throwing, contentent of debugger panel will be delayed for relatively very long (~20 seconds in my case) time. Screencast: OS and version: Fedora 25, Che 6.0.0-M2, mounted Che project.

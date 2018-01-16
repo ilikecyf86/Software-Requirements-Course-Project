@@ -1,0 +1,3 @@
+modify stacks.json
+
+I want to remove java-mysql images from stacks.json, but I found it has never changed after my changes. How to modify the stacks.json?

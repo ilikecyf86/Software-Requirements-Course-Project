@@ -1,0 +1,15 @@
+ServerException in time of injection of default user in selenium tests
+kind/bug selenium/failure severity/blocker target/che6 team/production status/in-progress status/in-progress 
+Description There is an error of injection of default user in selenium tests of Che 6: [ERROR] 1) Error injecting constructor, org.eclipse.che.api.core.ServerException: java.io.IOException
+[ERROR] at org.eclipse.che.selenium.core.user.TestUserImpl.<init>(TestUserImpl.java:86)
+[ERROR] while locating org.eclipse.che.selenium.core.user.TestUserImpl annotated with @com.google.inject.internal.UniqueAnnotations$Internal(value=1)
+[ERROR] at org.eclipse.che.selenium.core.user.CheDefaultTestUser.<init>(CheDefaultTestUser.java:36)
+[ERROR] at org.eclipse.che.selenium.core.user.CheDefaultTestUser.class(CheDefaultTestUser.java:36)
+[ERROR] while locating org.eclipse.che.selenium.core.user.CheDefaultTestUser
+[ERROR] while locating org.eclipse.che.selenium.core.user.TestUser
+[ERROR] for the 4th parameter of org.eclipse.che.selenium.core.workspace.TestWorkspaceProviderImpl.<init>(TestWorkspaceProviderImpl.java:62)
+[ERROR] at org.eclipse.che.selenium.core.workspace.TestWorkspaceProviderImpl.class(TestWorkspaceProviderImpl.java:41)
+[ERROR] while locating org.eclipse.che.selenium.core.workspace.TestWorkspaceProviderImpl
+[ERROR] at org.eclipse.che.selenium.core.CheSeleniumSuiteModule.configure(CheSeleniumSuiteModule.java:83)
+[ERROR] while locating org.eclipse.che.selenium.core.workspace.TestWorkspaceProvider
+ The problem: there is out-dated path to Che Rest API using in tests: /wsmaster/api/. OS and version: Che 6

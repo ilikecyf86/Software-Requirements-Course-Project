@@ -1,0 +1,3 @@
+Enter password silently.
+kind/enhancement 
+Currently <docker> eclipse/che stop --user <name> --password <password> requires users to expose there password. We should provide another option --passwordPrompt or detect when nothing is provide and prompt user for password which is not displayed. My current work around that works in unix only is: docker run -ti -v /var/run/docker.sock:/var/run/docker.sock -v /root/codenvy-data/:/data codenvy/cli:5.6.0 stop --user admin --password $(read -s cPass;echo $cPass) Codenvy 5.6.0

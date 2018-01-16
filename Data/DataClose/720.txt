@@ -1,0 +1,3 @@
+Implement workspace start interruption for Docker backend
+status/open-for-dev target/branch status/in-progress status/open-for-dev status/in-progress 
+Related to spi branch only. Investigate how workspace start sequence with interruption will affect current docker based spi because now InternalRuntime does not fit the cases when we need to stop starting workspace environment. Based on investigation rewrite docker infrastructure with considering of start interruption. Also, note that we already have such feature for master branch and it was done in the scope of the issue.

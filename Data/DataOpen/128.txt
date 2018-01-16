@@ -1,0 +1,3 @@
+Che 6 on OpenShift - Phase 2
+kind/epic 
+Following issue #7321 Requirements on workspace runtimes Support dockerfile recipes - #5906 Support composefile recipes Display message in dashboard related to the restrictions on the recipes Adapted Features and Capabilities Disable Agents configuration from dashboard when unprivileged containers are used TBD: Impacts on workspace's servers TBD: Impacts on workspace's env variables Administration Docs: Provide runbook similar to https://codenvy.io/docs/admin-guide/runbook/index.html Linked Issues codenvy/codenvy#2517

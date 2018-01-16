@@ -1,0 +1,3 @@
+Study possibility to restore workspace runtimes from docker information after improper restart
+kind/task sprint/next-sprint status/open-for-dev team/platform sprint/current-sprint sprint/next-sprint sprint/current-sprint status/open-for-dev 
+Sometimes it can happen that ws-master terminated or improperly restarted. It can be cause of many circumstances but one of the most common is JVM failure. If in this time some workspace was running we will lose it. The goal of this task is to study possibility to recover all workspace runtime information from DB or from docker or swarm. Result of this issue: list of things to do or almost working prototype.

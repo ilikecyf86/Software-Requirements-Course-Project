@@ -1,0 +1,3 @@
+Are workspaces persistent?
+
+Hi, I new to Che and want to try it out on Amazon and/or Google Cloud but every time I restart my Instance/VM I lose all my workspaces. Is this how Che works? Is it possible to make them persistent? thanks

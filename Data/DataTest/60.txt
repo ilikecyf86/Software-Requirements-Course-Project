@@ -1,0 +1,3 @@
+How to extend a new project type that contains a new perspective
+kind/question 
+hi, I have read docs about how to extend Eclipse Che from https://eclipse-che.readme.io/v4.3, but I can not get information that I need. I wanted to extend a new project type. Once this new project is created, workspace should show me a new perspective with new functions that doesn't work for coding or compiling, not a IDE. As developing a RCP program based on Eclipse, I hope develop a new program based on Che. I hope I can get some tips, it is better if you can provide tutorials. By the way, whether Eclipse che support GEF?

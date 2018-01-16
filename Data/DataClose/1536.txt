@@ -1,0 +1,25 @@
+Serialize machine required fields as docker container labels
+kind/enhancement kind/task kind/enhancement status/in-progress status/in-progress 
+This is a very first step to achive workspace runtimes recovery. Basically each time docker container is created machine servers are stored as labels, which allows to recover this data in future. The other machine mandatory data such as machine id
+machine name
+machine owner
+workspace id
+environment name
+ should be also serialized as container labels, proposed format is: "che:env_name": "wksp-lz1b",
+"che:id": "machinep91hshmqt17bi7lp",
+"che:name": "dev-machine",
+"che:owner": "che",
+"che:workspace_id": "workspaceos6k0l3pz89ufi2z",
+"che:server:22/tcp:ref": "ssh",
+"che:server:4401/tcp:path": "/api",
+"che:server:4401/tcp:protocol": "http",
+"che:server:4401/tcp:ref": "wsagent",
+"che:server:4411/tcp:protocol": "http",
+"che:server:4411/tcp:ref": "terminal",
+"che:server:8000:protocol": "http",
+"che:server:8000:ref": "tomcat8-debug",
+"che:server:8080:protocol": "http",
+"che:server:8080:ref": "tomcat8",
+"che:server:9876:protocol": "http",
+"che:server:9876:ref": "codeserver"
+ Investigated by #3910

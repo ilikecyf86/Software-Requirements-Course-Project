@@ -1,0 +1,3 @@
+add shortcut for Quick Fix to editor
+
+_1 Upvote_ I’m using beta.codenvy.com. The Quick Fix feature is buried in the menu without a shortcut and thus a PITA to use. The normal Eclipse shortcut {Cmd,Ctrl}+1 does not apply in Codenvy. Version: 4.3.4 Revision: 5cb83bdceb9aae28

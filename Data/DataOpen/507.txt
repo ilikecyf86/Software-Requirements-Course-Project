@@ -1,0 +1,3 @@
+Code highlighting and preview for Markdown
+kind/enhancement 
+Does Che support syntax highlighting and previewing markdown documents? I'd like to use this for two reasons: To simplify markdown editing (almost any project on Github uses markdown, Eclipse Che included) To give the user documentation when he starts a new workspace. I want to put markdown documentation in the workspace and show it to the user after the workspace is started. Che's vision is to make contributing to code as easy as possible. Showing the user documentation after starting a workspace will bring us closer to that goal.

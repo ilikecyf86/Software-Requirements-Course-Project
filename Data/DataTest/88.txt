@@ -1,0 +1,59 @@
+JAVA_HOME not found
+
+#############################################################
+On Windows, Che projects can only reside in %userprofile% due
+to limitations of Docker. On this computer, %userprofile% is
+C:\Users\LegitSoulja
+#############################################################
+
+Could not find an existing docker machine.
+Creating docker machine named default... Please be patient, this takes a couple minutes the first time.
+Successfully started docker machine named default...
+Setting environment variables for machine default...
+Docker is configured to use docker-machine named default with IP 192.168.99.100...
+
+############## HOW TO CONNECT YOUR CHE CLIENT ###############
+After Che server has booted, you can connect your clients by:
+1. Open browser to http://localhost:8080, or:
+2. Open native chromium app.
+#############################################################
+
+
+!!!
+!!! Failure running JAVA_HOME/bin/java -version. We received .
+!!!
+
+Usage:
+  che [OPTIONS] [COMMAND]
+     -v,        --vmware                Use the docker-machine VMware driver (instead of VirtualBox)
+     -m:name,   --machine:name          For Win & Mac, sets the docker-machine VM name; default=default
+     -a:driver, --machine-driver:driver For Win & Mac, specifies the docker-machine driver to use; default=vbox
+     -p:port,   --port:port             Port that Che server will use for HTTP requests; default=8080
+     -r:ip,     --remote:ip             If Che clients are not localhost, set to IP address of Che server
+     -h,        --help                  Show this help
+     -d,        --debug                 Use debug mode (prints command line options + app server debug)
+
+  Options when running Che natively:
+     -b,        --blocking-entropy      Security: https://wiki.apache.org/tomcat/HowTo/FasterStartUp
+     -g,        --registry              Launch Docker registry as a container (used for ws snapshots)
+     -s:client, --skip:client           Do not print browser client connection information
+     -s:java,   --skip:java             Do not enforce Java version checks
+     -s:uid,    --skip:uid              Do not enforce UID=1000 for Docker
+
+  Options when running Che in a Docker container:
+     -i,        --image                 Launches Che within a Docker container using latest image
+     -i:tag,    --image:tag             Launches Che within a Docker container using specific image
+     -c:name,   --container:name        Sets the container name if -i provided; default=che
+     -t,        --stop-container        If stopping Che, will also stop Che container if Che ran with -i
+
+  Commands:
+     run                                (Default) Starts Che server with logging in current console
+     start                              Starts Che server in new console
+     stop                               Stops Che server
+
+Docs: http://eclipse.org/che/getting-started.
+
+If you are running Che as a server on a VM for multiple users to access, review the various networking
+configuration items that control how clients, Che and workspaces initiate connections. See:
+https://eclipse-che.readme.io/docs/networking.
+ I have installed both jdk & jre 1.8.0_91 Variable JAVA_HOME = C:\Program Files\Java\jdk1.8.0_91\bin what am i doing wrong?

@@ -1,0 +1,3 @@
+SPI - OpenShift Implementation - Show workspace Pod events in the IDE
+kind/enhancement team/platform status/open-for-dev status/in-progress status/open-for-dev status/in-progress 
+This is en enhancement request. I think it would be nice to show workspace pods events when a workspace is being started. Currently, when a workspace is starting no logs are streamed until pod is up and Che agents starts, it can take a while for pod image to be pulled, and pod to be created. For a user it may look like Che stopped responding. @sleshchenko @akorneta @l0rd @ibuziuk what do you think?

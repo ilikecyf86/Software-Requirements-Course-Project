@@ -1,0 +1,3 @@
+Documentation of REST API is outdated
+kind/docs severity/P1 
+Most examples doesn´t work. Especially the editing File examples. Can someone explain me how to get the content of a file over the api? I would be very happy. Thanks

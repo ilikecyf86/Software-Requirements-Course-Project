@@ -1,0 +1,3 @@
+Moderator as a Contributor
+kind/question 
+I would like to open discussion for the possibility of having a moderator role. Things that a moderator would do are organization oriented and for issues and PRs. Close old issues with no recent responses. Edit postings from English as a second language speakers. This would make issues or PRs easier to read. Which in turn helps others who come in later to reread an issue or PR to fix a problem they are having. Help assign labels to issues or PRs. Lock issues so that only contributors can comment (For giving updates but not dragging out conversations). A moderator would need to know the labeling system and best practices as determined by the core team. Thoughts?

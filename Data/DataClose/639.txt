@@ -1,0 +1,3 @@
+[Regression] The code validation is not available for language servers
+kind/bug severity/blocker team/ide 
+Preconditions: Create a workspace based on C# stack. Create the Asp. application from the Wizard. Reproduction Steps: Open the Program.cs. After init LS, do some error in the code. OS and version: Fedora 25, chrome browser, nightly.codenvy-stg.com/ server Expected result: The error marker should appear in the line with error Actual result: There is no any markers Additional information: The problem actual for PHP and Python language servers The related test: CheckMainFeatureForLanguageTest

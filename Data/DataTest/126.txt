@@ -1,0 +1,3 @@
+When create workspace,I got error about tty.
+kind/question 
+When create workspace,I got error "[STDERR] sudo: no tty present and no askpass program specified ". Does anyone met the same problem?

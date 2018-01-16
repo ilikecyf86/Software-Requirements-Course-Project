@@ -1,0 +1,3 @@
+Commands are not removed after deleting related project
+kind/bug severity/P2 team/ide 
+After creating a project we have several default commands, but when the project was deleted, commands still are in the Commands Panel. After refreshing IDE commands disappear. Reproduction Steps: Create some project (for example spring-sample); Delete the project; Go to the Commands panel, all commands related to the deleted project still are here.

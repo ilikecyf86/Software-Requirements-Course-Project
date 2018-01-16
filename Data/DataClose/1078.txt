@@ -1,0 +1,3 @@
+Enhancement : Desktop GUI for Eclipse Che
+kind/question 
+Any possible for Eclipse Che to running X11 (VNC server) in a workspace with a desktop plugins? Meaning that, have a VNC connection to view X11 desktop. Once a success connection are make, the X11 view will appear on a workspace tab. It will be very useful for the programmer that need to develop GUI using Eclipse Che.

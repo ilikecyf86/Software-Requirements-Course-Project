@@ -1,0 +1,3 @@
+Not expected behavior in the ProjectExplorer page-object methods
+kind/enhancement kind/task status/in-progress team/production kind/bug kind/enhancement kind/task sprint/current-sprint status/code-review status/in-progress 
+Description We need update ProjectExplorer page-object in the selenium tests, because we have a lot of methods in this page-object which have not expected behavior and must be fixed. This issue is a part of stabilization changes. Report with reproduced problem: https://ci.codenvycorp.com/view/qa/job/che-integration-tests-che6/96/Selenium_tests_report/

@@ -1,0 +1,3 @@
+Confused with IP mappings.
+
+Ok I understand theres multiple network adaptors, and ceh runs on the ip of 192.168.99.100 and my vps running on 192.168.0.129. My question is, what ip should I port forward too? I had it working randomly, but now its not working anymore after I reinstall and installed everything back the right way. I have no clue what I did to get it working the first time but can I get some personal assistance? The weird thing is when I checked my adapter properties the ip of the adapter was 192.168.99.1 but I connect through 192.168.99.100. Im soo confused I tried re-routing my ip 192.168.0.129 to 192.168.9.1 then just portforward my computer like normal but that didnt even work

@@ -1,0 +1,3 @@
+Alignment on Piechart on Diagnostics
+kind/bug severity/P2 team/plugin 
+Tested with the Desktop Client Reproduction Steps: 1:) Install the Desktop Client 2:) Run Diagnostics OS and version: Che 5.8.0 on Windows 10 Version 1607 (OS Build 14393.187) in Docker (not Docker for Windows)

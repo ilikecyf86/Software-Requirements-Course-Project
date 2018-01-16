@@ -1,0 +1,3 @@
+unzip: cannot find or open /mnt/che/ws-agent.zip, /mnt/che/ws-agent.zip.zip or /mnt/che/ws-agent.zip.ZIP.
+kind/question 
+docker shell:docker run --net=host --restart always --name che -d -v /var/run/docker.sock:/var/run/docker.sock -v /home/it/che/lib:/home/user/che/lib-copy -v /home/it/che/workspaces:/home/user/che/workspaces -v /home/it/che/storage:/home/user/che/storage -v /home/it/che/conf/che.properties:/home/user/che/conf/che.properties codenvy/che:nightly docker version: Client: Version: 1.11.2 API version: 1.23 Go version: go1.5.4 Git commit: b9f10c9 Built: Wed Jun 1 22:00:43 2016 OS/Arch: linux/amd64 Server: Version: 1.11.2 API version: 1.23 Go version: go1.5.4 Git commit: b9f10c9 Built: Wed Jun 1 22:00:43 2016 OS/Arch: linux/amd64

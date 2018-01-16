@@ -1,0 +1,3 @@
+New Machine API Implementation: SSH Machines
+New feature 
+It should be possible to launch SSH machines (i.e. connect to a remote Linux machine). This type of machine will be an auxiliary one, which means that Docker type machine will still run the workspace. It should be possible to connect to a remote SSH machine using username and password.

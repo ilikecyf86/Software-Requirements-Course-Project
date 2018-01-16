@@ -1,0 +1,67 @@
+license headers are missing
+
+When compiling the dashboard there appears an error of missing license header. It gets compilable only with an additional key -Dlicense.skip=true Reproduction Steps: $ git clone https://github.com/eclipse/che.git
+$ cd che/dashboard
+$ mvn clean install
+ Observed behavior: [INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Che Dashboard :: Web App 5.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.9.1:parse-version (parse-version) @ che-dashboard-war ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.3:create (default) @ che-dashboard-war ---
+[INFO] Executing: /bin/sh -c cd /home/alex/che/dashboard && git rev-parse --verify HEAD
+[INFO] Working directory: /home/alex/che/dashboard
+[INFO] Storing buildNumber: e5bccfdbf5b0ca5603efea7e3a2a08204d3e2646 at timestamp: 20170105
+[INFO] Storing buildScmBranch: master
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-java-version) @ che-dashboard-war ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (enforce-maven-version) @ che-dashboard-war ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (distribution-management-used) @ che-dashboard-war ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (no-distribution-management-at-all) @ che-dashboard-war ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (dependency) @ che-dashboard-war ---
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4:enforce (ban-bad-dependencies) @ che-dashboard-war ---
+[INFO] 
+[INFO] --- maven-sortpom-plugin:2.3.0:verify (default) @ che-dashboard-war ---
+[INFO] Verifying file /home/alex/che/dashboard/pom.xml
+[INFO] 
+[INFO] --- license-maven-plugin:2.10:check (check-headers) @ che-dashboard-war ---
+[INFO] Checking licenses...
+[WARNING] Missing header in: /home/alex/che/dashboard/src/app/workspaces/workspace-details/environments/list-servers/server.ts
+[WARNING] Missing header in: /home/alex/che/dashboard/src/app/workspaces/workspace-details/environments/list-ports/add-port-dialog/add-port-dialog.controller.ts
+[WARNING] Missing header in: /home/alex/che/dashboard/src/app/workspaces/workspace-details/environments/list-env-variables/add-variable-dialog/add-variable-dialog.controller.ts
+[WARNING] Unknown file extension: /home/alex/che/dashboard/src/app/colors/che-output-colors.constant.ts.template
+[WARNING] Unknown file extension: /home/alex/che/dashboard/src/app/colors/che-output-colors.json
+[WARNING] Unknown file extension: /home/alex/che/dashboard/src/app/colors/che-color.constant.ts.template
+[WARNING] Unknown file extension: /home/alex/che/dashboard/src/app/colors/che-colors.json
+[WARNING] Unknown file extension: /home/alex/che/dashboard/src/app/proxy/proxy-settings.constant.ts.template
+[WARNING] Missing header in: /home/alex/che/dashboard/src/components/api/environment/environment-manager-machine.ts
+[WARNING] Unknown file extension: /home/alex/che/dashboard/src/assets/images/icon-saas.png
+[WARNING] Unknown file extension: /home/alex/che/dashboard/src/assets/images/icon-on-prem.png
+[WARNING] Unknown file extension: /home/alex/che/dashboard/src/assets/svg/README.MD
+[WARNING] Unknown file extension: /home/alex/che/dashboard/src/assets/branding/product.json
+[WARNING] Unknown file extension: /home/alex/che/dashboard/src/assets/fonts/open-sans-latin.woff2
+[WARNING] Unknown file extension: /home/alex/che/dashboard/src/assets/fonts/open-sans-latin-ext.woff2
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4.394 s
+[INFO] Finished at: 2017-01-05T10:28:56+01:00
+[INFO] Final Memory: 23M/981M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal com.mycila:license-maven-plugin:2.10:check (check-headers) on project che-dashboard-war: Some files do not have the expected license header -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+
+ Che version: latest (downloaded an hour ago) OS and version: Ubuntu 14.04 Additional information: Problem started happening recently, didn't happen in an older version of Che: Yes Problem can be reliably reproduced, doesn't happen randomly: Yes

@@ -1,0 +1,3 @@
+Synchronize list of repositories and the list of local changes
+kind/task status/open-for-dev team/enterprise sprint/current-sprint status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+Epic: #5128 Add the list of repository to the git panel: Select the first repo if there is no selection at all. Synchronize list of local changes with selected repo.

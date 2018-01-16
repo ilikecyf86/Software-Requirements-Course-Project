@@ -1,0 +1,3 @@
+Create "Git revert" action
+New feature 
+It would be great to be able to revert all not commited changes by selecting an item (file or folder). Like in Intellij Idea "Revert..." action.

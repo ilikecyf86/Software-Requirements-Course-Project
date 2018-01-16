@@ -1,0 +1,3 @@
+Che6 : with macOS Che is connecting to internal ip
+kind/bug 
+Description On macOS, che is using internal IP instead of "localhost" Reproduction Steps Run che6 on macOS OS and version: macOS

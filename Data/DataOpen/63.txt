@@ -1,0 +1,3 @@
+Replace old debugger icons with new ones
+kind/task team/enterprise 
+List of the new icons to apply: https://drive.google.com/drive/folders/19hBUKCEofXY9_Z4UcIi4dwYf4jwbtHpl

@@ -1,0 +1,41 @@
+plugin failed
+kind/question 
+I use a version 5.4.1, but this problem occurred. I saw prev issue 1633 and tried fixing, but couldn't resolve this matter. /eclipseche/che/sdk# ../bin/che-install-plugin.sh
+
+#####################################################################
+CHE SDK: Installing each extension into local maven repository
+#####################################################################
+
+
+#####################################################################
+CHE SDK: Adding IDE extensions as dependencies
+#####################################################################
+
+Found: 0 extension(s)
+
+#####################################################################
+CHE SDK: Adding extensions as dependencies to ws-agent
+#####################################################################
+
+Found: 0 extension(s)
+
+#####################################################################
+CHE SDK: Compiling everything into new IDE. ~5 minutes.
+#####################################################################
+
+[INFO] Scanning for projects...
+[ERROR] [ERROR] Some problems were encountered while processing the POMs:
+[WARNING] 'parent.relativePath' of POM org.eclipse.che:assembly-ide-war:[unknown-version] (/opt/bitnami/apps/eclipseche/che/sdk/assembly-ide-war/temp/pom.xml) points at org.eclipse.che:assembly-ide-war instead of org.eclipse.che:che-assembly-parent, please verify your project structure @ line 16, column 13
+[FATAL] Non-resolvable parent POM for org.eclipse.che:assembly-ide-war:[unknown-version]: Failure to find org.eclipse.che:che-assembly-parent:pom:5.4.1 in https://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced and 'parent.relativePath' points at wrong local POM @ line 16, column 13
+ @
+[ERROR] The build could not read 1 project -> [Help 1]
+[ERROR]
+[ERROR]   The project org.eclipse.che:assembly-ide-war:[unknown-version] (/opt/bitnami/apps/eclipseche/che/sdk/assembly-ide-war/temp/pom.xml) has 1 error
+[ERROR]     Non-resolvable parent POM for org.eclipse.che:assembly-ide-war:[unknown-version]: Failure to find org.eclipse.che:che-assembly-parent:pom:5.4.1 in https://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced and 'parent.relativePath' points at wrong local POM @ line 16, column 13 -> [Help 2]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException
+[ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/UnresolvableModelException`

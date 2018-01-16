@@ -1,0 +1,28 @@
+Can't add extension example
+kind/bug 
+hi, I installed Eclipse-che-4.0.1, and I try to add extension example that provided by che in /plugins/examples. By refering tohttp://eclipse-che.readme.io/docs/developing-extensions, I add all three extension successfully. Then I bulid che from source(4.2.2), and I use the same way to add those extensions.when run /bin/che-plugin-install, I always get this error: --- gwt-maven-plugin:2.7.0:compile (default) @ assembly-ide-war ---
+[INFO] Compiling module org.eclipse.che.ide.IDE
+[INFO]    Ignored 74 units with compilation errors in first pass.
+[INFO] Compile with -strict or with -logLevel set to TRACE or DEBUG to see all errors.
+[INFO]    Computing all possible rebind results for 'org.eclipse.che.ide.client.inject.IDEInjector'
+[INFO]       Rebinding org.eclipse.che.ide.client.inject.IDEInjector
+[INFO]          Invoking generator com.google.gwt.inject.rebind.GinjectorGenerator
+[INFO]             [ERROR] Error injecting @com.google.inject.name.Named(value=cheExtensionPath) java.lang.String: Unable to create or inherit binding: Binding requested for constant key '@com.google.inject.name.Named(value=cheExtensionPath) java.lang.String' but no explicit binding was found
+[INFO]   Path to required node:
+[INFO] 
+[INFO] org.eclipse.che.ide.client.BootstrapController [org.eclipse.che.ide.client.inject.IDEInjector#getBootstrapController()]
+[INFO]  -> org.eclipse.che.ide.client.ExtensionInitializer [@Inject constructor of org.eclipse.che.ide.client.BootstrapController]
+[INFO]  -> org.eclipse.che.ide.client.ExtensionManager [@Inject constructor of org.eclipse.che.ide.client.ExtensionInitializer]
+[INFO]  -> com.google.inject.Provider<examples.MyExtension> [@Inject constructor of org.eclipse.che.ide.client.ExtensionManager]
+[INFO]  -> examples.MyExtension [Implicit provider for com.google.inject.Provider<examples.MyExtension>]
+[INFO]  -> examples.MyAction [@Inject constructor of examples.MyExtension]
+[INFO]  -> examples.MyServiceClient [@Inject constructor of examples.MyAction]
+[INFO]  -> @com.google.inject.name.Named(value=cheExtensionPath) java.lang.String [@Inject constructor of examples.MyServiceClient]
+[INFO] 
+[INFO]    [ERROR] Errors in 'org/eclipse/che/ide/client/IDE.java'
+[INFO]       [ERROR] Line 23: Failed to resolve 'org.eclipse.che.ide.client.inject.IDEInjector' via deferred binding
+[INFO]    [WARN] For the following type(s), generated source was never committed (did you forget to call commit()?)
+[INFO]       [WARN] org.eclipse.che.ide.client.inject.org_eclipse_che_ide_client_inject_IDEInjectorImpl
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+ I remove che-ide-extension-client-server example, run /bin/che-plugin-install again.No error happens, but when I start workspace, I found noly che-ide-extension-simple works, the che-server-extensiondoesn't work.When visiting http://localhost:8080/api/workspace/name/{ws-name},I is responsed no any resources matched Hope your answer.

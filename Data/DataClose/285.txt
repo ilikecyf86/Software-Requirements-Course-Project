@@ -1,0 +1,3 @@
+Connections to Keycloak 404 on non-multiuser
+kind/question 
+I'm not sure if this is intended behaviour but I noticed that running che-server in normal mode, connections are still being made to keycloak, organisation which show as 404 errors in the console. Che 5.19

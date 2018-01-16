@@ -1,0 +1,3 @@
+Add copy/move/delete methods with caller object
+kind/task status/open-for-dev team/plugin sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/next-sprint sprint/current-sprint sprint/next-sprint status/open-for-dev 
+Usually, to know who exactly called modification resource operation we need to get an instance of this object. Proposed method names: org.eclipse.che.ide.api.resources.Resource#copy(java.lang.Object, org.eclipse.che.ide.resource.Path, boolean) org.eclipse.che.ide.api.resources.Resource#move(java.lang.Object, org.eclipse.che.ide.resource.Path, boolean) org.eclipse.che.ide.api.resources.Resource#delete(java.lang.Object) Later, instance of requestor may be consumed from org.eclipse.che.ide.api.resources.ResourceChangedEvent

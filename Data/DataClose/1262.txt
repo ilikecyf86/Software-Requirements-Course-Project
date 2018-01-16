@@ -1,0 +1,3 @@
+Find a better place for classes from che-plugin-sdk-env-local
+kind/task team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+Looks like components from che-plugin-sdk-env-local has no relation to plugin, sdk or local environment. We need to find a better place for this components Need for #4403

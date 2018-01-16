@@ -1,0 +1,3 @@
+Can I change che server port through -p:port?
+
+I tried to change my che server port to 80 through che -p:80 run, however, the che server did actually bind to port 80 but the redirect server port still 8080, such as: 2016-05-13 20:14:02,636[kspaceManager-0] [ERROR] [o.e.c.a.w.s.WorkspaceManager 538] - Can't start machine ws-machine because machine recipe downloading failed. Recipe url http://localhost:8080/ide/api/recipe/recipea46mq2cb3dmzaati/script. Error: Connection refused: connectorg.eclipse.che.api.machine.server.exception.MachineException: Can't start machine ws-machine because machine recipe downloading failed. Recipe url http://localhost:8080/ide/api/recipe/recipea46mq2cb3dmzaati/script. Error: Connection refused: connect

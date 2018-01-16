@@ -1,0 +1,3 @@
+Unexpected failing selenium tests from TestRunnerPlugin package
+team/platform team/production team/platform kind/bug sprint/current-sprint status/open-for-dev 
+Description Sometimes on CI server we have unexpected status a test that has been run by TestRunnerPlugin. For example: we have test that should be failed. But in the tree with project tests result - we have test with "uncertain status". (grey color) see screenshot: It happens randomly only CI in multithread selenium mode. OS and version: Ci-server, che-selenium integration tests

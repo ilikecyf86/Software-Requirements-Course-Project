@@ -1,0 +1,41 @@
+eclipse/che-ip returns 2 IP addresses as CHE_HOST
+kind/bug 
+I started an Ubuntu instance on digital ocean and ran cli: INFO: (che init): CHE_HOST=138.68.77.169 10.19.0.8 root@ubuntu-2gb-fra1-01:~# ifconfig
+docker0   Link encap:Ethernet  HWaddr 02:42:58:be:fd:01  
+          inet addr:172.17.0.1  Bcast:0.0.0.0  Mask:255.255.0.0
+          inet6 addr: fe80::42:58ff:febe:fd01/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:401 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:303 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:35748 (35.7 KB)  TX bytes:54238 (54.2 KB)
+
+eth0      Link encap:Ethernet  HWaddr ca:18:b8:42:99:90  
+          inet addr:138.68.77.169  Bcast:138.68.79.255  Mask:255.255.240.0
+          inet6 addr: fe80::c818:b8ff:fe42:9990/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:329732 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:24948 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:483680037 (483.6 MB)  TX bytes:2256880 (2.2 MB)
+
+eth0:1    Link encap:Ethernet  HWaddr ca:18:b8:42:99:90  
+          inet addr:10.19.0.8  Bcast:10.19.255.255  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:160 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:160 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:11840 (11.8 KB)  TX bytes:11840 (11.8 KB)
+
+veth445c798 Link encap:Ethernet  HWaddr 26:de:70:50:08:eb  
+          inet6 addr: fe80::24de:70ff:fe50:8eb/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:29 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:26 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:3075 (3.0 KB)  TX bytes:7880 (7.8 KB)

@@ -1,0 +1,3 @@
+The reason of the warning line in tab is not explained
+kind/bug 
+Description I opened Che in Che and at some point got a yellow line in the tab where the file name is placed. But editor shows neither line warning marks nor tip on mouse hovering on tab. Reproduction Steps OS and version: Diagnostics:

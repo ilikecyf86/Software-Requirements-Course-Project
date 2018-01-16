@@ -1,0 +1,3 @@
+Provide Release Candidate for Shipped Releases
+kind/docs kind/enhancement severity/P2 
+Create release candidate(RC) Docker images for Dockerhub for all shippable releases. Once this RC is tested and acceptable we can put associated numbered release docker images onto Dockerhub and remove RC images. We will need to update our development process wiki and possibly our documentation.

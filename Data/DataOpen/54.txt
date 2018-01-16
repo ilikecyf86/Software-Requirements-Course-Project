@@ -1,0 +1,186 @@
+Multiuser Keycloak
+kind/question 
+Description Keycloak not working when I use multiuser with OpenShift Origin. Reproduction Steps mkdir ~/che-openshift-commands cd ~/che-openshift-commands DEPLOY_SCRIPT_URL=https://raw.githubusercontent.com/eclipse/che/master/dockerfiles/init/modules/openshift/files/scripts/deploy_che.sh WAIT_SCRIPT_URL=https://raw.githubusercontent.com/eclipse/che/master/dockerfiles/init/modules/openshift/files/scripts/wait_until_che_is_available.sh STACKS_SCRIPT_URL=https://raw.githubusercontent.com/eclipse/che/master/dockerfiles/init/modules/openshift/files/scripts/replace_stacks.sh curl -fsSL ${DEPLOY_SCRIPT_URL} -o ./get-che.sh curl -fsSL ${WAIT_SCRIPT_URL} -o ./wait-che.sh curl -fsSL ${STACKS_SCRIPT_URL} -o ./stacks-che.sh oc login -u developer export OPENSHIFT_TOKEN=$(oc whoami -t) export EXTERNAL_IP=$(curl -s https://4.ifcfg.me/) export MINISHIFT_IP=${EXTERNAL_IP} CHE_MULTIUSER="true" bash ./get-che.sh && bash ./wait-che.sh bash ./stacks-che.sh OS and version: Scaleway's Server using OpenShift Origin Step by Step at https://medium.com/@james_devcomb/openshift-origin-on-vps-like-scaleways-2197294cf4fe Diagnostics: Logs from Keycloak Build: warning: Image sha256:a03a21d7b825d1d95f9e54bdfed47c28b60744fa97a468a1d599db324da7e88e does not contain a value for the io.openshift.s2i.scripts-url label
+--
+  | WARNING: Error getting save-artifacts from : script "save-artifacts" not installed
+  | Current directory: /opt/jboss
+  | Directory contents of /tmp/src:
+  | .
+  | ..
+  | .s2i
+  | realms
+  | themes
+  | Directory contents of /tmp/src/themes:
+  | total 0
+  | drwxr-xr-x 3 jboss jboss 17 Dec 10 05:14 .
+  | drwxr-xr-x 5 jboss jboss 46 Dec 10 05:14 ..
+  | drwxr-xr-x 5 jboss jboss 47 Dec 10 05:14 che
+  | Directory contents of /tmp/s2i:
+  | .
+  | ..
+  | assemble
+  | run
+  | Adding the Che Keycloak theme files in the following directory: /opt/jboss/keycloak/themes/che ...
+  | '/tmp/src/themes/che/' -> '/opt/jboss/keycloak/themes/che'
+  | '/tmp/src/themes/che/account' -> '/opt/jboss/keycloak/themes/che/account'
+  | '/tmp/src/themes/che/account/messages' -> '/opt/jboss/keycloak/themes/che/account/messages'
+  | '/tmp/src/themes/che/account/messages/messages_en.properties' -> '/opt/jboss/keycloak/themes/che/account/messages/messages_en.properties'
+  | '/tmp/src/themes/che/account/resources' -> '/opt/jboss/keycloak/themes/che/account/resources'
+  | '/tmp/src/themes/che/account/resources/css' -> '/opt/jboss/keycloak/themes/che/account/resources/css'
+  | '/tmp/src/themes/che/account/resources/css/che-account.css' -> '/opt/jboss/keycloak/themes/che/account/resources/css/che-account.css'
+  | '/tmp/src/themes/che/account/template.ftl' -> '/opt/jboss/keycloak/themes/che/account/template.ftl'
+  | '/tmp/src/themes/che/account/theme.properties' -> '/opt/jboss/keycloak/themes/che/account/theme.properties'
+  | '/tmp/src/themes/che/email' -> '/opt/jboss/keycloak/themes/che/email'
+  | '/tmp/src/themes/che/email/html' -> '/opt/jboss/keycloak/themes/che/email/html'
+  | '/tmp/src/themes/che/email/html/email-verification.ftl' -> '/opt/jboss/keycloak/themes/che/email/html/email-verification.ftl'
+  | '/tmp/src/themes/che/email/html/event-login_error.ftl' -> '/opt/jboss/keycloak/themes/che/email/html/event-login_error.ftl'
+  | '/tmp/src/themes/che/email/html/event-remove_totp.ftl' -> '/opt/jboss/keycloak/themes/che/email/html/event-remove_totp.ftl'
+  | '/tmp/src/themes/che/email/html/event-update_password.ftl' -> '/opt/jboss/keycloak/themes/che/email/html/event-update_password.ftl'
+  | '/tmp/src/themes/che/email/html/event-update_totp.ftl' -> '/opt/jboss/keycloak/themes/che/email/html/event-update_totp.ftl'
+  | '/tmp/src/themes/che/email/html/executeActions.ftl' -> '/opt/jboss/keycloak/themes/che/email/html/executeActions.ftl'
+  | '/tmp/src/themes/che/email/html/footer.ftl' -> '/opt/jboss/keycloak/themes/che/email/html/footer.ftl'
+  | '/tmp/src/themes/che/email/html/header.ftl' -> '/opt/jboss/keycloak/themes/che/email/html/header.ftl'
+  | '/tmp/src/themes/che/email/html/identity-provider-link.ftl' -> '/opt/jboss/keycloak/themes/che/email/html/identity-provider-link.ftl'
+  | '/tmp/src/themes/che/email/html/password-reset.ftl' -> '/opt/jboss/keycloak/themes/che/email/html/password-reset.ftl'
+  | '/tmp/src/themes/che/email/messages' -> '/opt/jboss/keycloak/themes/che/email/messages'
+  | '/tmp/src/themes/che/email/messages/messages_en.properties' -> '/opt/jboss/keycloak/themes/che/email/messages/messages_en.properties'
+  | '/tmp/src/themes/che/email/text' -> '/opt/jboss/keycloak/themes/che/email/text'
+  | '/tmp/src/themes/che/email/text/email-verification.ftl' -> '/opt/jboss/keycloak/themes/che/email/text/email-verification.ftl'
+  | '/tmp/src/themes/che/email/text/event-login_error.ftl' -> '/opt/jboss/keycloak/themes/che/email/text/event-login_error.ftl'
+  | '/tmp/src/themes/che/email/text/event-remove_totp.ftl' -> '/opt/jboss/keycloak/themes/che/email/text/event-remove_totp.ftl'
+  | '/tmp/src/themes/che/email/text/event-update_password.ftl' -> '/opt/jboss/keycloak/themes/che/email/text/event-update_password.ftl'
+  | '/tmp/src/themes/che/email/text/event-update_totp.ftl' -> '/opt/jboss/keycloak/themes/che/email/text/event-update_totp.ftl'
+  | '/tmp/src/themes/che/email/text/executeActions.ftl' -> '/opt/jboss/keycloak/themes/che/email/text/executeActions.ftl'
+  | '/tmp/src/themes/che/email/text/footer.ftl' -> '/opt/jboss/keycloak/themes/che/email/text/footer.ftl'
+  | '/tmp/src/themes/che/email/text/header.ftl' -> '/opt/jboss/keycloak/themes/che/email/text/header.ftl'
+  | '/tmp/src/themes/che/email/text/identity-provider-link.ftl' -> '/opt/jboss/keycloak/themes/che/email/text/identity-provider-link.ftl'
+  | '/tmp/src/themes/che/email/text/password-reset.ftl' -> '/opt/jboss/keycloak/themes/che/email/text/password-reset.ftl'
+  | '/tmp/src/themes/che/email/theme.properties' -> '/opt/jboss/keycloak/themes/che/email/theme.properties'
+  | '/tmp/src/themes/che/login' -> '/opt/jboss/keycloak/themes/che/login'
+  | '/tmp/src/themes/che/login/login-reset-password.ftl' -> '/opt/jboss/keycloak/themes/che/login/login-reset-password.ftl'
+  | '/tmp/src/themes/che/login/login-update-password.ftl' -> '/opt/jboss/keycloak/themes/che/login/login-update-password.ftl'
+  | '/tmp/src/themes/che/login/login.ftl' -> '/opt/jboss/keycloak/themes/che/login/login.ftl'
+  | '/tmp/src/themes/che/login/logo.ftl' -> '/opt/jboss/keycloak/themes/che/login/logo.ftl'
+  | '/tmp/src/themes/che/login/messages' -> '/opt/jboss/keycloak/themes/che/login/messages'
+  | '/tmp/src/themes/che/login/messages/messages_en.properties' -> '/opt/jboss/keycloak/themes/che/login/messages/messages_en.properties'
+  | '/tmp/src/themes/che/login/register.ftl' -> '/opt/jboss/keycloak/themes/che/login/register.ftl'
+  | '/tmp/src/themes/che/login/resources' -> '/opt/jboss/keycloak/themes/che/login/resources'
+  | '/tmp/src/themes/che/login/resources/css' -> '/opt/jboss/keycloak/themes/che/login/resources/css'
+  | '/tmp/src/themes/che/login/resources/css/che-login.css' -> '/opt/jboss/keycloak/themes/che/login/resources/css/che-login.css'
+  | '/tmp/src/themes/che/login/resources/img' -> '/opt/jboss/keycloak/themes/che/login/resources/img'
+  | '/tmp/src/themes/che/login/resources/img/che-logo.svg' -> '/opt/jboss/keycloak/themes/che/login/resources/img/che-logo.svg'
+  | '/tmp/src/themes/che/login/resources/img/favicon.ico' -> '/opt/jboss/keycloak/themes/che/login/resources/img/favicon.ico'
+  | '/tmp/src/themes/che/login/resources/img/logo-github-hover@3x.png' -> '/opt/jboss/keycloak/themes/che/login/resources/img/logo-github-hover@3x.png'
+  | '/tmp/src/themes/che/login/resources/img/logo-github@3x.png' -> '/opt/jboss/keycloak/themes/che/login/resources/img/logo-github@3x.png'
+  | '/tmp/src/themes/che/login/theme.properties' -> '/opt/jboss/keycloak/themes/che/login/theme.properties'
+  | Adding the Che configuration to import into directory: /opt/jboss/keycloak/realms ...
+  | '/tmp/src/realms/master-realm.json.erb' -> '/opt/jboss/keycloak/realms/master-realm.json'
+  | '/tmp/src/realms/master-users-0.json.erb' -> '/opt/jboss/keycloak/realms/master-users-0.json'
+  | Pushing image 172.30.1.1:5000/eclipse-che/keycloak:latest ...
+  | Pushed 0/20 layers, 0% complete
+  | Pushed 1/20 layers, 5% complete
+  | Pushed 2/20 layers, 10% complete
+  | Pushed 3/20 layers, 15% complete
+  | Pushed 4/20 layers, 20% complete
+  | Pushed 5/20 layers, 25% complete
+  | Pushed 6/20 layers, 30% complete
+  | Pushed 7/20 layers, 35% complete
+  | Pushed 8/20 layers, 41% complete
+  | Pushed 9/20 layers, 50% complete
+  | Pushed 10/20 layers, 55% complete
+  | Pushed 11/20 layers, 60% complete
+  | Pushed 12/20 layers, 65% complete
+  | Pushed 13/20 layers, 70% complete
+  | Pushed 14/20 layers, 75% complete
+  | Pushed 15/20 layers, 80% complete
+  | Pushed 16/20 layers, 85% complete
+  | Pushed 17/20 layers, 90% complete
+  | Pushed 18/20 layers, 95% complete
+  | Pushed 19/20 layers, 100% complete
+  | Pushed 20/20 layers, 100% complete
+  | Push successful
+ Logs from Keycloak pod: [KEYCLOAK DOCKER IMAGE] Using the external postgres database
+--
+  | 05:15:02,777 INFO  [org.jboss.modules] (main) JBoss Modules version 1.6.0.Final
+  | 05:15:02,919 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.7.SP1
+  | 05:15:03,092 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0049: Keycloak 3.3.0.CR2 (WildFly Core 3.0.1.Final) starting
+  | 05:15:08,244 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+  | 05:15:08,443 INFO  [org.wildfly.security] (Controller Boot Thread) ELY00001: WildFly Elytron version 1.1.1.Final
+  | 05:15:08,488 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+  | 05:15:08,977 INFO  [org.jboss.as.patching] (MSC service thread 1-3) WFLYPAT0050: Keycloak cumulative patch ID is: base, one-off patches include: none
+  | 05:15:09,114 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-1) WFLYDM0111: Keystore /opt/jboss/keycloak/standalone/configuration/application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+  | 05:15:09,393 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+  | 05:15:09,399 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: Keycloak 3.3.0.CR2 (WildFly Core 3.0.1.Final) started in 6610ms - Started 67 of 81 services (25 services are lazy, passive or on-demand)
+  | The batch executed successfully
+  | 05:15:09,853 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0050: Keycloak 3.3.0.CR2 (WildFly Core 3.0.1.Final) stopped in 59ms
+  | 05:15:11,358 INFO  [org.jboss.modules] (main) JBoss Modules version 1.6.0.Final
+  | 05:15:11,483 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.7.SP1
+  | 05:15:11,644 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0049: Keycloak 3.3.0.CR2 (WildFly Core 3.0.1.Final) starting
+  | 05:15:14,545 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+  | 05:15:14,789 INFO  [org.wildfly.security] (Controller Boot Thread) ELY00001: WildFly Elytron version 1.1.1.Final
+  | 05:15:14,811 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+  | 05:15:15,559 INFO  [org.jboss.as.patching] (MSC service thread 1-3) WFLYPAT0050: Keycloak cumulative patch ID is: base, one-off patches include: none
+  | 05:15:15,621 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-3) WFLYDM0111: Keystore /opt/jboss/keycloak/standalone/configuration/application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+  | 05:15:15,857 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+  | 05:15:15,864 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: Keycloak 3.3.0.CR2 (WildFly Core 3.0.1.Final) started in 4492ms - Started 67 of 86 services (30 services are lazy, passive or on-demand)
+  | The batch executed successfully
+  | 05:15:16,506 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0050: Keycloak 3.3.0.CR2 (WildFly Core 3.0.1.Final) stopped in 63ms
+  | =========================================================================
+  | JBoss Bootstrap Environment
+  | JBOSS_HOME: /opt/jboss/keycloak
+  | JAVA: /usr/lib/jvm/java/bin/java
+  | JAVA_OPTS:  -server -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true
+  | =========================================================================
+  | 05:15:17,529 INFO  [org.jboss.modules] (main) JBoss Modules version 1.6.0.Final
+  | 05:15:18,061 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.7.SP1
+  | 05:15:18,257 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0049: Keycloak 3.3.0.CR2 (WildFly Core 3.0.1.Final) starting
+  | 05:15:20,643 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+  | 05:15:20,710 INFO  [org.wildfly.security] (ServerService Thread Pool -- 21) ELY00001: WildFly Elytron version 1.1.1.Final
+  | 05:15:20,747 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 24) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+  | 05:15:21,071 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+  | 05:15:21,134 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.5.1.Final
+  | 05:15:21,179 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.5.1.Final
+  | 05:15:21,305 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 34) WFLYRS0016: RESTEasy version 3.0.24.Final
+  | 05:15:21,343 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 33) WFLYCLINF0001: Activating Infinispan subsystem.
+  | 05:15:21,363 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 41) WFLYNAM0001: Activating Naming Subsystem
+  | 05:15:21,370 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 39) WFLYJSF0007: Activated the following JSF Implementations: [main]
+  | 05:15:21,374 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 47) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+  | 05:15:21,401 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 32) WFLYIO001: Worker 'default' has auto-configured to 4 core threads with 32 task threads based on your 2 available processors
+  | 05:15:21,457 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 46) WFLYSEC0002: Activating Security Subsystem
+  | 05:15:22,150 INFO  [org.jboss.as.security] (MSC service thread 1-3) WFLYSEC0001: Current PicketBox version=5.0.2.Final
+  | 05:15:22,315 INFO  [org.jboss.as.connector] (MSC service thread 1-2) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.6.Final)
+  | 05:15:23,424 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 28) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+  | 05:15:23,478 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0003: Undertow 1.4.18.Final starting
+  | 05:15:23,518 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = h2
+  | 05:15:23,521 INFO  [org.jboss.as.naming] (MSC service thread 1-1) WFLYNAM0003: Starting Naming Service
+  | 05:15:23,604 INFO  [org.jboss.remoting] (MSC service thread 1-2) JBoss Remoting version 5.0.0.Final
+  | 05:15:23,613 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 28) WFLYJCA0005: Deploying non-JDBC-compliant driver class org.postgresql.Driver (version 42.1)
+  | 05:15:23,925 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = postgresql
+  | 05:15:23,929 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+  | 05:15:24,317 INFO  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 32 (per class), which is derived from thread worker pool sizing.
+  | 05:15:24,317 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 8 (per class), which is derived from the number of CPUs on this host.
+  | 05:15:24,399 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 48) WFLYUT0014: Creating file handler for path '/opt/jboss/keycloak/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+  | 05:15:24,435 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0012: Started server default-server.
+  | 05:15:24,455 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0018: Host default-host starting
+  | 05:15:24,768 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0006: Undertow HTTP listener default listening on 0.0.0.0:8080
+  | 05:15:25,004 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0493: EJB subsystem suspension complete
+  | 05:15:25,215 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+  | 05:15:25,226 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/KeycloakDS]
+  | 05:15:25,383 INFO  [org.jboss.as.patching] (MSC service thread 1-2) WFLYPAT0050: Keycloak cumulative patch ID is: base, one-off patches include: none
+  | 05:15:25,432 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-4) WFLYDM0111: Keystore /opt/jboss/keycloak/standalone/configuration/application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+  | 05:15:25,473 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-2) WFLYDS0013: Started FileSystemDeploymentService for directory /opt/jboss/keycloak/standalone/deployments
+  | 05:15:25,492 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "keycloak-server.war" (runtime-name: "keycloak-server.war")
+  | 05:15:25,628 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTPS listener https listening on 0.0.0.0:8443
+  | 05:15:27,685 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-3) ISPN000128: Infinispan version: Infinispan 'Chakra' 8.2.8.Final
+  | 05:15:28,427 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 51) WFLYCLINF0002: Started offlineSessions cache from keycloak container
+  | 05:15:28,428 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 54) WFLYCLINF0002: Started users cache from keycloak container
+  | 05:15:28,428 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 58) WFLYCLINF0002: Started authenticationSessions cache from keycloak container
+  | 05:15:28,428 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 50) WFLYCLINF0002: Started authorization cache from keycloak container
+  | 05:15:28,427 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0002: Started actionTokens cache from keycloak container
+  | 05:15:28,427 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 57) WFLYCLINF0002: Started realms cache from keycloak container
+  | 05:15:28,438 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 53) WFLYCLINF0002: Started sessions cache from keycloak container
+  | 05:15:28,427 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 56) WFLYCLINF0002: Started work cache from keycloak container
+  | 05:15:28,428 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 55) WFLYCLINF0002: Started loginFailures cache from keycloak container
+  | 05:15:28,427 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 59) WFLYCLINF0002: Started keys cache from keycloak container
+  | 05:15:28,482 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 60) WFLYCLINF0002: Started client-mappings cache from ejb container
+*** JBossAS process (183) received KILL signal ***

@@ -1,0 +1,160 @@
+Can't create project
+kind/question 
+I have Eclipse Che downloaded from here: https://install.codenvycorp.com/che/eclipse-che-latest.zip (Version 4.0.0 - RC3). I installed docker from here: https://docs.docker.com/engine/installation/linux/ubuntulinux/ I set CHE_HOME=/home/anton/che I start bin/che.sh I make new project On step 3 application freeze and write logs: [STDOUT] Listening for transport dt_socket at address: 4403
+[STDOUT] 2016-03-03 14:32:31,528[main]             [INFO ] [o.a.c.s.VersionLoggerListener 89]    - Server version:        Apache Tomcat/8.0.28
+[STDOUT] 2016-03-03 14:32:31,531[main]             [INFO ] [o.a.c.s.VersionLoggerListener 91]    - Server built:          Oct 7 2015 18:25:21 UTC
+[STDOUT] 2016-03-03 14:32:31,532[main]             [INFO ] [o.a.c.s.VersionLoggerListener 93]    - Server number:         8.0.28.0
+[STDOUT] 2016-03-03 14:32:31,532[main]             [INFO ] [o.a.c.s.VersionLoggerListener 95]    - OS Name:               Linux
+[STDOUT] 2016-03-03 14:32:31,533[main]             [INFO ] [o.a.c.s.VersionLoggerListener 97]    - OS Version:            4.2.0-30-generic
+[STDOUT] 2016-03-03 14:32:31,540[main]             [INFO ] [o.a.c.s.VersionLoggerListener 99]    - Architecture:          amd64
+[STDOUT] 2016-03-03 14:32:31,541[main]             [INFO ] [o.a.c.s.VersionLoggerListener 101]   - Java Home:             /opt/jdk1.8.0_45/jre
+[STDOUT] 2016-03-03 14:32:31,541[main]             [INFO ] [o.a.c.s.VersionLoggerListener 103]   - JVM Version:           1.8.0_45-b14
+[STDOUT] 2016-03-03 14:32:31,542[main]             [INFO ] [o.a.c.s.VersionLoggerListener 105]   - JVM Vendor:            Oracle Corporation
+[STDOUT] 2016-03-03 14:32:31,542[main]             [INFO ] [o.a.c.s.VersionLoggerListener 107]   - CATALINA_BASE:         /home/user/che/ws-agent
+[STDOUT] 2016-03-03 14:32:31,543[main]             [INFO ] [o.a.c.s.VersionLoggerListener 109]   - CATALINA_HOME:         /home/user/che/ws-agent
+[STDOUT] 2016-03-03 14:32:31,544[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.config.file=/home/user/che/ws-agent/conf/logging.properties
+[STDOUT] 2016-03-03 14:32:31,544[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+[STDOUT] 2016-03-03 14:32:31,545[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Xms256m
+[STDOUT] 2016-03-03 14:32:31,545[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Xmx1024m
+[STDOUT] 2016-03-03 14:32:31,546[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.logs.dir=/home/user/che/ws-agent/logs
+[STDOUT] 2016-03-03 14:32:31,546[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote
+[STDOUT] 2016-03-03 14:32:31,547[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.ssl=false
+[STDOUT] 2016-03-03 14:32:31,547[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.authenticate=false
+[STDOUT] 2016-03-03 14:32:31,547[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.local.conf.dir=/mnt/che/conf
+[STDOUT] 2016-03-03 14:32:31,548[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -agentlib:jdwp=transport=dt_socket,address=4403,server=y,suspend=n
+[STDOUT] 2016-03-03 14:32:31,548[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.endorsed.dirs=/home/user/che/ws-agent/endorsed
+[STDOUT] 2016-03-03 14:32:31,549[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.base=/home/user/che/ws-agent
+[STDOUT] 2016-03-03 14:32:31,549[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.home=/home/user/che/ws-agent
+[STDOUT] 2016-03-03 14:32:31,549[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.io.tmpdir=/home/user/che/ws-agent/temp
+[STDOUT] 2016-03-03 14:32:31,792[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 424]  - Initializing ProtocolHandler ["http-nio-4401"]
+[STDOUT] 2016-03-03 14:32:31,814[main]             [INFO ] [o.a.t.util.net.NioSelectorPool 72]   - Using a shared selector for servlet write/read
+[STDOUT] 2016-03-03 14:32:31,820[main]             [INFO ] [o.a.catalina.startup.Catalina 587]   - Initialization processed in 855 ms
+[STDOUT] 2016-03-03 14:32:31,856[main]             [INFO ] [c.m.JmxRemoteLifecycleListener 332]  - The JMX Remote Listener has configured the registry on port 32001 and the server on port 32101 for the Platform server
+[STDOUT] 2016-03-03 14:32:31,857[main]             [INFO ] [o.a.c.core.StandardService 433]      - Starting service Catalina
+[STDOUT] 2016-03-03 14:32:31,857[main]             [INFO ] [o.a.c.core.StandardEngine 259]       - Starting Servlet Engine: Apache Tomcat/8.0.28
+[STDOUT] 2016-03-03 14:32:31,957[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 916]        - Deploying web application archive /home/user/che/ws-agent/webapps/ide.war
+[STDOUT] Thu Mar 03 14:32:44 UTC 2016 - [localhost-startStop-1] Product-specified preferences called before plugin is started
+[STDOUT] 2016-03-03 14:32:44,638[ventBusClient-0]  [WARN ] [.c.a.c.n.WSocketEventBusClient 256]  - Not able to connect to ws://che-host:8080/ide/api/eventbus/?token=dummy_token because Connection timeout. Retrying 
+[STDOUT] 2016-03-03 14:32:44,700[ost-startStop-1]  [ERROR] [o.a.c.c.C.[.[localhost].[/ide] 4744] - Exception sending context initialized event to listener instance of class org.eclipse.che.inject.CodenvyBootstrap
+[STDOUT] com.google.inject.CreationException: Unable to create injector, see the following errors:
+[STDOUT] 
+[STDOUT] 1) Invocation error of method public void org.eclipse.che.ide.ext.java.server.ApiEndpointAccessibilityChecker.start() throws org.eclipse.che.api.core.ForbiddenException,org.eclipse.che.api.core.BadRequestException,org.eclipse.che.api.core.ConflictException,org.eclipse.che.api.core.NotFoundException,org.eclipse.che.api.core.ServerException,org.eclipse.che.api.core.UnauthorizedException,java.io.IOException on org.eclipse.che.ide.ext.java.server.ApiEndpointAccessibilityChecker@7dd4d9a6
+[STDOUT]   at org.eclipse.che.ide.ext.java.server.MachineModule.configure(MachineModule.java:103)
+[STDOUT]   while locating org.eclipse.che.ide.ext.java.server.ApiEndpointAccessibilityChecker
+[STDOUT] 
+[STDOUT] 1 error
+[STDOUT]    at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:466) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:184) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.Guice.createInjector(Guice.java:96) ~[guice-4.0.jar:na]
+[STDOUT]    at org.everrest.guice.servlet.EverrestGuiceContextListener.getInjector(EverrestGuiceContextListener.java:137) ~[everrest-integration-guice-1.12.0.jar:na]
+[STDOUT]    at com.google.inject.servlet.GuiceServletContextListener.contextInitialized(GuiceServletContextListener.java:47) ~[guice-servlet-4.0.jar:na]
+[STDOUT]    at org.everrest.guice.servlet.EverrestGuiceContextListener.contextInitialized(EverrestGuiceContextListener.java:84) ~[everrest-integration-guice-1.12.0.jar:na]
+[STDOUT]    at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4738) [catalina.jar:8.0.28]
+[STDOUT]    at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5181) [catalina.jar:8.0.28]
+[STDOUT]    at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [catalina.jar:8.0.28]
+[STDOUT]    at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725) [catalina.jar:8.0.28]
+[STDOUT]    at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701) [catalina.jar:8.0.28]
+[STDOUT]    at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717) [catalina.jar:8.0.28]
+[STDOUT]    at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:945) [catalina.jar:8.0.28]
+[STDOUT]    at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1798) [catalina.jar:8.0.28]
+[STDOUT]    at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_45]
+[STDOUT]    at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_45]
+[STDOUT]    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_45]
+[STDOUT]    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_45]
+[STDOUT]    at java.lang.Thread.run(Thread.java:745) [na:1.8.0_45]
+[STDOUT] Caused by: java.net.SocketTimeoutException: connect timed out
+[STDOUT]    at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_45]
+[STDOUT]    at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345) ~[na:1.8.0_45]
+[STDOUT]    at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_45]
+[STDOUT]    at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_45]
+[STDOUT]    at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_45]
+[STDOUT]    at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_45]
+[STDOUT]    at sun.net.NetworkClient.doConnect(NetworkClient.java:175) ~[na:1.8.0_45]
+[STDOUT]    at sun.net.www.http.HttpClient.openServer(HttpClient.java:432) ~[na:1.8.0_45]
+[STDOUT]    at sun.net.www.http.HttpClient.openServer(HttpClient.java:527) ~[na:1.8.0_45]
+[STDOUT]    at sun.net.www.http.HttpClient.<init>(HttpClient.java:211) ~[na:1.8.0_45]
+[STDOUT]    at sun.net.www.http.HttpClient.New(HttpClient.java:308) ~[na:1.8.0_45]
+[STDOUT]    at sun.net.www.http.HttpClient.New(HttpClient.java:326) ~[na:1.8.0_45]
+[STDOUT]    at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1168) ~[na:1.8.0_45]
+[STDOUT]    at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1104) ~[na:1.8.0_45]
+[STDOUT]    at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:998) ~[na:1.8.0_45]
+[STDOUT]    at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:932) ~[na:1.8.0_45]
+[STDOUT]    at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1512) ~[na:1.8.0_45]
+[STDOUT]    at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1440) ~[na:1.8.0_45]
+[STDOUT]    at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480) ~[na:1.8.0_45]
+[STDOUT]    at org.eclipse.che.api.core.rest.DefaultHttpJsonRequest.doRequest(DefaultHttpJsonRequest.java:225) ~[che-core-api-core-4.0.0-RC3.jar:4.0.0-RC3]
+[STDOUT]    at org.eclipse.che.api.core.rest.DefaultHttpJsonRequest.request(DefaultHttpJsonRequest.java:136) ~[che-core-api-core-4.0.0-RC3.jar:4.0.0-RC3]
+[STDOUT]    at org.eclipse.che.ide.ext.java.server.ApiEndpointAccessibilityChecker.start(ApiEndpointAccessibilityChecker.java:55) ~[classes/:4.0.0-RC3]
+[STDOUT]    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_45]
+[STDOUT]    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_45]
+[STDOUT]    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_45]
+[STDOUT]    at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_45]
+[STDOUT]    at org.eclipse.che.inject.lifecycle.InitModule$1$1.afterInjection(InitModule.java:44) ~[che-core-commons-inject-4.0.0-RC3.jar:4.0.0-RC3]
+[STDOUT]    at com.google.inject.internal.MembersInjectorImpl.notifyListeners(MembersInjectorImpl.java:119) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:115) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199) ~[guice-4.0.jar:na]
+[STDOUT]    at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180) ~[guice-4.0.jar:na]
+[STDOUT]    ... 18 common frames omitted
+[STDOUT] 2016-03-03 14:32:44,818[ost-startStop-1]  [ERROR] [o.a.c.core.StandardContext 5182]     - One or more listeners failed to start. Full details will be found in the appropriate container log file
+[STDOUT] 2016-03-03 14:32:44,836[ost-startStop-1]  [ERROR] [o.a.c.core.StandardContext 5233]     - Context [/ide] startup failed due to previous errors
+[STDOUT] 2016-03-03 14:32:44,868[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 980]        - Deployment of web application archive /home/user/che/ws-agent/webapps/ide.war has finished in 12,910 ms
+[STDOUT] 2016-03-03 14:32:44,875[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 469]  - Starting ProtocolHandler ["http-nio-4401"]
+[STDOUT] 2016-03-03 14:32:44,884[main]             [INFO ] [o.a.catalina.startup.Catalina 638]   - Server startup in 13063 ms
+[STDOUT] 2016-03-03 14:32:48,640[ventBusClient-0]  [ERROR] [.c.a.c.n.WSocketEventBusClient 267]  - Unexpected here
+[STDERR] java.lang.IllegalStateException: Can't overwrite cause with java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [org.apache.catalina.loader.WebappClassLoaderBase]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+[STDERR]    at java.lang.Throwable.initCause(Throwable.java:457)
+[STDERR]    at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1344)
+[STDERR]    at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1206)
+[STDERR]    at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1167)
+[STDERR]    at ch.qos.logback.classic.spi.PackagingDataCalculator.loadClass(PackagingDataCalculator.java:207)
+[STDERR]    at ch.qos.logback.classic.spi.PackagingDataCalculator.bestEffortLoadClass(PackagingDataCalculator.java:232)
+[STDERR]    at ch.qos.logback.classic.spi.PackagingDataCalculator.computeBySTEP(PackagingDataCalculator.java:138)
+[STDERR]    at ch.qos.logback.classic.spi.PackagingDataCalculator.populateUncommonFrames(PackagingDataCalculator.java:113)
+[STDERR]    at ch.qos.logback.classic.spi.PackagingDataCalculator.populateFrames(PackagingDataCalculator.java:105)
+[STDERR]    at ch.qos.logback.classic.spi.PackagingDataCalculator.calculate(PackagingDataCalculator.java:57)
+[STDERR]    at ch.qos.logback.classic.spi.ThrowableProxy.calculatePackagingData(ThrowableProxy.java:147)
+[STDERR]    at ch.qos.logback.classic.spi.LoggingEvent.<init>(LoggingEvent.java:124)
+[STDERR]    at ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(Logger.java:440)
+[STDERR]    at ch.qos.logback.classic.Logger.filterAndLog_0_Or3Plus(Logger.java:396)
+[STDERR]    at ch.qos.logback.classic.Logger.error(Logger.java:559)
+[STDERR]    at org.eclipse.che.api.core.notification.WSocketEventBusClient$ConnectTask.run(WSocketEventBusClient.java:268)
+[STDERR]    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+[STDERR]    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+[STDERR]    at java.lang.Thread.run(Thread.java:745)
+[STDERR] Caused by: java.lang.ClassNotFoundException
+[STDERR]    at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1343)
+[STDERR]    ... 17 more
+[STDERR] java.lang.IllegalStateException: Can't overwrite cause with java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [java.lang.ClassLoader]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+[STDERR]    at java.lang.Throwable.initCause(Throwable.java:457)
+[STDERR]    at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1344)
+[STDERR]    at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1206)
+[STDERR]    at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1167)
+[STDERR]    at ch.qos.logback.classic.spi.PackagingDataCalculator.loadClass(PackagingDataCalculator.java:207)
+[STDERR]    at ch.qos.logback.classic.spi.PackagingDataCalculator.bestEffortLoadClass(PackagingDataCalculator.java:232)
+[STDERR]    at ch.qos.logback.classic.spi.PackagingDataCalculator.computeBySTEP(PackagingDataCalculator.java:138)
+[STDERR]    at ch.qos.logback.classic.spi.PackagingDataCalculator.populateUncommonFrames(PackagingDataCalculator.java:113)
+[STDERR]    at ch.qos.logback.classic.spi.PackagingDataCalculator.populateFrames(PackagingDataCalculator.java:105)
+[STDERR]    at ch.qos.logback.classic.spi.PackagingDataCalculator.calculate(PackagingDataCalculator.java:57)
+[STDERR]    at ch.qos.logback.classic.spi.ThrowableProxy.calculatePackagingData(ThrowableProxy.java:147)
+[STDERR]    at ch.qos.logback.classic.spi.LoggingEvent.<init>(LoggingEvent.java:124)
+[STDERR]    at ch.qos.logback.classic.Logger.buildLoggingEventAndAppend(Logger.java:440)
+[STDERR]    at ch.qos.logback.classic.Logger.filterAndLog_0_Or3Plus(Logger.java:396)
+[STDERR]    at ch.qos.logback.classic.Logger.error(Logger.java:559)
+[STDERR]    at org.eclipse.che.api.core.notification.WSocketEventBusClient$ConnectTask.run(WSocketEventBusClient.java:268)
+[STDERR]    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+[STDERR]    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+[STDERR]    at java.lang.Thread.run(Thread.java:745)
+[STDERR] Caused by: java.lang.ClassNotFoundException
+[STDERR]    at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForClassLoading(WebappClassLoaderBase.java:1343)
+[STDERR]    ... 17 more

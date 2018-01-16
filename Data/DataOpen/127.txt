@@ -1,0 +1,3 @@
+Display resource errors (e.g. compiling errors) displayed by a language server into the Project Explorer view
+kind/enhancement 
+Description Errors detected by a language server should be reflected in the Project Explorer view. Requirements Let's suppose I have a resource containing errors. I want this resource and its parents to be underlined in the Project Explorer as in the following example : current behaviour : expected behaviour : Linked issues This requirement is an extension of #5926 but applied to resources managed by a code server.

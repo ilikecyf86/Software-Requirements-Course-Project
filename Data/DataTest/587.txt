@@ -1,0 +1,3 @@
+How to create a html+js project in 4.x
+
+With the built-in "ubuntu_jdk8" or "debian_jdk8", I can create Java projects successfully. But how can I create a normal html+js project? I can create a blank project and create some html/js files, but not sure how to run the machine to give me a url to visit. I also tried to create a new workspace based on FROM codenvy/javascript_html, but I can't create any project in this workspace, there is no template, and the "Create" button is always disabled: Along with this question, I also want to know how to create a nodejs project

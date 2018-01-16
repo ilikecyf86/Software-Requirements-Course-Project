@@ -1,0 +1,3 @@
+[languageserver] hover provider
+
+Should be supported https://github.com/Microsoft/vscode-languageserver-protocol#hover

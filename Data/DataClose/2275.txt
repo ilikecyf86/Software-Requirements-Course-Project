@@ -1,0 +1,3 @@
+Allow to customise shortcuts
+kind/enhancement 
+Would it be possible to customise the shortcuts provided by Eclipse Che? E.g. on OS X the shortcut for Find Action is Command + A - which is the same as Select All, making it unusable.

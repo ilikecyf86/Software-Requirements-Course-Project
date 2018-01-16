@@ -1,0 +1,3 @@
+Display current loading step in top menu
+kind/enhancement team/plugin 
+Description Rework command controller component to display loading status and step name Is a part of #5231 Reproduction Steps OS and version: Diagnostics:

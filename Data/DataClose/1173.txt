@@ -1,0 +1,3 @@
+Cannot delete user from admin dashboard, if he has running workspaces
+kind/bug team/platform severity/P1 
+Cannot use UserService to delete a user, if he has running workspaces: This is the response, that will be returned {"message":"org.eclipse.che.api.core.ServerException cannot be cast to java.lang.Error"} That ServerException will occur in JpaWorkspaceDao in event subscriber, that tries to remove the workspace in onCascadeEvent method

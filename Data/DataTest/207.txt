@@ -1,0 +1,3 @@
+Add ability to delete multiple workspaces from workspace list
+Improvement 
+In the list of projects and in the list of factories, we have the ability to select multiple items from the list and delete all of them. We need to handle the same use case in the list of workspaces. To do that we will: add the "more option" button in the header, with the entry "Delete selected workspaces" on the workspace item in the list: we will display a checkbox - which will always be displayed and visible to the users.

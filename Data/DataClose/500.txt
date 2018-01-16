@@ -1,0 +1,3 @@
+Full text search should support pagination
+kind/enhancement team/ide status/in-progress 
+For preventing crash or freeze browser need to add ability get search by discrete pages. For now we have problem described in the #6126 as temporary solutions we just limit search result in the #6142

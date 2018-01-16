@@ -1,0 +1,3 @@
+Improve workspace details toolbar
+kind/enhancement sprint/next-sprint status/open-for-dev team/plugin status/code-review status/open-for-dev sprint/next-sprint status/pending-merge status/code-review 
+The workspace details toolbar should contain: workspace name workspace status run/stop button open button

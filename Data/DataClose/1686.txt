@@ -1,0 +1,3 @@
+Sample/Guide to implementing error mechanism for new language
+kind/question 
+My use case includes implementing a new language plugin for CHE. There are examples for code completion and syntax highlighting. What is the way to implement error hinting on an editor, like the errors the java editor provides ?

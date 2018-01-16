@@ -1,0 +1,8 @@
+Question : How to compile C++ that using external library?
+kind/question 
+OS : 16.04 ubuntu Che : 5.8.1 #include <boost/thread/thread.hpp> #include <boost/thread/mutex.hpp> boost::mutex mutex1, mutex2; void ThreadA() { // Solves deadlock problem mutex1.lock(); std::cout << "Thread A" << std::endl; mutex2.lock(); mutex2.unlock(); mutex1.unlock(); } void ThreadB() { // Solves deadlock problem mutex1.lock(); std::cout << "Thread B" << std::endl; mutex2.lock(); mutex1.unlock(); mutex2.unlock(); } void ExecuteThreads() { boost::thread t1( ThreadA ); boost::thread t2( ThreadB ); t1.join();
+t2.join();
+
+std::cout << "Finished" << std::endl;
+ } int main() { ExecuteThreads(); return 0;
+ } i have the above C++ code that using external library, so how should i compile using this compile CLI g++ thread.cpp -o thread -L/usr/lib -Lbuild -L. -lboost_system -lboost_thread inside Che? p/s : iostream can not be paste in, need to include also

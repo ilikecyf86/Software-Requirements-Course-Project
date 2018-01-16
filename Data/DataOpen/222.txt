@@ -1,0 +1,3 @@
+Port implementors to jdt.ls extension
+kind/task target/che6 target/branch 
+Move the code that finds implementers into jdt.ls extension and call from "implementers" through custom command.

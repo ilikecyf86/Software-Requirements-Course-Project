@@ -1,0 +1,3 @@
+assembly-ide-war build hangs
+kind/question 
+Hello, After linking my custom agent to assembly-ide-war => am trying to build with these commands cd che/assembly/assembly-ide-war mvn clean install -Denforcer.skip=true -Dmaven.test.skip=true The build is stuck for long time and terminal shows the info as in screenshot below:

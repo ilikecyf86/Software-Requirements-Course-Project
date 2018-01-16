@@ -1,0 +1,3 @@
+ssh installer enabled by default when adding a new machine
+kind/bug team/plugin sprint/current-sprint sprint/current-sprint sprint/current-sprint 
+Steps to reproduce: Create a multi machine workspace. In User Dashboard, go to machines, add machine. Check workspaces config A new machine is added with ssh installer. On OpenShift this causes workspace start failure as ssh installer does not have sudo. This installer should not be added by default. All we need in a new machien by default is exec agent and terminal.

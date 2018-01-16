@@ -1,0 +1,3 @@
+Use Persistent Volumes Claims when creating workspaces
+kind/enhancement 
+Usage of hostPath volumes is not supported on multi-node OpenShift clusters. We should use PersistentVolumeClaims instead. This issue is to change OpenShiftConnector::createContainer to use PersistentVolumeClaims. See https://issues.jboss.org/browse/CHE-60 OS and version: any

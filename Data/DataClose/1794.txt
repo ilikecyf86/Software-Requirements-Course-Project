@@ -1,0 +1,3 @@
+[Docs] Intelij development setup section missing in help
+kind/docs 
+IDE setup section in help is mentioning intelij support, but help refers to missing section: https://eclipse-che.readme.io/v5.0/docs/setup-che-workspace#setup-the-intellij-ide h3. Steps to reproduce: Go to https://eclipse-che.readme.io/v5.0/docs/setup-che-workspace Select Intelij h3. Expected behavior Link should refer to some section or it should be removed.

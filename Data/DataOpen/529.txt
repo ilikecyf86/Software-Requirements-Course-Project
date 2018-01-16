@@ -1,0 +1,3 @@
+Display List of samples registered in Che
+kind/enhancement team/plugin 
+This screen allow the user to browse the list of register code samples with Che. (Similar to Stacks)

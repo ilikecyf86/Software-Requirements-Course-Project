@@ -1,0 +1,3 @@
+Make it possible to call Git diff widget from folder
+kind/enhancement team/enterprise status/open-for-dev 
+Git diff widget can show several files in the same widget by listing with the help of next / previous buttons: Git compare widget can show changed files tree, but diff cannot be called when folder is selected: It would be great to have an ability to call diff from folder. If git diff is invoked on the folder then the first file in the folder should be appeared in the git diff widget. But a user still will be able to navigate (prev/next) through the whole list of files.

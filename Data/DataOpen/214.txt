@@ -1,0 +1,25 @@
+IDE and Dashboard don't show any error message when docker workspace fails to start because of InternalInfrastructureException
+kind/bug target/che6 team/platform status/open-for-dev sprint/current-sprint 
+Description IDE and Dashboard don't show any error message when docker workspace fails to start because of InternalInfrastructureException. See how it looks like on IDE See how it looks like on Dashboard Workspace master logs 2017-11-02 13:23:21,203[nio-8080-exec-1]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 238]   - Starting workspace 'che/wksp-122t' with id 'workspacejbvytuks783dql14' by user 'che'
+2017-11-02 13:23:21,209[aceSharedPool-1]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 291]   - Workspace 'che:wksp-122t' with id 'workspacejbvytuks783dql14' start failed
+2017-11-02 13:23:21,209[aceSharedPool-1]  [ERROR] [o.e.c.a.w.s.WorkspaceRuntimes 301]   - Error response from docker API, status: 500, message: could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network
+
+org.eclipse.che.api.workspace.server.spi.InternalInfrastructureException: Error response from docker API, status: 500, message: could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network
+
+        at org.eclipse.che.workspace.infrastructure.docker.network.NetworkLifecycle.createNetwork(NetworkLifecycle.java:46)
+        at org.eclipse.che.workspace.infrastructure.docker.DockerInternalRuntime.internalStart(DockerInternalRuntime.java:188)
+        at org.eclipse.che.api.workspace.server.spi.InternalRuntime.start(InternalRuntime.java:103)
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes$StartRuntimeTask.run(WorkspaceRuntimes.java:275)
+        at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalRunnable.run(CopyThreadLocalRunnable.java:29)
+        at java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1626)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+        at java.lang.Thread.run(Thread.java:745)
+Caused by: org.eclipse.che.infrastructure.docker.client.exception.DockerException: Error response from docker API, status: 500, message: could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network
+
+        at org.eclipse.che.infrastructure.docker.client.DockerConnector.getDockerException(DockerConnector.java:1446)
+        at org.eclipse.che.infrastructure.docker.client.DockerConnector.createNetwork(DockerConnector.java:1285)
+        at org.eclipse.che.workspace.infrastructure.docker.network.NetworkLifecycle.createNetwork(NetworkLifecycle.java:39)
+        ... 8 common frames omitted
+
+ OS and version: Diagnostics:

@@ -1,0 +1,3 @@
+Remove unnecessary item from the check list in ServerRuntimeInfoTest
+kind/task team/production 
+Description After changing servers list in the IDE the 'terminal' item in runtime info widget is not visible on this moment. (We should resize or scroll this one).

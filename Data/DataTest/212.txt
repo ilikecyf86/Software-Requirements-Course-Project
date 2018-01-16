@@ -1,0 +1,3 @@
+Restore svn plugin for version 4.x
+kind/epic 
+We need to upgrade plugin-svn so that it'll be compatible with 4.x version.

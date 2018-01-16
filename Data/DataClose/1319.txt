@@ -1,0 +1,3 @@
+[Factory] Rename `.codenvy.dockerfile`
+kind/task sprint/current-sprint status/open-for-dev team/platform sprint/current-sprint 
+For Che, we can’t keep the .codenvy.dockerfile. Proposal would be to: Maintain the .codenvy.dockerfile file support for Codenvy- but deprecate it. Use a similar filename for both Codenvy/Che. Could be .che.dockerfile or .runtime.dockerfile

@@ -1,0 +1,3 @@
+Generate effective pom feature works wrong with multimodule projects
+kind/bug status/in-progress status/in-progress 
+Reproduction Steps: Create a maven multimodule project and select Assistant -> generate effective pom Expected behavior: The effective pom.xml should be generated and opened Observed behavior: The effective pom.xml is empty Has been added try/catch block in the GenerateEffectivePomTest for workaround Codenvy version: 5.0.0-M6 OS and version: Ubuntu 14.04 LTSAdditional information: Note: it reproduced mostly in nightly server

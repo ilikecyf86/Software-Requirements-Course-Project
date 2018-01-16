@@ -1,0 +1,3 @@
+Updating .NET Core Template and Maintainer
+kind/enhancement 
+I've already contributed the PR to eclipse/che-dockerfiles#30 and have signed the CLA (I have a screenshot in the PR). There has been no merge so far and I have been informed to post here so it makes the next sprint.

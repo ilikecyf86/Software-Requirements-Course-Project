@@ -1,0 +1,186 @@
+Browser can't access workspace: "client has aborted connection"
+kind/question 
+So I'm trying to setup che on a dedicated server, but I've not been able to access the IDE from my browser browser. The workspace does seem to launch, but no success creating a project, eventually I get a "failed to initialize IDE" popup. When I hit the workspace "restart" button, I get get this output: [DOCKER] latest: Pulling from eclipse/ubuntu_python 
+[DOCKER] Digest: sha256:d4fd345b6d1c3e694e68c69b3089828b9ac123f4b8bc29b7f000ec4f70f00a37 
+[DOCKER] Status: Image is up to date for eclipse/ubuntu_python:latest 
+[STDOUT] Exec-agent configuration
+[STDOUT]   Server
+[STDOUT]     - Address: :4411
+[STDOUT]     - Static content: /home/user/che/terminal/
+[STDOUT]     - Base path: ''
+[STDOUT]   Terminal
+[STDOUT]     - Slave command: '/bin/bash'
+[STDOUT]     - Activity tracking enabled: false
+[STDOUT]   Process executor
+[STDOUT]     - Logs dir: /home/user/che/exec-agent/logs
+[STDOUT] 
+[STDOUT] ⇩ Registered HttpRoutes:
+[STDOUT] 
+[STDOUT] Process Routes:
+[STDOUT] ✓ Start Process ........................... POST   /process
+[STDOUT] ✓ Get Process ............................. GET    /process/:pid
+[STDOUT] ✓ Kill Process ............................ DELETE /process/:pid
+[STDOUT] ✓ Get Process Logs ........................ GET    /process/:pid/logs
+[STDOUT] ✓ Get Processes ........................... GET    /process
+[STDOUT] 
+[STDOUT] Channel Routes:
+[STDOUT] ✓ Connect to Exec-Agent(webscoket) ........ GET    /connect
+[STDOUT] 
+[STDOUT] Terminal routes:
+[STDOUT] ✓ Connect to pty(webscoket) ............... GET    /pty
+[STDOUT] 
+[STDOUT] 
+[STDOUT] ⇩ Registered RpcRoutes:
+[STDOUT] 
+[STDOUT] Process Routes:
+[STDOUT] ✓ process.start
+[STDOUT] ✓ process.kill
+[STDOUT] ✓ process.subscribe
+[STDOUT] ✓ process.unsubscribe
+[STDOUT] ✓ process.updateSubscriber
+[STDOUT] ✓ process.getLogs
+[STDOUT] ✓ process.getProcess
+[STDOUT] ✓ process.getProcesses
+Listening for transport dt_socket at address: 4403
+2017-01-20 21:55:35,849[main]             [INFO ] [o.a.c.s.VersionLoggerListener 89]    - Server version:        Apache Tomcat/8.0.38
+2017-01-20 21:55:35,864[main]             [INFO ] [o.a.c.s.VersionLoggerListener 91]    - Server built:          Oct 6 2016 20:51:55 UTC
+2017-01-20 21:55:35,869[main]             [INFO ] [o.a.c.s.VersionLoggerListener 93]    - Server number:         8.0.38.0
+2017-01-20 21:55:35,876[main]             [INFO ] [o.a.c.s.VersionLoggerListener 95]    - OS Name:               Linux
+2017-01-20 21:55:35,879[main]             [INFO ] [o.a.c.s.VersionLoggerListener 97]    - OS Version:            3.16.0-4-amd64
+2017-01-20 21:55:35,886[main]             [INFO ] [o.a.c.s.VersionLoggerListener 99]    - Architecture:          amd64
+2017-01-20 21:55:35,890[main]             [INFO ] [o.a.c.s.VersionLoggerListener 101]   - Java Home:             /usr/lib/jvm/java-8-openjdk-amd64/jre
+2017-01-20 21:55:35,897[main]             [INFO ] [o.a.c.s.VersionLoggerListener 103]   - JVM Version:           1.8.0_111-8u111-b14-3~14.04.1-b14
+2017-01-20 21:55:35,901[main]             [INFO ] [o.a.c.s.VersionLoggerListener 105]   - JVM Vendor:            Oracle Corporation
+2017-01-20 21:55:35,908[main]             [INFO ] [o.a.c.s.VersionLoggerListener 107]   - CATALINA_BASE:         /home/user/che/ws-agent
+2017-01-20 21:55:35,915[main]             [INFO ] [o.a.c.s.VersionLoggerListener 109]   - CATALINA_HOME:         /home/user/che/ws-agent
+2017-01-20 21:55:35,921[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.config.file=/home/user/che/ws-agent/conf/logging.properties
+2017-01-20 21:55:35,926[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+2017-01-20 21:55:35,936[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Xms256m
+2017-01-20 21:55:35,940[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Xmx2048m
+2017-01-20 21:55:35,944[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.security.egd=file:/dev/./urandom
+2017-01-20 21:55:35,955[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.logs.dir=/home/user/che/ws-agent/logs
+2017-01-20 21:55:35,959[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+2017-01-20 21:55:35,964[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+2017-01-20 21:55:35,971[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -agentlib:jdwp=transport=dt_socket,address=4403,server=y,suspend=n
+2017-01-20 21:55:35,974[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote
+2017-01-20 21:55:35,977[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.ssl=false
+2017-01-20 21:55:35,982[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.authenticate=false
+2017-01-20 21:55:35,987[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.local.conf.dir=/mnt/che/conf
+2017-01-20 21:55:35,993[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.endorsed.dirs=/home/user/che/ws-agent/endorsed
+2017-01-20 21:55:35,996[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.base=/home/user/che/ws-agent
+2017-01-20 21:55:36,005[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.home=/home/user/che/ws-agent
+2017-01-20 21:55:36,009[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.io.tmpdir=/home/user/che/ws-agent/temp
+2017-01-20 21:55:36,997[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 443]  - Initializing ProtocolHandler ["http-nio-4401"]
+2017-01-20 21:55:37,131[main]             [INFO ] [o.a.t.util.net.NioSelectorPool 72]   - Using a shared selector for servlet write/read
+2017-01-20 21:55:37,155[main]             [INFO ] [o.a.catalina.startup.Catalina 591]   - Initialization processed in 3780 ms
+2017-01-20 21:55:37,569[main]             [INFO ] [c.m.JmxRemoteLifecycleListener 332]  - The JMX Remote Listener has configured the registry on port 32002 and the server on port 32102 for the Platform server
+2017-01-20 21:55:37,581[main]             [INFO ] [o.a.c.core.StandardService 435]      - Starting service Catalina
+2017-01-20 21:55:37,585[main]             [INFO ] [o.a.c.core.StandardEngine 259]       - Starting Servlet Engine: Apache Tomcat/8.0.38
+2017-01-20 21:55:38,115[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 911]        - Deploying web application archive /home/user/che/ws-agent/webapps/ROOT.war
+2017-01-20 21:56:42,072[ost-startStop-1]  [INFO ] [o.e.c.a.p.s.WorkspaceHolder 59]      - Workspace ID: workspace7o1jt4g7ts6pqaql
+2017-01-20 21:56:42,082[ost-startStop-1]  [INFO ] [o.e.c.a.p.s.WorkspaceHolder 60]      - API Endpoint: http://che-host:8080/wsmaster/api
+2017-01-20 21:56:42,085[ost-startStop-1]  [INFO ] [o.e.c.a.p.s.WorkspaceHolder 61]      - User Token  : true
+Fri Jan 20 21:56:50 UTC 2017 - [localhost-startStop-1] Product-specified preferences called before plugin is started
+2017-01-20 21:56:50,291[ost-startStop-1]  [WARN ] [e.c.p.m.s.c.c.ClasspathManager 87]   - Maven server not started looks like you don't have Maven in your path
+2017-01-20 21:56:52,006[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 975]        - Deployment of web application archive /home/user/che/ws-agent/webapps/ROOT.war has finished in 73,887 ms
+2017-01-20 21:56:52,037[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 488]  - Starting ProtocolHandler ["http-nio-4401"]
+2017-01-20 21:56:52,084[main]             [INFO ] [o.a.catalina.startup.Catalina 642]   - Server startup in 74925 ms
+2017-01-20 21:56:53,616[io-4401-exec-12]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,616[io-4401-exec-14]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,617[io-4401-exec-15]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,617[nio-4401-exec-7]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,617[io-4401-exec-18]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,617[nio-4401-exec-9]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,617[io-4401-exec-17]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,617[nio-4401-exec-4]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,617[nio-4401-exec-8]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,617[nio-4401-exec-1]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,618[nio-4401-exec-2]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,618[nio-4401-exec-6]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,618[nio-4401-exec-5]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,618[io-4401-exec-13]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,618[io-4401-exec-10]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,618[io-4401-exec-19]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,618[nio-4401-exec-3]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,618[io-4401-exec-16]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-20 21:56:53,619[io-4401-exec-11]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+ To be specific, I'm running everything in a single dedicated server, and trying to access it from a browser in another machine. When scouting for the requests sent by the browser, I see that most requests are made to the proper hostname, except for when the error happens, it tries a few calls to several URLs in the form of http://127.0.0.1/api/xx so I guess that's the problem but I've been unable to configure this specific IP. I use the flag -e CHE_HOST=<ip> I have also ended up trying setting environment variables CHE_DOCKER_MACHINE_HOST=domain.tld (domain name pointing over <ip>) CHE_HOST_IP=<ip> Reproduction Steps: explained above, che launched with docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /home/angivare/docker_data:/data -e CHE_HOST=<ip> eclipse/che restart Che version: 5.1.1 OS and version: jessie 8.1 Docker version: 1.13.0 Che cli.log output: Fri Jan 20 21:43:23 UTC 2017
+INFO: (che cli): Checking network... (hint: '--fast' skips version, network, and nightly checks)
+/usr/bin/curl  "-I -k dockerhub.com -s -o /dev/null --write-out %{http_code}"
+INFO: (che cli): Loading cli...
+DEBUG: docker_run
+DEBUG: is_boot2docker
+DEBUG: is_initialized
+DEBUG: is_initialized
+DEBUG: is_initialized
+DEBUG: cli_parse
+DEBUG: cmd_restart
+INFO: (che restart): Restarting...
+DEBUG: cmd_stop
+INFO: (che stop): Stopping containers...
+DEBUG: is_initialized
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che stop -t 180 >> "/data/cli.log" 2>&1 || true
+DEBUG: docker_compose
+DEBUG: docker_run
+Stopping che ... done
+INFO: (che stop): Removing containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che rm >> "/data/cli.log" 2>&1 || true
+DEBUG: docker_compose
+DEBUG: docker_run
+Going to remove che
+Removing che ... done
+DEBUG: cmd_start
+DEBUG: is_initialized
+INFO: (che cli): Checking registry for version '5.1.1' images
+eval IMAGE_PUPPET=puppet/puppet-agent-alpine:4.6.2
+eval IMAGE_REGISTRY=registry:2.5.0
+eval IMAGE_INIT=eclipse/che-init:5.1.1
+eval IMAGE_CHE=eclipse/che-server:5.1.1
+INFO: (che config):  Generating che configuration...
+DEBUG: generate_configuration_with_puppet
+DEBUG: is_docker_for_windows
+docker_run                   --env-file="/data/che.env"                   --env-file=/version/5.1.1/images                   -v "/home/angivare/docker_data/instance":/opt/che:rw                                      -e "CHE_ENV_FILE=/home/angivare/docker_data/instance/config/che.env"                   -e "CHE_CONTAINER_ROOT=/data"                   -e "CHE_ENVIRONMENT=production"                   -e "CHE_CONFIG=/home/angivare/docker_data/instance"                   -e "CHE_INSTANCE=/home/angivare/docker_data/instance"                   -e "CHE_REPO=off"                   --entrypoint=/usr/bin/puppet                       eclipse/che-init:5.1.1                           apply --modulepath                                 /etc/puppet/modules/                                 /etc/puppet/manifests/ --show_diff >> "/data/cli.log"
+DEBUG: docker_run
+Notice: Compiled catalog for 97e37b6c7971.online.net in environment production in 0.73 seconds
+Notice: Applied catalog in 0.22 seconds
+INFO: (che config):  Customizing docker-compose for running in a container
+INFO: (che start):  Preflight checks
+DEBUG: port_open
+         port 8080 (http):       [AVAILABLE] 
+DEBUG: port_open
+
+INFO: (che start):  Starting containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p="che" up -d >> "/data/cli.log" 2>&1
+DEBUG: docker_compose
+DEBUG: docker_run
+Creating che
+docker inspect -f '{{.Id}}' che
+INFO: (che start):  Services booting...
+INFO: (che start):  Server logs at "docker logs -f che"
+DEBUG: docker_compose
+DEBUG: docker_run
+DEBUG: Container with id f3b565fddfb8 is matching che service
+DEBUG: Running state of container f3b565fddfb8 is true
+/usr/bin/curl  "-I -k <ip>:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+sleep 2
+/usr/bin/curl  "-I -k <ip>:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+sleep 2
+/usr/bin/curl  "-I -k <ip>:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+DEBUG: docker_compose
+DEBUG: docker_run
+DEBUG: Container with id f3b565fddfb8 is matching che service
+DEBUG: Running state of container f3b565fddfb8 is true
+/usr/bin/curl  "-I -k <ip>:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+DEBUG: is_initialized
+DEBUG: docker_run
+DEBUG: is_docker_for_mac
+INFO: (che start):  Booted and reachable
+DEBUG: is_initialized
+INFO: (che start):  Ver: 5.1.1
+INFO: (che start):  Use: http://domain.tld:8080
+INFO: (che start):  API: http://domain.tld:8080/swagger
+ to be precise, every occurence of <ip> in this post is the very same ip, same for every occurence of domain.tld

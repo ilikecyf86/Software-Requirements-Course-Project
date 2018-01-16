@@ -1,0 +1,20 @@
+Cannot execute docker run eclipse/che on SUSE
+kind/question 
+I'm trying to run this command: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /usr/docker:/data eclipse/che start But I get this error: INFO: Welcome to Eclipse Che!
+INFO:
+INFO: You are missing a mandatory parameter:
+INFO:    1. Mount 'docker.sock' for accessing Docker with unix sockets.
+INFO:    2. Or, set DOCKER_HOST to Docker's location (unix or tcp).
+INFO:
+INFO: Mount Syntax:
+INFO:    Start with 'docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock' ...
+INFO:
+INFO: DOCKER_HOST Syntax:
+INFO:    Start with 'docker run -it --rm -e DOCKER_HOST=<daemon-location> ...'
+INFO:
+INFO: Possible root causes:
+INFO:    1. Your admin has not granted permissions to /var/run/docker.sock.
+INFO:    2. You passed '--user uid:gid' with bad values.
+INFO:    3. Your firewall is blocking TCP ports for accessing Docker daemon.
+
+ I'm able to execute this command: docker run -p 8080:8080 --name che --rm -v /var/run/docker.sock:/var/run/docker.sock -v /usr/docker:/data eclipse/che-server It seems that Docker is configured correctly, as I am able to run hello world and pull images successfully, even though I'm behind a corporate proxy. I granted full permissions to /var/run/docker.sock and I don't seem to be running behind a firewall. Reproduction Steps: Execute docker run eclipse/che OS and version: OS SUSE 12 SP1 Docker Version: Client version: 1.6.2 Client API version: 1.18 Go version (client): go1.3.3 Git commit (client): 7c8fca2 OS/Arch (client): linux/amd64 Server version: 1.6.2 Server API version: 1.18 Go version (server): go1.3.3 Git commit (server): 7c8fca2 OS/Arch (server): linux/amd64 Che version latest (5.4.1), although the same issue occurs on Che 5.0.0. Diagnostics: docker run <DOCKER_OPTIONS> eclise/che info outputs the same error as above. When I add the --trace flag I get this output: CHECK_VERSION='Error response from daemon: client and server don'\''t have same version (client : 1.23, server: 1.18)' Any ideas?

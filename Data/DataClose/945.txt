@@ -1,0 +1,3 @@
+Workspace is started with not imported project if try to create it from configuration file
+kind/bug severity/P2 team/plugin status/open-for-dev 
+Reproduction Steps: Go to dashboard -> "Create workspace" -> "Create from configuration" Paste configuration to the field Choose "web-java-spring" in the "Ready to run project samples" list Click on "Create" button Wait until workspace will be started Pay attention to the screen Expected behavior Project will be created without errors Observed behavior Workspace is started with not imported project Attachment

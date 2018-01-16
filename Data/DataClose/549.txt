@@ -1,0 +1,3 @@
+Opening a terminal tab must take the focus
+kind/bug severity/P1 
+When the user is creating a new terminal tab or clicking to open an existing, the focus is not given into the terminal, which force the user to click one more time to be able to start typing. Reproduction Steps: 1- Open the Processes panel 2- Click on default terminal provided --> Focus is not given into the terminal 3- Click into the terminal --> Focus is given into the terminal and user can start input commands 4- Click to create a new terminal --> Focus is not given into the terminal See animated gif: OS and version: OSIO 1.0.289 - 08/17/2017

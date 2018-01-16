@@ -1,0 +1,3 @@
+fix cli config command, logs overwriting and jmx
+kind/task sprint/current-sprint status/in-progress team/production sprint/current-sprint status/in-progress 
+fix cli config command, logs overwriting and jmx

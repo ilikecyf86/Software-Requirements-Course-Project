@@ -1,0 +1,23 @@
+Error when starting workspace [Question]
+kind/question 
+Hi, I want to trying Che... But impossible for me to start a workspace. I'm running it on Archlinux, and I have this error when i trying to run my workspace. I have trying 2 types of installation. Docker, Server. For zipfile, or after compiling from source. Always get this error. :< 
+2016-05-19 20:37:23,714[kspaceManager-0]  [INFO ] [o.e.c.a.m.s.MachineManager 162]      - Creating machine [ws = workspacemnox5w985n16cqt9: env = wksp-4de9: machine = ws-machine]
+2016-05-19 20:37:23,719[kspaceManager-0]  [ERROR] [o.e.c.a.w.s.WorkspaceManager 549]    - Unable build docker based machine, Dockerfile found but it doesn't contain base image.
+org.eclipse.che.api.machine.server.exception.MachineException: Unable build docker based machine, Dockerfile found but it doesn't contain base image.
+        at org.eclipse.che.api.machine.server.MachineManager.createInstance(MachineManager.java:405) ~[che-core-api-machine-4.3.0-RC1-SNAPSHOT.jar:4.3.0-RC1-SNAPSHOT]
+        at org.eclipse.che.api.machine.server.MachineManager.createMachine(MachineManager.java:342) ~[che-core-api-machine-4.3.0-RC1-SNAPSHOT.jar:4.3.0-RC1-SNAPSHOT]
+        at org.eclipse.che.api.machine.server.MachineManager.createMachineSync(MachineManager.java:166) ~[che-core-api-machine-4.3.0-RC1-SNAPSHOT.jar:4.3.0-RC1-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.createMachine(WorkspaceRuntimes.java:490) ~[che-core-api-workspace-4.3.0-RC1-SNAPSHOT.jar:4.3.0-RC1-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.startMachine(WorkspaceRuntimes.java:411) ~[che-core-api-workspace-4.3.0-RC1-SNAPSHOT.jar:4.3.0-RC1-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.startQueue(WorkspaceRuntimes.java:368) ~[che-core-api-workspace-4.3.0-RC1-SNAPSHOT.jar:4.3.0-RC1-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.start(WorkspaceRuntimes.java:180) ~[che-core-api-workspace-4.3.0-RC1-SNAPSHOT.jar:4.3.0-RC1-SNAPSHOT]
+        at org.eclipse.che.api.workspace.server.WorkspaceManager.lambda$performAsyncStart$2(WorkspaceManager.java:533) ~[che-core-api-workspace-4.3.0-RC1-SNAPSHOT.jar:4.3.0-RC1-SNAPSHOT]
+        at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalRunnable.run(CopyThreadLocalRunnable.java:28) ~[che-core-commons-lang-4.3.0-RC1-SNAPSHOT.jar:4.3.0-RC1-SNAPSHOT]
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_92]
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_92]
+        at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_92]
+Caused by: org.eclipse.che.api.machine.server.exception.InvalidRecipeException: Unable build docker based machine, Dockerfile found but it doesn't contain base image.
+        at org.eclipse.che.plugin.docker.machine.DockerInstanceProvider.parseRecipe(DockerInstanceProvider.java:275) ~[che-plugin-docker-machine-4.3.0-RC1-SNAPSHOT.jar:4.3.0-RC1-SNAPSHOT]
+        at org.eclipse.che.plugin.docker.machine.DockerInstanceProvider.createInstance(DockerInstanceProvider.java:219) ~[che-plugin-docker-machine-4.3.0-RC1-SNAPSHOT.jar:4.3.0-RC1-SNAPSHOT]
+        at org.eclipse.che.api.machine.server.MachineManager.createInstance(MachineManager.java:365) ~[che-core-api-machine-4.3.0-RC1-SNAPSHOT.jar:4.3.0-RC1-SNAPSHOT]
+        ... 11 common frames omitted

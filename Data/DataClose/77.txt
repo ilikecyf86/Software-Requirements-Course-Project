@@ -1,0 +1,10 @@
+Adapt webdriver.sh script to run on Multi User Che
+kind/enhancement status/open-for-dev team/production sprint/current-sprint status/in-progress status/open-for-dev status/code-review status/in-progress status/code-review 
+We need to have next features when running selenium tests on Multi User Che with --multiuser parameter: To have --multiuser parameter in sample commands in test output like the follow: [TEST] Try rerun all tests:
+[TEST] 	/home/ndp/projects/che/selenium/che-selenium-test/selenium-tests.sh   --threads=2 -Mlocal --failed-tests
+[TEST] 	/home/ndp/projects/che/selenium/che-selenium-test/selenium-tests.sh   --threads=2 -Mgrid --failed-tests
+[TEST]
+[TEST] Or run them one by one:
+[TEST] 	/home/ndp/projects/che/selenium/che-selenium-test/selenium-tests.sh   -Mlocal --test=org.eclipse.che.selenium.assistant.CheckFindActionFeatureInCheTest
+[TEST] 	/home/ndp/projects/che/selenium/che-selenium-test/selenium-tests.sh   -Mlocal --test=org.eclipse.che.selenium.dashboard.CreateAndDeleteProjectsTest
+ Compare results with proper job on CI https://ci.codenvycorp.com/view/qa/job/che-multiuser-integration-tests/

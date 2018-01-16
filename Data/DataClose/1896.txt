@@ -1,0 +1,8 @@
+What's the proper way for a workspace `dev-machine` to connect to the docker daemon?
+
+Reproduction Steps: Start latest che using the following bash snippet run with che start che() {
+     docker run --rm -it \
+          -v /var/run/docker.sock:/var/run/docker.sock \
+          -v $HOME/.che:/che \
+          eclipse/che "$@"
+} Create a workspace using ECLIPSE CHE stack In the workspace's dev-machine terminal run sudo docker ps -a Expected behavior: The dev-machine should be able to connect to the docker daemon and list the current processes. Observed behavior: sudo docker ps -a returns: "Cannot connect to the Docker daemon. Is the docker daemon running on this host?" Che version: 5.0.0-M8 OS and version: macOS Sierra Version 10.12 Docker version: Docker version 1.13.0-rc3, build 4d92237 Che install: Docker (using eclipse/che ) Additional information: Adding CHE_WORKSPACE_VOLUME=/var/run/docker.sock:/var/run/docker.sock to $HOME/.che/che.env (for the above example script) solves the problem. Is there a better way to do this preferably via the docker run ... command and using the -e flag to set an environment variable? I was unable to get the suggestions in a previous issue (#2309) to work. Problem started happening recently, didn't happen in an older version of Che: No (but not certain) Problem can be reliably reproduced, doesn't happen randomly: Yes

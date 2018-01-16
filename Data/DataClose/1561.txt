@@ -1,0 +1,38 @@
+Build failed under /assembly/assembly-ide-war on Windows
+kind/question 
+Reproduction Steps: cd %%CHE_REPO%%\assembly\assembly-ide-war
+mvn clean install
+ OS and version: Windows 10 Diagnostics: [INFO]    Compiling 4 permutations
+[INFO]       Compiling permutation 0...
+[INFO]       Compiling permutation 1...
+[INFO]       Compiling permutation 2...
+[INFO]       Compiling permutation 3...
+[INFO]    Compile of permutations succeeded
+[INFO]    Compilation succeeded -- 418.121s
+[INFO] Linking into E:\works\che1\assembly\assembly-ide-war\target\assembly-ide-war-5.2.2\_app
+[INFO]    Link succeeded
+[INFO]    Linking succeeded -- 2.072s
+[INFO]
+[INFO] --- maven-war-plugin:2.6:war (default-war) @ assembly-ide-war ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [assembly-ide-war] in [E:\works\che1\assembly\assembly-ide-war\target\assembly-ide-war-5.2.2]
+[INFO] Processing war project
+[INFO] Copying webapp resources [E:\works\che1\assembly\assembly-ide-war\src\main\webapp]
+[INFO] Webapp assembled in [1424 msecs]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 07:39 min
+[INFO] Finished at: 2017-02-09T08:29:32+08:00
+[INFO] Final Memory: 85M/1257M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-war-plugin:2.6:war (default-war) on project assembly-ide-war: Execution default-war of goal org.apache.maven.plugins:maven-war-plugin:2.6:war failed: Illegal/unsupported escape sequence near index 10
+[ERROR] WEB-INF\\\lib\\\(?!.*j2ee).*.jar
+[ERROR] ^
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/PluginExecutionException

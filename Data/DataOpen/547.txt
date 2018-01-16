@@ -1,0 +1,3 @@
+Simplifying the extension development workflow within Che
+Improvement kind/task kind/enhancement Improvement kind/epic kind/task kind/enhancement 
+Developing a hello world IDE plug-in and testing it (using it) #1649 Extensibility in client side without touching platform Extensibility in server side without touching platform Experiencing something “fast” when developing server-side workspace agent components #1650 Reduce GWT compilation time #1651 Hot (un)deploy of server components #1652 Unlink/decouple IDE client from the runtime server #1653 Importing Eclipse Che source code in existing IDEs #1654 Ease super dev mode with existing IDEs #1655 Allow to generate Eclipse Che package with all required dependencies with Docker #1656

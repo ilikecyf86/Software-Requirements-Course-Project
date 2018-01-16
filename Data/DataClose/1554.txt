@@ -1,0 +1,3 @@
+Information missing in workspace/runtime interface
+severity/P1 severity/blocker severity/P1 kind/question severity/blocker kind/bug severity/P2 kind/question team/plugin sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Using codenvy nightly staging server.

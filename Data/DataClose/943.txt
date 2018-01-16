@@ -1,0 +1,3 @@
+Workspace config is returned to default value, if try to change it
+kind/bug severity/P2 team/plugin 
+Reproduction Steps: Go to "Workspaces" -> "Add Workspace" -> "Workspace Config" Try to remove current config and paste new Pay attention to the screen Expected behavior Changes will be staying in the field Observed behavior Pasted config changed to default config. If to do the same actions once more, all changes will be saved . Attachment

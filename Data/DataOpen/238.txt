@@ -1,0 +1,3 @@
+Decentralization of resource storing in resource manager
+kind/task team/plugin sprint/current-sprint status/open-for-dev sprint/current-sprint 
+Description There is a need to decentralize storing of resources in resource manager. Current model of resource management has several omissions which impact some part of UI. Need for: #5752 Need for: #5986 Need for: #6352

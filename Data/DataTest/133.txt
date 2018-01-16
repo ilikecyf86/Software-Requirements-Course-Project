@@ -1,0 +1,3 @@
+CPP Workspace
+kind/question 
+What is the current level of support for the CPP workspace in the 4.0.1 and 4.1.0 releases of Che? The 4.0 documentation online shows a CPP workspace in the 'Ready to Go' stacks - but is not present in my deployments. In looking over the source code, it appears as if the CPP plugin gets built into the framework but the stack does not appear in the 'predefined stacks' JSON file. It looks as if the CPP support is not fully baked in yet - is this the case or am I missing something? Thanks, Stephan

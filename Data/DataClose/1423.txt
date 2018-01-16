@@ -1,0 +1,15 @@
+NPE in RefactoringService
+kind/bug sprint/next-sprint team/ide sprint/next-sprint sprint/current-sprint 
+[STDOUT] 2017-03-03 20:36:45,727[nio-4401-exec-9]  [ERROR] [c.a.c.r.RuntimeExceptionMapper 47]   - Internal Server Error occurred, error time: 2017-03-03 20:36:45
+[STDOUT] java.lang.NullPointerException: null
+[STDOUT] <----->at org.eclipse.che.plugin.java.server.rest.RefactoringService.lambda$createMoveRefactoring$0(RefactoringService.java:92) ~[che-plugin-java-ext-lang-server-5.5.0-SNAPSHOT.jar:5.5.0-SNAPSHOT
+[STDOUT] <----->at org.eclipse.che.plugin.java.server.rest.RefactoringService$$Lambda$169/1493005531.apply(Unknown Source) ~[na:na]
+[STDOUT] <----->at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_45]
+[STDOUT] <----->at java.util.ArrayList$Itr.forEachRemaining(ArrayList.java:891) ~[na:1.8.0_45]
+[STDOUT] <----->at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) ~[na:1.8.0_45]
+[STDOUT] <----->at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:512) ~[na:1.8.0_45]
+[STDOUT] <----->at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:502) ~[na:1.8.0_45]
+[STDOUT] <----->at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:576) ~[na:1.8.0_45]
+[STDOUT] <----->at java.util.stream.AbstractPipeline.evaluateToArrayNode(AbstractPipeline.java:255) ~[na:1.8.0_45]
+
+ I think it somehow related to RefactoringFeatureTest checkRefactorFilesFromIde

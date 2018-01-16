@@ -1,0 +1,3 @@
+Workspaces can't be created <1gb
+wontfix 
+Minimum size for a workspace (being created through the ui) is 1gb. It is sometimes useful to create smaller containers than this, having this constraint limits container density and wastes resources.

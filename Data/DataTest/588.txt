@@ -1,0 +1,3 @@
+How to pass config when starting a machine?
+kind/question 
+In 4.x, when creating a workspace, we can select an image like UBUNTU_JDK8. Since in China, it's quite slow to visit maven repository sometimes, so I want to bind the local ~/.m2 directory to the docker containers to reuse them jars across multi containers. But I can't find a way to add such config, how to do it?

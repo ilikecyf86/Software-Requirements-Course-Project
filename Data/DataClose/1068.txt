@@ -1,0 +1,3 @@
+There is no Stack description in Ready-to-Go section.
+kind/bug team/plugin sprint/current-sprint status/open-for-dev status/code-review status/open-for-dev status/code-review sprint/current-sprint 
+Missed stack description in ready-to-go stack section. Reproduction Steps: 1 - Go to dashboard. 2 - Click 'Create Workspace' 3 - Look at Ready-to-Go Stacks section Expected: There are Stack name with a stack description Actual: There are Stack name with a stack tags. It needs to replace tags with a stack description. Ubuntu 16.10: Diagnostics:

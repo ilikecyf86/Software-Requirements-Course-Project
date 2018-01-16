@@ -1,0 +1,3 @@
+Link local Source folders to Projects in Eclipse CHE
+kind/question 
+Hi, Is it possible to link local source folders to Projects in Eclipse CHE? OS and version: Windows 10 Thanks, Kevin

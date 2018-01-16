@@ -1,0 +1,3 @@
+[Regression] The Implementation feature sets cursor position in wrong place
+kind/bug severity/P2 team/ide 
+Reproduction Steps: Create and start a workspace from the Java-MySql stack with the web-java-petclinic project. Open the org.springframework.samples.petclinic.model.Pet java class and set cursor to 48:28 position In the "Assistant" menu call the "Implementation(s)" function Select the PetType class from the list Observed behavior: A cursor position in the opened class set to 1:1. Che version: 5.16.0-SNAPSHOT OS and version: Fedora 25 Failed test: ImplementationBaseOperationsTest Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes]

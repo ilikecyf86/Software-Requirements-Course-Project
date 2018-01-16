@@ -1,0 +1,3 @@
+Add help popups to the preferences box
+kind/enhancement 
+Currently some of the fields in the preference box aren't as user friendly as they could be. There are a couple of things we could do to help: Rename "SSH" to "SSH Keys" Add a popup explanation for "Machines" : Set keys used to SSH into remote machines. Add a popup explanation for "VCS" : Set keys used for private code repositories It would be helpful to have a "Keys" sub-item under "Git" that would tell people : "Set your git or svn SSH keys to access private repos in the 'Keys > VCS' section of this dialog"

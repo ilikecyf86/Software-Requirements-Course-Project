@@ -1,0 +1,3 @@
+Display machine's exposed ports in IDE
+kind/enhancement sprint/next-sprint status/open-for-dev team/plugin sprint/current-sprint sprint/next-sprint target/branch status/open-for-dev sprint/current-sprint 
+The machine's exposed ports information would be useful to have directly in IDE in the consoles panel. Now, when user is developing in IDE and needs that info, he has to switch to workspace details of the current workspace, expand proper machine and scroll to servers section. The proposed way is to display this info as following:

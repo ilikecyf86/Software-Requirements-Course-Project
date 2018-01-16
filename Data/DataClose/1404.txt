@@ -1,0 +1,57 @@
+Dashboard replaces "Open" button on "Save" after workspace run
+kind/bug severity/blocker team/plugin sprint/current-sprint severity/P1 severity/blocker sprint/current-sprint 
+Reproduction Steps: Open Dashboard and go to the Workspaces page. Click on "Add Workspace" button and save workspace. Click on "Run" button and wait until state of workspace becomes as "Running". Expected behaviour: There is "Open" button enabled on workspace page. Actual misleading behaviour: There is "Save" button instead on workspace page. Screencast: OS and version: Ubuntu 14.04 LTS Browser: Chrome Version 55.0.2883.87 (64-bit) Che version: 5.5.0-SNAPSHOT. Diagnostics: ndp@ndp:~/projects/qa$ docker run -ti -v /home/ndp/data/che/:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:nightly info
+WARNING: No swap limit support
+INFO: (che cli): nightly - using docker 1.12.6 / native
+INFO: (che download): Pulling image eclipse/che:nightly
+
+nightly: Pulling from eclipse/che
+Digest: sha256:9d76f4c90c1f069cff65b813b268d12cbc61e3041c856351120baaaf409e4b05
+Status: Image is up to date for eclipse/che:nightly
+
+CLI:
+ TTY: true
+ Daemon: /var/run/docker.sock
+ Image: eclipse/che:nightly
+ Version: nightly
+ Command: info
+ Parameters: info
+Mounts:
+ /data: /home/ndp/data/che/
+ /data/instance: not set
+ /data/backup: not set
+ /repo: not set
+ /assembly: not set
+ /sync: not set
+ /unison: not set
+ /chedir: not set
+System:
+ Docker: native
+ Proxy: not set
+Internal:
+ CHE_VERSION: nightly
+ CHE_HOST: 172.19.20.32
+ CHE_INSTANCE: /home/ndp/data/che//instance
+ CHE_CONFIG: /home/ndp/data/che/
+ CHE_BACKUP: /home/ndp/data/che//backup
+ CHE_REGISTRY: /version
+ CHE_DEBUG: false
+ IP Detection: 172.19.20.32
+ Initialized: true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:nightly
+ IMAGE_CHE=eclipse/che-server:nightly
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+che.env:
+ CHE_HOST=172.19.20.32
+ CHE_OAUTH_GITHUB_CLIENTID=aaeea7c5502c3a10384d
+ CHE_OAUTH_GITHUB_CLIENTSECRET=8b6668c57ad36168179ec439c475debc80ccef93
+ CHE_OAUTH_GITHUB_AUTHURI=https://github.com/login/oauth/authorize
+ CHE_OAUTH_GITHUB_TOKENURI=https://github.com/login/oauth/access_token
+ CHE_OAUTH_GITHUB_REDIRECTURIS=http://localhost:${SERVER_PORT}/wsmaster/api/oauth/callback

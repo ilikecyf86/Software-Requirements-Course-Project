@@ -1,0 +1,3 @@
+[Regression] The Build Path feature doesn't work correctly
+kind/bug severity/P2 
+Reproduction Steps: Create and start a workspace from the Java stack. Add the Java project by the Create New Project wizard. Add a new folder to the project . From the context menu of this folder start Build Path -> Use as Source Folder. Observed behavior: Nothing changed. The folder will change status by refreshing web page. Che version: 5.17.0-SNAPSHOT OS and version: Fedora 25 Failed test: MoveJavaFileInNewSourceFolderTest Additional information:

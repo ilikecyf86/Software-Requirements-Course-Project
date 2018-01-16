@@ -1,0 +1,97 @@
+[SPI-branch] Factory with certain configuration is not redirected into workspace properly
+severity/blocker team/plugin kind/bug severity/P1 severity/blocker status/in-progress status/in-progress status/code-review status/in-progress status/code-review 
+Reproduction Steps: Preconditions: Dashboard -> Factories->Create Factory ->Template -> Paste into text area next content:    "v":"4.0",
+   "name":"sincePolicyojm",
+   "policies":{
+      "since":date_in_miiilisec_after_ca
+   },
+   "workspace":{
+      "environments":{
+         "wss":{
+            "machines":{
+               "dev-machine":{
+                  "attributes":{
+
+                  },
+                  "servers":{
+
+                  },
+                  "installers":[
+                     "org.eclipse.che.terminal",
+                     "org.eclipse.che.ws-agent",
+                     "org.eclipse.che.ssh"
+                  ]
+               }
+            },
+            "warnings":[
+
+            ],
+            "recipe":{
+               "type":"compose",
+               "content":"services:\n  dev-machine:\n    image: codenvy/ubuntu_jdk8\n    mem_limit: 2147483648",
+               "contentType":"application/x-yaml"
+            }
+         }
+      },
+      "defaultEnv":"wss",
+      "projects":[
+         {
+            "links":[
+
+            ],
+            "name":"Spring",
+            "attributes":{
+               "languageVersion":[
+                  "1.6"
+               ],
+               "language":[
+                  "java"
+               ]
+            },
+            "type":"maven",
+            "source":{
+               "location":"https://github.com/codenvy-templates/web-spring-java-simple.git",
+               "type":"git",
+               "parameters":{
+                  "keepVcs":"false",
+                  "branch":"3.1.0"
+               }
+            },
+            "path":"/Spring",
+            "problems":[
+
+            ],
+            "mixins":[
+               "git"
+            ]
+         }
+      ],
+      "name":"factoryz327d2",
+      "commands":[
+
+      ],
+      "links":[
+
+      ]
+   },
+   "links":[
+
+   ]
+}
+ Consume just created factory Expected result: we should be redirected in the just created workspace Actual result: we remain on dashboard navbar OS and version: Fedora 25, Chrome browser, CHE_SPI assembly 5.18.0-SNAPSHOT, rev.: 18abede Additional information: In the JS/ console we have next exception: com.google.gwt.core.client.JavaScriptException: (TypeError) : Cannot read property 'wH' of undefined
+	at Unknown.rX(Util.java:38)
+	at Unknown.sb(Object.java:71)
+	at Unknown.GXi(AbstractPerspective.java:314)
+	at Unknown.Ndk(WorkspacePresenter.java:168)
+	at Unknown.Ttj(AppStateManager.java:155)
+	at Unknown.XIg(AppContextImpl.java:128)
+	at Unknown.cUd(EventListener.java:32)
+	at Unknown.anonymous(JsElementalMixinBase.java:271)
+	at Unknown.fq(Impl.java:239)
+	at Unknown.iq(Impl.java:291)
+	at Unknown.anonymous(Impl.java:77)
+	at Unknown.bbg(FactoryIdeInitializationStrategy.java:98)
+	at Unknown.hbg(FactoryIdeInitializationStrategy.java:97)
+	at Unknown._Qe(JsPromise.java:40)
+	at Unknown.anonymous(JsPromise.java:168)
+ This influence in next failed tests: CheckFactoryWithMultiModuleTest CheckFactoryWithSincePolicyTest CheckFactoryWithSvnCVSTest CheckFactoryWithUntilPolicyTest DirectUrlFactoryWithKeepDirectory DirectUrlFactoryWithSpecificBranch CheckOpenFileFeatureTest CheckWelcomePanelOnCodenvyTest CheckRunCommandFeatureTest CreateFactoryFromUiWithKeepDirTest CreateNamedFactoryFromDashBoard CheckFactoryWithSparseCheckoutTest DirectUrlFactoryWithRootFolder

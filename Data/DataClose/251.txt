@@ -1,0 +1,3 @@
+[CHE6] Adapt the WorspaceDetailsTest selenium test
+kind/task team/production status/in-progress status/in-progress 
+We need adapt WorspaceDetailsTest selenium test according to che6 assembly: agents in CHE 6 renamed to installers; delete checking notification after starting a workspace.

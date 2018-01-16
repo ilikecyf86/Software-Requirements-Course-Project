@@ -1,0 +1,3 @@
+Implement required features for Resource API
+kind/task team/platform status/analyzing status/open-for-dev status/analyzing 
+Resource API should be able to calculate the amount of RAM that will be used by workspace after the start and the amount of currently used RAM by workspaces. But such logic in commented in spi branch because it was designed to use docker workspaces only. Calculating of RAM before workspace start is here. Calculation of used RAM by user's workspaces is here. It is needed to implement in spi branch abstract entity which will be implemented by infrastructure. And then Resource API will be able to get needed values without depending on specific infrastructure.

@@ -1,0 +1,3 @@
+Unexpected errors in the ws-machine console during test of the Language server (regression)
+kind/bug severity/P1 team/ide 
+Reproduction Steps: This easy to reproduce with CheckMainFeatureForLanguageTest. Note! Tests - pass. Because base features with autocomplete works as expected OS and version: Ubuntu 14.0 TLS, chrome browser

@@ -1,0 +1,3 @@
+Adapting existing selenium tests from "editor" , "intelligencecommand" packages according to changes in SPI branch
+kind/task status/in-progress team/production status/open-for-dev status/in-progress status/in-progress status/code-review status/in-progress status/code-review status/open-for-dev 
+We need to rework next tests according to SPI changes : CheckReplaceFeatureInEditorTest CheckRestoringOfSplitEditor CheckWorkingWithTabByUsingTabListTest CheckWorkingWithTabsByUsingContextMenuTest ContextMenuEditorTest SplitEditorFeatureTest CheckBasicFunctionalityInCommandsExplorerTest CommandsEditorTest PreviewUrlIntoCommandsEditorTest MacrosCommandsEditorTest AutocompleteCommandsEditorTest CheckIntelligenceCommandFromToolbarTest

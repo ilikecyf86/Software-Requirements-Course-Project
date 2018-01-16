@@ -1,0 +1,3 @@
+Super Dev Mode can not be started up
+kind/question 
+Hi, I followed the wiki to start Super Dev Mode in my Eclipse. But it is not start up due to some compile errors. Full log could be find here: log.txt Thanks.

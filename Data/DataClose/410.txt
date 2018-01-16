@@ -1,0 +1,3 @@
+jdt.ls Use one LS per workspace
+kind/task sprint/current-sprint status/in-progress team/osio status/in-progress 
+We want to use only one instance of jdt.ls per workspace. We need have proxy language servers per project to work with the current 1 LS/project strategy in Che.

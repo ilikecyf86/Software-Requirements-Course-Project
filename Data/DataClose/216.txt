@@ -1,0 +1,3 @@
+Paste after editor tab closing using mouse wheel
+kind/bug 
+Reproduction Steps Open a project file Copy something into clipboard Open another tab Close just opened tab using mouse wheel After that, text from clipboard will be pasted into first opened tab.

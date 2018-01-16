@@ -1,0 +1,3 @@
+Stabilize ProjectStateAfterRefreshTest and EditorValidationTest selenium tests
+kind/task status/in-progress team/production sprint/current-sprint status/code-review status/in-progress status/code-review 
+We have random unexpected fails in the ProjectStateAfterRefreshTest and EditorValidationTest. Especialy this is actual for tests which runs on the Jenkins. So we need investigate reasons and fix this problem.

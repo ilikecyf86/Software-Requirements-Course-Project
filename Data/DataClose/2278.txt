@@ -1,0 +1,3 @@
+Persisting workspaces on Dockerized Che
+kind/question 
+Using Docker to run che-server and persisting /home/user/che/workspaces and /home/user/che/storage. However even though those directories have something, after restarting Che it seems that it lost my workspaces (and associated projects). (Note: I used CHE_WORKSPACE_STORAGE to change location of the workspaces)

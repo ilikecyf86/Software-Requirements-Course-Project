@@ -1,0 +1,3 @@
+Can't create maven command with the name "newMaven"
+
+It's a strange issue, when the name if "newMaven", it can't be created. The "Save" button is disabled. There is no other existing task has the same name. PS: Base on the commit 9e4369517e4308593fce0895d4700e77ecba12f8

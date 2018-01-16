@@ -1,0 +1,3 @@
+.Generated Files
+kind/question 
+I can see a java files in ./assembly/assembly-ide-war/target/.generated/ in this path. I think, these files are created in runtime and moved to .Generated folders. When these files are created? What is the use of these files? Is it used for any api request or guice injection ? Can you please clarify ! Awaiting for your reply. Thanks in Advance.

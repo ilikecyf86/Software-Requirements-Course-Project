@@ -1,0 +1,3 @@
+Javascript editor does not validate code after changes
+kind/bug 
+1 Create javascript file and paste for example next code: function myFunction(name,job) { document.getElementById("demo").innerHTML ="Welcome " + name + ", the " + job + "."; } Expected result: we should see error marker with error 'document is undefined' Actual result: The error marker does not appear Close file and open again. Error marker appears. After applying 'quick fix' proposal - all work correct.

@@ -1,0 +1,3 @@
+Update Che editor to Orion 14
+kind/enhancement team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+Orion team released Orion 14 on March 17. There were over 150 bugs and enhancements fixed. Description of some of them can be founded there. Need to update Che editor to fourteenth release of Orion.

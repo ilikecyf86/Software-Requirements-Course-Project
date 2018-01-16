@@ -1,0 +1,3 @@
+Clear target directory of selenium tests to avoid appearance of outdated result on CI
+kind/task team/production status/in-progress status/in-progress 
+There is CI job https://ci.codenvycorp.com/view/qa/job/che-integration-tests/37/ where build failed but test report is present, because of che-selenium-test/target directory hadn't been cleaned from the previous run of tests during the new run. Reproduction Steps: OS and version: Diagnostics:

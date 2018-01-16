@@ -1,0 +1,3 @@
+[che-multiuser] Agent websocket connections contains two tokens
+kind/bug target/branch status/in-progress status/in-progress 
+In IDE side we modifying each webscoket URL with keycloak access token along with it for agents websocket connections we already have machine tokens in URL, so we need to handle this situation and avoid usage of two token in agents URLs.

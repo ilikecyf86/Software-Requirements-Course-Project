@@ -1,0 +1,3 @@
+Move existing organizations tests to the che-multiuser
+kind/task team/production status/in-progress status/code-review status/in-progress status/code-review 
+In the che-multiuser assembly will be added organizations feature. So we need to move existing selenium tests from the codenvy/codenvy to the che-multiuser. We need to move next tests: AdminOfParentOrganizationTest AdminOfSubOrganizationTest AdminOrganizationTest BulkOrganizationDeletionTest DeleteOrganizationInListTest DeleteOrganizationTest FilterOrganizationTest OrganizationListTest OrganizationTest RenameOrganizationTest UserEmptyOrganizationTest UserOrganizationTest and related with them pageobjects : AddMember AddOrganization OrganizationListPage OrganizationPage CodenvyAdminDashboard ConfirmDialog EditMode

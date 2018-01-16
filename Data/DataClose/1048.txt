@@ -1,0 +1,36 @@
+ls-json: Expected STRING but was BEGIN_OBJECT
+kind/question 
+We get this error on lots of our projects which seems to stop the ls in it's tracks: [STDOUT] 2017-05-09 15:00:21,977[ool-16-thread-1]  [ERROR] [.c.a.l.r.ServerInitializerImpl 91]   - Info Parsing file 91/301: app/code/local/Xyz/Press/Block/Adminhtml/Press.php.
+[STDOUT] 2017-05-09 15:00:22,016[ool-16-thread-1]  [ERROR] [.c.a.l.r.ServerInitializerImpl 91]   - Info Parsing file 92/144: phpstorm-stubs/standard/apache.php.
+[STDOUT] 2017-05-09 15:00:22,017[ool-16-thread-1]  [ERROR] [.c.a.l.r.ServerInitializerImpl 91]   - Info Parsing file 92/301: app/code/local/Xyz/Press/Block/View.php.
+[STDERR] May 09, 2017 3:00:22 PM org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor run
+[STDERR] SEVERE: java.lang.IllegalStateException: Expected STRING but was BEGIN_OBJECT
+[STDERR] com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected STRING but was BEGIN_OBJECT
+[STDERR] 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:200)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:810)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:875)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapterFactory$Adapter.createMessage(MessageTypeAdapterFactory.java:162)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapterFactory$Adapter.read(MessageTypeAdapterFactory.java:130)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapterFactory$Adapter.read(MessageTypeAdapterFactory.java:54)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:810)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:775)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:724)
+[STDERR] 	at com.google.gson.Gson.fromJson(Gson.java:696)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.MessageJsonHandler.parseMessage(MessageJsonHandler.java:70)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:148)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:77)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:68)
+[STDERR] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+[STDERR] 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[STDERR] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+[STDERR] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+[STDERR] 	at java.lang.Thread.run(Thread.java:745)
+[STDERR] Caused by: java.lang.IllegalStateException: Expected STRING but was BEGIN_OBJECT
+[STDERR] 	at com.google.gson.internal.bind.JsonTreeReader.nextString(JsonTreeReader.java:154)
+[STDERR] 	at com.google.gson.internal.bind.TypeAdapters$13.read(TypeAdapters.java:358)
+[STDERR] 	at com.google.gson.internal.bind.TypeAdapters$13.read(TypeAdapters.java:346)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:78)
+[STDERR] 	at org.eclipse.lsp4j.jsonrpc.json.adapters.CollectionTypeAdapterFactory$Adapter.read(CollectionTypeAdapterFactory.java:54)
+[STDERR] 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1.read(ReflectiveTypeAdapterFactory.java:103)
+[STDERR] 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:196)
+[STDERR] 	... 18 more

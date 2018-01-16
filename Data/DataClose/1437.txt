@@ -1,0 +1,67 @@
+Che not communicating with GDB properly, failing to insert breakpoints
+kind/bug severity/P2 team/enterprise 
+GDB debugging not working as advertised in https://eclipse.org/che/docs/ide/debug/index.html#gdb Reproduction Steps: Using cpp-default stack (eclipse/cpp_gcc dockerimage) and c-simple-console project sample change command line to add -g to gcc (cd /projects/c-simple-console && gcc -g -o Hello Hello.c && ./Hello build project, generates Hello that runs as expected Run menu -> Edit Debug Configurations -> + next to GDB Check Debug local binary Change Binary path to ${current.project.path}/Hello to match command above press Save Add breakpoint on Hello.c Line 4 (line with printf) Shift-F9 (or Run -> Debug -> debug config used above) Note that the debug says it starts, and the UI flashes a little around the Debug view. Events view shows Remote debugger connected followed immediately by Remote debugger disconnected. I can see from ps that gdb is running, but only for a second or less. If I change program to an infinite loop like this: 
+#include <unistd.h>
+#include <stdio.h>
+
+int main() {
+	while (1) {
+	printf("Hello World\n");
+	fflush(stdout);
+	sleep(1);
+	}
+
+	return 0;
+}	
+ then gdb stays alive, but no breakpoints are ever hit. Additionally, if I hit Pause button in debugger view, the debug session terminates with an error: "Can't parse 'No stack .\n'into GdbBacktrace". and in the browser console I get POST http://172.17.0.1:32872/api/debugger/2 500 (Internal Server Error) @ :32872/api/debugger/2:1 When looking at the chrome console I can see lots of other error messages when interacting with the GDB Debug configurations like this ClassCastExceptions. Here are the logs for codenvy.io and nightly running locally: logs.zip. These errors mean that the - (remove button) for GDB configurations do not work. OS and version: Failed with 5.3.1 and nightly running on Ubuntu 16.10 and running 5.3.1 on codenvy.io. All running in Chrome 56. Diagnostics: 
+$ docker run --rm -it -v /tmp/e2cloud/data2020:/data -v /var/run/docker.sock:/var/run/docker.sock -e CHE_PORT=2020 eclipse/che:nightly  info
+WARNING: No swap limit support
+INFO: (che cli): nightly - using docker 1.13.1 / native
+INFO: (che download): Pulling image eclipse/che:nightly
+
+nightly: Pulling from eclipse/che
+Digest: sha256:697904f8f9934b880fbef927a493394a658cca17ca0bfcb977eb720b984e7bf9
+Status: Image is up to date for eclipse/che:nightly
+
+
+CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che:nightly
+ Version:        nightly
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /tmp/e2cloud/data2020
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    nightly
+ CHE_HOST:       172.17.0.1
+ CHE_INSTANCE:   /tmp/e2cloud/data2020/instance
+ CHE_CONFIG:     /tmp/e2cloud/data2020
+ CHE_BACKUP:     /tmp/e2cloud/data2020/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   172.17.0.1
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:nightly
+ IMAGE_CHE=eclipse/che-server:nightly
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+che.env:
+ CHE_HOST=172.17.0.1

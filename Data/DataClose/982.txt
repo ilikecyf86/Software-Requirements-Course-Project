@@ -1,0 +1,3 @@
+Cannot select text from a command output
+kind/bug severity/P1 team/ide sprint/next-sprint status/code-review sprint/current-sprint sprint/next-sprint status/code-review 
+Reproduction Steps: Start a workspace. Run a command from command widget. Try to select output with mouse. Expected behaviour: Output is selected. Observed behaviour: Cannot select output. This is also actual for machines boot log. OS and version: Ubuntu 16.04, CHE 5.11.0-SNAPSHOT, Chrome 58.0.3029.81 (64-bit)

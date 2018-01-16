@@ -1,0 +1,3 @@
+Is there any good way to save extend attributes in project or workspace for plugin developing?
+kind/question 
+I want to save extend attributes in project or workspace in my che plugin. I could find appropriate API to implement it OS and version: CentOS Che5.2.2

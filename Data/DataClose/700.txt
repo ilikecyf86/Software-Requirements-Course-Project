@@ -1,0 +1,3 @@
+Add using of persistent volumes for storing sources of projects
+kind/enhancement kind/task kind/enhancement status/in-progress team/platform status/in-progress 
+Not to lose local changes in sources of projects after workspace restarting we should use persistent volumes for storing sources of projects.

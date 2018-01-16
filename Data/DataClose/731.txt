@@ -1,0 +1,3 @@
+Investigate how to run IDE tooling in separate containers
+kind/task team/platform 
+Related to SPI branch only. There is a concept called sidecar. It suggests starting wsagent, terminal, exec and other servers as a separate containers. We need to investigate how it can work with design of new SPI

@@ -1,0 +1,3 @@
+Fix cleanup of abandoned workspace containers in DockerAbandonedResourceCleaner
+kind/bug target/che6 team/platform 
+Description DockerAbandonedResourceCleaner doesn't work because here machine id is compared with machine name. And in addition, a returned value of machine ID is always null because when the name is generated here null is passed as machine ID. Reproduction Steps OS and version: Diagnostics:

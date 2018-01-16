@@ -1,0 +1,13 @@
+Errors in nightly che
+kind/question 
+When creating a project from dashboard, there is such an error in Chrome console: TypeError: Cannot read property 'status' of undefined
+    at app-debdde175d.js:1403
+    at l (vendor-94d8cfba30.js:66)
+    at vendor-94d8cfba30.js:66
+    at h.$eval (vendor-94d8cfba30.js:67)
+    at h.$digest (vendor-94d8cfba30.js:67)
+    at h.$apply (vendor-94d8cfba30.js:67)
+    at o (vendor-94d8cfba30.js:66)
+    at g (vendor-94d8cfba30.js:66)
+    at XMLHttpRequest.x.onload (vendor-94d8cfba30.js:66)
+ And at the meanwhile, there is not output displayed in the panels of each step: And it will block at this step forever, but the server side has no exceptions in the console

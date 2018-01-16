@@ -1,0 +1,30 @@
+Build Failure
+kind/question 
+Reproduction Steps: I am getting the following error.Can anyone please help me? git clone https://github.com/cloudfoundry-community/eclipse-che-boshrelease
+cd eclipse-che-boshrelease/src/che
+mvn clean install -DSkipTests=true -rf :che-dashboard-war
+ Che version: https://github.com/cloudfoundry-community/eclipse-che-boshrelease OS and version: AWS Ubuntu Che cli.log output: [INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Che Dashboard :: Web App ........................... FAILURE [02:42 min]
+[INFO] Che IDE :: Parent .................................. SKIPPED
+[INFO] Che Machine Plugins :: Packaging ................... SKIPPED
+[INFO] Che Assembly Machine Plugins :: Server ............. SKIPPED
+[INFO] Che IDE :: Compiling GWT Application ............... SKIPPED
+[INFO] Che IDE :: Assemblies Tomcat ....................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:48 min
+[INFO] Finished at: 2017-01-24T18:58:45+00:00
+[INFO] Final Memory: 132M/989M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-antrun-plugin:1.8:run (compile) on project che-dashboard-war: An Ant BuildException has occured: exec returned: 1
+[ERROR] around Ant part ...<exec failonerror="true" dir="/home/ubuntu/bin/workspace/eclipse-che-boshrelease/src/che/dashboard" executable="npm">... @ 4:120 in /home/ubuntu/bin/workspace/eclipse-che-boshrelease/src/che/dashboard/target/antrun/build-main.xml
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

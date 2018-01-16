@@ -1,0 +1,3 @@
+Is there any possibility from which we can by pass username and password in eclipse che url?
+kind/question 
+I want to display eclipse che url : http://{ip-addrees}/dashboard in mvc C# but every time when I am loading that url it is giving me a pop up for username and password. So is there any api or any thing from which I can bypass username and password? can any one please help me with this?

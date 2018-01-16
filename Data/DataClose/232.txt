@@ -1,0 +1,8 @@
+[REGRESSION] che workspaces fail to start on mac os
+kind/bug severity/blocker 
+on Mac OS workspace start fails with: Could not start workspace wksp-qboq. Reason: Start of environment 'default' failed. Error: Timeout. The Che server is unable to ping your workspace. This implies a network configuration issue, workspace boot failure, or an unusually slow workspace boot.
+ che run command: docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock \
+                    -v /Users/roman/development/codenvy_projects/.che_multi:/data \
+                    -e CHE_MULTIUSER=true \
+                    eclipse/che-cli:nightly $@
+ this regression appear after: #6738 @davidfestal can you please check this. on tag 5.19.0 works as expected

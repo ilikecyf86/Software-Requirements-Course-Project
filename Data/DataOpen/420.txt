@@ -1,0 +1,3 @@
+Clean workspace master of EWS
+kind/enhancement team/ide sprint/current-sprint 
+After all dependent components are moved to new JSON-RPC websocket transport we can safely clean workspace master of EWS.

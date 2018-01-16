@@ -1,0 +1,3 @@
+Make it possible to update che server deploymentConfig
+kind/task team/production sprint/current-sprint 
+Currently, OpenShift deploy script does not handle situations when Che server configuration needs to be updated. The script should be able to apply new envs to deployment config and trigger a new deployment

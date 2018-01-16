@@ -1,0 +1,3 @@
+Improve DtoGenerator to annotate overridden methods
+kind/enhancement kind/bug severity/P1 kind/enhancement status/in-progress 
+There are a lot of messages outputted during Che build about missed @Override annotations on the generated DTO implementations. DtoGenerator should be fixed to annotate overridden methods with @Override or annotate generated classes with @SuppressWarnings("MissingOverride"). I've tried to build Che with disabled Error Prone plugin (to avoid outputting these compilation warnings) and reverted fix that limits the amount of output in IDE. As a result, browser's tab with IDE was frozen much less time during Che build.

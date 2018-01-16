@@ -1,0 +1,3 @@
+[Regression] Pull Request does not work for fork repository
+kind/bug severity/P2 selenium/failure team/platform 
+Reproduction Steps: Open the IDE and import test fork repository (e.g. https://github.com/iedexmain1/pull-request-plugin-fork-test.git) Make some changes in the README file Try to perform the pull request Expected behavior: the pull request should be created Observed behavior: the pull request has error Che version: 5.18.0 OS and version: Fedora 25 Docker version: 17.06 API docker version: 1.30 Che install: Docker container Additional information: Related selenium test is the PullRequestPluginWithForkTest Problem can be reliably reproduced, doesn't happen randomly: [Yes] See the attachment:

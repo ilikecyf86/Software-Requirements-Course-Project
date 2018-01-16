@@ -1,0 +1,3 @@
+Che compile error
+
+I get an error compile from git with the goal org.codehaus.mojo:gwt-maven-plugin:2.7.0:compile (default) on project assembly-ide-war: Command https://codedump.io/share/Iodp8Q5iJDDk/1/che-compile-error

@@ -1,0 +1,516 @@
+Workspaces will not start
+kind/question 
+I have my Che server running but am having problems starting workspaces. When I attempt to start a workspace, I get the following failure: Could not start workspace <workspace_name>. Reason: Start of environment 'default' failed. Error: Timeout. The Che server is unable to ping your workspace. This implies a network configuration issue, workspace boot failure, or an unusually slow workspace boot. Reproduction Steps: Go to the dashboard. Create any kind of workspace. In this case, I created a Java-MySQL workspace. I tried other workspaces but every one I attempted to run yielded the same failure. In the event that this was a firewall issue, I deactivated my machine's firewall. This didn't solve the problem. I have noticed that this problem has appeared with earlier versions of Che. None of the solutions given seem to apply to my situation. OS and version: CentOS 7 Diagnostics: The che network output from the bundle tar is below: �[0;32mINFO:�[0m 
+�[0;32mINFO:�[0m ---------------------------------------
+�[0;32mINFO:�[0m --------   CONNECTIVITY TEST   --------
+�[0;32mINFO:�[0m ---------------------------------------
+�[0;32mINFO:�[0m (che network): eclipse/che-ip: 172.17.0.1
+�[0;32mINFO:�[0m (che network): Browser => Workspace Agent (localhost): Connection failed
+�[0;32mINFO:�[0m (che network): Browser => Workspace Agent (172.17.0.1): Connection succeeded
+�[0;32mINFO:�[0m (che network): Server  => Workspace Agent (External IP): Connection succeeded
+�[0;32mINFO:�[0m (che network): Server  => Workspace Agent (Internal IP): Connection succeeded
+ The che info output is below: CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che
+ Version:        5.2.2
+ Command:        info
+ Parameters:     info --bundle
+Mounts:
+ /data:          /home/rbrown3/software/docker
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    5.2.2
+ CHE_HOST:       172.17.0.1
+ CHE_INSTANCE:   /home/rbrown3/software/docker/instance
+ CHE_CONFIG:     /home/rbrown3/software/docker
+ CHE_BACKUP:     /home/rbrown3/software/docker/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   172.17.0.1
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:5.2.2
+ IMAGE_CHE=eclipse/che-server:5.2.2
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.2.2
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.2.2
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:5.2.2
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:5.2.2
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.2.2
+che.env:
+ CHE_HOST=172.17.0.1
+ CHE_DOCKER_IP=172.17.0.1
+ DOCKER_HOST=tcp://localhost:2375
+ Workspace startup creates 2 log outputs: one for database and one for the server process. The database log is below: [STDERR] 2017-02-06T21:42:23.642580Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.
+[STDERR] 2017-02-06T21:42:23.728087Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 251d217e-ecb5-11e6-8970-0242ac110002.
+[STDERR] 2017-02-06T21:42:23.746743Z 0 [Warning] Gtid table is not ready to be used. Table 'mysql.gtid_executed' cannot be opened.
+[STDERR] 2017-02-06T21:42:23.747636Z 1 [Warning] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+[STDOUT] Fetched 9888 kB in 4s (2229 kB/s)
+[STDOUT] Reading package lists...
+[STDOUT] Reading package lists...
+[STDOUT] Building dependency tree...
+[STDOUT] Reading state information...
+[STDOUT] The following extra packages will be installed:
+[STDOUT]   ca-certificates krb5-locales libcurl3 libffi6 libgmp10 libgnutls-deb0-28
+[STDOUT]   libgssapi-krb5-2 libhogweed2 libidn11 libk5crypto3 libkeyutils1 libkrb5-3
+[STDOUT]   libkrb5support0 libldap-2.4-2 libnettle4 libp11-kit0 librtmp1 libsasl2-2
+[STDOUT]   libsasl2-modules libsasl2-modules-db libssh2-1 libtasn1-6
+[STDOUT] Suggested packages:
+[STDOUT]   gnutls-bin krb5-doc krb5-user libsasl2-modules-otp libsasl2-modules-ldap
+[STDOUT]   libsasl2-modules-sql libsasl2-modules-gssapi-mit
+[STDOUT]   libsasl2-modules-gssapi-heimdal
+[STDOUT] The following NEW packages will be installed:
+[STDOUT]   ca-certificates curl krb5-locales libcurl3 libffi6 libgmp10
+[STDOUT]   libgnutls-deb0-28 libgssapi-krb5-2 libhogweed2 libidn11 libk5crypto3
+[STDOUT]   libkeyutils1 libkrb5-3 libkrb5support0 libldap-2.4-2 libnettle4 libp11-kit0
+[STDOUT]   librtmp1 libsasl2-2 libsasl2-modules libsasl2-modules-db libssh2-1
+[STDOUT]   libtasn1-6
+[STDOUT] 0 upgraded, 23 newly installed, 0 to remove and 0 not upgraded.
+[STDOUT] Need to get 6169 kB of archives.
+[STDOUT] After this operation, 11.4 MB of additional disk space will be used.
+[STDOUT] Get:1 http://deb.debian.org/debian/ jessie/main libgmp10 amd64 2:6.0.0+dfsg-6 [253 kB]
+[STDOUT] Get:2 http://deb.debian.org/debian/ jessie/main libnettle4 amd64 2.7.1-5+deb8u2 [176 kB]
+[STDOUT] Get:3 http://deb.debian.org/debian/ jessie/main libhogweed2 amd64 2.7.1-5+deb8u2 [125 kB]
+[STDOUT] Get:4 http://deb.debian.org/debian/ jessie/main libffi6 amd64 3.1-2+b2 [20.1 kB]
+[STDOUT] Get:5 http://deb.debian.org/debian/ jessie/main libp11-kit0 amd64 0.20.7-1 [81.2 kB]
+[STDOUT] Get:6 http://deb.debian.org/debian/ jessie/main libtasn1-6 amd64 4.2-3+deb8u2 [49.0 kB]
+[STDOUT] Get:7 http://deb.debian.org/debian/ jessie/main libgnutls-deb0-28 amd64 3.3.8-6+deb8u4 [695 kB]
+[STDOUT] Get:8 http://deb.debian.org/debian/ jessie/main libkeyutils1 amd64 1.5.9-5+b1 [12.0 kB]
+[STDOUT] Get:9 http://deb.debian.org/debian/ jessie/main libkrb5support0 amd64 1.12.1+dfsg-19+deb8u2 [59.1 kB]
+[STDOUT] Get:10 http://deb.debian.org/debian/ jessie/main libk5crypto3 amd64 1.12.1+dfsg-19+deb8u2 [115 kB]
+[STDOUT] Get:11 http://deb.debian.org/debian/ jessie/main libkrb5-3 amd64 1.12.1+dfsg-19+deb8u2 [303 kB]
+[STDOUT] Get:12 http://deb.debian.org/debian/ jessie/main libgssapi-krb5-2 amd64 1.12.1+dfsg-19+deb8u2 [152 kB]
+[STDOUT] Get:13 http://deb.debian.org/debian/ jessie/main libidn11 amd64 1.29-1+deb8u2 [136 kB]
+[STDOUT] Get:14 http://deb.debian.org/debian/ jessie/main libsasl2-modules-db amd64 2.1.26.dfsg1-13+deb8u1 [67.1 kB]
+[STDOUT] Get:15 http://deb.debian.org/debian/ jessie/main libsasl2-2 amd64 2.1.26.dfsg1-13+deb8u1 [105 kB]
+[STDOUT] Get:16 http://deb.debian.org/debian/ jessie/main libldap-2.4-2 amd64 2.4.40+dfsg-1+deb8u2 [218 kB]
+[STDOUT] Get:17 http://deb.debian.org/debian/ jessie/main librtmp1 amd64 2.4+20150115.gita107cef-1 [59.8 kB]
+[STDOUT] Get:18 http://deb.debian.org/debian/ jessie/main libssh2-1 amd64 1.4.3-4.1+deb8u1 [125 kB]
+[STDOUT] Get:19 http://deb.debian.org/debian/ jessie/main libcurl3 amd64 7.38.0-4+deb8u5 [259 kB]
+[STDOUT] Get:20 http://deb.debian.org/debian/ jessie/main krb5-locales all 1.12.1+dfsg-19+deb8u2 [2649 kB]
+[STDERR] 2017-02-06T21:42:31.180526Z 1 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:31.180589Z 1 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:31.180634Z 1 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:31.180669Z 1 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:31.180756Z 1 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDOUT] Get:21 http://deb.debian.org/debian/ jessie/main ca-certificates all 20141019+deb8u2 [207 kB]
+[STDOUT] Get:22 http://deb.debian.org/debian/ jessie/main curl amd64 7.38.0-4+deb8u5 [200 kB]
+[STDOUT] Get:23 http://deb.debian.org/debian/ jessie/main libsasl2-modules amd64 2.1.26.dfsg1-13+deb8u1 [101 kB]
+[STDERR] debconf: delaying package configuration, since apt-utils is not installed
+[STDOUT] Fetched 6169 kB in 2s (2641 kB/s)
+[STDOUT] Selecting previously unselected package libgmp10:amd64.
+[STDOUT] (Reading database ... 9212 files and directories currently installed.)
+[STDOUT] Preparing to unpack .../libgmp10_2%3a6.0.0+dfsg-6_amd64.deb ...
+[STDOUT] Unpacking libgmp10:amd64 (2:6.0.0+dfsg-6) ...
+[STDOUT] Selecting previously unselected package libnettle4:amd64.
+[STDOUT] Preparing to unpack .../libnettle4_2.7.1-5+deb8u2_amd64.deb ...
+[STDOUT] Unpacking libnettle4:amd64 (2.7.1-5+deb8u2) ...
+[STDOUT] Selecting previously unselected package libhogweed2:amd64.
+[STDOUT] Preparing to unpack .../libhogweed2_2.7.1-5+deb8u2_amd64.deb ...
+[STDOUT] Unpacking libhogweed2:amd64 (2.7.1-5+deb8u2) ...
+[STDOUT] Selecting previously unselected package libffi6:amd64.
+[STDOUT] Preparing to unpack .../libffi6_3.1-2+b2_amd64.deb ...
+[STDOUT] Unpacking libffi6:amd64 (3.1-2+b2) ...
+[STDOUT] Selecting previously unselected package libp11-kit0:amd64.
+[STDOUT] Preparing to unpack .../libp11-kit0_0.20.7-1_amd64.deb ...
+[STDOUT] Unpacking libp11-kit0:amd64 (0.20.7-1) ...
+[STDOUT] Selecting previously unselected package libtasn1-6:amd64.
+[STDOUT] Preparing to unpack .../libtasn1-6_4.2-3+deb8u2_amd64.deb ...
+[STDOUT] Unpacking libtasn1-6:amd64 (4.2-3+deb8u2) ...
+[STDOUT] Selecting previously unselected package libgnutls-deb0-28:amd64.
+[STDOUT] Preparing to unpack .../libgnutls-deb0-28_3.3.8-6+deb8u4_amd64.deb ...
+[STDOUT] Unpacking libgnutls-deb0-28:amd64 (3.3.8-6+deb8u4) ...
+[STDOUT] Selecting previously unselected package libkeyutils1:amd64.
+[STDOUT] Preparing to unpack .../libkeyutils1_1.5.9-5+b1_amd64.deb ...
+[STDOUT] Unpacking libkeyutils1:amd64 (1.5.9-5+b1) ...
+[STDOUT] Selecting previously unselected package libkrb5support0:amd64.
+[STDOUT] Preparing to unpack .../libkrb5support0_1.12.1+dfsg-19+deb8u2_amd64.deb ...
+[STDOUT] Unpacking libkrb5support0:amd64 (1.12.1+dfsg-19+deb8u2) ...
+[STDOUT] Database initialized
+[STDOUT] Initializing certificates
+[STDERR] Generating a 2048 bit RSA private key
+[STDOUT] Selecting previously unselected package libk5crypto3:amd64.
+[STDOUT] Preparing to unpack .../libk5crypto3_1.12.1+dfsg-19+deb8u2_amd64.deb ...
+[STDOUT] Unpacking libk5crypto3:amd64 (1.12.1+dfsg-19+deb8u2) ...
+[STDERR] ......................................................................+++
+[STDERR] ...............................................................+++
+[STDERR] unable to write 'random state'
+[STDERR] writing new private key to 'ca-key.pem'
+[STDERR] -----
+[STDERR] Generating a 2048 bit RSA private key
+[STDOUT] Selecting previously unselected package libkrb5-3:amd64.
+[STDOUT] Preparing to unpack .../libkrb5-3_1.12.1+dfsg-19+deb8u2_amd64.deb ...
+[STDOUT] Unpacking libkrb5-3:amd64 (1.12.1+dfsg-19+deb8u2) ...
+[STDERR] ...................................................................+++
+[STDERR] ...............+++
+[STDERR] unable to write 'random state'
+[STDERR] writing new private key to 'server-key.pem'
+[STDERR] -----
+[STDERR] Generating a 2048 bit RSA private key
+[STDERR] .+++
+[STDERR] ....................+++
+[STDERR] unable to write 'random state'
+[STDERR] writing new private key to 'client-key.pem'
+[STDERR] -----
+[STDOUT] Certificates initialized
+[STDOUT] MySQL init process in progress...
+[STDOUT] Selecting previously unselected package libgssapi-krb5-2:amd64.
+[STDOUT] Preparing to unpack .../libgssapi-krb5-2_1.12.1+dfsg-19+deb8u2_amd64.deb ...
+[STDOUT] Unpacking libgssapi-krb5-2:amd64 (1.12.1+dfsg-19+deb8u2) ...
+[STDERR] 2017-02-06T21:42:37.636734Z 0 [Warning] Changed limits: max_open_files: 4096 (requested 5000)
+[STDERR] 2017-02-06T21:42:37.636852Z 0 [Warning] Changed limits: table_open_cache: 1967 (requested 2000)
+[STDERR] 2017-02-06T21:42:37.834510Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+[STDERR] 2017-02-06T21:42:37.836889Z 0 [Note] mysqld (mysqld 5.7.17) starting as process 322 ...
+[STDERR] 2017-02-06T21:42:37.841082Z 0 [Note] InnoDB: PUNCH HOLE support available
+[STDERR] 2017-02-06T21:42:37.841105Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+[STDERR] 2017-02-06T21:42:37.841111Z 0 [Note] InnoDB: Uses event mutexes
+[STDERR] 2017-02-06T21:42:37.841118Z 0 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+[STDERR] 2017-02-06T21:42:37.841123Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.3
+[STDERR] 2017-02-06T21:42:37.841130Z 0 [Note] InnoDB: Using Linux native AIO
+[STDERR] 2017-02-06T21:42:37.841477Z 0 [Note] InnoDB: Number of pools: 1
+[STDERR] 2017-02-06T21:42:37.841609Z 0 [Note] InnoDB: Using CPU crc32 instructions
+[STDERR] 2017-02-06T21:42:37.843646Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+[STDERR] 2017-02-06T21:42:37.855249Z 0 [Note] InnoDB: Completed initialization of buffer pool
+[STDERR] 2017-02-06T21:42:37.857846Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+[STDERR] 2017-02-06T21:42:37.870582Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+[STDERR] 2017-02-06T21:42:37.914735Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+[STDERR] 2017-02-06T21:42:37.914924Z 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+[STDERR] 2017-02-06T21:42:38.144429Z 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+[STDERR] 2017-02-06T21:42:38.146049Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+[STDERR] 2017-02-06T21:42:38.146068Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+[STDERR] 2017-02-06T21:42:38.147005Z 0 [Note] InnoDB: Waiting for purge to start
+[STDERR] 2017-02-06T21:42:38.197288Z 0 [Note] InnoDB: 5.7.17 started; log sequence number 2535853
+[STDERR] 2017-02-06T21:42:38.197684Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+[STDERR] 2017-02-06T21:42:38.197925Z 0 [Note] Plugin 'FEDERATED' is disabled.
+[STDERR] 2017-02-06T21:42:38.201389Z 0 [Note] InnoDB: Buffer pool(s) load completed at 170206 21:42:38
+[STDERR] 2017-02-06T21:42:38.205132Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+[STDERR] 2017-02-06T21:42:38.205500Z 0 [Warning] CA certificate ca.pem is self signed.
+[STDERR] 2017-02-06T21:42:38.253321Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:38.253390Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:38.253430Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:38.253450Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:38.255849Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:38.267427Z 0 [Note] Event Scheduler: Loaded 0 events
+[STDERR] 2017-02-06T21:42:38.267610Z 0 [Note] Executing 'SELECT * FROM INFORMATION_SCHEMA.TABLES;' to get a list of tables using the deprecated partition engine. You may use the startup option '--disable-partition-engine-check' to skip this check. 
+[STDERR] 2017-02-06T21:42:38.267627Z 0 [Note] Beginning of list of non-natively partitioned tables
+[STDOUT] Selecting previously unselected package libidn11:amd64.
+[STDERR] 2017-02-06T21:42:38.289869Z 0 [Note] End of list of non-natively partitioned tables
+[STDERR] 2017-02-06T21:42:38.290044Z 0 [Note] mysqld: ready for connections.
+[STDERR] Version: '5.7.17'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server (GPL)
+[STDOUT] Preparing to unpack .../libidn11_1.29-1+deb8u2_amd64.deb ...
+[STDOUT] Unpacking libidn11:amd64 (1.29-1+deb8u2) ...
+[STDOUT] Selecting previously unselected package libsasl2-modules-db:amd64.
+[STDOUT] Preparing to unpack .../libsasl2-modules-db_2.1.26.dfsg1-13+deb8u1_amd64.deb ...
+[STDOUT] Unpacking libsasl2-modules-db:amd64 (2.1.26.dfsg1-13+deb8u1) ...
+[STDOUT] Selecting previously unselected package libsasl2-2:amd64.
+[STDOUT] Preparing to unpack .../libsasl2-2_2.1.26.dfsg1-13+deb8u1_amd64.deb ...
+[STDOUT] Unpacking libsasl2-2:amd64 (2.1.26.dfsg1-13+deb8u1) ...
+[STDOUT] Selecting previously unselected package libldap-2.4-2:amd64.
+[STDOUT] Preparing to unpack .../libldap-2.4-2_2.4.40+dfsg-1+deb8u2_amd64.deb ...
+[STDOUT] Unpacking libldap-2.4-2:amd64 (2.4.40+dfsg-1+deb8u2) ...
+[STDOUT] Selecting previously unselected package librtmp1:amd64.
+[STDOUT] Preparing to unpack .../librtmp1_2.4+20150115.gita107cef-1_amd64.deb ...
+[STDOUT] Unpacking librtmp1:amd64 (2.4+20150115.gita107cef-1) ...
+[STDOUT] Selecting previously unselected package libssh2-1:amd64.
+[STDOUT] Preparing to unpack .../libssh2-1_1.4.3-4.1+deb8u1_amd64.deb ...
+[STDOUT] Unpacking libssh2-1:amd64 (1.4.3-4.1+deb8u1) ...
+[STDOUT] Selecting previously unselected package libcurl3:amd64.
+[STDOUT] Preparing to unpack .../libcurl3_7.38.0-4+deb8u5_amd64.deb ...
+[STDOUT] Unpacking libcurl3:amd64 (7.38.0-4+deb8u5) ...
+[STDOUT] Selecting previously unselected package krb5-locales.
+[STDOUT] Preparing to unpack .../krb5-locales_1.12.1+dfsg-19+deb8u2_all.deb ...
+[STDOUT] Unpacking krb5-locales (1.12.1+dfsg-19+deb8u2) ...
+[STDERR] Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+[STDERR] Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+[STDOUT] Selecting previously unselected package ca-certificates.
+[STDOUT] Preparing to unpack .../ca-certificates_20141019+deb8u2_all.deb ...
+[STDOUT] Unpacking ca-certificates (20141019+deb8u2) ...
+[STDOUT] Selecting previously unselected package curl.
+[STDOUT] Preparing to unpack .../curl_7.38.0-4+deb8u5_amd64.deb ...
+[STDOUT] Unpacking curl (7.38.0-4+deb8u5) ...
+[STDOUT] Selecting previously unselected package libsasl2-modules:amd64.
+[STDOUT] Preparing to unpack .../libsasl2-modules_2.1.26.dfsg1-13+deb8u1_amd64.deb ...
+[STDOUT] Unpacking libsasl2-modules:amd64 (2.1.26.dfsg1-13+deb8u1) ...
+[STDOUT] Setting up libgmp10:amd64 (2:6.0.0+dfsg-6) ...
+[STDOUT] Setting up libnettle4:amd64 (2.7.1-5+deb8u2) ...
+[STDOUT] Setting up libhogweed2:amd64 (2.7.1-5+deb8u2) ...
+[STDOUT] Setting up libffi6:amd64 (3.1-2+b2) ...
+[STDOUT] Setting up libp11-kit0:amd64 (0.20.7-1) ...
+[STDOUT] Setting up libtasn1-6:amd64 (4.2-3+deb8u2) ...
+[STDOUT] Setting up libgnutls-deb0-28:amd64 (3.3.8-6+deb8u4) ...
+[STDOUT] Setting up libkeyutils1:amd64 (1.5.9-5+b1) ...
+[STDOUT] Setting up libkrb5support0:amd64 (1.12.1+dfsg-19+deb8u2) ...
+[STDOUT] Setting up libk5crypto3:amd64 (1.12.1+dfsg-19+deb8u2) ...
+[STDOUT] Setting up libkrb5-3:amd64 (1.12.1+dfsg-19+deb8u2) ...
+[STDOUT] Setting up libgssapi-krb5-2:amd64 (1.12.1+dfsg-19+deb8u2) ...
+[STDOUT] Setting up libidn11:amd64 (1.29-1+deb8u2) ...
+[STDERR] Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+[STDOUT] Setting up libsasl2-modules-db:amd64 (2.1.26.dfsg1-13+deb8u1) ...
+[STDERR] 2017-02-06T21:42:47.267251Z 5 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:47.267310Z 5 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:47.267362Z 5 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:47.267426Z 5 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:47.267515Z 5 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDERR] mysql: [Warning] Using a password on the command line interface can be insecure.
+[STDERR] mysql: [Warning] Using a password on the command line interface can be insecure.
+[STDERR] mysql: [Warning] Using a password on the command line interface can be insecure.
+[STDERR] mysql: [Warning] Using a password on the command line interface can be insecure.
+[STDERR] 2017-02-06T21:42:47.305630Z 9 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:47.305659Z 9 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:47.305704Z 9 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:47.305730Z 9 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:47.305976Z 9 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDOUT] 
+[STDERR] 2017-02-06T21:42:47.308130Z 0 [Note] Giving 0 client threads a chance to die gracefully
+[STDERR] 2017-02-06T21:42:47.308178Z 0 [Note] Shutting down slave threads
+[STDERR] 2017-02-06T21:42:47.308198Z 0 [Note] Forcefully disconnecting 0 remaining clients
+[STDERR] 2017-02-06T21:42:47.308220Z 0 [Note] Event Scheduler: Purging the queue. 0 events
+[STDERR] 2017-02-06T21:42:47.308324Z 0 [Note] Binlog end
+[STDERR] 2017-02-06T21:42:47.309239Z 0 [Note] Shutting down plugin 'ngram'
+[STDERR] 2017-02-06T21:42:47.309256Z 0 [Note] Shutting down plugin 'BLACKHOLE'
+[STDERR] 2017-02-06T21:42:47.309262Z 0 [Note] Shutting down plugin 'partition'
+[STDERR] 2017-02-06T21:42:47.309267Z 0 [Note] Shutting down plugin 'ARCHIVE'
+[STDERR] 2017-02-06T21:42:47.309272Z 0 [Note] Shutting down plugin 'INNODB_SYS_VIRTUAL'
+[STDERR] 2017-02-06T21:42:47.309276Z 0 [Note] Shutting down plugin 'INNODB_SYS_DATAFILES'
+[STDERR] 2017-02-06T21:42:47.309280Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESPACES'
+[STDERR] 2017-02-06T21:42:47.309284Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN_COLS'
+[STDERR] 2017-02-06T21:42:47.309288Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN'
+[STDERR] 2017-02-06T21:42:47.309292Z 0 [Note] Shutting down plugin 'INNODB_SYS_FIELDS'
+[STDERR] 2017-02-06T21:42:47.309296Z 0 [Note] Shutting down plugin 'INNODB_SYS_COLUMNS'
+[STDERR] 2017-02-06T21:42:47.309299Z 0 [Note] Shutting down plugin 'INNODB_SYS_INDEXES'
+[STDERR] 2017-02-06T21:42:47.309303Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESTATS'
+[STDERR] 2017-02-06T21:42:47.309310Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLES'
+[STDERR] 2017-02-06T21:42:47.309314Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_TABLE'
+[STDERR] 2017-02-06T21:42:47.309318Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_CACHE'
+[STDERR] 2017-02-06T21:42:47.309322Z 0 [Note] Shutting down plugin 'INNODB_FT_CONFIG'
+[STDERR] 2017-02-06T21:42:47.309326Z 0 [Note] Shutting down plugin 'INNODB_FT_BEING_DELETED'
+[STDERR] 2017-02-06T21:42:47.309330Z 0 [Note] Shutting down plugin 'INNODB_FT_DELETED'
+[STDERR] 2017-02-06T21:42:47.309334Z 0 [Note] Shutting down plugin 'INNODB_FT_DEFAULT_STOPWORD'
+[STDERR] 2017-02-06T21:42:47.309340Z 0 [Note] Shutting down plugin 'INNODB_METRICS'
+[STDERR] 2017-02-06T21:42:47.309344Z 0 [Note] Shutting down plugin 'INNODB_TEMP_TABLE_INFO'
+[STDERR] 2017-02-06T21:42:47.309348Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_POOL_STATS'
+[STDERR] 2017-02-06T21:42:47.309352Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE_LRU'
+[STDERR] 2017-02-06T21:42:47.309356Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE'
+[STDERR] 2017-02-06T21:42:47.309360Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX_RESET'
+[STDERR] 2017-02-06T21:42:47.309364Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX'
+[STDERR] 2017-02-06T21:42:47.309380Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM_RESET'
+[STDERR] 2017-02-06T21:42:47.309385Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM'
+[STDERR] 2017-02-06T21:42:47.309389Z 0 [Note] Shutting down plugin 'INNODB_CMP_RESET'
+[STDERR] 2017-02-06T21:42:47.309393Z 0 [Note] Shutting down plugin 'INNODB_CMP'
+[STDERR] 2017-02-06T21:42:47.309397Z 0 [Note] Shutting down plugin 'INNODB_LOCK_WAITS'
+[STDERR] 2017-02-06T21:42:47.309401Z 0 [Note] Shutting down plugin 'INNODB_LOCKS'
+[STDERR] 2017-02-06T21:42:47.309405Z 0 [Note] Shutting down plugin 'INNODB_TRX'
+[STDERR] 2017-02-06T21:42:47.309410Z 0 [Note] Shutting down plugin 'InnoDB'
+[STDERR] 2017-02-06T21:42:47.309514Z 0 [Note] InnoDB: FTS optimize thread exiting.
+[STDERR] 2017-02-06T21:42:47.309824Z 0 [Note] InnoDB: Starting shutdown...
+[STDOUT] Setting up libsasl2-2:amd64 (2.1.26.dfsg1-13+deb8u1) ...
+[STDERR] 2017-02-06T21:42:47.410000Z 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+[STDERR] 2017-02-06T21:42:47.410945Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 170206 21:42:47
+[STDOUT] Setting up libldap-2.4-2:amd64 (2.4.40+dfsg-1+deb8u2) ...
+[STDOUT] Setting up librtmp1:amd64 (2.4+20150115.gita107cef-1) ...
+[STDOUT] Setting up libssh2-1:amd64 (1.4.3-4.1+deb8u1) ...
+[STDOUT] Setting up libcurl3:amd64 (7.38.0-4+deb8u5) ...
+[STDOUT] Setting up krb5-locales (1.12.1+dfsg-19+deb8u2) ...
+[STDOUT] Setting up ca-certificates (20141019+deb8u2) ...
+[STDOUT] debconf: unable to initialize frontend: Dialog
+[STDOUT] debconf: (TERM is not set, so the dialog frontend is not usable.)
+[STDOUT] debconf: falling back to frontend: Readline
+[STDERR] 2017-02-06T21:42:49.731177Z 0 [Note] InnoDB: Shutdown completed; log sequence number 12168554
+[STDERR] 2017-02-06T21:42:49.739138Z 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+[STDERR] 2017-02-06T21:42:49.739171Z 0 [Note] Shutting down plugin 'MRG_MYISAM'
+[STDERR] 2017-02-06T21:42:49.739195Z 0 [Note] Shutting down plugin 'MyISAM'
+[STDERR] 2017-02-06T21:42:49.739220Z 0 [Note] Shutting down plugin 'CSV'
+[STDERR] 2017-02-06T21:42:49.739241Z 0 [Note] Shutting down plugin 'MEMORY'
+[STDERR] 2017-02-06T21:42:49.739255Z 0 [Note] Shutting down plugin 'PERFORMANCE_SCHEMA'
+[STDERR] 2017-02-06T21:42:49.739317Z 0 [Note] Shutting down plugin 'sha256_password'
+[STDERR] 2017-02-06T21:42:49.739331Z 0 [Note] Shutting down plugin 'mysql_native_password'
+[STDERR] 2017-02-06T21:42:49.739663Z 0 [Note] Shutting down plugin 'binlog'
+[STDERR] 2017-02-06T21:42:49.740929Z 0 [Note] mysqld: Shutdown complete
+[STDERR] 
+[STDOUT] 
+[STDOUT] MySQL init process done. Ready for start up.
+[STDOUT] 
+[STDERR] 2017-02-06T21:42:49.904741Z 0 [Warning] Changed limits: max_open_files: 4096 (requested 5000)
+[STDERR] 2017-02-06T21:42:49.904863Z 0 [Warning] Changed limits: table_open_cache: 1967 (requested 2000)
+[STDERR] 2017-02-06T21:42:50.084208Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+[STDERR] 2017-02-06T21:42:50.085749Z 0 [Note] mysqld (mysqld 5.7.17) starting as process 1 ...
+[STDERR] 2017-02-06T21:42:50.090227Z 0 [Note] InnoDB: PUNCH HOLE support available
+[STDERR] 2017-02-06T21:42:50.090253Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+[STDERR] 2017-02-06T21:42:50.090259Z 0 [Note] InnoDB: Uses event mutexes
+[STDERR] 2017-02-06T21:42:50.090265Z 0 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+[STDERR] 2017-02-06T21:42:50.090270Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.3
+[STDERR] 2017-02-06T21:42:50.090277Z 0 [Note] InnoDB: Using Linux native AIO
+[STDERR] 2017-02-06T21:42:50.090729Z 0 [Note] InnoDB: Number of pools: 1
+[STDERR] 2017-02-06T21:42:50.090904Z 0 [Note] InnoDB: Using CPU crc32 instructions
+[STDERR] 2017-02-06T21:42:50.093156Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+[STDERR] 2017-02-06T21:42:50.104747Z 0 [Note] InnoDB: Completed initialization of buffer pool
+[STDERR] 2017-02-06T21:42:50.107497Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+[STDERR] 2017-02-06T21:42:50.120078Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+[STDERR] 2017-02-06T21:42:50.157660Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+[STDERR] 2017-02-06T21:42:50.157797Z 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+[STDOUT] /usr/sbin/update-ca-certificates: [--verbose] [--fresh]
+[STDERR] 2017-02-06T21:42:50.373118Z 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+[STDERR] 2017-02-06T21:42:50.374226Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+[STDERR] 2017-02-06T21:42:50.374240Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+[STDERR] 2017-02-06T21:42:50.375135Z 0 [Note] InnoDB: Waiting for purge to start
+[STDERR] 2017-02-06T21:42:50.425361Z 0 [Note] InnoDB: 5.7.17 started; log sequence number 12168554
+[STDERR] 2017-02-06T21:42:50.425773Z 0 [Note] Plugin 'FEDERATED' is disabled.
+[STDERR] 2017-02-06T21:42:50.425795Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+[STDERR] 2017-02-06T21:42:50.431890Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+[STDERR] 2017-02-06T21:42:50.432176Z 0 [Warning] CA certificate ca.pem is self signed.
+[STDERR] 2017-02-06T21:42:50.434640Z 0 [Note] Server hostname (bind-address): '*'; port: 3306
+[STDERR] 2017-02-06T21:42:50.434733Z 0 [Note] IPv6 is available.
+[STDERR] 2017-02-06T21:42:50.434748Z 0 [Note]   - '::' resolves to '::';
+[STDERR] 2017-02-06T21:42:50.434795Z 0 [Note] Server socket created on IP: '::'.
+[STDERR] 2017-02-06T21:42:50.435924Z 0 [Note] InnoDB: Buffer pool(s) load completed at 170206 21:42:50
+[STDERR] 2017-02-06T21:42:50.475183Z 0 [Warning] 'user' entry 'root@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:50.475241Z 0 [Warning] 'user' entry 'mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:50.475294Z 0 [Warning] 'db' entry 'sys mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:50.475329Z 0 [Warning] 'proxies_priv' entry '@ root@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:50.478109Z 0 [Warning] 'tables_priv' entry 'sys_config mysql.sys@localhost' ignored in --skip-name-resolve mode.
+[STDERR] 2017-02-06T21:42:50.485789Z 0 [Note] Event Scheduler: Loaded 0 events
+[STDERR] 2017-02-06T21:42:50.486015Z 0 [Note] Executing 'SELECT * FROM INFORMATION_SCHEMA.TABLES;' to get a list of tables using the deprecated partition engine. You may use the startup option '--disable-partition-engine-check' to skip this check. 
+[STDERR] 2017-02-06T21:42:50.486027Z 0 [Note] Beginning of list of non-natively partitioned tables
+[STDERR] 2017-02-06T21:42:50.507580Z 0 [Note] End of list of non-natively partitioned tables
+[STDERR] 2017-02-06T21:42:50.507746Z 0 [Note] mysqld: ready for connections.
+[STDERR] Version: '5.7.17'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
+[STDOUT] Setting up curl (7.38.0-4+deb8u5) ...
+[STDOUT] Setting up libsasl2-modules:amd64 (2.1.26.dfsg1-13+deb8u1) ...
+[STDOUT] Processing triggers for libc-bin (2.19-18+deb8u7) ...
+[STDOUT] Processing triggers for ca-certificates (20141019+deb8u2) ...
+[STDOUT] Updating certificates in /etc/ssl/certs... 174 added, 0 removed; done.
+[STDOUT] Running hooks in /etc/ca-certificates/update.d....done.
+[STDOUT] Exec-agent configuration
+[STDOUT]   Server
+[STDOUT]     - Address: :4411
+[STDOUT]     - Static content: /root/che/terminal/
+[STDOUT]     - Base path: ''
+[STDOUT]   Terminal
+[STDOUT]     - Slave command: '/bin/bash'
+[STDOUT]     - Activity tracking enabled: false
+[STDOUT]   Process executor
+[STDOUT]     - Logs dir: /root/che/exec-agent/logs
+[STDOUT] 
+[STDOUT] ⇩ Registered HttpRoutes:
+[STDOUT] 
+[STDOUT] Process Routes:
+[STDOUT] ✓ Start Process ........................... POST   /process
+[STDOUT] ✓ Get Process ............................. GET    /process/:pid
+[STDOUT] ✓ Kill Process ............................ DELETE /process/:pid
+[STDOUT] ✓ Get Process Logs ........................ GET    /process/:pid/logs
+[STDOUT] ✓ Get Processes ........................... GET    /process
+[STDOUT] 
+[STDOUT] Channel Routes:
+[STDOUT] ✓ Connect to Exec-Agent(webscoket) ........ GET    /connect
+[STDOUT] 
+[STDOUT] Terminal routes:
+[STDOUT] ✓ Connect to pty(webscoket) ............... GET    /pty
+[STDOUT] 
+[STDOUT] 
+[STDOUT] ⇩ Registered RpcRoutes:
+[STDOUT] 
+[STDOUT] Process Routes:
+[STDOUT] ✓ process.start
+[STDOUT] ✓ process.kill
+[STDOUT] ✓ process.subscribe
+[STDOUT] ✓ process.unsubscribe
+[STDOUT] ✓ process.updateSubscriber
+[STDOUT] ✓ process.getLogs
+[STDOUT] ✓ process.getProcess
+[STDOUT] ✓ process.getProcesses
+ The output of the process startup is below: [DOCKER] latest: Pulling from eclipse/ubuntu_jdk8 
+[DOCKER] Digest: sha256:69f514b226808be7d251442096bcc61d85dcb77f91f453e1cfe090a8f350c854 
+[DOCKER] Status: Image is up to date for eclipse/ubuntu_jdk8:latest 
+[STDOUT] Exec-agent configuration
+[STDOUT]   Server
+[STDOUT]     - Address: :4411
+[STDOUT]     - Static content: /home/user/che/terminal/
+[STDOUT]     - Base path: ''
+[STDOUT]   Terminal
+[STDOUT]     - Slave command: '/bin/bash'
+[STDOUT]     - Activity tracking enabled: false
+[STDOUT]   Process executor
+[STDOUT]     - Logs dir: /home/user/che/exec-agent/logs
+[STDOUT] 
+[STDOUT] ⇩ Registered HttpRoutes:
+[STDOUT] 
+[STDOUT] Process Routes:
+[STDOUT] ✓ Start Process ........................... POST   /process
+[STDOUT] ✓ Get Process ............................. GET    /process/:pid
+[STDOUT] ✓ Kill Process ............................ DELETE /process/:pid
+[STDOUT] ✓ Get Process Logs ........................ GET    /process/:pid/logs
+[STDOUT] ✓ Get Processes ........................... GET    /process
+[STDOUT] 
+[STDOUT] Channel Routes:
+[STDOUT] ✓ Connect to Exec-Agent(webscoket) ........ GET    /connect
+[STDOUT] 
+[STDOUT] Terminal routes:
+[STDOUT] ✓ Connect to pty(webscoket) ............... GET    /pty
+[STDOUT] 
+[STDOUT] 
+[STDOUT] ⇩ Registered RpcRoutes:
+[STDOUT] 
+[STDOUT] Process Routes:
+[STDOUT] ✓ process.start
+[STDOUT] ✓ process.kill
+[STDOUT] ✓ process.subscribe
+[STDOUT] ✓ process.unsubscribe
+[STDOUT] ✓ process.updateSubscriber
+[STDOUT] ✓ process.getLogs
+[STDOUT] ✓ process.getProcess
+[STDOUT] ✓ process.getProcesses
+Listening for transport dt_socket at address: 4403
+2017-02-06 21:43:05,741[main]             [INFO ] [o.a.c.s.VersionLoggerListener 89]    - Server version:        Apache Tomcat/8.0.38
+2017-02-06 21:43:05,744[main]             [INFO ] [o.a.c.s.VersionLoggerListener 91]    - Server built:          Oct 6 2016 20:51:55 UTC
+2017-02-06 21:43:05,744[main]             [INFO ] [o.a.c.s.VersionLoggerListener 93]    - Server number:         8.0.38.0
+2017-02-06 21:43:05,744[main]             [INFO ] [o.a.c.s.VersionLoggerListener 95]    - OS Name:               Linux
+2017-02-06 21:43:05,745[main]             [INFO ] [o.a.c.s.VersionLoggerListener 97]    - OS Version:            3.10.0-327.el7.x86_64
+2017-02-06 21:43:05,745[main]             [INFO ] [o.a.c.s.VersionLoggerListener 99]    - Architecture:          amd64
+2017-02-06 21:43:05,746[main]             [INFO ] [o.a.c.s.VersionLoggerListener 101]   - Java Home:             /usr/lib/jvm/java-8-openjdk-amd64/jre
+2017-02-06 21:43:05,746[main]             [INFO ] [o.a.c.s.VersionLoggerListener 103]   - JVM Version:           1.8.0_121-8u121-b13-0ubuntu1.16.04.2-b13
+2017-02-06 21:43:05,746[main]             [INFO ] [o.a.c.s.VersionLoggerListener 105]   - JVM Vendor:            Oracle Corporation
+2017-02-06 21:43:05,747[main]             [INFO ] [o.a.c.s.VersionLoggerListener 107]   - CATALINA_BASE:         /home/user/che/ws-agent
+2017-02-06 21:43:05,747[main]             [INFO ] [o.a.c.s.VersionLoggerListener 109]   - CATALINA_HOME:         /home/user/che/ws-agent
+2017-02-06 21:43:05,748[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.config.file=/home/user/che/ws-agent/conf/logging.properties
+2017-02-06 21:43:05,748[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+2017-02-06 21:43:05,748[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Xms256m
+2017-02-06 21:43:05,749[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Xmx2048m
+2017-02-06 21:43:05,749[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.security.egd=file:/dev/./urandom
+2017-02-06 21:43:05,750[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.logs.dir=/home/user/che/ws-agent/logs
+2017-02-06 21:43:05,750[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+2017-02-06 21:43:05,750[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+2017-02-06 21:43:05,751[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -agentlib:jdwp=transport=dt_socket,address=4403,server=y,suspend=n
+2017-02-06 21:43:05,751[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote
+2017-02-06 21:43:05,751[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.ssl=false
+2017-02-06 21:43:05,752[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.authenticate=false
+2017-02-06 21:43:05,752[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.local.conf.dir=/mnt/che/conf
+2017-02-06 21:43:05,752[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.endorsed.dirs=/home/user/che/ws-agent/endorsed
+2017-02-06 21:43:05,753[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.base=/home/user/che/ws-agent
+2017-02-06 21:43:05,753[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.home=/home/user/che/ws-agent
+2017-02-06 21:43:05,753[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.io.tmpdir=/home/user/che/ws-agent/temp
+2017-02-06 21:43:05,848[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 443]  - Initializing ProtocolHandler ["http-nio-4401"]
+2017-02-06 21:43:05,862[main]             [INFO ] [o.a.t.util.net.NioSelectorPool 72]   - Using a shared selector for servlet write/read
+2017-02-06 21:43:05,865[main]             [INFO ] [o.a.catalina.startup.Catalina 591]   - Initialization processed in 424 ms
+2017-02-06 21:43:05,934[main]             [INFO ] [c.m.JmxRemoteLifecycleListener 332]  - The JMX Remote Listener has configured the registry on port 32002 and the server on port 32102 for the Platform server
+2017-02-06 21:43:05,934[main]             [INFO ] [o.a.c.core.StandardService 435]      - Starting service Catalina
+2017-02-06 21:43:05,935[main]             [INFO ] [o.a.c.core.StandardEngine 259]       - Starting Servlet Engine: Apache Tomcat/8.0.38
+2017-02-06 21:43:05,994[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 911]        - Deploying web application archive /home/user/che/ws-agent/webapps/ROOT.war
+2017-02-06 21:43:14,911[ost-startStop-1]  [INFO ] [o.e.c.a.p.s.WorkspaceHolder 59]      - Workspace ID: workspaceggcaegjn9r8dqigp
+2017-02-06 21:43:14,912[ost-startStop-1]  [INFO ] [o.e.c.a.p.s.WorkspaceHolder 60]      - API Endpoint: http://che-host:8080/wsmaster/api
+2017-02-06 21:43:14,912[ost-startStop-1]  [INFO ] [o.e.c.a.p.s.WorkspaceHolder 61]      - User Token  : true
+2017-02-06 21:43:15,839[s polled Thread]  [INFO ] [o.e.c.p.m.server.rmi.RmiClient 130]  - Port/Name:59017/MavenRemoteServerImple8d8ed3c
+ 
+Mon Feb 06 21:43:17 UTC 2017 - [localhost-startStop-1] Product-specified preferences called before plugin is started
+2017-02-06 21:43:17,829[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 975]        - Deployment of web application archive /home/user/che/ws-agent/webapps/ROOT.war has finished in 11,834 ms
+2017-02-06 21:43:17,833[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 488]  - Starting ProtocolHandler ["http-nio-4401"]
+2017-02-06 21:43:17,841[main]             [INFO ] [o.a.catalina.startup.Catalina 642]   - Server startup in 11975 ms

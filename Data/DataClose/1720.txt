@@ -1,0 +1,3 @@
+Consider to disable sendfile capability in Tomcat configuration
+kind/enhancement status/open-for-dev team/platform sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+For tomcat there is a tradeoff between using compression (saving your bandwidth) and using the sendfile feature (saving your CPU cycles) I think bandwidth is a bit more important for us in compression of CPU cycles. See more https://tomcat.apache.org/tomcat-8.0-doc/config/http.html By disabling sendfile capability we will turn on compression for files larger 48Kb

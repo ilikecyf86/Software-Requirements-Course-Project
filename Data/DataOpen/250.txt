@@ -1,0 +1,3 @@
+Run As -> JUnit test works only if the project was built beforehand
+kind/bug team/ide 
+When I right click on and invoke Run JUnit Tests for a vertx booster project it executes and fails with No test found to run.Test suite is empty.. In desktop IDEs building project manually before executing tests is not required. Related rh-che issue redhat-developer/rh-che#365 Reproduction Steps: Start che and import vertx project with JUnit tests - https://github.com/openshiftio-vertx-boosters/vertx-http-booster Once project is imported right click on it -> Run As -> JUnit test ERROR: The following logs would be printed to the console No test found to run.Test suite is empty 4. Build the project and repeat step 2 5. SUCCESS: JUnit tests will be executed

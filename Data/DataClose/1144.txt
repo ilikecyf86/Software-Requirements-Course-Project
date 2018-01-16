@@ -1,0 +1,50 @@
+Unable to restart a workspace: [ERROR] [o.a.c.core.ContainerBase 728] - ContainerBase.addChild: start
+kind/question 
+Whenever I try to stop and restart a workspace I have the following error: [STDOUT] 2017-04-17 19:11:18,242[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 443]  - Initializing ProtocolHandler ["http-nio-4401"]
+[STDOUT] 2017-04-17 19:11:18,253[main]             [INFO ] [o.a.t.util.net.NioSelectorPool 72]   - Using a shared selector for servlet write/read
+[STDOUT] 2017-04-17 19:11:18,255[main]             [INFO ] [o.a.catalina.startup.Catalina 591]   - Initialization processed in 362 ms
+[STDOUT] 2017-04-17 19:11:18,325[main]             [INFO ] [c.m.JmxRemoteLifecycleListener 332]  - The JMX Remote Listener has configured the registry on port 32002 and the server on port 32102 for the Platform server
+[STDOUT] 2017-04-17 19:11:18,326[main]             [INFO ] [o.a.c.core.StandardService 435]      - Starting service Catalina
+[STDOUT] 2017-04-17 19:11:18,326[main]             [INFO ] [o.a.c.core.StandardEngine 259]       - Starting Servlet Engine: Apache Tomcat/8.0.38
+[STDOUT] 2017-04-17 19:11:18,396[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 911]        - Deploying web application archive /home/user/che/ws-agent/webapps/ROOT.war
+[STDOUT] 2017-04-17 19:11:18,601[ost-startStop-1]  [ERROR] [o.a.c.core.ContainerBase 728]        - ContainerBase.addChild: start: 
+[STDOUT] org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[]]
+[STDOUT] 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:162) ~[catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725) [catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701) [catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717) [catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:940) [catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1816) [catalina.jar:8.0.38]
+[STDOUT] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_121]
+[STDOUT] 	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_121]
+[STDOUT] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_121]
+[STDOUT] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_121]
+[STDOUT] 	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+[STDOUT] Caused by: java.lang.NullPointerException: null
+[STDOUT] 	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:333) ~[tomcat-util-scan.jar:8.0.38]
+[STDOUT] 	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:193) ~[tomcat-util-scan.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.startup.ContextConfig.processJarsForWebFragments(ContextConfig.java:1898) ~[catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1131) ~[catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:783) ~[catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:307) ~[catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:95) ~[catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90) ~[catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5213) ~[catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:145) ~[catalina.jar:8.0.38]
+[STDOUT] 	... 10 common frames omitted
+[STDOUT] 2017-04-17 19:11:18,609[ost-startStop-1]  [ERROR] [o.a.c.startup.HostConfig 943]        - Error deploying web application archive /home/user/che/ws-agent/webapps/ROOT.war
+[STDOUT] java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[]]
+[STDOUT] 	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:729) ~[catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701) ~[catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717) ~[catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:940) ~[catalina.jar:8.0.38]
+[STDOUT] 	at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1816) [catalina.jar:8.0.38]
+[STDOUT] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [na:1.8.0_121]
+[STDOUT] 	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_121]
+[STDOUT] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_121]
+[STDOUT] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_121]
+[STDOUT] 	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_121]
+[STDOUT] 2017-04-17 19:11:18,613[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 975]        - Deployment of web application archive /home/user/che/ws-agent/webapps/ROOT.war has finished in 216 ms
+[STDOUT] 2017-04-17 19:11:18,618[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 488]  - Starting ProtocolHandler ["http-nio-4401"]
+[STDOUT] 2017-04-17 19:11:18,635[main]             [INFO ] [o.a.catalina.startup.Catalina 642]   - Server startup in 379 ms
+ Reproduction Steps: Add a new workspace, select Runtime Java or Blank or Python. Save and Open Workspace Stop workspace Open workspace. OS and version: I run Eclipse Che 5.8.0 on Linux CentOs 7. Diagnostics: I run Eclipse Che with the following command: docker run -it --rm  -v /var/run/docker.sock:/var/run/docker.sock -v /home/eclipseche/data:/data eclipse/che:5.8.0 start

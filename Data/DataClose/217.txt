@@ -1,0 +1,3 @@
+Stabilization selenium tests in the "che6" branch
+kind/task status/in-progress team/production status/in-progress sprint/current-sprint 
+We still have unexpected fails in the tests: AutocompleteProposalJavaDocTest CheckAutocompleteFeaturesInTheTestFolderTest TransitiveDependencyTest We need to investigate and find the new reasons of instability. Also, we need to be sure that problems with another fixed tests are not reproduced. Also, we need run all tests scope in 4 threads for check stability and fix fallen tests according to this results.

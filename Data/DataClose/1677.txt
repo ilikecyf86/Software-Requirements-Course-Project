@@ -1,0 +1,145 @@
+"Unable to initialize IDE" when "Starting workspace agent."
+kind/question 
+Get the error message "Unable to initialize IDE" (in a Javascript message window) when the IDE is trying to initialize workspace agent (Popup with message "Starting workspace agent. Agent provides RESTful services like intellisense and SSH"). Followed by the message "Workspace agent is no longer responding. To fix the problem, verify you have a good network connection and restart the workspace." Reproduction Steps: Create new che environment in docker (refer creation logs below) Create a new workspace with Java stack (also tried with Blank stack with the same result). Che version: Your CLI version is '5.1.1'. Your installed version is '5.1.1'. OS and version: Windows 7 Docker version: $ docker version Client: Version: 1.12.6 API version: 1.24 Go version: go1.6.4 Git commit: 78d1802 Built: Wed Jan 11 00:23:16 2017 OS/Arch: windows/amd64 Server: Version: 1.12.6 API version: 1.24 Go version: go1.6.4 Git commit: 78d1802 Built: Wed Jan 11 00:23:16 2017 OS/Arch: linux/amd64 Che cli.log output: creation output: $ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /C/ajay_temp/testProjects/docker/eclipse_che:/data eclipse/che start
+WARN: You are using CLI image version 'latest' which is set to '5.1.1'.
+INFO: (che cli): Checking network... (hint: '--fast' skips version, network, and nightly checks)
+INFO: (che cli): Loading cli...
+INFO: (che cli): Checking registry for version '5.1.1' images
+INFO: (che download): Checking for image 'puppet/puppet-agent-alpine:4.6.2'...found
+INFO: (che download): Checking for image 'registry:2.5.0'...found
+INFO: (che download): Checking for image 'eclipse/che-init:5.1.1'...not found
+INFO: (che download): Pulling image eclipse/che-init:5.1.1
+
+5.1.1: Pulling from eclipse/che-init
+e110a4a17941: Already exists
+c6be0cda3022: Already exists
+b883875a9222: Already exists
+d7e1053f3043: Already exists
+588fa03c26ba: Already exists
+75074008875d: Pull complete
+02f3f20e9a7a: Pull complete
+0f272d266c42: Pull complete
+bb0743d3c38e: Pull complete
+2aee681fe8c0: Pull complete
+Digest: sha256:711c6a577f5458e1f62b78781d50b49d86e6313cd5dc5415832df6e62b3f76d7
+Status: Downloaded newer image for eclipse/che-init:5.1.1
+
+INFO: (che download): Checking for image 'eclipse/che-server:5.1.1'...not found
+INFO: (che download): Pulling image eclipse/che-server:5.1.1
+
+5.1.1: Pulling from eclipse/che-server
+3690ec4760f9: Already exists
+7fe36e46c847: Already exists
+571ea5ba1601: Pull complete
+b12536dfdbd4: Pull complete
+Digest: sha256:682174183fb6062339585cdafe6c1c1e640a6ee927ab3da0e325dce09cc8c453
+Status: Downloaded newer image for eclipse/che-server:5.1.1
+
+INFO: (che init): Installing configuration and bootstrap variables:
+INFO: (che init):   CHE_HOST=192.168.99.100
+INFO: (che init):   CHE_VERSION=5.1.1
+INFO: (che init):   CHE_CONFIG=/C/ajay_temp/testProjects/docker/eclipse_che
+INFO: (che init):   CHE_INSTANCE=/C/ajay_temp/testProjects/docker/eclipse_che/instance
+INFO: (che config): Generating che configuration...
+INFO: (che config): Customizing docker-compose for running in a container
+INFO: (che start): Preflight checks
+         port 8080 (http):       [AVAILABLE]
+
+INFO: (che start): Starting containers...
+INFO: (che start): Services booting...
+INFO: (che start): Server logs at "docker logs -f che"
+INFO: (che start): Booted and reachable
+INFO: (che start): Ver: 5.1.1
+INFO: (che start): Use: http://192.168.99.100:8080
+INFO: (che start): API: http://192.168.99.100:8080/swagger
+ dev-machine output: [DOCKER] latest: Pulling from eclipse/ubuntu_jdk8 
+[DOCKER] Digest: sha256:58505295083a0e4be0d73cc8027d43c08e13f71cda89b1903903459ba7e3dcd4 
+[DOCKER] Status: Image is up to date for eclipse/ubuntu_jdk8:latest 
+[STDOUT] Exec-agent configuration
+[STDOUT]   Server
+[STDOUT]     - Address: :4411
+[STDOUT]     - Static content: /home/user/che/terminal/
+[STDOUT]     - Base path: ''
+[STDOUT]   Terminal
+[STDOUT]     - Slave command: '/bin/bash'
+[STDOUT]     - Activity tracking enabled: false
+[STDOUT]   Process executor
+[STDOUT]     - Logs dir: /home/user/che/exec-agent/logs
+[STDOUT] 
+[STDOUT] ⇩ Registered HttpRoutes:
+[STDOUT] 
+[STDOUT] Process Routes:
+[STDOUT] ✓ Start Process ........................... POST   /process
+[STDOUT] ✓ Get Process ............................. GET    /process/:pid
+[STDOUT] ✓ Kill Process ............................ DELETE /process/:pid
+[STDOUT] ✓ Get Process Logs ........................ GET    /process/:pid/logs
+[STDOUT] ✓ Get Processes ........................... GET    /process
+[STDOUT] 
+[STDOUT] Channel Routes:
+[STDOUT] ✓ Connect to Exec-Agent(webscoket) ........ GET    /connect
+[STDOUT] 
+[STDOUT] Terminal routes:
+[STDOUT] ✓ Connect to pty(webscoket) ............... GET    /pty
+[STDOUT] 
+[STDOUT] 
+[STDOUT] ⇩ Registered RpcRoutes:
+[STDOUT] 
+[STDOUT] Process Routes:
+[STDOUT] ✓ process.start
+[STDOUT] ✓ process.kill
+[STDOUT] ✓ process.subscribe
+[STDOUT] ✓ process.unsubscribe
+[STDOUT] ✓ process.updateSubscriber
+[STDOUT] ✓ process.getLogs
+[STDOUT] ✓ process.getProcess
+[STDOUT] ✓ process.getProcesses
+Listening for transport dt_socket at address: 4403
+2017-01-24 13:12:12,165[main]             [INFO ] [o.a.c.s.VersionLoggerListener 89]    - Server version:        Apache Tomcat/8.0.38
+2017-01-24 13:12:12,168[main]             [INFO ] [o.a.c.s.VersionLoggerListener 91]    - Server built:          Oct 6 2016 20:51:55 UTC
+2017-01-24 13:12:12,173[main]             [INFO ] [o.a.c.s.VersionLoggerListener 93]    - Server number:         8.0.38.0
+2017-01-24 13:12:12,175[main]             [INFO ] [o.a.c.s.VersionLoggerListener 95]    - OS Name:               Linux
+2017-01-24 13:12:12,178[main]             [INFO ] [o.a.c.s.VersionLoggerListener 97]    - OS Version:            4.4.41-boot2docker
+2017-01-24 13:12:12,179[main]             [INFO ] [o.a.c.s.VersionLoggerListener 99]    - Architecture:          amd64
+2017-01-24 13:12:12,181[main]             [INFO ] [o.a.c.s.VersionLoggerListener 101]   - Java Home:             /opt/jdk1.8.0_102/jre
+2017-01-24 13:12:12,182[main]             [INFO ] [o.a.c.s.VersionLoggerListener 103]   - JVM Version:           1.8.0_102-b14
+2017-01-24 13:12:12,194[main]             [INFO ] [o.a.c.s.VersionLoggerListener 105]   - JVM Vendor:            Oracle Corporation
+2017-01-24 13:12:12,195[main]             [INFO ] [o.a.c.s.VersionLoggerListener 107]   - CATALINA_BASE:         /home/user/che/ws-agent
+2017-01-24 13:12:12,196[main]             [INFO ] [o.a.c.s.VersionLoggerListener 109]   - CATALINA_HOME:         /home/user/che/ws-agent
+2017-01-24 13:12:12,199[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.config.file=/home/user/che/ws-agent/conf/logging.properties
+2017-01-24 13:12:12,200[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+2017-01-24 13:12:12,208[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Xms256m
+2017-01-24 13:12:12,209[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Xmx2048m
+2017-01-24 13:12:12,210[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.security.egd=file:/dev/./urandom
+2017-01-24 13:12:12,224[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.logs.dir=/home/user/che/ws-agent/logs
+2017-01-24 13:12:12,224[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+2017-01-24 13:12:12,226[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+2017-01-24 13:12:12,232[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -agentlib:jdwp=transport=dt_socket,address=4403,server=y,suspend=n
+2017-01-24 13:12:12,234[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote
+2017-01-24 13:12:12,236[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.ssl=false
+2017-01-24 13:12:12,250[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcom.sun.management.jmxremote.authenticate=false
+2017-01-24 13:12:12,251[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dche.local.conf.dir=/mnt/che/conf
+2017-01-24 13:12:12,252[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.endorsed.dirs=/home/user/che/ws-agent/endorsed
+2017-01-24 13:12:12,252[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.base=/home/user/che/ws-agent
+2017-01-24 13:12:12,257[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Dcatalina.home=/home/user/che/ws-agent
+2017-01-24 13:12:12,266[main]             [INFO ] [o.a.c.s.VersionLoggerListener 115]   - Command line argument: -Djava.io.tmpdir=/home/user/che/ws-agent/temp
+2017-01-24 13:12:12,645[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 443]  - Initializing ProtocolHandler ["http-nio-4401"]
+2017-01-24 13:12:12,687[main]             [INFO ] [o.a.t.util.net.NioSelectorPool 72]   - Using a shared selector for servlet write/read
+2017-01-24 13:12:12,697[main]             [INFO ] [o.a.catalina.startup.Catalina 591]   - Initialization processed in 1161 ms
+2017-01-24 13:12:12,765[main]             [INFO ] [c.m.JmxRemoteLifecycleListener 332]  - The JMX Remote Listener has configured the registry on port 32002 and the server on port 32102 for the Platform server
+2017-01-24 13:12:12,801[main]             [INFO ] [o.a.c.core.StandardService 435]      - Starting service Catalina
+2017-01-24 13:12:12,801[main]             [INFO ] [o.a.c.core.StandardEngine 259]       - Starting Servlet Engine: Apache Tomcat/8.0.38
+2017-01-24 13:12:12,964[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 911]        - Deploying web application archive /home/user/che/ws-agent/webapps/ROOT.war
+2017-01-24 13:12:28,524[ost-startStop-1]  [INFO ] [o.e.c.a.p.s.WorkspaceHolder 59]      - Workspace ID: workspace6ha4jdursbtsx6j4
+2017-01-24 13:12:28,526[ost-startStop-1]  [INFO ] [o.e.c.a.p.s.WorkspaceHolder 60]      - API Endpoint: http://che-host:8080/wsmaster/api
+2017-01-24 13:12:28,527[ost-startStop-1]  [INFO ] [o.e.c.a.p.s.WorkspaceHolder 61]      - User Token  : true
+2017-01-24 13:12:31,154[s polled Thread]  [INFO ] [o.e.c.p.m.server.rmi.RmiClient 130]  - Port/Name:45847/MavenRemoteServerImpl73a74724
+ 
+Tue Jan 24 13:12:33 UTC 2017 - [localhost-startStop-1] Product-specified preferences called before plugin is started
+2017-01-24 13:12:34,508[ost-startStop-1]  [INFO ] [o.a.c.startup.HostConfig 975]        - Deployment of web application archive /home/user/che/ws-agent/webapps/ROOT.war has finished in 21,542 ms
+2017-01-24 13:12:34,520[main]             [INFO ] [o.a.c.http11.Http11NioProtocol 488]  - Starting ProtocolHandler ["http-nio-4401"]
+2017-01-24 13:12:34,695[main]             [INFO ] [o.a.catalina.startup.Catalina 642]   - Server startup in 21994 ms
+2017-01-24 13:12:35,051[nio-4401-exec-1]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-24 13:12:35,052[nio-4401-exec-5]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-24 13:12:35,052[nio-4401-exec-2]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-24 13:12:35,051[nio-4401-exec-4]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+2017-01-24 13:12:35,057[nio-4401-exec-3]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.

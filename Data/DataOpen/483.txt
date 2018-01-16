@@ -1,0 +1,3 @@
+Add support to specify package while creating class
+kind/question kind/enhancement kind/question 
+When a package is empty then it is not shown in the CHE workspace. So when I have to add a file to that empty package, I have to create the class in some other non empty package then move that to the empty package. Either show option to display empty package or, while creating a new class option of package should be provided.

@@ -1,0 +1,3 @@
+Auto save call Updating file loader
+kind/bug severity/P1 team/ide severity/P1 severity/P1 severity/blocker severity/P1 status/in-progress status/in-progress 
+On fast connections and local Che this is barely visible. However, if Che is a remote one, each time auto save happens, Updating file loader shows up. Then, Getting projects. It can be reproduced by using throttling in browser dev console on a local Che. These loaders aren't necessary at all.

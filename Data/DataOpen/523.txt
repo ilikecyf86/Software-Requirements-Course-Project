@@ -1,0 +1,3 @@
+Discussion: Adding OT to Pair Programming Extension
+kind/question 
+Pair Programming extension is great, but needs a collision algorithm and I think OT (Operational Transformation) is up for the job. I'm going to start working on adding the functionality to https://github.com/eclipse/flux. But wanted to drop an issue here for discussion and tracking. I'll reference the issue over at the flux repo when I get over there. Eclipse/flux#24

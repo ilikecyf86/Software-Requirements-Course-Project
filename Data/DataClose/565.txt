@@ -1,0 +1,3 @@
+Adapt existing selenium tests for SPI assembly
+kind/epic target/branch kind/task kind/epic team/production kind/epic kind/task kind/epic kind/epic 
+Try running selenium tests for Che SPI assembly, analyze and resolve all compatibility issues Adapting existing selenium tests from "editor" , "intelligencecommand" packages according to changes in SPI #6188 Adapting existing selenium tests from "preferences", "editor.autocomplete" packages according to changes in SPI branch #6225 Adapting existing selenium tests from 'miscellaneous' according to SPI branch #6248

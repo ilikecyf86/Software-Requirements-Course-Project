@@ -1,0 +1,3 @@
+Search is slow and crashes browser
+kind/bug severity/P1 team/ide status/in-progress 
+The search seems to be ultra slow and can crash the browser after a few minutes waiting for results. Reproduction Steps: Download a large project (for example) from https://github.com/outeredge/edge-docker-magento/releases/download/2.1.8/Magento-CE-2.1.8.tar.gz, try searching for "test" amongst all files. OS and version: Chrome, Ubuntu, Che 5.17

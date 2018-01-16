@@ -1,0 +1,3 @@
+Rework depended selenium tests after latest changes in the CHE
+kind/task 
+We have next changes in the IDE - the notifications pop up for files under filewatcher have been removed. I should rework all tests from FileWatcher package Should be change test plugin for TestNg and some commands list for KeyBindings also has been changed.

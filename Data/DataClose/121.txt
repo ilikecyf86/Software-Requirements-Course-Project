@@ -1,0 +1,3 @@
+Sometimes the message about deleted file under filewatcher is absent in the events panel
+kind/task selenium/failure team/production kind/bug kind/task team/ide team/production 
+Description Sometimes on CI failed RemoveFilesWithActiveTabs. We should investigate reason of failing and fix it Reproduction Steps The test launches 2 instances browser for common workspace. The browsers open the same file. In the browser#1 deletes file from IDE. In the browser#2 checks deleting with the message. Add info: This reproduces only on CI in multithread mode, related selenium test: RemoveFilesWithActiveTabs

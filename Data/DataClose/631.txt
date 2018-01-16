@@ -1,0 +1,20 @@
+[MissingCasesInEnumSwitch] Non-exhaustive switch; either add a default or handle the remaining cases: TOP_TOP
+kind/bug team/ide sprint/next-sprint status/in-progress sprint/next-sprint status/code-review status/in-progress status/in-progress status/code-review status/code-review status/in-progress status/code-review 
+/home/sj/dev/src/codenvy/che/ide/commons-gwt/src/main/java/org/eclipse/che/ide/ui/Tooltip.java:230: error: [MissingCasesInEnumSwitch] Non-exhaustive switch; either add a default or
+handle the remaining cases: TOP_TOP
+        switch (positioner.getVerticalAlignment()) {
+        ^
+    (see http://errorprone.info/bugpattern/MissingCasesInEnumSwitch)
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+ /home/sj/dev/src/codenvy/che/ide/commons-gwt/src/main/java/org/eclipse/che/ide/util/UnicodeUtils.java:467: error: [MissingCasesInEnumSwitch] Non-exhaustive switch; either add a defa
+ult or handle the remaining cases: ONCE
+                switch (occurences) {
+                ^
+ ome/sj/dev/src/codenvy/che/ide/che-core-ide-api/src/main/java/org/eclipse/che/ide/api/event/ng/EditorFileStatusNotificationOperation.java:85: error: [MissingCasesInEnumSwitch] Non
+-exhaustive switch; either add a default or handle the remaining cases: CREATED
+        switch (status) {
+        ^
+ /home/sj/dev/src/codenvy/che/ide/che-core-ide-api/src/main/java/org/eclipse/che/ide/api/event/ng/FileOpenCloseEventListener.java:49: error: [MissingCasesInEnumSwitch] Non-exhaustive
+ switch; either add a default or handle the remaining cases: SAVE
+                switch (event.getOperationType()) {

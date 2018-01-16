@@ -1,0 +1,3 @@
+Cannot uninstall che in mac?
+kind/question 
+How to completely remove che in mac? Once tomcat process is stopped, a new tomcat process is started at a different pid.

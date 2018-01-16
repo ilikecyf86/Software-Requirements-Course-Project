@@ -1,0 +1,3 @@
+[dashboard] Fix impact of removing MachineExtensionProxyServlet
+kind/bug 
+Need to adapt dashboard to changes caused by removing MachineExtensionProxyServlet in issue https://jira.codenvycorp.com/browse/CHE-708

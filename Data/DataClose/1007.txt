@@ -1,0 +1,3 @@
+Implement Environment estimation in Docker SPI implementation
+kind/task 
+Now Docker SPI implementation validates environment on environment estimation. But it doesn't estimate environment structure. We should implement it.

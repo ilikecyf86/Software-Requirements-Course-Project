@@ -1,0 +1,5 @@
+Make alternative to CHE_LOCAL_BINARY
+kind/enhancement 
+CHE_LOCAL_BINARY is the path to unzipped che. During development of che it looks like this CHE_LOCAL_BINARY=/Users/sj/dev/src/codenvy/che/assembly/assembly-main/target/eclipse-che-5.0.0-M6-SNAPSHOT/eclipse-che-5.0.0-M6-SNAPSHOT
+ It contains version, that is not very good. Because it sometimes changes. I'm proposing to add new variable - path to zip with che. CHE_LOCAL_BINARY_ZIP=/Users/sj/dev/src/codenvy/che/assembly/assembly-main/target
+ The important thing that it should not require version

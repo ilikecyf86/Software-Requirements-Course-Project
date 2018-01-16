@@ -1,0 +1,3 @@
+Cursor style in the Stacks list is wrong if stacks Components field is empty
+kind/bug severity/P2 team/plugin sprint/current-sprint status/code-review status/code-review sprint/current-sprint 
+Reproduction Steps: Go from the Dashboard to the Stacks list Hover cursor over COMPONENTS field of the Blank stack Expected behavior: Cursor style if default because its place is not clickable Observed behavior: Cursor style changes to pointer Similar behavior: in the Projects tab of workspace if projects DESCRIPTION is empty ; in the Workspaces list if workspaces STACK field is empty. Che version: 5.21.0-SNAPSHOT OS and version: Fedora 25 Additional information:

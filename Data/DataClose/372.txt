@@ -1,0 +1,3 @@
+Investigate problem of failing selenium tests for Find Usage and Navigate File Structure features
+kind/task team/production kind/bug sprint/current-sprint status/open-for-dev kind/task status/in-progress status/open-for-dev status/in-progress 
+FileStructureNodesTest and FindUsagesBaseOperationTest selenium tests fail while trying to open Node by double click action. If do double click action twice then Node will open. We should clarify of reason why the tests do not work properly.

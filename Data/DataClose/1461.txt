@@ -1,0 +1,3 @@
+The recent workspaces list doesn't work correctly
+kind/bug team/plugin status/open-for-dev sprint/current-sprint status/code-review status/open-for-dev status/code-review sprint/current-sprint 
+Reproduction Steps: Delete all the workspaces Create 6 any workspaces Expected behavior: In the recent workspaces list 5 recent workspaces are visible Observed behavior: Only the first created workspace is visible If create workspaces again they will be added to the "Recent Workspaces" list and more then 5 workspaces are visible(see screenshot 1) Che version: 5.4.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.3 Che install: Docker container Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes] Screenshot №1

@@ -1,0 +1,25 @@
+Investigate unexpected selenium tests interruption
+kind/bug selenium/failure team/production selenium/failure sprint/current-sprint status/open-for-dev status/in-progress status/open-for-dev status/code-review status/in-progress status/code-review 
+Reproduction Steps: Run separate selenium test. Sometimes test interrupts at the pre-destroy step when removing test workspaces without any logs: 2017-09-19 12:55:38,879[main]             [INFO ] [o.e.c.s.core.user.TestUserImpl 68]   - User name='useruu28yq', password 'Pwd11r5upx', id='userwjjwwccnsdfo2lpk' has been created
+2017-09-19 12:55:38,890[main]             [INFO ] [.c.w.TestWorkspaceProviderImpl 168]  - Initialize workspace pool with 1 entries.
+2017-09-19 12:55:38,980[onPool-worker-1]  [INFO ] [c.c.TestWorkspaceServiceClient 188]  - Workspace name='workspacext0m1n' and id='workspacexv6etg102zdfwntg' created
+Sep 19, 2017 12:55:39 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Attempting bi-dialect session, assuming Postel's Law holds true on the remote end
+Sep 19, 2017 12:55:40 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+2017-09-19 12:55:41,090[main]             [INFO ] [.e.c.s.c.i.SeleniumTestHandler 170]  - Dependencies injection in org.eclipse.che.selenium.miscellaneous.DialogAboutTest
+2017-09-19 12:55:41,381[onPool-worker-2]  [INFO ] [c.c.TestWorkspaceServiceClient 188]  - Workspace name='workspace7ohz5s' and id='workspaceevog62r1v1bbikvs' created
+2017-09-19 12:56:37,018[onPool-worker-2]  [INFO ] [o.e.c.s.c.w.TestWorkspaceImpl 58]    - Workspace name='workspace7ohz5s' id='workspaceevog62r1v1bbikvs' started.
+2017-09-19 12:56:39,689[onPool-worker-1]  [INFO ] [o.e.c.s.c.w.TestWorkspaceImpl 58]    - Workspace name='workspacext0m1n' id='workspacexv6etg102zdfwntg' started.
+Sep 19, 2017 12:56:39 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Attempting bi-dialect session, assuming Postel's Law holds true on the remote end
+Sep 19, 2017 12:56:40 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 73.522 sec - in org.eclipse.che.selenium.miscellaneous.DialogAboutTest
+2017-09-19 12:56:50,709[Thread-0]         [INFO ] [.e.c.s.c.i.SeleniumTestHandler 321]  - Cleaning up test environment...
+2017-09-19 12:56:50,710[Thread-0]         [INFO ] [.e.c.s.c.i.SeleniumTestHandler 212]  - Processing @PreDestroy annotation in org.eclipse.che.selenium.miscellaneous.DialogAboutTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+ P.S. The problem is with shutdown method which is called from shutdown hook. JVM interrupts this hook quickly - in tens seconds without any exception thrown: Shutdown hooks should also finish their work quickly. When a program invokes exit the expectation is that the virtual machine will promptly shut down and exit. When the virtual machine is terminated due to user logoff or system shutdown the underlying operating system may only allow a fixed amount of time in which to shut down and exit. It is therefore inadvisable to attempt any user interaction or to perform a long-running computation in a shutdown hook. So clean up is better to do from the SeleniumTestHandler::onFinish(ISuite suite) method which is called by TestNG itself. OS and version: Diagnostics:

@@ -1,0 +1,64 @@
+Creating a new project on /dashboard/#/create-project with a new workspace gets stuck at "Creating and initializing workspace" forever
+kind/bug severity/P1 
+Creating a new project on /dashboard/#/create-project with a new workspace gets stuck at "Creating and initializing workspace" forever Reproduction Steps: Create a new Stack based on the default dev-machine, and with command apt-get install -y git python3 gcc gcc-c++ git Test stack. The test workspace should launch without issues Go to /dashboard/#/create-project and choose template new blank project, based on this new stack Click "Create" button at bottom Observe che getting stuck: Che version: Your CLI version is 'nightly'.
+Your installed version is 'nightly'.
+ OS and version: Fedora 25 / Linux cyberman 4.9.3-200.fc25.x86_64 #1 SMP Fri Jan 13 01:01:13 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux Docker version: Client:
+ Version:      1.13.0
+ API version:  1.25
+ Go version:   go1.7.3
+ Git commit:   49bf474
+ Built:        Tue Jan 17 09:58:06 2017
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.13.0
+ API version:  1.25 (minimum version 1.12)
+ Go version:   go1.7.3
+ Git commit:   49bf474
+ Built:        Tue Jan 17 09:58:06 2017
+ OS/Arch:      linux/amd64
+ Experimental: false
+ Che cli.log output: jonas@cyberman:~/Develop/eclipse-che$ cat data/cli.log 
+HTTP/1.0 200 OK
+Content-type: application/octet-stream
+Date: Tue, 24 Jan 2017 18:19:32 GMT
+Connection: close
+Accept-Ranges: bytes
+Last-Modified: Tue, 08 Nov 2016 19:28:30 GMT
+Content-length: 6
+
+         conn (browser => ws):   [OK]
+DEBUG: docker_run
+DEBUG: docker_run
+         conn (server => ws):    [OK]
+fakeagent
+
+INFO: (che start):  Starting containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p="che" up -d >> "/data/cli.log" 2>&1
+DEBUG: docker_compose
+DEBUG: docker_run
+Starting che
+docker inspect -f '{{.Id}}' che
+INFO: (che start):  Services booting...
+INFO: (che start):  Server logs at "docker logs -f che"
+DEBUG: docker_compose
+DEBUG: docker_run
+DEBUG: Container with id 392506494b9c is matching che service
+DEBUG: Running state of container 392506494b9c is true
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+DEBUG: docker_compose
+DEBUG: docker_run
+DEBUG: Container with id 392506494b9c is matching che service
+DEBUG: Running state of container 392506494b9c is true
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+DEBUG: is_initialized
+DEBUG: docker_run
+DEBUG: is_docker_for_mac
+INFO: (che start):  Booted and reachable
+DEBUG: is_initialized
+INFO: (che start):  Ver: nightly
+INFO: (che start):  Use: http://172.17.0.1:8080
+INFO: (che start):  API: http://172.17.0.1:8080/swagger
+jonas@cyberman:~/Develop/eclipse-che$

@@ -1,0 +1,3 @@
+Compile GDB to be compatible with ARM
+Test status/pending-merge Test 
+For a remote debugging session on an Artik device, one needs to launch gdb server on the device, and then connect to it from GDB from within Che workspace. Gdb running in a Che workspace should be compiled for arm architecture.

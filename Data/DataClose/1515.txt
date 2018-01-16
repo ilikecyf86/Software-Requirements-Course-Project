@@ -1,0 +1,50 @@
+CLI in dev mode doesn't check availability of debug port 8080
+kind/bug 
+CLI in dev mode doesn't check whether port 8080 is available and fails with ugly error. Reproduction Steps: Start Codenvy in debug mode. Try to start Che in debug mode. OS and version: Ubuntu 16.04 Error: $ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /home/gaal/workspace/.che:/data -v /home/gaal/workspace/che:/repo eclipse/che-cli:nightly restart --debug --fast
+WARNING: No swap limit support
+INFO: (che cli): /repo mounted - using assembly and manifests from your local repository
+INFO: (che cli): nightly - using docker 1.12.5 / native
+WARN: CHE_HOST (172.17.0.1) overridden by che.env (agaragatyi.codenvy-dev.com)
+INFO: (che restart): Restarting...
+INFO: (che stop): Server che on port 8080 not running...
+INFO: (che config): Generating che configuration...
+Notice: Compiled catalog for 1dfd65f5300b.ua.codenvy-dev.com in environment production in 0.13 seconds
+Notice: Applied catalog in 0.10 seconds
+INFO: (che config): Customizing docker-compose for running in a container
+INFO: (che config): Copying local binaries to /home/gaal/workspace/.che/instance/dev...
+INFO: (che start): Starting containers...
+Starting che
+
+ERROR: for che  Cannot start service che: driver failed programming external connectivity on endpoint che (c2d72cb7334cf0bc23fc727c1206f23ba70e5cc06183dd7a236e19d27728b520): Bind for 0.0.0.0:8000 failed: port is already allocated
+Encountered errors while bringing up the project.
+ERROR: Error during 'compose up' - printing 30 line tail of /home/gaal/workspace/.che/cli.log:
+eval IMAGE_INIT=eclipse/che-init:nightly
+eval IMAGE_CHE=eclipse/che-server:nightly
+eval IMAGE_COMPOSE=docker/compose:1.8.1
+eval UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+eval UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+eval UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+eval UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+INFO: (che cli):  nightly - using docker 1.12.5 / native
+WARN: CHE_HOST (172.17.0.1) overridden by che.env (agaragatyi.codenvy-dev.com)
+INFO: (che restart):  Restarting...
+DEBUG: cmd_stop
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+INFO: (che stop):  Server che on port 8080 not running...
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+INFO: (che config):  Generating che configuration...
+docker_run                   --env-file="/data/che.env"                   --env-file=/version/nightly/images                   -v "/home/gaal/workspace/.che/instance":/opt/che:rw                    -e "CHE_ASSEMBLY=/home/gaal/workspace/.che/instance/dev/che-tomcat" -v "/home/gaal/workspace/che/dockerfiles/init/manifests":/etc/puppet/manifests:ro -v "/home/gaal/workspace/che/dockerfiles/init/modules":/etc/puppet/modules:ro                   -e "CHE_ENV_FILE=/home/gaal/workspace/.che/instance/config/che.env"                   -e "CHE_CONTAINER_ROOT=/data"                   -e "CHE_CONTAINER_NAME=che"                   -e "CHE_ENVIRONMENT=development"                   -e "CHE_CONFIG=/home/gaal/workspace/.che/instance"                   -e "CHE_INSTANCE=/home/gaal/workspace/.che/instance"                   -e "CHE_REPO=on"                   --entrypoint=/usr/bin/puppet                       eclipse/che-init:nightly                           apply --modulepath                                 /etc/puppet/modules/:/etc/puppet/addon/                                 /etc/puppet/manifests/ --show_diff 
+INFO: (che config):  Customizing docker-compose for running in a container
+docker_run -v "/home/gaal/workspace/.che/instance/dev":/root/dev alpine:3.4 sh -c "rm -rf /root/dev/*"
+rm -rf "/home/gaal/workspace/.che/instance/dev" >> "/data/cli.log"
+INFO: (che config):  Copying local binaries to /home/gaal/workspace/.che/instance/dev...
+INFO: (che start):  Starting containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p="che" up -d
+ERROR: Error during 'compose up' - printing 30 line tail of /home/gaal/workspace/.che/cli.log:

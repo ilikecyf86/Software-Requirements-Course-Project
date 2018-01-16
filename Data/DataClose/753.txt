@@ -1,0 +1,3 @@
+Release notes
+kind/question 
+Is it possible to get the release notes for the releases listed on github. The changelog in the repository is not being kept up to date and the last release note listed on the blog is for 5.12.

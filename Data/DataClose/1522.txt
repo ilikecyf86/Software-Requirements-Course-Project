@@ -1,0 +1,611 @@
+CLI shows wrong port for debugging of master
+kind/bug severity/P1 status/in-progress status/code-review status/in-progress status/code-review 
+After starting Che with --debug option CLI shows debug port 9000. But correct port is 8000. The same bug is present in Codenvy CLI. Reproduction Steps: Start Che with --debug option. OS and version: Ubuntu 16.04 Diagnostics: HTTP/1.0 200 OK
+Content-type: application/octet-stream
+Date: Mon, 13 Feb 2017 09:41:13 GMT
+Connection: close
+Accept-Ranges: bytes
+Last-Modified: Tue, 08 Nov 2016 19:28:30 GMT
+Content-length: 6
+
+         conn (browser => ws):    �[0;32m[OK]�[0m
+         conn (server => ws):     �[0;32m[OK]�[0m
+fakeagent
+
+INFO: (che start):  Starting containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p="che" up -d >> "/data/cli.log" 2>&1
+Creating che
+docker inspect -f '{{.Id}}' che
+INFO: (che start):  Services booting...
+INFO: (che start):  Server logs at "docker logs -f che"
+DEBUG: Container with id 800f2d959bbb is matching che service
+DEBUG: Running state of container 800f2d959bbb is true
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+DEBUG: Container with id 800f2d959bbb is matching che service
+DEBUG: Running state of container 800f2d959bbb is true
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che start):  Booted and reachable
+INFO: (che start):  Ver: nightly
+INFO: (che start):  Use: http://172.19.20.12:8080
+INFO: (che start):  API: http://172.19.20.12:8080/swagger
+Mon Feb 13 10:01:59 UTC 2017
+Checking registry for version 'nightly' images
+eval BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+eval BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+eval IMAGE_INIT=eclipse/che-init:nightly
+eval IMAGE_CHE=eclipse/che-server:nightly
+eval IMAGE_COMPOSE=docker/compose:1.8.1
+eval UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+eval UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+eval UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+eval UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+INFO: (che cli):  nightly - using docker 1.12.5 / native
+WARN: CHE_HOST (172.17.0.1) overridden by che.env (172.19.20.12)
+INFO: (che restart):  Restarting...
+DEBUG: cmd_stop
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che stop):  Stopping workspaces...
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-action:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-dir:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-test:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-mount:nightly'... found
+�[31mERROR:�[39m (che action/graceful-stop): SyntaxError: Unexpected token < in JSON at position 1
+SyntaxError: Unexpected token < in JSON at position 1
+    at Object.parse (native)
+    at DefaultHttpJsonResponse.asDto (/che-lib/spi/http/default-http-json-request.js:104:43)
+    at jsonRequest.request.then (/che-lib/api/wsmaster/system/system.js:31:33)
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+INFO: (che stop):  Stopping containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che stop -t 180 >> "/data/cli.log" 2>&1 || true
+Stopping che ... 
+�[1A�[2K
+Stopping che ... done
+�[1BINFO: (che stop):  Removing containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che rm >> "/data/cli.log" 2>&1 || true
+Going to remove che
+Removing che ... 
+�[1A�[2K
+Removing che ... done
+�[1Bdocker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+INFO: (che config):  Generating che configuration...
+docker_run                   --env-file="/data/che.env"                   --env-file=/version/nightly/images                   -v "/home/gaal/workspace/.che/instance":/opt/che:rw                    -e "CHE_ASSEMBLY=/home/gaal/workspace/.che/instance/dev/che-tomcat" -v "/home/gaal/workspace/che/dockerfiles/init/manifests":/etc/puppet/manifests:ro -v "/home/gaal/workspace/che/dockerfiles/init/modules":/etc/puppet/modules:ro                   -e "CHE_ENV_FILE=/home/gaal/workspace/.che/instance/config/che.env"                   -e "CHE_CONTAINER_ROOT=/data"                   -e "CHE_CONTAINER_NAME=che"                   -e "CHE_ENVIRONMENT=production"                   -e "CHE_CONFIG=/home/gaal/workspace/.che/instance"                   -e "CHE_INSTANCE=/home/gaal/workspace/.che/instance"                   -e "CHE_REPO=on"                   --entrypoint=/usr/bin/puppet                       eclipse/che-init:nightly                           apply --modulepath                                 /etc/puppet/modules/:/etc/puppet/addon/                                 /etc/puppet/manifests/ --show_diff >> "/data/cli.log"
+�[mNotice: Compiled catalog for 4025c4bf6c60.ua.codenvy-dev.com in environment production in 0.13 seconds�[0m
+�[mNotice: Applied catalog in 0.09 seconds�[0m
+INFO: (che config):  Customizing docker-compose for running in a container
+docker_run -v "/home/gaal/workspace/.che/instance/dev":/root/dev alpine:3.4 sh -c "rm -rf /root/dev/*"
+rm -rf "/home/gaal/workspace/.che/instance/dev" >> "/data/cli.log"
+INFO: (che config):  Copying local binaries to /home/gaal/workspace/.che/instance/dev...
+INFO: (che start):  Starting containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p="che" up -d >> "/data/cli.log" 2>&1
+Creating che
+docker inspect -f '{{.Id}}' che
+INFO: (che start):  Services booting...
+INFO: (che start):  Server logs at "docker logs -f che"
+DEBUG: Container with id 59baa1b6ca2e is matching che service
+DEBUG: Running state of container 59baa1b6ca2e is true
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+DEBUG: Container with id 59baa1b6ca2e is matching che service
+DEBUG: Running state of container 59baa1b6ca2e is true
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che start):  Booted and reachable
+INFO: (che start):  Ver: nightly
+INFO: (che start):  Use: http://172.19.20.12:8080
+INFO: (che start):  API: http://172.19.20.12:8080/swagger
+Mon Feb 13 10:22:25 UTC 2017
+Checking registry for version 'nightly' images
+eval BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+eval BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+eval IMAGE_INIT=eclipse/che-init:nightly
+eval IMAGE_CHE=eclipse/che-server:nightly
+eval IMAGE_COMPOSE=docker/compose:1.8.1
+eval UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+eval UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+eval UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+eval UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+INFO: (che cli):  nightly - using docker 1.12.5 / native
+WARN: CHE_HOST (172.17.0.1) overridden by che.env (172.19.20.12)
+INFO: (che restart):  Restarting...
+DEBUG: cmd_stop
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che stop):  Stopping workspaces...
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-action:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-dir:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-test:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-mount:nightly'... found
+�[31mERROR:�[39m (che action/graceful-stop): SyntaxError: Unexpected token < in JSON at position 1
+SyntaxError: Unexpected token < in JSON at position 1
+    at Object.parse (native)
+    at DefaultHttpJsonResponse.asDto (/che-lib/spi/http/default-http-json-request.js:104:43)
+    at jsonRequest.request.then (/che-lib/api/wsmaster/system/system.js:31:33)
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+INFO: (che stop):  Stopping containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che stop -t 180 >> "/data/cli.log" 2>&1 || true
+Stopping che ... 
+�[1A�[2K
+Stopping che ... done
+�[1BINFO: (che stop):  Removing containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che rm >> "/data/cli.log" 2>&1 || true
+Going to remove che
+Removing che ... 
+�[1A�[2K
+Removing che ... done
+�[1Bdocker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+INFO: (che config):  Generating che configuration...
+docker_run                   --env-file="/data/che.env"                   --env-file=/version/nightly/images                   -v "/home/gaal/workspace/.che/instance":/opt/che:rw                    -e "CHE_ASSEMBLY=/home/gaal/workspace/.che/instance/dev/che-tomcat" -v "/home/gaal/workspace/che/dockerfiles/init/manifests":/etc/puppet/manifests:ro -v "/home/gaal/workspace/che/dockerfiles/init/modules":/etc/puppet/modules:ro                   -e "CHE_ENV_FILE=/home/gaal/workspace/.che/instance/config/che.env"                   -e "CHE_CONTAINER_ROOT=/data"                   -e "CHE_CONTAINER_NAME=che"                   -e "CHE_ENVIRONMENT=development"                   -e "CHE_CONFIG=/home/gaal/workspace/.che/instance"                   -e "CHE_INSTANCE=/home/gaal/workspace/.che/instance"                   -e "CHE_REPO=on"                   --entrypoint=/usr/bin/puppet                       eclipse/che-init:nightly                           apply --modulepath                                 /etc/puppet/modules/:/etc/puppet/addon/                                 /etc/puppet/manifests/ --show_diff 
+INFO: (che config):  Customizing docker-compose for running in a container
+docker_run -v "/home/gaal/workspace/.che/instance/dev":/root/dev alpine:3.4 sh -c "rm -rf /root/dev/*"
+rm -rf "/home/gaal/workspace/.che/instance/dev" >> "/data/cli.log"
+INFO: (che config):  Copying local binaries to /home/gaal/workspace/.che/instance/dev...
+INFO: (che start):  Starting containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p="che" up -d
+ERROR: Error during 'compose up' - printing 30 line tail of /home/gaal/workspace/.che/cli.log:
+Mon Feb 13 10:24:21 UTC 2017
+Checking registry for version 'nightly' images
+eval BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+eval BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+eval IMAGE_INIT=eclipse/che-init:nightly
+eval IMAGE_CHE=eclipse/che-server:nightly
+eval IMAGE_COMPOSE=docker/compose:1.8.1
+eval UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+eval UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+eval UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+eval UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+INFO: (che cli):  nightly - using docker 1.12.5 / native
+WARN: CHE_HOST (172.17.0.1) overridden by che.env (172.19.20.12)
+INFO: (che restart):  Restarting...
+DEBUG: cmd_stop
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+INFO: (che stop):  Server che on port 8080 not running...
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+INFO: (che config):  Generating che configuration...
+docker_run                   --env-file="/data/che.env"                   --env-file=/version/nightly/images                   -v "/home/gaal/workspace/.che/instance":/opt/che:rw                    -e "CHE_ASSEMBLY=/home/gaal/workspace/.che/instance/dev/che-tomcat" -v "/home/gaal/workspace/che/dockerfiles/init/manifests":/etc/puppet/manifests:ro -v "/home/gaal/workspace/che/dockerfiles/init/modules":/etc/puppet/modules:ro                   -e "CHE_ENV_FILE=/home/gaal/workspace/.che/instance/config/che.env"                   -e "CHE_CONTAINER_ROOT=/data"                   -e "CHE_CONTAINER_NAME=che"                   -e "CHE_ENVIRONMENT=production"                   -e "CHE_CONFIG=/home/gaal/workspace/.che/instance"                   -e "CHE_INSTANCE=/home/gaal/workspace/.che/instance"                   -e "CHE_REPO=on"                   --entrypoint=/usr/bin/puppet                       eclipse/che-init:nightly                           apply --modulepath                                 /etc/puppet/modules/:/etc/puppet/addon/                                 /etc/puppet/manifests/ --show_diff >> "/data/cli.log"
+�[mNotice: Compiled catalog for fb818a629df5.ua.codenvy-dev.com in environment production in 0.13 seconds�[0m
+�[mNotice: /Stage[main]/Che/File[/opt/che/config/che.env]/content: 
+--- /opt/che/config/che.env
++++ /tmp/puppet-file20170213-1-i3g889
+@@ -27,8 +27,8 @@
+ CHE_CONTAINER_OFFLINE_FOLDER=/data/backup
+ CHE_CONTAINER_PREFIX=che
+ CHE_CONTAINER_ROOT=/data
+-CHE_DEBUG=true
+-CHE_ENVIRONMENT=development
++CHE_DEBUG=false
++CHE_ENVIRONMENT=production
+ CHE_ENVIRONMENT_FILE=che.env
+ CHE_ENV_FILE=/home/gaal/workspace/.che/instance/config/che.env
+ CHE_FORMAL_PRODUCT_NAME=Eclipse Che
+@@ -79,11 +79,6 @@
+ #DOCKER_HOST=tcp://localhost:2375
+ #DOCKER_MACHINE_HOST=172.17.0.1
+ 
+-CHE_DEBUG_SERVER=true
+-JPDA=jpda
+-CHE_ASSEMBLY=/home/gaal/workspace/.che/instance/dev/che-tomcat
+-CHE_LOG_LEVEL=debug
+-JPDA_ADDRESS=8000
+ 
+ 
+ CHE_DATABASE=/data
+�[0m
+�[mNotice: /Stage[main]/Che/File[/opt/che/config/che.env]/content: content changed '{md5}908bb29aac02a462ee0b30501f7d9520' to '{md5}af16d523275e719c09d9d3211a7ebd5c'�[0m
+�[mNotice: /Stage[main]/Compose/Compose::Generate_compose_file[docker-compose-container.yml]/File[/opt/che/docker-compose-container.yml]/content: 
+--- /opt/che/docker-compose-container.yml
++++ /tmp/puppet-file20170213-1-142fkdv
+@@ -15,6 +15,5 @@
+     - '/home/gaal/workspace/.che/instance/dev/che-tomcat:/assembly'
+   ports:
+     - '8080:8080'
+-    - '8000:8000'
+   restart: always
+   container_name: che
+�[0m
+�[mNotice: /Stage[main]/Compose/Compose::Generate_compose_file[docker-compose-container.yml]/File[/opt/che/docker-compose-container.yml]/content: content changed '{md5}519779eabb7577df7c269851d64a5248' to '{md5}f3be2f4d64a1e78fcfd675ae7c048a64'�[0m
+�[mNotice: /Stage[main]/Compose/Compose::Generate_compose_file[docker-compose.yml]/File[/opt/che/docker-compose.yml]/content: 
+--- /opt/che/docker-compose.yml
++++ /tmp/puppet-file20170213-1-1g8pxgd
+@@ -15,6 +15,5 @@
+     - '/home/gaal/workspace/.che/instance/dev/che-tomcat:/assembly'
+   ports:
+     - '8080:8080'
+-    - '8000:8000'
+   restart: always
+   container_name: che
+�[0m
+�[mNotice: /Stage[main]/Compose/Compose::Generate_compose_file[docker-compose.yml]/File[/opt/che/docker-compose.yml]/content: content changed '{md5}8b3b0de66760302e3fe595111e88213e' to '{md5}b6125e116a8aa500d68d2ba477ecc696'�[0m
+�[mNotice: Applied catalog in 0.22 seconds�[0m
+INFO: (che config):  Customizing docker-compose for running in a container
+docker_run -v "/home/gaal/workspace/.che/instance/dev":/root/dev alpine:3.4 sh -c "rm -rf /root/dev/*"
+rm -rf "/home/gaal/workspace/.che/instance/dev" >> "/data/cli.log"
+INFO: (che config):  Copying local binaries to /home/gaal/workspace/.che/instance/dev...
+INFO: (che start):  Starting containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p="che" up -d >> "/data/cli.log" 2>&1
+Recreating che
+docker inspect -f '{{.Id}}' che
+INFO: (che start):  Services booting...
+INFO: (che start):  Server logs at "docker logs -f che"
+DEBUG: Container with id 8de8b7307799 is matching che service
+DEBUG: Running state of container 8de8b7307799 is true
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+DEBUG: Container with id 8de8b7307799 is matching che service
+DEBUG: Running state of container 8de8b7307799 is true
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che start):  Booted and reachable
+INFO: (che start):  Ver: nightly
+INFO: (che start):  Use: http://172.19.20.12:8080
+INFO: (che start):  API: http://172.19.20.12:8080/swagger
+Mon Feb 13 10:52:25 UTC 2017
+Checking registry for version 'nightly' images
+eval BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+eval BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+eval IMAGE_INIT=eclipse/che-init:nightly
+eval IMAGE_CHE=eclipse/che-server:nightly
+eval IMAGE_COMPOSE=docker/compose:1.8.1
+eval UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+eval UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+eval UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+eval UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+INFO: (che cli):  nightly - using docker 1.12.5 / native
+WARN: CHE_HOST (172.17.0.1) overridden by che.env (172.19.20.12)
+INFO: (che restart):  Restarting...
+DEBUG: cmd_stop
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che stop):  Stopping workspaces...
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-action:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-dir:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-test:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-mount:nightly'... found
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'PREPARING_TO_SHUTDOWN' (was 'RUNNING')
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'undefined' (was 'undefined')
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'undefined' (was 'undefined')
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'undefined' (was 'undefined')
+�[32mINFO:�[39m (che action/graceful-stop): Success: system is now in status 'READY_TO_SHUTDOWN'.
+INFO: (che stop):  Stopping containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che stop -t 180 >> "/data/cli.log" 2>&1 || true
+Stopping che ... 
+�[1A�[2K
+Stopping che ... done
+�[1BINFO: (che stop):  Removing containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che rm >> "/data/cli.log" 2>&1 || true
+Going to remove che
+Removing che ... 
+�[1A�[2K
+Removing che ... done
+�[1Bdocker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+INFO: (che config):  Generating che configuration...
+docker_run                   --env-file="/data/che.env"                   --env-file=/version/nightly/images                   -v "/home/gaal/workspace/.che/instance":/opt/che:rw                    -e "CHE_ASSEMBLY=/home/gaal/workspace/.che/instance/dev/che-tomcat" -v "/home/gaal/workspace/che/dockerfiles/init/manifests":/etc/puppet/manifests:ro -v "/home/gaal/workspace/che/dockerfiles/init/modules":/etc/puppet/modules:ro                   -e "CHE_ENV_FILE=/home/gaal/workspace/.che/instance/config/che.env"                   -e "CHE_CONTAINER_ROOT=/data"                   -e "CHE_CONTAINER_NAME=che"                   -e "CHE_ENVIRONMENT=development"                   -e "CHE_CONFIG=/home/gaal/workspace/.che/instance"                   -e "CHE_INSTANCE=/home/gaal/workspace/.che/instance"                   -e "CHE_REPO=on"                   --entrypoint=/usr/bin/puppet                       eclipse/che-init:nightly                           apply --modulepath                                 /etc/puppet/modules/:/etc/puppet/addon/                                 /etc/puppet/manifests/ --show_diff 
+INFO: (che config):  Customizing docker-compose for running in a container
+docker_run -v "/home/gaal/workspace/.che/instance/dev":/root/dev alpine:3.4 sh -c "rm -rf /root/dev/*"
+rm -rf "/home/gaal/workspace/.che/instance/dev" >> "/data/cli.log"
+INFO: (che config):  Copying local binaries to /home/gaal/workspace/.che/instance/dev...
+INFO: (che start):  Starting containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p="che" up -d
+docker inspect -f '{{.Id}}' che
+INFO: (che start):  Services booting...
+DEBUG: Container with id 4d42656edb35 is matching che service
+DEBUG: Running state of container 4d42656edb35 is true
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+sleep 2
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+sleep 2
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+DEBUG: Container with id 4d42656edb35 is matching che service
+DEBUG: Running state of container 4d42656edb35 is true
+INFO:  
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che start):  Booted and reachable
+INFO: (che start):  Ver: nightly
+INFO: (che start):  Use: http://172.19.20.12:8080
+INFO: (che start):  API: http://172.19.20.12:8080/swagger
+INFO: (che start):  Debug: http://172.17.0.1:9000
+Mon Feb 13 10:57:04 UTC 2017
+Checking registry for version 'nightly' images
+eval BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+eval BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+eval IMAGE_INIT=eclipse/che-init:nightly
+eval IMAGE_CHE=eclipse/che-server:nightly
+eval IMAGE_COMPOSE=docker/compose:1.8.1
+eval UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+eval UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+eval UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+eval UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+INFO: (che cli):  nightly - using docker 1.12.5 / native
+WARN: CHE_HOST (172.17.0.1) overridden by che.env (172.19.20.12)
+INFO: (che restart):  Restarting...
+DEBUG: cmd_stop
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che stop):  Stopping workspaces...
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-action:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-dir:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-test:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-mount:nightly'... found
+�[31mERROR:�[39m (che action/graceful-stop): SyntaxError: Unexpected token < in JSON at position 1
+SyntaxError: Unexpected token < in JSON at position 1
+    at Object.parse (native)
+    at DefaultHttpJsonResponse.asDto (/che-lib/spi/http/default-http-json-request.js:104:43)
+    at jsonRequest.request.then (/che-lib/api/wsmaster/system/system.js:31:33)
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+INFO: (che stop):  Stopping containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che stop -t 180 >> "/data/cli.log" 2>&1 || true
+Stopping che ... 
+�[1A�[2K
+Stopping che ... done
+�[1BINFO: (che stop):  Removing containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che rm >> "/data/cli.log" 2>&1 || true
+Going to remove che
+Removing che ... 
+�[1A�[2K
+Removing che ... done
+�[1Bdocker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+INFO: (che config):  Generating che configuration...
+docker_run                   --env-file="/data/che.env"                   --env-file=/version/nightly/images                   -v "/home/gaal/workspace/.che/instance":/opt/che:rw                    -e "CHE_ASSEMBLY=/home/gaal/workspace/.che/instance/dev/che-tomcat" -v "/home/gaal/workspace/che/dockerfiles/init/manifests":/etc/puppet/manifests:ro -v "/home/gaal/workspace/che/dockerfiles/init/modules":/etc/puppet/modules:ro                   -e "CHE_ENV_FILE=/home/gaal/workspace/.che/instance/config/che.env"                   -e "CHE_CONTAINER_ROOT=/data"                   -e "CHE_CONTAINER_NAME=che"                   -e "CHE_ENVIRONMENT=development"                   -e "CHE_CONFIG=/home/gaal/workspace/.che/instance"                   -e "CHE_INSTANCE=/home/gaal/workspace/.che/instance"                   -e "CHE_REPO=on"                   --entrypoint=/usr/bin/puppet                       eclipse/che-init:nightly                           apply --modulepath                                 /etc/puppet/modules/:/etc/puppet/addon/                                 /etc/puppet/manifests/ --show_diff 
+INFO: (che config):  Customizing docker-compose for running in a container
+docker_run -v "/home/gaal/workspace/.che/instance/dev":/root/dev alpine:3.4 sh -c "rm -rf /root/dev/*"
+rm -rf "/home/gaal/workspace/.che/instance/dev" >> "/data/cli.log"
+INFO: (che config):  Copying local binaries to /home/gaal/workspace/.che/instance/dev...
+INFO: (che start):  Starting containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p="che" up -d
+docker inspect -f '{{.Id}}' che
+INFO: (che start):  Services booting...
+DEBUG: Container with id c44867db5f80 is matching che service
+DEBUG: Running state of container c44867db5f80 is true
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+sleep 2
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+sleep 2
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+DEBUG: Container with id c44867db5f80 is matching che service
+DEBUG: Running state of container c44867db5f80 is true
+INFO:  
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che start):  Booted and reachable
+INFO: (che start):  Ver: nightly
+INFO: (che start):  Use: http://172.19.20.12:8080
+INFO: (che start):  API: http://172.19.20.12:8080/swagger
+INFO: (che start):  Debug: http://172.17.0.1:9000
+Mon Feb 13 12:35:40 UTC 2017
+Checking registry for version 'nightly' images
+eval BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+eval BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+eval IMAGE_INIT=eclipse/che-init:nightly
+eval IMAGE_CHE=eclipse/che-server:nightly
+eval IMAGE_COMPOSE=docker/compose:1.8.1
+eval UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+eval UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+eval UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+eval UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+INFO: (che cli):  nightly - using docker 1.12.5 / native
+WARN: CHE_HOST (172.17.0.1) overridden by che.env (172.19.20.12)
+INFO: (che restart):  Restarting...
+DEBUG: cmd_stop
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che stop):  Stopping workspaces...
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-action:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-dir:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-test:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-mount:nightly'... found
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'PREPARING_TO_SHUTDOWN' (was 'RUNNING')
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'undefined' (was 'undefined')
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'undefined' (was 'undefined')
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'undefined' (was 'undefined')
+�[32mINFO:�[39m (che action/graceful-stop): Success: system is now in status 'READY_TO_SHUTDOWN'.
+INFO: (che stop):  Stopping containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che stop -t 180 >> "/data/cli.log" 2>&1 || true
+Stopping che ... 
+�[1A�[2K
+Stopping che ... done
+�[1BINFO: (che stop):  Removing containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che rm >> "/data/cli.log" 2>&1 || true
+Going to remove che
+Removing che ... 
+�[1A�[2K
+Removing che ... done
+�[1Bdocker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+INFO: (che config):  Generating che configuration...
+docker_run                   --env-file="/data/che.env"                   --env-file=/version/nightly/images                   -v "/home/gaal/workspace/.che/instance":/opt/che:rw                    -e "CHE_ASSEMBLY=/home/gaal/workspace/.che/instance/dev/che-tomcat" -v "/home/gaal/workspace/che/dockerfiles/init/manifests":/etc/puppet/manifests:ro -v "/home/gaal/workspace/che/dockerfiles/init/modules":/etc/puppet/modules:ro                   -e "CHE_ENV_FILE=/home/gaal/workspace/.che/instance/config/che.env"                   -e "CHE_CONTAINER_ROOT=/data"                   -e "CHE_CONTAINER_NAME=che"                   -e "CHE_ENVIRONMENT=development"                   -e "CHE_CONFIG=/home/gaal/workspace/.che/instance"                   -e "CHE_INSTANCE=/home/gaal/workspace/.che/instance"                   -e "CHE_REPO=on"                   --entrypoint=/usr/bin/puppet                       eclipse/che-init:nightly                           apply --modulepath                                 /etc/puppet/modules/:/etc/puppet/addon/                                 /etc/puppet/manifests/ --show_diff 
+INFO: (che config):  Customizing docker-compose for running in a container
+docker_run -v "/home/gaal/workspace/.che/instance/dev":/root/dev alpine:3.4 sh -c "rm -rf /root/dev/*"
+rm -rf "/home/gaal/workspace/.che/instance/dev" >> "/data/cli.log"
+INFO: (che config):  Copying local binaries to /home/gaal/workspace/.che/instance/dev...
+INFO: (che start):  Starting containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p="che" up -d
+docker inspect -f '{{.Id}}' che
+INFO: (che start):  Services booting...
+DEBUG: Container with id 1eb49dfd2321 is matching che service
+DEBUG: Running state of container 1eb49dfd2321 is true
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+sleep 2
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+sleep 2
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+DEBUG: Container with id 1eb49dfd2321 is matching che service
+DEBUG: Running state of container 1eb49dfd2321 is true
+INFO:  
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che start):  Booted and reachable
+INFO: (che start):  Ver: nightly
+INFO: (che start):  Use: http://172.19.20.12:8080
+INFO: (che start):  API: http://172.19.20.12:8080/swagger
+INFO: (che start):  Debug: http://172.17.0.1:9000
+Mon Feb 13 13:18:11 UTC 2017
+Checking registry for version 'nightly' images
+eval BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+eval BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+eval IMAGE_INIT=eclipse/che-init:nightly
+eval IMAGE_CHE=eclipse/che-server:nightly
+eval IMAGE_COMPOSE=docker/compose:1.8.1
+eval UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+eval UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+eval UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+eval UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+INFO: (che cli):  nightly - using docker 1.12.5 / native
+WARN: CHE_HOST (172.17.0.1) overridden by che.env (172.19.20.12)
+INFO: (che restart):  Restarting...
+DEBUG: cmd_stop
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che stop):  Stopping workspaces...
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-action:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-dir:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-test:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-mount:nightly'... found
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'PREPARING_TO_SHUTDOWN' (was 'RUNNING')
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'undefined' (was 'undefined')
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'undefined' (was 'undefined')
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'undefined' (was 'undefined')
+�[32mINFO:�[39m (che action/graceful-stop): Success: system is now in status 'READY_TO_SHUTDOWN'.
+INFO: (che stop):  Stopping containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che stop -t 180 >> "/data/cli.log" 2>&1 || true
+Stopping che ... 
+�[1A�[2K
+Stopping che ... done
+�[1BINFO: (che stop):  Removing containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che rm >> "/data/cli.log" 2>&1 || true
+Going to remove che
+Removing che ... 
+�[1A�[2K
+Removing che ... done
+�[1Bdocker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+INFO: (che config):  Generating che configuration...
+docker_run                   --env-file="/data/che.env"                   --env-file=/version/nightly/images                   -v "/home/gaal/workspace/.che/instance":/opt/che:rw                    -e "CHE_ASSEMBLY=/home/gaal/workspace/.che/instance/dev/che-tomcat" -v "/home/gaal/workspace/che/dockerfiles/init/manifests":/etc/puppet/manifests:ro -v "/home/gaal/workspace/che/dockerfiles/init/modules":/etc/puppet/modules:ro                   -e "CHE_ENV_FILE=/home/gaal/workspace/.che/instance/config/che.env"                   -e "CHE_CONTAINER_ROOT=/data"                   -e "CHE_CONTAINER_NAME=che"                   -e "CHE_ENVIRONMENT=development"                   -e "CHE_CONFIG=/home/gaal/workspace/.che/instance"                   -e "CHE_INSTANCE=/home/gaal/workspace/.che/instance"                   -e "CHE_REPO=on"                   --entrypoint=/usr/bin/puppet                       eclipse/che-init:nightly                           apply --modulepath                                 /etc/puppet/modules/:/etc/puppet/addon/                                 /etc/puppet/manifests/ --show_diff 
+INFO: (che config):  Customizing docker-compose for running in a container
+docker_run -v "/home/gaal/workspace/.che/instance/dev":/root/dev alpine:3.4 sh -c "rm -rf /root/dev/*"
+rm -rf "/home/gaal/workspace/.che/instance/dev" >> "/data/cli.log"
+INFO: (che config):  Copying local binaries to /home/gaal/workspace/.che/instance/dev...
+INFO: (che start):  Starting containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p="che" up -d
+docker inspect -f '{{.Id}}' che
+INFO: (che start):  Services booting...
+DEBUG: Container with id af8b49a14e72 is matching che service
+DEBUG: Running state of container af8b49a14e72 is true
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+sleep 2
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+000
+sleep 2
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+DEBUG: Container with id af8b49a14e72 is matching che service
+DEBUG: Running state of container af8b49a14e72 is true
+INFO:  
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che start):  Booted and reachable
+INFO: (che start):  Ver: nightly
+INFO: (che start):  Use: http://172.19.20.12:8080
+INFO: (che start):  API: http://172.19.20.12:8080/swagger
+INFO: (che start):  Debug: http://172.17.0.1:9000
+Mon Feb 13 13:22:17 UTC 2017
+Checking registry for version 'nightly' images
+eval BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+eval BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+eval IMAGE_INIT=eclipse/che-init:nightly
+eval IMAGE_CHE=eclipse/che-server:nightly
+eval IMAGE_COMPOSE=docker/compose:1.8.1
+eval UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+eval UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+eval UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+eval UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+INFO: (che cli):  nightly - using docker 1.12.5 / native
+WARN: CHE_HOST (172.17.0.1) overridden by che.env (172.19.20.12)
+DEBUG: cmd_stop
+docker inspect -f '{{.Id}}' che
+/usr/bin/curl  "-I -k 172.17.0.1:8080/api/ -s -o /dev/null --write-out %{http_code}"
+200
+INFO: (che stop):  Stopping workspaces...
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-action:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-dir:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-test:nightly'... found
+\033[0;32mINFO:\033[0m (che download): Checking for image 'eclipse/che-mount:nightly'... found
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'PREPARING_TO_SHUTDOWN' (was 'RUNNING')
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'undefined' (was 'undefined')
+�[32mINFO:�[39m (che action/graceful-stop): System going into status 'undefined' (was 'undefined')
+�[32mINFO:�[39m (che action/graceful-stop): Success: system is now in status 'READY_TO_SHUTDOWN'.
+INFO: (che stop):  Stopping containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che stop -t 180 >> "/data/cli.log" 2>&1 || true
+Stopping che ... 
+�[1A�[2K
+Stopping che ... done
+�[1BINFO: (che stop):  Removing containers...
+docker_compose --file="/data/instance/docker-compose-container.yml" -p=che rm >> "/data/cli.log" 2>&1 || true
+Going to remove che
+Removing che ... 
+�[1A�[2K
+Removing che ... done
+�[1B

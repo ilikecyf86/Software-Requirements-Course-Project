@@ -1,0 +1,3 @@
+fix rh-che-ci-master build on CI
+kind/task sprint/current-sprint team/production 
+fix rh-che-ci-master build on CI

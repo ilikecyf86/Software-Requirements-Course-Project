@@ -1,0 +1,3 @@
+Unable to connect ARTIK device
+status/open-for-dev 
+Hi, I am unable to connect the ARTIK device with the ide. I followed the directions given in the https://eclipse-che.readme.io/docs/samsung-artik-ide-getting-started . When I enter the ip address, username and password and try to connect the device I get the following error: Failed to connect to device artik_device_1 due to an error Ssh machine creation failed because ssh of machine is inaccessible. Error:timeout: socket is not established What am I doing wrong? How to make ssh of machine accessible?

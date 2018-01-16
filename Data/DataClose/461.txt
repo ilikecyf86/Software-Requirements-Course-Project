@@ -1,0 +1,3 @@
+Add selenium tests for "Servers" section
+kind/task sprint/next-sprint status/open-for-dev team/plugin target/branch sprint/next-sprint status/open-for-dev 
+The "Servers" tab of the machine's panel should be covered with selenium test.

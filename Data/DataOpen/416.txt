@@ -1,0 +1,3 @@
+Maven tests fails on some configurations
+kind/bug team/ide severity/P2 sprint/next-sprint sprint/next-sprint 
+Due to this line tests fails on environments where M2_HOME property is not set. We need to find more flexible way to configure maven server independently of the hosting OS.

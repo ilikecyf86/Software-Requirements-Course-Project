@@ -1,0 +1,4 @@
+Passing argument to docker image
+kind/question 
+Latest docker image can start, but I hope I can pass some argument to the internal che.sh, like: docker run --privileged -it --name che --net=host codenvy/che:nightly -r:111.111.111.111
+ I've tried but make it myself, but not successful. So I asked a question on stackoverflow: http://stackoverflow.com/questions/34691752/how-to-write-a-dockerfile-which-i-can-start-a-service-and-run-a-shell-and-also-a Thanks for help

@@ -1,0 +1,3 @@
+Rework Language Server plugin to avoid using Everrest based Websocket calls
+kind/enhancement team/ide status/in-progress status/in-progress 
+Language Server plugin uses Everrest based Websocket calls for broadcasting events about language server initialization. See LanguageServerRegistry. Need to replace it with JSON-RPC.

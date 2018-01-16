@@ -1,0 +1,3 @@
+Workspace not change his status after starting
+kind/bug severity/P2 
+Reproduction Steps Create and run any workspace Not do any actions and wait until workspace will be started Pay attention that workspace status in dashboard is not changed OS and version: Che(multiuser) 5.19.0 ; Fedora 25 ; Chrome 59.0 Attachment

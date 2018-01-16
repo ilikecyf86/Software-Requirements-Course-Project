@@ -1,0 +1,3 @@
+Cannot cancel refactoring operation by Escape button
+kind/bug severity/P2 team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint status/in-progress status/code-review status/in-progress status/code-review sprint/current-sprint 
+Reproduction Steps: Open a java class Set a cursor on some field of the class Try to rename the field by Assistant -> Refactoring -> Rename action Type a new name for this one, but do not confirm the operation Press Escape button to cancel the refactoring operation Expected behaviour: the refactoring operation is cancelled and the field has old name Observed behaviour: the field has the new name Che version: 5.10.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

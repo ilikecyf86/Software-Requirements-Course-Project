@@ -1,0 +1,103 @@
+org.eclipse.che.plugin.docker.client.exception.DockerException: Error response from docker API, status: 500, message: Invalid filter 'reference'
+kind/bug sprint/current-sprint status/open-for-dev team/enterprise sprint/current-sprint status/open-for-dev 
+2017-06-29 19:02:57,968[nio-8080-exec-3]  [INFO ] [o.e.c.a.w.s.WorkspaceManager 897]    - Workspace 'che/wksp-2zze' with id 'workspacea7pko9em3yqrvbnd' created by user 'che'
+2017-06-29 19:03:00,375[aceSharedPool-4]  [WARN ] [.e.c.p.d.m.MachineProviderImpl 557]  - Failed to check image eclipse/dotnet_core availability. Cause: Error response from docker API, status: 500, message: Invalid filter 'reference'
+org.eclipse.che.plugin.docker.client.exception.DockerException: Error response from docker API, status: 500, message: Invalid filter 'reference'
+	at org.eclipse.che.plugin.docker.client.DockerConnector.getDockerException(DockerConnector.java:1369)
+	at org.eclipse.che.plugin.docker.client.DockerConnector.listImages(DockerConnector.java:230)
+	at org.eclipse.che.plugin.docker.machine.MachineProviderImpl.isDockerImageExistLocally(MachineProviderImpl.java:553)
+	at org.eclipse.che.plugin.docker.machine.MachineProviderImpl.pullImage(MachineProviderImpl.java:523)
+	at org.eclipse.che.plugin.docker.machine.MachineProviderImpl.prepareImage(MachineProviderImpl.java:439)
+	at org.eclipse.che.plugin.docker.machine.MachineProviderImpl.startService(MachineProviderImpl.java:334)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.lambda$startEnvironmentQueue$6(CheEnvironmentEngine.java:785)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.startInstance(CheEnvironmentEngine.java:952)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.startEnvironmentQueue(CheEnvironmentEngine.java:813)
+	at org.eclipse.che.api.environment.server.CheEnvironmentEngine.start(CheEnvironmentEngine.java:268)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.startEnvironmentAndPublishEvents(WorkspaceRuntimes.java:712)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes.access$100(WorkspaceRuntimes.java:106)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes$StartTask.call(WorkspaceRuntimes.java:977)
+	at org.eclipse.che.api.workspace.server.WorkspaceRuntimes$StartTask.call(WorkspaceRuntimes.java:941)
+	at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalCallable.call(CopyThreadLocalCallable.java:30)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+ Reproduction Steps: Start a new workspace based on .NET runtime + default project provided by the wizard Result: worspace is created, but project isn't imported into it. Exception appreared in che log (see above) Probably, the project import failure is not directly related to the exception, as yet another warning message appeared after the exception: 2017-06-29 19:05:50,821[nio-8080-exec-4]  [WARN ] [s.o.OAuthAuthenticationService 201]  - Unsupported OAuth provider github
+ OS and version: $ docker --version
+Cannot set persistent booleans, please try as root.
+Docker version 1.12.6, build 88a4867/1.12.6
+ $ docker version
+Cannot set persistent booleans, please try as root.
+Client:
+ Version:         1.12.6
+ API version:     1.24
+ Package version: docker-1.12.6-32.git88a4867.el7.x86_64
+ Go version:      go1.7.6
+ Git commit:      88a4867/1.12.6
+ Built:           Mon Jun 19 17:26:57 2017
+ OS/Arch:         linux/amd64
+
+Server:
+ Version:         1.12.6
+ API version:     1.24
+ Package version: docker-1.12.6-32.git88a4867.el7.x86_64
+ Go version:      go1.7.6
+ Git commit:      88a4867/1.12.6
+ Built:           Mon Jun 19 17:26:57 2017
+ OS/Arch:         linux/amd64
+ $ uname -a
+Linux rhel 3.10.0-514.26.1.el7.x86_64 #1 SMP Tue Jun 20 01:16:02 EDT 2017 x86_64 x86_64 x86_64 GNU/Linux
+ Diagnostics: $ docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /home/ruby/projects/che/che-runtime-workspace:/data -v /home/ruby/projects/che/source/che:/repo eclipse/che info --fast
+Cannot set persistent booleans, please try as root.
+WARN: Bound 'eclipse/che' to 'eclipse/che:5.14.0'
+ WARNING: Usage of loopback devices is strongly discouraged for production use. Either use `--storage-opt dm.thinpooldev` or use `--storage-opt dm.no_warn_on_loop_devices=true` to suppress this warning.
+INFO: (che cli): /repo mounted - using assembly and manifests from your local repository
+ERROR: The scripts in eclipse/che do not match those in :/repo.
+ERROR: Is your repo branch compatible with this image version?
+ERROR: Add '--skip:scripts' to skip this check.
+INFO: (che cli): 5.14.0 - using docker 1.12.6 / native
+
+CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che
+ Version:        5.14.0
+ Command:        info
+ Parameters:     info --fast
+Mounts:
+ /data:          /home/ruby/projects/che/che-runtime-workspace
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          /home/ruby/projects/che/source/che
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    5.14.0
+ CHE_HOST:       10.0.2.15
+ CHE_INSTANCE:   /home/ruby/projects/che/che-runtime-workspace/instance
+ CHE_CONFIG:     /home/ruby/projects/che/che-runtime-workspace
+ CHE_BACKUP:     /home/ruby/projects/che/che-runtime-workspace/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   10.0.2.15
+ Initialized:    true
+ CHE_DEVELOPMENT_REPO: /home/ruby/projects/che/source/che
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:5.14.0
+ IMAGE_CHE=eclipse/che-server:5.14.0
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ IMAGE_TRAEFIK=traefik:v1.3.0-rc3
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:nightly
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:nightly
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:nightly
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:nightly
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:nightly
+che.env:
+ CHE_HOST=10.0.2.15
+ CHE_SINGLE_PORT=false

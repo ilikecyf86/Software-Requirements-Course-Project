@@ -1,0 +1,3 @@
+Allow to show/hide servers that were not explicitly added by user
+kind/enhancement sprint/next-sprint status/open-for-dev team/plugin sprint/current-sprint target/branch sprint/next-sprint status/open-for-dev sprint/current-sprint 
+Add ability to show/hide the servers, that were not directly added by user (those that are absent in machine's config). The checkbox should be enough.

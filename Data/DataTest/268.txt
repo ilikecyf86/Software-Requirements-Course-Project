@@ -1,0 +1,3 @@
+Unexpected message 'Unable to start workspace' after stop workspace
+kind/bug 
+Open the dashboard and create new workspace using stack Java. Open it in the IDE and import project (e.g. git@github.com:idexmai/Spring_Simple.git). Go to -> 'Workspace' -> 'Stop' and perform it. Expected: should appear the 'Start Workspace' form. Actual: unexpectedly appears the message 'Unable to start workspace'. See the attachments.

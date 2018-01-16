@@ -1,0 +1,3 @@
+Project explorer randomly fail to expand some folders
+kind/bug severity/P1 
+Reproduction Steps: Import projects Try to expand some folders Some folders fail to expand No error from server No console log error When refreshing the browser (F5), sometime the folder that couldn't be expanded magically expand well. but can't expand new other folders ....

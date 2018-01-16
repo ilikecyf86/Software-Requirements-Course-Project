@@ -1,0 +1,3 @@
+Workspace agent does not start on RHEL with no Java 1.8 installed
+kind/bug severity/P1 
+Steps to reproduce: Grab a clean rhel7 image Create a custom stack There's no -y here https://github.com/eclipse/che/blob/master/wsagent/agent/src/main/resources/org.eclipse.che.ws-agent.script.sh#L217 and here https://github.com/eclipse/che/blob/master/wsagent/agent/src/main/resources/org.eclipse.che.ws-agent.script.sh#L80 As a result, openjdk packages are never installed and workspace fails to start.

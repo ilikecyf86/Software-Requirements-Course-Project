@@ -1,0 +1,6 @@
+Define format for writing guides
+kind/task status/open-for-dev team/enterprise sprint/current-sprint sprint/current-sprint sprint/current-sprint status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+The goal of this task is to figure out the best format for guides. Consider: extensibility easy to use popularity render library that we allowed to use Issue also requires specification concerning Che actions format. Format has to be intuitively understand for Technology provider and any person who wants to write guide. @eivantsov 's suggestion: [action type=ide actionID=helpAboutAction]
+[action type=openFile path=/path/to/file scroll=23 highlight=23:25]
+[action type=command name=build and run]
+ Epic: #6150 DoD: Parser in question has to cover at least MD format Performance tests performed to compare client side parser vs server side parser Proposed format for custom actions can be parsed and relatively easy to use License checked Sources to look at: https://code.visualstudio.com/docs/languages/markdown @benoitf already has made investigation, see details in comments

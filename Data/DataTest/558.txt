@@ -1,0 +1,3 @@
+Custom image fails on workspace build, stuck in "Starting"
+kind/question 
+When creating a workspace based on an image that fails to execute/build/etc it gets stuck in "Starting" state. When there it can't be deleted, stopped, recovered, etc - or at least I haven't been able to find a way to yet.

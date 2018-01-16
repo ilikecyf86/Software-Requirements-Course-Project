@@ -1,0 +1,3 @@
+Remove exec/terminal agents from dependencies of ws-agent
+kind/task team/platform 
+Description Currently, ws-agent installer has terminal and exec agents as dependencies. But it doesn't depend on it, to be honest. I suggest removing these dependencies. Reproduction Steps OS and version: Diagnostics:

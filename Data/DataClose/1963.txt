@@ -1,0 +1,7 @@
+Chefile error: location is undefined in workspace.runtime.image.location
+kind/question severity/P2 kind/bug status/code-review status/code-review 
+I used the CLI che dir init command to get a Chefile and then added this line workspace.runtime.image.location="node:6". But this gives me an error when I run che dir up: WARNING: No kernel memory limit support
+ERROR: ECLIPSE CHE(dir): Error: Error while parsing the file '/d/Projects/Tests/che-dir/Chefile' at line 3 and column 33. The error is :Cannot set property 'location' of undefined
+ Reproduction Steps: Get the CLI Make sure you set the vars like suggested CHE_DATA=<somedir> and CHE_VERSION=nightly Switch to the che dir getting started guide and make sure you set CHE_UTILITY_VERSION=nightly Go into an empty folder and run che dir init. Open the generated "Chefile" and add workspace.runtime.image.location="node:6". Run che dir up. Expected behavior: Start a che server with a workspace that has the node:6 image. Observed behavior: WARNING: No kernel memory limit support
+ERROR: ECLIPSE CHE(dir): Error: Error while parsing the file '/d/Projects/Tests/che-dir/Chefile' at line 3 and column 33. The error is :Cannot set property 'location' of undefined
+ Che version: nightly? OS and version: Windows 10 Pro Docker version: 1.12.3 (Native windows version)

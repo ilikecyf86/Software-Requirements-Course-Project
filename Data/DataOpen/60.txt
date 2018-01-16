@@ -1,0 +1,33 @@
+Eclipse Che Custom Assembly with this SVN plugin doesn’t work
+kind/question 
+Description I created and launch a custom assembly Using the SVN plug-in added to the Che6 branch by referring to the document , but “Subversion” is not added to the “Import project” menu. Reproduction Steps Install a SVN Plugin comply with Che version(6.0.0-M3-SNAPSHOT) Link dependencies to Che Pom Subject is below che/pom.xml che/assembly/assembly-ide-war/pom.xm che/assembly/assembly-wsagent-war/pom.xml Build Che assembly     cd che/assembly/assembly-ide-war && mvn clean install
+    cd che/assembly/assembly-wsagent-war && mvn clean install
+    cd che/assembly/assembly-wsagent-server && mvn clean install
+    cd che/assembly/assembly-main && mvn clean install
+ Launch Che     docker run -it --rm -e CHE_PORT=80 \
+    -v /var/run/docker.sock:/var/run/docker.sock  \
+    -v /data/che-6.0:/data -v /data/che-6.0/instance:/data/instance \
+    -v /data/che-6.0/backup:/data/backup \
+    -v /data/che-repo/che/assembly/assembly-main/target/eclipse-che-6.0.0-M3-SNAPSHOT/eclipse-che-6.0.0-M3-SNAPSHOT:/assembly \
+    eclipse/che:6.0.0-M2 start
+ all containers strat succesfully. Output log details INFO: (che cli): :/assembly mounted - using assembly from local host
+INFO: (che cli): 6.0.0-M2 - using docker 17.11.0-ce-rc3 / native
+WARN: Newer version '6.0.0-M2' available
+INFO: (che config): Generating che configuration...
+INFO: (che config): Customizing docker-compose for running in a container
+INFO: (che config): Copying local binaries to /data/che-6.0/instance/dev...
+INFO: (che start): Preflight checks
+         mem (1.5 GiB):           [OK]
+         disk (100 MB):           [OK]
+         port 80 (http):        [AVAILABLE]
+         conn (browser => ws):    [OK]
+         conn (server => ws):     [OK]
+
+INFO: (che start): Starting containers...
+INFO: (che start): Services booting...
+INFO: (che start): Server logs at "docker logs -f che-80" 
+INFO: (che start): Booted and reachable
+INFO: (che start): Ver: 6.0.0-M2
+INFO: (che start): Use: http://XX.XX.XX.XX:80
+INFO: (che start): API: http://XX.XX.XX.XX:80/swagger
+ Che starts up normally, and the workspace can also be used normally. But “Subversion” is not added to the “Import project” menu. Please could you help me, is there something I am missing? Che version: 6.0.0-M3-SNAPSHOT OS and version: CentOS Linux release 7.4.1708 Docker version: 17.11.0-ce-rc3 Maven version: Apache Maven 3.3.9

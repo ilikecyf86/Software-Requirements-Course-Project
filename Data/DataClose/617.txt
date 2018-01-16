@@ -1,0 +1,3 @@
+Wrong behaviour of double click in Git Compare window
+status/in-progress team/enterprise kind/bug status/in-progress 
+Reproduction Steps: Create a workspace and clone Che project (or another with several remote branches). Change a few files. Use Main Menu -> Git -> Compare -> Compare with branch In the opened dialog choose remote non-master branch. In the opened window select modified file and perform double click on it. Expected: Diff with the selected branch should be shown. Actual: Diff with Head is shown. In case of click on Compare button it works as expected.

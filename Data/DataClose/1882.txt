@@ -1,0 +1,3 @@
+Position of create/remove/duplicate buttons aren't correct when Commands Explorer width is too small
+kind/bug team/ide status/pending-merge status/pending-merge 
+Position of create/remove/duplicate buttons aren't correct when Commands Explorer width is too small. Reproduction Steps: Reduce width of the Commands Explorer. Try to select command with long name. Observed behavior: Additional information: branch icom

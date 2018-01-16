@@ -1,0 +1,3 @@
+Hello World Extension Not Working
+
+We are trying to design sample hello world extension for eclipse-che as mentioned https://eclipse-che.readme.io/v5.0/docs/helloworld-extension Screenshots for how we configured che-helloworld-sample extension Steps # CREATE HELLOWORLDEXTENSION CLASS # ADD DEPENDENCIES AND PARENT DEFINITION TO THE POM.XML # CREATE HELLOWORLDEXTENSION GWT MODULE # ADD HELLOWORLDEXTENSION GWT MODULE TO ASSEMBLY # ADD EXTENSION TO ROOT POM OF CHE # LINK TO IDE ASSEMBLY Subsequently i have rebuild extension (che-helloworld-sample) and che (assembly-main) but did not get the desire output as explained in docs @vicky-unvired @eivantsov @alexanup @srinisubramanian @TylerJewell @slemeur @azatsarynnyy @vparfonov @benoitf @eivantsov @vzhukovskii

@@ -1,0 +1,3 @@
+where is documentation of class ProposalApplyResult?
+kind/question kind/docs severity/P2 team/ide 
+ProposalApplyResult is a dto class describing how to complete when user uses code-assist in java, but I want to know what every field means in ProposalApplyResult. where can I find any documentation about it? ps: the class is in the path che/plugins/plugin-java/che-plugin-java-ext-lang-shared-src/main/java/org/eclipse/che/ide/ext/java/shared/dto.ProposalApplyResult.java

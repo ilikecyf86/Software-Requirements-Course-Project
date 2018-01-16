@@ -1,0 +1,41 @@
+Inject panel in editor at runtime ?
+kind/question 
+Hello, I would like to show a tmp JSON result in the editor view but I want to stylizing display. Like add colors, tables, etc Is it possible to inject a panel in place of the TextEditorPartViewImpl editorPanel UIField, at runtime ? Or injecting a new UIBinder for the whole view ? I tried this, new editor is create but new view is not working : public class ResultViewImpl {
+
+    private static ResultViewImplUiBinder uiBinder = GWT.create(ResultViewImplUiBinder.class);
+
+    @UiField
+    SimplePanel editorPanel;
+    @UiField
+    RichTextArea content;
+
+    private EditorAgent editorAgent;
+
+    @Inject
+    public ResultViewImpl(EditorAgent editorAgent) {
+        this.editorAgent = editorAgent;
+    }
+
+    public void init(String result, String configName) {
+        //Add new text editor to EditorPartStack 
+        editorAgent.openEditor(new ResultFileImpl(configName, result));
+        //Get HTMLPanel from TextEditorPartViewImpl
+        Widget panel = ((OrionEditorPresenter)editorAgent.getActiveEditor()).getView().asWidget();
+        //Remove childrens and add my simple panel
+        Node child = panel.getElement().getChild(0);
+        child.removeFromParent();
+        child = panel.getElement().getChild(1);
+        child.removeFromParent();
+        panel.getElement().appendChild(uiBinder.createAndBindUi(this).asWidget().getElement());
+
+        content.setText(result);
+    }
+
+    interface ResultViewImplUiBinder extends UiBinder<SimplePanel, ResultViewImpl> {}
+}
+ ResultViewImpl.ui.xml    <g:SimplePanel width="100%" height="100%" addStyleNames="{style.editorZone-layout}">
+        <g:SimplePanel ui:field="editorPanel" addStyleNames="{style.editorZone-editor}">
+            <g:RichTextArea ui:field="content" />
+        </g:SimplePanel>
+    </g:SimplePanel>
+ Help would be appreciate. Thank you.

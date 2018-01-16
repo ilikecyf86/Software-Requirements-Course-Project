@@ -1,0 +1,3 @@
+Fix unstable selenium tests from miscellaneous package
+kind/task status/in-progress team/production status/in-progress 
+We need to fix next unstable selenium tests from miscellaneous package: FindUsagesBaseOperationTest - sometimes actions(click on icon, double click) are not work while test is running. FileStructureNodesTest - sometimes actions(click on icon, double click) are not work while test is running. This issue related to #6346.

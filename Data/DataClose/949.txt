@@ -1,0 +1,15 @@
+'Starting workspace agent' fails + specifying CHE_HOST breaks pre-flight checks
+kind/question 
+I'm running nginx in front of Che (runing from Docker). Che is exposed on 10.0.0.2:8080 and I have nginx with TLS (che.chimera.mickens.io) pointing to 10.0.0.2. Aka, https://che.chimera.mickens.io should point at the running Che instance. If I configure nothing else, Che appears to run successfully, I can connect to https://che.chimera.mickens.io and start creating a workspace. However, the agent never starts up. Or at least, Che is unable to talk to the workspace agent and so I'm unable to proceed. From like half a dozen other Issues, it seems that setting CHE_HOST would help... but if I edit che.env to set CHE_HOST=che.chimera.mickens.io then the preflight validation checks fail: �[38;5;220mWARN:�[0m Bound 'eclipse/che' to 'eclipse/che:5.11.0'
+�[0;32mINFO:�[0m (che cli): 5.11.0 - using docker 17.05.0-ce / native
+�[38;5;220mWARN:�[0m (che cli): 'CHE_HOST=che.chimera.mickens.io' is != discovered IP '10.0.0.2'
+�[0;32mINFO:�[0m 
+�[0;32mINFO:�[0m ---------------------------------------
+�[0;32mINFO:�[0m --------   CONNECTIVITY TEST   --------
+�[0;32mINFO:�[0m ---------------------------------------
+�[0;32mINFO:�[0m (che network): eclipse/che-ip:5.11.0: che.chimera.mickens.io
+�[0;32mINFO:�[0m (che network): Browser => Workspace Agent (localhost): Connection failed
+�[0;32mINFO:�[0m (che network): Browser => Workspace Agent (che.chimera.mickens.io): Connection failed
+�[0;32mINFO:�[0m (che network): Server  => Workspace Agent (External IP): Connection failed
+�[0;32mINFO:�[0m (che network): Server  => Workspace Agent (Internal IP): Connection succeeded
+ This seems overly complicated... There are a non-trivial number of other Issues that are about the same topic, and I don't see any docs on what exact configuration steps are required to make a setup like this work. I've really never had anywhere near this difficulty just putting something behind nginx before. Maybe I'm making a simple basic mistake/assumption...

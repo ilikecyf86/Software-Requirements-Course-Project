@@ -1,0 +1,3 @@
+How To Start many che instances on same machine
+kind/question 
+Hi tyler ! how would i start a second instance of eclipse che , bitnami created an instance of eclipse che running in the cloud i need to start an other instance of eclipse che on that same VM , and assign to that instance a user and a password

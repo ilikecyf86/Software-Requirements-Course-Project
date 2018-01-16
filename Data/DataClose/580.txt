@@ -1,0 +1,3 @@
+[Regression] Part of the text in the link is not displayed
+kind/bug severity/P2 
+Reproduction Steps: Create java stack without project or delete all projects in the existing workspace Pay attention to the project explorer Expected behavior: Links in project explorer will be the same like in editor Observed behavior: Part of the text in the links "Import project" and "Create project" are not displayed OS and version: CHE 5.16.0 ; Chrome 59.0 ; Fedora 25 Attachment:

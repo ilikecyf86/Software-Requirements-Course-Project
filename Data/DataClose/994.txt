@@ -1,0 +1,3 @@
+The Python language server isn't enabled by default for Python stacks
+kind/bug sprint/next-sprint status/open-for-dev team/plugin severity/P1 sprint/current-sprint sprint/next-sprint status/open-for-dev sprint/current-sprint 
+Reproduction Steps: Workspaces -> Add workspace button -> Runtime tab From the Stack Library tab select any python stack See on the Machine settings Observed behavior: The Python language server isn't enabled Che version: 5.11.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

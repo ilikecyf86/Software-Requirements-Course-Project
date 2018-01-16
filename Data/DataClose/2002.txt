@@ -1,0 +1,3 @@
+Project may lose selection after opening a class from external libraries
+kind/enhancement kind/bug severity/P2 kind/enhancement status/in-progress status/in-progress 
+Reproduction Steps: Create for example the Spring project form dashboard Open GreetingController class Set cursor to 13:11 position and press F4 key Launch build command Expected behavior: Project should be built Observed behavior: Nothing happened Che version: 5.0.0 M-8 OS and version: Ubuntu 14.0 TLS Docker version: 1.12 Che install: Docker container

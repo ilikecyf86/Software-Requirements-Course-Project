@@ -1,0 +1,47 @@
+Investigate ProjectExplorer selenium page object to be able to locate displaying items constantly
+kind/task team/production kind/bug sprint/current-sprint status/open-for-dev kind/task kind/task kind/bug status/open-for-dev 
+There are methods of ProjectExplorer selenium page object which works unstable and this causes unexpected failures of tests because of time has run out limit on waiting on visibility of test project item in project explorer of IDE: Update! Issue #7227 should partly fix the problem. ProjectExplorer#waitVisibleItem() org.eclipse.che.selenium.editor.ContextMenuEditorTest#prepare org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@path='/ContextMenuEditorTestgrjb']/div (tried for 20 second(s) with 500 MILLISECONDS interval)Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'System info: host: 'slave4.codenvycorp.com', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '3.10.0-514.16.1.el7.x86_64', java.version: '1.8.0_102'Driver info: org.eclipse.che.selenium.core.SeleniumWebDriver
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:265)
+at org.eclipse.che.selenium.pageobject.ProjectExplorer.waitVisibleItem(ProjectExplorer.java:226)
+at org.eclipse.che.selenium.editor.ContextMenuEditorTest.prepare(ContextMenuEditorTest.java:134)
+ org.eclipse.che.selenium.assistant.CheckFindActionFeatureInCheTest#setUp org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@path='/CheckFindActionFeatureInCheTestmnnr']/div (tried for 20 second(s) with 500 MILLISECONDS interval)Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'System info: host: 'slave4.codenvycorp.com', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '3.10.0-514.16.1.el7.x86_64', java.version: '1.8.0_102'Driver info: org.eclipse.che.selenium.core.SeleniumWebDriver
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
+at org.eclipse.che.selenium.core.SeleniumWebDriver.findElement(SeleniumWebDriver.java:108)
+at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:895)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:41)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)
+at org.eclipse.che.selenium.pageobject.ProjectExplorer.waitVisibleItem(ProjectExplorer.java:226)
+at org.eclipse.che.selenium.assistant.CheckFindActionFeatureInCheTest.setUp
+ ProjectExplorer#openItemByPath() org.eclipse.che.selenium.git.KeepDirectoryGitImportTest::keepDirectoryImportFromGitHub()   org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+...
+Command duration or timeout: 31 milliseconds
+...
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.eclipse.che.selenium.pageobject.ProjectExplorer.openItemByPath(ProjectExplorer.java:421)
+	at org.eclipse.che.selenium.git.KeepDirectoryGitImportTest.keepDirectoryImportFromGitHub(KeepDirectoryGitImportTest.java:164)
+ Html dump can be found here. org.eclipse.che.selenium.git.PullRequestPluginWithForkTest::createPullRequest()       org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+...
+Command duration or timeout: 28 milliseconds
+...
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.eclipse.che.selenium.pageobject.ProjectExplorer.openItemByPath(ProjectExplorer.java:421)
+	at org.eclipse.che.selenium.git.PullRequestPluginWithForkTest.createPullRequest(PullRequestPluginWithForkTest.java:128)
+ Html dump can be found here. Possible solution: perform "click" operation on web element by using JavaScriptExecutor: JavascriptExecutor executor = (JavascriptExecutor)driver;
+executor.executeScript("arguments[0].click();", element); ProjectExplorer#openItemByVisibleNameInExplore() org.eclipse.che.selenium.git.CheckoutBranchTest#checkoutBranchTest()       org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+...
+Command duration or timeout: 35 milliseconds
+...
+	at org.openqa.selenium.interactions.DoubleClickAction.perform(DoubleClickAction.java:39)
+	at org.openqa.selenium.interactions.CompositeAction.perform(CompositeAction.java:50)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:373)
+	at org.eclipse.che.selenium.pageobject.ProjectExplorer.openItemByVisibleNameInExplorer(ProjectExplorer.java:473)
+	at org.eclipse.che.selenium.git.CheckoutBranchTest.checkoutBranchTest(CheckoutBranchTest.java:152)
+ Html dump can be found here. OS and version: 5.19.0-SNAPSHOT, 5.21.0-SNAPSHOT, Diagnostics:

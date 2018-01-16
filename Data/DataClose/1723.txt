@@ -1,0 +1,3 @@
+Remove unused GWT compiler permutation
+kind/task team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+AFAIK some of the permutation are redundant but they are part of compilation. It's extend compilation time and size of produced script. Please revise used permutation and remove that is not used

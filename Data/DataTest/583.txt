@@ -1,0 +1,7 @@
+Build docker image failed
+
+I tried to build the docker image: cd che
+docker build -t freewind/che:try1 .
+ But it fails: Step 8 : ADD /assembly-ide/target/eclipse-che-*/eclipse-che-* /home/user/che
+No source files were specified
+ Do I need to do something else before building? (e.g. mvn clean install)

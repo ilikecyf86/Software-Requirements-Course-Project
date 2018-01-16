@@ -1,0 +1,3 @@
+Need to update github url in remotes using swagger
+kind/question 
+Hi, I have eclipse che workspace with java project. I need to change github url in remotes but using swagger api. Is there any way to do it? Thanks and regards, worksamp

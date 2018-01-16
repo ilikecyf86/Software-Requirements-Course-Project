@@ -1,0 +1,3 @@
+Avoid caching problem in http resources
+sprint/current-sprint status/open-for-dev team/platform sprint/next-sprint kind/task sprint/current-sprint sprint/current-sprint sprint/next-sprint status/open-for-dev sprint/current-sprint 
+All resources except that have word "cache" in names should not be cached and must be revalidated. Resources that have in name word "cache" have to be cached for long period. Ex: 1 month.

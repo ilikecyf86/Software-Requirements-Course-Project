@@ -1,0 +1,48 @@
+Project import fails with 'Not a git repository' error
+kind/question 
+Hi, when trying to import git project from private repository on 5.17.0 release, fails with error message 'Not a git repository'. Please note that import of the same project with exact same steps works on 5.16.0 and earlier releases. Cloning project from terminal works OK, project appears in Project Explorer but is unusable and can not be expanded. Chrome Console: Chrome_Console_Errors.txt From logs above, request to: http://172.16.0.3:32806/api/project/tree/ra?depth=1&includeFiles=true results with {"message":"Not a git repository"} Reproduction Steps: Go to Workspace > Import Project... Under Source Control select GIT Input repository URL Proceed with 'Import' button On Project Configuration dialog: Select Maven and proceed with Save button OS and version: OS: Linux CentOS 7.3 on VirtualBox VM Eclipse Che: 5.17.0 Diagnostics: INFO: (che cli): 5.17.0 - using docker 17.06.2-ce / native
+
+CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che:5.17.0
+ Version:        5.17.0
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /home/vagrant/che
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    5.17.0
+ CHE_HOST:       172.16.0.3
+ CHE_INSTANCE:   /home/vagrant/che/instance
+ CHE_CONFIG:     /home/vagrant/che
+ CHE_BACKUP:     /home/vagrant/che/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   10.0.2.15
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:5.17.0
+ IMAGE_CHE=eclipse/che-server:5.17.0
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ IMAGE_TRAEFIK=traefik:v1.3.0-rc3
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.17.0
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.17.0
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:5.17.0
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:5.17.0
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.17.0
+che.env:
+ CHE_HOST=172.16.0.3
+ CHE_SINGLE_PORT=false
+ Screenshot:

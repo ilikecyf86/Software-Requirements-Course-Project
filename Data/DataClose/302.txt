@@ -1,0 +1,24 @@
+Can't create workspace in Che 5.19.0 behind proxy
+kind/bug status/analyzing team/platform kind/question kind/bug status/analyzing team/platform 
+Description Can't get a workspace running with http proxy enabled. To me it looks a lot like the no_proxy setting has been ignored within the che server code. Environment: Start eclipse che behind a http proxy (Port 1234. IP 1.3.4.5) Proxy in che container 
+JAVA_HTTP_PROXY_PORT=-Dhttp.proxyPort=1234
+JAVA_HTTP_PROXY_HOST=-Dhttp.proxyHost=1.3.4.5
+JAVA_HTTPS_PROXY_HOST=-Dhttps.proxyHost=1.3.4.5
+JAVA_HTTPS_PROXY_PORT=-Dhttps.proxyPort=1234
+JAVA_HTTP_PROXY_SET=-Dhttp.proxySet=true
+CHE_WORKSPACE_JAVA_OPTIONS=-Xms256m -Xmx2048m -Djava.security.egd=file:/dev/./urandom -Dhttp.proxySet=true -Dhttp.proxyHost=1.3.4.5  -Dhttp.proxyPort=3128 -Dhttps.proxyHost=1.3.4.5 -Dhttps.proxyPort=1234 -Dhttp.nonProxyHosts='che-host||1.3.4.5|localhost|
+
+
+ Proxy in che container 
+http_proxy=http://1.3.4.5:1234/
+https_proxy=http://1.3.4.5:1234/
+no_proxy=che-host,,1.3.4.5,localhost
+
+ Steps Create a Workspace tail the log of container "che" Result: che workspace does not boot up. Reproduction Steps create a workspace behind a http proxy OS and version: 5.19.0 ubuntu docker 17.03.ce Diagnostics: 2017-10-16 12:53:13,870[aceSharedPool-0]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 676]   - Launching 'org.eclipse.che.exec' agent at workspace workspace20zt3gxmcn724j5z
+2017-10-16 12:53:16,170[aceSharedPool-0]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 676]   - Launching 'org.eclipse.che.terminal' agent at workspace workspace20zt3gxmcn724j5z
+2017-10-16 12:53:30,695[aceSharedPool-0]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 676]   - Launching 'org.eclipse.che.exec' agent at workspace workspace20zt3gxmcn724j5z
+2017-10-16 12:53:32,922[aceSharedPool-0]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 676]   - Launching 'org.eclipse.che.terminal' agent at workspace workspace20zt3gxmcn724j5z
+2017-10-16 12:53:35,104[aceSharedPool-0]  [INFO ] [o.e.c.a.w.s.WorkspaceRuntimes 676]   - Launching 'org.eclipse.che.ws-agent' agent at workspace workspace20zt3gxmcn724j5z
+2017-10-16 12:53:36,146[aceSharedPool-0]  [WARN ] [a.a.s.WsAgentHealthCheckerImpl 63]   - Failed to get machine token
+java.io.IOException: Failed access: http://localhost:8080/api/machine/token/workspace20zt3gxmcn724j5z?token, method: GET, response code: 502, message: <html><body><h1>502 Connection refused</h1><p>
+ HINT: The connection refused message was returned by the proxy. So the proxy is called but it should be localhost.

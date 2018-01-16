@@ -1,0 +1,3 @@
+Overwriting of name of workspace on creation with auto generated value
+kind/bug team/plugin status/open-for-dev status/open-for-dev 
+Reproduction Steps: Go to Dashboard -> Workspaces -> Add Workspace Type name of new workspace Switch to Runtime tab and go back to Settings tab Click on Create button Expected behavior: Workspace with inputted name will be created Observed behavior: Workspace is created, but has auto generated name Che version: OS and version: Ubuntu 16.04 Docker version: CLI: Version: 1.12.1 API version: 1.24 Che install: server (zip) Additional information: Problem can be reliably reproduced, doesn't happen randomly: Yes

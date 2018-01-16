@@ -1,0 +1,3 @@
+Add dashboard UI for changing user permissions
+kind/eclipse-che kind/enhancement team/plugin kind/eclipse-che 
+From @bmicklea on October 6, 2016 16:22 In Codenvy you can share a workspace with users by adding them to the workspace. However, you can't alter their access permissions through the UI. Only through the API. It would be helpful to be able to select one or more users and click a "Permissions" button. When pressed this would bring up a popup: Title: Edit Workspace Permissions List all permissions with checkboxes beside each Buttons at the bottom are "Save" and "Cancel" The popup should be styled like other popups in the product. Codenvy version: 5.0.0-M4 Copied from original issue: codenvy/codenvy#920

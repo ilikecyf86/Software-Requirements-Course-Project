@@ -1,0 +1,3 @@
+Update style for popups in Dashboard
+team/plugin sprint/next-sprint status/open-for-dev kind/enhancement sprint/current-sprint sprint/next-sprint status/in-progress status/code-review status/in-progress status/open-for-dev status/code-review sprint/current-sprint 
+We have some old styled popups in the Dashboard which need to be updated. We need to update the layout of the popup to this design: Che version: 5.0.0-M5

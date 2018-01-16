@@ -1,0 +1,3 @@
+Update Che JDT-LS workspace on project creation/deletion
+target/che6 kind/bug target/branch target/che6 
+Now, our Che Java language server read projects list on its start. But if a user adds or removes project, LS doesn't react on this event. In case of deletion even could create a corresponding directory of deleted project. To resolve problem we have to notify LS to update its workspace on project creation and deletion.

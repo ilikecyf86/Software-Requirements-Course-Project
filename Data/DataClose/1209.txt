@@ -1,0 +1,7 @@
+Dockerfile not parsed properly at Stacks > Import
+kind/bug team/plugin sprint/next-sprint status/open-for-dev severity/P1 status/code-review status/open-for-dev sprint/next-sprint sprint/current-sprint status/code-review sprint/current-sprint 
+Steps to reproduce: In User Dashboard, go to Stacks > Import > Dockerfile Paste the following recipe: FROM eclipse/ubuntu_jdk8
+RUN echo hello && echo hello
+ Once stack is created, go to this stack and click Show recipe which looks like this: FROM eclipse/ubuntu_jdk8
+RUN echo hello echo hello
+ && is missing which makes this RUN instruction invalid. Perhaps, there are other UD forms that produce there same bug.

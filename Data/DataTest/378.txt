@@ -1,0 +1,3 @@
+Callback URL different from GitHub callback and che.properties
+
+The callback URL under the Use Che as an IDE->Git has a root context of http://localhost:8080/che and the che.properties file is http://localhost:${SERVER_PORT}/ide. When using /che as the root context, and trying to upload an OAuth token to GitHub, Che gives a 404. When changing the GitHub root context to /ide, Che is able to authenticate with GitHub.

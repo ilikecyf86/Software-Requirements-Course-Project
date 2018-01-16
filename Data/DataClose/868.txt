@@ -1,0 +1,3 @@
+Improve JSON language server
+kind/enhancement kind/bug team/ide severity/P1 severity/P2 kind/enhancement severity/P1 status/in-progress team/osio team/ide status/code-review status/in-progress status/code-review 
+We need to improve JSON language server autocomplete because we have wrong behavior. Steps to reproduce: Go to the workspace with launched JSON language server Create C# project with JSON file Open JSON file Launch autocomplete (Ctrl + Space) in the places like in the attachment Pay attention to result Expected behavior Autocomplete will be provided pieces of the code Observed behavior Autocomplete does not provide the pieces of the code Attacment

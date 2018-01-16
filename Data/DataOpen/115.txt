@@ -1,0 +1,3 @@
+Update to Orion 15.0
+kind/enhancement 
+Last July, Orion 15.0 was released. Currently, Che uses 14.0 and it would benefit Che to use 15 since it seem to cover up some things I pointed out in #3865

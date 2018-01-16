@@ -1,0 +1,3 @@
+Create test for checking project commands starting from the Processes area
+kind/task team/production status/in-progress status/in-progress 
+We need create test for checking projects commands starting from the Processes area.

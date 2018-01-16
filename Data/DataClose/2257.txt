@@ -1,0 +1,13 @@
+Che launcher: not clear error message
+kind/bug kind/enhancement status/pending-merge kind/bug 
+[11:47:36]sj:~#: che start
+INFO: ECLIPSE CHE: Found image codenvy/che-server:latest
+INFO: ECLIPSE CHE: Starting container...
+time="2016-10-13T08:47:46Z" level=fatal msg="Error response from daemon: oci runtime error: exec: \"/home/user/che/bin/che.sh\": stat /home/user/che/bin/che.sh: no such file or directory"
+[11:47:46]sj:~#:
+ [11:46:54]sj:~#: env |grep  CHE
+CHE_LOGS_DIR=/Users/sj/.che/logs
+CHE_LOCAL_CONF_DIR=/Users/sj/.che/
+CHE_LOCAL_BINARY=/Users/sj/dev/src/codenvy/che/assembly/assembly-main/target
+ [11:47:46]sj:~#: docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES

@@ -1,0 +1,3 @@
+Smoothly handle offline mode in UD
+kind/enhancement 
+We should modify the user dashboard to be smarter about offline mode. If the system is not connected to the internet (or explicitly started in an offline mode), we should gray out stacks that are not available in local TAR files. This would require us to add meta-data to each of the stacks to indicate the list of docker images that are needed to run that stack, and then we could parse that list to detect if those images are available locally or not.

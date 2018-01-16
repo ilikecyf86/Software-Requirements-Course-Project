@@ -1,0 +1,56 @@
+Issue the saving snapshots to private registry
+kind/question 
+Hi, I'm using eclipse che 5.2.2 with docker on Ubuntu 14.04 OS and trying to configure the private registry for snapshotting the workspace. Followed the instructions from below link https://www.eclipse.org/che/docs/workspace/machines/ Still the snaphot is getting saved locally. Have I missed out any configuration? I have added the registry configuration under Administration tab too. Kindly help me. Here's my che info details  eclipse/che:5.2.2 info --fast
+WARNING: No swap limit support
+WARNING: No kernel memory limit support
+INFO: (che cli): 5.2.2 - using docker 1.12.6 / native
+
+CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che:5.2.2
+ Version:        5.2.2
+ Command:        info
+ Parameters:     info --fast
+Mounts:
+ /data:          /data/che-data
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    5.2.2
+ CHE_HOST:       10.1.1.1
+ CHE_INSTANCE:   /data/che-data/instance
+ CHE_CONFIG:     /data/che-data
+ CHE_BACKUP:     /data/che-data/backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   10.1.1.1
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:5.2.2
+ IMAGE_CHE=eclipse/che-server:5.2.2
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.2.2
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.2.2
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:5.2.2
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:5.2.2
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.2.2
+che.env:
+ CHE_HOST=10.1.1.1
+ DOCKER_HOST=tcp://10.1.1.1:2375
+ CHE_DOCKER_REGISTRY=10.1.1.12:5000
+ CHE_DOCKER_REGISTRY__FOR__SNAPSHOTS=true
+ CHE_DOCKER_NAMESPACE=rajiv
+ CHE_WORKSPACE_AUTO__SNAPSHOT=true
+ CHE_DOCKER_REGISTRY_AUTH_REGISTRY_URL=10.1.1.12:5000
+ CHE_DOCKER_REGISTRY_AUTH_REGISTRY_USERNAME=user
+ CHE_DOCKER_REGISTRY_AUTH_REGISTRY_PASSWORD=xxxxx
+ CHE_DOCKER_ALWAYS__PULL__IMAGE=false

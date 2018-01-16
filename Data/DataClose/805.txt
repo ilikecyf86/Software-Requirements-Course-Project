@@ -1,0 +1,3 @@
+Deprecate and Remove Subversion support
+kind/enhancement kind/task level/beginner kind/enhancement team/pm team/platform status/open-for-dev sprint/current-sprint sprint/current-sprint 
+Let's start the retirement of the subversion support.

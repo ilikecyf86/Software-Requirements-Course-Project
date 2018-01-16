@@ -1,0 +1,3 @@
+Icons aren't aligned on Git History panel
+kind/bug 
+Icons aren't aligned on Git History panel.

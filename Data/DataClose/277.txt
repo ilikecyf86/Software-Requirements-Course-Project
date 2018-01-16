@@ -1,0 +1,46 @@
+[CHE-6] java.io.IOException: User limit of inotify watches reached
+kind/bug team/ide 
+Description java.io.IOException: User limit of inotify watches reached appears. Reproduction Steps open a workspace with 6 GB RAM with CHE project inside. Start to open folders. WRONG: exception appears: 2017/10/19 11:04:19 Start new terminal.
+2017-10-19 11:07:34,836[equestProcessor]  [ERROR] [o.e.c.a.v.w.FileWatcherService 198]  - Can't register dir /projects/che/wsagent/che-core-api-debug-shared in file watch service
+java.io.IOException: User limit of inotify watches reached
+	at sun.nio.fs.LinuxWatchService$Poller.run(LinuxWatchService.java:329)
+	at sun.nio.fs.AbstractPoller.processRequests(AbstractPoller.java:260)
+	at java.lang.Thread.run(Thread.java:748)
+	at sun.nio.fs.LinuxWatchService$Poller.implRegister(LinuxWatchService.java:264)
+	at sun.nio.fs.LinuxWatchService$Poller.implRegister(LinuxWatchService.java:264)
+java.io.IOException: User limit of inotify watches reached
+2017-10-19 11:07:41,976[equestProcessor]  [ERROR] [o.e.c.a.v.w.FileWatcherService 198]  - Can't register dir /projects/che/wsagent/che-core-api-debug-shared/src in file watch service
+	at sun.nio.fs.AbstractPoller.processRequests(AbstractPoller.java:260)
+	at java.lang.Thread.run(Thread.java:748)
+	at sun.nio.fs.LinuxWatchService$Poller.run(LinuxWatchService.java:329)
+2017-10-19 11:07:42,680[equestProcessor]  [ERROR] [o.e.c.a.v.w.FileWatcherService 198]  - Can't register dir /projects/che/wsagent/che-core-api-debug-shared/src/main in file watch service
+java.io.IOException: User limit of inotify watches reached
+	at sun.nio.fs.LinuxWatchService$Poller.implRegister(LinuxWatchService.java:264)
+	at sun.nio.fs.AbstractPoller.processRequests(AbstractPoller.java:260)
+	at java.lang.Thread.run(Thread.java:748)
+	at sun.nio.fs.LinuxWatchService$Poller.run(LinuxWatchService.java:329)
+java.io.IOException: User limit of inotify watches reached
+	at java.lang.Thread.run(Thread.java:748)
+2017-10-19 11:07:43,464[equestProcessor]  [ERROR] [o.e.c.a.v.w.FileWatcherService 198]  - Can't register dir /projects/che/wsagent/che-core-api-debug-shared/src/main/java in file watch service
+	at sun.nio.fs.LinuxWatchService$Poller.implRegister(LinuxWatchService.java:264)
+	at sun.nio.fs.LinuxWatchService$Poller.run(LinuxWatchService.java:329)
+	at sun.nio.fs.AbstractPoller.processRequests(AbstractPoller.java:260)
+java.io.IOException: User limit of inotify watches reached
+2017-10-19 11:08:03,996[equestProcessor]  [ERROR] [o.e.c.a.v.w.FileWatcherService 198]  - Can't register dir /projects/che/wsagent/che-core-api-debug-shared/src/main/java/org/eclipse/che/api/debug/shared in file watch service
+	at sun.nio.fs.LinuxWatchService$Poller.implRegister(LinuxWatchService.java:264)
+	at sun.nio.fs.LinuxWatchService$Poller.run(LinuxWatchService.java:329)
+	at sun.nio.fs.AbstractPoller.processRequests(AbstractPoller.java:260)
+	at java.lang.Thread.run(Thread.java:748)
+2017-10-19 11:08:05,341[equestProcessor]  [ERROR] [o.e.c.a.v.w.FileWatcherService 198]  - Can't register dir /projects/che/wsagent/che-core-api-debug-shared/src/main/java/org/eclipse/che/api/debug/shared/model in file watch service
+	at java.lang.Thread.run(Thread.java:748)
+	at sun.nio.fs.AbstractPoller.processRequests(AbstractPoller.java:260)
+	at sun.nio.fs.LinuxWatchService$Poller.run(LinuxWatchService.java:329)
+	at sun.nio.fs.LinuxWatchService$Poller.implRegister(LinuxWatchService.java:264)
+java.io.IOException: User limit of inotify watches reached
+2017-10-19 11:08:09,528[equestProcessor]  [ERROR] [o.e.c.a.v.w.FileWatcherService 198]  - Can't register dir /projects/che/wsagent/che-core-api-debug-shared/src/main/java/org/eclipse/che/api/debug/shared/model in file watch service
+	at sun.nio.fs.AbstractPoller.processRequests(AbstractPoller.java:260)
+	at sun.nio.fs.LinuxWatchService$Poller.implRegister(LinuxWatchService.java:264)
+java.io.IOException: User limit of inotify watches reached
+	at sun.nio.fs.LinuxWatchService$Poller.run(LinuxWatchService.java:329)
+	at java.lang.Thread.run(Thread.java:748)
+ OS and version: Ubuntu 16.0.4 Diagnostics:

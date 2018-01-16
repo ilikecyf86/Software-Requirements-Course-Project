@@ -1,0 +1,3 @@
+Rework dashboard on managing environment variables
+kind/enhancement team/plugin sprint/current-sprint status/open-for-dev status/in-progress status/open-for-dev status/in-progress sprint/current-sprint 
+As far as new ability to save environment variables to machines config was introduced in che6, there is need to rework the way of how environment variables are saved and retrieved by dashboard application. It was available only for compose and docker files, now - for all types of the recipe, so restrictions should be removed as well.

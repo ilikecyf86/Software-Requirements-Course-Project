@@ -1,0 +1,9 @@
+User limit of inotify watches reached
+kind/bug severity/blocker team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint 
+I've just upgraded our team from 5.16 to 5.18 and unfortunately we are now experiencing Chrome crashing with the Che tab consuming 100% CPU. I managed to get some debug from the workspace. Bear in mind we run large projects with many thousands of files (like Magento 2) but this was working fine in 5.16. We've rolled back for now. [STDOUT] 2017-09-25 10:18:52,212[ted-scheduler-5]  [ERROR] [o.e.c.a.v.w.FileWatcherService 198]  - Can't register dir /projects/test/pub/static/frontend/test/default/en_GB/knockoutjs in file watch service
+[STDOUT] java.io.IOException: User limit of inotify watches reached
+[STDOUT] 	at sun.nio.fs.LinuxWatchService$Poller.implRegister(LinuxWatchService.java:264)
+[STDOUT] 	at sun.nio.fs.AbstractPoller.processRequests(AbstractPoller.java:260)
+[STDOUT] 	at sun.nio.fs.LinuxWatchService$Poller.run(LinuxWatchService.java:329)
+[STDOUT] 	at java.lang.Thread.run(Thread.java:748)
+ OS and version: Chrome 61, Ubuntu, Che 5.18

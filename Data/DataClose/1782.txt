@@ -1,0 +1,14 @@
+Improve error message when starting nightly from a latest configuration
+kind/enhancement 
+When user is using the CLI with the image eclipse/che and moving to use eclipse/che:nightly we are printing the following error message. WARNING: No kernel memory limit support
+INFO: Proxy: HTTP_PROXY=, HTTPS_PROXY=, NO_PROXY=*.local, 169.254/16
+INFO: (che cli): Checking network... (hint: '--fast' skips version and network checks)
+INFO: (che cli): Loading cli...
+ERROR:
+ERROR: Your CLI version 'eclipse/che:nightly' does not match your installed version '5.0.0'.
+ERROR:
+ERROR: The 'nightly' CLI is only compatible with 'nightly' installed versions.
+ERROR: You may not 'che upgrade' from 'nightly' to a numbered (tagged) version.
+ERROR:
+ERROR: Run the CLI as 'eclipse/che:<version>' to install a tagged version.
+ This message is not helpful and doing an upgrade will not work. In general, I would think that we should catch when the user is starting nightly because it behaves differently than a tag version, and should be used in parallel of a default installation. Would be nice to inform the user that, he can try nightly by installing it on another folder to be mount. Che version: 5.0.0 OS and version: MAC OS 10.12.2 Docker version: 1.12.3

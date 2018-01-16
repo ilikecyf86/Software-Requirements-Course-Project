@@ -1,0 +1,3 @@
+How to delete a running workspace?
+
+I want to delete a running workspace, but show this error: Failed! Can't remove running workspace workspace50isjk211hvsadni How can I do it?

@@ -1,0 +1,3 @@
+How to restore workspaces when restarting Che?
+kind/question 
+hi, Steps to reproduce: start che through executing bin/che.bat 2.visit localhost:8080 3.create a new workspace and create a simple java project 4.stop che through closing the command shell where is executing bin/che.bat 5.execute bin/che.bat again 6.can't find any workspace and project when visiting localhost:8080 I find the size of file .docker/macine/macines/che/disk.vmdk increase when I create workspace, so I guess some information about workspace have been stored, so how to restore workspace when I restart che? I run che on Wins 7, and the version of Che is 4.3.4(I try to use other version but get same result). Thanks in advance.

@@ -1,0 +1,5 @@
+Wrong organization shown for workspace
+kind/bug team/plugin 
+Description Started a local multi user che (6.0.0-M2) with empty data area: docker run -it --rm -e CHE_MULTIUSER=true -v ~/chedata_plain600m2:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:6.0.0-M2 init
+docker run -it --rm -e CHE_MULTIUSER=true -v ~/chedata_plain600m2:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:6.0.0-M2 start
+ Login as admin Create two organizations: one and two Go to “Workspaces” and press “Add” the "Create Workspace" form opens. but doesn’t allow to select the organization. (Problem 1, might be related to #6725 ) to workaround that: refresh the browser page. Now the organizations are visible and can be selected create a workspace ws_one in organization one create a workspace ws_two in organization two now go to "Workspaces" open the configuration page for workspace two/ws_two switch to the overview tab the organization is listed as "one" here. OS and version: Chrome on Ubuntu VM Che running locally in the Ubuntu VM

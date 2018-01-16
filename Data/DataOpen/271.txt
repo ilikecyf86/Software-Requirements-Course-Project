@@ -1,0 +1,3 @@
+Add registry to store arbitrary user's data different from preferences
+kind/epic 
+There are different kind of data that are needed to be stored: debugger things commands workspace state etc Some of them are stored in Local Storage of the browser, others in user's preferences. One part of data are project related, others are workspace related. This issue implies implementation a service to store different kind of data per project/workspace.

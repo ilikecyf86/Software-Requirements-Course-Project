@@ -1,0 +1,3 @@
+Reworks CheckWsAgentAfterStopProcessTest test
+kind/task team/production status/in-progress status/in-progress 
+We need check restarting of workspace by API and from the IDE in different methods.

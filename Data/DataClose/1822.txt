@@ -1,0 +1,8 @@
+CLI download error.
+kind/question 
+When I start ./che.sh from the base che folder it starts to download the latest CLI and crashes. $ ./che.sh INFO: Downloading cli-latest ERROR: CLI download error. Bad network or version. CLI update works for 5.0.0-M3+. Reproduction Steps: I have set http_proxy environment variables. $ git clone https://github.com/eclipse/che.git
+$ cd che
+$ ./che.sh
+INFO:  Downloading cli-latest
+ERROR: CLI download error. Bad network or version. CLI update works for 5.0.0-M3+.
+ Expected behavior: It pulls the images and lists the starting options. Observed behavior: It does not pull the images. It seems to be a proxy issue, but the proxy settings for docker and enviroment variables are set. Che version: latest OS and version: Ubuntu 14.04 Docker version: 1.12.15 Additional information: Problem can be reliably reproduced, doesn't happen randomly: Yes

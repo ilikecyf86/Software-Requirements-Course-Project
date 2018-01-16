@@ -1,0 +1,3 @@
+Adding examples and stack icons using REST API
+kind/question kind/task 
+Is there a way to add project templates/examples and stack icons using the REST API? Is the REST API the preferred way to customize a Che installation or should I change the files in the data directory?

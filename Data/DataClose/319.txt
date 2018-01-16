@@ -1,0 +1,26 @@
+Fix tests depended on Filewatcher suite
+kind/bug selenium/failure team/production status/in-progress status/code-review status/in-progress status/in-progress status/code-review status/in-progress 
+After merging of multiuser branch we have exception like: com.google.inject.ConfigurationException: Guice configuration errors:
+1) Unable to create binding for org.eclipse.che.selenium.core.entrance.Entrance. It was already configured on one or more child injectors or private modules bound at org.eclipse.che.selenium.core.CheSeleniumWebDriverRelatedModule.getEntrance()
+If it was in a PrivateModule, did you forget to expose the binding?while locating org.eclipse.che.selenium.core.entrance.Entrance1 error
+ at com.google.inject.internal.InjectorImpl.getProvider(InjectorImpl.java:1045
+ at com.google.inject.internal.InjectorImpl.getProvider(InjectorImpl.java:1004
+ at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1054
+ at org.eclipse.che.selenium.core.pageobject.PageObjectsInjector.instantiate(PageObjectsInjector.java:85
+ at org.eclipse.che.selenium.core.pageobject.PageObjectsInjector.instantiate(PageObjectsInjector.java:94
+ at org.eclipse.che.selenium.core.pageobject.PageObjectsInjector.injectField(PageObjectsInjector.java:74
+ at org.eclipse.che.selenium.core.pageobject.PageObjectsInjector.injectMembers(PageObjectsInjector.java:67
+ at org.eclipse.che.selenium.core.inject.SeleniumTestHandler.injectDependencies(SeleniumTestHandler.java:208
+ at org.eclipse.che.selenium.core.inject.SeleniumTestHandler.beforeInvocation(SeleniumTestHandler.java:178
+ at org.testng.internal.invokers.InvokedMethodListenerInvoker$InvokeBeforeInvocationWithoutContextStrategy.callMethod(InvokedMethodListenerInvoker.java:84
+ at org.testng.internal.invokers.InvokedMethodListenerInvoker.invokeListener(InvokedMethodListenerInvoker.java:62
+ at org.testng.internal.Invoker.runInvokedMethodListeners(Invoker.java:603
+ at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:531
+ at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215
+ at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:140
+ at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170
+ at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104
+ at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142
+ at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617
+ at java.lang.Thread.run(Thread.java:745)
+ We should investigate and fix this problem

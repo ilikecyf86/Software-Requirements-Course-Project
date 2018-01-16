@@ -1,0 +1,3 @@
+stack.predefined.list.json property points to the file, not to the directory as written in the documentation
+
+The documentation says that I can declare my custom stacks in a separate json file in the /stacks directory (https://eclipse-che.readme.io/docs/stacks), but in fact only stacks from one file (predefined-stacks.json) file are read.

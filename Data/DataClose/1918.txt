@@ -1,0 +1,3 @@
+Support `git push -f`
+kind/enhancement team/enterprise status/in-progress sprint/current-sprint status/code-review status/in-progress status/code-review sprint/current-sprint 
+There have no function equivalent to git push -f Reproduction Steps: Select Git menu Remotes... - Push... See dialog. Expected behavior: Something like the checkbox for specifying 'force push' Observed behavior: There doesn't have Che version: 5.0.0-M8 OS and version: Independent Docker version: Independent Che install: Independent Additional information: Problem started happening recently, didn't happen in an older version of Che: No Problem can be reliably reproduced, doesn't happen randomly: Yes

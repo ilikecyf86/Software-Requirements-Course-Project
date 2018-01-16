@@ -1,0 +1,3 @@
+CHE_SINGLE_PORT=true mode is broken with Che6
+target/che6 team/platform team/platform team/platform 
+Description Start Che 6 with -e CHE_SINGLE_PORT=true expecting that all traffic is using 8080 port. It doesn't work. Reproduction Steps Use of -e CHE_SINGLE_PORT=true to start Che 6 OS and version: macOS High Sierra 10.13.1 (17B48) / Docker version 17.11.0-ce-rc3-mac38 (20152)

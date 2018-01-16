@@ -1,0 +1,3 @@
+Some factories do not work on the getting-started page
+kind/bug 
+When I create workspaces from template on the 'che getting-started' page, then several of them do not work. Reproduction Steps: Got to the - http://www.eclipse.org/che/getting-started/cloud Create the workspaces from the list below: eXo Task add-on Yeoman Alfresco .NET ASP.NET Expected behavior: workspaces should be started Observed behavior: workspaces do not started Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes] See the attachment: eXo Task add-on Yeoman Alfresco .NET ASP.NET

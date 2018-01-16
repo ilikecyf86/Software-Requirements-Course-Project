@@ -1,0 +1,3 @@
+Ugly text rendering
+kind/question 
+This is a rare bug I encountered while I was testing my Dockerfile OS and version: Codenvy 5.14.0 on codenvy.io

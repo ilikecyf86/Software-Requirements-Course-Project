@@ -1,0 +1,3 @@
+[languageserver] Find Reference
+kind/enhancement team/ide 
+The "find references" method from should be supported. See https://github.com/Microsoft/vscode-languageserver-protocol#find-references

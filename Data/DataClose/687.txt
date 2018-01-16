@@ -1,0 +1,3 @@
+How does Che stop/start the containers when stop/start workspace or stop/start Che server?
+kind/question 
+I have a workspace with three machines node. When I stop workspace and open the workspace again, I found some data lost in container and the script in ENTRYPOINT will be run again. For example, I have a machine which will install a database when the containers startup. If I restart the workspace, I found the install script will be executed again. I do not see this problem if I run the container in docker directly with docker stop/start. What does Che do to the containers when stop a workspace and start it again?

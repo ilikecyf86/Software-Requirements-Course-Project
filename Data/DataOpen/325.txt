@@ -1,0 +1,3 @@
+TypeScript files has incorrect file icons
+kind/enhancement team/ide 
+Noticed this while working on a TS project they seem to use JS icons OS and version: Codenvy 5.18.0-SNAPSHOT on Windows 10

@@ -1,0 +1,12 @@
+Remove deprecation related to RemotePreferenceDao
+kind/task team/platform sprint/next-sprint status/open-for-dev status/in-progress status/open-for-dev sprint/next-sprint status/in-progress 
+[WARNING] /Users/sj/dev/src/codenvy/che/wsagent/wsagent-local/src/test/java/org/eclipse/che/RemotePreferenceDaoTest.java:[61,12] [deprecation] RemotePreferenceDao in org.eclipse.che has been deprecated
+[WARNING] /Users/sj/dev/src/codenvy/che/wsagent/wsagent-local/src/test/java/org/eclipse/che/RemotePreferenceDaoTest.java:[65,28] [deprecation] RemotePreferenceDao in org.eclipse.che has been deprecated
+[WARNING] /Users/sj/dev/src/codenvy/che/wsagent/wsagent-local/src/test/java/org/eclipse/che/RemotePreferenceDaoCompatibilityTest.java:[68,14] [deprecation] RemotePreferenceDao in org.eclipse.che has been deprecated
+[WARNING] /Users/sj/dev/src/codenvy/che/wsagent/wsagent-local/src/test/java/org/eclipse/che/RemotePreferenceDaoCompatibilityTest.java:[68,50] [deprecation] RemotePreferenceDao in org.eclipse.che has been deprecated
+[WARNING] /Users/sj/dev/src/codenvy/che/wsagent/wsagent-local/src/test/java/org/eclipse/che/RemotePreferenceDaoCompatibilityTest.java:[77,14] [deprecation] RemotePreferenceDao in org.eclipse.che has been deprecated
+[WARNING] /Users/sj/dev/src/codenvy/che/wsagent/wsagent-local/src/test/java/org/eclipse/che/RemotePreferenceDaoCompatibilityTest.java:[77,50] [deprecation] RemotePreferenceDao in org.eclipse.che has been deprecated
+[WARNING] /Users/sj/dev/src/codenvy/che/wsagent/wsagent-local/src/test/java/org/eclipse/che/RemotePreferenceDaoCompatibilityTest.java:[86,14] [deprecation] RemotePreferenceDao in org.eclipse.che has been deprecated
+[WARNING] /Users/sj/dev/src/codenvy/che/wsagent/wsagent-local/src/test/java/org/eclipse/che/RemotePreferenceDaoCompatibilityTest.java:[86,50] [deprecation] RemotePreferenceDao in org.eclipse.che has been deprecated
+[WARNING] /Users/sj/dev/src/codenvy/che/wsagent/wsagent-local/src/test/java/org/eclipse/che/RemotePreferenceDaoCompatibilityTest.java:[96,14] [deprecation] RemotePreferenceDao in org.eclipse.che has been deprecated
+[WARNING] /Users/sj/dev/src/codenvy/che/wsagent/wsagent-local/src/test/java/org/eclipse/che/RemotePreferenceDaoCompatibilityTest.java:[96,50] [deprecation] RemotePreferenceDao in org.eclipse.che has been deprecated

@@ -1,0 +1,3 @@
+Code Actions don't get Diagnostic
+kind/task 
+Found this issue during jdt.ls-PoC. Need to cherry-pick the commit into master

@@ -1,0 +1,3 @@
+close file issue
+kind/question 
+Hello, I added a new type of editor to Che, the problem is when I want to close the editor just the view disappears but the Head that contains the name of the file remains open. this is the close method in the Presenter : public void close(final boolean save) { view.setVisible(false); partStack.removePart(this); }

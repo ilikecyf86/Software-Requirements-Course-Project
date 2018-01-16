@@ -1,0 +1,3 @@
+Security
+
+I am setting up eclipse che on my home computer and want to work on it remotely. However, how do I setup a login requirement to make sure only I can access it from the internet? Might be able to do this but I have not figured out how.

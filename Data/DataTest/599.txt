@@ -1,0 +1,58 @@
+Is it possible to run a single Java file or a Java test from the UI?
+
+I installed the latest eclipse-che and created a simple maven java project. It contains a very simple Java application: package maven_test;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+    }
+} And a test: package maven_test;
+
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
+
+/**
+ * Unit test for simple App.
+ */
+public class AppTest 
+    extends TestCase
+{
+    /**
+     * Create the test case
+     *
+     * @param testName name of the test case
+     */
+    public AppTest( String testName )
+    {
+        super( testName );
+    }
+
+    /**
+     * @return the suite of tests being tested
+     */
+    public static Test suite()
+    {
+        return new TestSuite( AppTest.class );
+    }
+
+    /**
+     * Rigourous Test :-)
+     */
+    public void testApp()
+    {
+        assertTrue( true );
+    }
+} I want to run the application or the test, and chose the Java 7 runner. It works, but finally gives me an error: [DOCKER] Removing intermediate container 75ec0758cf27
+[DOCKER] Successfully built ec65a2f775dc
+[INFO] Environment preparation done. Application maven-test starting up…
+[STDERR] no main manifest attribute, in application.jar
+[INFO] Run ended @ Fri Dec 04 06:33:55 UTC 2015
+[INFO] Application maven-test has been shutdown.
+ How to configure che to support running a specified Java file? Is there any plugin support it?

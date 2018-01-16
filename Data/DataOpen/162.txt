@@ -1,0 +1,3 @@
+Focus is reset on UD on changes in workspace config
+kind/bug team/plugin 
+Description When I edit workspace config or use buttons (enabling/disabling installers in particular) UD reset focus, scrolls the page. This is very annoying behavior. Looks like it is a behavior of workspace autosave feature. If so it probably easy to fix. In case of editing workspace config directly It requires me to scroll page after every editing that makes JSON valid. So I have to brake JSON, edit how I want, fix JSON to avoid this annoying behavior. Looks like a bug. Reproduction Steps OS and version: Diagnostics:

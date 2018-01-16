@@ -1,0 +1,21 @@
+Recipe Location URL incorrect
+kind/bug severity/P2 team/plugin sprint/next-sprint sprint/current-sprint sprint/next-sprint status/code-review status/code-review sprint/current-sprint 
+The recipe location URL (e.g. http://192.168.99.100:8080/dashboard/eclipse/debian_jre for "eclipse/debigna_jre") shown in the Stack's or Workspace's Runtime's detail section is incorrect. It results in HTTP 404. Reproduction Steps: For Workspace Create a workspace Open the workspace using configure workspace option Go to Runtime section Click on the link in the Recipe Location For Stacks Go to stacks section of the Dashboard. Open any existing stack Go to Runtime section Click on the link in the Recipe Location Che version: Version :5.2.0-SNAPSHOT
+Revision :c4bd4d0ee1d8fdeb
+Build Time :2017-01-24 16:34:56
+ OS and version: Windows 7 Docker version: $ docker version
+Client:
+ Version:      1.12.6
+ API version:  1.24
+ Go version:   go1.6.4
+ Git commit:   78d1802
+ Built:        Wed Jan 11 00:23:16 2017
+ OS/Arch:      windows/amd64
+
+Server:
+ Version:      1.12.6
+ API version:  1.24
+ Go version:   go1.6.4
+ Git commit:   78d1802
+ Built:        Wed Jan 11 00:23:16 2017
+ OS/Arch:      linux/amd64

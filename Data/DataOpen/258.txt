@@ -1,0 +1,3 @@
+Integrate vscode debugger for java applications
+team/enterprise status/analyzing kind/epic 
+Che Debugger vs jdt.ls Comparison list of features https://docs.google.com/document/d/1ZkyI1CgRpK7lY2RANuIPgX-nRNdce6Q1neX2N_aq0Tg/edit# Replace the current implementation of Java Debugger with one provided by VSCode https://code.visualstudio.com/blogs/2017/09/28/java-debug https://github.com/vscjavaci/eclipse.jdt.ls

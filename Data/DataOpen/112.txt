@@ -1,0 +1,3 @@
+Document ways and best practices for project import
+kind/docs target/che6 team/ide 
+This piece of documentation should focus on: Importing a project from client Importing a project from server side plugin ANy FS related comments Talk about REST and #7380 approaches, share some best practices, show entrypoint in writing such a plugin component.

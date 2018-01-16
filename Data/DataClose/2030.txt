@@ -1,0 +1,3 @@
+Enhancement - Rename file after moving it.
+kind/enhancement kind/question team/ide kind/question 
+When you move a file in a folder where there is already a file called the same, you can choose if you want to rename the file. In this case, a blank input field appears where you can choose a new name. It would be nice to have here the old name to modify.

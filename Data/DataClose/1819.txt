@@ -1,0 +1,3 @@
+Remove full docs from Che install
+kind/docs kind/enhancement severity/P2 
+The Che install doesn't need a full set of local docs, in fact it's likely to cause issues because: It adds significantly to the size of the download It makes loading Che much slower (due primarily to the large images that have to be loaded for docs) It would make more sense to only include the docs "homepage" in the Che distribution. This would be a special docs homepage that: Removes the header items docs, tutorials, Artik, Openshift Replaces View on GitHub with GitHub Lists the version of Che the user has installed as a link to the online docs for that version

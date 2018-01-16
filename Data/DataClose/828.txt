@@ -1,0 +1,3 @@
+Eclipse Che application authentication
+kind/task status/open-for-dev team/platform 
+We are going to use OpenID protocol + Keycloak ID to introduce authentication in Eclipse Che. In terms of Keycloak we have such clients. Private client wsmaster(aka api) - Public client dashboard ide docs (aka swagger) cli - ? Goal of this task setup kycloak adapters for each client find the way how to provide configuration for each client. Important parts: secret for a private client, OpenID endpoint. Note 1 : wsagent authentication is part of separate issue #5434 Note 2: May be wsmaster is bearer-only client.

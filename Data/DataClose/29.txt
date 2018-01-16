@@ -1,0 +1,10 @@
+Returned cursor position is wrong while working with splitted editor
+kind/bug target/che6 
+Reproduction Steps: Start CheckRestoringSplitEditorTest selenium test from the org.eclipse.che.selenium.editor package. Observed behavior: The selenium test fails while checking cursor position from a file from second pane because was returned the cursor position from fist pane. org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for org.eclipse.che.selenium.pageobject.CodenvyEditor$$Lambda$83/1217155384@26a923e2 (tried for 5 second(s) with 500 MILLISECONDS interval)
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'slave2.codenvycorp.com', ip: '127.0.0.1', os.name: 'Linux', os.arch: 'amd64', os.version: '3.10.0-514.16.1.el7.x86_64', java.version: '1.8.0_102'
+Driver info: org.eclipse.che.selenium.core.SeleniumWebDriver
+	at org.eclipse.che.selenium.editor.CheckRestoringSplitEditorTest.setPositionsForSplittedEditor(CheckRestoringSplitEditorTest.java:150)
+	at org.eclipse.che.selenium.editor.CheckRestoringSplitEditorTest.checkRestoringStateSplittedEditor(CheckRestoringSplitEditorTest.java:88)
+ https://ci.codenvycorp.com/view/qa/job/che-integration-tests-che6/103/Selenium_tests_report/ OS and version: Che(Che6 branch) 6.0.0-M3; Chrome 59.0; Fedora 25 Failed test: CheckRestoringSplitEditorTest

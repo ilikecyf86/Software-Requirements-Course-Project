@@ -1,0 +1,3 @@
+Using Eclipse Che for developing apps on Raspberry pi
+kind/question 
+Hi , I was wondering if there is any information available on - how to configure Eclipse Che IDE(running on a desktop/laptop) to cross-compile code for raspberry pi (kernel/apps). i saw an article on how to run Eclipse Che on Raspberry pi (native compilation), but that is different from my need. Thanks in advance. regards Vijay

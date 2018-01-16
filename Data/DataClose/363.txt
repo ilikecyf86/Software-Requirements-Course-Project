@@ -1,0 +1,3 @@
+The autosave feature works wrong with Editor panes
+kind/bug severity/P2 
+Reproduction Steps: Open any file in the Editor. See that the Enable Autosave checkbox in the Preferences -> Editor is checked. Split pane in two rows or columns. Do some changes in the file. Expected behavior: A marker for changes to the file appeared. Then the file will be saved and the marker will disappear. Observed behavior: The marker disappears only in the active panel. If click on another panel, the marker disappears and the file is saved again. And the problem with the error markers in xml files. They will appear in other panes only after they become active. Che version: 5.19.0-SNAPSHOT OS and version: Fedora 25

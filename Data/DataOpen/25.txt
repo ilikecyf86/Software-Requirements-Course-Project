@@ -1,0 +1,3 @@
+LS configuration doc and examples
+kind/docs team/ide 
+Finalization of #7840 Prepare documentation (with description from PR above) about how to configure and examples: like you provided (but please clean it up from unnecessary config like petclinic db :) ) w/o installers, using pre-configured images for both machines (@eivantsov please help) same as second but on OpenShift (with OS recipe)

@@ -1,0 +1,3 @@
+Factory with several projects in configuration sets correctly only first project (regression)
+kind/bug severity/P1 status/in-progress 
+Preconditions: Create a workspace based on java stack. Create the java-web project and C console application through wizard. Steps to reproduce: Go to Dashboard. Factories -> Create Factory -> Select the just created workspace -> Create Copy factory URL and consume it. Expected result: The workspace should be created. The related projects should be configured properly. Actual result: The first project configured correctly, but second project is not cloned and configured. OS and version: Fedora 25, Chrome browser. Server locations: https://nightly.codenvy-stg.com, https://codenvy-stg.com, CHE-5.13.0

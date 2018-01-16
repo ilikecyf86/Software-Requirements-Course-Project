@@ -1,0 +1,3 @@
+Question about templates folder
+
+I was reading this from docs: https://eclipse-che.readme.io/docs/templates But I have a question, if I git clone all projects from samples.json inside the directory project.template_location_dir before runnning che, did che will link these cloned project to all samples or I have to set .zip file ? Context is that I want to download all project template locally before running che on a server without internet access.

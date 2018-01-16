@@ -1,0 +1,48 @@
+Compiling GWT Application Failed
+
+mvn clean install [INFO] ------------------------------------------------------------------------
+[INFO] Building Che :: Compiling GWT Application 3.14.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+Downloading: http://repo.jenkins-ci.org/public/org/jenkins-ci/jenkins/1.26/jenkins-1.26.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Che :: Parent ...................................... SUCCESS [  3.370 s]
+[INFO] Che :: Plugin Tools ................................ SUCCESS [  0.112 s]
+[INFO] Che :: Plugin Tools :: API Plugin .................. SUCCESS [ 29.734 s]
+[INFO] Che :: Examples .................................... SUCCESS [  2.262 s]
+[INFO] Che :: Examples :: Action .......................... SUCCESS [  7.182 s]
+[INFO] Che :: Examples :: Project Type .................... SUCCESS [  4.739 s]
+[INFO] Che :: Examples :: Service ......................... SUCCESS [  3.938 s]
+[INFO] Che :: Examples :: Theme ........................... SUCCESS [  5.742 s]
+[INFO] Che :: Examples :: Multi Extension ................. SUCCESS [  0.068 s]
+[INFO] Che :: Examples :: Multi Extension :: Action ....... SUCCESS [  4.514 s]
+[INFO] Che :: Examples :: Multi Extension :: ProjectType .. SUCCESS [  4.425 s]
+[INFO] Che :: Examples :: Multi Extension :: Service ...... SUCCESS [  3.818 s]
+[INFO] Che :: Examples :: Multi Extension :: Theme ........ SUCCESS [  4.663 s]
+[INFO] Che :: Examples :: Multi Extension :: Assembly ..... SUCCESS [  0.706 s]
+[INFO] Che :: Archetypes .................................. SUCCESS [  0.159 s]
+[INFO] Che :: Archetypes :: Client Extension .............. SUCCESS [  2.388 s]
+[INFO] Che :: Archetypes :: Server Extension .............. SUCCESS [  0.089 s]
+[INFO] Che :: Archetypes :: Project Type .................. SUCCESS [  0.113 s]
+[INFO] Che :: Archetypes :: Multi module Extension ........ SUCCESS [  0.165 s]
+[INFO] Che :: Admin war ................................... SUCCESS [  5.902 s]
+[INFO] Che :: Compiling GWT Application ................... FAILURE [ 25.886 s]
+[INFO] Che :: Assemblies Tomcat ........................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:51 min
+[INFO] Finished at: 2015-12-09T11:56:39+08:00
+[INFO] Final Memory: 135M/1175M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal on project assembly-sdk-war: Could not resolve dependencies for project org.eclipse.che.ide:assembly-sdk-war:war:3.14.0-SNAPSHOT: Failed to collect dependencies at org.eclipse.che.plugin:che-plugin-github-ext-github:jar:3.14.0-SNAPSHOT -> org.kohsuke:github-api:jar:1.67 -> com.infradna.tool:bridge-method-annotation:jar:1.14 -> org.jenkins-ci:annotation-indexer:jar:1.4: Failed to read artifact descriptor for org.jenkins-ci:annotation-indexer:jar:1.4: Could not transfer artifact org.jenkins-ci:jenkins:pom:1.26 from/to repo.jenkins-ci.org (http://repo.jenkins-ci.org/public/): repo.jenkins-ci.org: unknown error: Unknown host repo.jenkins-ci.org: unknown error -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/DependencyResolutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :assembly-sdk-war

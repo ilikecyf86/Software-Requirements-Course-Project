@@ -1,0 +1,3 @@
+[dashboard] Update the styles of inputs
+kind/enhancement status/open-for-dev team/plugin sprint/current-sprint status/code-review status/open-for-dev status/code-review sprint/current-sprint 
+Update the styles of inputs due to the following spec: https://app.zeplin.io/project.html#pid=5875f7218d4086df39a3a603&sid=58ca6362295490ebed2a12eb Prepare page in dashboard demo components with different states samples.

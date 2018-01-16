@@ -1,0 +1,3 @@
+while upgrading eclipse che to 6.0.0-M2 pulling eclipse/che-ip:5.17.0 issue , how to resolve it
+kind/question 
+When running following command to upgrade the version of Eclipse-che from 5.17.0 : docker run -it --rm -v /root/che/:/repo -v /che-data:/data -v /var/run/docker.sock:/var/run/docker.sock eclipse/che:6.0.0-M2 upgrade. Then it is Pulling image eclipse/che-ip:5.17.0 . How to get resolve the issue. Thanks in advance.

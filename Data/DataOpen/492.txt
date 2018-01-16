@@ -1,0 +1,3 @@
+The tab for sorting workspaces by RAM doesn't work
+kind/bug team/plugin sprint/next-sprint status/open-for-dev severity/P2 sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+Reproduction Steps: Create some workspaces with different sizes of RAM Click the Workspaces RAM tab for sorting the workspaces list Expected behavior: The workspaces list was sorted by RAM Observed behavior: The workspaces list was not sorted Che version: 5.4.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS Docker version: 1.12.3 Che install: Docker container Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes]

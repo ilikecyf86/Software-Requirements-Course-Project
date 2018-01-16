@@ -1,0 +1,3 @@
+Explicitly set protocol for ssh agent
+kind/task status/open-for-dev team/enterprise sprint/next-sprint severity/P1 status/open-for-dev 
+Problems: protocol is not defined there is no Runtime url at Servers section on Dashboard Solution: Add protocol here: che/agents/ssh/src/main/resources/org.eclipse.che.ssh.json Line 8 in c8dafb9 "ssh": { Check Runtime url

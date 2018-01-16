@@ -1,0 +1,4 @@
+"/fakeagent" is already in use by container
+kind/question 
+Run a lot of eclipse/che:nightly with difference ports at the same time. Some coitainers can't spawn che-server. Log is like below. Mar 08 08:35:23 che-node-00 dockerd[1056]: time="2017-03-08T08:35:23.950391448Z" level=error msg="Handler for POST /v1.23/containers/create returned error: Conflict. The container name \"/fakeagent\" is already in use by container fffd092867c7e46e801be9b50999f52543b564c55ba6cf4098f6249831b01e6f. You have to remove (or rename) that container to be able to reuse that name."
+ OS and version: CoreOS 1339.0.0. But maybe OS independent.

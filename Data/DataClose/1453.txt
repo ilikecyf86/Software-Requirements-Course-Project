@@ -1,0 +1,3 @@
+Add possibility to get recipe location URL from API.
+kind/enhancement 
+We'd like to allow the user to be able to see and read recipe of machines. The API provide us we have a list of registries, which can be private or public. API don't allow to know the complete path for the url to the registry (wether it's a public one or private one) In order to fix this issue: #3571. We need to get the complete url from the API.

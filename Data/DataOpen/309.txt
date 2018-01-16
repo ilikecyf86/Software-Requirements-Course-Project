@@ -1,0 +1,3 @@
+Browser was freeze when running `npm install` in the console.
+kind/bug status/in-progress 
+Reproduction Steps: Setup node environment Get an application contains packages.json via GitHub or somewhere. Run npm install Browser is hang up. Browser's console shows 504 error in ws://.../connect This is not 100% reproduction. OS and version: Version :5.18.0-SNAPSHOT Revision :5231059555dc1838 Build Time :2017-09-08 13:45:52 Diagnostics: I suspect the root cause is this NPE.

@@ -1,0 +1,3 @@
+Specifying local docker image in stacks.json
+kind/question 
+Am using Che as IDE Server. I want to add a custom stack through stacks.json. In the new json Object which I have added, have specified a local docker image. I have created a docker image locally say 'my_components', and in the json object have specified source as "source": { "type": "image", "origin": "my_components" } After restarting the CHE docker container. The dashboard is empty. If I remove the custom json Object from stacks.json it shows the default dashboard. Can some one guide me how do I specify a local docker images as source in stacks.json Thanks Santhosh

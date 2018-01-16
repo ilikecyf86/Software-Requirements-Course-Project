@@ -1,0 +1,5 @@
+How to enable existing syntax highlighting for scala
+kind/question 
+There is a tutorial in https://eclipse-che.readme.io/docs/code-editors#section-syntax-highlighting on how to add a syntax highlighting for a user language. They say: Add extension with mime type to File Extension Registry. There is already a scala and sbt definition in https://github.com/eclipse/che/blob/master/ide/che-core-ide-api/src/main/java/org/eclipse/che/ide/api/editor/filetype/ExtensionFileTypeIdentifier.java this.mappings.put("scala", Collections.singletonList("text/x-scala"));
+this.mappings.put("sbt", Collections.singletonList("text/x-scala"));// scala build definition
+ However, when I create a file with .scala extention in some project, there is no syntax highlighting. Expected behavior: It is expected to see the highlighting. Observed behavior: No highlighting. Che version: latest OS and version: Ubuntu 16.04 Docker version: 1.12.15 Additional information: Problem started happening recently, didn't happen in an older version of Che: No Problem can be reliably reproduced, doesn't happen randomly: Yes

@@ -1,0 +1,3 @@
+Add JUnit5 runner according new test runner API
+kind/enhancement team/ide 
+No description provided.

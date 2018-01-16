@@ -1,0 +1,9 @@
+Why the exposed port range is 32768-65535, which is not the same as the range in che.properties?
+
+In the Dockerfile: # expose 8080 port and a range of ports for runners
+
+EXPOSE 8080 32768-65535
+ But in /assembly-ide-war/src/main/webapp/WEB-INF/classes/codenvy/che.properties` # range of available service ports
+sys.resources.min_port=49152
+sys.resources.max_port=65535
+ I wonder why the start port is different? And what's usage of the ports between 32768 and 49152?

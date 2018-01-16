@@ -1,0 +1,3 @@
+openFile Action errors
+kind/bug severity/P1 team/ide status/open-for-dev sprint/next-sprint sprint/current-sprint sprint/next-sprint status/in-progress status/code-review status/in-progress status/code-review status/open-for-dev 
+I try to go to this url to open file in project: http://192.168.99.100:8081/che/wksp-299q?action=openFile:file=test2/pom.xml; And then, I got this: Moreover, there are some problems occurs when I try to use openFile action: Document wasn't opened Document was opened, but wasn't activated

@@ -1,0 +1,3 @@
+Add to index new files while renaming refactoring
+status/pending-merge 
+When renaming refactoring provided, old files are marked as deleted in git index but new renamed files are not under git index, so when we viewing a list of git changed files by git compare there are only deleted files in the list. That is because git diff command shows files that are in the git index.

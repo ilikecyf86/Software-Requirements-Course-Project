@@ -1,0 +1,3 @@
+Creating workspaces/stacks from a custom recipe is missing from UD
+kind/bug severity/blocker team/platform team/plugin team/platform status/in-progress status/in-progress 
+With the introduction of a new create workspace flow, I am unable to create and start a workspace from a custom recipe (Dockerfile or Composefile). When creating a stack, I do not have this option either. This is a regression versus 5.14.0 and should be fixed.

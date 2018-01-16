@@ -1,0 +1,3 @@
+Replace using obsolete WebSocket implementation by the newer one for communicating with terminal agent
+kind/enhancement team/ide kind/task kind/enhancement 
+There's just one place where obsolete WebSocket implementation still used - TerminalPresenter. Need to replace it with the newer WebSocket impl. It will allow to completely remove the older WebSocket impl. depends on #5635

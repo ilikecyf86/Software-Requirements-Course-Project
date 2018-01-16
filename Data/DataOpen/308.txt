@@ -1,0 +1,3 @@
+Traefik doesn't restart after rebooting the host OS.
+kind/enhancement 
+The title is all. Reproduction Steps: Start Che with -e CHE_SINGLE_PORT=true Reboot your host OS. Run docker ps OS and version: Recent nightly images.. Diagnostics: I've not tested but simply it should be added restart: always into there.

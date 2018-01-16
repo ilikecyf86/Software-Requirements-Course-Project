@@ -1,0 +1,3 @@
+Fix logger strings format
+kind/enhancement 
+It is necessary to fix logger string format throughout the project according to our code styling and also after the new formatter is applied. To get the idea of a wrong format in logs refer to the link.

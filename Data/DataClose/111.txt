@@ -1,0 +1,3 @@
+Add an ability to hide and restore the workspace/machines output tabs from IDE
+kind/enhancement team/plugin sprint/current-sprint target/che6 status/open-for-dev sprint/current-sprint 
+Description After start of IDE workspace start and machines output tabs are useless for me but they consume space on UI and I'm not allowed to close/hide them. It would be useful to allow a user to do that. For example, we can show them in machines tree view and allow to close on tabs list, but when user need it he would be able to click on the needed entry in machines tree to open that view.

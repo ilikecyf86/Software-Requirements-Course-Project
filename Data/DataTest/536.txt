@@ -1,0 +1,8 @@
+che.sh -p doesn't publish port 8080 to the specified port
+kind/bug 
+On OSX 10.11.3 if I run $ bin/che.sh -i -p:9000
+ The run script fails with !!! Running 'docker' succeeded, but 'docker ps' failed. This usually means that docker cannot reach its daemon. If I look at the log it shows that the following command was generated Launching a new Docker container named che from image codenvy/che:latest with Docker command:
++ /usr/local/bin/docker run --privileged -e '"DOCKER_MACHINE_HOST=192.168.99.100"' --name che -d -p 9000:9000 -p 32768-32788:32768-32788 codenvy/che:latest bash -c 'true && sudo chown -R user:user /home/user/che && sudo service docker start && tail -f /dev/null'
+ Then if I run docker ps I see that port 8080 is exposed but not published CONTAINER ID        IMAGE                COMMAND                  CREATED             STATUS              PORTS                                                                                     NAMES
+8329ed2f7c0e        codenvy/che:latest   "bash -c 'true && sud"   12 seconds ago      Up 9 seconds        0.0.0.0:9000->9000/tcp, 8080/tcp, 0.0.0.0:32768-32788->32768-32788/tcp, 32789-65535/tcp   che
+ If I don't specify -i it works correctly.

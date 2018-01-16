@@ -1,0 +1,33 @@
+Cannot read property 'HG' of null
+
+We get the following error in console when running a workspace Tue May 23 07:49:09 GMT+100 2017 com.google.gwt.logging.client.LogConfiguration
+SEVERE: Exception caught: (TypeError) : Cannot read property 'HG' of null
+com.google.web.bindery.event.shared.UmbrellaException: Exception caught: (TypeError) : Cannot read property 'HG' of null
+	at Unknown.hp(Throwable.java:74)
+	at Unknown.pp(Exception.java:33)
+	at Unknown.tp(RuntimeException.java:33)
+	at Unknown.DB(UmbrellaException.java:65)
+	at Unknown.lB(SimpleEventBus.java:203)
+	at Unknown.ltj(SimpleEventBus.java:88)
+	at Unknown.nuj(WorkspaceComponent.java:191)
+	at Unknown.Eq(SchedulerImpl.java:50)
+	at Unknown.vq(SchedulerImpl.java:347)
+	at Unknown.Iq(SchedulerImpl.java:78)
+	at Unknown.Cq(SchedulerImpl.java:141)
+	at Unknown.hq(Impl.java:239)
+	at Unknown.kq(Impl.java:291)
+	at Unknown.anonymous(Impl.java:77)
+Caused by: com.google.gwt.core.client.JavaScriptException: (TypeError) : Cannot read property 'HG' of null
+	at Unknown.O9f(WsConnectionListener.java:48)
+	at Unknown.oIf(WorkspaceStartedEvent.java:57)
+	at Unknown.lB(GwtEvent.java:76)
+	at Unknown.ltj(SimpleEventBus.java:88)
+	at Unknown.nuj(WorkspaceComponent.java:191)
+	at Unknown.Eq(SchedulerImpl.java:50)
+	at Unknown.vq(SchedulerImpl.java:347)
+	at Unknown.Iq(SchedulerImpl.java:78)
+	at Unknown.Cq(SchedulerImpl.java:141)
+	at Unknown.hq(Impl.java:239)
+	at Unknown.kq(Impl.java:291)
+	at Unknown.anonymous(Impl.java:77)
+ Reproduction Steps: Start a workspace, check the console OS and version: Eclipse Che 5.10.0, Chrome 58

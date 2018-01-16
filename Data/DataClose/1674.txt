@@ -1,0 +1,3 @@
+Revise referencing side of foreign keys
+kind/task sprint/next-sprint status/open-for-dev team/platform sprint/current-sprint sprint/next-sprint sprint/current-sprint 
+During review of this pr #3823 (comment) we discovered that missed index of referencing side of foreign key can caused that some operations (delete in our case) takes > 10 minutes instead of 10 seconds Scope of this issues is to revise all "referencing side of foreign key " and operations what we are doing with this field and consider to add indexes if needed. See more http://stackoverflow.com/a/970605/318536

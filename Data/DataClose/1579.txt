@@ -1,0 +1,3 @@
+Documentation lacks search box
+kind/enhancement 
+The documentation at https://www.eclipse.org/che/docs/ seems to lack a free text search box. I see that you already put a lot of work in a good table of contents which is definitely appreciated, but it shouldn't replace a built-in search function. If there is one, I can't seem to find it.. Reproduction Steps: Open https://www.eclipse.org/che/docs/ Look for a free text search box

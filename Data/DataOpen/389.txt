@@ -1,0 +1,3 @@
+Rework server-side exception model of workspace api module
+kind/task team/platform 
+In the server-side code of the workspace module, we use exceptions related to HTTP status codes - NotFoundException, ServerException, ForbiddenException, BadRequestException. But code that doesn't commute over HTTP suffers from this model and we have to make code less clear to handle exceptions. The purpose of this issue is to eliminate this problem and use HTTP related exceptions in HTTP related code only.

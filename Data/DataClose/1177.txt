@@ -1,0 +1,15 @@
+Golang agents fails to build locally on Windows
+kind/question 
+After upgrading my fork with some recent changes for CHE, my local build on Windows fails with the following: [INFO] --- exec-maven-plugin:1.4.0:exec (build-go-sources) @ go-agents ---
+# github.com/eclipse/che-lib/pty
+..\..\..\che-lib\pty\ioctl.go:6: undefined: syscall.SYS_IOCTL
+..\..\..\che-lib\pty\ioctl.go:6: not enough arguments in call to syscall.Syscall
+..\..\..\che-lib\pty\run.go:21: unknown syscall.SysProcAttr field 'Setctty' in struct literal
+..\..\..\che-lib\pty\run.go:21: unknown syscall.SysProcAttr field 'Setsid' in struct literal
+..\..\..\che-lib\pty\util.go:18: undefined: setsize
+..\..\..\che-lib\pty\util.go:30: undefined: syscall.SYS_IOCTL
+..\..\..\che-lib\pty\util.go:32: undefined: syscall.TIOCGWINSZ
+..\..\..\che-lib\pty\util.go:34: not enough arguments in call to syscall.Syscall
+# github.com/eclipse/che/agents/go-agents/exec-agent/exec
+exec-agent\exec\process.go:267: undefined: syscall.Kill
+ Is there anything that I might be missing in my development environment or is it just "no go" for Windows in current state? Reproduction Steps: Try to build CHE 5.8.0 locally on Windows machine. OS and version: Windows 10

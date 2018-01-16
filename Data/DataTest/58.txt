@@ -1,0 +1,3 @@
+Workspace Not Loaded On Che Start
+kind/question 
+The workspaces in the /workspaces/ are not loading after restarting che server. It is not available in the workspaces list. Workspace wksp-48cm that I created before I restarted is not available. Also I am not sure what import an existing workspace configuration does but it does not seem to be working. I am using the nightly from yesterday.

@@ -1,0 +1,3 @@
+Documentation not clear enough
+
+The eclipe che documentation should contain either a recommended link to install docker, or a separate guide of your own on how to install docker. For a person who has never used docker before it is difficult to go through different guides and figure out the correct one to install docker when their primary goal is to run Che and not install docker. Appreciate if you could append this in your docs..

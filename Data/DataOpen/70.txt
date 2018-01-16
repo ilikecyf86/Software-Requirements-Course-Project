@@ -1,0 +1,3 @@
+Selenium: Add selenium tests for cases switching between IDE parts
+kind/task 
+Description We have new feature #7024 So we should add some selenium tests for it. Related to #7754

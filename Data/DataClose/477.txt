@@ -1,0 +1,3 @@
+[SPI branch] Auto snapshot does not work
+kind/bug team/platform status/info-needed 
+Reproduction Steps: Open a workspace in the IDE Create a file in the terminal Restart the workspace from Menu Expected behavior: Auto snapshot does not work when to perform restart Observed behavior: Auto snaphot should work like in the master branch Che version: 5.18.0 OS and version: Fedora 25 Docker version: 17.06 API docker version: 1.30 Che install: Docker container Additional information: Problem can be reliably reproduced, doesn't happen randomly: [Yes]

@@ -1,0 +1,3 @@
+The 'Navigate to File' does not work for files without a content
+kind/bug 
+Open a project that has files without a content (e.g. https://github.com/artaleks9/java-multimodule-for-navigate.git). Use the 'Navigte to File' for these files. Expected: the files should be found by the 'Navigate to File'. Actual: the files are not found. See the attachment.

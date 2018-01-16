@@ -1,0 +1,3 @@
+Fix losing selected text in the new terminal ui.
+kind/task team/enterprise sprint/current-sprint status/open-for-dev status/in-progress status/open-for-dev sprint/current-sprint status/in-progress 
+In the experimental branch https://github.com/eclipse/che/tree/CHE-3210 we have a bug: losing selected text in the terminal. This is not bug of the xterm.js, this some problem in our integration code.

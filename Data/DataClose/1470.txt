@@ -1,0 +1,3 @@
+Intellij project setup does not compile
+kind/docs 
+I tried to import the root pom of the project into Intellij, Tried arktik and 5.3.x branches, both do not compile. the jdt-ui plugin for e.g. has many errors like Error:(42, 53) java: package org.eclipse.che.plugin.java.server.dto does not exist Reproduction Steps: OS and version: ubuntu 16.4 Am I missing something in my setup? like a maven repo or something? Any hint would be appreciated,

@@ -1,0 +1,3 @@
+Remove properties and env vars with triggers that are not used in Che6 anymore
+kind/task target/che6 team/platform 
+Description In Che6 we have rewritten a lot of code. We haven't removed properties that are no longer in use. This may lead to a situation when a user configures something that won't work and contacts support or chats to figure out what is wrong. We need to cleanup che.properties, che.env template and docs regarding those properties. Reproduction Steps OS and version: Diagnostics:

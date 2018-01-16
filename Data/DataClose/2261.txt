@@ -1,0 +1,15 @@
+Multiline Recipe Section in Stack Editor
+kind/enhancement status/info-needed team/plugin 
+Currently the recipe needs to be edited in JSON format. The recipe is defined by a single line with carriage return character \n. This is not very user friendly. Proposed to add ability to change the recipe both in the JSON format in configuration section and in a separate section for recipe in the stack editor with a multi-line editor similar to what is used in the "Create workspace > Create new workspace from stack > Write your own stack". The configuration section form and recipe section form would need to synchronize when changes are made to either form. Current JSON format that needs to be edited: services:\n db:\n image: codenvy/mysql\n environment:\n MYSQL_DATABASE: petclinic\n MYSQL_USER: petclinic\n MYSQL_PASSWORD: password\n mem_limit: 1073741824\n dev-machine:\n image: codenvy/ubuntu_jdk8\n mem_limit: 2147483648\n depends_on:\n - db Would like to edit in multi-line: services:
+ db:
+  image: codenvy/mysql
+  environment:
+   MYSQL_DATABASE: petclinic
+   MYSQL_USER: petclinic
+   MYSQL_PASSWORD: password
+  mem_limit: 1073741824
+ dev-machine:
+  image: codenvy/ubuntu_jdk8
+  mem_limit: 2147483648
+  depends_on:
+    - db

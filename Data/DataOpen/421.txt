@@ -1,0 +1,3 @@
+The next and previous page buttons in the Factories list don't work(regression)
+kind/bug status/open-for-dev team/plugin 
+Reproduction Steps: Create at least 16 factories In the Factories list click on the next page button Observed behavior: The factories list didn't change. Che version: 5.12.0-SNAPSHOT OS and version: Ubuntu 16.04 LTS

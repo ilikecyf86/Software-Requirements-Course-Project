@@ -1,0 +1,3 @@
+Disable Orion Editor
+kind/question 
+I fired up a meteor project and upon opening any JS file, it flags almost every symbol as invalid syntax. Reproduction Steps: $ meteor create then open any .js file in the editor Eclipse/che version: Codenvy 5.2.2 Are you really only able to add/remove plugins by re-building che? see here

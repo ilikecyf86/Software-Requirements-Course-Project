@@ -1,0 +1,3 @@
+Make it possible to run multiple wsmaster in parallel
+kind/epic status/analyzing 
+Description This is about starting multiple wsmaster servers (behind a reverse proxy) to serve the same group of workspaces for the purpose of: blue-green deployment to minimize downtime during new versions rollout load balancing

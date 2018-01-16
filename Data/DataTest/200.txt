@@ -1,0 +1,3 @@
+Investigate amount of Git methods that are missing in JGit and are needed for our GitService
+Study 
+Need to now how many Git methods that are used in our GitService but not implemented or working incorrect in JGit.

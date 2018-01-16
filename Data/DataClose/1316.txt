@@ -1,0 +1,3 @@
+[Factory] Update links to docs in product
+kind/task sprint/current-sprint status/open-for-dev team/plugin status/code-review status/open-for-dev status/code-review sprint/current-sprint 
+On dashboard, we are referring to the docs of Codenvy. We need to update the link so that it workspace for both Che and Codenvy.

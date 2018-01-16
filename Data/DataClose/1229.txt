@@ -1,0 +1,3 @@
+Unexpected reset of Applicable slider after saving command
+kind/bug severity/P1 team/ide sprint/next-sprint sprint/current-sprint sprint/next-sprint sprint/next-sprint status/in-progress sprint/current-sprint 
+Preconditions: we should have a workspace with 2 prjects Reproduction Steps: Open Command explorer, add a command, in the command editor disable command for a project with slider. Save it. Expected result: The state of sliders should be saved. Actual result: The just disabled slider unexpectedly returned to enable state. OS and version: Ubuntu 14.0 TLS, chrome browser.

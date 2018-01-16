@@ -1,0 +1,3 @@
+UD adds incorrect information into WS configuration on WS creation from stack
+kind/bug severity/P2 team/plugin 
+When user creates WS from some stack UD adds config section that is not respected by API and will be ignored. But it can confuse user if he goes into "Workspace config" section and see this information. Reproduction Steps: Open UD. Open WS creation view. Open "Workspace config" section. Che version: 5.0.0-Snapshot OS and version: Ubuntu 16.04 Docker version: 12 Che install: Docker container

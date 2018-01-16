@@ -1,0 +1,3 @@
+Che multiuser: Style organization email notifications
+kind/task status/in-progress team/platform 
+It is needed to apply Che style to organization email notifications. Now it is just plain text what is not good UX. Existing Organization Notifications: Member added to an Organization Member Removed from an Organization Organization Renamed Organization Removed

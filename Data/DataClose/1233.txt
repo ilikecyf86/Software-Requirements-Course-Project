@@ -1,0 +1,3 @@
+AppContext#getProjects() doesn't work as expected after renaming a project
+kind/bug team/ide sprint/next-sprint severity/P1 sprint/next-sprint sprint/next-sprint 
+AppContext#getProjects() returns not existed projects after renaming a project. Reproduction Steps: Create a single project in a workspace. Rename the project. AppContext#getProjects() returns three projects instead of one.

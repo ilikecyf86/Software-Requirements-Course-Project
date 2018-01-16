@@ -1,0 +1,3 @@
+Parameterize the Che Vagrantfile
+kind/enhancement 
+We would like to automate setting up Che with the required VirtualBox and Vagrant stack using the Yatta Launcher. In order to do that, we'd like to make a few changes to the Vagrantfile to better support external configuration. This would include Setting the already available parameters like HTTP_PROXY etc via environment variables Configuration of the network ip address and port More detailed progress output The goal is to keep the out-of-the-box behavior of the Vagrantfile during a plain vagrant up unchanged as long as the introduced environment variables are unset. I'll have a pull request with the proposed changes ready in a moment.

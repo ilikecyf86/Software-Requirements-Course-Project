@@ -1,0 +1,539 @@
+Workspace Crashes Browser Tab
+kind/bug severity/P2 sprint/next-sprint team/ide sprint/current-sprint sprint/next-sprint status/in-progress status/in-progress 
+When I open workspace for the eclipse che stack I get the following error in chrome developer console one time but not able to get it again in the screen capture. 
+6vendor-66eea7122d.js:75 Markup '<md-button flex></md-button>' may not work as expected in IE Browsers. Consult 'https://github.com/philipwalton/flexbugs#9-some-html-elements-cant-be-flex-containers' for details.
+(anonymous) @ vendor-66eea7122d.js:75
+app-cc75944aa8.js:673 Preloading IDE javascript /_app/9F39DEA6071E57BCB5615E7C8C35A415.cache.js
+_app-0.js:13788 INFO (org.eclipse.che.ide.websocket.ng.impl.MessagesReSender): Going to resend websocket messaged: [{"jsonrpc":"2.0","method":"process.getProcesses","id":"2","params":{"all":false}}]
+_app-0.js:13788 INFO (org.eclipse.che.ide.websocket.ng.impl.MessagesReSender): Going to resend websocket messaged: [{"jsonrpc":"2.0","method":"track:project-tree","params":{"type":"START","path":"/"}}, {"jsonrpc":"2.0","method":"track:git-checkout","params":{}}]
+VM88 _app-0.js:13788 ERROR (org.eclipse.che.ide.ui.smartTree.NodeLoader$CTreeNodeLoaderHandler): Requested node not found.
+VIi @ VM88 _app-0.js:13788
+XIi @ VM88 _app-0.js:14752
+WIi @ VM88 _app-0.js:16662
+TIi @ VM88 _app-0.js:7194
+Psi @ VM88 _app-0.js:17348
+Bxi @ VM88 _app-0.js:4573
+Dxi @ VM88 _app-0.js:17681
+Ay @ VM88 _app-0.js:16821
+py @ VM88 _app-0.js:13455
+osi @ VM88 _app-0.js:12071
+psi @ VM88 _app-0.js:15532
+Lsi @ VM88 _app-0.js:6888
+Nsi @ VM88 _app-0.js:17681
+(anonymous) @ VM88 _app-0.js:9588
+2VM88 _app-0.js:13788 ERROR (org.eclipse.che.ide.statepersistance.AppStateManager): 
+com.google.gwt.core.client.JavaScriptException: (TypeError) : Cannot read property 'a' of undefined
+	at Unknown.Uzf(_app-0.js)
+	at Unknown.$Af(_app-0.js)
+	at Unknown.xwf(_app-0.js)
+	at Unknown.wwf(_app-0.js)
+	at Unknown.zwf(_app-0.js)
+	at Unknown.l5h(_app-0.js)
+	at Unknown.gsf(_app-0.js)
+	at Unknown.r1e(_app-0.js)
+	at Unknown.t1e(_app-0.js)
+	at Unknown.Ay(_app-0.js)
+	at Unknown.M4c(_app-0.js)
+	at Unknown.O4c(_app-0.js)
+	at Unknown.Ay(_app-0.js)
+	at Unknown.sy(_app-0.js)
+	at Unknown.H4c(_app-0.js)
+	at Unknown.wn(_app-0.js)
+	at Unknown.zn(_app-0.js)
+	at Unknown.eval(_app-0.js)
+	at Unknown.onbeforeunload(_app-0.js)
+VIi @ VM88 _app-0.js:13788
+XIi @ VM88 _app-0.js:14752
+WIi @ VM88 _app-0.js:16662
+TIi @ VM88 _app-0.js:7194
+l5h @ VM88 _app-0.js:16550
+gsf @ VM88 _app-0.js:17660
+r1e @ VM88 _app-0.js:10637
+t1e @ VM88 _app-0.js:17658
+Ay @ VM88 _app-0.js:16821
+M4c @ VM88 _app-0.js:8804
+O4c @ VM88 _app-0.js:17646
+Ay @ VM88 _app-0.js:16821
+sy @ VM88 _app-0.js:15437
+H4c @ VM88 _app-0.js:11752
+wn @ VM88 _app-0.js:7854
+zn @ VM88 _app-0.js:10620
+(anonymous) @ VM88 _app-0.js:11309
+$wnd.onbeforeunload @ VM88 _app-0.js:16822
+VM88 _app-0.js:13788 ERROR (org.eclipse.che.ide.statepersistance.AppStateManager): Failed to store app's state to user's preferences
+VIi @ VM88 _app-0.js:13788
+XIi @ VM88 _app-0.js:14752
+WIi @ VM88 _app-0.js:16662
+$Ii @ VM88 _app-0.js:7930
+s5h @ VM88 _app-0.js:17679
+X_d @ VM88 _app-0.js:13308
+(anonymous) @ VM88 _app-0.js:10475
+VM88 _app-0.js:13788 INFO (org.eclipse.che.ide.part.explorer.project.ProjectExplorerStateComponent$3): 
+VM88 _app-0.js:13788 INFO (org.eclipse.che.ide.websocket.ng.impl.MessagesReSender): Going to resend websocket messaged: [{"jsonrpc":"2.0","method":"track:project-tree","params":{"type":"START","path":"/"}}, {"jsonrpc":"2.0","method":"track:git-checkout","params":{}}]
+8VM88 _app-0.js:17496 ZeroClipboard error of type "flash-deactivated": Flash is too outdated for your browser and/or is configured as click-to-activate
+ Reproduction Steps: I am not sure how to reproduce. I am pretty sure it has to do with the project explorer. OS and version: Diagnostics: docker run -ti -v /root/cinc/:/data -v /var/run/docker.sock:/var/run/docker.sock -e HOST_PORT=8080 -e CHE_HOST=---- -e CHE_WORKSPACE_VOLUME=/var/run/docker.sock:/var/run/docker.sock eclipse/che:5.5.0 info
+INFO: (che cli): 5.5.0 - using docker 1.12.2 / native
+
+CLI:
+ TTY:            true
+ Daemon:         /var/run/docker.sock
+ Image:          eclipse/che:5.5.0
+ Version:        5.5.0
+ Command:        info
+ Parameters:     info
+Mounts:
+ /data:          /root/cinc/
+ /data/instance: not set
+ /data/backup:   not set
+ /repo:          not set
+ /assembly:      not set
+ /sync:          not set
+ /unison:        not set
+ /chedir:        not set
+System:
+ Docker:         native
+ Proxy:          not set
+Internal:
+ CHE_VERSION:    5.5.0
+ CHE_HOST:       ----
+ CHE_INSTANCE:   /root/cinc//instance
+ CHE_CONFIG:     /root/cinc/
+ CHE_BACKUP:     /root/cinc//backup
+ CHE_REGISTRY:   /version
+ CHE_DEBUG:      false
+ IP Detection:   10.5.131.227
+ Initialized:    true
+Image Registry:
+ IMAGE_INIT=eclipse/che-init:5.5.0
+ IMAGE_CHE=eclipse/che-server:5.5.0
+ IMAGE_COMPOSE=docker/compose:1.8.1
+ BOOTSTRAP_IMAGE_ALPINE=alpine:3.4
+ BOOTSTRAP_IMAGE_CHEIP=eclipse/che-ip:5.5.0
+ UTILITY_IMAGE_CHEACTION=eclipse/che-action:5.5.0
+ UTILITY_IMAGE_CHEDIR=eclipse/che-dir:5.5.0
+ UTILITY_IMAGE_CHETEST=eclipse/che-test:5.5.0
+ UTILITY_IMAGE_CHEMOUNT=eclipse/che-mount:5.5.0
+che.env:
+ CHE_HOST=----
+ logs- [STDOUT] 2017-03-25 14:24:02,725[nio-4401-exec-5]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 49]   - Web socket session opened
+[STDOUT] 2017-03-25 14:24:02,726[nio-4401-exec-5]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 50]   - Endpoint: 1267253373
+[STDOUT] 2017-03-25 14:25:09,973[io-4401-exec-10]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 49]   - Web socket session opened
+[STDOUT] 2017-03-25 14:25:09,974[io-4401-exec-10]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 50]   - Endpoint: 1979025595
+[STDOUT] 2017-03-25 14:26:00,485[nio-4401-exec-5]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 49]   - Web socket session opened
+[STDOUT] 2017-03-25 14:26:00,486[nio-4401-exec-5]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 50]   - Endpoint: 1574314492
+[STDOUT] 2017-03-25 14:27:07,784[nio-4401-exec-7]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 69]   - Web socket session closed
+[STDOUT] 2017-03-25 14:28:16,765[nio-4401-exec-2]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+[STDOUT] 2017-03-25 14:28:16,775[nio-4401-exec-6]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 69]   - Web socket session closed
+[STDOUT] 2017-03-25 14:32:49,627[nio-4401-exec-7]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 49]   - Web socket session opened
+[STDOUT] 2017-03-25 14:32:49,627[nio-4401-exec-7]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 50]   - Endpoint: 564864567
+[STDOUT] 2017-03-25 14:33:38,911[nio-4401-exec-5]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 49]   - Web socket session opened
+[STDOUT] 2017-03-25 14:33:38,911[nio-4401-exec-5]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 50]   - Endpoint: 182737896
+[STDOUT] 2017-03-25 14:37:02,886[io-4401-exec-10]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 69]   - Web socket session closed
+[STDOUT] 2017-03-25 14:37:02,927[nio-4401-exec-5]  [WARN ] [o.e.c.impl.ContainerResponse 93]     - Client has aborted connection. Response writing omitted.
+[STDOUT] 2017-03-25 14:37:13,103[io-4401-exec-10]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 49]   - Web socket session opened
+[STDOUT] 2017-03-25 14:37:13,103[io-4401-exec-10]  [INFO ] [a.c.w.i.BasicWebSocketEndpoint 50]   - Endpoint: 1691936395
+ [STDOUT] 2017/03/25 14:24:02 A new channel with id 'channel-8' successfully opened
+[STDOUT] New terminal successfully initialized.
+[STDOUT] 2017/03/25 14:25:09 A new channel with id 'channel-9' successfully opened
+[STDOUT] New terminal successfully initialized.
+[STDOUT] 2017/03/25 14:26:00 A new channel with id 'channel-10' successfully opened
+[STDOUT] New terminal successfully initialized.
+[STDOUT] 2017/03/25 14:27:07 Channel with id 'channel-8' successfully closed
+[STDOUT] Terminal reader closed.
+[STDOUT] 2017/03/25 14:28:16 Channel with id 'channel-9' successfully closed
+[STDOUT] Terminal reader closed.
+[STDOUT] 2017/03/25 14:32:49 A new channel with id 'channel-11' successfully opened
+[STDOUT] New terminal successfully initialized.
+[STDOUT] 2017/03/25 14:33:38 A new channel with id 'channel-12' successfully opened
+[STDOUT] New terminal successfully initialized.
+[STDOUT] Terminal reader closed.
+[STDOUT] 2017/03/25 14:37:02 Channel with id 'channel-12' successfully closed
+[STDOUT] 2017/03/25 14:37:13 A new channel with id 'channel-13' successfully opened
+ 202.168.151.162 - - [25/Mar/2017:01:49:08 +0000] "GET //script HTTP/1.1" 302 -
+202.168.151.162 - - [25/Mar/2017:01:49:08 +0000] "GET /dashboard/ HTTP/1.1" 200 1782
+49.4.142.203 - - [25/Mar/2017:02:27:05 +0000] "GET /manager/html HTTP/1.1" 200 -
+103.242.2.71 - - [25/Mar/2017:07:13:56 +0000] "GET /script HTTP/1.1" 302 -
+103.242.2.71 - - [25/Mar/2017:07:13:56 +0000] "GET /dashboard/ HTTP/1.1" 200 1782
+196.52.43.54 - - [25/Mar/2017:10:04:38 +0000] "GET / HTTP/1.0" 302 -
+191.96.249.97 - - [25/Mar/2017:10:12:53 +0000] "GET /setup.cgi HTTP/1.1" 302 -
+180.150.187.149 - - [25/Mar/2017:10:28:51 +0000] "GET /favicon.ico HTTP/1.1" 302 -
+96.8.233.82 - - [25/Mar/2017:14:09:19 +0000] "GET / HTTP/1.1" 302 -
+96.8.233.82 - - [25/Mar/2017:14:09:19 +0000] "GET /dashboard/ HTTP/1.1" 200 1782
+96.8.233.82 - - [25/Mar/2017:14:09:19 +0000] "GET /dashboard/styles/app-04821db53a.css HTTP/1.1" 200 651399
+96.8.233.82 - - [25/Mar/2017:14:09:19 +0000] "GET /dashboard/scripts/vendor-66eea7122d.js HTTP/1.1" 200 1255949
+96.8.233.82 - - [25/Mar/2017:14:09:19 +0000] "GET /dashboard/scripts/app-cc75944aa8.js HTTP/1.1" 200 738553
+96.8.233.82 - - [25/Mar/2017:14:09:20 +0000] "GET /dashboard/fonts/open-sans-latin.woff2 HTTP/1.1" 200 10352
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /dashboard/assets/branding/product.json HTTP/1.1" 200 446
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "OPTIONS /wsmaster/api/ HTTP/1.1" 200 242
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "OPTIONS /wsmaster/api/ HTTP/1.1" 200 242
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/profile HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/profile HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/ HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/ HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /dashboard/assets/branding/che-logo-text.svg HTTP/1.1" 200 8541
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /_app/compilation-mappings.txt?uid=528259 HTTP/1.1" 200 373
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /dashboard/assets/branding/loader.svg HTTP/1.1" 200 1252
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /dashboard/fonts/che.woff HTTP/1.1" 200 3180
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /dashboard/fonts/material-design.woff HTTP/1.1" 200 64812
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:21 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:22 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:22 +0000] "GET /admin/ HTTP/1.1" 302 -
+96.8.233.82 - - [25/Mar/2017:14:09:22 +0000] "GET /favicon.ico HTTP/1.1" 302 -
+96.8.233.82 - - [25/Mar/2017:14:09:22 +0000] "GET /dashboard/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 200 66624
+96.8.233.82 - - [25/Mar/2017:14:09:22 +0000] "GET /_app/9F39DEA6071E57BCB5615E7C8C35A415.cache.js HTTP/1.1" 200 3763823
+96.8.233.82 - - [25/Mar/2017:14:09:22 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:09:22 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:09:22 +0000] "GET /dashboard/ HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:09:22 +0000] "GET /dashboard/assets/branding/che-logo.svg HTTP/1.1" 200 7443
+96.8.233.82 - - [25/Mar/2017:14:09:22 +0000] "GET /dashboard/ HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:09:25 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:09:25 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:09:25 +0000] "GET /wsmaster/api/workspace/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:25 +0000] "GET /wsmaster/api/workspace/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:26 +0000] "GET /wsmaster/api/agent HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:26 +0000] "GET /wsmaster/api/agent HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:26 +0000] "GET /wsmaster/api/ssh/workspace/find?name=workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:26 +0000] "GET /wsmaster/api/ssh/workspace/find?name=workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:26 +0000] "GET /wsmaster/api/workspace/che/wksp-6t32 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:26 +0000] "GET /wsmaster/api/workspace/che/wksp-6t32 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:26 +0000] "GET /wsmaster/api/agent HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:26 +0000] "GET /wsmaster/api/agent HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:09:27 +0000] "GET /dashboard/assets/zeroclipboard/ZeroClipboard.swf?noCache=1490450968102 HTTP/1.1" 200 6580
+96.8.233.82 - - [25/Mar/2017:14:23:57 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:23:57 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:23:57 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:23:57 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:23:57 +0000] "GET /che/wksp-6t32?uid=523610 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:23:58 +0000] "GET /_app/browserNotSupported.js HTTP/1.1" 200 3047
+96.8.233.82 - - [25/Mar/2017:14:23:58 +0000] "GET /_app/_app.nocache.js HTTP/1.1" 200 7851
+96.8.233.82 - - [25/Mar/2017:14:23:58 +0000] "GET /_app/9F39DEA6071E57BCB5615E7C8C35A415.cache.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:23:58 +0000] "GET /_app/IDE.css HTTP/1.1" 200 3870
+96.8.233.82 - - [25/Mar/2017:14:23:59 +0000] "GET /_app/ZeroClipboard.min.js HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:23:59 +0000] "GET /_app/font-awesome-4.5.0/css/font-awesome.min.css HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:24:00 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:24:00 +0000] "GET /wsmaster/api/profile/ HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:24:00 +0000] "GET /wsmaster/api/workspace/che/wksp-6t32 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:24:00 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:24:01 +0000] "GET /wsmaster/api/workspace/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:24:01 +0000] "GET /wsmaster/api/project-template/all HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:24:01 +0000] "GET /_app/font-awesome-4.5.0/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 200 66624
+96.8.233.82 - - [25/Mar/2017:14:24:01 +0000] "GET /_app/ZeroClipboard.swf?noCache=1490451842809 HTTP/1.1" 200 4036
+96.8.233.82 - - [25/Mar/2017:14:24:01 +0000] "GET /_app/require.js HTTP/1.1" 200 83083
+96.8.233.82 - - [25/Mar/2017:14:24:01 +0000] "GET /wsmaster/api/workspace/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:24:02 +0000] "GET /_app/term/xterm.js HTTP/1.1" 200 52870
+172.17.0.2 - - [25/Mar/2017:14:24:06 +0000] "PUT /wsmaster/api/activity/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 404 -
+96.8.233.82 - - [25/Mar/2017:14:25:02 +0000] "GET /dashboard/ HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:02 +0000] "GET /dashboard/scripts/vendor-66eea7122d.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:02 +0000] "GET /dashboard/styles/app-04821db53a.css HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:02 +0000] "GET /dashboard/scripts/app-cc75944aa8.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:03 +0000] "GET /dashboard/fonts/open-sans-latin.woff2 HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:03 +0000] "OPTIONS /wsmaster/api/ HTTP/1.1" 200 242
+96.8.233.82 - - [25/Mar/2017:14:25:03 +0000] "OPTIONS /wsmaster/api/ HTTP/1.1" 200 242
+96.8.233.82 - - [25/Mar/2017:14:25:03 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:03 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:03 +0000] "GET /wsmaster/api/profile HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:25:03 +0000] "GET /wsmaster/api/profile HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:25:03 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:03 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:03 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:03 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /_app/compilation-mappings.txt?uid=380615 HTTP/1.1" 200 373
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /dashboard/fonts/che.woff HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /dashboard/fonts/material-design.woff HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /favicon.ico HTTP/1.1" 302 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /dashboard/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /_app/9F39DEA6071E57BCB5615E7C8C35A415.cache.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /dashboard/ HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /che/wksp-6t32?uid=838473 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /_app/browserNotSupported.js HTTP/1.1" 200 3047
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /_app/_app.nocache.js HTTP/1.1" 200 7851
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /_app/9F39DEA6071E57BCB5615E7C8C35A415.cache.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:04 +0000] "GET /_app/IDE.css HTTP/1.1" 200 3870
+96.8.233.82 - - [25/Mar/2017:14:25:07 +0000] "GET /_app/font-awesome-4.5.0/css/font-awesome.min.css HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:07 +0000] "GET /_app/ZeroClipboard.min.js HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:07 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:07 +0000] "GET /wsmaster/api/profile/ HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:25:07 +0000] "GET /wsmaster/api/workspace/che/wksp-6t32 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:08 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:25:08 +0000] "GET /wsmaster/api/workspace/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:08 +0000] "GET /wsmaster/api/project-template/all HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:08 +0000] "GET /_app/ZeroClipboard.swf?noCache=1490451910113 HTTP/1.1" 200 4036
+96.8.233.82 - - [25/Mar/2017:14:25:08 +0000] "GET /_app/font-awesome-4.5.0/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 200 66624
+96.8.233.82 - - [25/Mar/2017:14:25:09 +0000] "GET /_app/require.js HTTP/1.1" 200 83083
+96.8.233.82 - - [25/Mar/2017:14:25:09 +0000] "GET /wsmaster/api/workspace/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:09 +0000] "GET /_app/term/xterm.js HTTP/1.1" 200 52870
+96.8.233.82 - - [25/Mar/2017:14:25:53 +0000] "GET /dashboard/ HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:53 +0000] "GET /dashboard/styles/app-04821db53a.css HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:53 +0000] "GET /dashboard/scripts/vendor-66eea7122d.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:53 +0000] "GET /dashboard/scripts/app-cc75944aa8.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:53 +0000] "GET /dashboard/fonts/open-sans-latin.woff2 HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "OPTIONS /wsmaster/api/ HTTP/1.1" 200 242
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "OPTIONS /wsmaster/api/ HTTP/1.1" 200 242
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/profile HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/profile HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /_app/compilation-mappings.txt?uid=156192 HTTP/1.1" 200 373
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /dashboard/fonts/che.woff HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /dashboard/fonts/material-design.woff HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /dashboard/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /_app/9F39DEA6071E57BCB5615E7C8C35A415.cache.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /favicon.ico HTTP/1.1" 302 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:25:54 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:25:55 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:55 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:55 +0000] "GET /dashboard/ HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:55 +0000] "GET /che/wksp-6t32?uid=260238 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:55 +0000] "GET /_app/browserNotSupported.js HTTP/1.1" 200 3047
+96.8.233.82 - - [25/Mar/2017:14:25:55 +0000] "GET /_app/_app.nocache.js HTTP/1.1" 200 7851
+96.8.233.82 - - [25/Mar/2017:14:25:55 +0000] "GET /_app/IDE.css HTTP/1.1" 200 3870
+96.8.233.82 - - [25/Mar/2017:14:25:55 +0000] "GET /_app/9F39DEA6071E57BCB5615E7C8C35A415.cache.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:25:56 +0000] "GET /_app/font-awesome-4.5.0/css/font-awesome.min.css HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:57 +0000] "GET /_app/ZeroClipboard.min.js HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:57 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:57 +0000] "GET /wsmaster/api/profile/ HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:25:57 +0000] "GET /wsmaster/api/workspace/che/wksp-6t32 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:58 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:25:58 +0000] "GET /wsmaster/api/workspace/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:58 +0000] "GET /wsmaster/api/project-template/all HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:25:59 +0000] "GET /_app/ZeroClipboard.swf?noCache=1490451960488 HTTP/1.1" 200 4036
+96.8.233.82 - - [25/Mar/2017:14:25:59 +0000] "GET /_app/font-awesome-4.5.0/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 200 66624
+96.8.233.82 - - [25/Mar/2017:14:25:59 +0000] "GET /_app/require.js HTTP/1.1" 200 83083
+96.8.233.82 - - [25/Mar/2017:14:25:59 +0000] "GET /wsmaster/api/workspace/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:26:00 +0000] "GET /_app/term/xterm.js HTTP/1.1" 200 52870
+96.8.233.82 - - [25/Mar/2017:14:26:01 +0000] "GET /dashboard/maps/scripts/vendor-66eea7122d.js.map HTTP/1.1" 200 1792725
+96.8.233.82 - - [25/Mar/2017:14:26:01 +0000] "GET /dashboard/maps/scripts/app-cc75944aa8.js.map HTTP/1.1" 200 483382
+96.8.233.82 - - [25/Mar/2017:14:26:01 +0000] "GET /_app/term/xterm.js.map HTTP/1.1" 200 237929
+96.8.233.82 - - [25/Mar/2017:14:26:01 +0000] "GET /dashboard/styles/app-04821db53a.css HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:26:01 +0000] "GET /_app/IDE.css HTTP/1.1" 200 3870
+96.8.233.82 - - [25/Mar/2017:14:26:01 +0000] "GET /_app/font-awesome-4.5.0/css/font-awesome.min.css HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:26:02 +0000] "GET /dashboard/maps/styles/app-04821db53a.css.map HTTP/1.1" 200 271333
+96.8.233.82 - - [25/Mar/2017:14:27:06 +0000] "GET /_app/built-codeEdit/code_edit/built-codeEdit.css HTTP/1.1" 200 90858
+96.8.233.82 - - [25/Mar/2017:14:27:07 +0000] "GET /dashboard/maps/scripts/vendor-66eea7122d.js.map HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:27:07 +0000] "GET /dashboard/maps/scripts/app-cc75944aa8.js.map HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:27:07 +0000] "GET /_app/term/xterm.js.map HTTP/1.1" 200 237929
+96.8.233.82 - - [25/Mar/2017:14:28:15 +0000] "GET /_app/built-codeEdit/code_edit/built-codeEdit.css HTTP/1.1" 200 90858
+96.8.233.82 - - [25/Mar/2017:14:28:16 +0000] "GET /dashboard/styles/app-04821db53a.css HTTP/1.1" 200 651399
+96.8.233.82 - - [25/Mar/2017:14:28:58 +0000] "GET /_app/built-codeEdit/code_edit/built-codeEdit.css HTTP/1.1" 200 90858
+96.8.233.82 - - [25/Mar/2017:14:28:59 +0000] "GET /_app/built-codeEdit/code_edit/built-codeEdit-amd.js HTTP/1.1" 200 1658809
+96.8.233.82 - - [25/Mar/2017:14:28:59 +0000] "GET /_app/orion/CheContentAssistMode.js HTTP/1.1" 200 1979
+96.8.233.82 - - [25/Mar/2017:14:29:07 +0000] "GET /_app/built-codeEdit/plugins/embeddedToolingPlugin.html HTTP/1.1" 200 211
+96.8.233.82 - - [25/Mar/2017:14:29:07 +0000] "GET /_app/cheJavaHighlightingPlugin/plugin.html HTTP/1.1" 200 3912
+96.8.233.82 - - [25/Mar/2017:14:29:07 +0000] "GET /_app/built-codeEdit/webtools/plugins/webToolsPlugin.html HTTP/1.1" 200 196
+96.8.233.82 - - [25/Mar/2017:14:29:07 +0000] "GET /_app/built-codeEdit/javascript/plugins/javascriptPlugin.html HTTP/1.1" 200 206
+96.8.233.82 - - [25/Mar/2017:14:29:07 +0000] "GET /_app/built-codeEdit/plugins/embeddedToolingPlugin.js HTTP/1.1" 200 237037
+96.8.233.82 - - [25/Mar/2017:14:29:07 +0000] "GET /_app/cheJavaHighlightingPlugin/lib/plugin.js HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:29:07 +0000] "GET /_app/built-codeEdit/webtools/plugins/webToolsPlugin.js HTTP/1.1" 200 538332
+96.8.233.82 - - [25/Mar/2017:14:29:07 +0000] "GET /_app/built-codeEdit/javascript/plugins/javascriptPlugin.js HTTP/1.1" 200 438524
+96.8.233.82 - - [25/Mar/2017:14:29:07 +0000] "GET /_app/orion-codenvy-theme.css HTTP/1.1" 200 677
+96.8.233.82 - - [25/Mar/2017:14:32:39 +0000] "GET /dashboard/ HTTP/1.1" 200 1782
+96.8.233.82 - - [25/Mar/2017:14:32:40 +0000] "GET /dashboard/styles/app-04821db53a.css HTTP/1.1" 200 651399
+96.8.233.82 - - [25/Mar/2017:14:32:40 +0000] "GET /dashboard/scripts/vendor-66eea7122d.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:32:40 +0000] "GET /dashboard/scripts/app-cc75944aa8.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:32:43 +0000] "GET /dashboard/fonts/open-sans-latin.woff2 HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:32:43 +0000] "OPTIONS /wsmaster/api/ HTTP/1.1" 200 242
+96.8.233.82 - - [25/Mar/2017:14:32:43 +0000] "OPTIONS /wsmaster/api/ HTTP/1.1" 200 242
+96.8.233.82 - - [25/Mar/2017:14:32:43 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:43 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:43 +0000] "GET /wsmaster/api/profile HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:32:43 +0000] "GET /wsmaster/api/profile HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /dashboard/fonts/che.woff HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /dashboard/fonts/material-design.woff HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /dashboard/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /_app/compilation-mappings.txt?uid=122839 HTTP/1.1" 200 373
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /_app/9F39DEA6071E57BCB5615E7C8C35A415.cache.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /che/wksp-6t32?uid=782826 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /_app/browserNotSupported.js HTTP/1.1" 200 3047
+96.8.233.82 - - [25/Mar/2017:14:32:44 +0000] "GET /_app/_app.nocache.js HTTP/1.1" 200 7851
+96.8.233.82 - - [25/Mar/2017:14:32:45 +0000] "GET /_app/IDE.css HTTP/1.1" 200 3870
+96.8.233.82 - - [25/Mar/2017:14:32:45 +0000] "GET /_app/9F39DEA6071E57BCB5615E7C8C35A415.cache.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:32:46 +0000] "GET /_app/font-awesome-4.5.0/css/font-awesome.min.css HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:46 +0000] "GET /_app/ZeroClipboard.min.js HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:46 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:46 +0000] "GET /wsmaster/api/profile/ HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:32:47 +0000] "GET /wsmaster/api/workspace/che/wksp-6t32 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:47 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:32:47 +0000] "GET /wsmaster/api/workspace/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:47 +0000] "GET /wsmaster/api/project-template/all HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:48 +0000] "GET /_app/ZeroClipboard.swf?noCache=1490452369603 HTTP/1.1" 200 4036
+96.8.233.82 - - [25/Mar/2017:14:32:48 +0000] "GET /_app/font-awesome-4.5.0/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 200 66624
+96.8.233.82 - - [25/Mar/2017:14:32:48 +0000] "GET /_app/require.js HTTP/1.1" 200 83083
+96.8.233.82 - - [25/Mar/2017:14:32:48 +0000] "GET /wsmaster/api/workspace/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:49 +0000] "GET /_app/term/xterm.js HTTP/1.1" 200 52870
+96.8.233.82 - - [25/Mar/2017:14:32:50 +0000] "GET /dashboard/maps/scripts/vendor-66eea7122d.js.map HTTP/1.1" 200 1792725
+96.8.233.82 - - [25/Mar/2017:14:32:50 +0000] "GET /dashboard/maps/scripts/app-cc75944aa8.js.map HTTP/1.1" 200 483382
+96.8.233.82 - - [25/Mar/2017:14:32:50 +0000] "GET /_app/term/xterm.js.map HTTP/1.1" 200 237929
+96.8.233.82 - - [25/Mar/2017:14:32:50 +0000] "GET /dashboard/styles/app-04821db53a.css HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:32:51 +0000] "GET /_app/IDE.css HTTP/1.1" 200 3870
+172.17.0.2 - - [25/Mar/2017:14:32:51 +0000] "PUT /wsmaster/api/activity/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 404 -
+96.8.233.82 - - [25/Mar/2017:14:32:51 +0000] "GET /_app/font-awesome-4.5.0/css/font-awesome.min.css HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:32:51 +0000] "GET /dashboard/maps/styles/app-04821db53a.css.map HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:31 +0000] "GET /dashboard/ HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:31 +0000] "GET /dashboard/styles/app-04821db53a.css HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:31 +0000] "GET /dashboard/scripts/vendor-66eea7122d.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:31 +0000] "GET /dashboard/scripts/app-cc75944aa8.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:32 +0000] "GET /dashboard/fonts/open-sans-latin.woff2 HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:32 +0000] "OPTIONS /wsmaster/api/ HTTP/1.1" 200 242
+96.8.233.82 - - [25/Mar/2017:14:33:32 +0000] "OPTIONS /wsmaster/api/ HTTP/1.1" 200 242
+96.8.233.82 - - [25/Mar/2017:14:33:32 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:32 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:32 +0000] "GET /wsmaster/api/profile HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:33:32 +0000] "GET /wsmaster/api/profile HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /wsmaster/api/workspace/settings HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /_app/compilation-mappings.txt?uid=11191 HTTP/1.1" 200 373
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /dashboard/fonts/che.woff HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /dashboard/fonts/material-design.woff HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /dashboard/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /_app/9F39DEA6071E57BCB5615E7C8C35A415.cache.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /che/wksp-6t32?uid=340041 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /_app/_app.nocache.js HTTP/1.1" 200 7851
+96.8.233.82 - - [25/Mar/2017:14:33:33 +0000] "GET /_app/browserNotSupported.js HTTP/1.1" 200 3047
+96.8.233.82 - - [25/Mar/2017:14:33:34 +0000] "GET /_app/9F39DEA6071E57BCB5615E7C8C35A415.cache.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:34 +0000] "GET /_app/IDE.css HTTP/1.1" 200 3870
+96.8.233.82 - - [25/Mar/2017:14:33:35 +0000] "GET /_app/font-awesome-4.5.0/css/font-awesome.min.css HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:35 +0000] "GET /_app/ZeroClipboard.min.js HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:35 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:36 +0000] "GET /wsmaster/api/profile/ HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:33:36 +0000] "GET /wsmaster/api/workspace/che/wksp-6t32 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:36 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:33:36 +0000] "GET /wsmaster/api/project-template/all HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:36 +0000] "GET /wsmaster/api/workspace/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:37 +0000] "GET /_app/font-awesome-4.5.0/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 200 66624
+96.8.233.82 - - [25/Mar/2017:14:33:37 +0000] "GET /_app/require.js HTTP/1.1" 200 83083
+96.8.233.82 - - [25/Mar/2017:14:33:37 +0000] "GET /wsmaster/api/workspace/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:38 +0000] "GET /_app/term/xterm.js HTTP/1.1" 200 52870
+96.8.233.82 - - [25/Mar/2017:14:33:43 +0000] "GET /dashboard/maps/scripts/vendor-66eea7122d.js.map HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:43 +0000] "GET /dashboard/maps/scripts/app-cc75944aa8.js.map HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:43 +0000] "GET /_app/term/xterm.js.map HTTP/1.1" 200 237929
+96.8.233.82 - - [25/Mar/2017:14:33:43 +0000] "GET /dashboard/styles/app-04821db53a.css HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:33:43 +0000] "GET /_app/IDE.css HTTP/1.1" 200 3870
+96.8.233.82 - - [25/Mar/2017:14:33:43 +0000] "GET /_app/font-awesome-4.5.0/css/font-awesome.min.css HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:33:44 +0000] "GET /dashboard/maps/styles/app-04821db53a.css.map HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:36:25 +0000] "GET /_app/built-codeEdit/code_edit/built-codeEdit.css HTTP/1.1" 200 90858
+96.8.233.82 - - [25/Mar/2017:14:36:27 +0000] "GET /_app/built-codeEdit/code_edit/built-codeEdit-amd.js HTTP/1.1" 200 1658809
+96.8.233.82 - - [25/Mar/2017:14:36:27 +0000] "GET /_app/orion/CheContentAssistMode.js HTTP/1.1" 200 1979
+96.8.233.82 - - [25/Mar/2017:14:36:33 +0000] "GET /_app/built-codeEdit/plugins/embeddedToolingPlugin.html HTTP/1.1" 200 211
+96.8.233.82 - - [25/Mar/2017:14:36:33 +0000] "GET /_app/cheJavaHighlightingPlugin/plugin.html HTTP/1.1" 200 3912
+96.8.233.82 - - [25/Mar/2017:14:36:33 +0000] "GET /_app/built-codeEdit/webtools/plugins/webToolsPlugin.html HTTP/1.1" 200 196
+96.8.233.82 - - [25/Mar/2017:14:36:33 +0000] "GET /_app/built-codeEdit/javascript/plugins/javascriptPlugin.html HTTP/1.1" 200 206
+96.8.233.82 - - [25/Mar/2017:14:36:33 +0000] "GET /_app/built-codeEdit/plugins/embeddedToolingPlugin.js HTTP/1.1" 200 237037
+96.8.233.82 - - [25/Mar/2017:14:36:33 +0000] "GET /_app/cheJavaHighlightingPlugin/lib/plugin.js HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:36:33 +0000] "GET /_app/built-codeEdit/webtools/plugins/webToolsPlugin.js HTTP/1.1" 200 538332
+96.8.233.82 - - [25/Mar/2017:14:36:33 +0000] "GET /_app/built-codeEdit/javascript/plugins/javascriptPlugin.js HTTP/1.1" 200 438524
+96.8.233.82 - - [25/Mar/2017:14:36:34 +0000] "GET /_app/orion-codenvy-theme.css HTTP/1.1" 200 677
+96.8.233.82 - - [25/Mar/2017:14:36:34 +0000] "GET /_app/built-codeEdit/javascript/plugins/ternWorker.js?worker-language=en-US HTTP/1.1" 200 905
+96.8.233.82 - - [25/Mar/2017:14:37:01 +0000] "GET /_app/built-codeEdit/code_edit/built-codeEdit.css HTTP/1.1" 200 90858
+96.8.233.82 - - [25/Mar/2017:14:37:02 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:37:02 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:37:02 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:37:02 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:37:02 +0000] "GET /che/wksp-zp7f?uid=228990 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:37:02 +0000] "PUT /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:37:02 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:37:02 +0000] "GET /wsmaster/api/workspace HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:37:02 +0000] "GET /che/wksp-6t32?uid=834048 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:37:02 +0000] "PUT /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:37:02 +0000] "GET /_app/browserNotSupported.js HTTP/1.1" 200 3047
+96.8.233.82 - - [25/Mar/2017:14:37:02 +0000] "GET /_app/_app.nocache.js HTTP/1.1" 200 7851
+96.8.233.82 - - [25/Mar/2017:14:37:03 +0000] "GET /_app/9F39DEA6071E57BCB5615E7C8C35A415.cache.js HTTP/1.1" 304 -
+96.8.233.82 - - [25/Mar/2017:14:37:03 +0000] "GET /_app/IDE.css HTTP/1.1" 200 3870
+96.8.233.82 - - [25/Mar/2017:14:37:06 +0000] "GET /_app/font-awesome-4.5.0/css/font-awesome.min.css HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:37:06 +0000] "GET /_app/ZeroClipboard.min.js HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:37:07 +0000] "GET /wsmaster/api/preferences HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:37:08 +0000] "GET /wsmaster/api/profile/ HTTP/1.1" 200 941
+96.8.233.82 - - [25/Mar/2017:14:37:10 +0000] "GET /wsmaster/api/workspace/che/wksp-6t32 HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:37:10 +0000] "GET /wsmaster/api/ws HTTP/1.1" 101 -
+96.8.233.82 - - [25/Mar/2017:14:37:10 +0000] "GET /wsmaster/api/workspace/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:37:11 +0000] "GET /wsmaster/api/project-template/all HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:37:14 +0000] "GET /_app/font-awesome-4.5.0/fonts/fontawesome-webfont.woff2?v=4.5.0 HTTP/1.1" 200 66624
+96.8.233.82 - - [25/Mar/2017:14:37:15 +0000] "GET /_app/require.js HTTP/1.1" 200 83083
+96.8.233.82 - - [25/Mar/2017:14:37:15 +0000] "GET /wsmaster/api/workspace/workspaceg5wjo9kgmc6nlbfm HTTP/1.1" 200 -
+96.8.233.82 - - [25/Mar/2017:14:37:15 +0000] "GET /_app/term/xterm.js HTTP/1.1" 200 52870
+ 2017-03-25 00:14:01,299[ted-scheduler-2]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 01:14:01,299[ted-scheduler-3]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 02:14:01,300[ted-scheduler-1]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 03:14:01,300[ted-scheduler-9]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 04:14:01,299[ted-scheduler-9]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 05:14:01,298[ted-scheduler-9]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 06:14:01,299[ted-scheduler-6]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 07:14:01,299[ted-scheduler-5]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 08:14:01,309[ted-scheduler-5]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 09:14:01,300[ted-scheduler-5]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 10:14:01,299[ted-scheduler-3]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 11:14:01,299[ted-scheduler-3]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 12:14:01,299[ted-scheduler-3]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 13:14:01,298[ted-scheduler-3]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 14:14:01,300[ted-scheduler-3]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+ 2017-03-25 00:14:01,299[ted-scheduler-2]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 01:14:01,299[ted-scheduler-3]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 02:14:01,300[ted-scheduler-1]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 03:14:01,300[ted-scheduler-9]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 04:14:01,299[ted-scheduler-9]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 05:14:01,298[ted-scheduler-9]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 06:14:01,299[ted-scheduler-6]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 07:14:01,299[ted-scheduler-5]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 08:14:01,309[ted-scheduler-5]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 09:14:01,300[ted-scheduler-5]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 10:14:01,299[ted-scheduler-3]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 11:14:01,299[ted-scheduler-3]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 12:14:01,299[ted-scheduler-3]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 13:14:01,298[ted-scheduler-3]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]
+2017-03-25 14:14:01,300[ted-scheduler-3]  [INFO ] [ockerAbandonedResourcesCleaner 124]  - List containers registered in the api: [/workspaceg5wjo9kgmc6nlbfm_machine8z74t6nazemdvoor_che_dev-machine]

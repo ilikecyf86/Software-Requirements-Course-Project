@@ -1,0 +1,3 @@
+BC break in Docker Che entrypoint.sh
+kind/question kind/bug team/production sprint/current-sprint status/in-progress kind/question sprint/current-sprint status/in-progress 
+A recent change to entrypoint.sh 4813a1a#diff-1da4013f60e1b92b5613cf9680423a88 seems to have caused our environments to start up without the users database or custom stacks. Are there upgrade docs for this or do we need to set CHE_HOME in an env var?

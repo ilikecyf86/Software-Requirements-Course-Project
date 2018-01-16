@@ -1,0 +1,106 @@
+Default stack projects
+kind/question 
+Defining projects in a stacks are not added to a new stack. Do we want to allow this(enhancement) or should this already work(bug)? Alternative is to create a factory to share with others but it would be nice to allow projects to be defined in stack. Reproduction Steps: My stack. {
+  "description": "Che and Codenvy Docs",
+  "scope": "general",
+  "tags": [
+    "Java 1.8",
+    "Jekyll 3.3.1"
+  ],
+  "creator": "admin",
+  "workspaceConfig": {
+    "environments": {
+      "default": {
+        "machines": {
+          "dev-machine": {
+            "agents": [
+              "org.eclipse.che.terminal",
+              "org.eclipse.che.ws-agent",
+              "org.eclipse.che.ssh"
+            ],
+            "servers": {},
+            "attributes": {
+              "memoryLimitBytes": "3221225472"
+            }
+          }
+        },
+        "recipe": {
+          "contentType": "application/x-yaml",
+          "type": "compose",
+          "content": "services:\n  dev-machine:\n    image: jdrummond/ubuntu_jekyll\n"
+        }
+      }
+    },
+    "defaultEnv": "default",
+    "commands": [
+      {
+        "commandLine": "mkdir -p /project/che-docs/target; jekyll serve --source /projects/che-docs -d /project/che-docs/target/ --force_polling --incremental",
+        "name": "Che Jekyll Serve Incremental",
+        "type": "custom",
+        "attributes": {
+          "previewUrl": "http://${server.port.4000}/"
+        }
+      },
+      {
+        "commandLine": "mkdir -p /project/che-docs/target; jekyll serve -s /projects/che-docs -d /project/che-docs/target/ --force_polling",
+        "name": "Che Jekyll Serve Full",
+        "type": "custom",
+        "attributes": {
+          "previewUrl": "http://${server.port.4000}/"
+        }
+      },
+      {
+        "commandLine": "rm -rf /project/codenvy-docs/target; mkdir -p /project/codenvy-docs/target; ln -fs /projects/che-docs/target/docs /project/codenvy-docs/target/docs/che; jekyll serve -s /projects/che-docs/src/main -d /project/codenvy-docs/target/ --force_polling --incremental",
+        "name": "Codenvy Jekyll Serve Incremental",
+        "type": "custom",
+        "attributes": {
+          "previewUrl": "http://${server.port.4000}/"
+        }
+      },
+      {
+        "commandLine": "rm -rf /project/codenvy-docs/target; mkdir -p /project/codenvy-docs/target; ln -fs /projects/che-docs/target/docs /project/codenvy-docs/target/docs/che; jekyll serve -s /projects/che-docs/src/main -d /project/codenvy-docs/target/ --force_polling",
+        "name": "Codenvy Jekyll Serve Full",
+        "type": "custom",
+        "attributes": {
+          "previewUrl": "http://${server.port.4000}/"
+        }
+      }
+    ],
+    "projects": [
+      {
+        "source": {
+          "location": "https://github.com/eclipse/che-docs.git",
+          "type": "git",
+          "parameters": {}
+        },
+        "links": [],
+        "mixins": [],
+        "problems": [],
+        "name": "che-docs",
+        "type": "blank",
+        "path": "/che-docs",
+        "attributes": {}
+      },
+      {
+        "source": {
+          "location": "https://github.com/codenvy/docs.git",
+          "type": "git",
+          "parameters": {}
+        },
+        "links": [],
+        "mixins": [],
+        "problems": [],
+        "name": "codenvy-docs",
+        "type": "blank",
+        "path": "/codenvy-docs",
+        "attributes": {}
+      }
+    ],
+    "name": "default",
+    "links": []
+  },
+  "components": [],
+  "name": "Docs Che and Codenvy",
+  "id": "stackcd9vap2f4fpnwrcx"
+}
+ codenvy 5.5.0

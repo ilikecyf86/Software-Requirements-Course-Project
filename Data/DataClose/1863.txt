@@ -1,0 +1,3 @@
+Change access to docs from dashboard
+
+We want to change the access to the docs. Instead of have a "Docs" item in the left sidebar, we are going to put it in the footer of dashboard pages.

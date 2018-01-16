@@ -1,0 +1,3 @@
+Disable forcing file saving on editor close operation
+kind/enhancement team/plugin 
+There is a proposal to change behavior of closing editor. The last one doesn't check whether opened file is dirty or not and force file saving. This type of operation is redundant and may be removed. Partially fix this issue: #3891

@@ -1,0 +1,3 @@
+Use a different python language server
+kind/task status/open-for-dev team/ide sprint/current-sprint sprint/next-sprint sprint/current-sprint sprint/current-sprint sprint/next-sprint 
+Investigate possibility of using a different python language server as per suggestion posted in the following issue sourcegraph/python-langserver#17
